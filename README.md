@@ -13,9 +13,9 @@ BMAX_B1 Plus is used as testbed to demonstrate.
 
 **HowTo**
 1. Linux-Bringup on BMAX_B1_Plus
-2. Setup GCC-UEFI
-3. Glodmont Unlock
-4. Match & Patch
+2. Goldmont Unlock
+3. Setup GCC-UEFI
+5. Match & Patch
 *_UEFI: Hello World!_
 >
 >
