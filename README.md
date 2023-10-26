@@ -51,11 +51,15 @@ BMAX_B1 Plus is used as testbed to demonstrate.
 >* For other vedors (BMAX) - Isolate TXE section using FIT, update the patch.
 >   
 >
-6. **Match & Patch - Using EFI shell**
+6. **Match & Patch - Using EFI shell (TBD)**
 >
 >
 >
-7. **_Static Decompilation Using Ghidra extension_**
+7. **_Static Decompilation Using Ghidra extension_  (TBD)**
+>
+>
+>
+8. **_Dynamic Tracing over DCI_ (TBD)**
 >
 >
 >
@@ -74,4 +78,7 @@ BMAX_B1 Plus is used as testbed to demonstrate.
 >* **Intel Celeron N3350** https://www.cpu-world.com/CPUs/Celeron/Intel-Mobile%20Celeron%20N3350.html
 >* **BMAX B1 Plus** https://www.bmaxit.com/2020/minipc_0808/34.html
 >* **ARM Pointer Authentication Code**::
->* **ARM Project Morrello**:: 
+>* **ARM Project Morrello**::
+>
+>
+
