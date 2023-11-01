@@ -22,9 +22,12 @@ BMAX_B1 Plus is used as testbed to demonstrate.
 >
 2. **Setting up GCC-UEFI**
 **_UEFI: Hello World!_ (TBD) **
->
->
->
+>* There are two possible methods used for creating UEFI executable
+>* I am listing the tutorials [references] to setup a "Hello World" program before proceeding to more complex u-code patches. 
+>* In these experiments we use gnu-efi packages (over TianoCore EDKII) for **.efi** program development. 
+>* Baseline package version is used from sourceforge:**gnu-efi.3.0.14**. 
+>* Some subtle differences in api/syntax has been observed if different version of gnu-efi is used (or if tianocoreEDKII baseline used). 
+>*
 3. ** Achieving Goldmont Unlock **
 >* To update contents of MSRAM with customized micro-code patches, access to CRBUS needs to be unlocked via DCI debugger. This unlock is called Red-unlock and here we try to achive the same.
 >* _Prequisites of GLM Unlock_
@@ -79,6 +82,6 @@ BMAX_B1 Plus is used as testbed to demonstrate.
 >* **BMAX B1 Plus** https://www.bmaxit.com/2020/minipc_0808/34.html
 >* **ARM Pointer Authentication Code**::
 >* **ARM Project Morrello**::
->
+>* **GNU-EFI Tutorials::** https://www.rodsbooks.com/efi-programming/prepare.html
 >
 
