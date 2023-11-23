@@ -58,6 +58,15 @@ BMAX_B1 Plus is used as testbed to demonstrate.
 >
 7. **_Static Decompilation Using Ghidra extension_  (TBD)**
 * One of the methods used by authors of Woot'23 papers to use post-processing scripts to translate glm binaries to micro-code and then to raw micro-code file could be loaded into Ghidra decompiler IDE for static analysis.
+* Ghidra could be downloaded from NSA github https://github.com/NationalSecurityAgency/ghidra#build as an pre-built execuatbles (while using standard x86/aarch64/riscv ISA extensions) or could be downloaded as source code and built again with custom extensions
+*
+* Pre-requisites: OpenJDK11+, Gradle 7.x+ and make/gcc.
+* Steps to build Ghidra from source:
+* 1. __git clone https://github.com/NationalSecurityAgency/ghidra#build__
+* 2. __gradle -I gradle/support/fetchDependencies.gradle init__
+* 3. __gradle buildGhidra__
+* Built Executable will be placed in build/dist/ folder as zip file. Unzip and use executable.
+* 
 * **_To Run_**
 * git clone https://github.com/chip-red-pill/uCodeDisasm.git; cd uCodedisasm/glm_ucode_disasm
 * glm_ucode_disasm.py ../ucode/ms_arry0.txt; cat ../ucode/ucode_glm.txt
