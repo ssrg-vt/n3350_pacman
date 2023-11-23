@@ -1,1 +1,2 @@
+Steps to create EFI Shell:
 https://www.baeldung.com/linux/efi-shell-bootable-flash
