@@ -49,8 +49,20 @@ Boot_ → _Secure_Boot_ → _Disable
 >* Vendor specific
 >* Gigabyte link: https://download.gigabyte.com/FileList/BIOS/brix_bios_gb-bpce-3350c_f5.zip
 >* For other vedors (BMAX) - Isolate TXE section using FIT, update the patch.
-   
-4. **_Run PAC / PACMAN Case-Studies_**
+
+4. **_Steps to Create Bootable EFI on USB stick_**
+```sh
+$lsblk -p // locate usb device to used
+$sudo umount /dev/sdb
+$sudo mkfs.vfat -F 32 /dev/sdb
+mkfs.fat 4.1 (2017-01-24)
+$sudo mount /dev/sdb /media/usb
+$sudo mkdir -p efi/boot/
+$cd efi/boot/
+$sudo wget -q -O BOOTX64.efi https://github.com/tianocore/edk2/raw/edk2-stable201903/ShellBinPkg/UefiShell/X64/Shell.efi  // for x86_64 machines
+```
+
+5. **_Run PAC / PACMAN Case-Studies_**
 ```sh
 git clone https://github.com/pietroborrello/CustomProcessingUnit.git
 cd CustomProcessingUnit; Update Makefile: GNU_EFI_DIR=<Gnu_EFI_home>
@@ -58,7 +70,7 @@ Make all; ls bios/cpu.efi // This EFI utility packages all the experiments liste
 In_EFI_SHELL>cpu.efi <experiment_id> // <experiment_id=2 for PAC on x86 and 3 for PACMAN attack>
 ```
 
-5. **_Static Decompilation Using Ghidra extension_**
+6. **_Static Decompilation Using Ghidra extension_**
 - One of the methods used by authors of Woot'23 papers to use post-processing scripts to translate glm binaries to micro-code and then to raw micro-code file could be loaded into Ghidra decompiler IDE for static analysis.
 - Ghidra could be downloaded from NSA github as an pre-built execuatbles (while using standard x86/aarch64/riscv ISA ) or could be downloaded as source code and built again with custom extensions.
 - Pre-requisites: OpenJDK11+, Gradle 7.x+ and make/gcc.
