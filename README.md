@@ -52,7 +52,7 @@ Boot_ → _Secure_Boot_ → _Disable
 
 4. **_Steps to Create Bootable EFI on USB stick_**
 ```sh
-$lsblk -p // locate usb device to used
+$lsblk -p // locate usb device to be used
 $sudo umount /dev/sdb
 $sudo mkfs.vfat -F 32 /dev/sdb
 mkfs.fat 4.1 (2017-01-24)
@@ -66,7 +66,7 @@ $sudo wget -q -O BOOTX64.efi https://github.com/tianocore/edk2/raw/edk2-stable20
 ```sh
 git clone https://github.com/pietroborrello/CustomProcessingUnit.git
 cd CustomProcessingUnit; Update Makefile: GNU_EFI_DIR=<Gnu_EFI_home>
-Make all; ls bios/cpu.efi // This EFI utility packages all the experiments listed
+Make all; ls bios/cpu.efi // This EFI utility packages all the experiments listed, copy .efi file to bootable USB stick and reboot board to UEFI shell.
 In_EFI_SHELL>cpu.efi <experiment_id> // <experiment_id=2 for PAC on x86 and 3 for PACMAN attack>
 ```
 
