@@ -1,0 +1,48 @@
+
+/home/lalitssrg/coreutils/lib/asnprintf.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <asnprintf>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 81 ec d8 00 00 00 	sub    $0xd8,%rsp
+   b:	48 89 4c 24 38       	mov    %rcx,0x38(%rsp)
+  10:	4c 89 44 24 40       	mov    %r8,0x40(%rsp)
+  15:	4c 89 4c 24 48       	mov    %r9,0x48(%rsp)
+  1a:	84 c0                	test   %al,%al
+  1c:	74 37                	je     55 <asnprintf+0x55>
+  1e:	0f 29 44 24 50       	movaps %xmm0,0x50(%rsp)
+  23:	0f 29 4c 24 60       	movaps %xmm1,0x60(%rsp)
+  28:	0f 29 54 24 70       	movaps %xmm2,0x70(%rsp)
+  2d:	0f 29 9c 24 80 00 00 	movaps %xmm3,0x80(%rsp)
+  34:	00 
+  35:	0f 29 a4 24 90 00 00 	movaps %xmm4,0x90(%rsp)
+  3c:	00 
+  3d:	0f 29 ac 24 a0 00 00 	movaps %xmm5,0xa0(%rsp)
+  44:	00 
+  45:	0f 29 b4 24 b0 00 00 	movaps %xmm6,0xb0(%rsp)
+  4c:	00 
+  4d:	0f 29 bc 24 c0 00 00 	movaps %xmm7,0xc0(%rsp)
+  54:	00 
+  55:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  5c:	00 00 
+  5e:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  63:	31 c0                	xor    %eax,%eax
+  65:	48 8d 84 24 e0 00 00 	lea    0xe0(%rsp),%rax
+  6c:	00 
+  6d:	48 89 e1             	mov    %rsp,%rcx
+  70:	c7 04 24 18 00 00 00 	movl   $0x18,(%rsp)
+  77:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  7c:	48 8d 44 24 20       	lea    0x20(%rsp),%rax
+  81:	c7 44 24 04 30 00 00 	movl   $0x30,0x4(%rsp)
+  88:	00 
+  89:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+  8e:	e8 00 00 00 00       	call   93 <asnprintf+0x93>
+  93:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+  98:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  9f:	00 00 
+  a1:	75 08                	jne    ab <asnprintf+0xab>
+  a3:	48 81 c4 d8 00 00 00 	add    $0xd8,%rsp
+  aa:	c3                   	ret    
+  ab:	e8 00 00 00 00       	call   b0 <asnprintf+0xb0>

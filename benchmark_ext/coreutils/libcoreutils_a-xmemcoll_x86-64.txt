@@ -1,0 +1,149 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xmemcoll.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <collate_error>:
+   0:	41 57                	push   %r15
+   2:	4d 89 c7             	mov    %r8,%r15
+   5:	41 56                	push   %r14
+   7:	49 89 ce             	mov    %rcx,%r14
+   a:	41 55                	push   %r13
+   c:	49 89 d5             	mov    %rdx,%r13
+   f:	ba 05 00 00 00       	mov    $0x5,%edx
+  14:	41 54                	push   %r12
+  16:	49 89 f4             	mov    %rsi,%r12
+  19:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 20 <collate_error+0x20>
+  20:	55                   	push   %rbp
+  21:	89 fd                	mov    %edi,%ebp
+  23:	31 ff                	xor    %edi,%edi
+  25:	53                   	push   %rbx
+  26:	48 83 ec 08          	sub    $0x8,%rsp
+  2a:	e8 00 00 00 00       	call   2f <collate_error+0x2f>
+  2f:	89 ee                	mov    %ebp,%esi
+  31:	31 ff                	xor    %edi,%edi
+  33:	48 89 c2             	mov    %rax,%rdx
+  36:	31 c0                	xor    %eax,%eax
+  38:	e8 00 00 00 00       	call   3d <collate_error+0x3d>
+  3d:	ba 05 00 00 00       	mov    $0x5,%edx
+  42:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 49 <collate_error+0x49>
+  49:	31 ff                	xor    %edi,%edi
+  4b:	e8 00 00 00 00       	call   50 <collate_error+0x50>
+  50:	31 f6                	xor    %esi,%esi
+  52:	31 ff                	xor    %edi,%edi
+  54:	48 89 c2             	mov    %rax,%rdx
+  57:	31 c0                	xor    %eax,%eax
+  59:	e8 00 00 00 00       	call   5e <collate_error+0x5e>
+  5e:	4c 89 f9             	mov    %r15,%rcx
+  61:	4c 89 f2             	mov    %r14,%rdx
+  64:	be 08 00 00 00       	mov    $0x8,%esi
+  69:	bf 01 00 00 00       	mov    $0x1,%edi
+  6e:	8b 2d 00 00 00 00    	mov    0x0(%rip),%ebp        # 74 <collate_error+0x74>
+  74:	e8 00 00 00 00       	call   79 <collate_error+0x79>
+  79:	4c 89 e9             	mov    %r13,%rcx
+  7c:	4c 89 e2             	mov    %r12,%rdx
+  7f:	be 08 00 00 00       	mov    $0x8,%esi
+  84:	31 ff                	xor    %edi,%edi
+  86:	48 89 c3             	mov    %rax,%rbx
+  89:	e8 00 00 00 00       	call   8e <collate_error+0x8e>
+  8e:	ba 05 00 00 00       	mov    $0x5,%edx
+  93:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 9a <collate_error+0x9a>
+  9a:	31 ff                	xor    %edi,%edi
+  9c:	49 89 c4             	mov    %rax,%r12
+  9f:	e8 00 00 00 00       	call   a4 <collate_error+0xa4>
+  a4:	48 83 c4 08          	add    $0x8,%rsp
+  a8:	49 89 d8             	mov    %rbx,%r8
+  ab:	4c 89 e1             	mov    %r12,%rcx
+  ae:	5b                   	pop    %rbx
+  af:	48 89 c2             	mov    %rax,%rdx
+  b2:	89 ef                	mov    %ebp,%edi
+  b4:	31 f6                	xor    %esi,%esi
+  b6:	5d                   	pop    %rbp
+  b7:	31 c0                	xor    %eax,%eax
+  b9:	41 5c                	pop    %r12
+  bb:	41 5d                	pop    %r13
+  bd:	41 5e                	pop    %r14
+  bf:	41 5f                	pop    %r15
+  c1:	e9 00 00 00 00       	jmp    c6 <collate_error+0xc6>
+  c6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  cd:	00 00 00 
+
+00000000000000d0 <xmemcoll>:
+  d0:	f3 0f 1e fa          	endbr64 
+  d4:	41 56                	push   %r14
+  d6:	41 55                	push   %r13
+  d8:	49 89 d5             	mov    %rdx,%r13
+  db:	41 54                	push   %r12
+  dd:	49 89 f4             	mov    %rsi,%r12
+  e0:	55                   	push   %rbp
+  e1:	48 89 fd             	mov    %rdi,%rbp
+  e4:	53                   	push   %rbx
+  e5:	48 89 cb             	mov    %rcx,%rbx
+  e8:	e8 00 00 00 00       	call   ed <xmemcoll+0x1d>
+  ed:	41 89 c6             	mov    %eax,%r14d
+  f0:	e8 00 00 00 00       	call   f5 <xmemcoll+0x25>
+  f5:	8b 38                	mov    (%rax),%edi
+  f7:	85 ff                	test   %edi,%edi
+  f9:	75 15                	jne    110 <xmemcoll+0x40>
+  fb:	5b                   	pop    %rbx
+  fc:	44 89 f0             	mov    %r14d,%eax
+  ff:	5d                   	pop    %rbp
+ 100:	41 5c                	pop    %r12
+ 102:	41 5d                	pop    %r13
+ 104:	41 5e                	pop    %r14
+ 106:	c3                   	ret    
+ 107:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 10e:	00 00 
+ 110:	49 89 d8             	mov    %rbx,%r8
+ 113:	4c 89 e9             	mov    %r13,%rcx
+ 116:	4c 89 e2             	mov    %r12,%rdx
+ 119:	48 89 ee             	mov    %rbp,%rsi
+ 11c:	e8 df fe ff ff       	call   0 <collate_error>
+ 121:	5b                   	pop    %rbx
+ 122:	44 89 f0             	mov    %r14d,%eax
+ 125:	5d                   	pop    %rbp
+ 126:	41 5c                	pop    %r12
+ 128:	41 5d                	pop    %r13
+ 12a:	41 5e                	pop    %r14
+ 12c:	c3                   	ret    
+ 12d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000130 <xmemcoll0>:
+ 130:	f3 0f 1e fa          	endbr64 
+ 134:	41 56                	push   %r14
+ 136:	41 55                	push   %r13
+ 138:	49 89 cd             	mov    %rcx,%r13
+ 13b:	41 54                	push   %r12
+ 13d:	49 89 d4             	mov    %rdx,%r12
+ 140:	55                   	push   %rbp
+ 141:	48 89 fd             	mov    %rdi,%rbp
+ 144:	53                   	push   %rbx
+ 145:	48 89 f3             	mov    %rsi,%rbx
+ 148:	e8 00 00 00 00       	call   14d <xmemcoll0+0x1d>
+ 14d:	41 89 c6             	mov    %eax,%r14d
+ 150:	e8 00 00 00 00       	call   155 <xmemcoll0+0x25>
+ 155:	8b 38                	mov    (%rax),%edi
+ 157:	85 ff                	test   %edi,%edi
+ 159:	75 15                	jne    170 <xmemcoll0+0x40>
+ 15b:	5b                   	pop    %rbx
+ 15c:	44 89 f0             	mov    %r14d,%eax
+ 15f:	5d                   	pop    %rbp
+ 160:	41 5c                	pop    %r12
+ 162:	41 5d                	pop    %r13
+ 164:	41 5e                	pop    %r14
+ 166:	c3                   	ret    
+ 167:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 16e:	00 00 
+ 170:	48 8d 53 ff          	lea    -0x1(%rbx),%rdx
+ 174:	4d 8d 45 ff          	lea    -0x1(%r13),%r8
+ 178:	4c 89 e1             	mov    %r12,%rcx
+ 17b:	48 89 ee             	mov    %rbp,%rsi
+ 17e:	e8 7d fe ff ff       	call   0 <collate_error>
+ 183:	5b                   	pop    %rbx
+ 184:	44 89 f0             	mov    %r14d,%eax
+ 187:	5d                   	pop    %rbp
+ 188:	41 5c                	pop    %r12
+ 18a:	41 5d                	pop    %r13
+ 18c:	41 5e                	pop    %r14
+ 18e:	c3                   	ret    

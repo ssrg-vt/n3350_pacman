@@ -1,0 +1,108 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-selinux-at.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <getfileconat>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	49 89 f4             	mov    %rsi,%r12
+   b:	55                   	push   %rbp
+   c:	89 fd                	mov    %edi,%ebp
+   e:	53                   	push   %rbx
+   f:	48 81 ec e8 0f 00 00 	sub    $0xfe8,%rsp
+  16:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1d:	00 00 
+  1f:	48 89 84 24 d8 0f 00 	mov    %rax,0xfd8(%rsp)
+  26:	00 
+  27:	31 c0                	xor    %eax,%eax
+  29:	e8 00 00 00 00       	call   2e <getfileconat+0x2e>
+  2e:	48 89 c3             	mov    %rax,%rbx
+  31:	83 fd 9c             	cmp    $0xffffff9c,%ebp
+  34:	0f 84 a6 00 00 00    	je     e0 <getfileconat+0xe0>
+  3a:	41 80 3c 24 2f       	cmpb   $0x2f,(%r12)
+  3f:	0f 84 9b 00 00 00    	je     e0 <getfileconat+0xe0>
+  45:	4c 8d 6c 24 10       	lea    0x10(%rsp),%r13
+  4a:	4c 89 e2             	mov    %r12,%rdx
+  4d:	89 ee                	mov    %ebp,%esi
+  4f:	4c 89 ef             	mov    %r13,%rdi
+  52:	e8 00 00 00 00       	call   57 <getfileconat+0x57>
+  57:	48 85 c0             	test   %rax,%rax
+  5a:	74 13                	je     6f <getfileconat+0x6f>
+  5c:	c7 03 5f 00 00 00    	movl   $0x5f,(%rbx)
+  62:	4c 39 e8             	cmp    %r13,%rax
+  65:	74 08                	je     6f <getfileconat+0x6f>
+  67:	48 89 c7             	mov    %rax,%rdi
+  6a:	e8 00 00 00 00       	call   6f <getfileconat+0x6f>
+  6f:	49 89 e4             	mov    %rsp,%r12
+  72:	4c 89 e7             	mov    %r12,%rdi
+  75:	e8 00 00 00 00       	call   7a <getfileconat+0x7a>
+  7a:	85 c0                	test   %eax,%eax
+  7c:	0f 85 92 00 00 00    	jne    114 <getfileconat+0x114>
+  82:	85 ed                	test   %ebp,%ebp
+  84:	78 05                	js     8b <getfileconat+0x8b>
+  86:	39 2c 24             	cmp    %ebp,(%rsp)
+  89:	74 75                	je     100 <getfileconat+0x100>
+  8b:	89 ef                	mov    %ebp,%edi
+  8d:	e8 00 00 00 00       	call   92 <getfileconat+0x92>
+  92:	85 c0                	test   %eax,%eax
+  94:	75 5a                	jne    f0 <getfileconat+0xf0>
+  96:	c7 03 5f 00 00 00    	movl   $0x5f,(%rbx)
+  9c:	4c 89 e7             	mov    %r12,%rdi
+  9f:	e8 00 00 00 00       	call   a4 <getfileconat+0xa4>
+  a4:	85 c0                	test   %eax,%eax
+  a6:	75 73                	jne    11b <getfileconat+0x11b>
+  a8:	4c 89 e7             	mov    %r12,%rdi
+  ab:	bd 5f 00 00 00       	mov    $0x5f,%ebp
+  b0:	e8 00 00 00 00       	call   b5 <getfileconat+0xb5>
+  b5:	89 2b                	mov    %ebp,(%rbx)
+  b7:	48 8b 84 24 d8 0f 00 	mov    0xfd8(%rsp),%rax
+  be:	00 
+  bf:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  c6:	00 00 
+  c8:	75 45                	jne    10f <getfileconat+0x10f>
+  ca:	48 81 c4 e8 0f 00 00 	add    $0xfe8,%rsp
+  d1:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  d6:	5b                   	pop    %rbx
+  d7:	5d                   	pop    %rbp
+  d8:	41 5c                	pop    %r12
+  da:	41 5d                	pop    %r13
+  dc:	c3                   	ret    
+  dd:	0f 1f 00             	nopl   (%rax)
+  e0:	c7 03 5f 00 00 00    	movl   $0x5f,(%rbx)
+  e6:	eb cf                	jmp    b7 <getfileconat+0xb7>
+  e8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  ef:	00 
+  f0:	4c 89 e7             	mov    %r12,%rdi
+  f3:	8b 2b                	mov    (%rbx),%ebp
+  f5:	e8 00 00 00 00       	call   fa <getfileconat+0xfa>
+  fa:	eb b9                	jmp    b5 <getfileconat+0xb5>
+  fc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 100:	4c 89 e7             	mov    %r12,%rdi
+ 103:	bd 09 00 00 00       	mov    $0x9,%ebp
+ 108:	e8 00 00 00 00       	call   10d <getfileconat+0x10d>
+ 10d:	eb a6                	jmp    b5 <getfileconat+0xb5>
+ 10f:	e8 00 00 00 00       	call   114 <getfileconat+0x114>
+ 114:	8b 3b                	mov    (%rbx),%edi
+ 116:	e8 00 00 00 00       	call   11b <getfileconat+0x11b>
+ 11b:	8b 3b                	mov    (%rbx),%edi
+ 11d:	e8 00 00 00 00       	call   122 <getfileconat+0x122>
+ 122:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 129:	00 00 00 00 
+ 12d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000130 <lgetfileconat>:
+ 130:	f3 0f 1e fa          	endbr64 
+ 134:	e9 c7 fe ff ff       	jmp    0 <getfileconat>
+ 139:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000140 <setfileconat>:
+ 140:	f3 0f 1e fa          	endbr64 
+ 144:	e9 b7 fe ff ff       	jmp    0 <getfileconat>
+ 149:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000150 <lsetfileconat>:
+ 150:	f3 0f 1e fa          	endbr64 
+ 154:	e9 a7 fe ff ff       	jmp    0 <getfileconat>

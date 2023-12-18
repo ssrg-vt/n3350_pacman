@@ -1,0 +1,88 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-dirname-lgpl.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <dir_len>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	31 ed                	xor    %ebp,%ebp
+   7:	53                   	push   %rbx
+   8:	48 89 fb             	mov    %rdi,%rbx
+   b:	48 83 ec 08          	sub    $0x8,%rsp
+   f:	80 3f 2f             	cmpb   $0x2f,(%rdi)
+  12:	40 0f 94 c5          	sete   %bpl
+  16:	e8 00 00 00 00       	call   1b <dir_len+0x1b>
+  1b:	48 29 d8             	sub    %rbx,%rax
+  1e:	eb 0e                	jmp    2e <dir_len+0x2e>
+  20:	80 7c 03 ff 2f       	cmpb   $0x2f,-0x1(%rbx,%rax,1)
+  25:	48 8d 50 ff          	lea    -0x1(%rax),%rdx
+  29:	75 08                	jne    33 <dir_len+0x33>
+  2b:	48 89 d0             	mov    %rdx,%rax
+  2e:	48 39 e8             	cmp    %rbp,%rax
+  31:	77 ed                	ja     20 <dir_len+0x20>
+  33:	48 83 c4 08          	add    $0x8,%rsp
+  37:	5b                   	pop    %rbx
+  38:	5d                   	pop    %rbp
+  39:	c3                   	ret    
+  3a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000040 <mdir_name>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	41 54                	push   %r12
+  46:	55                   	push   %rbp
+  47:	48 89 fd             	mov    %rdi,%rbp
+  4a:	53                   	push   %rbx
+  4b:	31 db                	xor    %ebx,%ebx
+  4d:	80 3f 2f             	cmpb   $0x2f,(%rdi)
+  50:	0f 94 c3             	sete   %bl
+  53:	e8 00 00 00 00       	call   58 <mdir_name+0x18>
+  58:	48 29 e8             	sub    %rbp,%rax
+  5b:	49 89 c4             	mov    %rax,%r12
+  5e:	eb 10                	jmp    70 <mdir_name+0x30>
+  60:	42 80 7c 25 ff 2f    	cmpb   $0x2f,-0x1(%rbp,%r12,1)
+  66:	49 8d 44 24 ff       	lea    -0x1(%r12),%rax
+  6b:	75 53                	jne    c0 <mdir_name+0x80>
+  6d:	49 89 c4             	mov    %rax,%r12
+  70:	4c 39 e3             	cmp    %r12,%rbx
+  73:	72 eb                	jb     60 <mdir_name+0x20>
+  75:	4c 89 e0             	mov    %r12,%rax
+  78:	48 83 f0 01          	xor    $0x1,%rax
+  7c:	89 c3                	mov    %eax,%ebx
+  7e:	49 8d 7c 04 01       	lea    0x1(%r12,%rax,1),%rdi
+  83:	83 e3 01             	and    $0x1,%ebx
+  86:	e8 00 00 00 00       	call   8b <mdir_name+0x4b>
+  8b:	48 85 c0             	test   %rax,%rax
+  8e:	74 5d                	je     ed <mdir_name+0xad>
+  90:	4c 89 e2             	mov    %r12,%rdx
+  93:	48 89 ee             	mov    %rbp,%rsi
+  96:	48 89 c7             	mov    %rax,%rdi
+  99:	e8 00 00 00 00       	call   9e <mdir_name+0x5e>
+  9e:	49 89 c0             	mov    %rax,%r8
+  a1:	84 db                	test   %bl,%bl
+  a3:	74 40                	je     e5 <mdir_name+0xa5>
+  a5:	c6 00 2e             	movb   $0x2e,(%rax)
+  a8:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+  ae:	43 c6 04 20 00       	movb   $0x0,(%r8,%r12,1)
+  b3:	5b                   	pop    %rbx
+  b4:	4c 89 c0             	mov    %r8,%rax
+  b7:	5d                   	pop    %rbp
+  b8:	41 5c                	pop    %r12
+  ba:	c3                   	ret    
+  bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  c0:	49 8d 7c 24 01       	lea    0x1(%r12),%rdi
+  c5:	e8 00 00 00 00       	call   ca <mdir_name+0x8a>
+  ca:	49 89 c0             	mov    %rax,%r8
+  cd:	48 85 c0             	test   %rax,%rax
+  d0:	74 1b                	je     ed <mdir_name+0xad>
+  d2:	4c 89 c7             	mov    %r8,%rdi
+  d5:	4c 89 e2             	mov    %r12,%rdx
+  d8:	48 89 ee             	mov    %rbp,%rsi
+  db:	e8 00 00 00 00       	call   e0 <mdir_name+0xa0>
+  e0:	49 89 c0             	mov    %rax,%r8
+  e3:	eb c9                	jmp    ae <mdir_name+0x6e>
+  e5:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+  eb:	eb c1                	jmp    ae <mdir_name+0x6e>
+  ed:	45 31 c0             	xor    %r8d,%r8d
+  f0:	eb c1                	jmp    b3 <mdir_name+0x73>

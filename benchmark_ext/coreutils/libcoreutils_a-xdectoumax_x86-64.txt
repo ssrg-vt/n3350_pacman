@@ -1,0 +1,99 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xdectoumax.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xnumtoumax>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	49 89 ff             	mov    %rdi,%r15
+   9:	41 56                	push   %r14
+   b:	49 89 ce             	mov    %rcx,%r14
+   e:	41 55                	push   %r13
+  10:	49 89 d5             	mov    %rdx,%r13
+  13:	89 f2                	mov    %esi,%edx
+  15:	31 f6                	xor    %esi,%esi
+  17:	41 54                	push   %r12
+  19:	4d 89 cc             	mov    %r9,%r12
+  1c:	55                   	push   %rbp
+  1d:	53                   	push   %rbx
+  1e:	48 83 ec 18          	sub    $0x18,%rsp
+  22:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  29:	00 00 
+  2b:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  30:	31 c0                	xor    %eax,%eax
+  32:	48 89 e1             	mov    %rsp,%rcx
+  35:	8b 6c 24 50          	mov    0x50(%rsp),%ebp
+  39:	e8 00 00 00 00       	call   3e <xnumtoumax+0x3e>
+  3e:	85 c0                	test   %eax,%eax
+  40:	75 5e                	jne    a0 <xnumtoumax+0xa0>
+  42:	48 8b 1c 24          	mov    (%rsp),%rbx
+  46:	4c 39 eb             	cmp    %r13,%rbx
+  49:	72 05                	jb     50 <xnumtoumax+0x50>
+  4b:	4c 39 f3             	cmp    %r14,%rbx
+  4e:	76 70                	jbe    c0 <xnumtoumax+0xc0>
+  50:	e8 00 00 00 00       	call   55 <xnumtoumax+0x55>
+  55:	48 81 fb 00 00 00 40 	cmp    $0x40000000,%rbx
+  5c:	49 89 c5             	mov    %rax,%r13
+  5f:	19 c0                	sbb    %eax,%eax
+  61:	83 e0 d7             	and    $0xffffffd7,%eax
+  64:	83 c0 4b             	add    $0x4b,%eax
+  67:	41 89 45 00          	mov    %eax,0x0(%r13)
+  6b:	85 ed                	test   %ebp,%ebp
+  6d:	b8 01 00 00 00       	mov    $0x1,%eax
+  72:	4c 89 ff             	mov    %r15,%rdi
+  75:	0f 44 e8             	cmove  %eax,%ebp
+  78:	e8 00 00 00 00       	call   7d <xnumtoumax+0x7d>
+  7d:	41 8b 75 00          	mov    0x0(%r13),%esi
+  81:	4c 89 e1             	mov    %r12,%rcx
+  84:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 8b <xnumtoumax+0x8b>
+  8b:	49 89 c0             	mov    %rax,%r8
+  8e:	31 c0                	xor    %eax,%eax
+  90:	89 ef                	mov    %ebp,%edi
+  92:	83 fe 16             	cmp    $0x16,%esi
+  95:	0f 44 f0             	cmove  %eax,%esi
+  98:	e8 00 00 00 00       	call   9d <xnumtoumax+0x9d>
+  9d:	0f 1f 00             	nopl   (%rax)
+  a0:	89 c3                	mov    %eax,%ebx
+  a2:	e8 00 00 00 00       	call   a7 <xnumtoumax+0xa7>
+  a7:	49 89 c5             	mov    %rax,%r13
+  aa:	83 fb 01             	cmp    $0x1,%ebx
+  ad:	74 39                	je     e8 <xnumtoumax+0xe8>
+  af:	83 fb 03             	cmp    $0x3,%ebx
+  b2:	75 b7                	jne    6b <xnumtoumax+0x6b>
+  b4:	c7 00 00 00 00 00    	movl   $0x0,(%rax)
+  ba:	eb af                	jmp    6b <xnumtoumax+0x6b>
+  bc:	0f 1f 40 00          	nopl   0x0(%rax)
+  c0:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  c5:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  cc:	00 00 
+  ce:	75 23                	jne    f3 <xnumtoumax+0xf3>
+  d0:	48 83 c4 18          	add    $0x18,%rsp
+  d4:	48 89 d8             	mov    %rbx,%rax
+  d7:	5b                   	pop    %rbx
+  d8:	5d                   	pop    %rbp
+  d9:	41 5c                	pop    %r12
+  db:	41 5d                	pop    %r13
+  dd:	41 5e                	pop    %r14
+  df:	41 5f                	pop    %r15
+  e1:	c3                   	ret    
+  e2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  e8:	c7 00 4b 00 00 00    	movl   $0x4b,(%rax)
+  ee:	e9 78 ff ff ff       	jmp    6b <xnumtoumax+0x6b>
+  f3:	e8 00 00 00 00       	call   f8 <xnumtoumax+0xf8>
+  f8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  ff:	00 
+
+0000000000000100 <xdectoumax>:
+ 100:	f3 0f 1e fa          	endbr64 
+ 104:	48 83 ec 10          	sub    $0x10,%rsp
+ 108:	41 51                	push   %r9
+ 10a:	4d 89 c1             	mov    %r8,%r9
+ 10d:	49 89 c8             	mov    %rcx,%r8
+ 110:	48 89 d1             	mov    %rdx,%rcx
+ 113:	48 89 f2             	mov    %rsi,%rdx
+ 116:	be 0a 00 00 00       	mov    $0xa,%esi
+ 11b:	e8 00 00 00 00       	call   120 <xdectoumax+0x20>
+ 120:	48 83 c4 18          	add    $0x18,%rsp
+ 124:	c3                   	ret    

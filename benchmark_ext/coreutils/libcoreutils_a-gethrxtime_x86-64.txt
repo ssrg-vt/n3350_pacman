@@ -1,0 +1,33 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-gethrxtime.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <gethrxtime>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	bf 01 00 00 00       	mov    $0x1,%edi
+   a:	48 83 ec 20          	sub    $0x20,%rsp
+   e:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  15:	00 00 
+  17:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  1c:	31 c0                	xor    %eax,%eax
+  1e:	48 89 e5             	mov    %rsp,%rbp
+  21:	48 89 ee             	mov    %rbp,%rsi
+  24:	e8 00 00 00 00       	call   29 <gethrxtime+0x29>
+  29:	85 c0                	test   %eax,%eax
+  2b:	74 08                	je     35 <gethrxtime+0x35>
+  2d:	48 89 ef             	mov    %rbp,%rdi
+  30:	e8 00 00 00 00       	call   35 <gethrxtime+0x35>
+  35:	48 69 04 24 00 ca 9a 	imul   $0x3b9aca00,(%rsp),%rax
+  3c:	3b 
+  3d:	48 03 44 24 08       	add    0x8(%rsp),%rax
+  42:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+  47:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  4e:	00 00 
+  50:	75 06                	jne    58 <gethrxtime+0x58>
+  52:	48 83 c4 20          	add    $0x20,%rsp
+  56:	5d                   	pop    %rbp
+  57:	c3                   	ret    
+  58:	e8 00 00 00 00       	call   5d <gethrxtime+0x5d>

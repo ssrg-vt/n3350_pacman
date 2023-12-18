@@ -1,0 +1,16 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mbrlen.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_mbrlen>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 85 d2             	test   %rdx,%rdx
+   7:	48 89 d1             	mov    %rdx,%rcx
+   a:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 11 <rpl_mbrlen+0x11>
+  11:	48 89 f2             	mov    %rsi,%rdx
+  14:	48 0f 44 c8          	cmove  %rax,%rcx
+  18:	48 89 fe             	mov    %rdi,%rsi
+  1b:	31 ff                	xor    %edi,%edi
+  1d:	e9 00 00 00 00       	jmp    22 <rpl_mbrlen+0x22>

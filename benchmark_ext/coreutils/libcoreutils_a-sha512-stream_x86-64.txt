@@ -1,0 +1,300 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-sha512-stream.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <sha384_init_ctx>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	e9 00 00 00 00       	jmp    9 <sha384_init_ctx+0x9>
+   9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000010 <sha384_finish_ctx>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	41 54                	push   %r12
+  16:	49 89 f4             	mov    %rsi,%r12
+  19:	48 89 fe             	mov    %rdi,%rsi
+  1c:	4c 89 e7             	mov    %r12,%rdi
+  1f:	e8 00 00 00 00       	call   24 <sha384_finish_ctx+0x14>
+  24:	4c 89 e0             	mov    %r12,%rax
+  27:	41 5c                	pop    %r12
+  29:	c3                   	ret    
+  2a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000030 <sha512_init_ctx>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	e9 00 00 00 00       	jmp    39 <sha512_init_ctx+0x9>
+  39:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000040 <sha512_finish_ctx>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	41 54                	push   %r12
+  46:	49 89 f4             	mov    %rsi,%r12
+  49:	48 89 fe             	mov    %rdi,%rsi
+  4c:	4c 89 e7             	mov    %r12,%rdi
+  4f:	e8 00 00 00 00       	call   54 <sha512_finish_ctx+0x14>
+  54:	4c 89 e0             	mov    %r12,%rax
+  57:	41 5c                	pop    %r12
+  59:	c3                   	ret    
+  5a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000060 <shaxxx_stream.constprop.0>:
+  60:	41 57                	push   %r15
+  62:	41 56                	push   %r14
+  64:	49 89 f6             	mov    %rsi,%r14
+  67:	41 55                	push   %r13
+  69:	49 89 fd             	mov    %rdi,%r13
+  6c:	bf 48 80 00 00       	mov    $0x8048,%edi
+  71:	41 54                	push   %r12
+  73:	55                   	push   %rbp
+  74:	53                   	push   %rbx
+  75:	48 89 d3             	mov    %rdx,%rbx
+  78:	48 81 ec f8 00 00 00 	sub    $0xf8,%rsp
+  7f:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+  84:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  8b:	00 00 
+  8d:	48 89 84 24 e8 00 00 	mov    %rax,0xe8(%rsp)
+  94:	00 
+  95:	31 c0                	xor    %eax,%eax
+  97:	e8 00 00 00 00       	call   9c <shaxxx_stream.constprop.0+0x3c>
+  9c:	48 85 c0             	test   %rax,%rax
+  9f:	0f 84 e3 00 00 00    	je     188 <shaxxx_stream.constprop.0+0x128>
+  a5:	4c 8d 7c 24 10       	lea    0x10(%rsp),%r15
+  aa:	48 89 c5             	mov    %rax,%rbp
+  ad:	4c 89 ff             	mov    %r15,%rdi
+  b0:	ff d3                	call   *%rbx
+  b2:	bb 00 80 00 00       	mov    $0x8000,%ebx
+  b7:	45 31 e4             	xor    %r12d,%r12d
+  ba:	eb 2d                	jmp    e9 <shaxxx_stream.constprop.0+0x89>
+  bc:	0f 1f 40 00          	nopl   0x0(%rax)
+  c0:	48 89 da             	mov    %rbx,%rdx
+  c3:	4a 8d 7c 25 00       	lea    0x0(%rbp,%r12,1),%rdi
+  c8:	4c 89 e9             	mov    %r13,%rcx
+  cb:	be 01 00 00 00       	mov    $0x1,%esi
+  d0:	4c 29 e2             	sub    %r12,%rdx
+  d3:	e8 00 00 00 00       	call   d8 <shaxxx_stream.constprop.0+0x78>
+  d8:	49 01 c4             	add    %rax,%r12
+  db:	49 81 fc 00 80 00 00 	cmp    $0x8000,%r12
+  e2:	74 54                	je     138 <shaxxx_stream.constprop.0+0xd8>
+  e4:	48 85 c0             	test   %rax,%rax
+  e7:	74 67                	je     150 <shaxxx_stream.constprop.0+0xf0>
+  e9:	41 f6 45 00 10       	testb  $0x10,0x0(%r13)
+  ee:	74 d0                	je     c0 <shaxxx_stream.constprop.0+0x60>
+  f0:	4d 85 e4             	test   %r12,%r12
+  f3:	75 7b                	jne    170 <shaxxx_stream.constprop.0+0x110>
+  f5:	4c 89 f6             	mov    %r14,%rsi
+  f8:	4c 89 ff             	mov    %r15,%rdi
+  fb:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 100:	ff d0                	call   *%rax
+ 102:	48 89 ef             	mov    %rbp,%rdi
+ 105:	e8 00 00 00 00       	call   10a <shaxxx_stream.constprop.0+0xaa>
+ 10a:	31 c0                	xor    %eax,%eax
+ 10c:	48 8b 94 24 e8 00 00 	mov    0xe8(%rsp),%rdx
+ 113:	00 
+ 114:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 11b:	00 00 
+ 11d:	75 64                	jne    183 <shaxxx_stream.constprop.0+0x123>
+ 11f:	48 81 c4 f8 00 00 00 	add    $0xf8,%rsp
+ 126:	5b                   	pop    %rbx
+ 127:	5d                   	pop    %rbp
+ 128:	41 5c                	pop    %r12
+ 12a:	41 5d                	pop    %r13
+ 12c:	41 5e                	pop    %r14
+ 12e:	41 5f                	pop    %r15
+ 130:	c3                   	ret    
+ 131:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 138:	ba 00 80 00 00       	mov    $0x8000,%edx
+ 13d:	48 89 ee             	mov    %rbp,%rsi
+ 140:	4c 89 ff             	mov    %r15,%rdi
+ 143:	e8 00 00 00 00       	call   148 <shaxxx_stream.constprop.0+0xe8>
+ 148:	e9 6a ff ff ff       	jmp    b7 <shaxxx_stream.constprop.0+0x57>
+ 14d:	0f 1f 00             	nopl   (%rax)
+ 150:	41 f6 45 00 20       	testb  $0x20,0x0(%r13)
+ 155:	74 99                	je     f0 <shaxxx_stream.constprop.0+0x90>
+ 157:	48 89 ef             	mov    %rbp,%rdi
+ 15a:	e8 00 00 00 00       	call   15f <shaxxx_stream.constprop.0+0xff>
+ 15f:	b8 01 00 00 00       	mov    $0x1,%eax
+ 164:	eb a6                	jmp    10c <shaxxx_stream.constprop.0+0xac>
+ 166:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 16d:	00 00 00 
+ 170:	4c 89 e2             	mov    %r12,%rdx
+ 173:	48 89 ee             	mov    %rbp,%rsi
+ 176:	4c 89 ff             	mov    %r15,%rdi
+ 179:	e8 00 00 00 00       	call   17e <shaxxx_stream.constprop.0+0x11e>
+ 17e:	e9 72 ff ff ff       	jmp    f5 <shaxxx_stream.constprop.0+0x95>
+ 183:	e8 00 00 00 00       	call   188 <shaxxx_stream.constprop.0+0x128>
+ 188:	b8 01 00 00 00       	mov    $0x1,%eax
+ 18d:	e9 7a ff ff ff       	jmp    10c <shaxxx_stream.constprop.0+0xac>
+ 192:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 199:	00 00 00 00 
+ 19d:	0f 1f 00             	nopl   (%rax)
+
+00000000000001a0 <sha384_buffer>:
+ 1a0:	f3 0f 1e fa          	endbr64 
+ 1a4:	e9 00 00 00 00       	jmp    1a9 <sha384_buffer+0x9>
+ 1a9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000001b0 <sha384_read_ctx>:
+ 1b0:	f3 0f 1e fa          	endbr64 
+ 1b4:	41 54                	push   %r12
+ 1b6:	49 89 f4             	mov    %rsi,%r12
+ 1b9:	48 81 ec e0 00 00 00 	sub    $0xe0,%rsp
+ 1c0:	f3 0f 6f 07          	movdqu (%rdi),%xmm0
+ 1c4:	f3 0f 6f 4f 10       	movdqu 0x10(%rdi),%xmm1
+ 1c9:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 1d0:	00 00 
+ 1d2:	48 89 84 24 d8 00 00 	mov    %rax,0xd8(%rsp)
+ 1d9:	00 
+ 1da:	31 c0                	xor    %eax,%eax
+ 1dc:	f3 0f 6f 57 20       	movdqu 0x20(%rdi),%xmm2
+ 1e1:	f3 0f 6f 5f 30       	movdqu 0x30(%rdi),%xmm3
+ 1e6:	48 89 e6             	mov    %rsp,%rsi
+ 1e9:	f3 0f 6f 67 40       	movdqu 0x40(%rdi),%xmm4
+ 1ee:	f3 0f 6f 6f 50       	movdqu 0x50(%rdi),%xmm5
+ 1f3:	0f 29 04 24          	movaps %xmm0,(%rsp)
+ 1f7:	f3 0f 6f 77 60       	movdqu 0x60(%rdi),%xmm6
+ 1fc:	f3 0f 6f 7f 70       	movdqu 0x70(%rdi),%xmm7
+ 201:	0f 29 4c 24 10       	movaps %xmm1,0x10(%rsp)
+ 206:	f3 0f 6f 87 80 00 00 	movdqu 0x80(%rdi),%xmm0
+ 20d:	00 
+ 20e:	f3 0f 6f 8f 90 00 00 	movdqu 0x90(%rdi),%xmm1
+ 215:	00 
+ 216:	0f 29 54 24 20       	movaps %xmm2,0x20(%rsp)
+ 21b:	48 8b 87 d0 00 00 00 	mov    0xd0(%rdi),%rax
+ 222:	f3 0f 6f 97 a0 00 00 	movdqu 0xa0(%rdi),%xmm2
+ 229:	00 
+ 22a:	0f 29 5c 24 30       	movaps %xmm3,0x30(%rsp)
+ 22f:	0f 29 64 24 40       	movaps %xmm4,0x40(%rsp)
+ 234:	f3 0f 6f 9f b0 00 00 	movdqu 0xb0(%rdi),%xmm3
+ 23b:	00 
+ 23c:	f3 0f 6f a7 c0 00 00 	movdqu 0xc0(%rdi),%xmm4
+ 243:	00 
+ 244:	4c 89 e7             	mov    %r12,%rdi
+ 247:	48 89 84 24 d0 00 00 	mov    %rax,0xd0(%rsp)
+ 24e:	00 
+ 24f:	0f 29 6c 24 50       	movaps %xmm5,0x50(%rsp)
+ 254:	0f 29 74 24 60       	movaps %xmm6,0x60(%rsp)
+ 259:	0f 29 7c 24 70       	movaps %xmm7,0x70(%rsp)
+ 25e:	0f 29 84 24 80 00 00 	movaps %xmm0,0x80(%rsp)
+ 265:	00 
+ 266:	0f 29 8c 24 90 00 00 	movaps %xmm1,0x90(%rsp)
+ 26d:	00 
+ 26e:	0f 29 94 24 a0 00 00 	movaps %xmm2,0xa0(%rsp)
+ 275:	00 
+ 276:	0f 29 9c 24 b0 00 00 	movaps %xmm3,0xb0(%rsp)
+ 27d:	00 
+ 27e:	0f 29 a4 24 c0 00 00 	movaps %xmm4,0xc0(%rsp)
+ 285:	00 
+ 286:	e8 00 00 00 00       	call   28b <sha384_read_ctx+0xdb>
+ 28b:	48 8b 84 24 d8 00 00 	mov    0xd8(%rsp),%rax
+ 292:	00 
+ 293:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 29a:	00 00 
+ 29c:	75 0d                	jne    2ab <sha384_read_ctx+0xfb>
+ 29e:	48 81 c4 e0 00 00 00 	add    $0xe0,%rsp
+ 2a5:	4c 89 e0             	mov    %r12,%rax
+ 2a8:	41 5c                	pop    %r12
+ 2aa:	c3                   	ret    
+ 2ab:	e8 00 00 00 00       	call   2b0 <sha512_process_bytes>
+
+00000000000002b0 <sha512_process_bytes>:
+ 2b0:	f3 0f 1e fa          	endbr64 
+ 2b4:	49 89 f8             	mov    %rdi,%r8
+ 2b7:	48 89 d7             	mov    %rdx,%rdi
+ 2ba:	48 89 f2             	mov    %rsi,%rdx
+ 2bd:	4c 89 c6             	mov    %r8,%rsi
+ 2c0:	e9 00 00 00 00       	jmp    2c5 <sha512_process_bytes+0x15>
+ 2c5:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 2cc:	00 00 00 00 
+
+00000000000002d0 <sha512_process_block>:
+ 2d0:	f3 0f 1e fa          	endbr64 
+ 2d4:	49 89 f8             	mov    %rdi,%r8
+ 2d7:	48 89 d7             	mov    %rdx,%rdi
+ 2da:	48 89 f2             	mov    %rsi,%rdx
+ 2dd:	4c 89 c6             	mov    %r8,%rsi
+ 2e0:	e9 00 00 00 00       	jmp    2e5 <sha512_process_block+0x15>
+ 2e5:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 2ec:	00 00 00 00 
+
+00000000000002f0 <sha512_buffer>:
+ 2f0:	f3 0f 1e fa          	endbr64 
+ 2f4:	e9 00 00 00 00       	jmp    2f9 <sha512_buffer+0x9>
+ 2f9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000300 <sha512_read_ctx>:
+ 300:	f3 0f 1e fa          	endbr64 
+ 304:	41 54                	push   %r12
+ 306:	49 89 f4             	mov    %rsi,%r12
+ 309:	48 81 ec e0 00 00 00 	sub    $0xe0,%rsp
+ 310:	f3 0f 6f 07          	movdqu (%rdi),%xmm0
+ 314:	f3 0f 6f 4f 10       	movdqu 0x10(%rdi),%xmm1
+ 319:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 320:	00 00 
+ 322:	48 89 84 24 d8 00 00 	mov    %rax,0xd8(%rsp)
+ 329:	00 
+ 32a:	31 c0                	xor    %eax,%eax
+ 32c:	f3 0f 6f 57 20       	movdqu 0x20(%rdi),%xmm2
+ 331:	f3 0f 6f 5f 30       	movdqu 0x30(%rdi),%xmm3
+ 336:	48 89 e6             	mov    %rsp,%rsi
+ 339:	f3 0f 6f 67 40       	movdqu 0x40(%rdi),%xmm4
+ 33e:	f3 0f 6f 6f 50       	movdqu 0x50(%rdi),%xmm5
+ 343:	0f 29 04 24          	movaps %xmm0,(%rsp)
+ 347:	f3 0f 6f 77 60       	movdqu 0x60(%rdi),%xmm6
+ 34c:	f3 0f 6f 7f 70       	movdqu 0x70(%rdi),%xmm7
+ 351:	0f 29 4c 24 10       	movaps %xmm1,0x10(%rsp)
+ 356:	f3 0f 6f 87 80 00 00 	movdqu 0x80(%rdi),%xmm0
+ 35d:	00 
+ 35e:	f3 0f 6f 8f 90 00 00 	movdqu 0x90(%rdi),%xmm1
+ 365:	00 
+ 366:	0f 29 54 24 20       	movaps %xmm2,0x20(%rsp)
+ 36b:	48 8b 87 d0 00 00 00 	mov    0xd0(%rdi),%rax
+ 372:	f3 0f 6f 97 a0 00 00 	movdqu 0xa0(%rdi),%xmm2
+ 379:	00 
+ 37a:	0f 29 5c 24 30       	movaps %xmm3,0x30(%rsp)
+ 37f:	0f 29 64 24 40       	movaps %xmm4,0x40(%rsp)
+ 384:	f3 0f 6f 9f b0 00 00 	movdqu 0xb0(%rdi),%xmm3
+ 38b:	00 
+ 38c:	f3 0f 6f a7 c0 00 00 	movdqu 0xc0(%rdi),%xmm4
+ 393:	00 
+ 394:	4c 89 e7             	mov    %r12,%rdi
+ 397:	48 89 84 24 d0 00 00 	mov    %rax,0xd0(%rsp)
+ 39e:	00 
+ 39f:	0f 29 6c 24 50       	movaps %xmm5,0x50(%rsp)
+ 3a4:	0f 29 74 24 60       	movaps %xmm6,0x60(%rsp)
+ 3a9:	0f 29 7c 24 70       	movaps %xmm7,0x70(%rsp)
+ 3ae:	0f 29 84 24 80 00 00 	movaps %xmm0,0x80(%rsp)
+ 3b5:	00 
+ 3b6:	0f 29 8c 24 90 00 00 	movaps %xmm1,0x90(%rsp)
+ 3bd:	00 
+ 3be:	0f 29 94 24 a0 00 00 	movaps %xmm2,0xa0(%rsp)
+ 3c5:	00 
+ 3c6:	0f 29 9c 24 b0 00 00 	movaps %xmm3,0xb0(%rsp)
+ 3cd:	00 
+ 3ce:	0f 29 a4 24 c0 00 00 	movaps %xmm4,0xc0(%rsp)
+ 3d5:	00 
+ 3d6:	e8 00 00 00 00       	call   3db <sha512_read_ctx+0xdb>
+ 3db:	48 8b 84 24 d8 00 00 	mov    0xd8(%rsp),%rax
+ 3e2:	00 
+ 3e3:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 3ea:	00 00 
+ 3ec:	75 0d                	jne    3fb <sha512_read_ctx+0xfb>
+ 3ee:	48 81 c4 e0 00 00 00 	add    $0xe0,%rsp
+ 3f5:	4c 89 e0             	mov    %r12,%rax
+ 3f8:	41 5c                	pop    %r12
+ 3fa:	c3                   	ret    
+ 3fb:	e8 00 00 00 00       	call   400 <sha512_stream>
+
+0000000000000400 <sha512_stream>:
+ 400:	f3 0f 1e fa          	endbr64 
+ 404:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 40b <sha512_stream+0xb>
+ 40b:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 412 <sha512_stream+0x12>
+ 412:	e9 49 fc ff ff       	jmp    60 <shaxxx_stream.constprop.0>
+ 417:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 41e:	00 00 
+
+0000000000000420 <sha384_stream>:
+ 420:	f3 0f 1e fa          	endbr64 
+ 424:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 42b <sha384_stream+0xb>
+ 42b:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 432 <sha384_stream+0x12>
+ 432:	e9 29 fc ff ff       	jmp    60 <shaxxx_stream.constprop.0>

@@ -1,0 +1,43 @@
+
+/home/lalitssrg/coreutils/lib/vasprintf.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_vasprintf>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	53                   	push   %rbx
+   5:	49 89 f0             	mov    %rsi,%r8
+   8:	48 89 fb             	mov    %rdi,%rbx
+   b:	48 89 d1             	mov    %rdx,%rcx
+   e:	31 ff                	xor    %edi,%edi
+  10:	4c 89 c2             	mov    %r8,%rdx
+  13:	48 83 ec 10          	sub    $0x10,%rsp
+  17:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1e:	00 00 
+  20:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  25:	31 c0                	xor    %eax,%eax
+  27:	48 89 e6             	mov    %rsp,%rsi
+  2a:	e8 00 00 00 00       	call   2f <rpl_vasprintf+0x2f>
+  2f:	48 85 c0             	test   %rax,%rax
+  32:	74 3f                	je     73 <rpl_vasprintf+0x73>
+  34:	48 89 c7             	mov    %rax,%rdi
+  37:	48 8b 04 24          	mov    (%rsp),%rax
+  3b:	48 3d ff ff ff 7f    	cmp    $0x7fffffff,%rax
+  41:	77 19                	ja     5c <rpl_vasprintf+0x5c>
+  43:	48 89 3b             	mov    %rdi,(%rbx)
+  46:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+  4b:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  52:	00 00 
+  54:	75 24                	jne    7a <rpl_vasprintf+0x7a>
+  56:	48 83 c4 10          	add    $0x10,%rsp
+  5a:	5b                   	pop    %rbx
+  5b:	c3                   	ret    
+  5c:	e8 00 00 00 00       	call   61 <rpl_vasprintf+0x61>
+  61:	e8 00 00 00 00       	call   66 <rpl_vasprintf+0x66>
+  66:	c7 00 4b 00 00 00    	movl   $0x4b,(%rax)
+  6c:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  71:	eb d3                	jmp    46 <rpl_vasprintf+0x46>
+  73:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  78:	eb cc                	jmp    46 <rpl_vasprintf+0x46>
+  7a:	e8 00 00 00 00       	call   7f <rpl_vasprintf+0x7f>

@@ -1,0 +1,164 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-renameatu.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <renameatu>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 89 ff             	mov    %edi,%r15d
+   9:	41 56                	push   %r14
+   b:	41 89 d6             	mov    %edx,%r14d
+   e:	41 55                	push   %r13
+  10:	49 89 cd             	mov    %rcx,%r13
+  13:	41 54                	push   %r12
+  15:	55                   	push   %rbp
+  16:	48 89 f5             	mov    %rsi,%rbp
+  19:	53                   	push   %rbx
+  1a:	44 89 c3             	mov    %r8d,%ebx
+  1d:	48 81 ec 48 01 00 00 	sub    $0x148,%rsp
+  24:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  2b:	00 00 
+  2d:	48 89 84 24 38 01 00 	mov    %rax,0x138(%rsp)
+  34:	00 
+  35:	31 c0                	xor    %eax,%eax
+  37:	e8 00 00 00 00       	call   3c <renameatu+0x3c>
+  3c:	41 89 c4             	mov    %eax,%r12d
+  3f:	85 c0                	test   %eax,%eax
+  41:	79 6d                	jns    b0 <renameatu+0xb0>
+  43:	e8 00 00 00 00       	call   48 <renameatu+0x48>
+  48:	49 89 c0             	mov    %rax,%r8
+  4b:	8b 00                	mov    (%rax),%eax
+  4d:	8d 50 ea             	lea    -0x16(%rax),%edx
+  50:	83 e2 ef             	and    $0xffffffef,%edx
+  53:	0f 95 c2             	setne  %dl
+  56:	83 f8 5f             	cmp    $0x5f,%eax
+  59:	0f 95 c0             	setne  %al
+  5c:	20 c2                	and    %al,%dl
+  5e:	41 89 d1             	mov    %edx,%r9d
+  61:	75 4d                	jne    b0 <renameatu+0xb0>
+  63:	85 db                	test   %ebx,%ebx
+  65:	0f 84 8b 00 00 00    	je     f6 <renameatu+0xf6>
+  6b:	83 fb 01             	cmp    $0x1,%ebx
+  6e:	0f 85 3c 01 00 00    	jne    1b0 <renameatu+0x1b0>
+  74:	b9 00 01 00 00       	mov    $0x100,%ecx
+  79:	4c 89 ee             	mov    %r13,%rsi
+  7c:	44 89 f7             	mov    %r14d,%edi
+  7f:	4c 89 04 24          	mov    %r8,(%rsp)
+  83:	48 8d 94 24 a0 00 00 	lea    0xa0(%rsp),%rdx
+  8a:	00 
+  8b:	e8 00 00 00 00       	call   90 <renameatu+0x90>
+  90:	4c 8b 04 24          	mov    (%rsp),%r8
+  94:	85 c0                	test   %eax,%eax
+  96:	74 48                	je     e0 <renameatu+0xe0>
+  98:	41 8b 00             	mov    (%r8),%eax
+  9b:	83 f8 4b             	cmp    $0x4b,%eax
+  9e:	74 40                	je     e0 <renameatu+0xe0>
+  a0:	83 f8 02             	cmp    $0x2,%eax
+  a3:	74 4b                	je     f0 <renameatu+0xf0>
+  a5:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+  ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  b0:	48 8b 84 24 38 01 00 	mov    0x138(%rsp),%rax
+  b7:	00 
+  b8:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  bf:	00 00 
+  c1:	0f 85 8e 01 00 00    	jne    255 <renameatu+0x255>
+  c7:	48 81 c4 48 01 00 00 	add    $0x148,%rsp
+  ce:	44 89 e0             	mov    %r12d,%eax
+  d1:	5b                   	pop    %rbx
+  d2:	5d                   	pop    %rbp
+  d3:	41 5c                	pop    %r12
+  d5:	41 5d                	pop    %r13
+  d7:	41 5e                	pop    %r14
+  d9:	41 5f                	pop    %r15
+  db:	c3                   	ret    
+  dc:	0f 1f 40 00          	nopl   0x0(%rax)
+  e0:	41 c7 00 11 00 00 00 	movl   $0x11,(%r8)
+  e7:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+  ed:	eb c1                	jmp    b0 <renameatu+0xb0>
+  ef:	90                   	nop
+  f0:	41 b9 01 00 00 00    	mov    $0x1,%r9d
+  f6:	48 89 ef             	mov    %rbp,%rdi
+  f9:	44 88 4c 24 0f       	mov    %r9b,0xf(%rsp)
+  fe:	4c 89 04 24          	mov    %r8,(%rsp)
+ 102:	e8 00 00 00 00       	call   107 <renameatu+0x107>
+ 107:	4c 89 ef             	mov    %r13,%rdi
+ 10a:	48 89 c3             	mov    %rax,%rbx
+ 10d:	e8 00 00 00 00       	call   112 <renameatu+0x112>
+ 112:	48 85 db             	test   %rbx,%rbx
+ 115:	74 1e                	je     135 <renameatu+0x135>
+ 117:	48 85 c0             	test   %rax,%rax
+ 11a:	4c 8b 04 24          	mov    (%rsp),%r8
+ 11e:	44 0f b6 4c 24 0f    	movzbl 0xf(%rsp),%r9d
+ 124:	74 0f                	je     135 <renameatu+0x135>
+ 126:	80 7c 1d ff 2f       	cmpb   $0x2f,-0x1(%rbp,%rbx,1)
+ 12b:	74 23                	je     150 <renameatu+0x150>
+ 12d:	41 80 7c 05 ff 2f    	cmpb   $0x2f,-0x1(%r13,%rax,1)
+ 133:	74 1b                	je     150 <renameatu+0x150>
+ 135:	4c 89 e9             	mov    %r13,%rcx
+ 138:	44 89 f2             	mov    %r14d,%edx
+ 13b:	48 89 ee             	mov    %rbp,%rsi
+ 13e:	44 89 ff             	mov    %r15d,%edi
+ 141:	e8 00 00 00 00       	call   146 <renameatu+0x146>
+ 146:	41 89 c4             	mov    %eax,%r12d
+ 149:	e9 62 ff ff ff       	jmp    b0 <renameatu+0xb0>
+ 14e:	66 90                	xchg   %ax,%ax
+ 150:	48 8d 54 24 10       	lea    0x10(%rsp),%rdx
+ 155:	b9 00 01 00 00       	mov    $0x100,%ecx
+ 15a:	48 89 ee             	mov    %rbp,%rsi
+ 15d:	44 89 ff             	mov    %r15d,%edi
+ 160:	44 88 4c 24 0f       	mov    %r9b,0xf(%rsp)
+ 165:	4c 89 04 24          	mov    %r8,(%rsp)
+ 169:	e8 00 00 00 00       	call   16e <renameatu+0x16e>
+ 16e:	85 c0                	test   %eax,%eax
+ 170:	0f 85 2f ff ff ff    	jne    a5 <renameatu+0xa5>
+ 176:	44 0f b6 4c 24 0f    	movzbl 0xf(%rsp),%r9d
+ 17c:	4c 8b 04 24          	mov    (%rsp),%r8
+ 180:	45 84 c9             	test   %r9b,%r9b
+ 183:	74 43                	je     1c8 <renameatu+0x1c8>
+ 185:	8b 44 24 28          	mov    0x28(%rsp),%eax
+ 189:	25 00 f0 00 00       	and    $0xf000,%eax
+ 18e:	3d 00 40 00 00       	cmp    $0x4000,%eax
+ 193:	74 a0                	je     135 <renameatu+0x135>
+ 195:	41 c7 00 02 00 00 00 	movl   $0x2,(%r8)
+ 19c:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+ 1a2:	e9 09 ff ff ff       	jmp    b0 <renameatu+0xb0>
+ 1a7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 1ae:	00 00 
+ 1b0:	41 c7 00 5f 00 00 00 	movl   $0x5f,(%r8)
+ 1b7:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+ 1bd:	e9 ee fe ff ff       	jmp    b0 <renameatu+0xb0>
+ 1c2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 1c8:	b9 00 01 00 00       	mov    $0x100,%ecx
+ 1cd:	4c 89 ee             	mov    %r13,%rsi
+ 1d0:	44 89 f7             	mov    %r14d,%edi
+ 1d3:	4c 89 04 24          	mov    %r8,(%rsp)
+ 1d7:	48 8d 94 24 a0 00 00 	lea    0xa0(%rsp),%rdx
+ 1de:	00 
+ 1df:	e8 00 00 00 00       	call   1e4 <renameatu+0x1e4>
+ 1e4:	4c 8b 04 24          	mov    (%rsp),%r8
+ 1e8:	85 c0                	test   %eax,%eax
+ 1ea:	74 24                	je     210 <renameatu+0x210>
+ 1ec:	41 83 38 02          	cmpl   $0x2,(%r8)
+ 1f0:	0f 85 af fe ff ff    	jne    a5 <renameatu+0xa5>
+ 1f6:	8b 44 24 28          	mov    0x28(%rsp),%eax
+ 1fa:	25 00 f0 00 00       	and    $0xf000,%eax
+ 1ff:	3d 00 40 00 00       	cmp    $0x4000,%eax
+ 204:	0f 85 9b fe ff ff    	jne    a5 <renameatu+0xa5>
+ 20a:	e9 26 ff ff ff       	jmp    135 <renameatu+0x135>
+ 20f:	90                   	nop
+ 210:	8b 84 24 b8 00 00 00 	mov    0xb8(%rsp),%eax
+ 217:	25 00 f0 00 00       	and    $0xf000,%eax
+ 21c:	3d 00 40 00 00       	cmp    $0x4000,%eax
+ 221:	74 0c                	je     22f <renameatu+0x22f>
+ 223:	41 c7 00 14 00 00 00 	movl   $0x14,(%r8)
+ 22a:	e9 76 fe ff ff       	jmp    a5 <renameatu+0xa5>
+ 22f:	8b 44 24 28          	mov    0x28(%rsp),%eax
+ 233:	25 00 f0 00 00       	and    $0xf000,%eax
+ 238:	3d 00 40 00 00       	cmp    $0x4000,%eax
+ 23d:	0f 84 f2 fe ff ff    	je     135 <renameatu+0x135>
+ 243:	41 c7 00 15 00 00 00 	movl   $0x15,(%r8)
+ 24a:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+ 250:	e9 5b fe ff ff       	jmp    b0 <renameatu+0xb0>
+ 255:	e8 00 00 00 00       	call   25a <renameatu+0x25a>

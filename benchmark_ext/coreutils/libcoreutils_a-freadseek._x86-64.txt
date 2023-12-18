@@ -1,0 +1,119 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-freadseek.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <freadseek>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	55                   	push   %rbp
+   9:	53                   	push   %rbx
+   a:	48 81 ec 00 10 00 00 	sub    $0x1000,%rsp
+  11:	48 83 0c 24 00       	orq    $0x0,(%rsp)
+  16:	48 83 ec 28          	sub    $0x28,%rsp
+  1a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  21:	00 00 
+  23:	48 89 84 24 18 10 00 	mov    %rax,0x1018(%rsp)
+  2a:	00 
+  2b:	31 c0                	xor    %eax,%eax
+  2d:	48 85 f6             	test   %rsi,%rsi
+  30:	74 7e                	je     b0 <freadseek+0xb0>
+  32:	49 89 fc             	mov    %rdi,%r12
+  35:	48 89 f5             	mov    %rsi,%rbp
+  38:	e8 00 00 00 00       	call   3d <freadseek+0x3d>
+  3d:	48 89 c3             	mov    %rax,%rbx
+  40:	48 85 c0             	test   %rax,%rax
+  43:	0f 84 97 00 00 00    	je     e0 <freadseek+0xe0>
+  49:	4c 8d 6c 24 08       	lea    0x8(%rsp),%r13
+  4e:	eb 10                	jmp    60 <freadseek+0x60>
+  50:	48 83 ed 01          	sub    $0x1,%rbp
+  54:	74 5a                	je     b0 <freadseek+0xb0>
+  56:	48 83 eb 01          	sub    $0x1,%rbx
+  5a:	0f 84 80 00 00 00    	je     e0 <freadseek+0xe0>
+  60:	4c 89 ee             	mov    %r13,%rsi
+  63:	4c 89 e7             	mov    %r12,%rdi
+  66:	e8 00 00 00 00       	call   6b <freadseek+0x6b>
+  6b:	48 85 c0             	test   %rax,%rax
+  6e:	74 20                	je     90 <freadseek+0x90>
+  70:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  75:	48 85 c0             	test   %rax,%rax
+  78:	74 16                	je     90 <freadseek+0x90>
+  7a:	48 39 e8             	cmp    %rbp,%rax
+  7d:	48 0f 47 c5          	cmova  %rbp,%rax
+  81:	49 01 44 24 08       	add    %rax,0x8(%r12)
+  86:	48 29 c5             	sub    %rax,%rbp
+  89:	74 25                	je     b0 <freadseek+0xb0>
+  8b:	48 29 c3             	sub    %rax,%rbx
+  8e:	74 50                	je     e0 <freadseek+0xe0>
+  90:	4c 89 e7             	mov    %r12,%rdi
+  93:	e8 00 00 00 00       	call   98 <freadseek+0x98>
+  98:	83 f8 ff             	cmp    $0xffffffff,%eax
+  9b:	75 b3                	jne    50 <freadseek+0x50>
+  9d:	4c 89 e7             	mov    %r12,%rdi
+  a0:	e8 00 00 00 00       	call   a5 <freadseek+0xa5>
+  a5:	f7 d8                	neg    %eax
+  a7:	19 c0                	sbb    %eax,%eax
+  a9:	eb 07                	jmp    b2 <freadseek+0xb2>
+  ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  b0:	31 c0                	xor    %eax,%eax
+  b2:	48 8b 94 24 18 10 00 	mov    0x1018(%rsp),%rdx
+  b9:	00 
+  ba:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  c1:	00 00 
+  c3:	0f 85 a8 00 00 00    	jne    171 <freadseek+0x171>
+  c9:	48 81 c4 28 10 00 00 	add    $0x1028,%rsp
+  d0:	5b                   	pop    %rbx
+  d1:	5d                   	pop    %rbp
+  d2:	41 5c                	pop    %r12
+  d4:	41 5d                	pop    %r13
+  d6:	c3                   	ret    
+  d7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  de:	00 00 
+  e0:	4c 89 e7             	mov    %r12,%rdi
+  e3:	e8 00 00 00 00       	call   e8 <freadseek+0xe8>
+  e8:	89 c7                	mov    %eax,%edi
+  ea:	85 c0                	test   %eax,%eax
+  ec:	79 42                	jns    130 <freadseek+0x130>
+  ee:	4c 8d 6c 24 10       	lea    0x10(%rsp),%r13
+  f3:	eb 08                	jmp    fd <freadseek+0xfd>
+  f5:	0f 1f 00             	nopl   (%rax)
+  f8:	48 29 dd             	sub    %rbx,%rbp
+  fb:	74 b3                	je     b0 <freadseek+0xb0>
+  fd:	bb 00 10 00 00       	mov    $0x1000,%ebx
+ 102:	4c 89 e1             	mov    %r12,%rcx
+ 105:	be 01 00 00 00       	mov    $0x1,%esi
+ 10a:	4c 89 ef             	mov    %r13,%rdi
+ 10d:	48 39 dd             	cmp    %rbx,%rbp
+ 110:	48 0f 46 dd          	cmovbe %rbp,%rbx
+ 114:	48 89 da             	mov    %rbx,%rdx
+ 117:	e8 00 00 00 00       	call   11c <freadseek+0x11c>
+ 11c:	48 39 c3             	cmp    %rax,%rbx
+ 11f:	76 d7                	jbe    f8 <freadseek+0xf8>
+ 121:	4c 89 e7             	mov    %r12,%rdi
+ 124:	e8 00 00 00 00       	call   129 <freadseek+0x129>
+ 129:	f7 d8                	neg    %eax
+ 12b:	19 c0                	sbb    %eax,%eax
+ 12d:	eb 83                	jmp    b2 <freadseek+0xb2>
+ 12f:	90                   	nop
+ 130:	31 f6                	xor    %esi,%esi
+ 132:	ba 01 00 00 00       	mov    $0x1,%edx
+ 137:	e8 00 00 00 00       	call   13c <freadseek+0x13c>
+ 13c:	48 85 c0             	test   %rax,%rax
+ 13f:	78 ad                	js     ee <freadseek+0xee>
+ 141:	48 8b 84 24 18 10 00 	mov    0x1018(%rsp),%rax
+ 148:	00 
+ 149:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 150:	00 00 
+ 152:	75 1d                	jne    171 <freadseek+0x171>
+ 154:	48 81 c4 28 10 00 00 	add    $0x1028,%rsp
+ 15b:	48 89 ee             	mov    %rbp,%rsi
+ 15e:	4c 89 e7             	mov    %r12,%rdi
+ 161:	ba 01 00 00 00       	mov    $0x1,%edx
+ 166:	5b                   	pop    %rbx
+ 167:	5d                   	pop    %rbp
+ 168:	41 5c                	pop    %r12
+ 16a:	41 5d                	pop    %r13
+ 16c:	e9 00 00 00 00       	jmp    171 <freadseek+0x171>
+ 171:	e8 00 00 00 00       	call   176 <freadseek+0x176>

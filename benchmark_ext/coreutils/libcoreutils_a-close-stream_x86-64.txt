@@ -1,0 +1,42 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-close-stream.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <close_stream>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	55                   	push   %rbp
+   7:	48 89 fd             	mov    %rdi,%rbp
+   a:	53                   	push   %rbx
+   b:	e8 00 00 00 00       	call   10 <close_stream+0x10>
+  10:	8b 5d 00             	mov    0x0(%rbp),%ebx
+  13:	48 89 ef             	mov    %rbp,%rdi
+  16:	49 89 c4             	mov    %rax,%r12
+  19:	83 e3 20             	and    $0x20,%ebx
+  1c:	e8 00 00 00 00       	call   21 <close_stream+0x21>
+  21:	85 db                	test   %ebx,%ebx
+  23:	75 23                	jne    48 <close_stream+0x48>
+  25:	85 c0                	test   %eax,%eax
+  27:	74 15                	je     3e <close_stream+0x3e>
+  29:	4d 85 e4             	test   %r12,%r12
+  2c:	75 30                	jne    5e <close_stream+0x5e>
+  2e:	e8 00 00 00 00       	call   33 <close_stream+0x33>
+  33:	83 38 09             	cmpl   $0x9,(%rax)
+  36:	0f 95 c0             	setne  %al
+  39:	0f b6 c0             	movzbl %al,%eax
+  3c:	f7 d8                	neg    %eax
+  3e:	5b                   	pop    %rbx
+  3f:	5d                   	pop    %rbp
+  40:	41 5c                	pop    %r12
+  42:	c3                   	ret    
+  43:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  48:	85 c0                	test   %eax,%eax
+  4a:	75 12                	jne    5e <close_stream+0x5e>
+  4c:	e8 00 00 00 00       	call   51 <close_stream+0x51>
+  51:	c7 00 00 00 00 00    	movl   $0x0,(%rax)
+  57:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  5c:	eb e0                	jmp    3e <close_stream+0x3e>
+  5e:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  63:	eb d9                	jmp    3e <close_stream+0x3e>

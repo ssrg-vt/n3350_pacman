@@ -1,0 +1,127 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-linebuffer.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <initbuffer>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	66 0f ef c0          	pxor   %xmm0,%xmm0
+   8:	48 c7 47 10 00 00 00 	movq   $0x0,0x10(%rdi)
+   f:	00 
+  10:	0f 11 07             	movups %xmm0,(%rdi)
+  13:	c3                   	ret    
+  14:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  1b:	00 00 00 00 
+  1f:	90                   	nop
+
+0000000000000020 <readlinebuffer_delim>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	41 57                	push   %r15
+  26:	41 56                	push   %r14
+  28:	41 55                	push   %r13
+  2a:	44 0f be ea          	movsbl %dl,%r13d
+  2e:	41 54                	push   %r12
+  30:	55                   	push   %rbp
+  31:	53                   	push   %rbx
+  32:	48 83 ec 18          	sub    $0x18,%rsp
+  36:	4c 8b 7f 10          	mov    0x10(%rdi),%r15
+  3a:	48 8b 0f             	mov    (%rdi),%rcx
+  3d:	89 54 24 0c          	mov    %edx,0xc(%rsp)
+  41:	44 88 6c 24 0b       	mov    %r13b,0xb(%rsp)
+  46:	4c 01 f9             	add    %r15,%rcx
+  49:	f6 06 10             	testb  $0x10,(%rsi)
+  4c:	0f 85 be 00 00 00    	jne    110 <readlinebuffer_delim+0xf0>
+  52:	49 89 fe             	mov    %rdi,%r14
+  55:	48 89 f5             	mov    %rsi,%rbp
+  58:	4d 89 fc             	mov    %r15,%r12
+  5b:	eb 29                	jmp    86 <readlinebuffer_delim+0x66>
+  5d:	0f 1f 00             	nopl   (%rax)
+  60:	48 8d 50 01          	lea    0x1(%rax),%rdx
+  64:	48 89 55 08          	mov    %rdx,0x8(%rbp)
+  68:	0f b6 18             	movzbl (%rax),%ebx
+  6b:	41 89 db             	mov    %ebx,%r11d
+  6e:	49 39 cc             	cmp    %rcx,%r12
+  71:	74 5d                	je     d0 <readlinebuffer_delim+0xb0>
+  73:	4c 89 e0             	mov    %r12,%rax
+  76:	44 88 18             	mov    %r11b,(%rax)
+  79:	4c 8d 60 01          	lea    0x1(%rax),%r12
+  7d:	41 39 dd             	cmp    %ebx,%r13d
+  80:	0f 84 c9 00 00 00    	je     14f <readlinebuffer_delim+0x12f>
+  86:	48 8b 45 08          	mov    0x8(%rbp),%rax
+  8a:	48 3b 45 10          	cmp    0x10(%rbp),%rax
+  8e:	72 d0                	jb     60 <readlinebuffer_delim+0x40>
+  90:	48 89 ef             	mov    %rbp,%rdi
+  93:	48 89 0c 24          	mov    %rcx,(%rsp)
+  97:	e8 00 00 00 00       	call   9c <readlinebuffer_delim+0x7c>
+  9c:	48 8b 0c 24          	mov    (%rsp),%rcx
+  a0:	83 f8 ff             	cmp    $0xffffffff,%eax
+  a3:	89 c3                	mov    %eax,%ebx
+  a5:	75 c4                	jne    6b <readlinebuffer_delim+0x4b>
+  a7:	4d 39 e7             	cmp    %r12,%r15
+  aa:	74 64                	je     110 <readlinebuffer_delim+0xf0>
+  ac:	f6 45 00 20          	testb  $0x20,0x0(%rbp)
+  b0:	75 5e                	jne    110 <readlinebuffer_delim+0xf0>
+  b2:	0f b6 44 24 0b       	movzbl 0xb(%rsp),%eax
+  b7:	41 38 44 24 ff       	cmp    %al,-0x1(%r12)
+  bc:	0f 84 8d 00 00 00    	je     14f <readlinebuffer_delim+0x12f>
+  c2:	44 89 eb             	mov    %r13d,%ebx
+  c5:	49 39 cc             	cmp    %rcx,%r12
+  c8:	75 5e                	jne    128 <readlinebuffer_delim+0x108>
+  ca:	44 0f b6 5c 24 0b    	movzbl 0xb(%rsp),%r11d
+  d0:	48 c7 c1 ff ff ff ff 	mov    $0xffffffffffffffff,%rcx
+  d7:	4c 89 ff             	mov    %r15,%rdi
+  da:	4c 89 f6             	mov    %r14,%rsi
+  dd:	4d 8b 26             	mov    (%r14),%r12
+  e0:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+  e6:	ba 01 00 00 00       	mov    $0x1,%edx
+  eb:	44 88 1c 24          	mov    %r11b,(%rsp)
+  ef:	e8 00 00 00 00       	call   f4 <readlinebuffer_delim+0xd4>
+  f4:	49 8b 0e             	mov    (%r14),%rcx
+  f7:	44 0f b6 1c 24       	movzbl (%rsp),%r11d
+  fc:	49 89 c7             	mov    %rax,%r15
+  ff:	4a 8d 04 20          	lea    (%rax,%r12,1),%rax
+ 103:	4d 89 7e 10          	mov    %r15,0x10(%r14)
+ 107:	4c 01 f9             	add    %r15,%rcx
+ 10a:	e9 67 ff ff ff       	jmp    76 <readlinebuffer_delim+0x56>
+ 10f:	90                   	nop
+ 110:	48 83 c4 18          	add    $0x18,%rsp
+ 114:	31 c0                	xor    %eax,%eax
+ 116:	5b                   	pop    %rbx
+ 117:	5d                   	pop    %rbp
+ 118:	41 5c                	pop    %r12
+ 11a:	41 5d                	pop    %r13
+ 11c:	41 5e                	pop    %r14
+ 11e:	41 5f                	pop    %r15
+ 120:	c3                   	ret    
+ 121:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 128:	0f b6 74 24 0c       	movzbl 0xc(%rsp),%esi
+ 12d:	49 8d 44 24 01       	lea    0x1(%r12),%rax
+ 132:	41 88 34 24          	mov    %sil,(%r12)
+ 136:	4c 29 f8             	sub    %r15,%rax
+ 139:	49 89 46 08          	mov    %rax,0x8(%r14)
+ 13d:	48 83 c4 18          	add    $0x18,%rsp
+ 141:	4c 89 f0             	mov    %r14,%rax
+ 144:	5b                   	pop    %rbx
+ 145:	5d                   	pop    %rbp
+ 146:	41 5c                	pop    %r12
+ 148:	41 5d                	pop    %r13
+ 14a:	41 5e                	pop    %r14
+ 14c:	41 5f                	pop    %r15
+ 14e:	c3                   	ret    
+ 14f:	4c 89 e0             	mov    %r12,%rax
+ 152:	eb e2                	jmp    136 <readlinebuffer_delim+0x116>
+ 154:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 15b:	00 00 00 00 
+ 15f:	90                   	nop
+
+0000000000000160 <readlinebuffer>:
+ 160:	f3 0f 1e fa          	endbr64 
+ 164:	ba 0a 00 00 00       	mov    $0xa,%edx
+ 169:	e9 b2 fe ff ff       	jmp    20 <readlinebuffer_delim>
+ 16e:	66 90                	xchg   %ax,%ax
+
+0000000000000170 <freebuffer>:
+ 170:	f3 0f 1e fa          	endbr64 
+ 174:	48 8b 7f 10          	mov    0x10(%rdi),%rdi
+ 178:	e9 00 00 00 00       	jmp    17d <freebuffer+0xd>

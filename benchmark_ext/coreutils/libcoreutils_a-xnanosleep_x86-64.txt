@@ -1,0 +1,57 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xnanosleep.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xnanosleep>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	66 48 0f 7e c5       	movq   %xmm0,%rbp
+   a:	53                   	push   %rbx
+   b:	48 83 ec 28          	sub    $0x28,%rsp
+   f:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  16:	00 00 
+  18:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  1d:	31 c0                	xor    %eax,%eax
+  1f:	e8 00 00 00 00       	call   24 <xnanosleep+0x24>
+  24:	66 48 0f 6e cd       	movq   %rbp,%xmm1
+  29:	66 0f 2f 0d 00 00 00 	comisd 0x0(%rip),%xmm1        # 31 <xnanosleep+0x31>
+  30:	00 
+  31:	48 89 c3             	mov    %rax,%rbx
+  34:	73 52                	jae    88 <xnanosleep+0x88>
+  36:	66 48 0f 6e c5       	movq   %rbp,%xmm0
+  3b:	48 89 e5             	mov    %rsp,%rbp
+  3e:	e8 00 00 00 00       	call   43 <xnanosleep+0x43>
+  43:	48 89 04 24          	mov    %rax,(%rsp)
+  47:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+  4c:	eb 0a                	jmp    58 <xnanosleep+0x58>
+  4e:	66 90                	xchg   %ax,%ax
+  50:	f7 03 fb ff ff ff    	testl  $0xfffffffb,(%rbx)
+  56:	75 48                	jne    a0 <xnanosleep+0xa0>
+  58:	c7 03 00 00 00 00    	movl   $0x0,(%rbx)
+  5e:	48 89 ee             	mov    %rbp,%rsi
+  61:	48 89 ef             	mov    %rbp,%rdi
+  64:	e8 00 00 00 00       	call   69 <xnanosleep+0x69>
+  69:	85 c0                	test   %eax,%eax
+  6b:	75 e3                	jne    50 <xnanosleep+0x50>
+  6d:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+  72:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  79:	00 00 
+  7b:	75 2a                	jne    a7 <xnanosleep+0xa7>
+  7d:	48 83 c4 28          	add    $0x28,%rsp
+  81:	5b                   	pop    %rbx
+  82:	5d                   	pop    %rbp
+  83:	c3                   	ret    
+  84:	0f 1f 40 00          	nopl   0x0(%rax)
+  88:	e8 00 00 00 00       	call   8d <xnanosleep+0x8d>
+  8d:	83 3b 04             	cmpl   $0x4,(%rbx)
+  90:	75 a4                	jne    36 <xnanosleep+0x36>
+  92:	e8 00 00 00 00       	call   97 <xnanosleep+0x97>
+  97:	83 3b 04             	cmpl   $0x4,(%rbx)
+  9a:	74 ec                	je     88 <xnanosleep+0x88>
+  9c:	eb 98                	jmp    36 <xnanosleep+0x36>
+  9e:	66 90                	xchg   %ax,%ax
+  a0:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  a5:	eb c6                	jmp    6d <xnanosleep+0x6d>
+  a7:	e8 00 00 00 00       	call   ac <xnanosleep+0xac>

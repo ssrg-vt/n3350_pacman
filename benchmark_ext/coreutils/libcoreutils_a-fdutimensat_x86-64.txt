@@ -1,0 +1,62 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-fdutimensat.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fdutimensat>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 56                	push   %r14
+   6:	45 89 c6             	mov    %r8d,%r14d
+   9:	41 55                	push   %r13
+   b:	41 89 f5             	mov    %esi,%r13d
+   e:	41 54                	push   %r12
+  10:	49 89 cc             	mov    %rcx,%r12
+  13:	55                   	push   %rbp
+  14:	48 89 d5             	mov    %rdx,%rbp
+  17:	48 83 ec 08          	sub    $0x8,%rsp
+  1b:	85 ff                	test   %edi,%edi
+  1d:	79 31                	jns    50 <fdutimensat+0x50>
+  1f:	48 85 d2             	test   %rdx,%rdx
+  22:	74 5c                	je     80 <fdutimensat+0x80>
+  24:	44 89 f1             	mov    %r14d,%ecx
+  27:	4c 89 e2             	mov    %r12,%rdx
+  2a:	48 89 ee             	mov    %rbp,%rsi
+  2d:	44 89 ef             	mov    %r13d,%edi
+  30:	e8 00 00 00 00       	call   35 <fdutimensat+0x35>
+  35:	83 f8 01             	cmp    $0x1,%eax
+  38:	74 46                	je     80 <fdutimensat+0x80>
+  3a:	48 83 c4 08          	add    $0x8,%rsp
+  3e:	5d                   	pop    %rbp
+  3f:	41 5c                	pop    %r12
+  41:	41 5d                	pop    %r13
+  43:	41 5e                	pop    %r14
+  45:	c3                   	ret    
+  46:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  4d:	00 00 00 
+  50:	48 89 ce             	mov    %rcx,%rsi
+  53:	e8 00 00 00 00       	call   58 <fdutimensat+0x58>
+  58:	83 f8 ff             	cmp    $0xffffffff,%eax
+  5b:	75 d8                	jne    35 <fdutimensat+0x35>
+  5d:	48 85 ed             	test   %rbp,%rbp
+  60:	74 d3                	je     35 <fdutimensat+0x35>
+  62:	e8 00 00 00 00       	call   67 <fdutimensat+0x67>
+  67:	83 38 26             	cmpl   $0x26,(%rax)
+  6a:	74 b8                	je     24 <fdutimensat+0x24>
+  6c:	48 83 c4 08          	add    $0x8,%rsp
+  70:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  75:	5d                   	pop    %rbp
+  76:	41 5c                	pop    %r12
+  78:	41 5d                	pop    %r13
+  7a:	41 5e                	pop    %r14
+  7c:	c3                   	ret    
+  7d:	0f 1f 00             	nopl   (%rax)
+  80:	e8 00 00 00 00       	call   85 <fdutimensat+0x85>
+  85:	c7 00 09 00 00 00    	movl   $0x9,(%rax)
+  8b:	48 83 c4 08          	add    $0x8,%rsp
+  8f:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  94:	5d                   	pop    %rbp
+  95:	41 5c                	pop    %r12
+  97:	41 5d                	pop    %r13
+  99:	41 5e                	pop    %r14
+  9b:	c3                   	ret    

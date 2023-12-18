@@ -1,0 +1,40 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-basename.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <base_name>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	55                   	push   %rbp
+   7:	53                   	push   %rbx
+   8:	48 89 fb             	mov    %rdi,%rbx
+   b:	e8 00 00 00 00       	call   10 <base_name+0x10>
+  10:	80 38 00             	cmpb   $0x0,(%rax)
+  13:	74 43                	je     58 <base_name+0x58>
+  15:	48 89 c7             	mov    %rax,%rdi
+  18:	48 89 c5             	mov    %rax,%rbp
+  1b:	e8 00 00 00 00       	call   20 <base_name+0x20>
+  20:	31 ff                	xor    %edi,%edi
+  22:	80 7c 05 00 2f       	cmpb   $0x2f,0x0(%rbp,%rax,1)
+  27:	40 0f 94 c7          	sete   %dil
+  2b:	48 01 f8             	add    %rdi,%rax
+  2e:	49 89 c4             	mov    %rax,%r12
+  31:	48 8d 78 01          	lea    0x1(%rax),%rdi
+  35:	e8 00 00 00 00       	call   3a <base_name+0x3a>
+  3a:	4c 89 e2             	mov    %r12,%rdx
+  3d:	48 89 ee             	mov    %rbp,%rsi
+  40:	48 89 c7             	mov    %rax,%rdi
+  43:	e8 00 00 00 00       	call   48 <base_name+0x48>
+  48:	42 c6 04 20 00       	movb   $0x0,(%rax,%r12,1)
+  4d:	5b                   	pop    %rbx
+  4e:	5d                   	pop    %rbp
+  4f:	41 5c                	pop    %r12
+  51:	c3                   	ret    
+  52:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  58:	48 89 df             	mov    %rbx,%rdi
+  5b:	48 89 dd             	mov    %rbx,%rbp
+  5e:	e8 00 00 00 00       	call   63 <base_name+0x63>
+  63:	49 89 c4             	mov    %rax,%r12
+  66:	eb c9                	jmp    31 <base_name+0x31>

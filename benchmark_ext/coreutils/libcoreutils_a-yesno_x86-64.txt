@@ -1,0 +1,48 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-yesno.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <yesno>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	ba 0a 00 00 00       	mov    $0xa,%edx
+   b:	45 31 e4             	xor    %r12d,%r12d
+   e:	48 83 ec 20          	sub    $0x20,%rsp
+  12:	48 8b 0d 00 00 00 00 	mov    0x0(%rip),%rcx        # 19 <yesno+0x19>
+  19:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  20:	00 00 
+  22:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  27:	31 c0                	xor    %eax,%eax
+  29:	48 8d 74 24 10       	lea    0x10(%rsp),%rsi
+  2e:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
+  33:	48 c7 44 24 08 00 00 	movq   $0x0,0x8(%rsp)
+  3a:	00 00 
+  3c:	48 c7 44 24 10 00 00 	movq   $0x0,0x10(%rsp)
+  43:	00 00 
+  45:	e8 00 00 00 00       	call   4a <yesno+0x4a>
+  4a:	48 85 c0             	test   %rax,%rax
+  4d:	7e 1a                	jle    69 <yesno+0x69>
+  4f:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+  54:	48 8d 44 07 ff       	lea    -0x1(%rdi,%rax,1),%rax
+  59:	80 38 0a             	cmpb   $0xa,(%rax)
+  5c:	74 32                	je     90 <yesno+0x90>
+  5e:	e8 00 00 00 00       	call   63 <yesno+0x63>
+  63:	85 c0                	test   %eax,%eax
+  65:	41 0f 9f c4          	setg   %r12b
+  69:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+  6e:	e8 00 00 00 00       	call   73 <yesno+0x73>
+  73:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  78:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  7f:	00 00 
+  81:	75 17                	jne    9a <yesno+0x9a>
+  83:	48 83 c4 20          	add    $0x20,%rsp
+  87:	44 89 e0             	mov    %r12d,%eax
+  8a:	41 5c                	pop    %r12
+  8c:	c3                   	ret    
+  8d:	0f 1f 00             	nopl   (%rax)
+  90:	c6 00 00             	movb   $0x0,(%rax)
+  93:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+  98:	eb c4                	jmp    5e <yesno+0x5e>
+  9a:	e8 00 00 00 00       	call   9f <yesno+0x9f>

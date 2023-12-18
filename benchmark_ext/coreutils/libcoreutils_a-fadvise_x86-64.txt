@@ -1,0 +1,26 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-fadvise.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fdadvise>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	e9 00 00 00 00       	jmp    9 <fdadvise+0x9>
+   9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000010 <fadvise>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	48 85 ff             	test   %rdi,%rdi
+  17:	74 1f                	je     38 <fadvise+0x28>
+  19:	41 54                	push   %r12
+  1b:	41 89 f4             	mov    %esi,%r12d
+  1e:	e8 00 00 00 00       	call   23 <fadvise+0x13>
+  23:	44 89 e1             	mov    %r12d,%ecx
+  26:	31 d2                	xor    %edx,%edx
+  28:	31 f6                	xor    %esi,%esi
+  2a:	89 c7                	mov    %eax,%edi
+  2c:	41 5c                	pop    %r12
+  2e:	e9 00 00 00 00       	jmp    33 <fadvise+0x23>
+  33:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  38:	c3                   	ret    

@@ -1,0 +1,570 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-base64.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <decode_4>:
+   0:	49 89 d1             	mov    %rdx,%r9
+   3:	48 89 f8             	mov    %rdi,%rax
+   6:	48 89 ca             	mov    %rcx,%rdx
+   9:	45 31 c0             	xor    %r8d,%r8d
+   c:	48 83 fe 01          	cmp    $0x1,%rsi
+  10:	0f 8e a3 00 00 00    	jle    b9 <decode_4+0xb9>
+  16:	0f b6 08             	movzbl (%rax),%ecx
+  19:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 20 <decode_4+0x20>
+  20:	0f b6 0c 0f          	movzbl (%rdi,%rcx,1),%ecx
+  24:	84 c9                	test   %cl,%cl
+  26:	0f 88 8d 00 00 00    	js     b9 <decode_4+0xb9>
+  2c:	44 0f b6 50 01       	movzbl 0x1(%rax),%r10d
+  31:	46 0f b6 14 17       	movzbl (%rdi,%r10,1),%r10d
+  36:	45 84 d2             	test   %r10b,%r10b
+  39:	78 7e                	js     b9 <decode_4+0xb9>
+  3b:	48 83 3a 00          	cmpq   $0x0,(%rdx)
+  3f:	4d 8b 01             	mov    (%r9),%r8
+  42:	0f 85 98 00 00 00    	jne    e0 <decode_4+0xe0>
+  48:	48 83 fe 02          	cmp    $0x2,%rsi
+  4c:	74 7e                	je     cc <decode_4+0xcc>
+  4e:	0f b6 48 02          	movzbl 0x2(%rax),%ecx
+  52:	80 f9 3d             	cmp    $0x3d,%cl
+  55:	74 69                	je     c0 <decode_4+0xc0>
+  57:	0f b6 0c 0f          	movzbl (%rdi,%rcx,1),%ecx
+  5b:	84 c9                	test   %cl,%cl
+  5d:	78 6d                	js     cc <decode_4+0xcc>
+  5f:	48 83 3a 00          	cmpq   $0x0,(%rdx)
+  63:	74 1a                	je     7f <decode_4+0x7f>
+  65:	41 89 cb             	mov    %ecx,%r11d
+  68:	41 c1 e2 04          	shl    $0x4,%r10d
+  6c:	49 83 c0 01          	add    $0x1,%r8
+  70:	41 c0 fb 02          	sar    $0x2,%r11b
+  74:	45 09 da             	or     %r11d,%r10d
+  77:	45 88 50 ff          	mov    %r10b,-0x1(%r8)
+  7b:	48 83 2a 01          	subq   $0x1,(%rdx)
+  7f:	48 83 fe 03          	cmp    $0x3,%rsi
+  83:	74 47                	je     cc <decode_4+0xcc>
+  85:	0f b6 40 03          	movzbl 0x3(%rax),%eax
+  89:	3c 3d                	cmp    $0x3d,%al
+  8b:	0f 84 7f 00 00 00    	je     110 <decode_4+0x110>
+  91:	0f b6 04 07          	movzbl (%rdi,%rax,1),%eax
+  95:	84 c0                	test   %al,%al
+  97:	78 33                	js     cc <decode_4+0xcc>
+  99:	48 83 3a 00          	cmpq   $0x0,(%rdx)
+  9d:	74 11                	je     b0 <decode_4+0xb0>
+  9f:	c1 e1 06             	shl    $0x6,%ecx
+  a2:	49 83 c0 01          	add    $0x1,%r8
+  a6:	09 c1                	or     %eax,%ecx
+  a8:	41 88 48 ff          	mov    %cl,-0x1(%r8)
+  ac:	48 83 2a 01          	subq   $0x1,(%rdx)
+  b0:	4d 89 01             	mov    %r8,(%r9)
+  b3:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+  b9:	44 89 c0             	mov    %r8d,%eax
+  bc:	c3                   	ret    
+  bd:	0f 1f 00             	nopl   (%rax)
+  c0:	48 83 fe 04          	cmp    $0x4,%rsi
+  c4:	75 06                	jne    cc <decode_4+0xcc>
+  c6:	80 78 03 3d          	cmpb   $0x3d,0x3(%rax)
+  ca:	74 34                	je     100 <decode_4+0x100>
+  cc:	4d 89 01             	mov    %r8,(%r9)
+  cf:	45 31 c0             	xor    %r8d,%r8d
+  d2:	44 89 c0             	mov    %r8d,%eax
+  d5:	c3                   	ret    
+  d6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  dd:	00 00 00 
+  e0:	45 89 d3             	mov    %r10d,%r11d
+  e3:	c1 e1 02             	shl    $0x2,%ecx
+  e6:	49 83 c0 01          	add    $0x1,%r8
+  ea:	41 c0 fb 04          	sar    $0x4,%r11b
+  ee:	44 09 d9             	or     %r11d,%ecx
+  f1:	41 88 48 ff          	mov    %cl,-0x1(%r8)
+  f5:	48 83 2a 01          	subq   $0x1,(%rdx)
+  f9:	e9 4a ff ff ff       	jmp    48 <decode_4+0x48>
+  fe:	66 90                	xchg   %ax,%ax
+ 100:	41 83 e2 0f          	and    $0xf,%r10d
+ 104:	74 aa                	je     b0 <decode_4+0xb0>
+ 106:	eb c4                	jmp    cc <decode_4+0xcc>
+ 108:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 10f:	00 
+ 110:	48 83 fe 04          	cmp    $0x4,%rsi
+ 114:	75 b6                	jne    cc <decode_4+0xcc>
+ 116:	83 e1 03             	and    $0x3,%ecx
+ 119:	74 95                	je     b0 <decode_4+0xb0>
+ 11b:	eb af                	jmp    cc <decode_4+0xcc>
+ 11d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000120 <isubase64>:
+ 120:	f3 0f 1e fa          	endbr64 
+ 124:	40 0f b6 ff          	movzbl %dil,%edi
+ 128:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 12f <isubase64+0xf>
+ 12f:	0f b6 04 38          	movzbl (%rax,%rdi,1),%eax
+ 133:	f7 d0                	not    %eax
+ 135:	c0 e8 07             	shr    $0x7,%al
+ 138:	c3                   	ret    
+ 139:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000140 <isbase64>:
+ 140:	f3 0f 1e fa          	endbr64 
+ 144:	40 0f b6 ff          	movzbl %dil,%edi
+ 148:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 14f <isbase64+0xf>
+ 14f:	0f b6 04 38          	movzbl (%rax,%rdi,1),%eax
+ 153:	f7 d0                	not    %eax
+ 155:	c0 e8 07             	shr    $0x7,%al
+ 158:	c3                   	ret    
+ 159:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000160 <base64_decode_ctx_init>:
+ 160:	f3 0f 1e fa          	endbr64 
+ 164:	c7 07 00 00 00 00    	movl   $0x0,(%rdi)
+ 16a:	c3                   	ret    
+ 16b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000170 <base64_encode>:
+ 170:	f3 0f 1e fa          	endbr64 
+ 174:	f6 c1 03             	test   $0x3,%cl
+ 177:	75 14                	jne    18d <base64_encode+0x1d>
+ 179:	48 89 c8             	mov    %rcx,%rax
+ 17c:	48 c1 f8 02          	sar    $0x2,%rax
+ 180:	48 8d 04 40          	lea    (%rax,%rax,2),%rax
+ 184:	48 39 f0             	cmp    %rsi,%rax
+ 187:	0f 84 39 01 00 00    	je     2c6 <base64_encode+0x156>
+ 18d:	48 85 f6             	test   %rsi,%rsi
+ 190:	0f 84 27 01 00 00    	je     2bd <base64_encode+0x14d>
+ 196:	48 85 c9             	test   %rcx,%rcx
+ 199:	0f 84 26 01 00 00    	je     2c5 <base64_encode+0x155>
+ 19f:	0f b6 07             	movzbl (%rdi),%eax
+ 1a2:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 1a9 <base64_encode+0x39>
+ 1a9:	41 89 c1             	mov    %eax,%r9d
+ 1ac:	41 c0 e9 02          	shr    $0x2,%r9b
+ 1b0:	41 83 e1 3f          	and    $0x3f,%r9d
+ 1b4:	47 0f b6 0c 08       	movzbl (%r8,%r9,1),%r9d
+ 1b9:	44 88 0a             	mov    %r9b,(%rdx)
+ 1bc:	48 83 f9 01          	cmp    $0x1,%rcx
+ 1c0:	0f 84 7c 01 00 00    	je     342 <base64_encode+0x1d2>
+ 1c6:	53                   	push   %rbx
+ 1c7:	4c 8d 4c 37 ff       	lea    -0x1(%rdi,%rsi,1),%r9
+ 1cc:	4c 8d 5c 37 fd       	lea    -0x3(%rdi,%rsi,1),%r11
+ 1d1:	4c 8d 54 37 fe       	lea    -0x2(%rdi,%rsi,1),%r10
+ 1d6:	e9 87 00 00 00       	jmp    262 <base64_encode+0xf2>
+ 1db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 1e0:	0f b6 77 01          	movzbl 0x1(%rdi),%esi
+ 1e4:	89 f3                	mov    %esi,%ebx
+ 1e6:	c0 eb 04             	shr    $0x4,%bl
+ 1e9:	01 d8                	add    %ebx,%eax
+ 1eb:	83 e0 3f             	and    $0x3f,%eax
+ 1ee:	41 0f b6 04 00       	movzbl (%r8,%rax,1),%eax
+ 1f3:	88 42 01             	mov    %al,0x1(%rdx)
+ 1f6:	48 83 f9 02          	cmp    $0x2,%rcx
+ 1fa:	0f 84 9a 00 00 00    	je     29a <base64_encode+0x12a>
+ 200:	c1 e6 02             	shl    $0x2,%esi
+ 203:	49 39 fa             	cmp    %rdi,%r10
+ 206:	0f 84 94 00 00 00    	je     2a0 <base64_encode+0x130>
+ 20c:	0f b6 47 02          	movzbl 0x2(%rdi),%eax
+ 210:	89 c3                	mov    %eax,%ebx
+ 212:	c0 eb 06             	shr    $0x6,%bl
+ 215:	01 de                	add    %ebx,%esi
+ 217:	83 e6 3f             	and    $0x3f,%esi
+ 21a:	41 0f b6 34 30       	movzbl (%r8,%rsi,1),%esi
+ 21f:	40 88 72 02          	mov    %sil,0x2(%rdx)
+ 223:	48 83 f9 03          	cmp    $0x3,%rcx
+ 227:	74 71                	je     29a <base64_encode+0x12a>
+ 229:	83 e0 3f             	and    $0x3f,%eax
+ 22c:	48 83 c2 04          	add    $0x4,%rdx
+ 230:	41 0f b6 04 00       	movzbl (%r8,%rax,1),%eax
+ 235:	88 42 ff             	mov    %al,-0x1(%rdx)
+ 238:	48 83 e9 04          	sub    $0x4,%rcx
+ 23c:	74 5c                	je     29a <base64_encode+0x12a>
+ 23e:	49 39 fb             	cmp    %rdi,%r11
+ 241:	74 75                	je     2b8 <base64_encode+0x148>
+ 243:	0f b6 47 03          	movzbl 0x3(%rdi),%eax
+ 247:	48 83 c7 03          	add    $0x3,%rdi
+ 24b:	89 c6                	mov    %eax,%esi
+ 24d:	40 c0 ee 02          	shr    $0x2,%sil
+ 251:	83 e6 3f             	and    $0x3f,%esi
+ 254:	41 0f b6 34 30       	movzbl (%r8,%rsi,1),%esi
+ 259:	40 88 32             	mov    %sil,(%rdx)
+ 25c:	48 83 f9 01          	cmp    $0x1,%rcx
+ 260:	74 38                	je     29a <base64_encode+0x12a>
+ 262:	c1 e0 04             	shl    $0x4,%eax
+ 265:	49 39 f9             	cmp    %rdi,%r9
+ 268:	0f 85 72 ff ff ff    	jne    1e0 <base64_encode+0x70>
+ 26e:	83 e0 30             	and    $0x30,%eax
+ 271:	41 0f b6 04 00       	movzbl (%r8,%rax,1),%eax
+ 276:	88 42 01             	mov    %al,0x1(%rdx)
+ 279:	48 83 f9 02          	cmp    $0x2,%rcx
+ 27d:	74 1b                	je     29a <base64_encode+0x12a>
+ 27f:	c6 42 02 3d          	movb   $0x3d,0x2(%rdx)
+ 283:	48 83 f9 03          	cmp    $0x3,%rcx
+ 287:	74 11                	je     29a <base64_encode+0x12a>
+ 289:	c6 42 03 3d          	movb   $0x3d,0x3(%rdx)
+ 28d:	48 8d 42 04          	lea    0x4(%rdx),%rax
+ 291:	48 83 f9 04          	cmp    $0x4,%rcx
+ 295:	74 03                	je     29a <base64_encode+0x12a>
+ 297:	c6 00 00             	movb   $0x0,(%rax)
+ 29a:	5b                   	pop    %rbx
+ 29b:	c3                   	ret    
+ 29c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 2a0:	83 e6 3c             	and    $0x3c,%esi
+ 2a3:	41 0f b6 04 30       	movzbl (%r8,%rsi,1),%eax
+ 2a8:	88 42 02             	mov    %al,0x2(%rdx)
+ 2ab:	48 83 f9 03          	cmp    $0x3,%rcx
+ 2af:	75 d8                	jne    289 <base64_encode+0x119>
+ 2b1:	5b                   	pop    %rbx
+ 2b2:	c3                   	ret    
+ 2b3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 2b8:	48 89 d0             	mov    %rdx,%rax
+ 2bb:	eb da                	jmp    297 <base64_encode+0x127>
+ 2bd:	48 85 c9             	test   %rcx,%rcx
+ 2c0:	74 03                	je     2c5 <base64_encode+0x155>
+ 2c2:	c6 02 00             	movb   $0x0,(%rdx)
+ 2c5:	c3                   	ret    
+ 2c6:	48 85 c0             	test   %rax,%rax
+ 2c9:	74 fa                	je     2c5 <base64_encode+0x155>
+ 2cb:	48 8d 34 07          	lea    (%rdi,%rax,1),%rsi
+ 2cf:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 2d6 <base64_encode+0x166>
+ 2d6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 2dd:	00 00 00 
+ 2e0:	0f b6 07             	movzbl (%rdi),%eax
+ 2e3:	48 83 c2 04          	add    $0x4,%rdx
+ 2e7:	48 83 c7 03          	add    $0x3,%rdi
+ 2eb:	89 c1                	mov    %eax,%ecx
+ 2ed:	c1 e0 04             	shl    $0x4,%eax
+ 2f0:	c0 e9 02             	shr    $0x2,%cl
+ 2f3:	83 e1 3f             	and    $0x3f,%ecx
+ 2f6:	41 0f b6 0c 08       	movzbl (%r8,%rcx,1),%ecx
+ 2fb:	88 4a fc             	mov    %cl,-0x4(%rdx)
+ 2fe:	0f b6 4f fe          	movzbl -0x2(%rdi),%ecx
+ 302:	41 89 c9             	mov    %ecx,%r9d
+ 305:	41 c0 e9 04          	shr    $0x4,%r9b
+ 309:	44 01 c8             	add    %r9d,%eax
+ 30c:	83 e0 3f             	and    $0x3f,%eax
+ 30f:	41 0f b6 04 00       	movzbl (%r8,%rax,1),%eax
+ 314:	88 42 fd             	mov    %al,-0x3(%rdx)
+ 317:	0f b6 47 ff          	movzbl -0x1(%rdi),%eax
+ 31b:	41 89 c1             	mov    %eax,%r9d
+ 31e:	83 e0 3f             	and    $0x3f,%eax
+ 321:	41 c0 e9 06          	shr    $0x6,%r9b
+ 325:	41 0f b6 04 00       	movzbl (%r8,%rax,1),%eax
+ 32a:	41 8d 0c 89          	lea    (%r9,%rcx,4),%ecx
+ 32e:	83 e1 3f             	and    $0x3f,%ecx
+ 331:	41 0f b6 0c 08       	movzbl (%r8,%rcx,1),%ecx
+ 336:	88 4a fe             	mov    %cl,-0x2(%rdx)
+ 339:	88 42 ff             	mov    %al,-0x1(%rdx)
+ 33c:	48 39 f7             	cmp    %rsi,%rdi
+ 33f:	75 9f                	jne    2e0 <base64_encode+0x170>
+ 341:	c3                   	ret    
+ 342:	c3                   	ret    
+ 343:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 34a:	00 00 00 00 
+ 34e:	66 90                	xchg   %ax,%ax
+
+0000000000000350 <base64_encode_alloc>:
+ 350:	f3 0f 1e fa          	endbr64 
+ 354:	41 56                	push   %r14
+ 356:	48 89 f0             	mov    %rsi,%rax
+ 359:	31 c9                	xor    %ecx,%ecx
+ 35b:	41 55                	push   %r13
+ 35d:	41 54                	push   %r12
+ 35f:	55                   	push   %rbp
+ 360:	53                   	push   %rbx
+ 361:	48 89 d3             	mov    %rdx,%rbx
+ 364:	48 ba 56 55 55 55 55 	movabs $0x5555555555555556,%rdx
+ 36b:	55 55 55 
+ 36e:	48 f7 ea             	imul   %rdx
+ 371:	48 89 f0             	mov    %rsi,%rax
+ 374:	48 c1 f8 3f          	sar    $0x3f,%rax
+ 378:	48 29 c2             	sub    %rax,%rdx
+ 37b:	48 8d 04 52          	lea    (%rdx,%rdx,2),%rax
+ 37f:	48 39 c6             	cmp    %rax,%rsi
+ 382:	0f 95 c1             	setne  %cl
+ 385:	48 01 ca             	add    %rcx,%rdx
+ 388:	4c 6b e2 04          	imul   $0x4,%rdx,%r12
+ 38c:	0f 90 c0             	seto   %al
+ 38f:	48 85 f6             	test   %rsi,%rsi
+ 392:	78 44                	js     3d8 <base64_encode_alloc+0x88>
+ 394:	0f b6 c0             	movzbl %al,%eax
+ 397:	48 85 c0             	test   %rax,%rax
+ 39a:	75 3c                	jne    3d8 <base64_encode_alloc+0x88>
+ 39c:	4d 8d 74 24 01       	lea    0x1(%r12),%r14
+ 3a1:	49 89 fd             	mov    %rdi,%r13
+ 3a4:	48 89 f5             	mov    %rsi,%rbp
+ 3a7:	4c 89 f7             	mov    %r14,%rdi
+ 3aa:	e8 00 00 00 00       	call   3af <base64_encode_alloc+0x5f>
+ 3af:	48 89 03             	mov    %rax,(%rbx)
+ 3b2:	48 89 c2             	mov    %rax,%rdx
+ 3b5:	48 85 c0             	test   %rax,%rax
+ 3b8:	74 34                	je     3ee <base64_encode_alloc+0x9e>
+ 3ba:	4c 89 f1             	mov    %r14,%rcx
+ 3bd:	48 89 ee             	mov    %rbp,%rsi
+ 3c0:	4c 89 ef             	mov    %r13,%rdi
+ 3c3:	e8 00 00 00 00       	call   3c8 <base64_encode_alloc+0x78>
+ 3c8:	5b                   	pop    %rbx
+ 3c9:	4c 89 e0             	mov    %r12,%rax
+ 3cc:	5d                   	pop    %rbp
+ 3cd:	41 5c                	pop    %r12
+ 3cf:	41 5d                	pop    %r13
+ 3d1:	41 5e                	pop    %r14
+ 3d3:	c3                   	ret    
+ 3d4:	0f 1f 40 00          	nopl   0x0(%rax)
+ 3d8:	48 c7 03 00 00 00 00 	movq   $0x0,(%rbx)
+ 3df:	45 31 e4             	xor    %r12d,%r12d
+ 3e2:	5b                   	pop    %rbx
+ 3e3:	4c 89 e0             	mov    %r12,%rax
+ 3e6:	5d                   	pop    %rbp
+ 3e7:	41 5c                	pop    %r12
+ 3e9:	41 5d                	pop    %r13
+ 3eb:	41 5e                	pop    %r14
+ 3ed:	c3                   	ret    
+ 3ee:	4d 89 f4             	mov    %r14,%r12
+ 3f1:	eb ef                	jmp    3e2 <base64_encode_alloc+0x92>
+ 3f3:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 3fa:	00 00 00 00 
+ 3fe:	66 90                	xchg   %ax,%ax
+
+0000000000000400 <base64_decode_ctx>:
+ 400:	f3 0f 1e fa          	endbr64 
+ 404:	41 57                	push   %r15
+ 406:	41 56                	push   %r14
+ 408:	49 89 fe             	mov    %rdi,%r14
+ 40b:	41 55                	push   %r13
+ 40d:	41 54                	push   %r12
+ 40f:	55                   	push   %rbp
+ 410:	53                   	push   %rbx
+ 411:	48 89 f3             	mov    %rsi,%rbx
+ 414:	48 89 d6             	mov    %rdx,%rsi
+ 417:	48 83 ec 38          	sub    $0x38,%rsp
+ 41b:	4d 8b 38             	mov    (%r8),%r15
+ 41e:	48 89 4c 24 18       	mov    %rcx,0x18(%rsp)
+ 423:	4c 89 44 24 10       	mov    %r8,0x10(%rsp)
+ 428:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 42f:	00 00 
+ 431:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+ 436:	31 c0                	xor    %eax,%eax
+ 438:	48 85 ff             	test   %rdi,%rdi
+ 43b:	4c 89 7c 24 20       	mov    %r15,0x20(%rsp)
+ 440:	0f 95 44 24 0b       	setne  0xb(%rsp)
+ 445:	0f 84 29 02 00 00    	je     674 <base64_decode_ctx+0x274>
+ 44b:	48 85 d2             	test   %rdx,%rdx
+ 44e:	8b 17                	mov    (%rdi),%edx
+ 450:	0f 95 44 24 09       	setne  0x9(%rsp)
+ 455:	0f b6 44 24 09       	movzbl 0x9(%rsp),%eax
+ 45a:	85 d2                	test   %edx,%edx
+ 45c:	41 0f 94 c5          	sete   %r13b
+ 460:	41 21 c5             	and    %eax,%r13d
+ 463:	44 88 6c 24 0a       	mov    %r13b,0xa(%rsp)
+ 468:	48 8d 6c 24 20       	lea    0x20(%rsp),%rbp
+ 46d:	eb 4d                	jmp    4bc <base64_decode_ctx+0xbc>
+ 46f:	90                   	nop
+ 470:	80 3b 0a             	cmpb   $0xa,(%rbx)
+ 473:	0f 84 37 01 00 00    	je     5b0 <base64_decode_ctx+0x1b0>
+ 479:	4c 89 f8             	mov    %r15,%rax
+ 47c:	4c 89 7c 24 20       	mov    %r15,0x20(%rsp)
+ 481:	4c 8d 3c 33          	lea    (%rbx,%rsi,1),%r15
+ 485:	48 29 d0             	sub    %rdx,%rax
+ 488:	48 29 44 24 18       	sub    %rax,0x18(%rsp)
+ 48d:	4d 85 f6             	test   %r14,%r14
+ 490:	0f 85 15 02 00 00    	jne    6ab <base64_decode_ctx+0x2ab>
+ 496:	48 89 df             	mov    %rbx,%rdi
+ 499:	4c 8d 6c 24 18       	lea    0x18(%rsp),%r13
+ 49e:	48 89 e9             	mov    %rbp,%rcx
+ 4a1:	4c 89 ea             	mov    %r13,%rdx
+ 4a4:	e8 57 fb ff ff       	call   0 <decode_4>
+ 4a9:	84 c0                	test   %al,%al
+ 4ab:	0f 84 df 01 00 00    	je     690 <base64_decode_ctx+0x290>
+ 4b1:	4c 89 fe             	mov    %r15,%rsi
+ 4b4:	4c 8b 7c 24 20       	mov    0x20(%rsp),%r15
+ 4b9:	48 29 de             	sub    %rbx,%rsi
+ 4bc:	80 7c 24 0a 00       	cmpb   $0x0,0xa(%rsp)
+ 4c1:	4c 89 fa             	mov    %r15,%rdx
+ 4c4:	0f 85 9e 00 00 00    	jne    568 <base64_decode_ctx+0x168>
+ 4ca:	48 85 f6             	test   %rsi,%rsi
+ 4cd:	0f 94 c0             	sete   %al
+ 4d0:	22 44 24 09          	and    0x9(%rsp),%al
+ 4d4:	75 62                	jne    538 <base64_decode_ctx+0x138>
+ 4d6:	48 85 f6             	test   %rsi,%rsi
+ 4d9:	75 95                	jne    470 <base64_decode_ctx+0x70>
+ 4db:	4c 89 f8             	mov    %r15,%rax
+ 4de:	4c 89 7c 24 20       	mov    %r15,0x20(%rsp)
+ 4e3:	48 29 d0             	sub    %rdx,%rax
+ 4e6:	48 29 44 24 18       	sub    %rax,0x18(%rsp)
+ 4eb:	4d 85 f6             	test   %r14,%r14
+ 4ee:	0f 84 8f 01 00 00    	je     683 <base64_decode_ctx+0x283>
+ 4f4:	41 8b 0e             	mov    (%r14),%ecx
+ 4f7:	49 89 df             	mov    %rbx,%r15
+ 4fa:	83 f9 04             	cmp    $0x4,%ecx
+ 4fd:	0f 84 cd 00 00 00    	je     5d0 <base64_decode_ctx+0x1d0>
+ 503:	48 63 f1             	movslq %ecx,%rsi
+ 506:	49 8d 7e 04          	lea    0x4(%r14),%rdi
+ 50a:	48 85 f6             	test   %rsi,%rsi
+ 50d:	74 1c                	je     52b <base64_decode_ctx+0x12b>
+ 50f:	48 83 fe 03          	cmp    $0x3,%rsi
+ 513:	7f 84                	jg     499 <base64_decode_ctx+0x99>
+ 515:	80 7c 24 09 00       	cmpb   $0x0,0x9(%rsp)
+ 51a:	0f 84 79 ff ff ff    	je     499 <base64_decode_ctx+0x99>
+ 520:	80 7c 24 0b 00       	cmpb   $0x0,0xb(%rsp)
+ 525:	0f 84 6e ff ff ff    	je     499 <base64_decode_ctx+0x99>
+ 52b:	48 8b 54 24 20       	mov    0x20(%rsp),%rdx
+ 530:	b8 01 00 00 00       	mov    $0x1,%eax
+ 535:	0f 1f 00             	nopl   (%rax)
+ 538:	48 8b 7c 24 10       	mov    0x10(%rsp),%rdi
+ 53d:	48 29 17             	sub    %rdx,(%rdi)
+ 540:	48 8b 54 24 28       	mov    0x28(%rsp),%rdx
+ 545:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 54c:	00 00 
+ 54e:	0f 85 6d 01 00 00    	jne    6c1 <base64_decode_ctx+0x2c1>
+ 554:	48 83 c4 38          	add    $0x38,%rsp
+ 558:	5b                   	pop    %rbx
+ 559:	5d                   	pop    %rbp
+ 55a:	41 5c                	pop    %r12
+ 55c:	41 5d                	pop    %r13
+ 55e:	41 5e                	pop    %r14
+ 560:	41 5f                	pop    %r15
+ 562:	c3                   	ret    
+ 563:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 568:	49 89 dc             	mov    %rbx,%r12
+ 56b:	4c 8d 6c 24 18       	lea    0x18(%rsp),%r13
+ 570:	48 8d 1c 33          	lea    (%rbx,%rsi,1),%rbx
+ 574:	eb 13                	jmp    589 <base64_decode_ctx+0x189>
+ 576:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 57d:	00 00 00 
+ 580:	4c 8b 7c 24 20       	mov    0x20(%rsp),%r15
+ 585:	49 83 c4 04          	add    $0x4,%r12
+ 589:	48 89 de             	mov    %rbx,%rsi
+ 58c:	48 89 e9             	mov    %rbp,%rcx
+ 58f:	4c 89 ea             	mov    %r13,%rdx
+ 592:	4c 89 e7             	mov    %r12,%rdi
+ 595:	4c 29 e6             	sub    %r12,%rsi
+ 598:	e8 63 fa ff ff       	call   0 <decode_4>
+ 59d:	84 c0                	test   %al,%al
+ 59f:	75 df                	jne    580 <base64_decode_ctx+0x180>
+ 5a1:	48 8b 54 24 20       	mov    0x20(%rsp),%rdx
+ 5a6:	4c 89 e3             	mov    %r12,%rbx
+ 5a9:	e9 1c ff ff ff       	jmp    4ca <base64_decode_ctx+0xca>
+ 5ae:	66 90                	xchg   %ax,%ax
+ 5b0:	4d 85 f6             	test   %r14,%r14
+ 5b3:	0f 84 9f 00 00 00    	je     658 <base64_decode_ctx+0x258>
+ 5b9:	48 83 c3 01          	add    $0x1,%rbx
+ 5bd:	48 83 ee 01          	sub    $0x1,%rsi
+ 5c1:	49 89 d7             	mov    %rdx,%r15
+ 5c4:	e9 f3 fe ff ff       	jmp    4bc <base64_decode_ctx+0xbc>
+ 5c9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 5d0:	41 c7 06 00 00 00 00 	movl   $0x0,(%r14)
+ 5d7:	b8 01 00 00 00       	mov    $0x1,%eax
+ 5dc:	31 c9                	xor    %ecx,%ecx
+ 5de:	48 83 fe 03          	cmp    $0x3,%rsi
+ 5e2:	7e 28                	jle    60c <base64_decode_ctx+0x20c>
+ 5e4:	84 c0                	test   %al,%al
+ 5e6:	74 24                	je     60c <base64_decode_ctx+0x20c>
+ 5e8:	ba 04 00 00 00       	mov    $0x4,%edx
+ 5ed:	be 0a 00 00 00       	mov    $0xa,%esi
+ 5f2:	48 89 df             	mov    %rbx,%rdi
+ 5f5:	89 4c 24 0c          	mov    %ecx,0xc(%rsp)
+ 5f9:	e8 00 00 00 00       	call   5fe <base64_decode_ctx+0x1fe>
+ 5fe:	48 63 4c 24 0c       	movslq 0xc(%rsp),%rcx
+ 603:	48 85 c0             	test   %rax,%rax
+ 606:	0f 84 8e 00 00 00    	je     69a <base64_decode_ctx+0x29a>
+ 60c:	49 39 df             	cmp    %rbx,%r15
+ 60f:	77 1b                	ja     62c <base64_decode_ctx+0x22c>
+ 611:	e9 ed fe ff ff       	jmp    503 <base64_decode_ctx+0x103>
+ 616:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 61d:	00 00 00 
+ 620:	48 63 ca             	movslq %edx,%rcx
+ 623:	4c 39 fb             	cmp    %r15,%rbx
+ 626:	0f 84 d7 fe ff ff    	je     503 <base64_decode_ctx+0x103>
+ 62c:	0f b6 03             	movzbl (%rbx),%eax
+ 62f:	48 83 c3 01          	add    $0x1,%rbx
+ 633:	3c 0a                	cmp    $0xa,%al
+ 635:	74 ec                	je     623 <base64_decode_ctx+0x223>
+ 637:	8d 51 01             	lea    0x1(%rcx),%edx
+ 63a:	41 89 16             	mov    %edx,(%r14)
+ 63d:	41 88 44 0e 04       	mov    %al,0x4(%r14,%rcx,1)
+ 642:	83 fa 04             	cmp    $0x4,%edx
+ 645:	75 d9                	jne    620 <base64_decode_ctx+0x220>
+ 647:	b9 04 00 00 00       	mov    $0x4,%ecx
+ 64c:	e9 b2 fe ff ff       	jmp    503 <base64_decode_ctx+0x103>
+ 651:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 658:	4c 89 f8             	mov    %r15,%rax
+ 65b:	4c 89 7c 24 20       	mov    %r15,0x20(%rsp)
+ 660:	48 89 df             	mov    %rbx,%rdi
+ 663:	4c 8d 3c 33          	lea    (%rbx,%rsi,1),%r15
+ 667:	48 29 d0             	sub    %rdx,%rax
+ 66a:	48 29 44 24 18       	sub    %rax,0x18(%rsp)
+ 66f:	e9 9b fe ff ff       	jmp    50f <base64_decode_ctx+0x10f>
+ 674:	c6 44 24 0a 01       	movb   $0x1,0xa(%rsp)
+ 679:	c6 44 24 09 01       	movb   $0x1,0x9(%rsp)
+ 67e:	e9 e5 fd ff ff       	jmp    468 <base64_decode_ctx+0x68>
+ 683:	4c 89 fa             	mov    %r15,%rdx
+ 686:	b8 01 00 00 00       	mov    $0x1,%eax
+ 68b:	e9 a8 fe ff ff       	jmp    538 <base64_decode_ctx+0x138>
+ 690:	48 8b 54 24 20       	mov    0x20(%rsp),%rdx
+ 695:	e9 9e fe ff ff       	jmp    538 <base64_decode_ctx+0x138>
+ 69a:	48 89 df             	mov    %rbx,%rdi
+ 69d:	be 04 00 00 00       	mov    $0x4,%esi
+ 6a2:	48 83 c3 04          	add    $0x4,%rbx
+ 6a6:	e9 ee fd ff ff       	jmp    499 <base64_decode_ctx+0x99>
+ 6ab:	49 63 0e             	movslq (%r14),%rcx
+ 6ae:	83 f9 04             	cmp    $0x4,%ecx
+ 6b1:	0f 84 19 ff ff ff    	je     5d0 <base64_decode_ctx+0x1d0>
+ 6b7:	85 c9                	test   %ecx,%ecx
+ 6b9:	0f 94 c0             	sete   %al
+ 6bc:	e9 1d ff ff ff       	jmp    5de <base64_decode_ctx+0x1de>
+ 6c1:	e8 00 00 00 00       	call   6c6 <base64_decode_ctx+0x2c6>
+ 6c6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 6cd:	00 00 00 
+
+00000000000006d0 <base64_decode_alloc_ctx>:
+ 6d0:	f3 0f 1e fa          	endbr64 
+ 6d4:	41 56                	push   %r14
+ 6d6:	49 89 f6             	mov    %rsi,%r14
+ 6d9:	41 55                	push   %r13
+ 6db:	49 89 fd             	mov    %rdi,%r13
+ 6de:	41 54                	push   %r12
+ 6e0:	49 89 d4             	mov    %rdx,%r12
+ 6e3:	55                   	push   %rbp
+ 6e4:	4c 89 c5             	mov    %r8,%rbp
+ 6e7:	53                   	push   %rbx
+ 6e8:	48 89 cb             	mov    %rcx,%rbx
+ 6eb:	48 83 ec 20          	sub    $0x20,%rsp
+ 6ef:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 6f6:	00 00 
+ 6f8:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+ 6fd:	48 89 d0             	mov    %rdx,%rax
+ 700:	48 c1 f8 02          	sar    $0x2,%rax
+ 704:	48 8d 7c 40 03       	lea    0x3(%rax,%rax,2),%rdi
+ 709:	48 89 7c 24 10       	mov    %rdi,0x10(%rsp)
+ 70e:	e8 00 00 00 00       	call   713 <base64_decode_alloc_ctx+0x43>
+ 713:	48 89 03             	mov    %rax,(%rbx)
+ 716:	48 85 c0             	test   %rax,%rax
+ 719:	74 45                	je     760 <base64_decode_alloc_ctx+0x90>
+ 71b:	48 89 c1             	mov    %rax,%rcx
+ 71e:	4c 8d 44 24 10       	lea    0x10(%rsp),%r8
+ 723:	4c 89 e2             	mov    %r12,%rdx
+ 726:	4c 89 f6             	mov    %r14,%rsi
+ 729:	4c 89 ef             	mov    %r13,%rdi
+ 72c:	e8 00 00 00 00       	call   731 <base64_decode_alloc_ctx+0x61>
+ 731:	84 c0                	test   %al,%al
+ 733:	74 3b                	je     770 <base64_decode_alloc_ctx+0xa0>
+ 735:	48 85 ed             	test   %rbp,%rbp
+ 738:	74 26                	je     760 <base64_decode_alloc_ctx+0x90>
+ 73a:	48 8b 54 24 10       	mov    0x10(%rsp),%rdx
+ 73f:	48 89 55 00          	mov    %rdx,0x0(%rbp)
+ 743:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 748:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 74f:	00 00 
+ 751:	75 37                	jne    78a <base64_decode_alloc_ctx+0xba>
+ 753:	48 83 c4 20          	add    $0x20,%rsp
+ 757:	5b                   	pop    %rbx
+ 758:	5d                   	pop    %rbp
+ 759:	41 5c                	pop    %r12
+ 75b:	41 5d                	pop    %r13
+ 75d:	41 5e                	pop    %r14
+ 75f:	c3                   	ret    
+ 760:	b8 01 00 00 00       	mov    $0x1,%eax
+ 765:	eb dc                	jmp    743 <base64_decode_alloc_ctx+0x73>
+ 767:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 76e:	00 00 
+ 770:	48 8b 3b             	mov    (%rbx),%rdi
+ 773:	88 44 24 0f          	mov    %al,0xf(%rsp)
+ 777:	e8 00 00 00 00       	call   77c <base64_decode_alloc_ctx+0xac>
+ 77c:	48 c7 03 00 00 00 00 	movq   $0x0,(%rbx)
+ 783:	0f b6 44 24 0f       	movzbl 0xf(%rsp),%eax
+ 788:	eb b9                	jmp    743 <base64_decode_alloc_ctx+0x73>
+ 78a:	e8 00 00 00 00       	call   78f <base64_decode_alloc_ctx+0xbf>

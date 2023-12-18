@@ -1,0 +1,383 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-strintcmp.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <strintcmp>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	0f b6 0f             	movzbl (%rdi),%ecx
+   7:	48 89 f0             	mov    %rsi,%rax
+   a:	48 89 fa             	mov    %rdi,%rdx
+   d:	0f b6 36             	movzbl (%rsi),%esi
+  10:	80 f9 2d             	cmp    $0x2d,%cl
+  13:	0f 84 77 01 00 00    	je     190 <strintcmp+0x190>
+  19:	40 80 fe 2d          	cmp    $0x2d,%sil
+  1d:	75 69                	jne    88 <strintcmp+0x88>
+  1f:	90                   	nop
+  20:	0f b6 70 01          	movzbl 0x1(%rax),%esi
+  24:	48 83 c0 01          	add    $0x1,%rax
+  28:	40 80 fe 30          	cmp    $0x30,%sil
+  2c:	74 f2                	je     20 <strintcmp+0x20>
+  2e:	40 80 fe 80          	cmp    $0x80,%sil
+  32:	74 ec                	je     20 <strintcmp+0x20>
+  34:	40 0f b6 c6          	movzbl %sil,%eax
+  38:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+  3e:	83 e8 30             	sub    $0x30,%eax
+  41:	83 f8 09             	cmp    $0x9,%eax
+  44:	0f 86 97 01 00 00    	jbe    1e1 <strintcmp+0x1e1>
+  4a:	80 f9 80             	cmp    $0x80,%cl
+  4d:	74 09                	je     58 <strintcmp+0x58>
+  4f:	80 f9 30             	cmp    $0x30,%cl
+  52:	75 16                	jne    6a <strintcmp+0x6a>
+  54:	0f 1f 40 00          	nopl   0x0(%rax)
+  58:	0f b6 4a 01          	movzbl 0x1(%rdx),%ecx
+  5c:	48 83 c2 01          	add    $0x1,%rdx
+  60:	80 f9 30             	cmp    $0x30,%cl
+  63:	74 f3                	je     58 <strintcmp+0x58>
+  65:	80 f9 80             	cmp    $0x80,%cl
+  68:	74 ee                	je     58 <strintcmp+0x58>
+  6a:	0f b6 c1             	movzbl %cl,%eax
+  6d:	45 31 c0             	xor    %r8d,%r8d
+  70:	83 e8 30             	sub    $0x30,%eax
+  73:	83 f8 09             	cmp    $0x9,%eax
+  76:	41 0f 96 c0          	setbe  %r8b
+  7a:	44 89 c0             	mov    %r8d,%eax
+  7d:	c3                   	ret    
+  7e:	66 90                	xchg   %ax,%ax
+  80:	0f b6 4a 01          	movzbl 0x1(%rdx),%ecx
+  84:	48 83 c2 01          	add    $0x1,%rdx
+  88:	80 f9 30             	cmp    $0x30,%cl
+  8b:	74 f3                	je     80 <strintcmp+0x80>
+  8d:	80 f9 80             	cmp    $0x80,%cl
+  90:	74 ee                	je     80 <strintcmp+0x80>
+  92:	40 80 fe 30          	cmp    $0x30,%sil
+  96:	74 08                	je     a0 <strintcmp+0xa0>
+  98:	40 80 fe 80          	cmp    $0x80,%sil
+  9c:	75 16                	jne    b4 <strintcmp+0xb4>
+  9e:	66 90                	xchg   %ax,%ax
+  a0:	0f b6 70 01          	movzbl 0x1(%rax),%esi
+  a4:	48 83 c0 01          	add    $0x1,%rax
+  a8:	40 80 fe 80          	cmp    $0x80,%sil
+  ac:	74 f2                	je     a0 <strintcmp+0xa0>
+  ae:	40 80 fe 30          	cmp    $0x30,%sil
+  b2:	74 ec                	je     a0 <strintcmp+0xa0>
+  b4:	40 38 ce             	cmp    %cl,%sil
+  b7:	40 0f b6 f6          	movzbl %sil,%esi
+  bb:	0f b6 c9             	movzbl %cl,%ecx
+  be:	75 40                	jne    100 <strintcmp+0x100>
+  c0:	8d 4e d0             	lea    -0x30(%rsi),%ecx
+  c3:	83 f9 09             	cmp    $0x9,%ecx
+  c6:	0f 87 8c 03 00 00    	ja     458 <strintcmp+0x458>
+  cc:	0f 1f 40 00          	nopl   0x0(%rax)
+  d0:	0f b6 4a 01          	movzbl 0x1(%rdx),%ecx
+  d4:	48 83 c2 01          	add    $0x1,%rdx
+  d8:	80 f9 80             	cmp    $0x80,%cl
+  db:	74 f3                	je     d0 <strintcmp+0xd0>
+  dd:	0f 1f 00             	nopl   (%rax)
+  e0:	0f b6 70 01          	movzbl 0x1(%rax),%esi
+  e4:	48 83 c0 01          	add    $0x1,%rax
+  e8:	40 80 fe 80          	cmp    $0x80,%sil
+  ec:	74 f2                	je     e0 <strintcmp+0xe0>
+  ee:	40 38 f1             	cmp    %sil,%cl
+  f1:	0f b6 c9             	movzbl %cl,%ecx
+  f4:	75 0a                	jne    100 <strintcmp+0x100>
+  f6:	8d 71 d0             	lea    -0x30(%rcx),%esi
+  f9:	83 fe 09             	cmp    $0x9,%esi
+  fc:	76 d2                	jbe    d0 <strintcmp+0xd0>
+  fe:	89 ce                	mov    %ecx,%esi
+ 100:	81 f9 80 00 00 00    	cmp    $0x80,%ecx
+ 106:	0f 84 a6 01 00 00    	je     2b2 <strintcmp+0x2b2>
+ 10c:	81 fe 80 00 00 00    	cmp    $0x80,%esi
+ 112:	0f 84 43 01 00 00    	je     25b <strintcmp+0x25b>
+ 118:	41 89 c8             	mov    %ecx,%r8d
+ 11b:	83 e9 30             	sub    $0x30,%ecx
+ 11e:	8d 7e d0             	lea    -0x30(%rsi),%edi
+ 121:	41 29 f0             	sub    %esi,%r8d
+ 124:	83 f9 09             	cmp    $0x9,%ecx
+ 127:	0f 87 49 02 00 00    	ja     376 <strintcmp+0x376>
+ 12d:	31 f6                	xor    %esi,%esi
+ 12f:	90                   	nop
+ 130:	0f b6 4a 01          	movzbl 0x1(%rdx),%ecx
+ 134:	48 83 c2 01          	add    $0x1,%rdx
+ 138:	80 f9 80             	cmp    $0x80,%cl
+ 13b:	74 f3                	je     130 <strintcmp+0x130>
+ 13d:	83 e9 30             	sub    $0x30,%ecx
+ 140:	48 83 c6 01          	add    $0x1,%rsi
+ 144:	83 f9 09             	cmp    $0x9,%ecx
+ 147:	76 e7                	jbe    130 <strintcmp+0x130>
+ 149:	83 ff 09             	cmp    $0x9,%edi
+ 14c:	0f 87 0a 02 00 00    	ja     35c <strintcmp+0x35c>
+ 152:	31 c9                	xor    %ecx,%ecx
+ 154:	0f 1f 40 00          	nopl   0x0(%rax)
+ 158:	0f b6 50 01          	movzbl 0x1(%rax),%edx
+ 15c:	48 83 c0 01          	add    $0x1,%rax
+ 160:	80 fa 80             	cmp    $0x80,%dl
+ 163:	74 f3                	je     158 <strintcmp+0x158>
+ 165:	83 ea 30             	sub    $0x30,%edx
+ 168:	48 83 c1 01          	add    $0x1,%rcx
+ 16c:	83 fa 09             	cmp    $0x9,%edx
+ 16f:	76 e7                	jbe    158 <strintcmp+0x158>
+ 171:	48 39 f1             	cmp    %rsi,%rcx
+ 174:	0f 84 d4 00 00 00    	je     24e <strintcmp+0x24e>
+ 17a:	48 39 ce             	cmp    %rcx,%rsi
+ 17d:	45 19 c0             	sbb    %r8d,%r8d
+ 180:	41 83 c8 01          	or     $0x1,%r8d
+ 184:	44 89 c0             	mov    %r8d,%eax
+ 187:	c3                   	ret    
+ 188:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 18f:	00 
+ 190:	0f b6 4a 01          	movzbl 0x1(%rdx),%ecx
+ 194:	48 83 c2 01          	add    $0x1,%rdx
+ 198:	80 f9 80             	cmp    $0x80,%cl
+ 19b:	74 f3                	je     190 <strintcmp+0x190>
+ 19d:	80 f9 30             	cmp    $0x30,%cl
+ 1a0:	74 ee                	je     190 <strintcmp+0x190>
+ 1a2:	40 80 fe 2d          	cmp    $0x2d,%sil
+ 1a6:	74 40                	je     1e8 <strintcmp+0x1e8>
+ 1a8:	0f b6 d1             	movzbl %cl,%edx
+ 1ab:	83 ea 30             	sub    $0x30,%edx
+ 1ae:	83 fa 09             	cmp    $0x9,%edx
+ 1b1:	77 15                	ja     1c8 <strintcmp+0x1c8>
+ 1b3:	e9 08 03 00 00       	jmp    4c0 <strintcmp+0x4c0>
+ 1b8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 1bf:	00 
+ 1c0:	0f b6 70 01          	movzbl 0x1(%rax),%esi
+ 1c4:	48 83 c0 01          	add    $0x1,%rax
+ 1c8:	40 80 fe 30          	cmp    $0x30,%sil
+ 1cc:	74 f2                	je     1c0 <strintcmp+0x1c0>
+ 1ce:	40 80 fe 80          	cmp    $0x80,%sil
+ 1d2:	74 ec                	je     1c0 <strintcmp+0x1c0>
+ 1d4:	40 0f b6 c6          	movzbl %sil,%eax
+ 1d8:	83 e8 30             	sub    $0x30,%eax
+ 1db:	83 f8 0a             	cmp    $0xa,%eax
+ 1de:	45 19 c0             	sbb    %r8d,%r8d
+ 1e1:	44 89 c0             	mov    %r8d,%eax
+ 1e4:	c3                   	ret    
+ 1e5:	0f 1f 00             	nopl   (%rax)
+ 1e8:	0f b6 70 01          	movzbl 0x1(%rax),%esi
+ 1ec:	48 83 c0 01          	add    $0x1,%rax
+ 1f0:	40 80 fe 80          	cmp    $0x80,%sil
+ 1f4:	74 f2                	je     1e8 <strintcmp+0x1e8>
+ 1f6:	40 80 fe 30          	cmp    $0x30,%sil
+ 1fa:	74 ec                	je     1e8 <strintcmp+0x1e8>
+ 1fc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 200:	40 38 f1             	cmp    %sil,%cl
+ 203:	0f 85 c5 00 00 00    	jne    2ce <strintcmp+0x2ce>
+ 209:	40 0f b6 ce          	movzbl %sil,%ecx
+ 20d:	8d 79 d0             	lea    -0x30(%rcx),%edi
+ 210:	83 ff 09             	cmp    $0x9,%edi
+ 213:	0f 87 b8 00 00 00    	ja     2d1 <strintcmp+0x2d1>
+ 219:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 220:	0f b6 4a 01          	movzbl 0x1(%rdx),%ecx
+ 224:	48 83 c2 01          	add    $0x1,%rdx
+ 228:	80 f9 80             	cmp    $0x80,%cl
+ 22b:	74 f3                	je     220 <strintcmp+0x220>
+ 22d:	0f 1f 00             	nopl   (%rax)
+ 230:	0f b6 70 01          	movzbl 0x1(%rax),%esi
+ 234:	48 83 c0 01          	add    $0x1,%rax
+ 238:	40 80 fe 80          	cmp    $0x80,%sil
+ 23c:	75 c2                	jne    200 <strintcmp+0x200>
+ 23e:	0f b6 70 01          	movzbl 0x1(%rax),%esi
+ 242:	48 83 c0 01          	add    $0x1,%rax
+ 246:	40 80 fe 80          	cmp    $0x80,%sil
+ 24a:	74 e4                	je     230 <strintcmp+0x230>
+ 24c:	eb b2                	jmp    200 <strintcmp+0x200>
+ 24e:	31 c0                	xor    %eax,%eax
+ 250:	48 85 c9             	test   %rcx,%rcx
+ 253:	44 0f 44 c0          	cmove  %eax,%r8d
+ 257:	44 89 c0             	mov    %r8d,%eax
+ 25a:	c3                   	ret    
+ 25b:	8d 71 d0             	lea    -0x30(%rcx),%esi
+ 25e:	44 8d 41 80          	lea    -0x80(%rcx),%r8d
+ 262:	bf 50 00 00 00       	mov    $0x50,%edi
+ 267:	83 fe 09             	cmp    $0x9,%esi
+ 26a:	0f 86 bd fe ff ff    	jbe    12d <strintcmp+0x12d>
+ 270:	80 3a 80             	cmpb   $0x80,(%rdx)
+ 273:	0f b6 08             	movzbl (%rax),%ecx
+ 276:	0f 84 2e 01 00 00    	je     3aa <strintcmp+0x3aa>
+ 27c:	45 31 c0             	xor    %r8d,%r8d
+ 27f:	80 f9 80             	cmp    $0x80,%cl
+ 282:	0f 85 59 ff ff ff    	jne    1e1 <strintcmp+0x1e1>
+ 288:	0f b6 70 01          	movzbl 0x1(%rax),%esi
+ 28c:	48 8d 50 01          	lea    0x1(%rax),%rdx
+ 290:	eb 08                	jmp    29a <strintcmp+0x29a>
+ 292:	0f b6 72 01          	movzbl 0x1(%rdx),%esi
+ 296:	48 83 c2 01          	add    $0x1,%rdx
+ 29a:	40 80 fe 30          	cmp    $0x30,%sil
+ 29e:	74 f2                	je     292 <strintcmp+0x292>
+ 2a0:	40 0f be c6          	movsbl %sil,%eax
+ 2a4:	83 e8 30             	sub    $0x30,%eax
+ 2a7:	83 f8 0a             	cmp    $0xa,%eax
+ 2aa:	45 19 c0             	sbb    %r8d,%r8d
+ 2ad:	e9 2f ff ff ff       	jmp    1e1 <strintcmp+0x1e1>
+ 2b2:	8d 7e d0             	lea    -0x30(%rsi),%edi
+ 2b5:	83 ff 09             	cmp    $0x9,%edi
+ 2b8:	77 b6                	ja     270 <strintcmp+0x270>
+ 2ba:	81 fe 80 00 00 00    	cmp    $0x80,%esi
+ 2c0:	74 ae                	je     270 <strintcmp+0x270>
+ 2c2:	29 f1                	sub    %esi,%ecx
+ 2c4:	31 f6                	xor    %esi,%esi
+ 2c6:	41 89 c8             	mov    %ecx,%r8d
+ 2c9:	e9 84 fe ff ff       	jmp    152 <strintcmp+0x152>
+ 2ce:	0f b6 c9             	movzbl %cl,%ecx
+ 2d1:	81 f9 80 00 00 00    	cmp    $0x80,%ecx
+ 2d7:	0f 84 aa 00 00 00    	je     387 <strintcmp+0x387>
+ 2dd:	44 0f b6 c6          	movzbl %sil,%r8d
+ 2e1:	40 80 fe 80          	cmp    $0x80,%sil
+ 2e5:	0f 84 35 01 00 00    	je     420 <strintcmp+0x420>
+ 2eb:	41 8d 78 d0          	lea    -0x30(%r8),%edi
+ 2ef:	41 29 c8             	sub    %ecx,%r8d
+ 2f2:	83 e9 30             	sub    $0x30,%ecx
+ 2f5:	83 f9 09             	cmp    $0x9,%ecx
+ 2f8:	0f 87 f2 01 00 00    	ja     4f0 <strintcmp+0x4f0>
+ 2fe:	31 f6                	xor    %esi,%esi
+ 300:	0f b6 4a 01          	movzbl 0x1(%rdx),%ecx
+ 304:	48 83 c2 01          	add    $0x1,%rdx
+ 308:	80 f9 80             	cmp    $0x80,%cl
+ 30b:	74 f3                	je     300 <strintcmp+0x300>
+ 30d:	83 e9 30             	sub    $0x30,%ecx
+ 310:	48 83 c6 01          	add    $0x1,%rsi
+ 314:	83 f9 09             	cmp    $0x9,%ecx
+ 317:	76 e7                	jbe    300 <strintcmp+0x300>
+ 319:	83 ff 09             	cmp    $0x9,%edi
+ 31c:	77 4d                	ja     36b <strintcmp+0x36b>
+ 31e:	31 c9                	xor    %ecx,%ecx
+ 320:	0f b6 50 01          	movzbl 0x1(%rax),%edx
+ 324:	48 83 c0 01          	add    $0x1,%rax
+ 328:	80 fa 80             	cmp    $0x80,%dl
+ 32b:	74 f3                	je     320 <strintcmp+0x320>
+ 32d:	83 ea 30             	sub    $0x30,%edx
+ 330:	48 83 c1 01          	add    $0x1,%rcx
+ 334:	83 fa 09             	cmp    $0x9,%edx
+ 337:	76 e7                	jbe    320 <strintcmp+0x320>
+ 339:	48 39 ce             	cmp    %rcx,%rsi
+ 33c:	74 10                	je     34e <strintcmp+0x34e>
+ 33e:	45 19 c0             	sbb    %r8d,%r8d
+ 341:	41 83 e0 02          	and    $0x2,%r8d
+ 345:	41 83 e8 01          	sub    $0x1,%r8d
+ 349:	e9 93 fe ff ff       	jmp    1e1 <strintcmp+0x1e1>
+ 34e:	31 c0                	xor    %eax,%eax
+ 350:	48 85 f6             	test   %rsi,%rsi
+ 353:	44 0f 44 c0          	cmove  %eax,%r8d
+ 357:	e9 85 fe ff ff       	jmp    1e1 <strintcmp+0x1e1>
+ 35c:	45 31 c0             	xor    %r8d,%r8d
+ 35f:	48 85 f6             	test   %rsi,%rsi
+ 362:	41 0f 95 c0          	setne  %r8b
+ 366:	e9 76 fe ff ff       	jmp    1e1 <strintcmp+0x1e1>
+ 36b:	48 f7 de             	neg    %rsi
+ 36e:	45 19 c0             	sbb    %r8d,%r8d
+ 371:	e9 6b fe ff ff       	jmp    1e1 <strintcmp+0x1e1>
+ 376:	83 ff 09             	cmp    $0x9,%edi
+ 379:	0f 86 61 01 00 00    	jbe    4e0 <strintcmp+0x4e0>
+ 37f:	45 31 c0             	xor    %r8d,%r8d
+ 382:	e9 5a fe ff ff       	jmp    1e1 <strintcmp+0x1e1>
+ 387:	8d 4e d0             	lea    -0x30(%rsi),%ecx
+ 38a:	83 f9 09             	cmp    $0x9,%ecx
+ 38d:	0f 87 a1 00 00 00    	ja     434 <strintcmp+0x434>
+ 393:	81 fe 80 00 00 00    	cmp    $0x80,%esi
+ 399:	0f 84 95 00 00 00    	je     434 <strintcmp+0x434>
+ 39f:	44 8d 46 80          	lea    -0x80(%rsi),%r8d
+ 3a3:	31 f6                	xor    %esi,%esi
+ 3a5:	e9 74 ff ff ff       	jmp    31e <strintcmp+0x31e>
+ 3aa:	80 f9 80             	cmp    $0x80,%cl
+ 3ad:	74 31                	je     3e0 <strintcmp+0x3e0>
+ 3af:	0f b6 4a 01          	movzbl 0x1(%rdx),%ecx
+ 3b3:	48 8d 42 01          	lea    0x1(%rdx),%rax
+ 3b7:	eb 08                	jmp    3c1 <strintcmp+0x3c1>
+ 3b9:	0f b6 48 01          	movzbl 0x1(%rax),%ecx
+ 3bd:	48 83 c0 01          	add    $0x1,%rax
+ 3c1:	80 f9 30             	cmp    $0x30,%cl
+ 3c4:	74 f3                	je     3b9 <strintcmp+0x3b9>
+ 3c6:	0f be c1             	movsbl %cl,%eax
+ 3c9:	45 31 c0             	xor    %r8d,%r8d
+ 3cc:	83 e8 30             	sub    $0x30,%eax
+ 3cf:	83 f8 09             	cmp    $0x9,%eax
+ 3d2:	41 0f 96 c0          	setbe  %r8b
+ 3d6:	e9 06 fe ff ff       	jmp    1e1 <strintcmp+0x1e1>
+ 3db:	83 ff 09             	cmp    $0x9,%edi
+ 3de:	77 9f                	ja     37f <strintcmp+0x37f>
+ 3e0:	44 0f be 42 01       	movsbl 0x1(%rdx),%r8d
+ 3e5:	0f b6 70 01          	movzbl 0x1(%rax),%esi
+ 3e9:	48 83 c2 01          	add    $0x1,%rdx
+ 3ed:	48 83 c0 01          	add    $0x1,%rax
+ 3f1:	44 89 c1             	mov    %r8d,%ecx
+ 3f4:	41 8d 78 d0          	lea    -0x30(%r8),%edi
+ 3f8:	41 38 f0             	cmp    %sil,%r8b
+ 3fb:	74 de                	je     3db <strintcmp+0x3db>
+ 3fd:	44 0f be d6          	movsbl %sil,%r10d
+ 401:	45 8d 4a d0          	lea    -0x30(%r10),%r9d
+ 405:	83 ff 09             	cmp    $0x9,%edi
+ 408:	0f 87 bd 00 00 00    	ja     4cb <strintcmp+0x4cb>
+ 40e:	48 89 d0             	mov    %rdx,%rax
+ 411:	45 29 d0             	sub    %r10d,%r8d
+ 414:	41 83 f9 09          	cmp    $0x9,%r9d
+ 418:	77 a7                	ja     3c1 <strintcmp+0x3c1>
+ 41a:	e9 c2 fd ff ff       	jmp    1e1 <strintcmp+0x1e1>
+ 41f:	90                   	nop
+ 420:	8d 71 d0             	lea    -0x30(%rcx),%esi
+ 423:	41 29 c8             	sub    %ecx,%r8d
+ 426:	bf 50 00 00 00       	mov    $0x50,%edi
+ 42b:	83 fe 09             	cmp    $0x9,%esi
+ 42e:	0f 86 ca fe ff ff    	jbe    2fe <strintcmp+0x2fe>
+ 434:	80 38 80             	cmpb   $0x80,(%rax)
+ 437:	0f b6 0a             	movzbl (%rdx),%ecx
+ 43a:	74 23                	je     45f <strintcmp+0x45f>
+ 43c:	45 31 c0             	xor    %r8d,%r8d
+ 43f:	80 f9 80             	cmp    $0x80,%cl
+ 442:	0f 85 99 fd ff ff    	jne    1e1 <strintcmp+0x1e1>
+ 448:	48 83 c2 01          	add    $0x1,%rdx
+ 44c:	0f be 02             	movsbl (%rdx),%eax
+ 44f:	3c 30                	cmp    $0x30,%al
+ 451:	74 f5                	je     448 <strintcmp+0x448>
+ 453:	e9 4c fe ff ff       	jmp    2a4 <strintcmp+0x2a4>
+ 458:	89 f1                	mov    %esi,%ecx
+ 45a:	e9 a1 fc ff ff       	jmp    100 <strintcmp+0x100>
+ 45f:	80 f9 80             	cmp    $0x80,%cl
+ 462:	74 2a                	je     48e <strintcmp+0x48e>
+ 464:	48 83 c0 01          	add    $0x1,%rax
+ 468:	0f b6 10             	movzbl (%rax),%edx
+ 46b:	80 fa 30             	cmp    $0x30,%dl
+ 46e:	74 f4                	je     464 <strintcmp+0x464>
+ 470:	0f be c2             	movsbl %dl,%eax
+ 473:	45 31 c0             	xor    %r8d,%r8d
+ 476:	83 e8 30             	sub    $0x30,%eax
+ 479:	83 f8 09             	cmp    $0x9,%eax
+ 47c:	41 0f 96 c0          	setbe  %r8b
+ 480:	e9 5c fd ff ff       	jmp    1e1 <strintcmp+0x1e1>
+ 485:	83 ff 09             	cmp    $0x9,%edi
+ 488:	0f 87 f1 fe ff ff    	ja     37f <strintcmp+0x37f>
+ 48e:	44 0f be 40 01       	movsbl 0x1(%rax),%r8d
+ 493:	0f be 4a 01          	movsbl 0x1(%rdx),%ecx
+ 497:	48 83 c0 01          	add    $0x1,%rax
+ 49b:	48 83 c2 01          	add    $0x1,%rdx
+ 49f:	41 8d 78 d0          	lea    -0x30(%r8),%edi
+ 4a3:	41 38 c8             	cmp    %cl,%r8b
+ 4a6:	74 dd                	je     485 <strintcmp+0x485>
+ 4a8:	8d 71 d0             	lea    -0x30(%rcx),%esi
+ 4ab:	83 ff 09             	cmp    $0x9,%edi
+ 4ae:	77 50                	ja     500 <strintcmp+0x500>
+ 4b0:	41 29 c8             	sub    %ecx,%r8d
+ 4b3:	83 fe 09             	cmp    $0x9,%esi
+ 4b6:	77 b0                	ja     468 <strintcmp+0x468>
+ 4b8:	e9 24 fd ff ff       	jmp    1e1 <strintcmp+0x1e1>
+ 4bd:	0f 1f 00             	nopl   (%rax)
+ 4c0:	41 b8 ff ff ff ff    	mov    $0xffffffff,%r8d
+ 4c6:	e9 16 fd ff ff       	jmp    1e1 <strintcmp+0x1e1>
+ 4cb:	45 31 c0             	xor    %r8d,%r8d
+ 4ce:	48 89 c2             	mov    %rax,%rdx
+ 4d1:	41 83 f9 09          	cmp    $0x9,%r9d
+ 4d5:	0f 87 06 fd ff ff    	ja     1e1 <strintcmp+0x1e1>
+ 4db:	e9 ba fd ff ff       	jmp    29a <strintcmp+0x29a>
+ 4e0:	31 f6                	xor    %esi,%esi
+ 4e2:	e9 6b fc ff ff       	jmp    152 <strintcmp+0x152>
+ 4e7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 4ee:	00 00 
+ 4f0:	83 ff 09             	cmp    $0x9,%edi
+ 4f3:	0f 87 86 fe ff ff    	ja     37f <strintcmp+0x37f>
+ 4f9:	31 f6                	xor    %esi,%esi
+ 4fb:	e9 1e fe ff ff       	jmp    31e <strintcmp+0x31e>
+ 500:	45 31 c0             	xor    %r8d,%r8d
+ 503:	83 fe 09             	cmp    $0x9,%esi
+ 506:	0f 87 d5 fc ff ff    	ja     1e1 <strintcmp+0x1e1>
+ 50c:	e9 3b ff ff ff       	jmp    44c <strintcmp+0x44c>

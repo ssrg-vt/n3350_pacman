@@ -1,0 +1,73 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-copy-file-range.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_copy_file_range>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	89 fd                	mov    %edi,%ebp
+   7:	48 81 ec b0 01 00 00 	sub    $0x1b0,%rsp
+   e:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  15:	00 00 
+  17:	48 89 84 24 a8 01 00 	mov    %rax,0x1a8(%rsp)
+  1e:	00 
+  1f:	31 c0                	xor    %eax,%eax
+  21:	80 3d 00 00 00 00 00 	cmpb   $0x0,0x0(%rip)        # 28 <rpl_copy_file_range+0x28>
+  28:	74 36                	je     60 <rpl_copy_file_range+0x60>
+  2a:	0f 8e 93 00 00 00    	jle    c3 <rpl_copy_file_range+0xc3>
+  30:	48 8b 84 24 a8 01 00 	mov    0x1a8(%rsp),%rax
+  37:	00 
+  38:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  3f:	00 00 
+  41:	0f 85 c7 00 00 00    	jne    10e <rpl_copy_file_range+0x10e>
+  47:	48 81 c4 b0 01 00 00 	add    $0x1b0,%rsp
+  4e:	89 ef                	mov    %ebp,%edi
+  50:	5d                   	pop    %rbp
+  51:	e9 00 00 00 00       	jmp    56 <rpl_copy_file_range+0x56>
+  56:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  5d:	00 00 00 
+  60:	48 8d 7c 24 20       	lea    0x20(%rsp),%rdi
+  65:	44 89 4c 24 1c       	mov    %r9d,0x1c(%rsp)
+  6a:	4c 89 44 24 10       	mov    %r8,0x10(%rsp)
+  6f:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+  74:	89 54 24 18          	mov    %edx,0x18(%rsp)
+  78:	48 89 34 24          	mov    %rsi,(%rsp)
+  7c:	e8 00 00 00 00       	call   81 <rpl_copy_file_range+0x81>
+  81:	48 8b 34 24          	mov    (%rsp),%rsi
+  85:	8b 54 24 18          	mov    0x18(%rsp),%edx
+  89:	80 bc 24 a3 00 00 00 	cmpb   $0x2e,0xa3(%rsp)
+  90:	2e 
+  91:	48 8b 4c 24 08       	mov    0x8(%rsp),%rcx
+  96:	4c 8b 44 24 10       	mov    0x10(%rsp),%r8
+  9b:	44 8b 4c 24 1c       	mov    0x1c(%rsp),%r9d
+  a0:	74 0e                	je     b0 <rpl_copy_file_range+0xb0>
+  a2:	c6 05 00 00 00 00 01 	movb   $0x1,0x0(%rip)        # a9 <rpl_copy_file_range+0xa9>
+  a9:	eb 85                	jmp    30 <rpl_copy_file_range+0x30>
+  ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  b0:	80 bc 24 a2 00 00 00 	cmpb   $0x35,0xa2(%rsp)
+  b7:	35 
+  b8:	7f e8                	jg     a2 <rpl_copy_file_range+0xa2>
+  ba:	74 3c                	je     f8 <rpl_copy_file_range+0xf8>
+  bc:	c6 05 00 00 00 00 ff 	movb   $0xff,0x0(%rip)        # c3 <rpl_copy_file_range+0xc3>
+  c3:	e8 00 00 00 00       	call   c8 <rpl_copy_file_range+0xc8>
+  c8:	c7 00 26 00 00 00    	movl   $0x26,(%rax)
+  ce:	48 8b 84 24 a8 01 00 	mov    0x1a8(%rsp),%rax
+  d5:	00 
+  d6:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  dd:	00 00 
+  df:	75 2d                	jne    10e <rpl_copy_file_range+0x10e>
+  e1:	48 81 c4 b0 01 00 00 	add    $0x1b0,%rsp
+  e8:	48 c7 c0 ff ff ff ff 	mov    $0xffffffffffffffff,%rax
+  ef:	5d                   	pop    %rbp
+  f0:	c3                   	ret    
+  f1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  f8:	80 bc 24 a5 00 00 00 	cmpb   $0x2e,0xa5(%rsp)
+  ff:	2e 
+ 100:	75 a0                	jne    a2 <rpl_copy_file_range+0xa2>
+ 102:	80 bc 24 a4 00 00 00 	cmpb   $0x32,0xa4(%rsp)
+ 109:	32 
+ 10a:	7e b0                	jle    bc <rpl_copy_file_range+0xbc>
+ 10c:	eb 94                	jmp    a2 <rpl_copy_file_range+0xa2>
+ 10e:	e8 00 00 00 00       	call   113 <rpl_copy_file_range+0x113>

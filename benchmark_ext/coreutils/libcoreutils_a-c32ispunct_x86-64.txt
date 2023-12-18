@@ -1,0 +1,9 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-c32ispunct.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <c32ispunct>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	e9 00 00 00 00       	jmp    9 <c32ispunct+0x9>

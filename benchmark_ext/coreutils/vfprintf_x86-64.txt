@@ -1,0 +1,73 @@
+
+/home/lalitssrg/coreutils/lib/vfprintf.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_vfprintf>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	49 89 f0             	mov    %rsi,%r8
+   9:	48 89 d1             	mov    %rdx,%rcx
+   c:	41 54                	push   %r12
+   e:	4c 89 c2             	mov    %r8,%rdx
+  11:	49 89 fc             	mov    %rdi,%r12
+  14:	55                   	push   %rbp
+  15:	53                   	push   %rbx
+  16:	48 81 ec 08 08 00 00 	sub    $0x808,%rsp
+  1d:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  24:	00 00 
+  26:	48 89 84 24 f8 07 00 	mov    %rax,0x7f8(%rsp)
+  2d:	00 
+  2e:	31 c0                	xor    %eax,%eax
+  30:	4c 8d 6c 24 20       	lea    0x20(%rsp),%r13
+  35:	48 8d 74 24 18       	lea    0x18(%rsp),%rsi
+  3a:	48 c7 44 24 18 d0 07 	movq   $0x7d0,0x18(%rsp)
+  41:	00 00 
+  43:	4c 89 ef             	mov    %r13,%rdi
+  46:	e8 00 00 00 00       	call   4b <rpl_vfprintf+0x4b>
+  4b:	48 8b 5c 24 18       	mov    0x18(%rsp),%rbx
+  50:	48 85 c0             	test   %rax,%rax
+  53:	0f 84 7e 00 00 00    	je     d7 <rpl_vfprintf+0xd7>
+  59:	4c 89 e1             	mov    %r12,%rcx
+  5c:	48 89 da             	mov    %rbx,%rdx
+  5f:	be 01 00 00 00       	mov    $0x1,%esi
+  64:	48 89 c7             	mov    %rax,%rdi
+  67:	48 89 c5             	mov    %rax,%rbp
+  6a:	e8 00 00 00 00       	call   6f <rpl_vfprintf+0x6f>
+  6f:	48 39 d8             	cmp    %rbx,%rax
+  72:	72 3c                	jb     b0 <rpl_vfprintf+0xb0>
+  74:	4c 39 ed             	cmp    %r13,%rbp
+  77:	74 08                	je     81 <rpl_vfprintf+0x81>
+  79:	48 89 ef             	mov    %rbp,%rdi
+  7c:	e8 00 00 00 00       	call   81 <rpl_vfprintf+0x81>
+  81:	48 81 fb ff ff ff 7f 	cmp    $0x7fffffff,%rbx
+  88:	77 42                	ja     cc <rpl_vfprintf+0xcc>
+  8a:	89 d8                	mov    %ebx,%eax
+  8c:	48 8b 94 24 f8 07 00 	mov    0x7f8(%rsp),%rdx
+  93:	00 
+  94:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  9b:	00 00 
+  9d:	75 47                	jne    e6 <rpl_vfprintf+0xe6>
+  9f:	48 81 c4 08 08 00 00 	add    $0x808,%rsp
+  a6:	5b                   	pop    %rbx
+  a7:	5d                   	pop    %rbp
+  a8:	41 5c                	pop    %r12
+  aa:	41 5d                	pop    %r13
+  ac:	c3                   	ret    
+  ad:	0f 1f 00             	nopl   (%rax)
+  b0:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  b5:	4c 39 ed             	cmp    %r13,%rbp
+  b8:	74 d2                	je     8c <rpl_vfprintf+0x8c>
+  ba:	48 89 ef             	mov    %rbp,%rdi
+  bd:	89 44 24 0c          	mov    %eax,0xc(%rsp)
+  c1:	e8 00 00 00 00       	call   c6 <rpl_vfprintf+0xc6>
+  c6:	8b 44 24 0c          	mov    0xc(%rsp),%eax
+  ca:	eb c0                	jmp    8c <rpl_vfprintf+0x8c>
+  cc:	e8 00 00 00 00       	call   d1 <rpl_vfprintf+0xd1>
+  d1:	c7 00 4b 00 00 00    	movl   $0x4b,(%rax)
+  d7:	4c 89 e7             	mov    %r12,%rdi
+  da:	e8 00 00 00 00       	call   df <rpl_vfprintf+0xdf>
+  df:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  e4:	eb a6                	jmp    8c <rpl_vfprintf+0x8c>
+  e6:	e8 00 00 00 00       	call   eb <rpl_vfprintf+0xeb>

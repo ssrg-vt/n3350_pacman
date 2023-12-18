@@ -1,0 +1,113 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-same.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <same_nameat>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	49 89 f7             	mov    %rsi,%r15
+   9:	41 56                	push   %r14
+   b:	49 89 ce             	mov    %rcx,%r14
+   e:	41 55                	push   %r13
+  10:	41 54                	push   %r12
+  12:	55                   	push   %rbp
+  13:	53                   	push   %rbx
+  14:	89 d3                	mov    %edx,%ebx
+  16:	48 81 ec 48 01 00 00 	sub    $0x148,%rsp
+  1d:	89 7c 24 08          	mov    %edi,0x8(%rsp)
+  21:	48 89 f7             	mov    %rsi,%rdi
+  24:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  2b:	00 00 
+  2d:	48 89 84 24 38 01 00 	mov    %rax,0x138(%rsp)
+  34:	00 
+  35:	31 c0                	xor    %eax,%eax
+  37:	e8 00 00 00 00       	call   3c <same_nameat+0x3c>
+  3c:	4c 89 f7             	mov    %r14,%rdi
+  3f:	48 89 c5             	mov    %rax,%rbp
+  42:	e8 00 00 00 00       	call   47 <same_nameat+0x47>
+  47:	48 89 ef             	mov    %rbp,%rdi
+  4a:	49 89 c4             	mov    %rax,%r12
+  4d:	e8 00 00 00 00       	call   52 <same_nameat+0x52>
+  52:	4c 89 e7             	mov    %r12,%rdi
+  55:	49 89 c5             	mov    %rax,%r13
+  58:	e8 00 00 00 00       	call   5d <same_nameat+0x5d>
+  5d:	45 31 c9             	xor    %r9d,%r9d
+  60:	49 39 c5             	cmp    %rax,%r13
+  63:	74 33                	je     98 <same_nameat+0x98>
+  65:	48 8b 84 24 38 01 00 	mov    0x138(%rsp),%rax
+  6c:	00 
+  6d:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  74:	00 00 
+  76:	0f 85 c2 00 00 00    	jne    13e <same_nameat+0x13e>
+  7c:	48 81 c4 48 01 00 00 	add    $0x148,%rsp
+  83:	44 89 c8             	mov    %r9d,%eax
+  86:	5b                   	pop    %rbx
+  87:	5d                   	pop    %rbp
+  88:	41 5c                	pop    %r12
+  8a:	41 5d                	pop    %r13
+  8c:	41 5e                	pop    %r14
+  8e:	41 5f                	pop    %r15
+  90:	c3                   	ret    
+  91:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  98:	4c 89 ea             	mov    %r13,%rdx
+  9b:	4c 89 e6             	mov    %r12,%rsi
+  9e:	48 89 ef             	mov    %rbp,%rdi
+  a1:	44 88 4c 24 0f       	mov    %r9b,0xf(%rsp)
+  a6:	e8 00 00 00 00       	call   ab <same_nameat+0xab>
+  ab:	45 31 c9             	xor    %r9d,%r9d
+  ae:	85 c0                	test   %eax,%eax
+  b0:	75 b3                	jne    65 <same_nameat+0x65>
+  b2:	4c 89 ff             	mov    %r15,%rdi
+  b5:	e8 00 00 00 00       	call   ba <same_nameat+0xba>
+  ba:	8b 7c 24 08          	mov    0x8(%rsp),%edi
+  be:	48 8d 54 24 10       	lea    0x10(%rsp),%rdx
+  c3:	b9 00 01 00 00       	mov    $0x100,%ecx
+  c8:	48 89 c6             	mov    %rax,%rsi
+  cb:	48 89 c5             	mov    %rax,%rbp
+  ce:	e8 00 00 00 00       	call   d3 <same_nameat+0xd3>
+  d3:	85 c0                	test   %eax,%eax
+  d5:	75 6c                	jne    143 <same_nameat+0x143>
+  d7:	48 89 ef             	mov    %rbp,%rdi
+  da:	e8 00 00 00 00       	call   df <same_nameat+0xdf>
+  df:	4c 89 f7             	mov    %r14,%rdi
+  e2:	e8 00 00 00 00       	call   e7 <same_nameat+0xe7>
+  e7:	48 8d 94 24 a0 00 00 	lea    0xa0(%rsp),%rdx
+  ee:	00 
+  ef:	b9 00 01 00 00       	mov    $0x100,%ecx
+  f4:	89 df                	mov    %ebx,%edi
+  f6:	48 89 c6             	mov    %rax,%rsi
+  f9:	48 89 c5             	mov    %rax,%rbp
+  fc:	e8 00 00 00 00       	call   101 <same_nameat+0x101>
+ 101:	85 c0                	test   %eax,%eax
+ 103:	75 3e                	jne    143 <same_nameat+0x143>
+ 105:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 10a:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 10f:	48 89 ef             	mov    %rbp,%rdi
+ 112:	48 33 84 24 a0 00 00 	xor    0xa0(%rsp),%rax
+ 119:	00 
+ 11a:	48 33 94 24 a8 00 00 	xor    0xa8(%rsp),%rdx
+ 121:	00 
+ 122:	48 09 d0             	or     %rdx,%rax
+ 125:	41 0f 94 c1          	sete   %r9b
+ 129:	44 88 4c 24 08       	mov    %r9b,0x8(%rsp)
+ 12e:	e8 00 00 00 00       	call   133 <same_nameat+0x133>
+ 133:	44 0f b6 4c 24 08    	movzbl 0x8(%rsp),%r9d
+ 139:	e9 27 ff ff ff       	jmp    65 <same_nameat+0x65>
+ 13e:	e8 00 00 00 00       	call   143 <same_nameat+0x143>
+ 143:	e8 00 00 00 00       	call   148 <same_nameat+0x148>
+ 148:	48 89 e9             	mov    %rbp,%rcx
+ 14b:	bf 01 00 00 00       	mov    $0x1,%edi
+ 150:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 157 <same_nameat+0x157>
+ 157:	8b 30                	mov    (%rax),%esi
+ 159:	31 c0                	xor    %eax,%eax
+ 15b:	e8 00 00 00 00       	call   160 <same_name>
+
+0000000000000160 <same_name>:
+ 160:	f3 0f 1e fa          	endbr64 
+ 164:	48 89 f1             	mov    %rsi,%rcx
+ 167:	ba 9c ff ff ff       	mov    $0xffffff9c,%edx
+ 16c:	48 89 fe             	mov    %rdi,%rsi
+ 16f:	bf 9c ff ff ff       	mov    $0xffffff9c,%edi
+ 174:	e9 87 fe ff ff       	jmp    0 <same_nameat>

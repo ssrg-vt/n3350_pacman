@@ -1,0 +1,38 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-root-dev-ino.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <get_root_dev_ino>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	53                   	push   %rbx
+   5:	48 89 fb             	mov    %rdi,%rbx
+   8:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # f <get_root_dev_ino+0xf>
+   f:	48 81 ec a0 00 00 00 	sub    $0xa0,%rsp
+  16:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1d:	00 00 
+  1f:	48 89 84 24 98 00 00 	mov    %rax,0x98(%rsp)
+  26:	00 
+  27:	31 c0                	xor    %eax,%eax
+  29:	48 89 e6             	mov    %rsp,%rsi
+  2c:	e8 00 00 00 00       	call   31 <get_root_dev_ino+0x31>
+  31:	85 c0                	test   %eax,%eax
+  33:	75 33                	jne    68 <get_root_dev_ino+0x68>
+  35:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  3a:	48 89 03             	mov    %rax,(%rbx)
+  3d:	48 8b 04 24          	mov    (%rsp),%rax
+  41:	48 89 43 08          	mov    %rax,0x8(%rbx)
+  45:	48 89 d8             	mov    %rbx,%rax
+  48:	48 8b 94 24 98 00 00 	mov    0x98(%rsp),%rdx
+  4f:	00 
+  50:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  57:	00 00 
+  59:	75 11                	jne    6c <get_root_dev_ino+0x6c>
+  5b:	48 81 c4 a0 00 00 00 	add    $0xa0,%rsp
+  62:	5b                   	pop    %rbx
+  63:	c3                   	ret    
+  64:	0f 1f 40 00          	nopl   0x0(%rax)
+  68:	31 c0                	xor    %eax,%eax
+  6a:	eb dc                	jmp    48 <get_root_dev_ino+0x48>
+  6c:	e8 00 00 00 00       	call   71 <get_root_dev_ino+0x71>

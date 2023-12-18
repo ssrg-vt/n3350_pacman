@@ -1,0 +1,66 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-closeout.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <close_stdout_set_file_name>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 89 3d 00 00 00 00 	mov    %rdi,0x0(%rip)        # b <close_stdout_set_file_name+0xb>
+   b:	c3                   	ret    
+   c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000010 <close_stdout_set_ignore_EPIPE>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	40 88 3d 00 00 00 00 	mov    %dil,0x0(%rip)        # 1b <close_stdout_set_ignore_EPIPE+0xb>
+  1b:	c3                   	ret    
+  1c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000020 <close_stdout>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	41 54                	push   %r12
+  26:	53                   	push   %rbx
+  27:	48 83 ec 08          	sub    $0x8,%rsp
+  2b:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 32 <close_stdout+0x12>
+  32:	e8 00 00 00 00       	call   37 <close_stdout+0x17>
+  37:	85 c0                	test   %eax,%eax
+  39:	74 16                	je     51 <close_stdout+0x31>
+  3b:	e8 00 00 00 00       	call   40 <close_stdout+0x20>
+  40:	80 3d 00 00 00 00 00 	cmpb   $0x0,0x0(%rip)        # 47 <close_stdout+0x27>
+  47:	48 89 c3             	mov    %rax,%rbx
+  4a:	74 1d                	je     69 <close_stdout+0x49>
+  4c:	83 38 20             	cmpl   $0x20,(%rax)
+  4f:	75 18                	jne    69 <close_stdout+0x49>
+  51:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 58 <close_stdout+0x38>
+  58:	e8 00 00 00 00       	call   5d <close_stdout+0x3d>
+  5d:	85 c0                	test   %eax,%eax
+  5f:	75 47                	jne    a8 <close_stdout+0x88>
+  61:	48 83 c4 08          	add    $0x8,%rsp
+  65:	5b                   	pop    %rbx
+  66:	41 5c                	pop    %r12
+  68:	c3                   	ret    
+  69:	31 ff                	xor    %edi,%edi
+  6b:	ba 05 00 00 00       	mov    $0x5,%edx
+  70:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 77 <close_stdout+0x57>
+  77:	e8 00 00 00 00       	call   7c <close_stdout+0x5c>
+  7c:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 83 <close_stdout+0x63>
+  83:	49 89 c4             	mov    %rax,%r12
+  86:	48 85 ff             	test   %rdi,%rdi
+  89:	74 28                	je     b3 <close_stdout+0x93>
+  8b:	e8 00 00 00 00       	call   90 <close_stdout+0x70>
+  90:	8b 33                	mov    (%rbx),%esi
+  92:	4d 89 e0             	mov    %r12,%r8
+  95:	31 ff                	xor    %edi,%edi
+  97:	48 89 c1             	mov    %rax,%rcx
+  9a:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # a1 <close_stdout+0x81>
+  a1:	31 c0                	xor    %eax,%eax
+  a3:	e8 00 00 00 00       	call   a8 <close_stdout+0x88>
+  a8:	8b 3d 00 00 00 00    	mov    0x0(%rip),%edi        # ae <close_stdout+0x8e>
+  ae:	e8 00 00 00 00       	call   b3 <close_stdout+0x93>
+  b3:	8b 33                	mov    (%rbx),%esi
+  b5:	48 89 c1             	mov    %rax,%rcx
+  b8:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # bf <close_stdout+0x9f>
+  bf:	31 ff                	xor    %edi,%edi
+  c1:	31 c0                	xor    %eax,%eax
+  c3:	e8 00 00 00 00       	call   c8 <close_stdout+0xa8>
+  c8:	eb de                	jmp    a8 <close_stdout+0x88>

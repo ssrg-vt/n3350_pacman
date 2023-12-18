@@ -1,0 +1,173 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mgetgroups.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mgetgroups>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	41 55                	push   %r13
+   a:	41 54                	push   %r12
+   c:	55                   	push   %rbp
+   d:	89 f5                	mov    %esi,%ebp
+   f:	53                   	push   %rbx
+  10:	48 83 ec 28          	sub    $0x28,%rsp
+  14:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+  19:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  20:	00 00 
+  22:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  27:	31 c0                	xor    %eax,%eax
+  29:	48 85 ff             	test   %rdi,%rdi
+  2c:	0f 84 ee 00 00 00    	je     120 <mgetgroups+0x120>
+  32:	48 89 fb             	mov    %rdi,%rbx
+  35:	bf 28 00 00 00       	mov    $0x28,%edi
+  3a:	c7 44 24 14 0a 00 00 	movl   $0xa,0x14(%rsp)
+  41:	00 
+  42:	e8 00 00 00 00       	call   47 <mgetgroups+0x47>
+  47:	49 89 c6             	mov    %rax,%r14
+  4a:	48 85 c0             	test   %rax,%rax
+  4d:	0f 84 80 00 00 00    	je     d3 <mgetgroups+0xd3>
+  53:	41 bc 0a 00 00 00    	mov    $0xa,%r12d
+  59:	4c 8d 6c 24 14       	lea    0x14(%rsp),%r13
+  5e:	eb 35                	jmp    95 <mgetgroups+0x95>
+  60:	44 8b 64 24 14       	mov    0x14(%rsp),%r12d
+  65:	49 63 f4             	movslq %r12d,%rsi
+  68:	48 89 f0             	mov    %rsi,%rax
+  6b:	48 c1 e8 3e          	shr    $0x3e,%rax
+  6f:	0f 95 c0             	setne  %al
+  72:	48 c1 e6 02          	shl    $0x2,%rsi
+  76:	0f b6 c0             	movzbl %al,%eax
+  79:	78 45                	js     c0 <mgetgroups+0xc0>
+  7b:	48 85 c0             	test   %rax,%rax
+  7e:	75 40                	jne    c0 <mgetgroups+0xc0>
+  80:	4c 89 f7             	mov    %r14,%rdi
+  83:	e8 00 00 00 00       	call   88 <mgetgroups+0x88>
+  88:	48 85 c0             	test   %rax,%rax
+  8b:	74 3e                	je     cb <mgetgroups+0xcb>
+  8d:	45 85 ff             	test   %r15d,%r15d
+  90:	79 7e                	jns    110 <mgetgroups+0x110>
+  92:	49 89 c6             	mov    %rax,%r14
+  95:	4c 89 e9             	mov    %r13,%rcx
+  98:	4c 89 f2             	mov    %r14,%rdx
+  9b:	89 ee                	mov    %ebp,%esi
+  9d:	48 89 df             	mov    %rbx,%rdi
+  a0:	e8 00 00 00 00       	call   a5 <mgetgroups+0xa5>
+  a5:	41 89 c7             	mov    %eax,%r15d
+  a8:	85 c0                	test   %eax,%eax
+  aa:	79 b4                	jns    60 <mgetgroups+0x60>
+  ac:	8b 44 24 14          	mov    0x14(%rsp),%eax
+  b0:	44 39 e0             	cmp    %r12d,%eax
+  b3:	74 4b                	je     100 <mgetgroups+0x100>
+  b5:	41 89 c4             	mov    %eax,%r12d
+  b8:	eb ab                	jmp    65 <mgetgroups+0x65>
+  ba:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  c0:	e8 00 00 00 00       	call   c5 <mgetgroups+0xc5>
+  c5:	c7 00 0c 00 00 00    	movl   $0xc,(%rax)
+  cb:	4c 89 f7             	mov    %r14,%rdi
+  ce:	e8 00 00 00 00       	call   d3 <mgetgroups+0xd3>
+  d3:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+  d9:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  de:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  e5:	00 00 
+  e7:	0f 85 5e 01 00 00    	jne    24b <mgetgroups+0x24b>
+  ed:	48 83 c4 28          	add    $0x28,%rsp
+  f1:	44 89 e0             	mov    %r12d,%eax
+  f4:	5b                   	pop    %rbx
+  f5:	5d                   	pop    %rbp
+  f6:	41 5c                	pop    %r12
+  f8:	41 5d                	pop    %r13
+  fa:	41 5e                	pop    %r14
+  fc:	41 5f                	pop    %r15
+  fe:	c3                   	ret    
+  ff:	90                   	nop
+ 100:	45 01 e4             	add    %r12d,%r12d
+ 103:	44 89 64 24 14       	mov    %r12d,0x14(%rsp)
+ 108:	e9 58 ff ff ff       	jmp    65 <mgetgroups+0x65>
+ 10d:	0f 1f 00             	nopl   (%rax)
+ 110:	48 8b 4c 24 08       	mov    0x8(%rsp),%rcx
+ 115:	48 89 01             	mov    %rax,(%rcx)
+ 118:	eb bf                	jmp    d9 <mgetgroups+0xd9>
+ 11a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 120:	48 c7 c2 ff ff ff ff 	mov    $0xffffffffffffffff,%rdx
+ 127:	31 f6                	xor    %esi,%esi
+ 129:	31 ff                	xor    %edi,%edi
+ 12b:	e8 00 00 00 00       	call   130 <mgetgroups+0x130>
+ 130:	89 44 24 14          	mov    %eax,0x14(%rsp)
+ 134:	89 c3                	mov    %eax,%ebx
+ 136:	85 c0                	test   %eax,%eax
+ 138:	0f 88 c2 00 00 00    	js     200 <mgetgroups+0x200>
+ 13e:	83 fd ff             	cmp    $0xffffffff,%ebp
+ 141:	41 0f 95 c4          	setne  %r12b
+ 145:	85 c0                	test   %eax,%eax
+ 147:	74 05                	je     14e <mgetgroups+0x14e>
+ 149:	45 84 e4             	test   %r12b,%r12b
+ 14c:	74 07                	je     155 <mgetgroups+0x155>
+ 14e:	83 c3 01             	add    $0x1,%ebx
+ 151:	89 5c 24 14          	mov    %ebx,0x14(%rsp)
+ 155:	48 63 fb             	movslq %ebx,%rdi
+ 158:	48 c1 e7 02          	shl    $0x2,%rdi
+ 15c:	e8 00 00 00 00       	call   161 <mgetgroups+0x161>
+ 161:	49 89 c5             	mov    %rax,%r13
+ 164:	48 85 c0             	test   %rax,%rax
+ 167:	0f 84 66 ff ff ff    	je     d3 <mgetgroups+0xd3>
+ 16d:	41 0f b6 c4          	movzbl %r12b,%eax
+ 171:	45 0f b6 e4          	movzbl %r12b,%r12d
+ 175:	48 c7 c2 ff ff ff ff 	mov    $0xffffffffffffffff,%rdx
+ 17c:	44 29 e3             	sub    %r12d,%ebx
+ 17f:	49 8d 74 85 00       	lea    0x0(%r13,%rax,4),%rsi
+ 184:	89 df                	mov    %ebx,%edi
+ 186:	e8 00 00 00 00       	call   18b <mgetgroups+0x18b>
+ 18b:	41 89 c4             	mov    %eax,%r12d
+ 18e:	85 c0                	test   %eax,%eax
+ 190:	0f 88 a4 00 00 00    	js     23a <mgetgroups+0x23a>
+ 196:	83 fd ff             	cmp    $0xffffffff,%ebp
+ 199:	74 08                	je     1a3 <mgetgroups+0x1a3>
+ 19b:	41 89 6d 00          	mov    %ebp,0x0(%r13)
+ 19f:	41 83 c4 01          	add    $0x1,%r12d
+ 1a3:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 1a8:	4c 89 28             	mov    %r13,(%rax)
+ 1ab:	41 83 fc 01          	cmp    $0x1,%r12d
+ 1af:	0f 8e 24 ff ff ff    	jle    d9 <mgetgroups+0xd9>
+ 1b5:	49 63 c4             	movslq %r12d,%rax
+ 1b8:	41 8b 75 00          	mov    0x0(%r13),%esi
+ 1bc:	49 8d 4c 85 00       	lea    0x0(%r13,%rax,4),%rcx
+ 1c1:	49 8d 45 04          	lea    0x4(%r13),%rax
+ 1c5:	48 39 c1             	cmp    %rax,%rcx
+ 1c8:	77 21                	ja     1eb <mgetgroups+0x1eb>
+ 1ca:	e9 0a ff ff ff       	jmp    d9 <mgetgroups+0xd9>
+ 1cf:	90                   	nop
+ 1d0:	41 3b 55 00          	cmp    0x0(%r13),%edx
+ 1d4:	74 1b                	je     1f1 <mgetgroups+0x1f1>
+ 1d6:	41 89 55 04          	mov    %edx,0x4(%r13)
+ 1da:	49 83 c5 04          	add    $0x4,%r13
+ 1de:	48 83 c0 04          	add    $0x4,%rax
+ 1e2:	48 39 c1             	cmp    %rax,%rcx
+ 1e5:	0f 86 ee fe ff ff    	jbe    d9 <mgetgroups+0xd9>
+ 1eb:	8b 10                	mov    (%rax),%edx
+ 1ed:	39 f2                	cmp    %esi,%edx
+ 1ef:	75 df                	jne    1d0 <mgetgroups+0x1d0>
+ 1f1:	41 83 ec 01          	sub    $0x1,%r12d
+ 1f5:	eb e7                	jmp    1de <mgetgroups+0x1de>
+ 1f7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 1fe:	00 00 
+ 200:	e8 00 00 00 00       	call   205 <mgetgroups+0x205>
+ 205:	83 38 26             	cmpl   $0x26,(%rax)
+ 208:	0f 85 c5 fe ff ff    	jne    d3 <mgetgroups+0xd3>
+ 20e:	bf 04 00 00 00       	mov    $0x4,%edi
+ 213:	e8 00 00 00 00       	call   218 <mgetgroups+0x218>
+ 218:	48 85 c0             	test   %rax,%rax
+ 21b:	0f 84 b2 fe ff ff    	je     d3 <mgetgroups+0xd3>
+ 221:	48 8b 4c 24 08       	mov    0x8(%rsp),%rcx
+ 226:	45 31 e4             	xor    %r12d,%r12d
+ 229:	83 fd ff             	cmp    $0xffffffff,%ebp
+ 22c:	89 28                	mov    %ebp,(%rax)
+ 22e:	41 0f 95 c4          	setne  %r12b
+ 232:	48 89 01             	mov    %rax,(%rcx)
+ 235:	e9 9f fe ff ff       	jmp    d9 <mgetgroups+0xd9>
+ 23a:	4c 89 ef             	mov    %r13,%rdi
+ 23d:	41 83 cc ff          	or     $0xffffffff,%r12d
+ 241:	e8 00 00 00 00       	call   246 <mgetgroups+0x246>
+ 246:	e9 8e fe ff ff       	jmp    d9 <mgetgroups+0xd9>
+ 24b:	e8 00 00 00 00       	call   250 <mgetgroups+0x250>

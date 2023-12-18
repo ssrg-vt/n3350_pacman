@@ -1,0 +1,65 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xstrtol-error.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xstrtol_fatal>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	53                   	push   %rbx
+   6:	48 83 ec 28          	sub    $0x28,%rsp
+   a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  11:	00 00 
+  13:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  18:	31 c0                	xor    %eax,%eax
+  1a:	8b 2d 00 00 00 00    	mov    0x0(%rip),%ebp        # 20 <xstrtol_fatal+0x20>
+  20:	83 ff 03             	cmp    $0x3,%edi
+  23:	77 6b                	ja     90 <xstrtol_fatal+0x90>
+  25:	83 ff 01             	cmp    $0x1,%edi
+  28:	0f 87 93 00 00 00    	ja     c1 <xstrtol_fatal+0xc1>
+  2e:	0f 85 99 00 00 00    	jne    cd <xstrtol_fatal+0xcd>
+  34:	4c 8d 15 00 00 00 00 	lea    0x0(%rip),%r10        # 3b <xstrtol_fatal+0x3b>
+  3b:	48 63 c6             	movslq %esi,%rax
+  3e:	85 f6                	test   %esi,%esi
+  40:	78 65                	js     a7 <xstrtol_fatal+0xa7>
+  42:	48 c1 e0 05          	shl    $0x5,%rax
+  46:	48 8b 1c 01          	mov    (%rcx,%rax,1),%rbx
+  4a:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 51 <xstrtol_fatal+0x51>
+  51:	4c 89 d6             	mov    %r10,%rsi
+  54:	ba 05 00 00 00       	mov    $0x5,%edx
+  59:	31 ff                	xor    %edi,%edi
+  5b:	4c 89 44 24 08       	mov    %r8,0x8(%rsp)
+  60:	48 89 0c 24          	mov    %rcx,(%rsp)
+  64:	e8 00 00 00 00       	call   69 <xstrtol_fatal+0x69>
+  69:	4c 8b 4c 24 08       	mov    0x8(%rsp),%r9
+  6e:	48 8b 0c 24          	mov    (%rsp),%rcx
+  72:	31 f6                	xor    %esi,%esi
+  74:	48 89 c2             	mov    %rax,%rdx
+  77:	49 89 d8             	mov    %rbx,%r8
+  7a:	89 ef                	mov    %ebp,%edi
+  7c:	31 c0                	xor    %eax,%eax
+  7e:	e8 00 00 00 00       	call   83 <xstrtol_fatal+0x83>
+  83:	e8 00 00 00 00       	call   88 <xstrtol_fatal+0x88>
+  88:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  8f:	00 
+  90:	83 ff 04             	cmp    $0x4,%edi
+  93:	0f 85 00 00 00 00    	jne    99 <xstrtol_fatal+0x99>
+  99:	4c 8d 15 00 00 00 00 	lea    0x0(%rip),%r10        # a0 <xstrtol_fatal+0xa0>
+  a0:	48 63 c6             	movslq %esi,%rax
+  a3:	85 f6                	test   %esi,%esi
+  a5:	79 9b                	jns    42 <xstrtol_fatal+0x42>
+  a7:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # ae <xstrtol_fatal+0xae>
+  ae:	88 54 24 16          	mov    %dl,0x16(%rsp)
+  b2:	48 8d 5c 24 16       	lea    0x16(%rsp),%rbx
+  b7:	c6 44 24 17 00       	movb   $0x0,0x17(%rsp)
+  bc:	48 29 c1             	sub    %rax,%rcx
+  bf:	eb 90                	jmp    51 <xstrtol_fatal+0x51>
+  c1:	4c 8d 15 00 00 00 00 	lea    0x0(%rip),%r10        # c8 <xstrtol_fatal+0xc8>
+  c8:	e9 6e ff ff ff       	jmp    3b <xstrtol_fatal+0x3b>
+  cd:	e9 00 00 00 00       	jmp    d2 <.LC3+0x9a>
+
+Disassembly of section .text.unlikely:
+
+0000000000000000 <xstrtol_fatal.cold>:
+   0:	e8 00 00 00 00       	call   5 <xstrtol_fatal.cold+0x5>

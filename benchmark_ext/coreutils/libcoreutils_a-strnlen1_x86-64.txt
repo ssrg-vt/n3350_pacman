@@ -1,0 +1,26 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-strnlen1.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <strnlen1>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	48 89 f2             	mov    %rsi,%rdx
+   8:	48 89 fd             	mov    %rdi,%rbp
+   b:	53                   	push   %rbx
+   c:	48 89 f3             	mov    %rsi,%rbx
+   f:	31 f6                	xor    %esi,%esi
+  11:	48 83 ec 08          	sub    $0x8,%rsp
+  15:	e8 00 00 00 00       	call   1a <strnlen1+0x1a>
+  1a:	48 89 c2             	mov    %rax,%rdx
+  1d:	48 29 ea             	sub    %rbp,%rdx
+  20:	48 83 c2 01          	add    $0x1,%rdx
+  24:	48 85 c0             	test   %rax,%rax
+  27:	48 89 d8             	mov    %rbx,%rax
+  2a:	48 0f 45 c2          	cmovne %rdx,%rax
+  2e:	48 83 c4 08          	add    $0x8,%rsp
+  32:	5b                   	pop    %rbx
+  33:	5d                   	pop    %rbp
+  34:	c3                   	ret    

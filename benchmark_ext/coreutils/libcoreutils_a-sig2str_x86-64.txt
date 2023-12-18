@@ -1,0 +1,192 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-sig2str.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <str2sig>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	49 89 f5             	mov    %rsi,%r13
+   9:	41 54                	push   %r12
+   b:	49 89 fc             	mov    %rdi,%r12
+   e:	55                   	push   %rbp
+   f:	48 8d 2d 00 00 00 00 	lea    0x0(%rip),%rbp        # 16 <str2sig+0x16>
+  16:	53                   	push   %rbx
+  17:	31 db                	xor    %ebx,%ebx
+  19:	48 83 ec 18          	sub    $0x18,%rsp
+  1d:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  24:	00 00 
+  26:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  2b:	31 c0                	xor    %eax,%eax
+  2d:	0f be 07             	movsbl (%rdi),%eax
+  30:	83 e8 30             	sub    $0x30,%eax
+  33:	83 f8 09             	cmp    $0x9,%eax
+  36:	77 18                	ja     50 <str2sig+0x50>
+  38:	eb 66                	jmp    a0 <str2sig+0xa0>
+  3a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  40:	83 c3 01             	add    $0x1,%ebx
+  43:	48 83 c5 0c          	add    $0xc,%rbp
+  47:	83 fb 23             	cmp    $0x23,%ebx
+  4a:	0f 84 80 00 00 00    	je     d0 <str2sig+0xd0>
+  50:	4c 89 e6             	mov    %r12,%rsi
+  53:	48 89 ef             	mov    %rbp,%rdi
+  56:	e8 00 00 00 00       	call   5b <str2sig+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	75 e1                	jne    40 <str2sig+0x40>
+  5f:	48 8d 14 5b          	lea    (%rbx,%rbx,2),%rdx
+  63:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 6a <str2sig+0x6a>
+  6a:	8b 04 90             	mov    (%rax,%rdx,4),%eax
+  6d:	41 89 c0             	mov    %eax,%r8d
+  70:	41 c1 f8 1f          	sar    $0x1f,%r8d
+  74:	41 89 45 00          	mov    %eax,0x0(%r13)
+  78:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  7d:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  84:	00 00 
+  86:	0f 85 02 01 00 00    	jne    18e <str2sig+0x18e>
+  8c:	48 83 c4 18          	add    $0x18,%rsp
+  90:	44 89 c0             	mov    %r8d,%eax
+  93:	5b                   	pop    %rbx
+  94:	5d                   	pop    %rbp
+  95:	41 5c                	pop    %r12
+  97:	41 5d                	pop    %r13
+  99:	c3                   	ret    
+  9a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  a0:	ba 0a 00 00 00       	mov    $0xa,%edx
+  a5:	48 89 e6             	mov    %rsp,%rsi
+  a8:	e8 00 00 00 00       	call   ad <str2sig+0xad>
+  ad:	48 8b 14 24          	mov    (%rsp),%rdx
+  b1:	80 3a 00             	cmpb   $0x0,(%rdx)
+  b4:	75 06                	jne    bc <str2sig+0xbc>
+  b6:	48 83 f8 40          	cmp    $0x40,%rax
+  ba:	7e b1                	jle    6d <str2sig+0x6d>
+  bc:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  c1:	41 b8 ff ff ff ff    	mov    $0xffffffff,%r8d
+  c7:	eb ab                	jmp    74 <str2sig+0x74>
+  c9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  d0:	e8 00 00 00 00       	call   d5 <str2sig+0xd5>
+  d5:	89 c5                	mov    %eax,%ebp
+  d7:	e8 00 00 00 00       	call   dc <str2sig+0xdc>
+  dc:	89 c3                	mov    %eax,%ebx
+  de:	85 ed                	test   %ebp,%ebp
+  e0:	7e 18                	jle    fa <str2sig+0xfa>
+  e2:	ba 05 00 00 00       	mov    $0x5,%edx
+  e7:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # ee <str2sig+0xee>
+  ee:	4c 89 e7             	mov    %r12,%rdi
+  f1:	e8 00 00 00 00       	call   f6 <str2sig+0xf6>
+  f6:	85 c0                	test   %eax,%eax
+  f8:	74 51                	je     14b <str2sig+0x14b>
+  fa:	85 db                	test   %ebx,%ebx
+  fc:	7e be                	jle    bc <str2sig+0xbc>
+  fe:	ba 05 00 00 00       	mov    $0x5,%edx
+ 103:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 10a <str2sig+0x10a>
+ 10a:	4c 89 e7             	mov    %r12,%rdi
+ 10d:	e8 00 00 00 00       	call   112 <str2sig+0x112>
+ 112:	85 c0                	test   %eax,%eax
+ 114:	75 a6                	jne    bc <str2sig+0xbc>
+ 116:	ba 0a 00 00 00       	mov    $0xa,%edx
+ 11b:	48 89 e6             	mov    %rsp,%rsi
+ 11e:	49 8d 7c 24 05       	lea    0x5(%r12),%rdi
+ 123:	e8 00 00 00 00       	call   128 <str2sig+0x128>
+ 128:	48 8b 14 24          	mov    (%rsp),%rdx
+ 12c:	80 3a 00             	cmpb   $0x0,(%rdx)
+ 12f:	75 8b                	jne    bc <str2sig+0xbc>
+ 131:	29 dd                	sub    %ebx,%ebp
+ 133:	48 63 ed             	movslq %ebp,%rbp
+ 136:	48 39 e8             	cmp    %rbp,%rax
+ 139:	7c 81                	jl     bc <str2sig+0xbc>
+ 13b:	48 85 c0             	test   %rax,%rax
+ 13e:	0f 8f 78 ff ff ff    	jg     bc <str2sig+0xbc>
+ 144:	01 d8                	add    %ebx,%eax
+ 146:	e9 22 ff ff ff       	jmp    6d <str2sig+0x6d>
+ 14b:	ba 0a 00 00 00       	mov    $0xa,%edx
+ 150:	48 89 e6             	mov    %rsp,%rsi
+ 153:	49 8d 7c 24 05       	lea    0x5(%r12),%rdi
+ 158:	e8 00 00 00 00       	call   15d <str2sig+0x15d>
+ 15d:	48 89 c2             	mov    %rax,%rdx
+ 160:	48 8b 04 24          	mov    (%rsp),%rax
+ 164:	80 38 00             	cmpb   $0x0,(%rax)
+ 167:	0f 85 4f ff ff ff    	jne    bc <str2sig+0xbc>
+ 16d:	48 85 d2             	test   %rdx,%rdx
+ 170:	0f 88 46 ff ff ff    	js     bc <str2sig+0xbc>
+ 176:	89 d8                	mov    %ebx,%eax
+ 178:	29 e8                	sub    %ebp,%eax
+ 17a:	48 98                	cltq   
+ 17c:	48 39 c2             	cmp    %rax,%rdx
+ 17f:	0f 8f 37 ff ff ff    	jg     bc <str2sig+0xbc>
+ 185:	8d 44 15 00          	lea    0x0(%rbp,%rdx,1),%eax
+ 189:	e9 df fe ff ff       	jmp    6d <str2sig+0x6d>
+ 18e:	e8 00 00 00 00       	call   193 <str2sig+0x193>
+ 193:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 19a:	00 00 00 00 
+ 19e:	66 90                	xchg   %ax,%ax
+
+00000000000001a0 <sig2str>:
+ 1a0:	f3 0f 1e fa          	endbr64 
+ 1a4:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 1ab <sig2str+0xb>
+ 1ab:	41 54                	push   %r12
+ 1ad:	31 d2                	xor    %edx,%edx
+ 1af:	55                   	push   %rbp
+ 1b0:	48 89 c1             	mov    %rax,%rcx
+ 1b3:	48 89 f5             	mov    %rsi,%rbp
+ 1b6:	53                   	push   %rbx
+ 1b7:	89 fb                	mov    %edi,%ebx
+ 1b9:	eb 11                	jmp    1cc <sig2str+0x2c>
+ 1bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 1c0:	83 c2 01             	add    $0x1,%edx
+ 1c3:	48 83 c1 0c          	add    $0xc,%rcx
+ 1c7:	83 fa 23             	cmp    $0x23,%edx
+ 1ca:	74 24                	je     1f0 <sig2str+0x50>
+ 1cc:	39 19                	cmp    %ebx,(%rcx)
+ 1ce:	75 f0                	jne    1c0 <sig2str+0x20>
+ 1d0:	48 8d 14 52          	lea    (%rdx,%rdx,2),%rdx
+ 1d4:	48 89 ef             	mov    %rbp,%rdi
+ 1d7:	48 8d 74 90 04       	lea    0x4(%rax,%rdx,4),%rsi
+ 1dc:	e8 00 00 00 00       	call   1e1 <sig2str+0x41>
+ 1e1:	31 c0                	xor    %eax,%eax
+ 1e3:	5b                   	pop    %rbx
+ 1e4:	5d                   	pop    %rbp
+ 1e5:	41 5c                	pop    %r12
+ 1e7:	c3                   	ret    
+ 1e8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 1ef:	00 
+ 1f0:	e8 00 00 00 00       	call   1f5 <sig2str+0x55>
+ 1f5:	41 89 c4             	mov    %eax,%r12d
+ 1f8:	e8 00 00 00 00       	call   1fd <sig2str+0x5d>
+ 1fd:	41 39 dc             	cmp    %ebx,%r12d
+ 200:	7f 70                	jg     272 <sig2str+0xd2>
+ 202:	39 d8                	cmp    %ebx,%eax
+ 204:	7c 6c                	jl     272 <sig2str+0xd2>
+ 206:	89 c2                	mov    %eax,%edx
+ 208:	44 29 e2             	sub    %r12d,%edx
+ 20b:	d1 fa                	sar    %edx
+ 20d:	44 01 e2             	add    %r12d,%edx
+ 210:	39 da                	cmp    %ebx,%edx
+ 212:	7d 4c                	jge    260 <sig2str+0xc0>
+ 214:	ba 58 00 00 00       	mov    $0x58,%edx
+ 219:	c7 45 00 52 54 4d 41 	movl   $0x414d5452,0x0(%rbp)
+ 220:	41 89 c4             	mov    %eax,%r12d
+ 223:	66 89 55 04          	mov    %dx,0x4(%rbp)
+ 227:	89 d8                	mov    %ebx,%eax
+ 229:	44 29 e0             	sub    %r12d,%eax
+ 22c:	74 b5                	je     1e3 <sig2str+0x43>
+ 22e:	48 8d 7d 05          	lea    0x5(%rbp),%rdi
+ 232:	41 89 c0             	mov    %eax,%r8d
+ 235:	31 c0                	xor    %eax,%eax
+ 237:	48 c7 c2 ff ff ff ff 	mov    $0xffffffffffffffff,%rdx
+ 23e:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 245 <sig2str+0xa5>
+ 245:	be 01 00 00 00       	mov    $0x1,%esi
+ 24a:	e8 00 00 00 00       	call   24f <sig2str+0xaf>
+ 24f:	5b                   	pop    %rbx
+ 250:	31 c0                	xor    %eax,%eax
+ 252:	5d                   	pop    %rbp
+ 253:	41 5c                	pop    %r12
+ 255:	c3                   	ret    
+ 256:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 25d:	00 00 00 
+ 260:	b9 4e 00 00 00       	mov    $0x4e,%ecx
+ 265:	c7 45 00 52 54 4d 49 	movl   $0x494d5452,0x0(%rbp)
+ 26c:	66 89 4d 04          	mov    %cx,0x4(%rbp)
+ 270:	eb b5                	jmp    227 <sig2str+0x87>
+ 272:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 277:	e9 67 ff ff ff       	jmp    1e3 <sig2str+0x43>

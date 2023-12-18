@@ -1,0 +1,79 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-closein.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <close_stdin_set_file_name>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 89 3d 00 00 00 00 	mov    %rdi,0x0(%rip)        # b <close_stdin_set_file_name+0xb>
+   b:	c3                   	ret    
+   c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000010 <close_stdin>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	41 55                	push   %r13
+  16:	41 54                	push   %r12
+  18:	55                   	push   %rbp
+  19:	48 8b 2d 00 00 00 00 	mov    0x0(%rip),%rbp        # 20 <close_stdin+0x10>
+  20:	48 89 ef             	mov    %rbp,%rdi
+  23:	e8 00 00 00 00       	call   28 <close_stdin+0x18>
+  28:	48 85 c0             	test   %rax,%rax
+  2b:	75 1b                	jne    48 <close_stdin+0x38>
+  2d:	48 89 ef             	mov    %rbp,%rdi
+  30:	e8 00 00 00 00       	call   35 <close_stdin+0x25>
+  35:	85 c0                	test   %eax,%eax
+  37:	75 36                	jne    6f <close_stdin+0x5f>
+  39:	5d                   	pop    %rbp
+  3a:	41 5c                	pop    %r12
+  3c:	41 5d                	pop    %r13
+  3e:	e9 00 00 00 00       	jmp    43 <close_stdin+0x33>
+  43:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  48:	48 89 ef             	mov    %rbp,%rdi
+  4b:	ba 01 00 00 00       	mov    $0x1,%edx
+  50:	31 f6                	xor    %esi,%esi
+  52:	e8 00 00 00 00       	call   57 <close_stdin+0x47>
+  57:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 5e <close_stdin+0x4e>
+  5e:	85 c0                	test   %eax,%eax
+  60:	0f 84 8a 00 00 00    	je     f0 <close_stdin+0xe0>
+  66:	e8 00 00 00 00       	call   6b <close_stdin+0x5b>
+  6b:	85 c0                	test   %eax,%eax
+  6d:	74 ca                	je     39 <close_stdin+0x29>
+  6f:	ba 05 00 00 00       	mov    $0x5,%edx
+  74:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 7b <close_stdin+0x6b>
+  7b:	31 ff                	xor    %edi,%edi
+  7d:	e8 00 00 00 00       	call   82 <close_stdin+0x72>
+  82:	4c 8b 2d 00 00 00 00 	mov    0x0(%rip),%r13        # 89 <close_stdin+0x79>
+  89:	49 89 c4             	mov    %rax,%r12
+  8c:	e8 00 00 00 00       	call   91 <close_stdin+0x81>
+  91:	48 89 c5             	mov    %rax,%rbp
+  94:	4d 85 ed             	test   %r13,%r13
+  97:	74 37                	je     d0 <close_stdin+0xc0>
+  99:	4c 89 ef             	mov    %r13,%rdi
+  9c:	e8 00 00 00 00       	call   a1 <close_stdin+0x91>
+  a1:	8b 75 00             	mov    0x0(%rbp),%esi
+  a4:	4d 89 e0             	mov    %r12,%r8
+  a7:	31 ff                	xor    %edi,%edi
+  a9:	48 89 c1             	mov    %rax,%rcx
+  ac:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # b3 <close_stdin+0xa3>
+  b3:	31 c0                	xor    %eax,%eax
+  b5:	e8 00 00 00 00       	call   ba <close_stdin+0xaa>
+  ba:	e8 00 00 00 00       	call   bf <close_stdin+0xaf>
+  bf:	8b 3d 00 00 00 00    	mov    0x0(%rip),%edi        # c5 <close_stdin+0xb5>
+  c5:	e8 00 00 00 00       	call   ca <close_stdin+0xba>
+  ca:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  d0:	8b 30                	mov    (%rax),%esi
+  d2:	4c 89 e1             	mov    %r12,%rcx
+  d5:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # dc <close_stdin+0xcc>
+  dc:	31 ff                	xor    %edi,%edi
+  de:	31 c0                	xor    %eax,%eax
+  e0:	e8 00 00 00 00       	call   e5 <close_stdin+0xd5>
+  e5:	e8 00 00 00 00       	call   ea <close_stdin+0xda>
+  ea:	eb d3                	jmp    bf <close_stdin+0xaf>
+  ec:	0f 1f 40 00          	nopl   0x0(%rax)
+  f0:	e8 00 00 00 00       	call   f5 <close_stdin+0xe5>
+  f5:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # fc <close_stdin+0xec>
+  fc:	85 c0                	test   %eax,%eax
+  fe:	0f 84 62 ff ff ff    	je     66 <close_stdin+0x56>
+ 104:	e8 00 00 00 00       	call   109 <close_stdin+0xf9>
+ 109:	e9 61 ff ff ff       	jmp    6f <close_stdin+0x5f>

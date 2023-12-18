@@ -1,0 +1,53 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-fclose.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_fclose>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	55                   	push   %rbp
+   7:	48 89 fd             	mov    %rdi,%rbp
+   a:	53                   	push   %rbx
+   b:	e8 00 00 00 00       	call   10 <rpl_fclose+0x10>
+  10:	48 89 ef             	mov    %rbp,%rdi
+  13:	85 c0                	test   %eax,%eax
+  15:	78 58                	js     6f <rpl_fclose+0x6f>
+  17:	e8 00 00 00 00       	call   1c <rpl_fclose+0x1c>
+  1c:	85 c0                	test   %eax,%eax
+  1e:	75 30                	jne    50 <rpl_fclose+0x50>
+  20:	48 89 ef             	mov    %rbp,%rdi
+  23:	e8 00 00 00 00       	call   28 <rpl_fclose+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	74 40                	je     6c <rpl_fclose+0x6c>
+  2c:	e8 00 00 00 00       	call   31 <rpl_fclose+0x31>
+  31:	48 89 ef             	mov    %rbp,%rdi
+  34:	44 8b 20             	mov    (%rax),%r12d
+  37:	48 89 c3             	mov    %rax,%rbx
+  3a:	e8 00 00 00 00       	call   3f <rpl_fclose+0x3f>
+  3f:	45 85 e4             	test   %r12d,%r12d
+  42:	75 3c                	jne    80 <rpl_fclose+0x80>
+  44:	5b                   	pop    %rbx
+  45:	5d                   	pop    %rbp
+  46:	41 5c                	pop    %r12
+  48:	c3                   	ret    
+  49:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  50:	48 89 ef             	mov    %rbp,%rdi
+  53:	e8 00 00 00 00       	call   58 <rpl_fclose+0x58>
+  58:	31 f6                	xor    %esi,%esi
+  5a:	ba 01 00 00 00       	mov    $0x1,%edx
+  5f:	89 c7                	mov    %eax,%edi
+  61:	e8 00 00 00 00       	call   66 <rpl_fclose+0x66>
+  66:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+  6a:	75 b4                	jne    20 <rpl_fclose+0x20>
+  6c:	48 89 ef             	mov    %rbp,%rdi
+  6f:	5b                   	pop    %rbx
+  70:	5d                   	pop    %rbp
+  71:	41 5c                	pop    %r12
+  73:	e9 00 00 00 00       	jmp    78 <rpl_fclose+0x78>
+  78:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  7f:	00 
+  80:	44 89 23             	mov    %r12d,(%rbx)
+  83:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  88:	eb ba                	jmp    44 <rpl_fclose+0x44>

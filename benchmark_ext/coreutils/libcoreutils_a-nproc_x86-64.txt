@@ -1,0 +1,188 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-nproc.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <parse_omp_threads.part.0>:
+   0:	48 83 ec 18          	sub    $0x18,%rsp
+   4:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+   b:	00 00 
+   d:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  12:	31 c0                	xor    %eax,%eax
+  14:	0f be 07             	movsbl (%rdi),%eax
+  17:	84 c0                	test   %al,%al
+  19:	74 08                	je     23 <parse_omp_threads.part.0+0x23>
+  1b:	3c 0d                	cmp    $0xd,%al
+  1d:	7f 31                	jg     50 <parse_omp_threads.part.0+0x50>
+  1f:	3c 08                	cmp    $0x8,%al
+  21:	7f 1d                	jg     40 <parse_omp_threads.part.0+0x40>
+  23:	31 c0                	xor    %eax,%eax
+  25:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+  2a:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  31:	00 00 
+  33:	0f 85 7d 00 00 00    	jne    b6 <parse_omp_threads.part.0+0xb6>
+  39:	48 83 c4 18          	add    $0x18,%rsp
+  3d:	c3                   	ret    
+  3e:	66 90                	xchg   %ax,%ax
+  40:	0f be 47 01          	movsbl 0x1(%rdi),%eax
+  44:	48 83 c7 01          	add    $0x1,%rdi
+  48:	84 c0                	test   %al,%al
+  4a:	74 d7                	je     23 <parse_omp_threads.part.0+0x23>
+  4c:	3c 0d                	cmp    $0xd,%al
+  4e:	7e cf                	jle    1f <parse_omp_threads.part.0+0x1f>
+  50:	3c 20                	cmp    $0x20,%al
+  52:	74 ec                	je     40 <parse_omp_threads.part.0+0x40>
+  54:	83 e8 30             	sub    $0x30,%eax
+  57:	83 f8 09             	cmp    $0x9,%eax
+  5a:	77 c7                	ja     23 <parse_omp_threads.part.0+0x23>
+  5c:	ba 0a 00 00 00       	mov    $0xa,%edx
+  61:	48 89 e6             	mov    %rsp,%rsi
+  64:	48 c7 04 24 00 00 00 	movq   $0x0,(%rsp)
+  6b:	00 
+  6c:	e8 00 00 00 00       	call   71 <parse_omp_threads.part.0+0x71>
+  71:	48 8b 14 24          	mov    (%rsp),%rdx
+  75:	48 85 d2             	test   %rdx,%rdx
+  78:	74 a9                	je     23 <parse_omp_threads.part.0+0x23>
+  7a:	0f b6 0a             	movzbl (%rdx),%ecx
+  7d:	84 c9                	test   %cl,%cl
+  7f:	74 a4                	je     25 <parse_omp_threads.part.0+0x25>
+  81:	48 83 c2 01          	add    $0x1,%rdx
+  85:	80 f9 0d             	cmp    $0xd,%cl
+  88:	7f 19                	jg     a3 <parse_omp_threads.part.0+0xa3>
+  8a:	80 f9 08             	cmp    $0x8,%cl
+  8d:	7e 94                	jle    23 <parse_omp_threads.part.0+0x23>
+  8f:	48 89 14 24          	mov    %rdx,(%rsp)
+  93:	0f b6 0a             	movzbl (%rdx),%ecx
+  96:	48 83 c2 01          	add    $0x1,%rdx
+  9a:	84 c9                	test   %cl,%cl
+  9c:	74 87                	je     25 <parse_omp_threads.part.0+0x25>
+  9e:	80 f9 0d             	cmp    $0xd,%cl
+  a1:	7e e7                	jle    8a <parse_omp_threads.part.0+0x8a>
+  a3:	80 f9 20             	cmp    $0x20,%cl
+  a6:	74 e7                	je     8f <parse_omp_threads.part.0+0x8f>
+  a8:	80 f9 2c             	cmp    $0x2c,%cl
+  ab:	0f 84 74 ff ff ff    	je     25 <parse_omp_threads.part.0+0x25>
+  b1:	e9 6d ff ff ff       	jmp    23 <parse_omp_threads.part.0+0x23>
+  b6:	e8 00 00 00 00       	call   bb <parse_omp_threads.part.0+0xbb>
+  bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000000c0 <num_processors>:
+  c0:	f3 0f 1e fa          	endbr64 
+  c4:	41 54                	push   %r12
+  c6:	55                   	push   %rbp
+  c7:	53                   	push   %rbx
+  c8:	48 81 ec 90 00 00 00 	sub    $0x90,%rsp
+  cf:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  d6:	00 00 
+  d8:	48 89 84 24 88 00 00 	mov    %rax,0x88(%rsp)
+  df:	00 
+  e0:	31 c0                	xor    %eax,%eax
+  e2:	83 ff 02             	cmp    $0x2,%edi
+  e5:	74 61                	je     148 <num_processors+0x88>
+  e7:	83 ff 01             	cmp    $0x1,%edi
+  ea:	0f 84 95 01 00 00    	je     285 <num_processors+0x1c5>
+  f0:	bf 53 00 00 00       	mov    $0x53,%edi
+  f5:	e8 00 00 00 00       	call   fa <num_processors+0x3a>
+  fa:	48 89 c3             	mov    %rax,%rbx
+  fd:	49 89 c4             	mov    %rax,%r12
+ 100:	48 8d 40 ff          	lea    -0x1(%rax),%rax
+ 104:	48 83 f8 01          	cmp    $0x1,%rax
+ 108:	0f 86 d2 00 00 00    	jbe    1e0 <num_processors+0x120>
+ 10e:	48 85 db             	test   %rbx,%rbx
+ 111:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+ 117:	4c 0f 4f e3          	cmovg  %rbx,%r12
+ 11b:	48 8b 84 24 88 00 00 	mov    0x88(%rsp),%rax
+ 122:	00 
+ 123:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 12a:	00 00 
+ 12c:	0f 85 72 01 00 00    	jne    2a4 <num_processors+0x1e4>
+ 132:	48 81 c4 90 00 00 00 	add    $0x90,%rsp
+ 139:	4c 89 e0             	mov    %r12,%rax
+ 13c:	5b                   	pop    %rbx
+ 13d:	5d                   	pop    %rbp
+ 13e:	41 5c                	pop    %r12
+ 140:	c3                   	ret    
+ 141:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 148:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 14f <num_processors+0x8f>
+ 14f:	e8 00 00 00 00       	call   154 <num_processors+0x94>
+ 154:	48 89 c7             	mov    %rax,%rdi
+ 157:	48 85 c0             	test   %rax,%rax
+ 15a:	0f 84 00 01 00 00    	je     260 <num_processors+0x1a0>
+ 160:	e8 9b fe ff ff       	call   0 <parse_omp_threads.part.0>
+ 165:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 16c <num_processors+0xac>
+ 16c:	48 89 c3             	mov    %rax,%rbx
+ 16f:	e8 00 00 00 00       	call   174 <num_processors+0xb4>
+ 174:	48 89 c7             	mov    %rax,%rdi
+ 177:	48 85 c0             	test   %rax,%rax
+ 17a:	0f 84 18 01 00 00    	je     298 <num_processors+0x1d8>
+ 180:	e8 7b fe ff ff       	call   0 <parse_omp_threads.part.0>
+ 185:	49 89 c4             	mov    %rax,%r12
+ 188:	48 85 c0             	test   %rax,%rax
+ 18b:	48 c7 c0 ff ff ff ff 	mov    $0xffffffffffffffff,%rax
+ 192:	4c 0f 44 e0          	cmove  %rax,%r12
+ 196:	48 85 db             	test   %rbx,%rbx
+ 199:	0f 85 89 00 00 00    	jne    228 <num_processors+0x168>
+ 19f:	48 89 e5             	mov    %rsp,%rbp
+ 1a2:	31 ff                	xor    %edi,%edi
+ 1a4:	be 80 00 00 00       	mov    $0x80,%esi
+ 1a9:	48 89 ea             	mov    %rbp,%rdx
+ 1ac:	e8 00 00 00 00       	call   1b1 <num_processors+0xf1>
+ 1b1:	85 c0                	test   %eax,%eax
+ 1b3:	0f 84 7f 00 00 00    	je     238 <num_processors+0x178>
+ 1b9:	bf 54 00 00 00       	mov    $0x54,%edi
+ 1be:	e8 00 00 00 00       	call   1c3 <num_processors+0x103>
+ 1c3:	4c 39 e0             	cmp    %r12,%rax
+ 1c6:	4c 0f 46 e0          	cmovbe %rax,%r12
+ 1ca:	48 85 c0             	test   %rax,%rax
+ 1cd:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1d2:	4c 0f 4e e0          	cmovle %rax,%r12
+ 1d6:	e9 40 ff ff ff       	jmp    11b <num_processors+0x5b>
+ 1db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 1e0:	48 89 e5             	mov    %rsp,%rbp
+ 1e3:	31 ff                	xor    %edi,%edi
+ 1e5:	be 80 00 00 00       	mov    $0x80,%esi
+ 1ea:	48 89 ea             	mov    %rbp,%rdx
+ 1ed:	e8 00 00 00 00       	call   1f2 <num_processors+0x132>
+ 1f2:	85 c0                	test   %eax,%eax
+ 1f4:	0f 85 21 ff ff ff    	jne    11b <num_processors+0x5b>
+ 1fa:	48 89 ee             	mov    %rbp,%rsi
+ 1fd:	bf 80 00 00 00       	mov    $0x80,%edi
+ 202:	e8 00 00 00 00       	call   207 <num_processors+0x147>
+ 207:	48 98                	cltq   
+ 209:	48 85 c0             	test   %rax,%rax
+ 20c:	0f 84 09 ff ff ff    	je     11b <num_processors+0x5b>
+ 212:	48 39 c3             	cmp    %rax,%rbx
+ 215:	0f 83 00 ff ff ff    	jae    11b <num_processors+0x5b>
+ 21b:	48 89 c3             	mov    %rax,%rbx
+ 21e:	e9 eb fe ff ff       	jmp    10e <num_processors+0x4e>
+ 223:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 228:	49 39 dc             	cmp    %rbx,%r12
+ 22b:	4c 0f 47 e3          	cmova  %rbx,%r12
+ 22f:	e9 e7 fe ff ff       	jmp    11b <num_processors+0x5b>
+ 234:	0f 1f 40 00          	nopl   0x0(%rax)
+ 238:	48 89 ee             	mov    %rbp,%rsi
+ 23b:	bf 80 00 00 00       	mov    $0x80,%edi
+ 240:	e8 00 00 00 00       	call   245 <num_processors+0x185>
+ 245:	48 98                	cltq   
+ 247:	48 85 c0             	test   %rax,%rax
+ 24a:	0f 84 69 ff ff ff    	je     1b9 <num_processors+0xf9>
+ 250:	49 39 c4             	cmp    %rax,%r12
+ 253:	4c 0f 47 e0          	cmova  %rax,%r12
+ 257:	e9 bf fe ff ff       	jmp    11b <num_processors+0x5b>
+ 25c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 260:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 267 <num_processors+0x1a7>
+ 267:	e8 00 00 00 00       	call   26c <num_processors+0x1ac>
+ 26c:	48 89 c7             	mov    %rax,%rdi
+ 26f:	48 85 c0             	test   %rax,%rax
+ 272:	74 11                	je     285 <num_processors+0x1c5>
+ 274:	e8 87 fd ff ff       	call   0 <parse_omp_threads.part.0>
+ 279:	49 89 c4             	mov    %rax,%r12
+ 27c:	48 85 c0             	test   %rax,%rax
+ 27f:	0f 85 1a ff ff ff    	jne    19f <num_processors+0xdf>
+ 285:	49 c7 c4 ff ff ff ff 	mov    $0xffffffffffffffff,%r12
+ 28c:	e9 0e ff ff ff       	jmp    19f <num_processors+0xdf>
+ 291:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 298:	49 c7 c4 ff ff ff ff 	mov    $0xffffffffffffffff,%r12
+ 29f:	e9 f2 fe ff ff       	jmp    196 <num_processors+0xd6>
+ 2a4:	e8 00 00 00 00       	call   2a9 <num_processors+0x1e9>

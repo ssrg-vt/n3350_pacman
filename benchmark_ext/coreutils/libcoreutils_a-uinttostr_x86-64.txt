@@ -1,0 +1,28 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-uinttostr.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <uinttostr>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	c6 46 0a 00          	movb   $0x0,0xa(%rsi)
+   8:	4c 8d 46 0a          	lea    0xa(%rsi),%r8
+   c:	be cd cc cc cc       	mov    $0xcccccccd,%esi
+  11:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  18:	89 f8                	mov    %edi,%eax
+  1a:	89 fa                	mov    %edi,%edx
+  1c:	49 83 e8 01          	sub    $0x1,%r8
+  20:	48 0f af c6          	imul   %rsi,%rax
+  24:	48 c1 e8 23          	shr    $0x23,%rax
+  28:	8d 0c 80             	lea    (%rax,%rax,4),%ecx
+  2b:	01 c9                	add    %ecx,%ecx
+  2d:	29 ca                	sub    %ecx,%edx
+  2f:	83 c2 30             	add    $0x30,%edx
+  32:	41 88 10             	mov    %dl,(%r8)
+  35:	89 fa                	mov    %edi,%edx
+  37:	89 c7                	mov    %eax,%edi
+  39:	83 fa 09             	cmp    $0x9,%edx
+  3c:	77 da                	ja     18 <uinttostr+0x18>
+  3e:	4c 89 c0             	mov    %r8,%rax
+  41:	c3                   	ret    

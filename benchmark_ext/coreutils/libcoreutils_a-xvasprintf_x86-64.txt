@@ -1,0 +1,162 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xvasprintf.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xstrcat>:
+   0:	41 57                	push   %r15
+   2:	41 56                	push   %r14
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	55                   	push   %rbp
+   9:	53                   	push   %rbx
+   a:	48 83 ec 28          	sub    $0x28,%rsp
+   e:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  15:	00 00 
+  17:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  1c:	31 c0                	xor    %eax,%eax
+  1e:	f3 0f 6f 06          	movdqu (%rsi),%xmm0
+  22:	0f 11 04 24          	movups %xmm0,(%rsp)
+  26:	4c 8b 7e 10          	mov    0x10(%rsi),%r15
+  2a:	4c 89 7c 24 10       	mov    %r15,0x10(%rsp)
+  2f:	48 85 ff             	test   %rdi,%rdi
+  32:	0f 84 c8 00 00 00    	je     100 <xstrcat+0x100>
+  38:	49 89 fd             	mov    %rdi,%r13
+  3b:	49 89 f4             	mov    %rsi,%r12
+  3e:	48 89 fd             	mov    %rdi,%rbp
+  41:	31 db                	xor    %ebx,%ebx
+  43:	49 c7 c6 ff ff ff ff 	mov    $0xffffffffffffffff,%r14
+  4a:	eb 24                	jmp    70 <xstrcat+0x70>
+  4c:	0f 1f 40 00          	nopl   0x0(%rax)
+  50:	89 c2                	mov    %eax,%edx
+  52:	83 c0 08             	add    $0x8,%eax
+  55:	89 04 24             	mov    %eax,(%rsp)
+  58:	4c 01 fa             	add    %r15,%rdx
+  5b:	48 8b 3a             	mov    (%rdx),%rdi
+  5e:	e8 00 00 00 00       	call   63 <xstrcat+0x63>
+  63:	48 01 c3             	add    %rax,%rbx
+  66:	49 0f 42 de          	cmovb  %r14,%rbx
+  6a:	48 83 ed 01          	sub    $0x1,%rbp
+  6e:	74 20                	je     90 <xstrcat+0x90>
+  70:	8b 04 24             	mov    (%rsp),%eax
+  73:	83 f8 2f             	cmp    $0x2f,%eax
+  76:	76 d8                	jbe    50 <xstrcat+0x50>
+  78:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+  7d:	48 8d 42 08          	lea    0x8(%rdx),%rax
+  81:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  86:	eb d3                	jmp    5b <xstrcat+0x5b>
+  88:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  8f:	00 
+  90:	48 81 fb ff ff ff 7f 	cmp    $0x7fffffff,%rbx
+  97:	0f 87 a3 00 00 00    	ja     140 <xstrcat+0x140>
+  9d:	48 8d 7b 01          	lea    0x1(%rbx),%rdi
+  a1:	e8 00 00 00 00       	call   a6 <xstrcat+0xa6>
+  a6:	49 89 c6             	mov    %rax,%r14
+  a9:	48 89 c5             	mov    %rax,%rbp
+  ac:	eb 35                	jmp    e3 <xstrcat+0xe3>
+  ae:	66 90                	xchg   %ax,%ax
+  b0:	89 c2                	mov    %eax,%edx
+  b2:	83 c0 08             	add    $0x8,%eax
+  b5:	49 03 54 24 10       	add    0x10(%r12),%rdx
+  ba:	41 89 04 24          	mov    %eax,(%r12)
+  be:	4c 8b 3a             	mov    (%rdx),%r15
+  c1:	4c 89 ff             	mov    %r15,%rdi
+  c4:	e8 00 00 00 00       	call   c9 <xstrcat+0xc9>
+  c9:	48 89 ef             	mov    %rbp,%rdi
+  cc:	4c 89 fe             	mov    %r15,%rsi
+  cf:	48 89 c3             	mov    %rax,%rbx
+  d2:	48 89 c2             	mov    %rax,%rdx
+  d5:	e8 00 00 00 00       	call   da <xstrcat+0xda>
+  da:	48 01 dd             	add    %rbx,%rbp
+  dd:	49 83 ed 01          	sub    $0x1,%r13
+  e1:	74 2d                	je     110 <xstrcat+0x110>
+  e3:	41 8b 04 24          	mov    (%r12),%eax
+  e7:	83 f8 2f             	cmp    $0x2f,%eax
+  ea:	76 c4                	jbe    b0 <xstrcat+0xb0>
+  ec:	49 8b 54 24 08       	mov    0x8(%r12),%rdx
+  f1:	48 8d 42 08          	lea    0x8(%rdx),%rax
+  f5:	49 89 44 24 08       	mov    %rax,0x8(%r12)
+  fa:	eb c2                	jmp    be <xstrcat+0xbe>
+  fc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 100:	bf 01 00 00 00       	mov    $0x1,%edi
+ 105:	e8 00 00 00 00       	call   10a <xstrcat+0x10a>
+ 10a:	48 89 c5             	mov    %rax,%rbp
+ 10d:	49 89 c6             	mov    %rax,%r14
+ 110:	c6 45 00 00          	movb   $0x0,0x0(%rbp)
+ 114:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+ 119:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 120:	00 00 
+ 122:	75 2c                	jne    150 <xstrcat+0x150>
+ 124:	48 83 c4 28          	add    $0x28,%rsp
+ 128:	4c 89 f0             	mov    %r14,%rax
+ 12b:	5b                   	pop    %rbx
+ 12c:	5d                   	pop    %rbp
+ 12d:	41 5c                	pop    %r12
+ 12f:	41 5d                	pop    %r13
+ 131:	41 5e                	pop    %r14
+ 133:	41 5f                	pop    %r15
+ 135:	c3                   	ret    
+ 136:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 13d:	00 00 00 
+ 140:	e8 00 00 00 00       	call   145 <xstrcat+0x145>
+ 145:	45 31 f6             	xor    %r14d,%r14d
+ 148:	c7 00 4b 00 00 00    	movl   $0x4b,(%rax)
+ 14e:	eb c4                	jmp    114 <xstrcat+0x114>
+ 150:	e8 00 00 00 00       	call   155 <xstrcat+0x155>
+ 155:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 15c:	00 00 00 00 
+
+0000000000000160 <xvasprintf>:
+ 160:	f3 0f 1e fa          	endbr64 
+ 164:	48 83 ec 18          	sub    $0x18,%rsp
+ 168:	49 89 f8             	mov    %rdi,%r8
+ 16b:	48 89 f2             	mov    %rsi,%rdx
+ 16e:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 175:	00 00 
+ 177:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 17c:	31 c0                	xor    %eax,%eax
+ 17e:	0f b6 07             	movzbl (%rdi),%eax
+ 181:	31 ff                	xor    %edi,%edi
+ 183:	84 c0                	test   %al,%al
+ 185:	75 1e                	jne    1a5 <xvasprintf+0x45>
+ 187:	eb 67                	jmp    1f0 <xvasprintf+0x90>
+ 189:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 190:	41 80 7c 78 01 73    	cmpb   $0x73,0x1(%r8,%rdi,2)
+ 196:	75 11                	jne    1a9 <xvasprintf+0x49>
+ 198:	48 83 c7 01          	add    $0x1,%rdi
+ 19c:	41 0f b6 04 78       	movzbl (%r8,%rdi,2),%eax
+ 1a1:	84 c0                	test   %al,%al
+ 1a3:	74 4b                	je     1f0 <xvasprintf+0x90>
+ 1a5:	3c 25                	cmp    $0x25,%al
+ 1a7:	74 e7                	je     190 <xvasprintf+0x30>
+ 1a9:	4c 89 c6             	mov    %r8,%rsi
+ 1ac:	48 89 e7             	mov    %rsp,%rdi
+ 1af:	e8 00 00 00 00       	call   1b4 <xvasprintf+0x54>
+ 1b4:	41 89 c0             	mov    %eax,%r8d
+ 1b7:	48 8b 04 24          	mov    (%rsp),%rax
+ 1bb:	45 85 c0             	test   %r8d,%r8d
+ 1be:	78 18                	js     1d8 <xvasprintf+0x78>
+ 1c0:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 1c5:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 1cc:	00 00 
+ 1ce:	75 41                	jne    211 <xvasprintf+0xb1>
+ 1d0:	48 83 c4 18          	add    $0x18,%rsp
+ 1d4:	c3                   	ret    
+ 1d5:	0f 1f 00             	nopl   (%rax)
+ 1d8:	e8 00 00 00 00       	call   1dd <xvasprintf+0x7d>
+ 1dd:	83 38 0c             	cmpl   $0xc,(%rax)
+ 1e0:	74 2a                	je     20c <xvasprintf+0xac>
+ 1e2:	31 c0                	xor    %eax,%eax
+ 1e4:	eb da                	jmp    1c0 <xvasprintf+0x60>
+ 1e6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 1ed:	00 00 00 
+ 1f0:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 1f5:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 1fc:	00 00 
+ 1fe:	75 11                	jne    211 <xvasprintf+0xb1>
+ 200:	48 89 d6             	mov    %rdx,%rsi
+ 203:	48 83 c4 18          	add    $0x18,%rsp
+ 207:	e9 f4 fd ff ff       	jmp    0 <xstrcat>
+ 20c:	e8 00 00 00 00       	call   211 <xvasprintf+0xb1>
+ 211:	e8 00 00 00 00       	call   216 <xvasprintf+0xb6>

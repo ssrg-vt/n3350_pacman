@@ -1,0 +1,41 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-c-strtod.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <c_strtod>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	49 89 fc             	mov    %rdi,%r12
+   9:	55                   	push   %rbp
+   a:	48 89 f5             	mov    %rsi,%rbp
+   d:	48 83 ec 08          	sub    $0x8,%rsp
+  11:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 18 <c_strtod+0x18>
+  18:	48 85 c0             	test   %rax,%rax
+  1b:	74 3b                	je     58 <c_strtod+0x58>
+  1d:	48 8b 15 00 00 00 00 	mov    0x0(%rip),%rdx        # 24 <c_strtod+0x24>
+  24:	48 85 d2             	test   %rdx,%rdx
+  27:	74 17                	je     40 <c_strtod+0x40>
+  29:	48 83 c4 08          	add    $0x8,%rsp
+  2d:	48 89 ee             	mov    %rbp,%rsi
+  30:	4c 89 e7             	mov    %r12,%rdi
+  33:	5d                   	pop    %rbp
+  34:	41 5c                	pop    %r12
+  36:	e9 00 00 00 00       	jmp    3b <c_strtod+0x3b>
+  3b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  40:	48 85 ed             	test   %rbp,%rbp
+  43:	74 04                	je     49 <c_strtod+0x49>
+  45:	4c 89 65 00          	mov    %r12,0x0(%rbp)
+  49:	48 83 c4 08          	add    $0x8,%rsp
+  4d:	66 0f ef c0          	pxor   %xmm0,%xmm0
+  51:	5d                   	pop    %rbp
+  52:	41 5c                	pop    %r12
+  54:	c3                   	ret    
+  55:	0f 1f 00             	nopl   (%rax)
+  58:	31 d2                	xor    %edx,%edx
+  5a:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 61 <c_strtod+0x61>
+  61:	bf bf 1f 00 00       	mov    $0x1fbf,%edi
+  66:	e8 00 00 00 00       	call   6b <c_strtod+0x6b>
+  6b:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 72 <c_strtod+0x72>
+  72:	eb a9                	jmp    1d <c_strtod+0x1d>

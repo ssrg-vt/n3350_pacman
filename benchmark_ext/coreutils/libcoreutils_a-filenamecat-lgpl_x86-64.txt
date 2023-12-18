@@ -1,0 +1,81 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-filenamecat-lgpl.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mfile_name_concat>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	41 55                	push   %r13
+   a:	41 54                	push   %r12
+   c:	49 89 f4             	mov    %rsi,%r12
+   f:	55                   	push   %rbp
+  10:	48 89 fd             	mov    %rdi,%rbp
+  13:	53                   	push   %rbx
+  14:	48 83 ec 18          	sub    $0x18,%rsp
+  18:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+  1d:	e8 00 00 00 00       	call   22 <mfile_name_concat+0x22>
+  22:	49 89 c5             	mov    %rax,%r13
+  25:	48 89 c7             	mov    %rax,%rdi
+  28:	e8 00 00 00 00       	call   2d <mfile_name_concat+0x2d>
+  2d:	49 29 ed             	sub    %rbp,%r13
+  30:	4c 89 e7             	mov    %r12,%rdi
+  33:	4d 8d 74 05 00       	lea    0x0(%r13,%rax,1),%r14
+  38:	48 89 c3             	mov    %rax,%rbx
+  3b:	e8 00 00 00 00       	call   40 <mfile_name_concat+0x40>
+  40:	49 89 c5             	mov    %rax,%r13
+  43:	48 85 db             	test   %rbx,%rbx
+  46:	0f 84 84 00 00 00    	je     d0 <mfile_name_concat+0xd0>
+  4c:	42 80 7c 35 ff 2f    	cmpb   $0x2f,-0x1(%rbp,%r14,1)
+  52:	0f 84 98 00 00 00    	je     f0 <mfile_name_concat+0xf0>
+  58:	31 db                	xor    %ebx,%ebx
+  5a:	41 bf 00 00 00 00    	mov    $0x0,%r15d
+  60:	41 80 3c 24 2f       	cmpb   $0x2f,(%r12)
+  65:	b8 2f 00 00 00       	mov    $0x2f,%eax
+  6a:	41 0f 44 c7          	cmove  %r15d,%eax
+  6e:	0f 95 c3             	setne  %bl
+  71:	88 44 24 07          	mov    %al,0x7(%rsp)
+  75:	4b 8d 7c 2e 01       	lea    0x1(%r14,%r13,1),%rdi
+  7a:	48 01 df             	add    %rbx,%rdi
+  7d:	e8 00 00 00 00       	call   82 <mfile_name_concat+0x82>
+  82:	49 89 c7             	mov    %rax,%r15
+  85:	48 85 c0             	test   %rax,%rax
+  88:	74 34                	je     be <mfile_name_concat+0xbe>
+  8a:	48 89 c7             	mov    %rax,%rdi
+  8d:	4c 89 f2             	mov    %r14,%rdx
+  90:	48 89 ee             	mov    %rbp,%rsi
+  93:	e8 00 00 00 00       	call   98 <mfile_name_concat+0x98>
+  98:	0f b6 4c 24 07       	movzbl 0x7(%rsp),%ecx
+  9d:	48 8d 3c 18          	lea    (%rax,%rbx,1),%rdi
+  a1:	88 08                	mov    %cl,(%rax)
+  a3:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  a8:	48 85 c0             	test   %rax,%rax
+  ab:	74 03                	je     b0 <mfile_name_concat+0xb0>
+  ad:	48 89 38             	mov    %rdi,(%rax)
+  b0:	4c 89 ea             	mov    %r13,%rdx
+  b3:	4c 89 e6             	mov    %r12,%rsi
+  b6:	e8 00 00 00 00       	call   bb <mfile_name_concat+0xbb>
+  bb:	c6 00 00             	movb   $0x0,(%rax)
+  be:	48 83 c4 18          	add    $0x18,%rsp
+  c2:	4c 89 f8             	mov    %r15,%rax
+  c5:	5b                   	pop    %rbx
+  c6:	5d                   	pop    %rbp
+  c7:	41 5c                	pop    %r12
+  c9:	41 5d                	pop    %r13
+  cb:	41 5e                	pop    %r14
+  cd:	41 5f                	pop    %r15
+  cf:	c3                   	ret    
+  d0:	31 db                	xor    %ebx,%ebx
+  d2:	41 bf 00 00 00 00    	mov    $0x0,%r15d
+  d8:	41 80 3c 24 2f       	cmpb   $0x2f,(%r12)
+  dd:	b8 2e 00 00 00       	mov    $0x2e,%eax
+  e2:	41 0f 45 c7          	cmovne %r15d,%eax
+  e6:	0f 94 c3             	sete   %bl
+  e9:	88 44 24 07          	mov    %al,0x7(%rsp)
+  ed:	eb 86                	jmp    75 <mfile_name_concat+0x75>
+  ef:	90                   	nop
+  f0:	c6 44 24 07 00       	movb   $0x0,0x7(%rsp)
+  f5:	31 db                	xor    %ebx,%ebx
+  f7:	e9 79 ff ff ff       	jmp    75 <mfile_name_concat+0x75>

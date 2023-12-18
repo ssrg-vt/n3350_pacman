@@ -1,0 +1,40 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-fd-safer-flag.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fd_safer_flag>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	41 89 fc             	mov    %edi,%r12d
+   b:	55                   	push   %rbp
+   c:	53                   	push   %rbx
+   d:	48 83 ec 08          	sub    $0x8,%rsp
+  11:	83 ff 02             	cmp    $0x2,%edi
+  14:	76 12                	jbe    28 <fd_safer_flag+0x28>
+  16:	48 83 c4 08          	add    $0x8,%rsp
+  1a:	44 89 e0             	mov    %r12d,%eax
+  1d:	5b                   	pop    %rbx
+  1e:	5d                   	pop    %rbp
+  1f:	41 5c                	pop    %r12
+  21:	41 5d                	pop    %r13
+  23:	c3                   	ret    
+  24:	0f 1f 40 00          	nopl   0x0(%rax)
+  28:	e8 00 00 00 00       	call   2d <fd_safer_flag+0x2d>
+  2d:	89 c5                	mov    %eax,%ebp
+  2f:	e8 00 00 00 00       	call   34 <fd_safer_flag+0x34>
+  34:	44 89 e7             	mov    %r12d,%edi
+  37:	41 89 ec             	mov    %ebp,%r12d
+  3a:	44 8b 28             	mov    (%rax),%r13d
+  3d:	48 89 c3             	mov    %rax,%rbx
+  40:	e8 00 00 00 00       	call   45 <fd_safer_flag+0x45>
+  45:	44 89 e0             	mov    %r12d,%eax
+  48:	44 89 2b             	mov    %r13d,(%rbx)
+  4b:	48 83 c4 08          	add    $0x8,%rsp
+  4f:	5b                   	pop    %rbx
+  50:	5d                   	pop    %rbp
+  51:	41 5c                	pop    %r12
+  53:	41 5d                	pop    %r13
+  55:	c3                   	ret    

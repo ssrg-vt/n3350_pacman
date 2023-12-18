@@ -1,0 +1,12 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-timegm.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_timegm>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	c7 47 20 00 00 00 00 	movl   $0x0,0x20(%rdi)
+   b:	48 8b 35 00 00 00 00 	mov    0x0(%rip),%rsi        # 12 <rpl_timegm+0x12>
+  12:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 19 <rpl_timegm+0x19>
+  19:	e9 00 00 00 00       	jmp    1e <rpl_timegm+0x1e>

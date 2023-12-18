@@ -1,0 +1,123 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-canon-host.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <canon_host>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	31 f6                	xor    %esi,%esi
+   8:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # f <canon_host+0xf>
+   f:	55                   	push   %rbp
+  10:	53                   	push   %rbx
+  11:	48 89 fb             	mov    %rdi,%rbx
+  14:	48 83 ec 10          	sub    $0x10,%rsp
+  18:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1f:	00 00 
+  21:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  26:	31 c0                	xor    %eax,%eax
+  28:	48 89 e1             	mov    %rsp,%rcx
+  2b:	48 c7 04 24 00 00 00 	movq   $0x0,(%rsp)
+  32:	00 
+  33:	c7 05 00 00 00 00 02 	movl   $0x2,0x0(%rip)        # 3d <canon_host+0x3d>
+  3a:	00 00 00 
+  3d:	e8 00 00 00 00       	call   42 <canon_host+0x42>
+  42:	85 c0                	test   %eax,%eax
+  44:	75 4a                	jne    90 <canon_host+0x90>
+  46:	48 8b 2c 24          	mov    (%rsp),%rbp
+  4a:	48 8b 7d 20          	mov    0x20(%rbp),%rdi
+  4e:	48 85 ff             	test   %rdi,%rdi
+  51:	48 0f 44 fb          	cmove  %rbx,%rdi
+  55:	e8 00 00 00 00       	call   5a <canon_host+0x5a>
+  5a:	49 89 c4             	mov    %rax,%r12
+  5d:	48 85 c0             	test   %rax,%rax
+  60:	74 3e                	je     a0 <canon_host+0xa0>
+  62:	48 89 ef             	mov    %rbp,%rdi
+  65:	e8 00 00 00 00       	call   6a <canon_host+0x6a>
+  6a:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  6f:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  76:	00 00 
+  78:	75 32                	jne    ac <canon_host+0xac>
+  7a:	48 83 c4 10          	add    $0x10,%rsp
+  7e:	4c 89 e0             	mov    %r12,%rax
+  81:	5b                   	pop    %rbx
+  82:	5d                   	pop    %rbp
+  83:	41 5c                	pop    %r12
+  85:	c3                   	ret    
+  86:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  8d:	00 00 00 
+  90:	89 05 00 00 00 00    	mov    %eax,0x0(%rip)        # 96 <canon_host+0x96>
+  96:	45 31 e4             	xor    %r12d,%r12d
+  99:	eb cf                	jmp    6a <canon_host+0x6a>
+  9b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  a0:	c7 05 00 00 00 00 f6 	movl   $0xfffffff6,0x0(%rip)        # aa <canon_host+0xaa>
+  a7:	ff ff ff 
+  aa:	eb b6                	jmp    62 <canon_host+0x62>
+  ac:	e8 00 00 00 00       	call   b1 <canon_host+0xb1>
+  b1:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  b8:	00 00 00 00 
+  bc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000000000c0 <canon_host_r>:
+  c0:	f3 0f 1e fa          	endbr64 
+  c4:	41 55                	push   %r13
+  c6:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # cd <canon_host_r+0xd>
+  cd:	41 54                	push   %r12
+  cf:	55                   	push   %rbp
+  d0:	48 89 f5             	mov    %rsi,%rbp
+  d3:	31 f6                	xor    %esi,%esi
+  d5:	53                   	push   %rbx
+  d6:	48 89 fb             	mov    %rdi,%rbx
+  d9:	48 83 ec 18          	sub    $0x18,%rsp
+  dd:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  e4:	00 00 
+  e6:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  eb:	31 c0                	xor    %eax,%eax
+  ed:	48 89 e1             	mov    %rsp,%rcx
+  f0:	48 c7 04 24 00 00 00 	movq   $0x0,(%rsp)
+  f7:	00 
+  f8:	c7 05 00 00 00 00 02 	movl   $0x2,0x0(%rip)        # 102 <canon_host_r+0x42>
+  ff:	00 00 00 
+ 102:	e8 00 00 00 00       	call   107 <canon_host_r+0x47>
+ 107:	85 c0                	test   %eax,%eax
+ 109:	75 55                	jne    160 <canon_host_r+0xa0>
+ 10b:	4c 8b 2c 24          	mov    (%rsp),%r13
+ 10f:	49 8b 7d 20          	mov    0x20(%r13),%rdi
+ 113:	48 85 ff             	test   %rdi,%rdi
+ 116:	48 0f 44 fb          	cmove  %rbx,%rdi
+ 11a:	e8 00 00 00 00       	call   11f <canon_host_r+0x5f>
+ 11f:	49 89 c4             	mov    %rax,%r12
+ 122:	48 85 c0             	test   %rax,%rax
+ 125:	75 0c                	jne    133 <canon_host_r+0x73>
+ 127:	48 85 ed             	test   %rbp,%rbp
+ 12a:	74 07                	je     133 <canon_host_r+0x73>
+ 12c:	c7 45 00 f6 ff ff ff 	movl   $0xfffffff6,0x0(%rbp)
+ 133:	4c 89 ef             	mov    %r13,%rdi
+ 136:	e8 00 00 00 00       	call   13b <canon_host_r+0x7b>
+ 13b:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 140:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 147:	00 00 
+ 149:	75 22                	jne    16d <canon_host_r+0xad>
+ 14b:	48 83 c4 18          	add    $0x18,%rsp
+ 14f:	4c 89 e0             	mov    %r12,%rax
+ 152:	5b                   	pop    %rbx
+ 153:	5d                   	pop    %rbp
+ 154:	41 5c                	pop    %r12
+ 156:	41 5d                	pop    %r13
+ 158:	c3                   	ret    
+ 159:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 160:	45 31 e4             	xor    %r12d,%r12d
+ 163:	48 85 ed             	test   %rbp,%rbp
+ 166:	74 d3                	je     13b <canon_host_r+0x7b>
+ 168:	89 45 00             	mov    %eax,0x0(%rbp)
+ 16b:	eb ce                	jmp    13b <canon_host_r+0x7b>
+ 16d:	e8 00 00 00 00       	call   172 <canon_host_r+0xb2>
+ 172:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 179:	00 00 00 00 
+ 17d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000180 <ch_strerror>:
+ 180:	f3 0f 1e fa          	endbr64 
+ 184:	8b 3d 00 00 00 00    	mov    0x0(%rip),%edi        # 18a <ch_strerror+0xa>
+ 18a:	e9 00 00 00 00       	jmp    18f <ch_strerror+0xf>

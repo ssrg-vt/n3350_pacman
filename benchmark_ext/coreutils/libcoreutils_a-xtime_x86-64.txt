@@ -1,0 +1,79 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xtime.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xtime_make>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 69 ff 00 ca 9a 3b 	imul   $0x3b9aca00,%rdi,%rdi
+   b:	48 8d 04 37          	lea    (%rdi,%rsi,1),%rax
+   f:	c3                   	ret    
+
+0000000000000010 <xtime_nonnegative_sec>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	48 ba b3 94 d6 26 e8 	movabs $0x112e0be826d694b3,%rdx
+  1b:	0b 2e 11 
+  1e:	48 89 f8             	mov    %rdi,%rax
+  21:	48 c1 ff 3f          	sar    $0x3f,%rdi
+  25:	48 f7 ea             	imul   %rdx
+  28:	48 c1 fa 1a          	sar    $0x1a,%rdx
+  2c:	48 89 d0             	mov    %rdx,%rax
+  2f:	48 29 f8             	sub    %rdi,%rax
+  32:	c3                   	ret    
+  33:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  3a:	00 00 00 00 
+  3e:	66 90                	xchg   %ax,%ax
+
+0000000000000040 <xtime_sec>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	48 ba b3 94 d6 26 e8 	movabs $0x112e0be826d694b3,%rdx
+  4b:	0b 2e 11 
+  4e:	48 89 f9             	mov    %rdi,%rcx
+  51:	48 c1 e9 3f          	shr    $0x3f,%rcx
+  55:	48 01 cf             	add    %rcx,%rdi
+  58:	48 89 f8             	mov    %rdi,%rax
+  5b:	48 c1 ff 3f          	sar    $0x3f,%rdi
+  5f:	48 f7 ea             	imul   %rdx
+  62:	48 89 d0             	mov    %rdx,%rax
+  65:	48 c1 f8 1a          	sar    $0x1a,%rax
+  69:	48 29 f8             	sub    %rdi,%rax
+  6c:	48 29 c8             	sub    %rcx,%rax
+  6f:	c3                   	ret    
+
+0000000000000070 <xtime_nonnegative_nsec>:
+  70:	f3 0f 1e fa          	endbr64 
+  74:	48 ba b3 94 d6 26 e8 	movabs $0x112e0be826d694b3,%rdx
+  7b:	0b 2e 11 
+  7e:	48 89 f8             	mov    %rdi,%rax
+  81:	48 f7 ea             	imul   %rdx
+  84:	48 89 d0             	mov    %rdx,%rax
+  87:	48 89 fa             	mov    %rdi,%rdx
+  8a:	48 c1 fa 3f          	sar    $0x3f,%rdx
+  8e:	48 c1 f8 1a          	sar    $0x1a,%rax
+  92:	48 29 d0             	sub    %rdx,%rax
+  95:	48 69 d0 00 ca 9a 3b 	imul   $0x3b9aca00,%rax,%rdx
+  9c:	48 89 f8             	mov    %rdi,%rax
+  9f:	48 29 d0             	sub    %rdx,%rax
+  a2:	c3                   	ret    
+  a3:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  aa:	00 00 00 00 
+  ae:	66 90                	xchg   %ax,%ax
+
+00000000000000b0 <xtime_nsec>:
+  b0:	f3 0f 1e fa          	endbr64 
+  b4:	48 ba b3 94 d6 26 e8 	movabs $0x112e0be826d694b3,%rdx
+  bb:	0b 2e 11 
+  be:	48 89 f8             	mov    %rdi,%rax
+  c1:	48 f7 ea             	imul   %rdx
+  c4:	48 89 d0             	mov    %rdx,%rax
+  c7:	48 89 fa             	mov    %rdi,%rdx
+  ca:	48 c1 fa 3f          	sar    $0x3f,%rdx
+  ce:	48 c1 f8 1a          	sar    $0x1a,%rax
+  d2:	48 29 d0             	sub    %rdx,%rax
+  d5:	48 69 d0 00 ca 9a 3b 	imul   $0x3b9aca00,%rax,%rdx
+  dc:	48 89 f8             	mov    %rdi,%rax
+  df:	48 29 d0             	sub    %rdx,%rax
+  e2:	48 8d 90 00 ca 9a 3b 	lea    0x3b9aca00(%rax),%rdx
+  e9:	48 0f 48 c2          	cmovs  %rdx,%rax
+  ed:	c3                   	ret    

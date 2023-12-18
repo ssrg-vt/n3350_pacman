@@ -1,0 +1,187 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-c-ctype.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <c_isalnum>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	83 ff 5a             	cmp    $0x5a,%edi
+   7:	7f 17                	jg     20 <c_isalnum+0x20>
+   9:	b8 01 00 00 00       	mov    $0x1,%eax
+   e:	83 ff 40             	cmp    $0x40,%edi
+  11:	7f 16                	jg     29 <c_isalnum+0x29>
+  13:	83 ef 30             	sub    $0x30,%edi
+  16:	83 ff 09             	cmp    $0x9,%edi
+  19:	0f 96 c0             	setbe  %al
+  1c:	c3                   	ret    
+  1d:	0f 1f 00             	nopl   (%rax)
+  20:	83 ef 61             	sub    $0x61,%edi
+  23:	83 ff 19             	cmp    $0x19,%edi
+  26:	0f 96 c0             	setbe  %al
+  29:	c3                   	ret    
+  2a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000030 <c_isalpha>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	83 ff 5a             	cmp    $0x5a,%edi
+  37:	7f 07                	jg     40 <c_isalpha+0x10>
+  39:	83 ff 40             	cmp    $0x40,%edi
+  3c:	0f 9f c0             	setg   %al
+  3f:	c3                   	ret    
+  40:	83 ef 61             	sub    $0x61,%edi
+  43:	83 ff 19             	cmp    $0x19,%edi
+  46:	0f 96 c0             	setbe  %al
+  49:	c3                   	ret    
+  4a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000050 <c_isascii>:
+  50:	f3 0f 1e fa          	endbr64 
+  54:	83 ff 7f             	cmp    $0x7f,%edi
+  57:	0f 96 c0             	setbe  %al
+  5a:	c3                   	ret    
+  5b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000060 <c_isblank>:
+  60:	f3 0f 1e fa          	endbr64 
+  64:	83 ff 20             	cmp    $0x20,%edi
+  67:	0f 94 c0             	sete   %al
+  6a:	83 ff 09             	cmp    $0x9,%edi
+  6d:	0f 94 c2             	sete   %dl
+  70:	09 d0                	or     %edx,%eax
+  72:	c3                   	ret    
+  73:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  7a:	00 00 00 00 
+  7e:	66 90                	xchg   %ax,%ax
+
+0000000000000080 <c_iscntrl>:
+  80:	f3 0f 1e fa          	endbr64 
+  84:	83 ff 1f             	cmp    $0x1f,%edi
+  87:	7f 0f                	jg     98 <c_iscntrl+0x18>
+  89:	f7 d7                	not    %edi
+  8b:	c1 ef 1f             	shr    $0x1f,%edi
+  8e:	89 f8                	mov    %edi,%eax
+  90:	c3                   	ret    
+  91:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  98:	83 ff 7f             	cmp    $0x7f,%edi
+  9b:	0f 94 c0             	sete   %al
+  9e:	c3                   	ret    
+  9f:	90                   	nop
+
+00000000000000a0 <c_isdigit>:
+  a0:	f3 0f 1e fa          	endbr64 
+  a4:	83 ef 30             	sub    $0x30,%edi
+  a7:	83 ff 09             	cmp    $0x9,%edi
+  aa:	0f 96 c0             	setbe  %al
+  ad:	c3                   	ret    
+  ae:	66 90                	xchg   %ax,%ax
+
+00000000000000b0 <c_isgraph>:
+  b0:	f3 0f 1e fa          	endbr64 
+  b4:	83 ef 21             	sub    $0x21,%edi
+  b7:	83 ff 5d             	cmp    $0x5d,%edi
+  ba:	0f 96 c0             	setbe  %al
+  bd:	c3                   	ret    
+  be:	66 90                	xchg   %ax,%ax
+
+00000000000000c0 <c_islower>:
+  c0:	f3 0f 1e fa          	endbr64 
+  c4:	83 ef 61             	sub    $0x61,%edi
+  c7:	83 ff 19             	cmp    $0x19,%edi
+  ca:	0f 96 c0             	setbe  %al
+  cd:	c3                   	ret    
+  ce:	66 90                	xchg   %ax,%ax
+
+00000000000000d0 <c_isprint>:
+  d0:	f3 0f 1e fa          	endbr64 
+  d4:	83 ef 20             	sub    $0x20,%edi
+  d7:	83 ff 5e             	cmp    $0x5e,%edi
+  da:	0f 96 c0             	setbe  %al
+  dd:	c3                   	ret    
+  de:	66 90                	xchg   %ax,%ax
+
+00000000000000e0 <c_ispunct>:
+  e0:	f3 0f 1e fa          	endbr64 
+  e4:	83 ff 60             	cmp    $0x60,%edi
+  e7:	7f 17                	jg     100 <c_ispunct+0x20>
+  e9:	83 ff 5a             	cmp    $0x5a,%edi
+  ec:	7f 32                	jg     120 <c_ispunct+0x40>
+  ee:	83 ff 2f             	cmp    $0x2f,%edi
+  f1:	7f 1d                	jg     110 <c_ispunct+0x30>
+  f3:	83 ff 20             	cmp    $0x20,%edi
+  f6:	0f 9f c0             	setg   %al
+  f9:	c3                   	ret    
+  fa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 100:	83 ef 7b             	sub    $0x7b,%edi
+ 103:	83 ff 03             	cmp    $0x3,%edi
+ 106:	0f 96 c0             	setbe  %al
+ 109:	c3                   	ret    
+ 10a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 110:	83 ef 3a             	sub    $0x3a,%edi
+ 113:	83 ff 06             	cmp    $0x6,%edi
+ 116:	0f 96 c0             	setbe  %al
+ 119:	c3                   	ret    
+ 11a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 120:	b8 01 00 00 00       	mov    $0x1,%eax
+ 125:	c3                   	ret    
+ 126:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 12d:	00 00 00 
+
+0000000000000130 <c_isspace>:
+ 130:	f3 0f 1e fa          	endbr64 
+ 134:	83 ff 0d             	cmp    $0xd,%edi
+ 137:	7f 07                	jg     140 <c_isspace+0x10>
+ 139:	83 ff 08             	cmp    $0x8,%edi
+ 13c:	0f 9f c0             	setg   %al
+ 13f:	c3                   	ret    
+ 140:	83 ff 20             	cmp    $0x20,%edi
+ 143:	0f 94 c0             	sete   %al
+ 146:	c3                   	ret    
+ 147:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 14e:	00 00 
+
+0000000000000150 <c_isupper>:
+ 150:	f3 0f 1e fa          	endbr64 
+ 154:	83 ef 41             	sub    $0x41,%edi
+ 157:	83 ff 19             	cmp    $0x19,%edi
+ 15a:	0f 96 c0             	setbe  %al
+ 15d:	c3                   	ret    
+ 15e:	66 90                	xchg   %ax,%ax
+
+0000000000000160 <c_isxdigit>:
+ 160:	f3 0f 1e fa          	endbr64 
+ 164:	8d 4f d0             	lea    -0x30(%rdi),%ecx
+ 167:	83 f9 36             	cmp    $0x36,%ecx
+ 16a:	77 14                	ja     180 <c_isxdigit+0x20>
+ 16c:	48 b8 ff 03 7e 00 00 	movabs $0x7e0000007e03ff,%rax
+ 173:	00 7e 00 
+ 176:	48 d3 e8             	shr    %cl,%rax
+ 179:	83 e0 01             	and    $0x1,%eax
+ 17c:	c3                   	ret    
+ 17d:	0f 1f 00             	nopl   (%rax)
+ 180:	31 c0                	xor    %eax,%eax
+ 182:	c3                   	ret    
+ 183:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 18a:	00 00 00 00 
+ 18e:	66 90                	xchg   %ax,%ax
+
+0000000000000190 <c_tolower>:
+ 190:	f3 0f 1e fa          	endbr64 
+ 194:	8d 4f bf             	lea    -0x41(%rdi),%ecx
+ 197:	89 f8                	mov    %edi,%eax
+ 199:	8d 57 20             	lea    0x20(%rdi),%edx
+ 19c:	83 f9 1a             	cmp    $0x1a,%ecx
+ 19f:	0f 42 c2             	cmovb  %edx,%eax
+ 1a2:	c3                   	ret    
+ 1a3:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 1aa:	00 00 00 00 
+ 1ae:	66 90                	xchg   %ax,%ax
+
+00000000000001b0 <c_toupper>:
+ 1b0:	f3 0f 1e fa          	endbr64 
+ 1b4:	8d 4f 9f             	lea    -0x61(%rdi),%ecx
+ 1b7:	89 f8                	mov    %edi,%eax
+ 1b9:	8d 57 e0             	lea    -0x20(%rdi),%edx
+ 1bc:	83 f9 1a             	cmp    $0x1a,%ecx
+ 1bf:	0f 42 c2             	cmovb  %edx,%eax
+ 1c2:	c3                   	ret    

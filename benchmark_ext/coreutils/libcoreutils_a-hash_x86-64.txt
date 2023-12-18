@@ -1,0 +1,1427 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-hash.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <raw_hasher>:
+       0:	f3 0f 1e fa          	endbr64 
+       4:	48 89 f8             	mov    %rdi,%rax
+       7:	31 d2                	xor    %edx,%edx
+       9:	48 c1 c8 03          	ror    $0x3,%rax
+       d:	48 f7 f6             	div    %rsi
+      10:	48 89 d0             	mov    %rdx,%rax
+      13:	c3                   	ret    
+      14:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+      1b:	00 00 00 00 
+      1f:	90                   	nop
+
+0000000000000020 <raw_comparator>:
+      20:	f3 0f 1e fa          	endbr64 
+      24:	48 39 fe             	cmp    %rdi,%rsi
+      27:	0f 94 c0             	sete   %al
+      2a:	c3                   	ret    
+      2b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000030 <check_tuning>:
+      30:	48 8b 47 28          	mov    0x28(%rdi),%rax
+      34:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 3b <check_tuning+0xb>
+      3b:	48 39 d0             	cmp    %rdx,%rax
+      3e:	74 70                	je     b0 <check_tuning+0x80>
+      40:	f3 0f 10 40 08       	movss  0x8(%rax),%xmm0
+      45:	0f 2f 05 00 00 00 00 	comiss 0x0(%rip),%xmm0        # 4c <check_tuning+0x1c>
+      4c:	76 51                	jbe    9f <check_tuning+0x6f>
+      4e:	f3 0f 10 0d 00 00 00 	movss  0x0(%rip),%xmm1        # 56 <check_tuning+0x26>
+      55:	00 
+      56:	0f 2f c8             	comiss %xmm0,%xmm1
+      59:	76 44                	jbe    9f <check_tuning+0x6f>
+      5b:	f3 0f 10 48 0c       	movss  0xc(%rax),%xmm1
+      60:	0f 2f 0d 00 00 00 00 	comiss 0x0(%rip),%xmm1        # 67 <check_tuning+0x37>
+      67:	76 36                	jbe    9f <check_tuning+0x6f>
+      69:	f3 0f 10 08          	movss  (%rax),%xmm1
+      6d:	0f 2f 0d 00 00 00 00 	comiss 0x0(%rip),%xmm1        # 74 <check_tuning+0x44>
+      74:	72 29                	jb     9f <check_tuning+0x6f>
+      76:	f3 0f 58 0d 00 00 00 	addss  0x0(%rip),%xmm1        # 7e <check_tuning+0x4e>
+      7d:	00 
+      7e:	f3 0f 10 50 04       	movss  0x4(%rax),%xmm2
+      83:	0f 2f d1             	comiss %xmm1,%xmm2
+      86:	76 17                	jbe    9f <check_tuning+0x6f>
+      88:	f3 0f 10 1d 00 00 00 	movss  0x0(%rip),%xmm3        # 90 <check_tuning+0x60>
+      8f:	00 
+      90:	0f 2f da             	comiss %xmm2,%xmm3
+      93:	72 0a                	jb     9f <check_tuning+0x6f>
+      95:	0f 2f c1             	comiss %xmm1,%xmm0
+      98:	b8 01 00 00 00       	mov    $0x1,%eax
+      9d:	77 16                	ja     b5 <check_tuning+0x85>
+      9f:	48 89 57 28          	mov    %rdx,0x28(%rdi)
+      a3:	31 c0                	xor    %eax,%eax
+      a5:	c3                   	ret    
+      a6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+      ad:	00 00 00 
+      b0:	b8 01 00 00 00       	mov    $0x1,%eax
+      b5:	c3                   	ret    
+      b6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+      bd:	00 00 00 
+
+00000000000000c0 <hash_find_entry>:
+      c0:	41 56                	push   %r14
+      c2:	49 89 d6             	mov    %rdx,%r14
+      c5:	41 55                	push   %r13
+      c7:	49 89 f5             	mov    %rsi,%r13
+      ca:	41 54                	push   %r12
+      cc:	41 89 cc             	mov    %ecx,%r12d
+      cf:	55                   	push   %rbp
+      d0:	48 89 fd             	mov    %rdi,%rbp
+      d3:	53                   	push   %rbx
+      d4:	48 8b 77 10          	mov    0x10(%rdi),%rsi
+      d8:	4c 89 ef             	mov    %r13,%rdi
+      db:	ff 55 30             	call   *0x30(%rbp)
+      de:	48 3b 45 10          	cmp    0x10(%rbp),%rax
+      e2:	0f 83 00 00 00 00    	jae    e8 <hash_find_entry+0x28>
+      e8:	48 89 c3             	mov    %rax,%rbx
+      eb:	48 c1 e3 04          	shl    $0x4,%rbx
+      ef:	48 03 5d 00          	add    0x0(%rbp),%rbx
+      f3:	49 89 1e             	mov    %rbx,(%r14)
+      f6:	48 8b 33             	mov    (%rbx),%rsi
+      f9:	48 85 f6             	test   %rsi,%rsi
+      fc:	74 71                	je     16f <hash_find_entry+0xaf>
+      fe:	4c 39 ee             	cmp    %r13,%rsi
+     101:	0f 84 b9 00 00 00    	je     1c0 <hash_find_entry+0x100>
+     107:	4c 89 ef             	mov    %r13,%rdi
+     10a:	ff 55 38             	call   *0x38(%rbp)
+     10d:	84 c0                	test   %al,%al
+     10f:	74 55                	je     166 <hash_find_entry+0xa6>
+     111:	48 8b 03             	mov    (%rbx),%rax
+     114:	45 84 e4             	test   %r12b,%r12b
+     117:	74 58                	je     171 <hash_find_entry+0xb1>
+     119:	48 8b 53 08          	mov    0x8(%rbx),%rdx
+     11d:	48 85 d2             	test   %rdx,%rdx
+     120:	0f 84 8a 00 00 00    	je     1b0 <hash_find_entry+0xf0>
+     126:	f3 0f 6f 02          	movdqu (%rdx),%xmm0
+     12a:	0f 11 03             	movups %xmm0,(%rbx)
+     12d:	48 c7 02 00 00 00 00 	movq   $0x0,(%rdx)
+     134:	48 8b 4d 48          	mov    0x48(%rbp),%rcx
+     138:	48 89 4a 08          	mov    %rcx,0x8(%rdx)
+     13c:	5b                   	pop    %rbx
+     13d:	48 89 55 48          	mov    %rdx,0x48(%rbp)
+     141:	5d                   	pop    %rbp
+     142:	41 5c                	pop    %r12
+     144:	41 5d                	pop    %r13
+     146:	41 5e                	pop    %r14
+     148:	c3                   	ret    
+     149:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+     150:	48 8b 30             	mov    (%rax),%rsi
+     153:	4c 39 ee             	cmp    %r13,%rsi
+     156:	74 28                	je     180 <hash_find_entry+0xc0>
+     158:	4c 89 ef             	mov    %r13,%rdi
+     15b:	ff 55 38             	call   *0x38(%rbp)
+     15e:	84 c0                	test   %al,%al
+     160:	75 1e                	jne    180 <hash_find_entry+0xc0>
+     162:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+     166:	48 8b 43 08          	mov    0x8(%rbx),%rax
+     16a:	48 85 c0             	test   %rax,%rax
+     16d:	75 e1                	jne    150 <hash_find_entry+0x90>
+     16f:	31 c0                	xor    %eax,%eax
+     171:	5b                   	pop    %rbx
+     172:	5d                   	pop    %rbp
+     173:	41 5c                	pop    %r12
+     175:	41 5d                	pop    %r13
+     177:	41 5e                	pop    %r14
+     179:	c3                   	ret    
+     17a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+     180:	48 8b 53 08          	mov    0x8(%rbx),%rdx
+     184:	48 8b 02             	mov    (%rdx),%rax
+     187:	45 84 e4             	test   %r12b,%r12b
+     18a:	74 e5                	je     171 <hash_find_entry+0xb1>
+     18c:	48 8b 4a 08          	mov    0x8(%rdx),%rcx
+     190:	48 89 4b 08          	mov    %rcx,0x8(%rbx)
+     194:	48 c7 02 00 00 00 00 	movq   $0x0,(%rdx)
+     19b:	48 8b 4d 48          	mov    0x48(%rbp),%rcx
+     19f:	48 89 4a 08          	mov    %rcx,0x8(%rdx)
+     1a3:	5b                   	pop    %rbx
+     1a4:	48 89 55 48          	mov    %rdx,0x48(%rbp)
+     1a8:	5d                   	pop    %rbp
+     1a9:	41 5c                	pop    %r12
+     1ab:	41 5d                	pop    %r13
+     1ad:	41 5e                	pop    %r14
+     1af:	c3                   	ret    
+     1b0:	48 c7 03 00 00 00 00 	movq   $0x0,(%rbx)
+     1b7:	eb b8                	jmp    171 <hash_find_entry+0xb1>
+     1b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+     1c0:	48 89 f0             	mov    %rsi,%rax
+     1c3:	e9 4c ff ff ff       	jmp    114 <hash_find_entry+0x54>
+     1c8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+     1cf:	00 
+
+00000000000001d0 <compute_bucket_size>:
+     1d0:	80 7e 10 00          	cmpb   $0x0,0x10(%rsi)
+     1d4:	75 4a                	jne    220 <compute_bucket_size+0x50>
+     1d6:	48 85 ff             	test   %rdi,%rdi
+     1d9:	0f 88 10 01 00 00    	js     2ef <compute_bucket_size+0x11f>
+     1df:	66 0f ef c0          	pxor   %xmm0,%xmm0
+     1e3:	f3 48 0f 2a c7       	cvtsi2ss %rdi,%xmm0
+     1e8:	f3 0f 5e 46 08       	divss  0x8(%rsi),%xmm0
+     1ed:	0f 2f 05 00 00 00 00 	comiss 0x0(%rip),%xmm0        # 1f4 <compute_bucket_size+0x24>
+     1f4:	0f 83 c2 00 00 00    	jae    2bc <compute_bucket_size+0xec>
+     1fa:	0f 2f 05 00 00 00 00 	comiss 0x0(%rip),%xmm0        # 201 <compute_bucket_size+0x31>
+     201:	0f 82 0d 01 00 00    	jb     314 <compute_bucket_size+0x144>
+     207:	f3 0f 5c 05 00 00 00 	subss  0x0(%rip),%xmm0        # 20f <compute_bucket_size+0x3f>
+     20e:	00 
+     20f:	f3 48 0f 2c f8       	cvttss2si %xmm0,%rdi
+     214:	48 0f ba ff 3f       	btc    $0x3f,%rdi
+     219:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+     220:	49 b9 ab aa aa aa aa 	movabs $0xaaaaaaaaaaaaaaab,%r9
+     227:	aa aa aa 
+     22a:	b8 0a 00 00 00       	mov    $0xa,%eax
+     22f:	48 39 c7             	cmp    %rax,%rdi
+     232:	48 0f 43 c7          	cmovae %rdi,%rax
+     236:	49 89 c0             	mov    %rax,%r8
+     239:	49 83 c8 01          	or     $0x1,%r8
+     23d:	49 83 f8 ff          	cmp    $0xffffffffffffffff,%r8
+     241:	74 79                	je     2bc <compute_bucket_size+0xec>
+     243:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+     248:	4c 89 c0             	mov    %r8,%rax
+     24b:	49 f7 e1             	mul    %r9
+     24e:	48 89 d0             	mov    %rdx,%rax
+     251:	48 83 e2 fe          	and    $0xfffffffffffffffe,%rdx
+     255:	48 d1 e8             	shr    %rax
+     258:	48 01 c2             	add    %rax,%rdx
+     25b:	4c 89 c0             	mov    %r8,%rax
+     25e:	48 29 d0             	sub    %rdx,%rax
+     261:	49 83 f8 09          	cmp    $0x9,%r8
+     265:	0f 86 a2 00 00 00    	jbe    30d <compute_bucket_size+0x13d>
+     26b:	48 85 c0             	test   %rax,%rax
+     26e:	74 42                	je     2b2 <compute_bucket_size+0xe2>
+     270:	bf 10 00 00 00       	mov    $0x10,%edi
+     275:	be 09 00 00 00       	mov    $0x9,%esi
+     27a:	b9 03 00 00 00       	mov    $0x3,%ecx
+     27f:	eb 10                	jmp    291 <compute_bucket_size+0xc1>
+     281:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+     288:	48 83 c7 08          	add    $0x8,%rdi
+     28c:	48 85 d2             	test   %rdx,%rdx
+     28f:	74 21                	je     2b2 <compute_bucket_size+0xe2>
+     291:	48 83 c1 02          	add    $0x2,%rcx
+     295:	4c 89 c0             	mov    %r8,%rax
+     298:	31 d2                	xor    %edx,%edx
+     29a:	48 01 fe             	add    %rdi,%rsi
+     29d:	48 f7 f1             	div    %rcx
+     2a0:	4c 39 c6             	cmp    %r8,%rsi
+     2a3:	72 e3                	jb     288 <compute_bucket_size+0xb8>
+     2a5:	4c 89 c0             	mov    %r8,%rax
+     2a8:	31 d2                	xor    %edx,%edx
+     2aa:	48 f7 f1             	div    %rcx
+     2ad:	48 85 d2             	test   %rdx,%rdx
+     2b0:	75 20                	jne    2d2 <compute_bucket_size+0x102>
+     2b2:	49 83 c0 02          	add    $0x2,%r8
+     2b6:	49 83 f8 ff          	cmp    $0xffffffffffffffff,%r8
+     2ba:	75 8c                	jne    248 <compute_bucket_size+0x78>
+     2bc:	48 83 ec 08          	sub    $0x8,%rsp
+     2c0:	e8 00 00 00 00       	call   2c5 <compute_bucket_size+0xf5>
+     2c5:	c7 00 0c 00 00 00    	movl   $0xc,(%rax)
+     2cb:	31 c0                	xor    %eax,%eax
+     2cd:	48 83 c4 08          	add    $0x8,%rsp
+     2d1:	c3                   	ret    
+     2d2:	4c 89 c0             	mov    %r8,%rax
+     2d5:	48 c1 e8 3d          	shr    $0x3d,%rax
+     2d9:	0f 95 c0             	setne  %al
+     2dc:	49 0f ba e0 3c       	bt     $0x3c,%r8
+     2e1:	0f b6 c0             	movzbl %al,%eax
+     2e4:	72 d6                	jb     2bc <compute_bucket_size+0xec>
+     2e6:	48 85 c0             	test   %rax,%rax
+     2e9:	75 d1                	jne    2bc <compute_bucket_size+0xec>
+     2eb:	4c 89 c0             	mov    %r8,%rax
+     2ee:	c3                   	ret    
+     2ef:	48 89 f8             	mov    %rdi,%rax
+     2f2:	83 e7 01             	and    $0x1,%edi
+     2f5:	66 0f ef c0          	pxor   %xmm0,%xmm0
+     2f9:	48 d1 e8             	shr    %rax
+     2fc:	48 09 f8             	or     %rdi,%rax
+     2ff:	f3 48 0f 2a c0       	cvtsi2ss %rax,%xmm0
+     304:	f3 0f 58 c0          	addss  %xmm0,%xmm0
+     308:	e9 db fe ff ff       	jmp    1e8 <compute_bucket_size+0x18>
+     30d:	b9 03 00 00 00       	mov    $0x3,%ecx
+     312:	eb 91                	jmp    2a5 <compute_bucket_size+0xd5>
+     314:	f3 48 0f 2c f8       	cvttss2si %xmm0,%rdi
+     319:	e9 02 ff ff ff       	jmp    220 <compute_bucket_size+0x50>
+     31e:	66 90                	xchg   %ax,%ax
+
+0000000000000320 <transfer_entries>:
+     320:	41 57                	push   %r15
+     322:	41 56                	push   %r14
+     324:	49 89 fe             	mov    %rdi,%r14
+     327:	41 55                	push   %r13
+     329:	41 54                	push   %r12
+     32b:	41 89 d4             	mov    %edx,%r12d
+     32e:	55                   	push   %rbp
+     32f:	48 89 f5             	mov    %rsi,%rbp
+     332:	53                   	push   %rbx
+     333:	48 83 ec 08          	sub    $0x8,%rsp
+     337:	48 8b 1e             	mov    (%rsi),%rbx
+     33a:	48 3b 5e 08          	cmp    0x8(%rsi),%rbx
+     33e:	72 16                	jb     356 <transfer_entries+0x36>
+     340:	e9 fd 00 00 00       	jmp    442 <transfer_entries+0x122>
+     345:	0f 1f 00             	nopl   (%rax)
+     348:	48 83 c3 10          	add    $0x10,%rbx
+     34c:	48 39 5d 08          	cmp    %rbx,0x8(%rbp)
+     350:	0f 86 ec 00 00 00    	jbe    442 <transfer_entries+0x122>
+     356:	4c 8b 3b             	mov    (%rbx),%r15
+     359:	4d 85 ff             	test   %r15,%r15
+     35c:	74 ea                	je     348 <transfer_entries+0x28>
+     35e:	4c 8b 6b 08          	mov    0x8(%rbx),%r13
+     362:	4d 85 ed             	test   %r13,%r13
+     365:	74 6a                	je     3d1 <transfer_entries+0xb1>
+     367:	49 8b 76 10          	mov    0x10(%r14),%rsi
+     36b:	eb 17                	jmp    384 <transfer_entries+0x64>
+     36d:	0f 1f 00             	nopl   (%rax)
+     370:	48 8b 48 08          	mov    0x8(%rax),%rcx
+     374:	49 89 4d 08          	mov    %rcx,0x8(%r13)
+     378:	4c 89 68 08          	mov    %r13,0x8(%rax)
+     37c:	48 85 d2             	test   %rdx,%rdx
+     37f:	74 4d                	je     3ce <transfer_entries+0xae>
+     381:	49 89 d5             	mov    %rdx,%r13
+     384:	4d 8b 7d 00          	mov    0x0(%r13),%r15
+     388:	4c 89 ff             	mov    %r15,%rdi
+     38b:	41 ff 56 30          	call   *0x30(%r14)
+     38f:	49 8b 76 10          	mov    0x10(%r14),%rsi
+     393:	48 39 f0             	cmp    %rsi,%rax
+     396:	0f 83 00 00 00 00    	jae    39c <transfer_entries+0x7c>
+     39c:	48 c1 e0 04          	shl    $0x4,%rax
+     3a0:	49 03 06             	add    (%r14),%rax
+     3a3:	49 8b 55 08          	mov    0x8(%r13),%rdx
+     3a7:	48 83 38 00          	cmpq   $0x0,(%rax)
+     3ab:	75 c3                	jne    370 <transfer_entries+0x50>
+     3ad:	4c 89 38             	mov    %r15,(%rax)
+     3b0:	49 8b 46 48          	mov    0x48(%r14),%rax
+     3b4:	49 83 46 18 01       	addq   $0x1,0x18(%r14)
+     3b9:	49 c7 45 00 00 00 00 	movq   $0x0,0x0(%r13)
+     3c0:	00 
+     3c1:	49 89 45 08          	mov    %rax,0x8(%r13)
+     3c5:	4d 89 6e 48          	mov    %r13,0x48(%r14)
+     3c9:	48 85 d2             	test   %rdx,%rdx
+     3cc:	75 b3                	jne    381 <transfer_entries+0x61>
+     3ce:	4c 8b 3b             	mov    (%rbx),%r15
+     3d1:	48 c7 43 08 00 00 00 	movq   $0x0,0x8(%rbx)
+     3d8:	00 
+     3d9:	45 84 e4             	test   %r12b,%r12b
+     3dc:	0f 85 66 ff ff ff    	jne    348 <transfer_entries+0x28>
+     3e2:	49 8b 76 10          	mov    0x10(%r14),%rsi
+     3e6:	4c 89 ff             	mov    %r15,%rdi
+     3e9:	41 ff 56 30          	call   *0x30(%r14)
+     3ed:	49 89 c5             	mov    %rax,%r13
+     3f0:	49 3b 46 10          	cmp    0x10(%r14),%rax
+     3f4:	0f 83 00 00 00 00    	jae    3fa <transfer_entries+0xda>
+     3fa:	49 c1 e5 04          	shl    $0x4,%r13
+     3fe:	4d 03 2e             	add    (%r14),%r13
+     401:	49 83 7d 00 00       	cmpq   $0x0,0x0(%r13)
+     406:	74 58                	je     460 <transfer_entries+0x140>
+     408:	49 8b 46 48          	mov    0x48(%r14),%rax
+     40c:	48 85 c0             	test   %rax,%rax
+     40f:	74 5a                	je     46b <transfer_entries+0x14b>
+     411:	48 8b 50 08          	mov    0x8(%rax),%rdx
+     415:	49 89 56 48          	mov    %rdx,0x48(%r14)
+     419:	49 8b 55 08          	mov    0x8(%r13),%rdx
+     41d:	4c 89 38             	mov    %r15,(%rax)
+     420:	48 89 50 08          	mov    %rdx,0x8(%rax)
+     424:	49 89 45 08          	mov    %rax,0x8(%r13)
+     428:	48 c7 03 00 00 00 00 	movq   $0x0,(%rbx)
+     42f:	48 83 c3 10          	add    $0x10,%rbx
+     433:	48 83 6d 18 01       	subq   $0x1,0x18(%rbp)
+     438:	48 39 5d 08          	cmp    %rbx,0x8(%rbp)
+     43c:	0f 87 14 ff ff ff    	ja     356 <transfer_entries+0x36>
+     442:	48 83 c4 08          	add    $0x8,%rsp
+     446:	b8 01 00 00 00       	mov    $0x1,%eax
+     44b:	5b                   	pop    %rbx
+     44c:	5d                   	pop    %rbp
+     44d:	41 5c                	pop    %r12
+     44f:	41 5d                	pop    %r13
+     451:	41 5e                	pop    %r14
+     453:	41 5f                	pop    %r15
+     455:	c3                   	ret    
+     456:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+     45d:	00 00 00 
+     460:	4d 89 7d 00          	mov    %r15,0x0(%r13)
+     464:	49 83 46 18 01       	addq   $0x1,0x18(%r14)
+     469:	eb bd                	jmp    428 <transfer_entries+0x108>
+     46b:	bf 10 00 00 00       	mov    $0x10,%edi
+     470:	e8 00 00 00 00       	call   475 <transfer_entries+0x155>
+     475:	48 85 c0             	test   %rax,%rax
+     478:	75 9f                	jne    419 <transfer_entries+0xf9>
+     47a:	48 83 c4 08          	add    $0x8,%rsp
+     47e:	31 c0                	xor    %eax,%eax
+     480:	5b                   	pop    %rbx
+     481:	5d                   	pop    %rbp
+     482:	41 5c                	pop    %r12
+     484:	41 5d                	pop    %r13
+     486:	41 5e                	pop    %r14
+     488:	41 5f                	pop    %r15
+     48a:	c3                   	ret    
+     48b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000490 <hash_get_n_buckets>:
+     490:	f3 0f 1e fa          	endbr64 
+     494:	48 8b 47 10          	mov    0x10(%rdi),%rax
+     498:	c3                   	ret    
+     499:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000004a0 <hash_get_n_buckets_used>:
+     4a0:	f3 0f 1e fa          	endbr64 
+     4a4:	48 8b 47 18          	mov    0x18(%rdi),%rax
+     4a8:	c3                   	ret    
+     4a9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000004b0 <hash_get_n_entries>:
+     4b0:	f3 0f 1e fa          	endbr64 
+     4b4:	48 8b 47 20          	mov    0x20(%rdi),%rax
+     4b8:	c3                   	ret    
+     4b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000004c0 <hash_get_max_bucket_length>:
+     4c0:	f3 0f 1e fa          	endbr64 
+     4c4:	48 8b 0f             	mov    (%rdi),%rcx
+     4c7:	48 8b 77 08          	mov    0x8(%rdi),%rsi
+     4cb:	45 31 c0             	xor    %r8d,%r8d
+     4ce:	48 39 f1             	cmp    %rsi,%rcx
+     4d1:	72 0e                	jb     4e1 <hash_get_max_bucket_length+0x21>
+     4d3:	eb 40                	jmp    515 <hash_get_max_bucket_length+0x55>
+     4d5:	0f 1f 00             	nopl   (%rax)
+     4d8:	48 83 c1 10          	add    $0x10,%rcx
+     4dc:	48 39 f1             	cmp    %rsi,%rcx
+     4df:	73 34                	jae    515 <hash_get_max_bucket_length+0x55>
+     4e1:	48 83 39 00          	cmpq   $0x0,(%rcx)
+     4e5:	74 f1                	je     4d8 <hash_get_max_bucket_length+0x18>
+     4e7:	48 8b 41 08          	mov    0x8(%rcx),%rax
+     4eb:	ba 01 00 00 00       	mov    $0x1,%edx
+     4f0:	48 85 c0             	test   %rax,%rax
+     4f3:	74 10                	je     505 <hash_get_max_bucket_length+0x45>
+     4f5:	0f 1f 00             	nopl   (%rax)
+     4f8:	48 8b 40 08          	mov    0x8(%rax),%rax
+     4fc:	48 83 c2 01          	add    $0x1,%rdx
+     500:	48 85 c0             	test   %rax,%rax
+     503:	75 f3                	jne    4f8 <hash_get_max_bucket_length+0x38>
+     505:	49 39 d0             	cmp    %rdx,%r8
+     508:	4c 0f 42 c2          	cmovb  %rdx,%r8
+     50c:	48 83 c1 10          	add    $0x10,%rcx
+     510:	48 39 f1             	cmp    %rsi,%rcx
+     513:	72 cc                	jb     4e1 <hash_get_max_bucket_length+0x21>
+     515:	4c 89 c0             	mov    %r8,%rax
+     518:	c3                   	ret    
+     519:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000520 <hash_table_ok>:
+     520:	f3 0f 1e fa          	endbr64 
+     524:	48 8b 0f             	mov    (%rdi),%rcx
+     527:	48 8b 77 08          	mov    0x8(%rdi),%rsi
+     52b:	31 d2                	xor    %edx,%edx
+     52d:	45 31 c0             	xor    %r8d,%r8d
+     530:	48 39 f1             	cmp    %rsi,%rcx
+     533:	72 14                	jb     549 <hash_table_ok+0x29>
+     535:	eb 3f                	jmp    576 <hash_table_ok+0x56>
+     537:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+     53e:	00 00 
+     540:	48 83 c1 10          	add    $0x10,%rcx
+     544:	48 39 f1             	cmp    %rsi,%rcx
+     547:	73 2d                	jae    576 <hash_table_ok+0x56>
+     549:	48 83 39 00          	cmpq   $0x0,(%rcx)
+     54d:	74 f1                	je     540 <hash_table_ok+0x20>
+     54f:	48 8b 41 08          	mov    0x8(%rcx),%rax
+     553:	49 83 c0 01          	add    $0x1,%r8
+     557:	48 83 c2 01          	add    $0x1,%rdx
+     55b:	48 85 c0             	test   %rax,%rax
+     55e:	74 e0                	je     540 <hash_table_ok+0x20>
+     560:	48 8b 40 08          	mov    0x8(%rax),%rax
+     564:	48 83 c2 01          	add    $0x1,%rdx
+     568:	48 85 c0             	test   %rax,%rax
+     56b:	75 f3                	jne    560 <hash_table_ok+0x40>
+     56d:	48 83 c1 10          	add    $0x10,%rcx
+     571:	48 39 f1             	cmp    %rsi,%rcx
+     574:	72 d3                	jb     549 <hash_table_ok+0x29>
+     576:	31 c0                	xor    %eax,%eax
+     578:	4c 39 47 18          	cmp    %r8,0x18(%rdi)
+     57c:	74 01                	je     57f <hash_table_ok+0x5f>
+     57e:	c3                   	ret    
+     57f:	48 39 57 20          	cmp    %rdx,0x20(%rdi)
+     583:	0f 94 c0             	sete   %al
+     586:	c3                   	ret    
+     587:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+     58e:	00 00 
+
+0000000000000590 <hash_print_statistics>:
+     590:	f3 0f 1e fa          	endbr64 
+     594:	41 55                	push   %r13
+     596:	41 54                	push   %r12
+     598:	45 31 e4             	xor    %r12d,%r12d
+     59b:	55                   	push   %rbp
+     59c:	48 89 f5             	mov    %rsi,%rbp
+     59f:	53                   	push   %rbx
+     5a0:	48 83 ec 08          	sub    $0x8,%rsp
+     5a4:	48 8b 0f             	mov    (%rdi),%rcx
+     5a7:	48 8b 77 08          	mov    0x8(%rdi),%rsi
+     5ab:	4c 8b 47 20          	mov    0x20(%rdi),%r8
+     5af:	48 8b 5f 10          	mov    0x10(%rdi),%rbx
+     5b3:	4c 8b 6f 18          	mov    0x18(%rdi),%r13
+     5b7:	48 39 f1             	cmp    %rsi,%rcx
+     5ba:	72 0d                	jb     5c9 <hash_print_statistics+0x39>
+     5bc:	eb 3f                	jmp    5fd <hash_print_statistics+0x6d>
+     5be:	66 90                	xchg   %ax,%ax
+     5c0:	48 83 c1 10          	add    $0x10,%rcx
+     5c4:	48 39 ce             	cmp    %rcx,%rsi
+     5c7:	76 34                	jbe    5fd <hash_print_statistics+0x6d>
+     5c9:	48 83 39 00          	cmpq   $0x0,(%rcx)
+     5cd:	74 f1                	je     5c0 <hash_print_statistics+0x30>
+     5cf:	48 8b 41 08          	mov    0x8(%rcx),%rax
+     5d3:	ba 01 00 00 00       	mov    $0x1,%edx
+     5d8:	48 85 c0             	test   %rax,%rax
+     5db:	74 10                	je     5ed <hash_print_statistics+0x5d>
+     5dd:	0f 1f 00             	nopl   (%rax)
+     5e0:	48 8b 40 08          	mov    0x8(%rax),%rax
+     5e4:	48 83 c2 01          	add    $0x1,%rdx
+     5e8:	48 85 c0             	test   %rax,%rax
+     5eb:	75 f3                	jne    5e0 <hash_print_statistics+0x50>
+     5ed:	49 39 d4             	cmp    %rdx,%r12
+     5f0:	4c 0f 42 e2          	cmovb  %rdx,%r12
+     5f4:	48 83 c1 10          	add    $0x10,%rcx
+     5f8:	48 39 ce             	cmp    %rcx,%rsi
+     5fb:	77 cc                	ja     5c9 <hash_print_statistics+0x39>
+     5fd:	4c 89 c1             	mov    %r8,%rcx
+     600:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 607 <hash_print_statistics+0x77>
+     607:	48 89 ef             	mov    %rbp,%rdi
+     60a:	31 c0                	xor    %eax,%eax
+     60c:	be 01 00 00 00       	mov    $0x1,%esi
+     611:	e8 00 00 00 00       	call   616 <hash_print_statistics+0x86>
+     616:	31 c0                	xor    %eax,%eax
+     618:	48 89 d9             	mov    %rbx,%rcx
+     61b:	be 01 00 00 00       	mov    $0x1,%esi
+     620:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 627 <hash_print_statistics+0x97>
+     627:	48 89 ef             	mov    %rbp,%rdi
+     62a:	e8 00 00 00 00       	call   62f <hash_print_statistics+0x9f>
+     62f:	4d 85 ed             	test   %r13,%r13
+     632:	78 6c                	js     6a0 <hash_print_statistics+0x110>
+     634:	66 0f ef c0          	pxor   %xmm0,%xmm0
+     638:	f2 49 0f 2a c5       	cvtsi2sd %r13,%xmm0
+     63d:	f2 0f 59 05 00 00 00 	mulsd  0x0(%rip),%xmm0        # 645 <hash_print_statistics+0xb5>
+     644:	00 
+     645:	48 85 db             	test   %rbx,%rbx
+     648:	78 7f                	js     6c9 <hash_print_statistics+0x139>
+     64a:	66 0f ef c9          	pxor   %xmm1,%xmm1
+     64e:	f2 48 0f 2a cb       	cvtsi2sd %rbx,%xmm1
+     653:	f2 0f 5e c1          	divsd  %xmm1,%xmm0
+     657:	4c 89 e9             	mov    %r13,%rcx
+     65a:	48 89 ef             	mov    %rbp,%rdi
+     65d:	be 01 00 00 00       	mov    $0x1,%esi
+     662:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 669 <hash_print_statistics+0xd9>
+     669:	b8 01 00 00 00       	mov    $0x1,%eax
+     66e:	e8 00 00 00 00       	call   673 <hash_print_statistics+0xe3>
+     673:	48 83 c4 08          	add    $0x8,%rsp
+     677:	4c 89 e1             	mov    %r12,%rcx
+     67a:	48 89 ef             	mov    %rbp,%rdi
+     67d:	5b                   	pop    %rbx
+     67e:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 685 <hash_print_statistics+0xf5>
+     685:	5d                   	pop    %rbp
+     686:	be 01 00 00 00       	mov    $0x1,%esi
+     68b:	41 5c                	pop    %r12
+     68d:	31 c0                	xor    %eax,%eax
+     68f:	41 5d                	pop    %r13
+     691:	e9 00 00 00 00       	jmp    696 <hash_print_statistics+0x106>
+     696:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+     69d:	00 00 00 
+     6a0:	4c 89 e8             	mov    %r13,%rax
+     6a3:	4c 89 ea             	mov    %r13,%rdx
+     6a6:	66 0f ef c0          	pxor   %xmm0,%xmm0
+     6aa:	48 d1 e8             	shr    %rax
+     6ad:	83 e2 01             	and    $0x1,%edx
+     6b0:	48 09 d0             	or     %rdx,%rax
+     6b3:	f2 48 0f 2a c0       	cvtsi2sd %rax,%xmm0
+     6b8:	f2 0f 58 c0          	addsd  %xmm0,%xmm0
+     6bc:	f2 0f 59 05 00 00 00 	mulsd  0x0(%rip),%xmm0        # 6c4 <hash_print_statistics+0x134>
+     6c3:	00 
+     6c4:	48 85 db             	test   %rbx,%rbx
+     6c7:	79 81                	jns    64a <hash_print_statistics+0xba>
+     6c9:	48 89 d8             	mov    %rbx,%rax
+     6cc:	83 e3 01             	and    $0x1,%ebx
+     6cf:	66 0f ef c9          	pxor   %xmm1,%xmm1
+     6d3:	48 d1 e8             	shr    %rax
+     6d6:	48 09 d8             	or     %rbx,%rax
+     6d9:	f2 48 0f 2a c8       	cvtsi2sd %rax,%xmm1
+     6de:	f2 0f 58 c9          	addsd  %xmm1,%xmm1
+     6e2:	e9 6c ff ff ff       	jmp    653 <hash_print_statistics+0xc3>
+     6e7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+     6ee:	00 00 
+
+00000000000006f0 <hash_lookup>:
+     6f0:	f3 0f 1e fa          	endbr64 
+     6f4:	41 54                	push   %r12
+     6f6:	49 89 f4             	mov    %rsi,%r12
+     6f9:	55                   	push   %rbp
+     6fa:	48 89 fd             	mov    %rdi,%rbp
+     6fd:	53                   	push   %rbx
+     6fe:	48 8b 77 10          	mov    0x10(%rdi),%rsi
+     702:	4c 89 e7             	mov    %r12,%rdi
+     705:	ff 55 30             	call   *0x30(%rbp)
+     708:	48 3b 45 10          	cmp    0x10(%rbp),%rax
+     70c:	0f 83 00 00 00 00    	jae    712 <hash_lookup+0x22>
+     712:	48 89 c3             	mov    %rax,%rbx
+     715:	48 c1 e3 04          	shl    $0x4,%rbx
+     719:	48 03 5d 00          	add    0x0(%rbp),%rbx
+     71d:	48 8b 33             	mov    (%rbx),%rsi
+     720:	48 85 f6             	test   %rsi,%rsi
+     723:	75 0e                	jne    733 <hash_lookup+0x43>
+     725:	eb 24                	jmp    74b <hash_lookup+0x5b>
+     727:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+     72e:	00 00 
+     730:	48 8b 33             	mov    (%rbx),%rsi
+     733:	4c 39 e6             	cmp    %r12,%rsi
+     736:	74 23                	je     75b <hash_lookup+0x6b>
+     738:	4c 89 e7             	mov    %r12,%rdi
+     73b:	ff 55 38             	call   *0x38(%rbp)
+     73e:	84 c0                	test   %al,%al
+     740:	75 16                	jne    758 <hash_lookup+0x68>
+     742:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+     746:	48 85 db             	test   %rbx,%rbx
+     749:	75 e5                	jne    730 <hash_lookup+0x40>
+     74b:	5b                   	pop    %rbx
+     74c:	31 c0                	xor    %eax,%eax
+     74e:	5d                   	pop    %rbp
+     74f:	41 5c                	pop    %r12
+     751:	c3                   	ret    
+     752:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+     758:	4c 8b 23             	mov    (%rbx),%r12
+     75b:	4c 89 e0             	mov    %r12,%rax
+     75e:	5b                   	pop    %rbx
+     75f:	5d                   	pop    %rbp
+     760:	41 5c                	pop    %r12
+     762:	c3                   	ret    
+     763:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+     76a:	00 00 00 00 
+     76e:	66 90                	xchg   %ax,%ax
+
+0000000000000770 <hash_get_first>:
+     770:	f3 0f 1e fa          	endbr64 
+     774:	48 83 7f 20 00       	cmpq   $0x0,0x20(%rdi)
+     779:	74 2d                	je     7a8 <hash_get_first+0x38>
+     77b:	48 8b 07             	mov    (%rdi),%rax
+     77e:	48 8b 57 08          	mov    0x8(%rdi),%rdx
+     782:	48 39 d0             	cmp    %rdx,%rax
+     785:	72 12                	jb     799 <hash_get_first+0x29>
+     787:	e9 00 00 00 00       	jmp    78c <hash_get_first+0x1c>
+     78c:	0f 1f 40 00          	nopl   0x0(%rax)
+     790:	48 83 c0 10          	add    $0x10,%rax
+     794:	48 39 d0             	cmp    %rdx,%rax
+     797:	73 16                	jae    7af <hash_get_first+0x3f>
+     799:	4c 8b 00             	mov    (%rax),%r8
+     79c:	4d 85 c0             	test   %r8,%r8
+     79f:	74 ef                	je     790 <hash_get_first+0x20>
+     7a1:	4c 89 c0             	mov    %r8,%rax
+     7a4:	c3                   	ret    
+     7a5:	0f 1f 00             	nopl   (%rax)
+     7a8:	45 31 c0             	xor    %r8d,%r8d
+     7ab:	4c 89 c0             	mov    %r8,%rax
+     7ae:	c3                   	ret    
+     7af:	e9 00 00 00 00       	jmp    7b4 <hash_get_first+0x44>
+     7b4:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+     7bb:	00 00 00 00 
+     7bf:	90                   	nop
+
+00000000000007c0 <hash_get_next>:
+     7c0:	f3 0f 1e fa          	endbr64 
+     7c4:	55                   	push   %rbp
+     7c5:	48 89 fd             	mov    %rdi,%rbp
+     7c8:	53                   	push   %rbx
+     7c9:	48 89 f3             	mov    %rsi,%rbx
+     7cc:	48 83 ec 08          	sub    $0x8,%rsp
+     7d0:	48 8b 77 10          	mov    0x10(%rdi),%rsi
+     7d4:	48 89 df             	mov    %rbx,%rdi
+     7d7:	ff 55 30             	call   *0x30(%rbp)
+     7da:	48 3b 45 10          	cmp    0x10(%rbp),%rax
+     7de:	0f 83 00 00 00 00    	jae    7e4 <hash_get_next+0x24>
+     7e4:	48 c1 e0 04          	shl    $0x4,%rax
+     7e8:	48 03 45 00          	add    0x0(%rbp),%rax
+     7ec:	48 89 c2             	mov    %rax,%rdx
+     7ef:	eb 0c                	jmp    7fd <hash_get_next+0x3d>
+     7f1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+     7f8:	48 85 d2             	test   %rdx,%rdx
+     7fb:	74 11                	je     80e <hash_get_next+0x4e>
+     7fd:	48 8b 0a             	mov    (%rdx),%rcx
+     800:	48 8b 52 08          	mov    0x8(%rdx),%rdx
+     804:	48 39 d9             	cmp    %rbx,%rcx
+     807:	75 ef                	jne    7f8 <hash_get_next+0x38>
+     809:	48 85 d2             	test   %rdx,%rdx
+     80c:	75 32                	jne    840 <hash_get_next+0x80>
+     80e:	48 8b 55 08          	mov    0x8(%rbp),%rdx
+     812:	eb 0c                	jmp    820 <hash_get_next+0x60>
+     814:	0f 1f 40 00          	nopl   0x0(%rax)
+     818:	4c 8b 00             	mov    (%rax),%r8
+     81b:	4d 85 c0             	test   %r8,%r8
+     81e:	75 0c                	jne    82c <hash_get_next+0x6c>
+     820:	48 83 c0 10          	add    $0x10,%rax
+     824:	48 39 c2             	cmp    %rax,%rdx
+     827:	77 ef                	ja     818 <hash_get_next+0x58>
+     829:	45 31 c0             	xor    %r8d,%r8d
+     82c:	48 83 c4 08          	add    $0x8,%rsp
+     830:	4c 89 c0             	mov    %r8,%rax
+     833:	5b                   	pop    %rbx
+     834:	5d                   	pop    %rbp
+     835:	c3                   	ret    
+     836:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+     83d:	00 00 00 
+     840:	4c 8b 02             	mov    (%rdx),%r8
+     843:	48 83 c4 08          	add    $0x8,%rsp
+     847:	5b                   	pop    %rbx
+     848:	5d                   	pop    %rbp
+     849:	4c 89 c0             	mov    %r8,%rax
+     84c:	c3                   	ret    
+     84d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000850 <hash_get_entries>:
+     850:	f3 0f 1e fa          	endbr64 
+     854:	4c 8b 0f             	mov    (%rdi),%r9
+     857:	31 c0                	xor    %eax,%eax
+     859:	4c 3b 4f 08          	cmp    0x8(%rdi),%r9
+     85d:	73 33                	jae    892 <hash_get_entries+0x42>
+     85f:	49 83 39 00          	cmpq   $0x0,(%r9)
+     863:	75 0b                	jne    870 <hash_get_entries+0x20>
+     865:	49 83 c1 10          	add    $0x10,%r9
+     869:	4c 39 4f 08          	cmp    %r9,0x8(%rdi)
+     86d:	77 f0                	ja     85f <hash_get_entries+0xf>
+     86f:	c3                   	ret    
+     870:	4c 89 c9             	mov    %r9,%rcx
+     873:	eb 18                	jmp    88d <hash_get_entries+0x3d>
+     875:	0f 1f 00             	nopl   (%rax)
+     878:	4c 8b 01             	mov    (%rcx),%r8
+     87b:	48 83 c0 01          	add    $0x1,%rax
+     87f:	4c 89 44 c6 f8       	mov    %r8,-0x8(%rsi,%rax,8)
+     884:	48 8b 49 08          	mov    0x8(%rcx),%rcx
+     888:	48 85 c9             	test   %rcx,%rcx
+     88b:	74 d8                	je     865 <hash_get_entries+0x15>
+     88d:	48 39 c2             	cmp    %rax,%rdx
+     890:	77 e6                	ja     878 <hash_get_entries+0x28>
+     892:	c3                   	ret    
+     893:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+     89a:	00 00 00 00 
+     89e:	66 90                	xchg   %ax,%ax
+
+00000000000008a0 <hash_do_for_each>:
+     8a0:	f3 0f 1e fa          	endbr64 
+     8a4:	41 57                	push   %r15
+     8a6:	41 56                	push   %r14
+     8a8:	41 55                	push   %r13
+     8aa:	41 54                	push   %r12
+     8ac:	55                   	push   %rbp
+     8ad:	53                   	push   %rbx
+     8ae:	48 83 ec 08          	sub    $0x8,%rsp
+     8b2:	4c 8b 37             	mov    (%rdi),%r14
+     8b5:	4c 3b 77 08          	cmp    0x8(%rdi),%r14
+     8b9:	73 58                	jae    913 <hash_do_for_each+0x73>
+     8bb:	49 89 ff             	mov    %rdi,%r15
+     8be:	48 89 f5             	mov    %rsi,%rbp
+     8c1:	49 89 d5             	mov    %rdx,%r13
+     8c4:	45 31 e4             	xor    %r12d,%r12d
+     8c7:	49 8b 3e             	mov    (%r14),%rdi
+     8ca:	48 85 ff             	test   %rdi,%rdi
+     8cd:	75 21                	jne    8f0 <hash_do_for_each+0x50>
+     8cf:	49 83 c6 10          	add    $0x10,%r14
+     8d3:	4d 39 77 08          	cmp    %r14,0x8(%r15)
+     8d7:	77 ee                	ja     8c7 <hash_do_for_each+0x27>
+     8d9:	48 83 c4 08          	add    $0x8,%rsp
+     8dd:	4c 89 e0             	mov    %r12,%rax
+     8e0:	5b                   	pop    %rbx
+     8e1:	5d                   	pop    %rbp
+     8e2:	41 5c                	pop    %r12
+     8e4:	41 5d                	pop    %r13
+     8e6:	41 5e                	pop    %r14
+     8e8:	41 5f                	pop    %r15
+     8ea:	c3                   	ret    
+     8eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+     8f0:	4c 89 f3             	mov    %r14,%rbx
+     8f3:	eb 13                	jmp    908 <hash_do_for_each+0x68>
+     8f5:	0f 1f 00             	nopl   (%rax)
+     8f8:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+     8fc:	49 83 c4 01          	add    $0x1,%r12
+     900:	48 85 db             	test   %rbx,%rbx
+     903:	74 ca                	je     8cf <hash_do_for_each+0x2f>
+     905:	48 8b 3b             	mov    (%rbx),%rdi
+     908:	4c 89 ee             	mov    %r13,%rsi
+     90b:	ff d5                	call   *%rbp
+     90d:	84 c0                	test   %al,%al
+     90f:	75 e7                	jne    8f8 <hash_do_for_each+0x58>
+     911:	eb c6                	jmp    8d9 <hash_do_for_each+0x39>
+     913:	45 31 e4             	xor    %r12d,%r12d
+     916:	eb c1                	jmp    8d9 <hash_do_for_each+0x39>
+     918:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+     91f:	00 
+
+0000000000000920 <hash_string>:
+     920:	f3 0f 1e fa          	endbr64 
+     924:	0f b6 0f             	movzbl (%rdi),%ecx
+     927:	31 d2                	xor    %edx,%edx
+     929:	84 c9                	test   %cl,%cl
+     92b:	74 20                	je     94d <hash_string+0x2d>
+     92d:	0f 1f 00             	nopl   (%rax)
+     930:	48 89 d0             	mov    %rdx,%rax
+     933:	48 83 c7 01          	add    $0x1,%rdi
+     937:	48 c1 e0 05          	shl    $0x5,%rax
+     93b:	48 29 d0             	sub    %rdx,%rax
+     93e:	31 d2                	xor    %edx,%edx
+     940:	48 01 c8             	add    %rcx,%rax
+     943:	0f b6 0f             	movzbl (%rdi),%ecx
+     946:	48 f7 f6             	div    %rsi
+     949:	84 c9                	test   %cl,%cl
+     94b:	75 e3                	jne    930 <hash_string+0x10>
+     94d:	48 89 d0             	mov    %rdx,%rax
+     950:	c3                   	ret    
+     951:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+     958:	00 00 00 00 
+     95c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000960 <hash_reset_tuning>:
+     960:	f3 0f 1e fa          	endbr64 
+     964:	48 b8 00 00 00 00 00 	movabs $0x3f80000000000000,%rax
+     96b:	00 80 3f 
+     96e:	c6 47 10 00          	movb   $0x0,0x10(%rdi)
+     972:	48 89 07             	mov    %rax,(%rdi)
+     975:	48 b8 cd cc 4c 3f f4 	movabs $0x3fb4fdf43f4ccccd,%rax
+     97c:	fd b4 3f 
+     97f:	48 89 47 08          	mov    %rax,0x8(%rdi)
+     983:	c3                   	ret    
+     984:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+     98b:	00 00 00 00 
+     98f:	90                   	nop
+
+0000000000000990 <hash_initialize>:
+     990:	f3 0f 1e fa          	endbr64 
+     994:	41 57                	push   %r15
+     996:	48 8d 05 63 f6 ff ff 	lea    -0x99d(%rip),%rax        # 0 <raw_hasher>
+     99d:	49 89 f7             	mov    %rsi,%r15
+     9a0:	41 56                	push   %r14
+     9a2:	4d 89 c6             	mov    %r8,%r14
+     9a5:	41 55                	push   %r13
+     9a7:	49 89 fd             	mov    %rdi,%r13
+     9aa:	bf 50 00 00 00       	mov    $0x50,%edi
+     9af:	41 54                	push   %r12
+     9b1:	55                   	push   %rbp
+     9b2:	48 89 d5             	mov    %rdx,%rbp
+     9b5:	53                   	push   %rbx
+     9b6:	48 89 cb             	mov    %rcx,%rbx
+     9b9:	48 83 ec 08          	sub    $0x8,%rsp
+     9bd:	48 85 d2             	test   %rdx,%rdx
+     9c0:	48 0f 44 e8          	cmove  %rax,%rbp
+     9c4:	48 85 c9             	test   %rcx,%rcx
+     9c7:	48 8d 05 52 f6 ff ff 	lea    -0x9ae(%rip),%rax        # 20 <raw_comparator>
+     9ce:	48 0f 44 d8          	cmove  %rax,%rbx
+     9d2:	e8 00 00 00 00       	call   9d7 <hash_initialize+0x47>
+     9d7:	49 89 c4             	mov    %rax,%r12
+     9da:	48 85 c0             	test   %rax,%rax
+     9dd:	0f 84 83 00 00 00    	je     a66 <hash_initialize+0xd6>
+     9e3:	4d 85 ff             	test   %r15,%r15
+     9e6:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 9ed <hash_initialize+0x5d>
+     9ed:	4c 89 e7             	mov    %r12,%rdi
+     9f0:	4c 0f 44 f8          	cmove  %rax,%r15
+     9f4:	4d 89 7c 24 28       	mov    %r15,0x28(%r12)
+     9f9:	e8 32 f6 ff ff       	call   30 <check_tuning>
+     9fe:	84 c0                	test   %al,%al
+     a00:	74 7e                	je     a80 <hash_initialize+0xf0>
+     a02:	4c 89 ef             	mov    %r13,%rdi
+     a05:	4c 89 fe             	mov    %r15,%rsi
+     a08:	e8 c3 f7 ff ff       	call   1d0 <compute_bucket_size>
+     a0d:	49 89 44 24 10       	mov    %rax,0x10(%r12)
+     a12:	49 89 c5             	mov    %rax,%r13
+     a15:	48 85 c0             	test   %rax,%rax
+     a18:	74 71                	je     a8b <hash_initialize+0xfb>
+     a1a:	be 10 00 00 00       	mov    $0x10,%esi
+     a1f:	48 89 c7             	mov    %rax,%rdi
+     a22:	e8 00 00 00 00       	call   a27 <hash_initialize+0x97>
+     a27:	49 89 04 24          	mov    %rax,(%r12)
+     a2b:	48 85 c0             	test   %rax,%rax
+     a2e:	74 5b                	je     a8b <hash_initialize+0xfb>
+     a30:	49 c1 e5 04          	shl    $0x4,%r13
+     a34:	49 89 6c 24 30       	mov    %rbp,0x30(%r12)
+     a39:	4c 01 e8             	add    %r13,%rax
+     a3c:	49 89 5c 24 38       	mov    %rbx,0x38(%r12)
+     a41:	49 89 44 24 08       	mov    %rax,0x8(%r12)
+     a46:	49 c7 44 24 18 00 00 	movq   $0x0,0x18(%r12)
+     a4d:	00 00 
+     a4f:	49 c7 44 24 20 00 00 	movq   $0x0,0x20(%r12)
+     a56:	00 00 
+     a58:	4d 89 74 24 40       	mov    %r14,0x40(%r12)
+     a5d:	49 c7 44 24 48 00 00 	movq   $0x0,0x48(%r12)
+     a64:	00 00 
+     a66:	48 83 c4 08          	add    $0x8,%rsp
+     a6a:	4c 89 e0             	mov    %r12,%rax
+     a6d:	5b                   	pop    %rbx
+     a6e:	5d                   	pop    %rbp
+     a6f:	41 5c                	pop    %r12
+     a71:	41 5d                	pop    %r13
+     a73:	41 5e                	pop    %r14
+     a75:	41 5f                	pop    %r15
+     a77:	c3                   	ret    
+     a78:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+     a7f:	00 
+     a80:	e8 00 00 00 00       	call   a85 <hash_initialize+0xf5>
+     a85:	c7 00 16 00 00 00    	movl   $0x16,(%rax)
+     a8b:	4c 89 e7             	mov    %r12,%rdi
+     a8e:	45 31 e4             	xor    %r12d,%r12d
+     a91:	e8 00 00 00 00       	call   a96 <hash_initialize+0x106>
+     a96:	eb ce                	jmp    a66 <hash_initialize+0xd6>
+     a98:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+     a9f:	00 
+
+0000000000000aa0 <hash_clear>:
+     aa0:	f3 0f 1e fa          	endbr64 
+     aa4:	41 54                	push   %r12
+     aa6:	55                   	push   %rbp
+     aa7:	48 89 fd             	mov    %rdi,%rbp
+     aaa:	53                   	push   %rbx
+     aab:	4c 8b 27             	mov    (%rdi),%r12
+     aae:	4c 3b 67 08          	cmp    0x8(%rdi),%r12
+     ab2:	72 16                	jb     aca <hash_clear+0x2a>
+     ab4:	e9 82 00 00 00       	jmp    b3b <hash_clear+0x9b>
+     ab9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+     ac0:	49 83 c4 10          	add    $0x10,%r12
+     ac4:	4c 39 65 08          	cmp    %r12,0x8(%rbp)
+     ac8:	76 71                	jbe    b3b <hash_clear+0x9b>
+     aca:	49 83 3c 24 00       	cmpq   $0x0,(%r12)
+     acf:	74 ef                	je     ac0 <hash_clear+0x20>
+     ad1:	49 8b 5c 24 08       	mov    0x8(%r12),%rbx
+     ad6:	48 8b 55 40          	mov    0x40(%rbp),%rdx
+     ada:	48 85 db             	test   %rbx,%rbx
+     add:	75 0c                	jne    aeb <hash_clear+0x4b>
+     adf:	eb 34                	jmp    b15 <hash_clear+0x75>
+     ae1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+     ae8:	48 89 c3             	mov    %rax,%rbx
+     aeb:	48 85 d2             	test   %rdx,%rdx
+     aee:	74 09                	je     af9 <hash_clear+0x59>
+     af0:	48 8b 3b             	mov    (%rbx),%rdi
+     af3:	ff d2                	call   *%rdx
+     af5:	48 8b 55 40          	mov    0x40(%rbp),%rdx
+     af9:	48 8b 43 08          	mov    0x8(%rbx),%rax
+     afd:	48 8b 4d 48          	mov    0x48(%rbp),%rcx
+     b01:	48 c7 03 00 00 00 00 	movq   $0x0,(%rbx)
+     b08:	48 89 4b 08          	mov    %rcx,0x8(%rbx)
+     b0c:	48 89 5d 48          	mov    %rbx,0x48(%rbp)
+     b10:	48 85 c0             	test   %rax,%rax
+     b13:	75 d3                	jne    ae8 <hash_clear+0x48>
+     b15:	48 85 d2             	test   %rdx,%rdx
+     b18:	74 06                	je     b20 <hash_clear+0x80>
+     b1a:	49 8b 3c 24          	mov    (%r12),%rdi
+     b1e:	ff d2                	call   *%rdx
+     b20:	49 c7 04 24 00 00 00 	movq   $0x0,(%r12)
+     b27:	00 
+     b28:	49 83 c4 10          	add    $0x10,%r12
+     b2c:	49 c7 44 24 f8 00 00 	movq   $0x0,-0x8(%r12)
+     b33:	00 00 
+     b35:	4c 39 65 08          	cmp    %r12,0x8(%rbp)
+     b39:	77 8f                	ja     aca <hash_clear+0x2a>
+     b3b:	5b                   	pop    %rbx
+     b3c:	48 c7 45 18 00 00 00 	movq   $0x0,0x18(%rbp)
+     b43:	00 
+     b44:	48 c7 45 20 00 00 00 	movq   $0x0,0x20(%rbp)
+     b4b:	00 
+     b4c:	5d                   	pop    %rbp
+     b4d:	41 5c                	pop    %r12
+     b4f:	c3                   	ret    
+
+0000000000000b50 <hash_free>:
+     b50:	f3 0f 1e fa          	endbr64 
+     b54:	41 57                	push   %r15
+     b56:	41 56                	push   %r14
+     b58:	41 55                	push   %r13
+     b5a:	41 54                	push   %r12
+     b5c:	55                   	push   %rbp
+     b5d:	48 89 fd             	mov    %rdi,%rbp
+     b60:	53                   	push   %rbx
+     b61:	48 83 ec 08          	sub    $0x8,%rsp
+     b65:	e8 00 00 00 00       	call   b6a <hash_free+0x1a>
+     b6a:	4c 8b 7d 00          	mov    0x0(%rbp),%r15
+     b6e:	48 83 7d 40 00       	cmpq   $0x0,0x40(%rbp)
+     b73:	44 8b 28             	mov    (%rax),%r13d
+     b76:	49 89 c4             	mov    %rax,%r12
+     b79:	48 8b 45 08          	mov    0x8(%rbp),%rax
+     b7d:	4d 89 fe             	mov    %r15,%r14
+     b80:	74 4e                	je     bd0 <hash_free+0x80>
+     b82:	48 83 7d 20 00       	cmpq   $0x0,0x20(%rbp)
+     b87:	74 47                	je     bd0 <hash_free+0x80>
+     b89:	49 39 c7             	cmp    %rax,%r15
+     b8c:	72 0b                	jb     b99 <hash_free+0x49>
+     b8e:	eb 73                	jmp    c03 <hash_free+0xb3>
+     b90:	49 83 c7 10          	add    $0x10,%r15
+     b94:	4c 39 f8             	cmp    %r15,%rax
+     b97:	76 33                	jbe    bcc <hash_free+0x7c>
+     b99:	49 8b 3f             	mov    (%r15),%rdi
+     b9c:	48 85 ff             	test   %rdi,%rdi
+     b9f:	74 ef                	je     b90 <hash_free+0x40>
+     ba1:	4c 89 fb             	mov    %r15,%rbx
+     ba4:	eb 0d                	jmp    bb3 <hash_free+0x63>
+     ba6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+     bad:	00 00 00 
+     bb0:	48 8b 3b             	mov    (%rbx),%rdi
+     bb3:	ff 55 40             	call   *0x40(%rbp)
+     bb6:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+     bba:	48 85 db             	test   %rbx,%rbx
+     bbd:	75 f1                	jne    bb0 <hash_free+0x60>
+     bbf:	48 8b 45 08          	mov    0x8(%rbp),%rax
+     bc3:	49 83 c7 10          	add    $0x10,%r15
+     bc7:	4c 39 f8             	cmp    %r15,%rax
+     bca:	77 cd                	ja     b99 <hash_free+0x49>
+     bcc:	4c 8b 75 00          	mov    0x0(%rbp),%r14
+     bd0:	4c 39 f0             	cmp    %r14,%rax
+     bd3:	76 2e                	jbe    c03 <hash_free+0xb3>
+     bd5:	0f 1f 00             	nopl   (%rax)
+     bd8:	49 8b 5e 08          	mov    0x8(%r14),%rbx
+     bdc:	48 85 db             	test   %rbx,%rbx
+     bdf:	74 18                	je     bf9 <hash_free+0xa9>
+     be1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+     be8:	48 89 df             	mov    %rbx,%rdi
+     beb:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+     bef:	e8 00 00 00 00       	call   bf4 <hash_free+0xa4>
+     bf4:	48 85 db             	test   %rbx,%rbx
+     bf7:	75 ef                	jne    be8 <hash_free+0x98>
+     bf9:	49 83 c6 10          	add    $0x10,%r14
+     bfd:	4c 39 75 08          	cmp    %r14,0x8(%rbp)
+     c01:	77 d5                	ja     bd8 <hash_free+0x88>
+     c03:	48 8b 5d 48          	mov    0x48(%rbp),%rbx
+     c07:	48 85 db             	test   %rbx,%rbx
+     c0a:	74 15                	je     c21 <hash_free+0xd1>
+     c0c:	0f 1f 40 00          	nopl   0x0(%rax)
+     c10:	48 89 df             	mov    %rbx,%rdi
+     c13:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+     c17:	e8 00 00 00 00       	call   c1c <hash_free+0xcc>
+     c1c:	48 85 db             	test   %rbx,%rbx
+     c1f:	75 ef                	jne    c10 <hash_free+0xc0>
+     c21:	48 8b 7d 00          	mov    0x0(%rbp),%rdi
+     c25:	e8 00 00 00 00       	call   c2a <hash_free+0xda>
+     c2a:	48 89 ef             	mov    %rbp,%rdi
+     c2d:	e8 00 00 00 00       	call   c32 <hash_free+0xe2>
+     c32:	45 89 2c 24          	mov    %r13d,(%r12)
+     c36:	48 83 c4 08          	add    $0x8,%rsp
+     c3a:	5b                   	pop    %rbx
+     c3b:	5d                   	pop    %rbp
+     c3c:	41 5c                	pop    %r12
+     c3e:	41 5d                	pop    %r13
+     c40:	41 5e                	pop    %r14
+     c42:	41 5f                	pop    %r15
+     c44:	c3                   	ret    
+     c45:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+     c4c:	00 00 00 00 
+
+0000000000000c50 <hash_rehash>:
+     c50:	f3 0f 1e fa          	endbr64 
+     c54:	41 56                	push   %r14
+     c56:	41 55                	push   %r13
+     c58:	41 54                	push   %r12
+     c5a:	55                   	push   %rbp
+     c5b:	48 89 fd             	mov    %rdi,%rbp
+     c5e:	48 89 f7             	mov    %rsi,%rdi
+     c61:	53                   	push   %rbx
+     c62:	48 83 ec 60          	sub    $0x60,%rsp
+     c66:	4c 8b 65 28          	mov    0x28(%rbp),%r12
+     c6a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+     c71:	00 00 
+     c73:	48 89 44 24 58       	mov    %rax,0x58(%rsp)
+     c78:	31 c0                	xor    %eax,%eax
+     c7a:	4c 89 e6             	mov    %r12,%rsi
+     c7d:	e8 4e f5 ff ff       	call   1d0 <compute_bucket_size>
+     c82:	48 85 c0             	test   %rax,%rax
+     c85:	0f 84 15 01 00 00    	je     da0 <hash_rehash+0x150>
+     c8b:	48 89 c3             	mov    %rax,%rbx
+     c8e:	48 39 45 10          	cmp    %rax,0x10(%rbp)
+     c92:	0f 84 f8 00 00 00    	je     d90 <hash_rehash+0x140>
+     c98:	be 10 00 00 00       	mov    $0x10,%esi
+     c9d:	48 89 c7             	mov    %rax,%rdi
+     ca0:	e8 00 00 00 00       	call   ca5 <hash_rehash+0x55>
+     ca5:	48 89 04 24          	mov    %rax,(%rsp)
+     ca9:	48 85 c0             	test   %rax,%rax
+     cac:	0f 84 ee 00 00 00    	je     da0 <hash_rehash+0x150>
+     cb2:	48 89 5c 24 10       	mov    %rbx,0x10(%rsp)
+     cb7:	48 c1 e3 04          	shl    $0x4,%rbx
+     cbb:	49 89 e5             	mov    %rsp,%r13
+     cbe:	31 d2                	xor    %edx,%edx
+     cc0:	48 01 d8             	add    %rbx,%rax
+     cc3:	48 89 ee             	mov    %rbp,%rsi
+     cc6:	4c 89 ef             	mov    %r13,%rdi
+     cc9:	4c 89 64 24 28       	mov    %r12,0x28(%rsp)
+     cce:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+     cd3:	48 8b 45 30          	mov    0x30(%rbp),%rax
+     cd7:	48 c7 44 24 18 00 00 	movq   $0x0,0x18(%rsp)
+     cde:	00 00 
+     ce0:	48 89 44 24 30       	mov    %rax,0x30(%rsp)
+     ce5:	48 8b 45 38          	mov    0x38(%rbp),%rax
+     ce9:	48 c7 44 24 20 00 00 	movq   $0x0,0x20(%rsp)
+     cf0:	00 00 
+     cf2:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
+     cf7:	48 8b 45 40          	mov    0x40(%rbp),%rax
+     cfb:	48 89 44 24 40       	mov    %rax,0x40(%rsp)
+     d00:	48 8b 45 48          	mov    0x48(%rbp),%rax
+     d04:	48 89 44 24 48       	mov    %rax,0x48(%rsp)
+     d09:	e8 12 f6 ff ff       	call   320 <transfer_entries>
+     d0e:	41 89 c4             	mov    %eax,%r12d
+     d11:	84 c0                	test   %al,%al
+     d13:	0f 85 8f 00 00 00    	jne    da8 <hash_rehash+0x158>
+     d19:	e8 00 00 00 00       	call   d1e <hash_rehash+0xce>
+     d1e:	ba 01 00 00 00       	mov    $0x1,%edx
+     d23:	4c 89 ee             	mov    %r13,%rsi
+     d26:	48 89 ef             	mov    %rbp,%rdi
+     d29:	44 8b 30             	mov    (%rax),%r14d
+     d2c:	48 89 c3             	mov    %rax,%rbx
+     d2f:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
+     d34:	48 89 45 48          	mov    %rax,0x48(%rbp)
+     d38:	e8 e3 f5 ff ff       	call   320 <transfer_entries>
+     d3d:	84 c0                	test   %al,%al
+     d3f:	0f 84 00 00 00 00    	je     d45 <hash_rehash+0xf5>
+     d45:	31 d2                	xor    %edx,%edx
+     d47:	4c 89 ee             	mov    %r13,%rsi
+     d4a:	48 89 ef             	mov    %rbp,%rdi
+     d4d:	e8 ce f5 ff ff       	call   320 <transfer_entries>
+     d52:	84 c0                	test   %al,%al
+     d54:	0f 84 00 00 00 00    	je     d5a <hash_rehash+0x10a>
+     d5a:	48 8b 3c 24          	mov    (%rsp),%rdi
+     d5e:	e8 00 00 00 00       	call   d63 <hash_rehash+0x113>
+     d63:	44 89 33             	mov    %r14d,(%rbx)
+     d66:	48 8b 44 24 58       	mov    0x58(%rsp),%rax
+     d6b:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+     d72:	00 00 
+     d74:	75 69                	jne    ddf <hash_rehash+0x18f>
+     d76:	48 83 c4 60          	add    $0x60,%rsp
+     d7a:	44 89 e0             	mov    %r12d,%eax
+     d7d:	5b                   	pop    %rbx
+     d7e:	5d                   	pop    %rbp
+     d7f:	41 5c                	pop    %r12
+     d81:	41 5d                	pop    %r13
+     d83:	41 5e                	pop    %r14
+     d85:	c3                   	ret    
+     d86:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+     d8d:	00 00 00 
+     d90:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+     d96:	eb ce                	jmp    d66 <hash_rehash+0x116>
+     d98:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+     d9f:	00 
+     da0:	45 31 e4             	xor    %r12d,%r12d
+     da3:	eb c1                	jmp    d66 <hash_rehash+0x116>
+     da5:	0f 1f 00             	nopl   (%rax)
+     da8:	48 8b 7d 00          	mov    0x0(%rbp),%rdi
+     dac:	e8 00 00 00 00       	call   db1 <hash_rehash+0x161>
+     db1:	48 8b 04 24          	mov    (%rsp),%rax
+     db5:	48 89 45 00          	mov    %rax,0x0(%rbp)
+     db9:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+     dbe:	48 89 45 08          	mov    %rax,0x8(%rbp)
+     dc2:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+     dc7:	48 89 45 10          	mov    %rax,0x10(%rbp)
+     dcb:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+     dd0:	48 89 45 18          	mov    %rax,0x18(%rbp)
+     dd4:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
+     dd9:	48 89 45 48          	mov    %rax,0x48(%rbp)
+     ddd:	eb 87                	jmp    d66 <hash_rehash+0x116>
+     ddf:	e8 00 00 00 00       	call   de4 <hash_rehash+0x194>
+     de4:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+     deb:	00 00 00 00 
+     def:	90                   	nop
+
+0000000000000df0 <hash_insert_if_absent>:
+     df0:	f3 0f 1e fa          	endbr64 
+     df4:	41 55                	push   %r13
+     df6:	41 54                	push   %r12
+     df8:	55                   	push   %rbp
+     df9:	53                   	push   %rbx
+     dfa:	48 83 ec 18          	sub    $0x18,%rsp
+     dfe:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+     e05:	00 00 
+     e07:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+     e0c:	31 c0                	xor    %eax,%eax
+     e0e:	48 85 f6             	test   %rsi,%rsi
+     e11:	0f 84 00 00 00 00    	je     e17 <hash_insert_if_absent+0x27>
+     e17:	49 89 e4             	mov    %rsp,%r12
+     e1a:	49 89 d5             	mov    %rdx,%r13
+     e1d:	31 c9                	xor    %ecx,%ecx
+     e1f:	48 89 fb             	mov    %rdi,%rbx
+     e22:	4c 89 e2             	mov    %r12,%rdx
+     e25:	48 89 f5             	mov    %rsi,%rbp
+     e28:	e8 93 f2 ff ff       	call   c0 <hash_find_entry>
+     e2d:	48 85 c0             	test   %rax,%rax
+     e30:	74 2e                	je     e60 <hash_insert_if_absent+0x70>
+     e32:	45 31 c0             	xor    %r8d,%r8d
+     e35:	4d 85 ed             	test   %r13,%r13
+     e38:	74 04                	je     e3e <hash_insert_if_absent+0x4e>
+     e3a:	49 89 45 00          	mov    %rax,0x0(%r13)
+     e3e:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+     e43:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+     e4a:	00 00 
+     e4c:	0f 85 d2 01 00 00    	jne    1024 <hash_insert_if_absent+0x234>
+     e52:	48 83 c4 18          	add    $0x18,%rsp
+     e56:	44 89 c0             	mov    %r8d,%eax
+     e59:	5b                   	pop    %rbx
+     e5a:	5d                   	pop    %rbp
+     e5b:	41 5c                	pop    %r12
+     e5d:	41 5d                	pop    %r13
+     e5f:	c3                   	ret    
+     e60:	48 8b 43 18          	mov    0x18(%rbx),%rax
+     e64:	48 85 c0             	test   %rax,%rax
+     e67:	78 7f                	js     ee8 <hash_insert_if_absent+0xf8>
+     e69:	66 0f ef ed          	pxor   %xmm5,%xmm5
+     e6d:	f3 48 0f 2a e8       	cvtsi2ss %rax,%xmm5
+     e72:	48 8b 43 10          	mov    0x10(%rbx),%rax
+     e76:	48 85 c0             	test   %rax,%rax
+     e79:	0f 88 8f 00 00 00    	js     f0e <hash_insert_if_absent+0x11e>
+     e7f:	66 0f ef e4          	pxor   %xmm4,%xmm4
+     e83:	f3 48 0f 2a e0       	cvtsi2ss %rax,%xmm4
+     e88:	48 8b 43 28          	mov    0x28(%rbx),%rax
+     e8c:	f3 0f 10 40 08       	movss  0x8(%rax),%xmm0
+     e91:	f3 0f 59 c4          	mulss  %xmm4,%xmm0
+     e95:	0f 2f e8             	comiss %xmm0,%xmm5
+     e98:	0f 87 92 00 00 00    	ja     f30 <hash_insert_if_absent+0x140>
+     e9e:	4c 8b 24 24          	mov    (%rsp),%r12
+     ea2:	49 83 3c 24 00       	cmpq   $0x0,(%r12)
+     ea7:	0f 84 d3 00 00 00    	je     f80 <hash_insert_if_absent+0x190>
+     ead:	48 8b 43 48          	mov    0x48(%rbx),%rax
+     eb1:	48 85 c0             	test   %rax,%rax
+     eb4:	0f 84 e6 00 00 00    	je     fa0 <hash_insert_if_absent+0x1b0>
+     eba:	48 8b 50 08          	mov    0x8(%rax),%rdx
+     ebe:	48 89 53 48          	mov    %rdx,0x48(%rbx)
+     ec2:	49 8b 54 24 08       	mov    0x8(%r12),%rdx
+     ec7:	48 89 28             	mov    %rbp,(%rax)
+     eca:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+     ed0:	48 89 50 08          	mov    %rdx,0x8(%rax)
+     ed4:	49 89 44 24 08       	mov    %rax,0x8(%r12)
+     ed9:	48 83 43 20 01       	addq   $0x1,0x20(%rbx)
+     ede:	e9 5b ff ff ff       	jmp    e3e <hash_insert_if_absent+0x4e>
+     ee3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+     ee8:	48 89 c2             	mov    %rax,%rdx
+     eeb:	83 e0 01             	and    $0x1,%eax
+     eee:	66 0f ef ed          	pxor   %xmm5,%xmm5
+     ef2:	48 d1 ea             	shr    %rdx
+     ef5:	48 09 c2             	or     %rax,%rdx
+     ef8:	48 8b 43 10          	mov    0x10(%rbx),%rax
+     efc:	f3 48 0f 2a ea       	cvtsi2ss %rdx,%xmm5
+     f01:	f3 0f 58 ed          	addss  %xmm5,%xmm5
+     f05:	48 85 c0             	test   %rax,%rax
+     f08:	0f 89 71 ff ff ff    	jns    e7f <hash_insert_if_absent+0x8f>
+     f0e:	48 89 c2             	mov    %rax,%rdx
+     f11:	83 e0 01             	and    $0x1,%eax
+     f14:	66 0f ef e4          	pxor   %xmm4,%xmm4
+     f18:	48 d1 ea             	shr    %rdx
+     f1b:	48 09 c2             	or     %rax,%rdx
+     f1e:	f3 48 0f 2a e2       	cvtsi2ss %rdx,%xmm4
+     f23:	f3 0f 58 e4          	addss  %xmm4,%xmm4
+     f27:	e9 5c ff ff ff       	jmp    e88 <hash_insert_if_absent+0x98>
+     f2c:	0f 1f 40 00          	nopl   0x0(%rax)
+     f30:	48 89 df             	mov    %rbx,%rdi
+     f33:	e8 f8 f0 ff ff       	call   30 <check_tuning>
+     f38:	48 8b 43 28          	mov    0x28(%rbx),%rax
+     f3c:	0f 28 cc             	movaps %xmm4,%xmm1
+     f3f:	f3 0f 10 40 08       	movss  0x8(%rax),%xmm0
+     f44:	f3 0f 59 c8          	mulss  %xmm0,%xmm1
+     f48:	0f 2f e9             	comiss %xmm1,%xmm5
+     f4b:	0f 86 4d ff ff ff    	jbe    e9e <hash_insert_if_absent+0xae>
+     f51:	f3 0f 59 60 0c       	mulss  0xc(%rax),%xmm4
+     f56:	80 78 10 00          	cmpb   $0x0,0x10(%rax)
+     f5a:	74 64                	je     fc0 <hash_insert_if_absent+0x1d0>
+     f5c:	0f 2f 25 00 00 00 00 	comiss 0x0(%rip),%xmm4        # f63 <hash_insert_if_absent+0x173>
+     f63:	72 6b                	jb     fd0 <hash_insert_if_absent+0x1e0>
+     f65:	e8 00 00 00 00       	call   f6a <hash_insert_if_absent+0x17a>
+     f6a:	41 b8 ff ff ff ff    	mov    $0xffffffff,%r8d
+     f70:	c7 00 0c 00 00 00    	movl   $0xc,(%rax)
+     f76:	e9 c3 fe ff ff       	jmp    e3e <hash_insert_if_absent+0x4e>
+     f7b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+     f80:	49 89 2c 24          	mov    %rbp,(%r12)
+     f84:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+     f8a:	48 83 43 20 01       	addq   $0x1,0x20(%rbx)
+     f8f:	48 83 43 18 01       	addq   $0x1,0x18(%rbx)
+     f94:	e9 a5 fe ff ff       	jmp    e3e <hash_insert_if_absent+0x4e>
+     f99:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+     fa0:	bf 10 00 00 00       	mov    $0x10,%edi
+     fa5:	e8 00 00 00 00       	call   faa <hash_insert_if_absent+0x1ba>
+     faa:	48 85 c0             	test   %rax,%rax
+     fad:	0f 85 0f ff ff ff    	jne    ec2 <hash_insert_if_absent+0xd2>
+     fb3:	41 b8 ff ff ff ff    	mov    $0xffffffff,%r8d
+     fb9:	e9 80 fe ff ff       	jmp    e3e <hash_insert_if_absent+0x4e>
+     fbe:	66 90                	xchg   %ax,%ax
+     fc0:	f3 0f 59 e0          	mulss  %xmm0,%xmm4
+     fc4:	eb 96                	jmp    f5c <hash_insert_if_absent+0x16c>
+     fc6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+     fcd:	00 00 00 
+     fd0:	0f 2f 25 00 00 00 00 	comiss 0x0(%rip),%xmm4        # fd7 <hash_insert_if_absent+0x1e7>
+     fd7:	73 37                	jae    1010 <hash_insert_if_absent+0x220>
+     fd9:	f3 48 0f 2c f4       	cvttss2si %xmm4,%rsi
+     fde:	48 89 df             	mov    %rbx,%rdi
+     fe1:	e8 00 00 00 00       	call   fe6 <hash_insert_if_absent+0x1f6>
+     fe6:	84 c0                	test   %al,%al
+     fe8:	74 c9                	je     fb3 <hash_insert_if_absent+0x1c3>
+     fea:	31 c9                	xor    %ecx,%ecx
+     fec:	4c 89 e2             	mov    %r12,%rdx
+     fef:	48 89 ee             	mov    %rbp,%rsi
+     ff2:	48 89 df             	mov    %rbx,%rdi
+     ff5:	e8 c6 f0 ff ff       	call   c0 <hash_find_entry>
+     ffa:	48 85 c0             	test   %rax,%rax
+     ffd:	0f 84 9b fe ff ff    	je     e9e <hash_insert_if_absent+0xae>
+    1003:	e9 00 00 00 00       	jmp    1008 <hash_insert_if_absent+0x218>
+    1008:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    100f:	00 
+    1010:	f3 0f 5c 25 00 00 00 	subss  0x0(%rip),%xmm4        # 1018 <hash_insert_if_absent+0x228>
+    1017:	00 
+    1018:	f3 48 0f 2c f4       	cvttss2si %xmm4,%rsi
+    101d:	48 0f ba fe 3f       	btc    $0x3f,%rsi
+    1022:	eb ba                	jmp    fde <hash_insert_if_absent+0x1ee>
+    1024:	e8 00 00 00 00       	call   1029 <hash_insert_if_absent+0x239>
+    1029:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001030 <hash_insert>:
+    1030:	f3 0f 1e fa          	endbr64 
+    1034:	53                   	push   %rbx
+    1035:	48 89 f3             	mov    %rsi,%rbx
+    1038:	48 83 ec 10          	sub    $0x10,%rsp
+    103c:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    1043:	00 00 
+    1045:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    104a:	31 c0                	xor    %eax,%eax
+    104c:	48 89 e2             	mov    %rsp,%rdx
+    104f:	e8 00 00 00 00       	call   1054 <hash_insert+0x24>
+    1054:	83 f8 ff             	cmp    $0xffffffff,%eax
+    1057:	74 27                	je     1080 <hash_insert+0x50>
+    1059:	85 c0                	test   %eax,%eax
+    105b:	48 89 d8             	mov    %rbx,%rax
+    105e:	48 0f 44 04 24       	cmove  (%rsp),%rax
+    1063:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+    1068:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+    106f:	00 00 
+    1071:	75 11                	jne    1084 <hash_insert+0x54>
+    1073:	48 83 c4 10          	add    $0x10,%rsp
+    1077:	5b                   	pop    %rbx
+    1078:	c3                   	ret    
+    1079:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1080:	31 c0                	xor    %eax,%eax
+    1082:	eb df                	jmp    1063 <hash_insert+0x33>
+    1084:	e8 00 00 00 00       	call   1089 <hash_insert+0x59>
+    1089:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001090 <hash_remove>:
+    1090:	f3 0f 1e fa          	endbr64 
+    1094:	41 54                	push   %r12
+    1096:	b9 01 00 00 00       	mov    $0x1,%ecx
+    109b:	55                   	push   %rbp
+    109c:	53                   	push   %rbx
+    109d:	48 89 fb             	mov    %rdi,%rbx
+    10a0:	48 83 ec 10          	sub    $0x10,%rsp
+    10a4:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    10ab:	00 00 
+    10ad:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    10b2:	31 c0                	xor    %eax,%eax
+    10b4:	48 89 e2             	mov    %rsp,%rdx
+    10b7:	e8 04 f0 ff ff       	call   c0 <hash_find_entry>
+    10bc:	49 89 c4             	mov    %rax,%r12
+    10bf:	48 85 c0             	test   %rax,%rax
+    10c2:	74 0f                	je     10d3 <hash_remove+0x43>
+    10c4:	48 8b 04 24          	mov    (%rsp),%rax
+    10c8:	48 83 6b 20 01       	subq   $0x1,0x20(%rbx)
+    10cd:	48 83 38 00          	cmpq   $0x0,(%rax)
+    10d1:	74 25                	je     10f8 <hash_remove+0x68>
+    10d3:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    10d8:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    10df:	00 00 
+    10e1:	0f 85 28 01 00 00    	jne    120f <hash_remove+0x17f>
+    10e7:	48 83 c4 10          	add    $0x10,%rsp
+    10eb:	4c 89 e0             	mov    %r12,%rax
+    10ee:	5b                   	pop    %rbx
+    10ef:	5d                   	pop    %rbp
+    10f0:	41 5c                	pop    %r12
+    10f2:	c3                   	ret    
+    10f3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    10f8:	48 8b 43 18          	mov    0x18(%rbx),%rax
+    10fc:	48 83 e8 01          	sub    $0x1,%rax
+    1100:	48 89 43 18          	mov    %rax,0x18(%rbx)
+    1104:	0f 88 a6 00 00 00    	js     11b0 <hash_remove+0x120>
+    110a:	66 0f ef ed          	pxor   %xmm5,%xmm5
+    110e:	f3 48 0f 2a e8       	cvtsi2ss %rax,%xmm5
+    1113:	48 8b 43 10          	mov    0x10(%rbx),%rax
+    1117:	48 85 c0             	test   %rax,%rax
+    111a:	0f 88 b6 00 00 00    	js     11d6 <hash_remove+0x146>
+    1120:	66 0f ef e4          	pxor   %xmm4,%xmm4
+    1124:	f3 48 0f 2a e0       	cvtsi2ss %rax,%xmm4
+    1129:	48 8b 43 28          	mov    0x28(%rbx),%rax
+    112d:	f3 0f 10 00          	movss  (%rax),%xmm0
+    1131:	f3 0f 59 c4          	mulss  %xmm4,%xmm0
+    1135:	0f 2f c5             	comiss %xmm5,%xmm0
+    1138:	76 99                	jbe    10d3 <hash_remove+0x43>
+    113a:	48 89 df             	mov    %rbx,%rdi
+    113d:	e8 ee ee ff ff       	call   30 <check_tuning>
+    1142:	48 8b 43 28          	mov    0x28(%rbx),%rax
+    1146:	f3 0f 10 00          	movss  (%rax),%xmm0
+    114a:	f3 0f 59 c4          	mulss  %xmm4,%xmm0
+    114e:	0f 2f c5             	comiss %xmm5,%xmm0
+    1151:	76 80                	jbe    10d3 <hash_remove+0x43>
+    1153:	f3 0f 59 60 04       	mulss  0x4(%rax),%xmm4
+    1158:	80 78 10 00          	cmpb   $0x0,0x10(%rax)
+    115c:	75 05                	jne    1163 <hash_remove+0xd3>
+    115e:	f3 0f 59 60 08       	mulss  0x8(%rax),%xmm4
+    1163:	0f 2f 25 00 00 00 00 	comiss 0x0(%rip),%xmm4        # 116a <hash_remove+0xda>
+    116a:	0f 83 88 00 00 00    	jae    11f8 <hash_remove+0x168>
+    1170:	f3 48 0f 2c f4       	cvttss2si %xmm4,%rsi
+    1175:	48 89 df             	mov    %rbx,%rdi
+    1178:	e8 00 00 00 00       	call   117d <hash_remove+0xed>
+    117d:	84 c0                	test   %al,%al
+    117f:	0f 85 4e ff ff ff    	jne    10d3 <hash_remove+0x43>
+    1185:	48 8b 6b 48          	mov    0x48(%rbx),%rbp
+    1189:	48 85 ed             	test   %rbp,%rbp
+    118c:	74 13                	je     11a1 <hash_remove+0x111>
+    118e:	66 90                	xchg   %ax,%ax
+    1190:	48 89 ef             	mov    %rbp,%rdi
+    1193:	48 8b 6d 08          	mov    0x8(%rbp),%rbp
+    1197:	e8 00 00 00 00       	call   119c <hash_remove+0x10c>
+    119c:	48 85 ed             	test   %rbp,%rbp
+    119f:	75 ef                	jne    1190 <hash_remove+0x100>
+    11a1:	48 c7 43 48 00 00 00 	movq   $0x0,0x48(%rbx)
+    11a8:	00 
+    11a9:	e9 25 ff ff ff       	jmp    10d3 <hash_remove+0x43>
+    11ae:	66 90                	xchg   %ax,%ax
+    11b0:	48 89 c2             	mov    %rax,%rdx
+    11b3:	83 e0 01             	and    $0x1,%eax
+    11b6:	66 0f ef ed          	pxor   %xmm5,%xmm5
+    11ba:	48 d1 ea             	shr    %rdx
+    11bd:	48 09 c2             	or     %rax,%rdx
+    11c0:	48 8b 43 10          	mov    0x10(%rbx),%rax
+    11c4:	f3 48 0f 2a ea       	cvtsi2ss %rdx,%xmm5
+    11c9:	f3 0f 58 ed          	addss  %xmm5,%xmm5
+    11cd:	48 85 c0             	test   %rax,%rax
+    11d0:	0f 89 4a ff ff ff    	jns    1120 <hash_remove+0x90>
+    11d6:	48 89 c2             	mov    %rax,%rdx
+    11d9:	83 e0 01             	and    $0x1,%eax
+    11dc:	66 0f ef e4          	pxor   %xmm4,%xmm4
+    11e0:	48 d1 ea             	shr    %rdx
+    11e3:	48 09 c2             	or     %rax,%rdx
+    11e6:	f3 48 0f 2a e2       	cvtsi2ss %rdx,%xmm4
+    11eb:	f3 0f 58 e4          	addss  %xmm4,%xmm4
+    11ef:	e9 35 ff ff ff       	jmp    1129 <hash_remove+0x99>
+    11f4:	0f 1f 40 00          	nopl   0x0(%rax)
+    11f8:	f3 0f 5c 25 00 00 00 	subss  0x0(%rip),%xmm4        # 1200 <hash_remove+0x170>
+    11ff:	00 
+    1200:	f3 48 0f 2c f4       	cvttss2si %xmm4,%rsi
+    1205:	48 0f ba fe 3f       	btc    $0x3f,%rsi
+    120a:	e9 66 ff ff ff       	jmp    1175 <hash_remove+0xe5>
+    120f:	e8 00 00 00 00       	call   1214 <hash_remove+0x184>
+    1214:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    121b:	00 00 00 00 
+    121f:	90                   	nop
+
+0000000000001220 <hash_delete>:
+    1220:	f3 0f 1e fa          	endbr64 
+    1224:	e9 67 fe ff ff       	jmp    1090 <hash_remove>
+
+Disassembly of section .text.unlikely:
+
+0000000000000000 <hash_find_entry.cold>:
+   0:	e8 00 00 00 00       	call   5 <transfer_entries.cold>
+
+0000000000000005 <transfer_entries.cold>:
+   5:	e8 00 00 00 00       	call   a <hash_lookup.cold>
+
+000000000000000a <hash_lookup.cold>:
+   a:	e8 00 00 00 00       	call   f <hash_get_first.cold>
+
+000000000000000f <hash_get_first.cold>:
+   f:	50                   	push   %rax
+  10:	e8 00 00 00 00       	call   15 <hash_get_next.cold>
+
+0000000000000015 <hash_get_next.cold>:
+  15:	e8 00 00 00 00       	call   1a <hash_rehash.cold>
+
+000000000000001a <hash_rehash.cold>:
+  1a:	e8 00 00 00 00       	call   1f <hash_insert_if_absent.cold>
+
+000000000000001f <hash_insert_if_absent.cold>:
+  1f:	e8 00 00 00 00       	call   24 <raw_comparator+0x4>

@@ -1,0 +1,173 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-randint.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <randint_new>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	53                   	push   %rbx
+   5:	48 89 fb             	mov    %rdi,%rbx
+   8:	bf 18 00 00 00       	mov    $0x18,%edi
+   d:	e8 00 00 00 00       	call   12 <randint_new+0x12>
+  12:	48 89 18             	mov    %rbx,(%rax)
+  15:	48 c7 40 10 00 00 00 	movq   $0x0,0x10(%rax)
+  1c:	00 
+  1d:	48 c7 40 08 00 00 00 	movq   $0x0,0x8(%rax)
+  24:	00 
+  25:	5b                   	pop    %rbx
+  26:	c3                   	ret    
+  27:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  2e:	00 00 
+
+0000000000000030 <randint_all_new>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	48 83 ec 08          	sub    $0x8,%rsp
+  38:	e8 00 00 00 00       	call   3d <randint_all_new+0xd>
+  3d:	48 85 c0             	test   %rax,%rax
+  40:	74 09                	je     4b <randint_all_new+0x1b>
+  42:	48 89 c7             	mov    %rax,%rdi
+  45:	48 83 c4 08          	add    $0x8,%rsp
+  49:	eb b5                	jmp    0 <randint_new>
+  4b:	31 c0                	xor    %eax,%eax
+  4d:	5a                   	pop    %rdx
+  4e:	c3                   	ret    
+  4f:	90                   	nop
+
+0000000000000050 <randint_get_source>:
+  50:	f3 0f 1e fa          	endbr64 
+  54:	48 8b 07             	mov    (%rdi),%rax
+  57:	c3                   	ret    
+  58:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  5f:	00 
+
+0000000000000060 <randint_genmax>:
+  60:	f3 0f 1e fa          	endbr64 
+  64:	41 57                	push   %r15
+  66:	41 56                	push   %r14
+  68:	49 89 fe             	mov    %rdi,%r14
+  6b:	41 55                	push   %r13
+  6d:	4c 8d 6e 01          	lea    0x1(%rsi),%r13
+  71:	41 54                	push   %r12
+  73:	55                   	push   %rbp
+  74:	48 89 f5             	mov    %rsi,%rbp
+  77:	53                   	push   %rbx
+  78:	48 83 ec 28          	sub    $0x28,%rsp
+  7c:	48 8b 0f             	mov    (%rdi),%rcx
+  7f:	4c 8b 67 08          	mov    0x8(%rdi),%r12
+  83:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  8a:	00 00 
+  8c:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  91:	31 c0                	xor    %eax,%eax
+  93:	48 8b 5f 10          	mov    0x10(%rdi),%rbx
+  97:	4c 8d 7c 24 10       	lea    0x10(%rsp),%r15
+  9c:	eb 37                	jmp    d5 <randint_genmax+0x75>
+  9e:	66 90                	xchg   %ax,%ax
+  a0:	48 39 eb             	cmp    %rbp,%rbx
+  a3:	0f 84 8e 00 00 00    	je     137 <randint_genmax+0xd7>
+  a9:	48 89 d8             	mov    %rbx,%rax
+  ac:	31 d2                	xor    %edx,%edx
+  ae:	48 29 e8             	sub    %rbp,%rax
+  b1:	49 f7 f5             	div    %r13
+  b4:	48 89 d7             	mov    %rdx,%rdi
+  b7:	48 89 c6             	mov    %rax,%rsi
+  ba:	48 29 d3             	sub    %rdx,%rbx
+  bd:	4c 89 e0             	mov    %r12,%rax
+  c0:	31 d2                	xor    %edx,%edx
+  c2:	49 f7 f5             	div    %r13
+  c5:	49 39 dc             	cmp    %rbx,%r12
+  c8:	0f 86 a2 00 00 00    	jbe    170 <randint_genmax+0x110>
+  ce:	48 8d 5f ff          	lea    -0x1(%rdi),%rbx
+  d2:	49 89 d4             	mov    %rdx,%r12
+  d5:	48 39 eb             	cmp    %rbp,%rbx
+  d8:	73 c6                	jae    a0 <randint_genmax+0x40>
+  da:	48 89 da             	mov    %rbx,%rdx
+  dd:	45 31 c0             	xor    %r8d,%r8d
+  e0:	48 c1 e2 08          	shl    $0x8,%rdx
+  e4:	49 83 c0 01          	add    $0x1,%r8
+  e8:	48 81 c2 ff 00 00 00 	add    $0xff,%rdx
+  ef:	48 39 d5             	cmp    %rdx,%rbp
+  f2:	77 ec                	ja     e0 <randint_genmax+0x80>
+  f4:	4c 89 c2             	mov    %r8,%rdx
+  f7:	48 89 cf             	mov    %rcx,%rdi
+  fa:	4c 89 fe             	mov    %r15,%rsi
+  fd:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+ 102:	e8 00 00 00 00       	call   107 <randint_genmax+0xa7>
+ 107:	48 8b 4c 24 08       	mov    0x8(%rsp),%rcx
+ 10c:	4c 89 fa             	mov    %r15,%rdx
+ 10f:	90                   	nop
+ 110:	0f b6 02             	movzbl (%rdx),%eax
+ 113:	48 c1 e3 08          	shl    $0x8,%rbx
+ 117:	49 c1 e4 08          	shl    $0x8,%r12
+ 11b:	48 83 c2 01          	add    $0x1,%rdx
+ 11f:	48 81 c3 ff 00 00 00 	add    $0xff,%rbx
+ 126:	49 01 c4             	add    %rax,%r12
+ 129:	48 39 dd             	cmp    %rbx,%rbp
+ 12c:	77 e2                	ja     110 <randint_genmax+0xb0>
+ 12e:	48 39 eb             	cmp    %rbp,%rbx
+ 131:	0f 85 72 ff ff ff    	jne    a9 <randint_genmax+0x49>
+ 137:	49 c7 46 10 00 00 00 	movq   $0x0,0x10(%r14)
+ 13e:	00 
+ 13f:	49 c7 46 08 00 00 00 	movq   $0x0,0x8(%r14)
+ 146:	00 
+ 147:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+ 14c:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 153:	00 00 
+ 155:	75 26                	jne    17d <randint_genmax+0x11d>
+ 157:	48 83 c4 28          	add    $0x28,%rsp
+ 15b:	4c 89 e0             	mov    %r12,%rax
+ 15e:	5b                   	pop    %rbx
+ 15f:	5d                   	pop    %rbp
+ 160:	41 5c                	pop    %r12
+ 162:	41 5d                	pop    %r13
+ 164:	41 5e                	pop    %r14
+ 166:	41 5f                	pop    %r15
+ 168:	c3                   	ret    
+ 169:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 170:	49 89 46 08          	mov    %rax,0x8(%r14)
+ 174:	49 89 d4             	mov    %rdx,%r12
+ 177:	49 89 76 10          	mov    %rsi,0x10(%r14)
+ 17b:	eb ca                	jmp    147 <randint_genmax+0xe7>
+ 17d:	e8 00 00 00 00       	call   182 <randint_genmax+0x122>
+ 182:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 189:	00 00 00 00 
+ 18d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000190 <randint_free>:
+ 190:	f3 0f 1e fa          	endbr64 
+ 194:	55                   	push   %rbp
+ 195:	48 c7 c2 ff ff ff ff 	mov    $0xffffffffffffffff,%rdx
+ 19c:	48 89 fd             	mov    %rdi,%rbp
+ 19f:	be 18 00 00 00       	mov    $0x18,%esi
+ 1a4:	e8 00 00 00 00       	call   1a9 <randint_free+0x19>
+ 1a9:	48 89 ef             	mov    %rbp,%rdi
+ 1ac:	5d                   	pop    %rbp
+ 1ad:	e9 00 00 00 00       	jmp    1b2 <randint_free+0x22>
+ 1b2:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 1b9:	00 00 00 00 
+ 1bd:	0f 1f 00             	nopl   (%rax)
+
+00000000000001c0 <randint_all_free>:
+ 1c0:	f3 0f 1e fa          	endbr64 
+ 1c4:	41 55                	push   %r13
+ 1c6:	41 54                	push   %r12
+ 1c8:	55                   	push   %rbp
+ 1c9:	48 89 fd             	mov    %rdi,%rbp
+ 1cc:	53                   	push   %rbx
+ 1cd:	48 83 ec 08          	sub    $0x8,%rsp
+ 1d1:	48 8b 3f             	mov    (%rdi),%rdi
+ 1d4:	e8 00 00 00 00       	call   1d9 <randint_all_free+0x19>
+ 1d9:	41 89 c4             	mov    %eax,%r12d
+ 1dc:	e8 00 00 00 00       	call   1e1 <randint_all_free+0x21>
+ 1e1:	48 89 ef             	mov    %rbp,%rdi
+ 1e4:	44 8b 28             	mov    (%rax),%r13d
+ 1e7:	48 89 c3             	mov    %rax,%rbx
+ 1ea:	e8 00 00 00 00       	call   1ef <randint_all_free+0x2f>
+ 1ef:	44 89 e0             	mov    %r12d,%eax
+ 1f2:	44 89 2b             	mov    %r13d,(%rbx)
+ 1f5:	48 83 c4 08          	add    $0x8,%rsp
+ 1f9:	5b                   	pop    %rbx
+ 1fa:	5d                   	pop    %rbp
+ 1fb:	41 5c                	pop    %r12
+ 1fd:	41 5d                	pop    %r13
+ 1ff:	c3                   	ret    

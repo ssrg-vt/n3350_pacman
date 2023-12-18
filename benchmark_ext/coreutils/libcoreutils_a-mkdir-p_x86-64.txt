@@ -1,0 +1,258 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mkdir-p.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <make_dir_parents>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	49 89 cb             	mov    %rcx,%r11
+   9:	41 56                	push   %r14
+   b:	41 55                	push   %r13
+   d:	49 89 f5             	mov    %rsi,%r13
+  10:	41 54                	push   %r12
+  12:	45 89 c4             	mov    %r8d,%r12d
+  15:	55                   	push   %rbp
+  16:	48 89 fd             	mov    %rdi,%rbp
+  19:	53                   	push   %rbx
+  1a:	48 89 d3             	mov    %rdx,%rbx
+  1d:	48 81 ec d8 00 00 00 	sub    $0xd8,%rsp
+  24:	8b 84 24 28 01 00 00 	mov    0x128(%rsp),%eax
+  2b:	4c 89 4c 24 10       	mov    %r9,0x10(%rsp)
+  30:	89 44 24 08          	mov    %eax,0x8(%rsp)
+  34:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  3b:	00 00 
+  3d:	48 89 84 24 c8 00 00 	mov    %rax,0xc8(%rsp)
+  44:	00 
+  45:	31 c0                	xor    %eax,%eax
+  47:	80 3f 2f             	cmpb   $0x2f,(%rdi)
+  4a:	74 09                	je     55 <make_dir_parents+0x55>
+  4c:	83 3e 04             	cmpl   $0x4,(%rsi)
+  4f:	0f 84 3b 01 00 00    	je     190 <make_dir_parents+0x190>
+  55:	48 85 db             	test   %rbx,%rbx
+  58:	0f 84 22 01 00 00    	je     180 <make_dir_parents+0x180>
+  5e:	4c 89 d9             	mov    %r11,%rcx
+  61:	48 89 da             	mov    %rbx,%rdx
+  64:	4c 89 ee             	mov    %r13,%rsi
+  67:	48 89 ef             	mov    %rbp,%rdi
+  6a:	4c 89 5c 24 18       	mov    %r11,0x18(%rsp)
+  6f:	e8 00 00 00 00       	call   74 <make_dir_parents+0x74>
+  74:	48 85 c0             	test   %rax,%rax
+  77:	0f 88 13 02 00 00    	js     290 <make_dir_parents+0x290>
+  7d:	4c 8b 5c 24 18       	mov    0x18(%rsp),%r11
+  82:	4c 8d 74 05 00       	lea    0x0(%rbp,%rax,1),%r14
+  87:	8b 84 24 10 01 00 00 	mov    0x110(%rsp),%eax
+  8e:	44 89 e2             	mov    %r12d,%edx
+  91:	8b 8c 24 18 01 00 00 	mov    0x118(%rsp),%ecx
+  98:	81 e2 00 02 00 00    	and    $0x200,%edx
+  9e:	23 8c 24 20 01 00 00 	and    0x120(%rsp),%ecx
+  a5:	25 00 0c 00 00       	and    $0xc00,%eax
+  aa:	89 4c 24 2c          	mov    %ecx,0x2c(%rsp)
+  ae:	09 d0                	or     %edx,%eax
+  b0:	83 f9 ff             	cmp    $0xffffffff,%ecx
+  b3:	0f 84 ef 00 00 00    	je     1a8 <make_dir_parents+0x1a8>
+  b9:	44 89 e0             	mov    %r12d,%eax
+  bc:	83 e0 c0             	and    $0xffffffc0,%eax
+  bf:	89 44 24 18          	mov    %eax,0x18(%rsp)
+  c3:	8b 74 24 18          	mov    0x18(%rsp),%esi
+  c7:	4c 89 f7             	mov    %r14,%rdi
+  ca:	4c 89 5c 24 20       	mov    %r11,0x20(%rsp)
+  cf:	e8 00 00 00 00       	call   d4 <make_dir_parents+0xd4>
+  d4:	4c 8b 5c 24 20       	mov    0x20(%rsp),%r11
+  d9:	85 c0                	test   %eax,%eax
+  db:	41 89 c7             	mov    %eax,%r15d
+  de:	0f 84 cc 01 00 00    	je     2b0 <make_dir_parents+0x2b0>
+  e4:	e8 00 00 00 00       	call   e9 <make_dir_parents+0xe9>
+  e9:	80 7c 24 08 00       	cmpb   $0x0,0x8(%rsp)
+  ee:	44 8b 38             	mov    (%rax),%r15d
+  f1:	49 89 c0             	mov    %rax,%r8
+  f4:	0f 84 be 02 00 00    	je     3b8 <make_dir_parents+0x3b8>
+  fa:	45 85 ff             	test   %r15d,%r15d
+  fd:	0f 84 e8 00 00 00    	je     1eb <make_dir_parents+0x1eb>
+ 103:	41 83 ff 02          	cmp    $0x2,%r15d
+ 107:	41 0f 95 c4          	setne  %r12b
+ 10b:	48 85 db             	test   %rbx,%rbx
+ 10e:	0f 95 c0             	setne  %al
+ 111:	41 20 c4             	and    %al,%r12b
+ 114:	0f 85 f6 00 00 00    	jne    210 <make_dir_parents+0x210>
+ 11a:	48 89 ef             	mov    %rbp,%rdi
+ 11d:	e8 00 00 00 00       	call   122 <make_dir_parents+0x122>
+ 122:	ba 05 00 00 00       	mov    $0x5,%edx
+ 127:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 12e <make_dir_parents+0x12e>
+ 12e:	31 ff                	xor    %edi,%edi
+ 130:	49 89 c4             	mov    %rax,%r12
+ 133:	e8 00 00 00 00       	call   138 <make_dir_parents+0x138>
+ 138:	4c 89 e1             	mov    %r12,%rcx
+ 13b:	44 89 fe             	mov    %r15d,%esi
+ 13e:	31 ff                	xor    %edi,%edi
+ 140:	48 89 c2             	mov    %rax,%rdx
+ 143:	31 c0                	xor    %eax,%eax
+ 145:	45 31 e4             	xor    %r12d,%r12d
+ 148:	e8 00 00 00 00       	call   14d <make_dir_parents+0x14d>
+ 14d:	48 8b 84 24 c8 00 00 	mov    0xc8(%rsp),%rax
+ 154:	00 
+ 155:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 15c:	00 00 
+ 15e:	0f 85 79 02 00 00    	jne    3dd <make_dir_parents+0x3dd>
+ 164:	48 81 c4 d8 00 00 00 	add    $0xd8,%rsp
+ 16b:	44 89 e0             	mov    %r12d,%eax
+ 16e:	5b                   	pop    %rbx
+ 16f:	5d                   	pop    %rbp
+ 170:	41 5c                	pop    %r12
+ 172:	41 5d                	pop    %r13
+ 174:	41 5e                	pop    %r14
+ 176:	41 5f                	pop    %r15
+ 178:	c3                   	ret    
+ 179:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 180:	49 89 ee             	mov    %rbp,%r14
+ 183:	e9 ff fe ff ff       	jmp    87 <make_dir_parents+0x87>
+ 188:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 18f:	00 
+ 190:	44 8b 7e 04          	mov    0x4(%rsi),%r15d
+ 194:	45 85 ff             	test   %r15d,%r15d
+ 197:	75 81                	jne    11a <make_dir_parents+0x11a>
+ 199:	48 85 db             	test   %rbx,%rbx
+ 19c:	0f 85 bc fe ff ff    	jne    5e <make_dir_parents+0x5e>
+ 1a2:	eb dc                	jmp    180 <make_dir_parents+0x180>
+ 1a4:	0f 1f 40 00          	nopl   0x0(%rax)
+ 1a8:	85 c0                	test   %eax,%eax
+ 1aa:	75 54                	jne    200 <make_dir_parents+0x200>
+ 1ac:	44 89 e6             	mov    %r12d,%esi
+ 1af:	4c 89 f7             	mov    %r14,%rdi
+ 1b2:	4c 89 5c 24 18       	mov    %r11,0x18(%rsp)
+ 1b7:	e8 00 00 00 00       	call   1bc <make_dir_parents+0x1bc>
+ 1bc:	41 89 c7             	mov    %eax,%r15d
+ 1bf:	85 c0                	test   %eax,%eax
+ 1c1:	0f 85 1d ff ff ff    	jne    e4 <make_dir_parents+0xe4>
+ 1c7:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 1cc:	48 8b 74 24 18       	mov    0x18(%rsp),%rsi
+ 1d1:	48 89 ef             	mov    %rbp,%rdi
+ 1d4:	ff d0                	call   *%rax
+ 1d6:	8b 84 24 10 01 00 00 	mov    0x110(%rsp),%eax
+ 1dd:	44 21 e0             	and    %r12d,%eax
+ 1e0:	a9 ff 01 00 00       	test   $0x1ff,%eax
+ 1e5:	0f 85 f7 01 00 00    	jne    3e2 <make_dir_parents+0x3e2>
+ 1eb:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+ 1f1:	e9 57 ff ff ff       	jmp    14d <make_dir_parents+0x14d>
+ 1f6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 1fd:	00 00 00 
+ 200:	44 89 e0             	mov    %r12d,%eax
+ 203:	83 e0 ed             	and    $0xffffffed,%eax
+ 206:	89 44 24 18          	mov    %eax,0x18(%rsp)
+ 20a:	e9 b4 fe ff ff       	jmp    c3 <make_dir_parents+0xc3>
+ 20f:	90                   	nop
+ 210:	48 8d 74 24 30       	lea    0x30(%rsp),%rsi
+ 215:	4c 89 f7             	mov    %r14,%rdi
+ 218:	4c 89 44 24 08       	mov    %r8,0x8(%rsp)
+ 21d:	e8 00 00 00 00       	call   222 <make_dir_parents+0x222>
+ 222:	4c 8b 44 24 08       	mov    0x8(%rsp),%r8
+ 227:	85 c0                	test   %eax,%eax
+ 229:	0f 84 69 01 00 00    	je     398 <make_dir_parents+0x398>
+ 22f:	41 83 ff 11          	cmp    $0x11,%r15d
+ 233:	0f 85 e1 fe ff ff    	jne    11a <make_dir_parents+0x11a>
+ 239:	41 8b 00             	mov    (%r8),%eax
+ 23c:	83 f8 02             	cmp    $0x2,%eax
+ 23f:	0f 84 d5 fe ff ff    	je     11a <make_dir_parents+0x11a>
+ 245:	83 f8 14             	cmp    $0x14,%eax
+ 248:	0f 84 cc fe ff ff    	je     11a <make_dir_parents+0x11a>
+ 24e:	48 89 ef             	mov    %rbp,%rdi
+ 251:	4c 89 44 24 08       	mov    %r8,0x8(%rsp)
+ 256:	e8 00 00 00 00       	call   25b <make_dir_parents+0x25b>
+ 25b:	ba 05 00 00 00       	mov    $0x5,%edx
+ 260:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 267 <make_dir_parents+0x267>
+ 267:	31 ff                	xor    %edi,%edi
+ 269:	49 89 c4             	mov    %rax,%r12
+ 26c:	e8 00 00 00 00       	call   271 <make_dir_parents+0x271>
+ 271:	4c 8b 44 24 08       	mov    0x8(%rsp),%r8
+ 276:	4c 89 e1             	mov    %r12,%rcx
+ 279:	31 ff                	xor    %edi,%edi
+ 27b:	48 89 c2             	mov    %rax,%rdx
+ 27e:	31 c0                	xor    %eax,%eax
+ 280:	45 31 e4             	xor    %r12d,%r12d
+ 283:	41 8b 30             	mov    (%r8),%esi
+ 286:	e8 00 00 00 00       	call   28b <make_dir_parents+0x28b>
+ 28b:	e9 bd fe ff ff       	jmp    14d <make_dir_parents+0x14d>
+ 290:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+ 294:	0f 85 51 ff ff ff    	jne    1eb <make_dir_parents+0x1eb>
+ 29a:	e8 00 00 00 00       	call   29f <make_dir_parents+0x29f>
+ 29f:	44 8b 38             	mov    (%rax),%r15d
+ 2a2:	e9 73 fe ff ff       	jmp    11a <make_dir_parents+0x11a>
+ 2a7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 2ae:	00 00 
+ 2b0:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 2b5:	4c 89 de             	mov    %r11,%rsi
+ 2b8:	48 89 ef             	mov    %rbp,%rdi
+ 2bb:	ff d0                	call   *%rax
+ 2bd:	ba 03 00 00 00       	mov    $0x3,%edx
+ 2c2:	48 8d 4c 24 30       	lea    0x30(%rsp),%rcx
+ 2c7:	4c 89 f6             	mov    %r14,%rsi
+ 2ca:	4c 89 ef             	mov    %r13,%rdi
+ 2cd:	e8 00 00 00 00       	call   2d2 <make_dir_parents+0x2d2>
+ 2d2:	83 f8 ff             	cmp    $0xffffffff,%eax
+ 2d5:	0f 8c 10 ff ff ff    	jl     1eb <make_dir_parents+0x1eb>
+ 2db:	85 c0                	test   %eax,%eax
+ 2dd:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 2e4 <make_dir_parents+0x2e4>
+ 2e4:	45 89 e1             	mov    %r12d,%r9d
+ 2e7:	4c 0f 44 f0          	cmove  %rax,%r14
+ 2eb:	48 83 ec 08          	sub    $0x8,%rsp
+ 2ef:	8b 84 24 18 01 00 00 	mov    0x118(%rsp),%eax
+ 2f6:	4c 89 f6             	mov    %r14,%rsi
+ 2f9:	50                   	push   %rax
+ 2fa:	44 8b 84 24 30 01 00 	mov    0x130(%rsp),%r8d
+ 301:	00 
+ 302:	8b 8c 24 28 01 00 00 	mov    0x128(%rsp),%ecx
+ 309:	8b 54 24 28          	mov    0x28(%rsp),%edx
+ 30d:	8b 7c 24 40          	mov    0x40(%rsp),%edi
+ 311:	e8 00 00 00 00       	call   316 <make_dir_parents+0x316>
+ 316:	5a                   	pop    %rdx
+ 317:	59                   	pop    %rcx
+ 318:	85 c0                	test   %eax,%eax
+ 31a:	0f 84 cb fe ff ff    	je     1eb <make_dir_parents+0x1eb>
+ 320:	45 85 ff             	test   %r15d,%r15d
+ 323:	0f 84 a7 00 00 00    	je     3d0 <make_dir_parents+0x3d0>
+ 329:	41 83 ff 02          	cmp    $0x2,%r15d
+ 32d:	0f 84 e7 fd ff ff    	je     11a <make_dir_parents+0x11a>
+ 333:	48 85 db             	test   %rbx,%rbx
+ 336:	0f 84 de fd ff ff    	je     11a <make_dir_parents+0x11a>
+ 33c:	e8 00 00 00 00       	call   341 <make_dir_parents+0x341>
+ 341:	83 38 14             	cmpl   $0x14,(%rax)
+ 344:	48 89 c3             	mov    %rax,%rbx
+ 347:	0f 84 cd fd ff ff    	je     11a <make_dir_parents+0x11a>
+ 34d:	48 89 ef             	mov    %rbp,%rdi
+ 350:	e8 00 00 00 00       	call   355 <make_dir_parents+0x355>
+ 355:	83 7c 24 2c ff       	cmpl   $0xffffffff,0x2c(%rsp)
+ 35a:	ba 05 00 00 00       	mov    $0x5,%edx
+ 35f:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 366 <make_dir_parents+0x366>
+ 366:	49 89 c4             	mov    %rax,%r12
+ 369:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 370 <make_dir_parents+0x370>
+ 370:	48 0f 45 f0          	cmovne %rax,%rsi
+ 374:	31 ff                	xor    %edi,%edi
+ 376:	e8 00 00 00 00       	call   37b <make_dir_parents+0x37b>
+ 37b:	8b 33                	mov    (%rbx),%esi
+ 37d:	4c 89 e1             	mov    %r12,%rcx
+ 380:	31 ff                	xor    %edi,%edi
+ 382:	48 89 c2             	mov    %rax,%rdx
+ 385:	31 c0                	xor    %eax,%eax
+ 387:	45 31 e4             	xor    %r12d,%r12d
+ 38a:	e8 00 00 00 00       	call   38f <make_dir_parents+0x38f>
+ 38f:	e9 b9 fd ff ff       	jmp    14d <make_dir_parents+0x14d>
+ 394:	0f 1f 40 00          	nopl   0x0(%rax)
+ 398:	8b 44 24 48          	mov    0x48(%rsp),%eax
+ 39c:	25 00 f0 00 00       	and    $0xf000,%eax
+ 3a1:	3d 00 40 00 00       	cmp    $0x4000,%eax
+ 3a6:	0f 85 6e fd ff ff    	jne    11a <make_dir_parents+0x11a>
+ 3ac:	e9 9c fd ff ff       	jmp    14d <make_dir_parents+0x14d>
+ 3b1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 3b8:	c7 44 24 18 ff ff ff 	movl   $0xffffffff,0x18(%rsp)
+ 3bf:	ff 
+ 3c0:	ba 02 00 00 00       	mov    $0x2,%edx
+ 3c5:	e9 f8 fe ff ff       	jmp    2c2 <make_dir_parents+0x2c2>
+ 3ca:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 3d0:	e8 00 00 00 00       	call   3d5 <make_dir_parents+0x3d5>
+ 3d5:	48 89 c3             	mov    %rax,%rbx
+ 3d8:	e9 70 ff ff ff       	jmp    34d <make_dir_parents+0x34d>
+ 3dd:	e8 00 00 00 00       	call   3e2 <make_dir_parents+0x3e2>
+ 3e2:	44 89 64 24 18       	mov    %r12d,0x18(%rsp)
+ 3e7:	ba 03 00 00 00       	mov    $0x3,%edx
+ 3ec:	e9 d1 fe ff ff       	jmp    2c2 <make_dir_parents+0x2c2>

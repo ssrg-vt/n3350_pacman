@@ -1,0 +1,54 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-cycle-check.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <cycle_check_init>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 c7 47 10 00 00 00 	movq   $0x0,0x10(%rdi)
+   b:	00 
+   c:	c7 47 18 16 f6 95 00 	movl   $0x95f616,0x18(%rdi)
+  13:	c3                   	ret    
+  14:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  1b:	00 00 00 00 
+  1f:	90                   	nop
+
+0000000000000020 <cycle_check>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	81 7f 18 16 f6 95 00 	cmpl   $0x95f616,0x18(%rdi)
+  2b:	75 50                	jne    7d <cycle_check+0x5d>
+  2d:	48 8b 47 10          	mov    0x10(%rdi),%rax
+  31:	48 8b 0e             	mov    (%rsi),%rcx
+  34:	48 8b 56 08          	mov    0x8(%rsi),%rdx
+  38:	48 85 c0             	test   %rax,%rax
+  3b:	74 23                	je     60 <cycle_check+0x40>
+  3d:	48 8b 77 08          	mov    0x8(%rdi),%rsi
+  41:	4c 8b 07             	mov    (%rdi),%r8
+  44:	48 31 ce             	xor    %rcx,%rsi
+  47:	49 31 d0             	xor    %rdx,%r8
+  4a:	4c 09 c6             	or     %r8,%rsi
+  4d:	74 28                	je     77 <cycle_check+0x57>
+  4f:	48 8d 70 01          	lea    0x1(%rax),%rsi
+  53:	48 89 77 10          	mov    %rsi,0x10(%rdi)
+  57:	48 85 f0             	test   %rsi,%rax
+  5a:	74 16                	je     72 <cycle_check+0x52>
+  5c:	31 c0                	xor    %eax,%eax
+  5e:	c3                   	ret    
+  5f:	90                   	nop
+  60:	48 c7 47 10 01 00 00 	movq   $0x1,0x10(%rdi)
+  67:	00 
+  68:	48 89 4f 08          	mov    %rcx,0x8(%rdi)
+  6c:	31 c0                	xor    %eax,%eax
+  6e:	48 89 17             	mov    %rdx,(%rdi)
+  71:	c3                   	ret    
+  72:	48 85 f6             	test   %rsi,%rsi
+  75:	75 f1                	jne    68 <cycle_check+0x48>
+  77:	b8 01 00 00 00       	mov    $0x1,%eax
+  7c:	c3                   	ret    
+  7d:	50                   	push   %rax
+  7e:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 85 <cycle_check+0x65>
+  85:	ba 3b 00 00 00       	mov    $0x3b,%edx
+  8a:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 91 <cycle_check+0x71>
+  91:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 98 <cycle_check+0x78>
+  98:	e8 00 00 00 00       	call   9d <cycle_check+0x7d>

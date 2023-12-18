@@ -1,0 +1,28 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-hash-pjw.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <hash_pjw>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 0f be 17          	movsbq (%rdi),%rdx
+   8:	84 d2                	test   %dl,%dl
+   a:	74 24                	je     30 <hash_pjw+0x30>
+   c:	31 c0                	xor    %eax,%eax
+   e:	66 90                	xchg   %ax,%ax
+  10:	48 c1 c0 09          	rol    $0x9,%rax
+  14:	48 83 c7 01          	add    $0x1,%rdi
+  18:	48 01 d0             	add    %rdx,%rax
+  1b:	48 0f be 17          	movsbq (%rdi),%rdx
+  1f:	84 d2                	test   %dl,%dl
+  21:	75 ed                	jne    10 <hash_pjw+0x10>
+  23:	31 d2                	xor    %edx,%edx
+  25:	48 f7 f6             	div    %rsi
+  28:	49 89 d0             	mov    %rdx,%r8
+  2b:	4c 89 c0             	mov    %r8,%rax
+  2e:	c3                   	ret    
+  2f:	90                   	nop
+  30:	45 31 c0             	xor    %r8d,%r8d
+  33:	4c 89 c0             	mov    %r8,%rax
+  36:	c3                   	ret    

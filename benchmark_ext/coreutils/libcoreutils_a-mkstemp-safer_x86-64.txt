@@ -1,0 +1,25 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mkstemp-safer.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mkstemp_safer>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 83 ec 08          	sub    $0x8,%rsp
+   8:	e8 00 00 00 00       	call   d <mkstemp_safer+0xd>
+   d:	48 83 c4 08          	add    $0x8,%rsp
+  11:	89 c7                	mov    %eax,%edi
+  13:	e9 00 00 00 00       	jmp    18 <mkstemp_safer+0x18>
+  18:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  1f:	00 
+
+0000000000000020 <mkostemp_safer>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	55                   	push   %rbp
+  25:	89 f5                	mov    %esi,%ebp
+  27:	e8 00 00 00 00       	call   2c <mkostemp_safer+0xc>
+  2c:	89 ee                	mov    %ebp,%esi
+  2e:	5d                   	pop    %rbp
+  2f:	89 c7                	mov    %eax,%edi
+  31:	e9 00 00 00 00       	jmp    36 <mkostemp_safer+0x16>

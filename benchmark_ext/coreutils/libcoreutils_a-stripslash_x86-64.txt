@@ -1,0 +1,26 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-stripslash.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <strip_trailing_slashes>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	48 89 fd             	mov    %rdi,%rbp
+   8:	53                   	push   %rbx
+   9:	48 83 ec 08          	sub    $0x8,%rsp
+   d:	e8 00 00 00 00       	call   12 <strip_trailing_slashes+0x12>
+  12:	80 38 00             	cmpb   $0x0,(%rax)
+  15:	48 89 c3             	mov    %rax,%rbx
+  18:	48 0f 44 dd          	cmove  %rbp,%rbx
+  1c:	48 89 df             	mov    %rbx,%rdi
+  1f:	e8 00 00 00 00       	call   24 <strip_trailing_slashes+0x24>
+  24:	48 01 c3             	add    %rax,%rbx
+  27:	80 3b 00             	cmpb   $0x0,(%rbx)
+  2a:	c6 03 00             	movb   $0x0,(%rbx)
+  2d:	0f 95 c0             	setne  %al
+  30:	48 83 c4 08          	add    $0x8,%rsp
+  34:	5b                   	pop    %rbx
+  35:	5d                   	pop    %rbp
+  36:	c3                   	ret    

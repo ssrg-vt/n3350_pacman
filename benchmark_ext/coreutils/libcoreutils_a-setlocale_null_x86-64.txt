@@ -1,0 +1,71 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-setlocale_null.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <setlocale_null_r>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	49 89 f4             	mov    %rsi,%r12
+   b:	31 f6                	xor    %esi,%esi
+   d:	55                   	push   %rbp
+   e:	53                   	push   %rbx
+   f:	48 89 d3             	mov    %rdx,%rbx
+  12:	48 83 ec 08          	sub    $0x8,%rsp
+  16:	e8 00 00 00 00       	call   1b <setlocale_null_r+0x1b>
+  1b:	48 85 c0             	test   %rax,%rax
+  1e:	74 78                	je     98 <setlocale_null_r+0x98>
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	48 89 c5             	mov    %rax,%rbp
+  26:	e8 00 00 00 00       	call   2b <setlocale_null_r+0x2b>
+  2b:	48 39 c3             	cmp    %rax,%rbx
+  2e:	77 20                	ja     50 <setlocale_null_r+0x50>
+  30:	41 bd 22 00 00 00    	mov    $0x22,%r13d
+  36:	48 85 db             	test   %rbx,%rbx
+  39:	75 35                	jne    70 <setlocale_null_r+0x70>
+  3b:	48 83 c4 08          	add    $0x8,%rsp
+  3f:	44 89 e8             	mov    %r13d,%eax
+  42:	5b                   	pop    %rbx
+  43:	5d                   	pop    %rbp
+  44:	41 5c                	pop    %r12
+  46:	41 5d                	pop    %r13
+  48:	c3                   	ret    
+  49:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  50:	48 89 ee             	mov    %rbp,%rsi
+  53:	4c 89 e7             	mov    %r12,%rdi
+  56:	48 8d 50 01          	lea    0x1(%rax),%rdx
+  5a:	45 31 ed             	xor    %r13d,%r13d
+  5d:	e8 00 00 00 00       	call   62 <setlocale_null_r+0x62>
+  62:	48 83 c4 08          	add    $0x8,%rsp
+  66:	44 89 e8             	mov    %r13d,%eax
+  69:	5b                   	pop    %rbx
+  6a:	5d                   	pop    %rbp
+  6b:	41 5c                	pop    %r12
+  6d:	41 5d                	pop    %r13
+  6f:	c3                   	ret    
+  70:	48 8d 53 ff          	lea    -0x1(%rbx),%rdx
+  74:	48 89 ee             	mov    %rbp,%rsi
+  77:	4c 89 e7             	mov    %r12,%rdi
+  7a:	e8 00 00 00 00       	call   7f <setlocale_null_r+0x7f>
+  7f:	41 c6 44 1c ff 00    	movb   $0x0,-0x1(%r12,%rbx,1)
+  85:	48 83 c4 08          	add    $0x8,%rsp
+  89:	44 89 e8             	mov    %r13d,%eax
+  8c:	5b                   	pop    %rbx
+  8d:	5d                   	pop    %rbp
+  8e:	41 5c                	pop    %r12
+  90:	41 5d                	pop    %r13
+  92:	c3                   	ret    
+  93:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  98:	41 bd 16 00 00 00    	mov    $0x16,%r13d
+  9e:	48 85 db             	test   %rbx,%rbx
+  a1:	74 98                	je     3b <setlocale_null_r+0x3b>
+  a3:	41 c6 04 24 00       	movb   $0x0,(%r12)
+  a8:	eb 91                	jmp    3b <setlocale_null_r+0x3b>
+  aa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000000b0 <setlocale_null>:
+  b0:	f3 0f 1e fa          	endbr64 
+  b4:	31 f6                	xor    %esi,%esi
+  b6:	e9 00 00 00 00       	jmp    bb <setlocale_null+0xb>

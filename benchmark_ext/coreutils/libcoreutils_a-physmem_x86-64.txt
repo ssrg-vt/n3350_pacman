@@ -1,0 +1,146 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-physmem.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <physmem_total>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 81 ec 98 00 00 00 	sub    $0x98,%rsp
+   b:	bf 55 00 00 00       	mov    $0x55,%edi
+  10:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  17:	00 00 
+  19:	48 89 84 24 88 00 00 	mov    %rax,0x88(%rsp)
+  20:	00 
+  21:	31 c0                	xor    %eax,%eax
+  23:	e8 00 00 00 00       	call   28 <physmem_total+0x28>
+  28:	66 0f ef c0          	pxor   %xmm0,%xmm0
+  2c:	bf 1e 00 00 00       	mov    $0x1e,%edi
+  31:	f2 48 0f 2a c0       	cvtsi2sd %rax,%xmm0
+  36:	f2 0f 11 44 24 08    	movsd  %xmm0,0x8(%rsp)
+  3c:	e8 00 00 00 00       	call   41 <physmem_total+0x41>
+  41:	f2 0f 10 44 24 08    	movsd  0x8(%rsp),%xmm0
+  47:	66 0f ef c9          	pxor   %xmm1,%xmm1
+  4b:	66 0f 2f c1          	comisd %xmm1,%xmm0
+  4f:	72 0f                	jb     60 <physmem_total+0x60>
+  51:	66 0f ef d2          	pxor   %xmm2,%xmm2
+  55:	f2 48 0f 2a d0       	cvtsi2sd %rax,%xmm2
+  5a:	66 0f 2f d1          	comisd %xmm1,%xmm2
+  5e:	73 38                	jae    98 <physmem_total+0x98>
+  60:	48 8d 7c 24 10       	lea    0x10(%rsp),%rdi
+  65:	e8 00 00 00 00       	call   6a <physmem_total+0x6a>
+  6a:	f2 0f 10 05 00 00 00 	movsd  0x0(%rip),%xmm0        # 72 <physmem_total+0x72>
+  71:	00 
+  72:	85 c0                	test   %eax,%eax
+  74:	74 2a                	je     a0 <physmem_total+0xa0>
+  76:	48 8b 84 24 88 00 00 	mov    0x88(%rsp),%rax
+  7d:	00 
+  7e:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  85:	00 00 
+  87:	75 62                	jne    eb <physmem_total+0xeb>
+  89:	48 81 c4 98 00 00 00 	add    $0x98,%rsp
+  90:	c3                   	ret    
+  91:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  98:	f2 0f 59 c2          	mulsd  %xmm2,%xmm0
+  9c:	eb d8                	jmp    76 <physmem_total+0x76>
+  9e:	66 90                	xchg   %ax,%ax
+  a0:	48 8b 44 24 30       	mov    0x30(%rsp),%rax
+  a5:	48 85 c0             	test   %rax,%rax
+  a8:	78 26                	js     d0 <physmem_total+0xd0>
+  aa:	66 0f ef c0          	pxor   %xmm0,%xmm0
+  ae:	f2 48 0f 2a c0       	cvtsi2sd %rax,%xmm0
+  b3:	8b 44 24 78          	mov    0x78(%rsp),%eax
+  b7:	66 0f ef c9          	pxor   %xmm1,%xmm1
+  bb:	f2 48 0f 2a c8       	cvtsi2sd %rax,%xmm1
+  c0:	f2 0f 59 c1          	mulsd  %xmm1,%xmm0
+  c4:	eb b0                	jmp    76 <physmem_total+0x76>
+  c6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  cd:	00 00 00 
+  d0:	48 89 c2             	mov    %rax,%rdx
+  d3:	83 e0 01             	and    $0x1,%eax
+  d6:	66 0f ef c0          	pxor   %xmm0,%xmm0
+  da:	48 d1 ea             	shr    %rdx
+  dd:	48 09 c2             	or     %rax,%rdx
+  e0:	f2 48 0f 2a c2       	cvtsi2sd %rdx,%xmm0
+  e5:	f2 0f 58 c0          	addsd  %xmm0,%xmm0
+  e9:	eb c8                	jmp    b3 <physmem_total+0xb3>
+  eb:	e8 00 00 00 00       	call   f0 <physmem_available>
+
+00000000000000f0 <physmem_available>:
+  f0:	f3 0f 1e fa          	endbr64 
+  f4:	48 81 ec 98 00 00 00 	sub    $0x98,%rsp
+  fb:	bf 56 00 00 00       	mov    $0x56,%edi
+ 100:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 107:	00 00 
+ 109:	48 89 84 24 88 00 00 	mov    %rax,0x88(%rsp)
+ 110:	00 
+ 111:	31 c0                	xor    %eax,%eax
+ 113:	e8 00 00 00 00       	call   118 <physmem_available+0x28>
+ 118:	66 0f ef c0          	pxor   %xmm0,%xmm0
+ 11c:	bf 1e 00 00 00       	mov    $0x1e,%edi
+ 121:	f2 48 0f 2a c0       	cvtsi2sd %rax,%xmm0
+ 126:	f2 0f 11 44 24 08    	movsd  %xmm0,0x8(%rsp)
+ 12c:	e8 00 00 00 00       	call   131 <physmem_available+0x41>
+ 131:	f2 0f 10 44 24 08    	movsd  0x8(%rsp),%xmm0
+ 137:	66 0f ef c9          	pxor   %xmm1,%xmm1
+ 13b:	66 0f 2f c1          	comisd %xmm1,%xmm0
+ 13f:	72 13                	jb     154 <physmem_available+0x64>
+ 141:	66 0f ef d2          	pxor   %xmm2,%xmm2
+ 145:	f2 48 0f 2a d0       	cvtsi2sd %rax,%xmm2
+ 14a:	66 0f 2f d1          	comisd %xmm1,%xmm2
+ 14e:	0f 83 7c 00 00 00    	jae    1d0 <physmem_available+0xe0>
+ 154:	48 8d 7c 24 10       	lea    0x10(%rsp),%rdi
+ 159:	e8 00 00 00 00       	call   15e <physmem_available+0x6e>
+ 15e:	85 c0                	test   %eax,%eax
+ 160:	75 5e                	jne    1c0 <physmem_available+0xd0>
+ 162:	48 8b 44 24 38       	mov    0x38(%rsp),%rax
+ 167:	48 85 c0             	test   %rax,%rax
+ 16a:	78 74                	js     1e0 <physmem_available+0xf0>
+ 16c:	66 0f ef c0          	pxor   %xmm0,%xmm0
+ 170:	f2 48 0f 2a c0       	cvtsi2sd %rax,%xmm0
+ 175:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
+ 17a:	48 85 c0             	test   %rax,%rax
+ 17d:	0f 88 80 00 00 00    	js     203 <physmem_available+0x113>
+ 183:	66 0f ef c9          	pxor   %xmm1,%xmm1
+ 187:	f2 48 0f 2a c8       	cvtsi2sd %rax,%xmm1
+ 18c:	8b 44 24 78          	mov    0x78(%rsp),%eax
+ 190:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+ 194:	66 0f ef c9          	pxor   %xmm1,%xmm1
+ 198:	f2 48 0f 2a c8       	cvtsi2sd %rax,%xmm1
+ 19d:	f2 0f 59 c1          	mulsd  %xmm1,%xmm0
+ 1a1:	48 8b 84 24 88 00 00 	mov    0x88(%rsp),%rax
+ 1a8:	00 
+ 1a9:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 1b0:	00 00 
+ 1b2:	75 6d                	jne    221 <physmem_available+0x131>
+ 1b4:	48 81 c4 98 00 00 00 	add    $0x98,%rsp
+ 1bb:	c3                   	ret    
+ 1bc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 1c0:	e8 00 00 00 00       	call   1c5 <physmem_available+0xd5>
+ 1c5:	f2 0f 59 05 00 00 00 	mulsd  0x0(%rip),%xmm0        # 1cd <physmem_available+0xdd>
+ 1cc:	00 
+ 1cd:	eb d2                	jmp    1a1 <physmem_available+0xb1>
+ 1cf:	90                   	nop
+ 1d0:	f2 0f 59 c2          	mulsd  %xmm2,%xmm0
+ 1d4:	eb cb                	jmp    1a1 <physmem_available+0xb1>
+ 1d6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 1dd:	00 00 00 
+ 1e0:	48 89 c2             	mov    %rax,%rdx
+ 1e3:	83 e0 01             	and    $0x1,%eax
+ 1e6:	66 0f ef c0          	pxor   %xmm0,%xmm0
+ 1ea:	48 d1 ea             	shr    %rdx
+ 1ed:	48 09 c2             	or     %rax,%rdx
+ 1f0:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
+ 1f5:	f2 48 0f 2a c2       	cvtsi2sd %rdx,%xmm0
+ 1fa:	f2 0f 58 c0          	addsd  %xmm0,%xmm0
+ 1fe:	48 85 c0             	test   %rax,%rax
+ 201:	79 80                	jns    183 <physmem_available+0x93>
+ 203:	48 89 c2             	mov    %rax,%rdx
+ 206:	83 e0 01             	and    $0x1,%eax
+ 209:	66 0f ef c9          	pxor   %xmm1,%xmm1
+ 20d:	48 d1 ea             	shr    %rdx
+ 210:	48 09 c2             	or     %rax,%rdx
+ 213:	f2 48 0f 2a ca       	cvtsi2sd %rdx,%xmm1
+ 218:	f2 0f 58 c9          	addsd  %xmm1,%xmm1
+ 21c:	e9 6b ff ff ff       	jmp    18c <physmem_available+0x9c>
+ 221:	e8 00 00 00 00       	call   226 <physmem_available+0x136>

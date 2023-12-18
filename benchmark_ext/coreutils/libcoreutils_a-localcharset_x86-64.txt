@@ -1,0 +1,22 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-localcharset.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <locale_charset>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 83 ec 08          	sub    $0x8,%rsp
+   8:	bf 0e 00 00 00       	mov    $0xe,%edi
+   d:	e8 00 00 00 00       	call   12 <locale_charset+0x12>
+  12:	48 85 c0             	test   %rax,%rax
+  15:	74 19                	je     30 <locale_charset+0x30>
+  17:	80 38 00             	cmpb   $0x0,(%rax)
+  1a:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 21 <locale_charset+0x21>
+  21:	48 0f 44 c2          	cmove  %rdx,%rax
+  25:	48 83 c4 08          	add    $0x8,%rsp
+  29:	c3                   	ret    
+  2a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  30:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 37 <locale_charset+0x37>
+  37:	48 83 c4 08          	add    $0x8,%rsp
+  3b:	c3                   	ret    

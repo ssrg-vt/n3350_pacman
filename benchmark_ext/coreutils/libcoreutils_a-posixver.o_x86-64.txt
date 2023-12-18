@@ -1,0 +1,45 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-posixver.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <posix2_version>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # d <posix2_version+0xd>
+   d:	41 bc 69 10 03 00    	mov    $0x31069,%r12d
+  13:	48 83 ec 10          	sub    $0x10,%rsp
+  17:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1e:	00 00 
+  20:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  25:	31 c0                	xor    %eax,%eax
+  27:	e8 00 00 00 00       	call   2c <posix2_version+0x2c>
+  2c:	48 85 c0             	test   %rax,%rax
+  2f:	74 05                	je     36 <posix2_version+0x36>
+  31:	80 38 00             	cmpb   $0x0,(%rax)
+  34:	75 1a                	jne    50 <posix2_version+0x50>
+  36:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  3b:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  42:	00 00 
+  44:	75 42                	jne    88 <posix2_version+0x88>
+  46:	48 83 c4 10          	add    $0x10,%rsp
+  4a:	44 89 e0             	mov    %r12d,%eax
+  4d:	41 5c                	pop    %r12
+  4f:	c3                   	ret    
+  50:	ba 0a 00 00 00       	mov    $0xa,%edx
+  55:	48 89 e6             	mov    %rsp,%rsi
+  58:	48 89 c7             	mov    %rax,%rdi
+  5b:	e8 00 00 00 00       	call   60 <posix2_version+0x60>
+  60:	48 8b 14 24          	mov    (%rsp),%rdx
+  64:	80 3a 00             	cmpb   $0x0,(%rdx)
+  67:	75 cd                	jne    36 <posix2_version+0x36>
+  69:	48 3d 00 00 00 80    	cmp    $0xffffffff80000000,%rax
+  6f:	7c 0f                	jl     80 <posix2_version+0x80>
+  71:	41 bc ff ff ff 7f    	mov    $0x7fffffff,%r12d
+  77:	4c 39 e0             	cmp    %r12,%rax
+  7a:	4c 0f 4e e0          	cmovle %rax,%r12
+  7e:	eb b6                	jmp    36 <posix2_version+0x36>
+  80:	41 bc 00 00 00 80    	mov    $0x80000000,%r12d
+  86:	eb ae                	jmp    36 <posix2_version+0x36>
+  88:	e8 00 00 00 00       	call   8d <posix2_version+0x8d>

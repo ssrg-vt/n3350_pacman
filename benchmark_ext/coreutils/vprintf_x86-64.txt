@@ -1,0 +1,12 @@
+
+/home/lalitssrg/coreutils/lib/vprintf.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_vprintf>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 89 f2             	mov    %rsi,%rdx
+   7:	48 89 fe             	mov    %rdi,%rsi
+   a:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 11 <rpl_vprintf+0x11>
+  11:	e9 00 00 00 00       	jmp    16 <rpl_vprintf+0x16>

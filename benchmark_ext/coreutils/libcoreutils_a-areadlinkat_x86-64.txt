@@ -1,0 +1,13 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-areadlinkat.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <areadlinkat>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	4c 8b 0d 00 00 00 00 	mov    0x0(%rip),%r9        # b <areadlinkat+0xb>
+   b:	45 31 c0             	xor    %r8d,%r8d
+   e:	31 c9                	xor    %ecx,%ecx
+  10:	31 d2                	xor    %edx,%edx
+  12:	e9 00 00 00 00       	jmp    17 <areadlinkat+0x17>

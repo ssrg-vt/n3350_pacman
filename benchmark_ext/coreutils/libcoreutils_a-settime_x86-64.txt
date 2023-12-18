@@ -1,0 +1,50 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-settime.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <settime>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	48 89 fe             	mov    %rdi,%rsi
+   9:	53                   	push   %rbx
+   a:	48 89 fb             	mov    %rdi,%rbx
+   d:	31 ff                	xor    %edi,%edi
+   f:	48 83 ec 28          	sub    $0x28,%rsp
+  13:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1a:	00 00 
+  1c:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  21:	31 c0                	xor    %eax,%eax
+  23:	e8 00 00 00 00       	call   28 <settime+0x28>
+  28:	41 89 c4             	mov    %eax,%r12d
+  2b:	85 c0                	test   %eax,%eax
+  2d:	74 42                	je     71 <settime+0x71>
+  2f:	e8 00 00 00 00       	call   34 <settime+0x34>
+  34:	83 38 01             	cmpl   $0x1,(%rax)
+  37:	74 38                	je     71 <settime+0x71>
+  39:	48 8b 03             	mov    (%rbx),%rax
+  3c:	48 8b 4b 08          	mov    0x8(%rbx),%rcx
+  40:	48 89 e7             	mov    %rsp,%rdi
+  43:	31 f6                	xor    %esi,%esi
+  45:	48 ba cf f7 53 e3 a5 	movabs $0x20c49ba5e353f7cf,%rdx
+  4c:	9b c4 20 
+  4f:	48 89 04 24          	mov    %rax,(%rsp)
+  53:	48 89 c8             	mov    %rcx,%rax
+  56:	48 c1 f9 3f          	sar    $0x3f,%rcx
+  5a:	48 f7 ea             	imul   %rdx
+  5d:	48 c1 fa 07          	sar    $0x7,%rdx
+  61:	48 29 ca             	sub    %rcx,%rdx
+  64:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+  69:	e8 00 00 00 00       	call   6e <settime+0x6e>
+  6e:	41 89 c4             	mov    %eax,%r12d
+  71:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  76:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  7d:	00 00 
+  7f:	75 0b                	jne    8c <settime+0x8c>
+  81:	48 83 c4 28          	add    $0x28,%rsp
+  85:	44 89 e0             	mov    %r12d,%eax
+  88:	5b                   	pop    %rbx
+  89:	41 5c                	pop    %r12
+  8b:	c3                   	ret    
+  8c:	e8 00 00 00 00       	call   91 <settime+0x91>

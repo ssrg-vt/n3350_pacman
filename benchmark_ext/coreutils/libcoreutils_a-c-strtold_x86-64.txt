@@ -1,0 +1,72 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-c-strtold.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <c_strtold>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	49 89 fc             	mov    %rdi,%r12
+   b:	55                   	push   %rbp
+   c:	48 89 f5             	mov    %rsi,%rbp
+   f:	48 83 ec 10          	sub    $0x10,%rsp
+  13:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 1a <c_strtold+0x1a>
+  1a:	48 85 c0             	test   %rax,%rax
+  1d:	0f 84 85 00 00 00    	je     a8 <c_strtold+0xa8>
+  23:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 2a <c_strtold+0x2a>
+  2a:	48 85 ff             	test   %rdi,%rdi
+  2d:	74 51                	je     80 <c_strtold+0x80>
+  2f:	e8 00 00 00 00       	call   34 <c_strtold+0x34>
+  34:	49 89 c5             	mov    %rax,%r13
+  37:	48 85 c0             	test   %rax,%rax
+  3a:	74 44                	je     80 <c_strtold+0x80>
+  3c:	4c 89 e7             	mov    %r12,%rdi
+  3f:	48 89 ee             	mov    %rbp,%rsi
+  42:	e8 00 00 00 00       	call   47 <c_strtold+0x47>
+  47:	db 3c 24             	fstpt  (%rsp)
+  4a:	e8 00 00 00 00       	call   4f <c_strtold+0x4f>
+  4f:	4c 89 ef             	mov    %r13,%rdi
+  52:	44 8b 20             	mov    (%rax),%r12d
+  55:	48 89 c5             	mov    %rax,%rbp
+  58:	e8 00 00 00 00       	call   5d <c_strtold+0x5d>
+  5d:	48 85 c0             	test   %rax,%rax
+  60:	0f 84 00 00 00 00    	je     66 <c_strtold+0x66>
+  66:	44 89 65 00          	mov    %r12d,0x0(%rbp)
+  6a:	db 2c 24             	fldt   (%rsp)
+  6d:	48 83 c4 10          	add    $0x10,%rsp
+  71:	5d                   	pop    %rbp
+  72:	41 5c                	pop    %r12
+  74:	41 5d                	pop    %r13
+  76:	c3                   	ret    
+  77:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  7e:	00 00 
+  80:	48 85 ed             	test   %rbp,%rbp
+  83:	74 13                	je     98 <c_strtold+0x98>
+  85:	4c 89 65 00          	mov    %r12,0x0(%rbp)
+  89:	48 83 c4 10          	add    $0x10,%rsp
+  8d:	d9 ee                	fldz   
+  8f:	5d                   	pop    %rbp
+  90:	41 5c                	pop    %r12
+  92:	41 5d                	pop    %r13
+  94:	c3                   	ret    
+  95:	0f 1f 00             	nopl   (%rax)
+  98:	48 83 c4 10          	add    $0x10,%rsp
+  9c:	d9 ee                	fldz   
+  9e:	5d                   	pop    %rbp
+  9f:	41 5c                	pop    %r12
+  a1:	41 5d                	pop    %r13
+  a3:	c3                   	ret    
+  a4:	0f 1f 40 00          	nopl   0x0(%rax)
+  a8:	31 d2                	xor    %edx,%edx
+  aa:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # b1 <c_strtold+0xb1>
+  b1:	bf bf 1f 00 00       	mov    $0x1fbf,%edi
+  b6:	e8 00 00 00 00       	call   bb <c_strtold+0xbb>
+  bb:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # c2 <c_strtold+0xc2>
+  c2:	e9 5c ff ff ff       	jmp    23 <c_strtold+0x23>
+
+Disassembly of section .text.unlikely:
+
+0000000000000000 <c_strtold.cold>:
+   0:	e8 00 00 00 00       	call   5 <c_strtold.cold+0x5>

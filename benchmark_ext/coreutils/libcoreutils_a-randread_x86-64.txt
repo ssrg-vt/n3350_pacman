@@ -1,0 +1,325 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-randread.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <randread_error>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        # a <randread_error+0xa>
+   a:	41 54                	push   %r12
+   c:	55                   	push   %rbp
+   d:	53                   	push   %rbx
+   e:	85 c0                	test   %eax,%eax
+  10:	74 61                	je     73 <randread_error+0x73>
+  12:	8b 2d 00 00 00 00    	mov    0x0(%rip),%ebp        # 18 <randread_error+0x18>
+  18:	e8 00 00 00 00       	call   1d <randread_error+0x1d>
+  1d:	49 89 c4             	mov    %rax,%r12
+  20:	e8 00 00 00 00       	call   25 <randread_error+0x25>
+  25:	ba 05 00 00 00       	mov    $0x5,%edx
+  2a:	48 89 c3             	mov    %rax,%rbx
+  2d:	8b 00                	mov    (%rax),%eax
+  2f:	85 c0                	test   %eax,%eax
+  31:	74 2d                	je     60 <randread_error+0x60>
+  33:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 3a <randread_error+0x3a>
+  3a:	31 ff                	xor    %edi,%edi
+  3c:	e8 00 00 00 00       	call   41 <randread_error+0x41>
+  41:	48 89 c2             	mov    %rax,%rdx
+  44:	8b 33                	mov    (%rbx),%esi
+  46:	4c 89 e1             	mov    %r12,%rcx
+  49:	5b                   	pop    %rbx
+  4a:	89 ef                	mov    %ebp,%edi
+  4c:	31 c0                	xor    %eax,%eax
+  4e:	5d                   	pop    %rbp
+  4f:	41 5c                	pop    %r12
+  51:	e9 00 00 00 00       	jmp    56 <randread_error+0x56>
+  56:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  5d:	00 00 00 
+  60:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 67 <randread_error+0x67>
+  67:	31 ff                	xor    %edi,%edi
+  69:	e8 00 00 00 00       	call   6e <randread_error+0x6e>
+  6e:	48 89 c2             	mov    %rax,%rdx
+  71:	eb d1                	jmp    44 <randread_error+0x44>
+  73:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 7a <randread_error+0x7a>
+  7a:	ba 6b 00 00 00       	mov    $0x6b,%edx
+  7f:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 86 <randread_error+0x86>
+  86:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 8d <randread_error+0x8d>
+  8d:	e8 00 00 00 00       	call   92 <randread_error+0x92>
+  92:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  99:	00 00 00 00 
+  9d:	0f 1f 00             	nopl   (%rax)
+
+00000000000000a0 <randread_new>:
+  a0:	f3 0f 1e fa          	endbr64 
+  a4:	41 57                	push   %r15
+  a6:	41 56                	push   %r14
+  a8:	41 55                	push   %r13
+  aa:	41 54                	push   %r12
+  ac:	55                   	push   %rbp
+  ad:	53                   	push   %rbx
+  ae:	48 83 ec 08          	sub    $0x8,%rsp
+  b2:	48 85 f6             	test   %rsi,%rsi
+  b5:	0f 84 3d 01 00 00    	je     1f8 <randread_new+0x158>
+  bb:	48 89 fb             	mov    %rdi,%rbx
+  be:	48 89 f5             	mov    %rsi,%rbp
+  c1:	48 85 ff             	test   %rdi,%rdi
+  c4:	74 6a                	je     130 <randread_new+0x90>
+  c6:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # cd <randread_new+0x2d>
+  cd:	e8 00 00 00 00       	call   d2 <randread_new+0x32>
+  d2:	49 89 c5             	mov    %rax,%r13
+  d5:	48 85 c0             	test   %rax,%rax
+  d8:	0f 84 52 01 00 00    	je     230 <randread_new+0x190>
+  de:	bf 38 10 00 00       	mov    $0x1038,%edi
+  e3:	e8 00 00 00 00       	call   e8 <randread_new+0x48>
+  e8:	4c 89 ef             	mov    %r13,%rdi
+  eb:	49 89 c4             	mov    %rax,%r12
+  ee:	4c 89 28             	mov    %r13,(%rax)
+  f1:	48 8d 05 08 ff ff ff 	lea    -0xf8(%rip),%rax        # 0 <randread_error>
+  f8:	49 89 44 24 08       	mov    %rax,0x8(%r12)
+  fd:	b8 00 10 00 00       	mov    $0x1000,%eax
+ 102:	49 8d 74 24 18       	lea    0x18(%r12),%rsi
+ 107:	48 39 c5             	cmp    %rax,%rbp
+ 10a:	49 89 5c 24 10       	mov    %rbx,0x10(%r12)
+ 10f:	48 0f 46 c5          	cmovbe %rbp,%rax
+ 113:	31 d2                	xor    %edx,%edx
+ 115:	48 89 c1             	mov    %rax,%rcx
+ 118:	e8 00 00 00 00       	call   11d <randread_new+0x7d>
+ 11d:	48 83 c4 08          	add    $0x8,%rsp
+ 121:	4c 89 e0             	mov    %r12,%rax
+ 124:	5b                   	pop    %rbx
+ 125:	5d                   	pop    %rbp
+ 126:	41 5c                	pop    %r12
+ 128:	41 5d                	pop    %r13
+ 12a:	41 5e                	pop    %r14
+ 12c:	41 5f                	pop    %r15
+ 12e:	c3                   	ret    
+ 12f:	90                   	nop
+ 130:	bf 38 10 00 00       	mov    $0x1038,%edi
+ 135:	e8 00 00 00 00       	call   13a <randread_new+0x9a>
+ 13a:	49 89 c4             	mov    %rax,%r12
+ 13d:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+ 144:	48 8d 05 b5 fe ff ff 	lea    -0x14b(%rip),%rax        # 0 <randread_error>
+ 14b:	49 89 44 24 08       	mov    %rax,0x8(%r12)
+ 150:	b8 00 08 00 00       	mov    $0x800,%eax
+ 155:	4d 8d 6c 24 20       	lea    0x20(%r12),%r13
+ 15a:	49 c7 44 24 10 00 00 	movq   $0x0,0x10(%r12)
+ 161:	00 00 
+ 163:	48 39 c5             	cmp    %rax,%rbp
+ 166:	4c 89 eb             	mov    %r13,%rbx
+ 169:	49 c7 44 24 18 00 00 	movq   $0x0,0x18(%r12)
+ 170:	00 00 
+ 172:	48 0f 47 e8          	cmova  %rax,%rbp
+ 176:	4c 01 ed             	add    %r13,%rbp
+ 179:	49 39 ed             	cmp    %rbp,%r13
+ 17c:	72 0a                	jb     188 <randread_new+0xe8>
+ 17e:	eb 68                	jmp    1e8 <randread_new+0x148>
+ 180:	48 01 c3             	add    %rax,%rbx
+ 183:	48 39 dd             	cmp    %rbx,%rbp
+ 186:	76 60                	jbe    1e8 <randread_new+0x148>
+ 188:	48 89 ee             	mov    %rbp,%rsi
+ 18b:	31 d2                	xor    %edx,%edx
+ 18d:	48 89 df             	mov    %rbx,%rdi
+ 190:	48 29 de             	sub    %rbx,%rsi
+ 193:	e8 00 00 00 00       	call   198 <randread_new+0xf8>
+ 198:	48 85 c0             	test   %rax,%rax
+ 19b:	79 e3                	jns    180 <randread_new+0xe0>
+ 19d:	e8 00 00 00 00       	call   1a2 <randread_new+0x102>
+ 1a2:	44 8b 38             	mov    (%rax),%r15d
+ 1a5:	49 89 c6             	mov    %rax,%r14
+ 1a8:	41 83 ff 04          	cmp    $0x4,%r15d
+ 1ac:	74 d5                	je     183 <randread_new+0xe3>
+ 1ae:	49 8b 2c 24          	mov    (%r12),%rbp
+ 1b2:	4c 89 e7             	mov    %r12,%rdi
+ 1b5:	ba 38 10 00 00       	mov    $0x1038,%edx
+ 1ba:	be 38 10 00 00       	mov    $0x1038,%esi
+ 1bf:	e8 00 00 00 00       	call   1c4 <randread_new+0x124>
+ 1c4:	4c 89 e7             	mov    %r12,%rdi
+ 1c7:	e8 00 00 00 00       	call   1cc <randread_new+0x12c>
+ 1cc:	48 85 ed             	test   %rbp,%rbp
+ 1cf:	74 08                	je     1d9 <randread_new+0x139>
+ 1d1:	48 89 ef             	mov    %rbp,%rdi
+ 1d4:	e8 00 00 00 00       	call   1d9 <randread_new+0x139>
+ 1d9:	45 89 3e             	mov    %r15d,(%r14)
+ 1dc:	45 31 e4             	xor    %r12d,%r12d
+ 1df:	e9 39 ff ff ff       	jmp    11d <randread_new+0x7d>
+ 1e4:	0f 1f 40 00          	nopl   0x0(%rax)
+ 1e8:	4c 89 ef             	mov    %r13,%rdi
+ 1eb:	e8 00 00 00 00       	call   1f0 <randread_new+0x150>
+ 1f0:	e9 28 ff ff ff       	jmp    11d <randread_new+0x7d>
+ 1f5:	0f 1f 00             	nopl   (%rax)
+ 1f8:	bf 38 10 00 00       	mov    $0x1038,%edi
+ 1fd:	e8 00 00 00 00       	call   202 <randread_new+0x162>
+ 202:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+ 209:	49 89 c4             	mov    %rax,%r12
+ 20c:	48 8d 05 ed fd ff ff 	lea    -0x213(%rip),%rax        # 0 <randread_error>
+ 213:	49 89 44 24 08       	mov    %rax,0x8(%r12)
+ 218:	49 c7 44 24 10 00 00 	movq   $0x0,0x10(%r12)
+ 21f:	00 00 
+ 221:	e9 f7 fe ff ff       	jmp    11d <randread_new+0x7d>
+ 226:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 22d:	00 00 00 
+ 230:	45 31 e4             	xor    %r12d,%r12d
+ 233:	e9 e5 fe ff ff       	jmp    11d <randread_new+0x7d>
+ 238:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 23f:	00 
+
+0000000000000240 <randread_set_handler>:
+ 240:	f3 0f 1e fa          	endbr64 
+ 244:	48 89 77 08          	mov    %rsi,0x8(%rdi)
+ 248:	c3                   	ret    
+ 249:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000250 <randread_set_handler_arg>:
+ 250:	f3 0f 1e fa          	endbr64 
+ 254:	48 89 77 10          	mov    %rsi,0x10(%rdi)
+ 258:	c3                   	ret    
+ 259:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000260 <randread>:
+ 260:	f3 0f 1e fa          	endbr64 
+ 264:	41 57                	push   %r15
+ 266:	41 56                	push   %r14
+ 268:	49 89 f6             	mov    %rsi,%r14
+ 26b:	41 55                	push   %r13
+ 26d:	41 54                	push   %r12
+ 26f:	55                   	push   %rbp
+ 270:	48 89 fd             	mov    %rdi,%rbp
+ 273:	53                   	push   %rbx
+ 274:	48 89 d3             	mov    %rdx,%rbx
+ 277:	48 83 ec 18          	sub    $0x18,%rsp
+ 27b:	48 8b 0f             	mov    (%rdi),%rcx
+ 27e:	48 85 c9             	test   %rcx,%rcx
+ 281:	48 89 0c 24          	mov    %rcx,(%rsp)
+ 285:	74 61                	je     2e8 <randread+0x88>
+ 287:	e8 00 00 00 00       	call   28c <randread+0x2c>
+ 28c:	45 31 ed             	xor    %r13d,%r13d
+ 28f:	48 8b 0c 24          	mov    (%rsp),%rcx
+ 293:	49 89 c4             	mov    %rax,%r12
+ 296:	eb 22                	jmp    2ba <randread+0x5a>
+ 298:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 29f:	00 
+ 2a0:	48 8b 45 00          	mov    0x0(%rbp),%rax
+ 2a4:	48 8b 7d 10          	mov    0x10(%rbp),%rdi
+ 2a8:	f6 00 20             	testb  $0x20,(%rax)
+ 2ab:	41 0f 44 d5          	cmove  %r13d,%edx
+ 2af:	41 89 14 24          	mov    %edx,(%r12)
+ 2b3:	ff 55 08             	call   *0x8(%rbp)
+ 2b6:	48 8b 4d 00          	mov    0x0(%rbp),%rcx
+ 2ba:	48 89 da             	mov    %rbx,%rdx
+ 2bd:	4c 89 f7             	mov    %r14,%rdi
+ 2c0:	be 01 00 00 00       	mov    $0x1,%esi
+ 2c5:	e8 00 00 00 00       	call   2ca <randread+0x6a>
+ 2ca:	41 8b 14 24          	mov    (%r12),%edx
+ 2ce:	49 01 c6             	add    %rax,%r14
+ 2d1:	48 29 c3             	sub    %rax,%rbx
+ 2d4:	75 ca                	jne    2a0 <randread+0x40>
+ 2d6:	48 83 c4 18          	add    $0x18,%rsp
+ 2da:	5b                   	pop    %rbx
+ 2db:	5d                   	pop    %rbp
+ 2dc:	41 5c                	pop    %r12
+ 2de:	41 5d                	pop    %r13
+ 2e0:	41 5e                	pop    %r14
+ 2e2:	41 5f                	pop    %r15
+ 2e4:	c3                   	ret    
+ 2e5:	0f 1f 00             	nopl   (%rax)
+ 2e8:	48 8b 4f 18          	mov    0x18(%rdi),%rcx
+ 2ec:	4c 8d 67 20          	lea    0x20(%rdi),%r12
+ 2f0:	48 8d 87 38 08 00 00 	lea    0x838(%rdi),%rax
+ 2f7:	41 bd 00 08 00 00    	mov    $0x800,%r13d
+ 2fd:	48 89 04 24          	mov    %rax,(%rsp)
+ 301:	48 39 ca             	cmp    %rcx,%rdx
+ 304:	0f 86 d5 00 00 00    	jbe    3df <randread+0x17f>
+ 30a:	4c 89 ee             	mov    %r13,%rsi
+ 30d:	48 89 ca             	mov    %rcx,%rdx
+ 310:	4c 89 f7             	mov    %r14,%rdi
+ 313:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+ 318:	48 29 ce             	sub    %rcx,%rsi
+ 31b:	48 03 34 24          	add    (%rsp),%rsi
+ 31f:	e8 00 00 00 00       	call   324 <randread+0xc4>
+ 324:	48 8b 4c 24 08       	mov    0x8(%rsp),%rcx
+ 329:	49 01 ce             	add    %rcx,%r14
+ 32c:	48 29 cb             	sub    %rcx,%rbx
+ 32f:	41 f6 c6 07          	test   $0x7,%r14b
+ 333:	74 23                	je     358 <randread+0xf8>
+ 335:	48 8b 34 24          	mov    (%rsp),%rsi
+ 339:	4c 89 e7             	mov    %r12,%rdi
+ 33c:	e8 00 00 00 00       	call   341 <randread+0xe1>
+ 341:	b9 00 08 00 00       	mov    $0x800,%ecx
+ 346:	48 81 fb 00 08 00 00 	cmp    $0x800,%rbx
+ 34d:	77 bb                	ja     30a <randread+0xaa>
+ 34f:	49 89 dd             	mov    %rbx,%r13
+ 352:	eb 4c                	jmp    3a0 <randread+0x140>
+ 354:	0f 1f 40 00          	nopl   0x0(%rax)
+ 358:	49 89 dd             	mov    %rbx,%r13
+ 35b:	49 89 df             	mov    %rbx,%r15
+ 35e:	49 8d 1c 1e          	lea    (%r14,%rbx,1),%rbx
+ 362:	41 81 e5 ff 07 00 00 	and    $0x7ff,%r13d
+ 369:	eb 19                	jmp    384 <randread+0x124>
+ 36b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 370:	4c 89 f6             	mov    %r14,%rsi
+ 373:	4c 89 e7             	mov    %r12,%rdi
+ 376:	e8 00 00 00 00       	call   37b <randread+0x11b>
+ 37b:	49 81 ef 00 08 00 00 	sub    $0x800,%r15
+ 382:	74 44                	je     3c8 <randread+0x168>
+ 384:	49 89 de             	mov    %rbx,%r14
+ 387:	4d 29 fe             	sub    %r15,%r14
+ 38a:	4d 39 ef             	cmp    %r13,%r15
+ 38d:	75 e1                	jne    370 <randread+0x110>
+ 38f:	48 8b 34 24          	mov    (%rsp),%rsi
+ 393:	4c 89 e7             	mov    %r12,%rdi
+ 396:	e8 00 00 00 00       	call   39b <randread+0x13b>
+ 39b:	b9 00 08 00 00       	mov    $0x800,%ecx
+ 3a0:	48 8b 34 24          	mov    (%rsp),%rsi
+ 3a4:	4c 89 ea             	mov    %r13,%rdx
+ 3a7:	4c 89 f7             	mov    %r14,%rdi
+ 3aa:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+ 3af:	e8 00 00 00 00       	call   3b4 <randread+0x154>
+ 3b4:	48 8b 4c 24 08       	mov    0x8(%rsp),%rcx
+ 3b9:	4c 29 e9             	sub    %r13,%rcx
+ 3bc:	48 89 4d 18          	mov    %rcx,0x18(%rbp)
+ 3c0:	e9 11 ff ff ff       	jmp    2d6 <randread+0x76>
+ 3c5:	0f 1f 00             	nopl   (%rax)
+ 3c8:	48 c7 45 18 00 00 00 	movq   $0x0,0x18(%rbp)
+ 3cf:	00 
+ 3d0:	48 83 c4 18          	add    $0x18,%rsp
+ 3d4:	5b                   	pop    %rbx
+ 3d5:	5d                   	pop    %rbp
+ 3d6:	41 5c                	pop    %r12
+ 3d8:	41 5d                	pop    %r13
+ 3da:	41 5e                	pop    %r14
+ 3dc:	41 5f                	pop    %r15
+ 3de:	c3                   	ret    
+ 3df:	49 89 c7             	mov    %rax,%r15
+ 3e2:	49 89 d5             	mov    %rdx,%r13
+ 3e5:	49 29 cf             	sub    %rcx,%r15
+ 3e8:	49 8d 87 00 08 00 00 	lea    0x800(%r15),%rax
+ 3ef:	48 89 04 24          	mov    %rax,(%rsp)
+ 3f3:	eb ab                	jmp    3a0 <randread+0x140>
+ 3f5:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 3fc:	00 00 00 00 
+
+0000000000000400 <randread_free>:
+ 400:	f3 0f 1e fa          	endbr64 
+ 404:	41 54                	push   %r12
+ 406:	48 c7 c2 ff ff ff ff 	mov    $0xffffffffffffffff,%rdx
+ 40d:	be 38 10 00 00       	mov    $0x1038,%esi
+ 412:	55                   	push   %rbp
+ 413:	48 89 fd             	mov    %rdi,%rbp
+ 416:	48 83 ec 08          	sub    $0x8,%rsp
+ 41a:	4c 8b 27             	mov    (%rdi),%r12
+ 41d:	e8 00 00 00 00       	call   422 <randread_free+0x22>
+ 422:	48 89 ef             	mov    %rbp,%rdi
+ 425:	e8 00 00 00 00       	call   42a <randread_free+0x2a>
+ 42a:	4d 85 e4             	test   %r12,%r12
+ 42d:	74 11                	je     440 <randread_free+0x40>
+ 42f:	48 83 c4 08          	add    $0x8,%rsp
+ 433:	4c 89 e7             	mov    %r12,%rdi
+ 436:	5d                   	pop    %rbp
+ 437:	41 5c                	pop    %r12
+ 439:	e9 00 00 00 00       	jmp    43e <randread_free+0x3e>
+ 43e:	66 90                	xchg   %ax,%ax
+ 440:	48 83 c4 08          	add    $0x8,%rsp
+ 444:	31 c0                	xor    %eax,%eax
+ 446:	5d                   	pop    %rbp
+ 447:	41 5c                	pop    %r12
+ 449:	c3                   	ret    

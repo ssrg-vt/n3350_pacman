@@ -1,0 +1,10 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-backup-rename.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <backup_file_rename>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	b9 01 00 00 00       	mov    $0x1,%ecx
+   9:	e9 00 00 00 00       	jmp    e <backup_file_rename+0xe>

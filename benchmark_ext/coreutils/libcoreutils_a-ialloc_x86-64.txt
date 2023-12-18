@@ -1,0 +1,49 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-ialloc.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <imalloc>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	e9 00 00 00 00       	jmp    9 <imalloc+0x9>
+   9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000010 <irealloc>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	31 c0                	xor    %eax,%eax
+  16:	48 85 f6             	test   %rsi,%rsi
+  19:	0f 94 c0             	sete   %al
+  1c:	48 09 c6             	or     %rax,%rsi
+  1f:	e9 00 00 00 00       	jmp    24 <irealloc+0x14>
+  24:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  2b:	00 00 00 00 
+  2f:	90                   	nop
+
+0000000000000030 <icalloc>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	e9 00 00 00 00       	jmp    39 <icalloc+0x9>
+  39:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000040 <ireallocarray>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	48 85 f6             	test   %rsi,%rsi
+  47:	74 0f                	je     58 <ireallocarray+0x18>
+  49:	48 85 d2             	test   %rdx,%rdx
+  4c:	74 0a                	je     58 <ireallocarray+0x18>
+  4e:	e9 00 00 00 00       	jmp    53 <ireallocarray+0x13>
+  53:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  58:	be 01 00 00 00       	mov    $0x1,%esi
+  5d:	ba 01 00 00 00       	mov    $0x1,%edx
+  62:	e9 00 00 00 00       	jmp    67 <ireallocarray+0x27>
+
+Disassembly of section .text.unlikely:
+
+0000000000000000 <_gl_alloc_nomem>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	50                   	push   %rax
+   5:	e8 00 00 00 00       	call   a <_gl_alloc_nomem+0xa>
+   a:	c7 00 0c 00 00 00    	movl   $0xc,(%rax)
+  10:	31 c0                	xor    %eax,%eax
+  12:	5a                   	pop    %rdx
+  13:	c3                   	ret    

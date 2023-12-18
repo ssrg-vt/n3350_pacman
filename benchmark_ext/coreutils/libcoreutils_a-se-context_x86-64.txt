@@ -1,0 +1,110 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-se-context.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <context_new>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 83 ec 08          	sub    $0x8,%rsp
+   8:	e8 00 00 00 00       	call   d <context_new+0xd>
+   d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  13:	31 c0                	xor    %eax,%eax
+  15:	48 83 c4 08          	add    $0x8,%rsp
+  19:	c3                   	ret    
+  1a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000020 <context_str>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	48 83 ec 08          	sub    $0x8,%rsp
+  28:	e8 00 00 00 00       	call   2d <context_str+0xd>
+  2d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  33:	31 c0                	xor    %eax,%eax
+  35:	48 83 c4 08          	add    $0x8,%rsp
+  39:	c3                   	ret    
+  3a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000040 <context_free>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	c3                   	ret    
+  45:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  4c:	00 00 00 00 
+
+0000000000000050 <context_user_set>:
+  50:	f3 0f 1e fa          	endbr64 
+  54:	48 83 ec 08          	sub    $0x8,%rsp
+  58:	e8 00 00 00 00       	call   5d <context_user_set+0xd>
+  5d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  63:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  68:	48 83 c4 08          	add    $0x8,%rsp
+  6c:	c3                   	ret    
+  6d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000070 <context_role_set>:
+  70:	f3 0f 1e fa          	endbr64 
+  74:	48 83 ec 08          	sub    $0x8,%rsp
+  78:	e8 00 00 00 00       	call   7d <context_role_set+0xd>
+  7d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  83:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  88:	48 83 c4 08          	add    $0x8,%rsp
+  8c:	c3                   	ret    
+  8d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000090 <context_range_set>:
+  90:	f3 0f 1e fa          	endbr64 
+  94:	48 83 ec 08          	sub    $0x8,%rsp
+  98:	e8 00 00 00 00       	call   9d <context_range_set+0xd>
+  9d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  a3:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  a8:	48 83 c4 08          	add    $0x8,%rsp
+  ac:	c3                   	ret    
+  ad:	0f 1f 00             	nopl   (%rax)
+
+00000000000000b0 <context_type_set>:
+  b0:	f3 0f 1e fa          	endbr64 
+  b4:	48 83 ec 08          	sub    $0x8,%rsp
+  b8:	e8 00 00 00 00       	call   bd <context_type_set+0xd>
+  bd:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  c3:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  c8:	48 83 c4 08          	add    $0x8,%rsp
+  cc:	c3                   	ret    
+  cd:	0f 1f 00             	nopl   (%rax)
+
+00000000000000d0 <context_type_get>:
+  d0:	f3 0f 1e fa          	endbr64 
+  d4:	48 83 ec 08          	sub    $0x8,%rsp
+  d8:	e8 00 00 00 00       	call   dd <context_type_get+0xd>
+  dd:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  e3:	31 c0                	xor    %eax,%eax
+  e5:	48 83 c4 08          	add    $0x8,%rsp
+  e9:	c3                   	ret    
+  ea:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000000f0 <context_range_get>:
+  f0:	f3 0f 1e fa          	endbr64 
+  f4:	48 83 ec 08          	sub    $0x8,%rsp
+  f8:	e8 00 00 00 00       	call   fd <context_range_get+0xd>
+  fd:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 103:	31 c0                	xor    %eax,%eax
+ 105:	48 83 c4 08          	add    $0x8,%rsp
+ 109:	c3                   	ret    
+ 10a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000110 <context_role_get>:
+ 110:	f3 0f 1e fa          	endbr64 
+ 114:	48 83 ec 08          	sub    $0x8,%rsp
+ 118:	e8 00 00 00 00       	call   11d <context_role_get+0xd>
+ 11d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 123:	31 c0                	xor    %eax,%eax
+ 125:	48 83 c4 08          	add    $0x8,%rsp
+ 129:	c3                   	ret    
+ 12a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000130 <context_user_get>:
+ 130:	f3 0f 1e fa          	endbr64 
+ 134:	48 83 ec 08          	sub    $0x8,%rsp
+ 138:	e8 00 00 00 00       	call   13d <context_user_get+0xd>
+ 13d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 143:	31 c0                	xor    %eax,%eax
+ 145:	48 83 c4 08          	add    $0x8,%rsp
+ 149:	c3                   	ret    

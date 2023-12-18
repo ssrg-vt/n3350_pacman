@@ -1,0 +1,167 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-memcoll.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <strcoll_loop>:
+   0:	41 57                	push   %r15
+   2:	49 89 ff             	mov    %rdi,%r15
+   5:	41 56                	push   %r14
+   7:	41 55                	push   %r13
+   9:	49 89 f5             	mov    %rsi,%r13
+   c:	41 54                	push   %r12
+   e:	49 89 cc             	mov    %rcx,%r12
+  11:	55                   	push   %rbp
+  12:	48 89 d5             	mov    %rdx,%rbp
+  15:	53                   	push   %rbx
+  16:	48 83 ec 08          	sub    $0x8,%rsp
+  1a:	e8 00 00 00 00       	call   1f <strcoll_loop+0x1f>
+  1f:	49 89 c6             	mov    %rax,%r14
+  22:	eb 2f                	jmp    53 <strcoll_loop+0x53>
+  24:	0f 1f 40 00          	nopl   0x0(%rax)
+  28:	4c 89 ff             	mov    %r15,%rdi
+  2b:	e8 00 00 00 00       	call   30 <strcoll_loop+0x30>
+  30:	48 89 ef             	mov    %rbp,%rdi
+  33:	48 8d 58 01          	lea    0x1(%rax),%rbx
+  37:	e8 00 00 00 00       	call   3c <strcoll_loop+0x3c>
+  3c:	49 01 df             	add    %rbx,%r15
+  3f:	48 83 c0 01          	add    $0x1,%rax
+  43:	48 01 c5             	add    %rax,%rbp
+  46:	49 29 c4             	sub    %rax,%r12
+  49:	49 29 dd             	sub    %rbx,%r13
+  4c:	74 32                	je     80 <strcoll_loop+0x80>
+  4e:	4d 85 e4             	test   %r12,%r12
+  51:	74 45                	je     98 <strcoll_loop+0x98>
+  53:	41 c7 06 00 00 00 00 	movl   $0x0,(%r14)
+  5a:	48 89 ee             	mov    %rbp,%rsi
+  5d:	4c 89 ff             	mov    %r15,%rdi
+  60:	e8 00 00 00 00       	call   65 <strcoll_loop+0x65>
+  65:	85 c0                	test   %eax,%eax
+  67:	74 bf                	je     28 <strcoll_loop+0x28>
+  69:	48 83 c4 08          	add    $0x8,%rsp
+  6d:	5b                   	pop    %rbx
+  6e:	5d                   	pop    %rbp
+  6f:	41 5c                	pop    %r12
+  71:	41 5d                	pop    %r13
+  73:	41 5e                	pop    %r14
+  75:	41 5f                	pop    %r15
+  77:	c3                   	ret    
+  78:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  7f:	00 
+  80:	49 f7 dc             	neg    %r12
+  83:	19 c0                	sbb    %eax,%eax
+  85:	48 83 c4 08          	add    $0x8,%rsp
+  89:	5b                   	pop    %rbx
+  8a:	5d                   	pop    %rbp
+  8b:	41 5c                	pop    %r12
+  8d:	41 5d                	pop    %r13
+  8f:	41 5e                	pop    %r14
+  91:	41 5f                	pop    %r15
+  93:	c3                   	ret    
+  94:	0f 1f 40 00          	nopl   0x0(%rax)
+  98:	48 83 c4 08          	add    $0x8,%rsp
+  9c:	b8 01 00 00 00       	mov    $0x1,%eax
+  a1:	5b                   	pop    %rbx
+  a2:	5d                   	pop    %rbp
+  a3:	41 5c                	pop    %r12
+  a5:	41 5d                	pop    %r13
+  a7:	41 5e                	pop    %r14
+  a9:	41 5f                	pop    %r15
+  ab:	c3                   	ret    
+  ac:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000000000b0 <memcoll>:
+  b0:	f3 0f 1e fa          	endbr64 
+  b4:	41 57                	push   %r15
+  b6:	41 56                	push   %r14
+  b8:	41 55                	push   %r13
+  ba:	49 89 d5             	mov    %rdx,%r13
+  bd:	41 54                	push   %r12
+  bf:	49 89 fc             	mov    %rdi,%r12
+  c2:	55                   	push   %rbp
+  c3:	48 89 cd             	mov    %rcx,%rbp
+  c6:	53                   	push   %rbx
+  c7:	48 89 f3             	mov    %rsi,%rbx
+  ca:	48 83 ec 18          	sub    $0x18,%rsp
+  ce:	48 39 ce             	cmp    %rcx,%rsi
+  d1:	75 13                	jne    e6 <memcoll+0x36>
+  d3:	48 89 f2             	mov    %rsi,%rdx
+  d6:	4c 89 ee             	mov    %r13,%rsi
+  d9:	e8 00 00 00 00       	call   de <memcoll+0x2e>
+  de:	85 c0                	test   %eax,%eax
+  e0:	89 44 24 08          	mov    %eax,0x8(%rsp)
+  e4:	74 62                	je     148 <memcoll+0x98>
+  e6:	4d 8d 3c 1c          	lea    (%r12,%rbx,1),%r15
+  ea:	4d 8d 74 2d 00       	lea    0x0(%r13,%rbp,1),%r14
+  ef:	4c 89 ea             	mov    %r13,%rdx
+  f2:	4c 89 e7             	mov    %r12,%rdi
+  f5:	45 0f b6 0f          	movzbl (%r15),%r9d
+  f9:	45 0f b6 06          	movzbl (%r14),%r8d
+  fd:	41 c6 07 00          	movb   $0x0,(%r15)
+ 101:	48 8d 4d 01          	lea    0x1(%rbp),%rcx
+ 105:	41 c6 06 00          	movb   $0x0,(%r14)
+ 109:	48 8d 73 01          	lea    0x1(%rbx),%rsi
+ 10d:	44 88 4c 24 0f       	mov    %r9b,0xf(%rsp)
+ 112:	44 88 44 24 08       	mov    %r8b,0x8(%rsp)
+ 117:	e8 e4 fe ff ff       	call   0 <strcoll_loop>
+ 11c:	44 0f b6 4c 24 0f    	movzbl 0xf(%rsp),%r9d
+ 122:	44 0f b6 44 24 08    	movzbl 0x8(%rsp),%r8d
+ 128:	41 89 c2             	mov    %eax,%r10d
+ 12b:	45 88 0f             	mov    %r9b,(%r15)
+ 12e:	45 88 06             	mov    %r8b,(%r14)
+ 131:	48 83 c4 18          	add    $0x18,%rsp
+ 135:	44 89 d0             	mov    %r10d,%eax
+ 138:	5b                   	pop    %rbx
+ 139:	5d                   	pop    %rbp
+ 13a:	41 5c                	pop    %r12
+ 13c:	41 5d                	pop    %r13
+ 13e:	41 5e                	pop    %r14
+ 140:	41 5f                	pop    %r15
+ 142:	c3                   	ret    
+ 143:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 148:	e8 00 00 00 00       	call   14d <memcoll+0x9d>
+ 14d:	44 8b 54 24 08       	mov    0x8(%rsp),%r10d
+ 152:	c7 00 00 00 00 00    	movl   $0x0,(%rax)
+ 158:	eb d7                	jmp    131 <memcoll+0x81>
+ 15a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000160 <memcoll0>:
+ 160:	f3 0f 1e fa          	endbr64 
+ 164:	41 56                	push   %r14
+ 166:	49 89 d6             	mov    %rdx,%r14
+ 169:	41 55                	push   %r13
+ 16b:	49 89 fd             	mov    %rdi,%r13
+ 16e:	41 54                	push   %r12
+ 170:	49 89 cc             	mov    %rcx,%r12
+ 173:	55                   	push   %rbp
+ 174:	48 89 f5             	mov    %rsi,%rbp
+ 177:	48 83 ec 08          	sub    $0x8,%rsp
+ 17b:	48 39 ce             	cmp    %rcx,%rsi
+ 17e:	75 30                	jne    1b0 <memcoll0+0x50>
+ 180:	48 89 f2             	mov    %rsi,%rdx
+ 183:	4c 89 f6             	mov    %r14,%rsi
+ 186:	e8 00 00 00 00       	call   18b <memcoll0+0x2b>
+ 18b:	85 c0                	test   %eax,%eax
+ 18d:	75 21                	jne    1b0 <memcoll0+0x50>
+ 18f:	e8 00 00 00 00       	call   194 <memcoll0+0x34>
+ 194:	c7 00 00 00 00 00    	movl   $0x0,(%rax)
+ 19a:	48 83 c4 08          	add    $0x8,%rsp
+ 19e:	31 c0                	xor    %eax,%eax
+ 1a0:	5d                   	pop    %rbp
+ 1a1:	41 5c                	pop    %r12
+ 1a3:	41 5d                	pop    %r13
+ 1a5:	41 5e                	pop    %r14
+ 1a7:	c3                   	ret    
+ 1a8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 1af:	00 
+ 1b0:	48 83 c4 08          	add    $0x8,%rsp
+ 1b4:	4c 89 e1             	mov    %r12,%rcx
+ 1b7:	4c 89 f2             	mov    %r14,%rdx
+ 1ba:	48 89 ee             	mov    %rbp,%rsi
+ 1bd:	4c 89 ef             	mov    %r13,%rdi
+ 1c0:	5d                   	pop    %rbp
+ 1c1:	41 5c                	pop    %r12
+ 1c3:	41 5d                	pop    %r13
+ 1c5:	41 5e                	pop    %r14
+ 1c7:	e9 34 fe ff ff       	jmp    0 <strcoll_loop>

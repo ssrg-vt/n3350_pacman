@@ -1,0 +1,504 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xmalloc.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xnrealloc>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	49 89 d4             	mov    %rdx,%r12
+   9:	55                   	push   %rbp
+   a:	48 89 f5             	mov    %rsi,%rbp
+   d:	53                   	push   %rbx
+   e:	48 89 fb             	mov    %rdi,%rbx
+  11:	e8 00 00 00 00       	call   16 <xnrealloc+0x16>
+  16:	48 85 c0             	test   %rax,%rax
+  19:	74 05                	je     20 <xnrealloc+0x20>
+  1b:	5b                   	pop    %rbx
+  1c:	5d                   	pop    %rbp
+  1d:	41 5c                	pop    %r12
+  1f:	c3                   	ret    
+  20:	48 85 db             	test   %rbx,%rbx
+  23:	74 0a                	je     2f <xnrealloc+0x2f>
+  25:	48 85 ed             	test   %rbp,%rbp
+  28:	74 f1                	je     1b <xnrealloc+0x1b>
+  2a:	4d 85 e4             	test   %r12,%r12
+  2d:	74 ec                	je     1b <xnrealloc+0x1b>
+  2f:	e8 00 00 00 00       	call   34 <xnrealloc+0x34>
+  34:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  3b:	00 00 00 00 
+  3f:	90                   	nop
+
+0000000000000040 <xmalloc>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	48 83 ec 08          	sub    $0x8,%rsp
+  48:	e8 00 00 00 00       	call   4d <xmalloc+0xd>
+  4d:	48 85 c0             	test   %rax,%rax
+  50:	74 05                	je     57 <xmalloc+0x17>
+  52:	48 83 c4 08          	add    $0x8,%rsp
+  56:	c3                   	ret    
+  57:	e8 00 00 00 00       	call   5c <xmalloc+0x1c>
+  5c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000060 <ximalloc>:
+  60:	f3 0f 1e fa          	endbr64 
+  64:	48 83 ec 08          	sub    $0x8,%rsp
+  68:	e8 00 00 00 00       	call   6d <ximalloc+0xd>
+  6d:	48 85 c0             	test   %rax,%rax
+  70:	74 05                	je     77 <ximalloc+0x17>
+  72:	48 83 c4 08          	add    $0x8,%rsp
+  76:	c3                   	ret    
+  77:	e8 00 00 00 00       	call   7c <ximalloc+0x1c>
+  7c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000080 <xcharalloc>:
+  80:	f3 0f 1e fa          	endbr64 
+  84:	48 83 ec 08          	sub    $0x8,%rsp
+  88:	e8 00 00 00 00       	call   8d <xcharalloc+0xd>
+  8d:	48 85 c0             	test   %rax,%rax
+  90:	74 05                	je     97 <xcharalloc+0x17>
+  92:	48 83 c4 08          	add    $0x8,%rsp
+  96:	c3                   	ret    
+  97:	e8 00 00 00 00       	call   9c <xcharalloc+0x1c>
+  9c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000000000a0 <xrealloc>:
+  a0:	f3 0f 1e fa          	endbr64 
+  a4:	55                   	push   %rbp
+  a5:	48 89 fd             	mov    %rdi,%rbp
+  a8:	53                   	push   %rbx
+  a9:	48 89 f3             	mov    %rsi,%rbx
+  ac:	48 83 ec 08          	sub    $0x8,%rsp
+  b0:	e8 00 00 00 00       	call   b5 <xrealloc+0x15>
+  b5:	48 85 c0             	test   %rax,%rax
+  b8:	74 07                	je     c1 <xrealloc+0x21>
+  ba:	48 83 c4 08          	add    $0x8,%rsp
+  be:	5b                   	pop    %rbx
+  bf:	5d                   	pop    %rbp
+  c0:	c3                   	ret    
+  c1:	48 85 ed             	test   %rbp,%rbp
+  c4:	74 05                	je     cb <xrealloc+0x2b>
+  c6:	48 85 db             	test   %rbx,%rbx
+  c9:	74 ef                	je     ba <xrealloc+0x1a>
+  cb:	e8 00 00 00 00       	call   d0 <xirealloc>
+
+00000000000000d0 <xirealloc>:
+  d0:	f3 0f 1e fa          	endbr64 
+  d4:	48 83 ec 08          	sub    $0x8,%rsp
+  d8:	31 c0                	xor    %eax,%eax
+  da:	48 85 f6             	test   %rsi,%rsi
+  dd:	0f 94 c0             	sete   %al
+  e0:	48 09 c6             	or     %rax,%rsi
+  e3:	e8 00 00 00 00       	call   e8 <xirealloc+0x18>
+  e8:	48 85 c0             	test   %rax,%rax
+  eb:	74 05                	je     f2 <xirealloc+0x22>
+  ed:	48 83 c4 08          	add    $0x8,%rsp
+  f1:	c3                   	ret    
+  f2:	e8 00 00 00 00       	call   f7 <xirealloc+0x27>
+  f7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  fe:	00 00 
+
+0000000000000100 <xreallocarray>:
+ 100:	f3 0f 1e fa          	endbr64 
+ 104:	41 54                	push   %r12
+ 106:	49 89 d4             	mov    %rdx,%r12
+ 109:	55                   	push   %rbp
+ 10a:	48 89 f5             	mov    %rsi,%rbp
+ 10d:	53                   	push   %rbx
+ 10e:	48 89 fb             	mov    %rdi,%rbx
+ 111:	e8 00 00 00 00       	call   116 <xreallocarray+0x16>
+ 116:	48 85 c0             	test   %rax,%rax
+ 119:	74 05                	je     120 <xreallocarray+0x20>
+ 11b:	5b                   	pop    %rbx
+ 11c:	5d                   	pop    %rbp
+ 11d:	41 5c                	pop    %r12
+ 11f:	c3                   	ret    
+ 120:	48 85 db             	test   %rbx,%rbx
+ 123:	74 0a                	je     12f <xreallocarray+0x2f>
+ 125:	48 85 ed             	test   %rbp,%rbp
+ 128:	74 f1                	je     11b <xreallocarray+0x1b>
+ 12a:	4d 85 e4             	test   %r12,%r12
+ 12d:	74 ec                	je     11b <xreallocarray+0x1b>
+ 12f:	e8 00 00 00 00       	call   134 <xreallocarray+0x34>
+ 134:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 13b:	00 00 00 00 
+ 13f:	90                   	nop
+
+0000000000000140 <xireallocarray>:
+ 140:	f3 0f 1e fa          	endbr64 
+ 144:	48 83 ec 08          	sub    $0x8,%rsp
+ 148:	48 85 f6             	test   %rsi,%rsi
+ 14b:	74 1b                	je     168 <xireallocarray+0x28>
+ 14d:	48 85 d2             	test   %rdx,%rdx
+ 150:	74 16                	je     168 <xireallocarray+0x28>
+ 152:	e8 00 00 00 00       	call   157 <xireallocarray+0x17>
+ 157:	48 85 c0             	test   %rax,%rax
+ 15a:	74 18                	je     174 <xireallocarray+0x34>
+ 15c:	48 83 c4 08          	add    $0x8,%rsp
+ 160:	c3                   	ret    
+ 161:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 168:	be 01 00 00 00       	mov    $0x1,%esi
+ 16d:	ba 01 00 00 00       	mov    $0x1,%edx
+ 172:	eb de                	jmp    152 <xireallocarray+0x12>
+ 174:	e8 00 00 00 00       	call   179 <xireallocarray+0x39>
+ 179:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000180 <xnmalloc>:
+ 180:	f3 0f 1e fa          	endbr64 
+ 184:	48 83 ec 08          	sub    $0x8,%rsp
+ 188:	48 89 f2             	mov    %rsi,%rdx
+ 18b:	48 89 fe             	mov    %rdi,%rsi
+ 18e:	31 ff                	xor    %edi,%edi
+ 190:	e8 00 00 00 00       	call   195 <xnmalloc+0x15>
+ 195:	48 85 c0             	test   %rax,%rax
+ 198:	74 06                	je     1a0 <xnmalloc+0x20>
+ 19a:	48 83 c4 08          	add    $0x8,%rsp
+ 19e:	c3                   	ret    
+ 19f:	90                   	nop
+ 1a0:	e8 00 00 00 00       	call   1a5 <xnmalloc+0x25>
+ 1a5:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 1ac:	00 00 00 00 
+
+00000000000001b0 <xinmalloc>:
+ 1b0:	f3 0f 1e fa          	endbr64 
+ 1b4:	48 83 ec 08          	sub    $0x8,%rsp
+ 1b8:	48 85 ff             	test   %rdi,%rdi
+ 1bb:	74 23                	je     1e0 <xinmalloc+0x30>
+ 1bd:	48 85 f6             	test   %rsi,%rsi
+ 1c0:	74 1e                	je     1e0 <xinmalloc+0x30>
+ 1c2:	48 89 f2             	mov    %rsi,%rdx
+ 1c5:	48 89 fe             	mov    %rdi,%rsi
+ 1c8:	31 ff                	xor    %edi,%edi
+ 1ca:	e8 00 00 00 00       	call   1cf <xinmalloc+0x1f>
+ 1cf:	48 85 c0             	test   %rax,%rax
+ 1d2:	74 18                	je     1ec <xinmalloc+0x3c>
+ 1d4:	48 83 c4 08          	add    $0x8,%rsp
+ 1d8:	c3                   	ret    
+ 1d9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 1e0:	be 01 00 00 00       	mov    $0x1,%esi
+ 1e5:	ba 01 00 00 00       	mov    $0x1,%edx
+ 1ea:	eb dc                	jmp    1c8 <xinmalloc+0x18>
+ 1ec:	e8 00 00 00 00       	call   1f1 <xinmalloc+0x41>
+ 1f1:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 1f8:	00 00 00 00 
+ 1fc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000200 <x2realloc>:
+ 200:	f3 0f 1e fa          	endbr64 
+ 204:	55                   	push   %rbp
+ 205:	48 89 f5             	mov    %rsi,%rbp
+ 208:	53                   	push   %rbx
+ 209:	48 83 ec 08          	sub    $0x8,%rsp
+ 20d:	48 8b 1e             	mov    (%rsi),%rbx
+ 210:	48 85 ff             	test   %rdi,%rdi
+ 213:	74 43                	je     258 <x2realloc+0x58>
+ 215:	48 89 d8             	mov    %rbx,%rax
+ 218:	48 d1 e8             	shr    %rax
+ 21b:	48 83 c0 01          	add    $0x1,%rax
+ 21f:	48 01 c3             	add    %rax,%rbx
+ 222:	72 29                	jb     24d <x2realloc+0x4d>
+ 224:	ba 01 00 00 00       	mov    $0x1,%edx
+ 229:	48 89 de             	mov    %rbx,%rsi
+ 22c:	e8 00 00 00 00       	call   231 <x2realloc+0x31>
+ 231:	48 85 c0             	test   %rax,%rax
+ 234:	74 12                	je     248 <x2realloc+0x48>
+ 236:	48 89 5d 00          	mov    %rbx,0x0(%rbp)
+ 23a:	48 83 c4 08          	add    $0x8,%rsp
+ 23e:	5b                   	pop    %rbx
+ 23f:	5d                   	pop    %rbp
+ 240:	c3                   	ret    
+ 241:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 248:	48 85 db             	test   %rbx,%rbx
+ 24b:	74 e9                	je     236 <x2realloc+0x36>
+ 24d:	e8 00 00 00 00       	call   252 <x2realloc+0x52>
+ 252:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 258:	48 85 db             	test   %rbx,%rbx
+ 25b:	b8 80 00 00 00       	mov    $0x80,%eax
+ 260:	ba 01 00 00 00       	mov    $0x1,%edx
+ 265:	48 0f 44 d8          	cmove  %rax,%rbx
+ 269:	48 89 de             	mov    %rbx,%rsi
+ 26c:	e8 00 00 00 00       	call   271 <x2realloc+0x71>
+ 271:	48 85 c0             	test   %rax,%rax
+ 274:	74 d7                	je     24d <x2realloc+0x4d>
+ 276:	48 89 5d 00          	mov    %rbx,0x0(%rbp)
+ 27a:	48 83 c4 08          	add    $0x8,%rsp
+ 27e:	5b                   	pop    %rbx
+ 27f:	5d                   	pop    %rbp
+ 280:	c3                   	ret    
+ 281:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 288:	00 00 00 00 
+ 28c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000290 <x2nrealloc>:
+ 290:	f3 0f 1e fa          	endbr64 
+ 294:	41 54                	push   %r12
+ 296:	49 89 d4             	mov    %rdx,%r12
+ 299:	55                   	push   %rbp
+ 29a:	48 89 f5             	mov    %rsi,%rbp
+ 29d:	53                   	push   %rbx
+ 29e:	48 8b 1e             	mov    (%rsi),%rbx
+ 2a1:	48 85 ff             	test   %rdi,%rdi
+ 2a4:	74 3a                	je     2e0 <x2nrealloc+0x50>
+ 2a6:	48 89 d8             	mov    %rbx,%rax
+ 2a9:	48 d1 e8             	shr    %rax
+ 2ac:	48 83 c0 01          	add    $0x1,%rax
+ 2b0:	48 01 c3             	add    %rax,%rbx
+ 2b3:	72 25                	jb     2da <x2nrealloc+0x4a>
+ 2b5:	48 89 de             	mov    %rbx,%rsi
+ 2b8:	e8 00 00 00 00       	call   2bd <x2nrealloc+0x2d>
+ 2bd:	48 85 c0             	test   %rax,%rax
+ 2c0:	74 0e                	je     2d0 <x2nrealloc+0x40>
+ 2c2:	48 89 5d 00          	mov    %rbx,0x0(%rbp)
+ 2c6:	5b                   	pop    %rbx
+ 2c7:	5d                   	pop    %rbp
+ 2c8:	41 5c                	pop    %r12
+ 2ca:	c3                   	ret    
+ 2cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 2d0:	48 85 db             	test   %rbx,%rbx
+ 2d3:	74 ed                	je     2c2 <x2nrealloc+0x32>
+ 2d5:	4d 85 e4             	test   %r12,%r12
+ 2d8:	74 e8                	je     2c2 <x2nrealloc+0x32>
+ 2da:	e8 00 00 00 00       	call   2df <x2nrealloc+0x4f>
+ 2df:	90                   	nop
+ 2e0:	48 85 db             	test   %rbx,%rbx
+ 2e3:	75 1a                	jne    2ff <x2nrealloc+0x6f>
+ 2e5:	31 d2                	xor    %edx,%edx
+ 2e7:	b8 80 00 00 00       	mov    $0x80,%eax
+ 2ec:	49 f7 f4             	div    %r12
+ 2ef:	31 d2                	xor    %edx,%edx
+ 2f1:	49 81 fc 80 00 00 00 	cmp    $0x80,%r12
+ 2f8:	0f 97 c2             	seta   %dl
+ 2fb:	48 8d 1c 10          	lea    (%rax,%rdx,1),%rbx
+ 2ff:	31 ff                	xor    %edi,%edi
+ 301:	4c 89 e2             	mov    %r12,%rdx
+ 304:	48 89 de             	mov    %rbx,%rsi
+ 307:	e8 00 00 00 00       	call   30c <x2nrealloc+0x7c>
+ 30c:	48 85 c0             	test   %rax,%rax
+ 30f:	74 c9                	je     2da <x2nrealloc+0x4a>
+ 311:	48 89 5d 00          	mov    %rbx,0x0(%rbp)
+ 315:	5b                   	pop    %rbx
+ 316:	5d                   	pop    %rbp
+ 317:	41 5c                	pop    %r12
+ 319:	c3                   	ret    
+ 31a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000320 <xpalloc>:
+ 320:	f3 0f 1e fa          	endbr64 
+ 324:	41 55                	push   %r13
+ 326:	49 89 fd             	mov    %rdi,%r13
+ 329:	48 89 d7             	mov    %rdx,%rdi
+ 32c:	41 54                	push   %r12
+ 32e:	49 89 f4             	mov    %rsi,%r12
+ 331:	48 89 ce             	mov    %rcx,%rsi
+ 334:	55                   	push   %rbp
+ 335:	53                   	push   %rbx
+ 336:	48 83 ec 08          	sub    $0x8,%rsp
+ 33a:	49 8b 0c 24          	mov    (%r12),%rcx
+ 33e:	48 89 cb             	mov    %rcx,%rbx
+ 341:	48 d1 fb             	sar    %rbx
+ 344:	48 01 cb             	add    %rcx,%rbx
+ 347:	0f 80 b8 00 00 00    	jo     405 <xpalloc+0xe5>
+ 34d:	48 39 f3             	cmp    %rsi,%rbx
+ 350:	48 89 f0             	mov    %rsi,%rax
+ 353:	48 0f 4e c3          	cmovle %rbx,%rax
+ 357:	48 85 f6             	test   %rsi,%rsi
+ 35a:	48 0f 49 d8          	cmovns %rax,%rbx
+ 35e:	48 89 dd             	mov    %rbx,%rbp
+ 361:	49 0f af e8          	imul   %r8,%rbp
+ 365:	0f 80 8e 00 00 00    	jo     3f9 <xpalloc+0xd9>
+ 36b:	48 83 fd 7f          	cmp    $0x7f,%rbp
+ 36f:	7e 57                	jle    3c8 <xpalloc+0xa8>
+ 371:	4d 85 ed             	test   %r13,%r13
+ 374:	74 6a                	je     3e0 <xpalloc+0xc0>
+ 376:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 37d:	00 00 00 
+ 380:	48 89 d8             	mov    %rbx,%rax
+ 383:	48 29 c8             	sub    %rcx,%rax
+ 386:	48 39 f8             	cmp    %rdi,%rax
+ 389:	7d 1b                	jge    3a6 <xpalloc+0x86>
+ 38b:	48 01 f9             	add    %rdi,%rcx
+ 38e:	48 89 cb             	mov    %rcx,%rbx
+ 391:	70 61                	jo     3f4 <xpalloc+0xd4>
+ 393:	48 39 f1             	cmp    %rsi,%rcx
+ 396:	7e 05                	jle    39d <xpalloc+0x7d>
+ 398:	48 85 f6             	test   %rsi,%rsi
+ 39b:	79 57                	jns    3f4 <xpalloc+0xd4>
+ 39d:	49 0f af c8          	imul   %r8,%rcx
+ 3a1:	48 89 cd             	mov    %rcx,%rbp
+ 3a4:	70 4e                	jo     3f4 <xpalloc+0xd4>
+ 3a6:	48 89 ee             	mov    %rbp,%rsi
+ 3a9:	4c 89 ef             	mov    %r13,%rdi
+ 3ac:	e8 00 00 00 00       	call   3b1 <xpalloc+0x91>
+ 3b1:	48 85 c0             	test   %rax,%rax
+ 3b4:	74 34                	je     3ea <xpalloc+0xca>
+ 3b6:	49 89 1c 24          	mov    %rbx,(%r12)
+ 3ba:	48 83 c4 08          	add    $0x8,%rsp
+ 3be:	5b                   	pop    %rbx
+ 3bf:	5d                   	pop    %rbp
+ 3c0:	41 5c                	pop    %r12
+ 3c2:	41 5d                	pop    %r13
+ 3c4:	c3                   	ret    
+ 3c5:	0f 1f 00             	nopl   (%rax)
+ 3c8:	bd 80 00 00 00       	mov    $0x80,%ebp
+ 3cd:	48 89 e8             	mov    %rbp,%rax
+ 3d0:	48 99                	cqto   
+ 3d2:	49 f7 f8             	idiv   %r8
+ 3d5:	48 89 c3             	mov    %rax,%rbx
+ 3d8:	48 29 d5             	sub    %rdx,%rbp
+ 3db:	4d 85 ed             	test   %r13,%r13
+ 3de:	75 a0                	jne    380 <xpalloc+0x60>
+ 3e0:	49 c7 04 24 00 00 00 	movq   $0x0,(%r12)
+ 3e7:	00 
+ 3e8:	eb 96                	jmp    380 <xpalloc+0x60>
+ 3ea:	4d 85 ed             	test   %r13,%r13
+ 3ed:	74 05                	je     3f4 <xpalloc+0xd4>
+ 3ef:	48 85 ed             	test   %rbp,%rbp
+ 3f2:	74 c2                	je     3b6 <xpalloc+0x96>
+ 3f4:	e8 00 00 00 00       	call   3f9 <xpalloc+0xd9>
+ 3f9:	48 bd ff ff ff ff ff 	movabs $0x7fffffffffffffff,%rbp
+ 400:	ff ff 7f 
+ 403:	eb c8                	jmp    3cd <xpalloc+0xad>
+ 405:	48 bb ff ff ff ff ff 	movabs $0x7fffffffffffffff,%rbx
+ 40c:	ff ff 7f 
+ 40f:	e9 39 ff ff ff       	jmp    34d <xpalloc+0x2d>
+ 414:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 41b:	00 00 00 00 
+ 41f:	90                   	nop
+
+0000000000000420 <xzalloc>:
+ 420:	f3 0f 1e fa          	endbr64 
+ 424:	48 83 ec 08          	sub    $0x8,%rsp
+ 428:	be 01 00 00 00       	mov    $0x1,%esi
+ 42d:	e8 00 00 00 00       	call   432 <xzalloc+0x12>
+ 432:	48 85 c0             	test   %rax,%rax
+ 435:	74 05                	je     43c <xzalloc+0x1c>
+ 437:	48 83 c4 08          	add    $0x8,%rsp
+ 43b:	c3                   	ret    
+ 43c:	e8 00 00 00 00       	call   441 <xzalloc+0x21>
+ 441:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 448:	00 00 00 00 
+ 44c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000450 <xizalloc>:
+ 450:	f3 0f 1e fa          	endbr64 
+ 454:	48 83 ec 08          	sub    $0x8,%rsp
+ 458:	be 01 00 00 00       	mov    $0x1,%esi
+ 45d:	e8 00 00 00 00       	call   462 <xizalloc+0x12>
+ 462:	48 85 c0             	test   %rax,%rax
+ 465:	74 05                	je     46c <xizalloc+0x1c>
+ 467:	48 83 c4 08          	add    $0x8,%rsp
+ 46b:	c3                   	ret    
+ 46c:	e8 00 00 00 00       	call   471 <xizalloc+0x21>
+ 471:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 478:	00 00 00 00 
+ 47c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000480 <xcalloc>:
+ 480:	f3 0f 1e fa          	endbr64 
+ 484:	48 83 ec 08          	sub    $0x8,%rsp
+ 488:	e8 00 00 00 00       	call   48d <xcalloc+0xd>
+ 48d:	48 85 c0             	test   %rax,%rax
+ 490:	74 05                	je     497 <xcalloc+0x17>
+ 492:	48 83 c4 08          	add    $0x8,%rsp
+ 496:	c3                   	ret    
+ 497:	e8 00 00 00 00       	call   49c <xcalloc+0x1c>
+ 49c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000000004a0 <xicalloc>:
+ 4a0:	f3 0f 1e fa          	endbr64 
+ 4a4:	48 83 ec 08          	sub    $0x8,%rsp
+ 4a8:	e8 00 00 00 00       	call   4ad <xicalloc+0xd>
+ 4ad:	48 85 c0             	test   %rax,%rax
+ 4b0:	74 05                	je     4b7 <xicalloc+0x17>
+ 4b2:	48 83 c4 08          	add    $0x8,%rsp
+ 4b6:	c3                   	ret    
+ 4b7:	e8 00 00 00 00       	call   4bc <xicalloc+0x1c>
+ 4bc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000000004c0 <xmemdup>:
+ 4c0:	f3 0f 1e fa          	endbr64 
+ 4c4:	41 54                	push   %r12
+ 4c6:	49 89 f4             	mov    %rsi,%r12
+ 4c9:	55                   	push   %rbp
+ 4ca:	48 89 fd             	mov    %rdi,%rbp
+ 4cd:	48 89 f7             	mov    %rsi,%rdi
+ 4d0:	48 83 ec 08          	sub    $0x8,%rsp
+ 4d4:	e8 00 00 00 00       	call   4d9 <xmemdup+0x19>
+ 4d9:	48 85 c0             	test   %rax,%rax
+ 4dc:	74 15                	je     4f3 <xmemdup+0x33>
+ 4de:	48 83 c4 08          	add    $0x8,%rsp
+ 4e2:	4c 89 e2             	mov    %r12,%rdx
+ 4e5:	48 89 ee             	mov    %rbp,%rsi
+ 4e8:	48 89 c7             	mov    %rax,%rdi
+ 4eb:	5d                   	pop    %rbp
+ 4ec:	41 5c                	pop    %r12
+ 4ee:	e9 00 00 00 00       	jmp    4f3 <xmemdup+0x33>
+ 4f3:	e8 00 00 00 00       	call   4f8 <xmemdup+0x38>
+ 4f8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 4ff:	00 
+
+0000000000000500 <ximemdup>:
+ 500:	f3 0f 1e fa          	endbr64 
+ 504:	41 54                	push   %r12
+ 506:	49 89 f4             	mov    %rsi,%r12
+ 509:	55                   	push   %rbp
+ 50a:	48 89 fd             	mov    %rdi,%rbp
+ 50d:	48 89 f7             	mov    %rsi,%rdi
+ 510:	48 83 ec 08          	sub    $0x8,%rsp
+ 514:	e8 00 00 00 00       	call   519 <ximemdup+0x19>
+ 519:	48 85 c0             	test   %rax,%rax
+ 51c:	74 15                	je     533 <ximemdup+0x33>
+ 51e:	48 83 c4 08          	add    $0x8,%rsp
+ 522:	4c 89 e2             	mov    %r12,%rdx
+ 525:	48 89 ee             	mov    %rbp,%rsi
+ 528:	48 89 c7             	mov    %rax,%rdi
+ 52b:	5d                   	pop    %rbp
+ 52c:	41 5c                	pop    %r12
+ 52e:	e9 00 00 00 00       	jmp    533 <ximemdup+0x33>
+ 533:	e8 00 00 00 00       	call   538 <ximemdup+0x38>
+ 538:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 53f:	00 
+
+0000000000000540 <ximemdup0>:
+ 540:	f3 0f 1e fa          	endbr64 
+ 544:	41 54                	push   %r12
+ 546:	49 89 f4             	mov    %rsi,%r12
+ 549:	55                   	push   %rbp
+ 54a:	48 89 fd             	mov    %rdi,%rbp
+ 54d:	48 8d 7e 01          	lea    0x1(%rsi),%rdi
+ 551:	48 83 ec 08          	sub    $0x8,%rsp
+ 555:	e8 00 00 00 00       	call   55a <ximemdup0+0x1a>
+ 55a:	48 85 c0             	test   %rax,%rax
+ 55d:	74 1a                	je     579 <ximemdup0+0x39>
+ 55f:	42 c6 04 20 00       	movb   $0x0,(%rax,%r12,1)
+ 564:	48 83 c4 08          	add    $0x8,%rsp
+ 568:	4c 89 e2             	mov    %r12,%rdx
+ 56b:	48 89 ee             	mov    %rbp,%rsi
+ 56e:	48 89 c7             	mov    %rax,%rdi
+ 571:	5d                   	pop    %rbp
+ 572:	41 5c                	pop    %r12
+ 574:	e9 00 00 00 00       	jmp    579 <ximemdup0+0x39>
+ 579:	e8 00 00 00 00       	call   57e <ximemdup0+0x3e>
+ 57e:	66 90                	xchg   %ax,%ax
+
+0000000000000580 <xstrdup>:
+ 580:	f3 0f 1e fa          	endbr64 
+ 584:	41 54                	push   %r12
+ 586:	55                   	push   %rbp
+ 587:	48 89 fd             	mov    %rdi,%rbp
+ 58a:	48 83 ec 08          	sub    $0x8,%rsp
+ 58e:	e8 00 00 00 00       	call   593 <xstrdup+0x13>
+ 593:	4c 8d 60 01          	lea    0x1(%rax),%r12
+ 597:	4c 89 e7             	mov    %r12,%rdi
+ 59a:	e8 00 00 00 00       	call   59f <xstrdup+0x1f>
+ 59f:	48 85 c0             	test   %rax,%rax
+ 5a2:	74 15                	je     5b9 <xstrdup+0x39>
+ 5a4:	48 83 c4 08          	add    $0x8,%rsp
+ 5a8:	4c 89 e2             	mov    %r12,%rdx
+ 5ab:	48 89 ee             	mov    %rbp,%rsi
+ 5ae:	48 89 c7             	mov    %rax,%rdi
+ 5b1:	5d                   	pop    %rbp
+ 5b2:	41 5c                	pop    %r12
+ 5b4:	e9 00 00 00 00       	jmp    5b9 <xstrdup+0x39>
+ 5b9:	e8 00 00 00 00       	call   5be <xstrdup+0x3e>

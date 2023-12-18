@@ -1,0 +1,28 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-fflush.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_fflush>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	48 89 fd             	mov    %rdi,%rbp
+   8:	48 85 ff             	test   %rdi,%rdi
+   b:	74 09                	je     16 <rpl_fflush+0x16>
+   d:	e8 00 00 00 00       	call   12 <rpl_fflush+0x12>
+  12:	85 c0                	test   %eax,%eax
+  14:	75 0a                	jne    20 <rpl_fflush+0x20>
+  16:	48 89 ef             	mov    %rbp,%rdi
+  19:	5d                   	pop    %rbp
+  1a:	e9 00 00 00 00       	jmp    1f <rpl_fflush+0x1f>
+  1f:	90                   	nop
+  20:	f7 45 00 00 01 00 00 	testl  $0x100,0x0(%rbp)
+  27:	74 ed                	je     16 <rpl_fflush+0x16>
+  29:	48 89 ef             	mov    %rbp,%rdi
+  2c:	ba 01 00 00 00       	mov    $0x1,%edx
+  31:	31 f6                	xor    %esi,%esi
+  33:	e8 00 00 00 00       	call   38 <rpl_fflush+0x38>
+  38:	48 89 ef             	mov    %rbp,%rdi
+  3b:	5d                   	pop    %rbp
+  3c:	e9 00 00 00 00       	jmp    41 <rpl_fflush+0x41>

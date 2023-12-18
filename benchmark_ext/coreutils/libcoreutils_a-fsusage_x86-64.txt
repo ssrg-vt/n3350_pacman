@@ -1,0 +1,85 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-fsusage.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <get_fs_usage>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	55                   	push   %rbp
+   7:	48 89 fd             	mov    %rdi,%rbp
+   a:	53                   	push   %rbx
+   b:	48 89 d3             	mov    %rdx,%rbx
+   e:	48 81 ec 90 01 00 00 	sub    $0x190,%rsp
+  15:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1c:	00 00 
+  1e:	48 89 84 24 88 01 00 	mov    %rax,0x188(%rsp)
+  25:	00 
+  26:	31 c0                	xor    %eax,%eax
+  28:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        # 2e <get_fs_usage+0x2e>
+  2e:	49 89 e4             	mov    %rsp,%r12
+  31:	85 c0                	test   %eax,%eax
+  33:	78 2b                	js     60 <get_fs_usage+0x60>
+  35:	74 43                	je     7a <get_fs_usage+0x7a>
+  37:	4c 89 e6             	mov    %r12,%rsi
+  3a:	48 89 ef             	mov    %rbp,%rdi
+  3d:	e8 00 00 00 00       	call   42 <get_fs_usage+0x42>
+  42:	41 89 c0             	mov    %eax,%r8d
+  45:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  4a:	45 85 c0             	test   %r8d,%r8d
+  4d:	78 7c                	js     cb <get_fs_usage+0xcb>
+  4f:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  54:	48 85 c0             	test   %rax,%rax
+  57:	48 0f 44 04 24       	cmove  (%rsp),%rax
+  5c:	eb 34                	jmp    92 <get_fs_usage+0x92>
+  5e:	66 90                	xchg   %ax,%ax
+  60:	4c 89 e7             	mov    %r12,%rdi
+  63:	e8 00 00 00 00       	call   68 <get_fs_usage+0x68>
+  68:	85 c0                	test   %eax,%eax
+  6a:	0f 84 80 00 00 00    	je     f0 <get_fs_usage+0xf0>
+  70:	c7 05 00 00 00 00 00 	movl   $0x0,0x0(%rip)        # 7a <get_fs_usage+0x7a>
+  77:	00 00 00 
+  7a:	4c 89 e6             	mov    %r12,%rsi
+  7d:	48 89 ef             	mov    %rbp,%rdi
+  80:	e8 00 00 00 00       	call   85 <get_fs_usage+0x85>
+  85:	85 c0                	test   %eax,%eax
+  87:	0f 88 8e 00 00 00    	js     11b <get_fs_usage+0x11b>
+  8d:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
+  92:	48 89 03             	mov    %rax,(%rbx)
+  95:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+  9a:	48 89 43 08          	mov    %rax,0x8(%rbx)
+  9e:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  a3:	48 89 43 10          	mov    %rax,0x10(%rbx)
+  a7:	48 8b 44 24 20       	mov    0x20(%rsp),%rax
+  ac:	48 89 43 18          	mov    %rax,0x18(%rbx)
+  b0:	48 c1 e8 3f          	shr    $0x3f,%rax
+  b4:	88 43 20             	mov    %al,0x20(%rbx)
+  b7:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+  bc:	48 89 43 28          	mov    %rax,0x28(%rbx)
+  c0:	48 8b 44 24 30       	mov    0x30(%rsp),%rax
+  c5:	48 89 43 30          	mov    %rax,0x30(%rbx)
+  c9:	31 c0                	xor    %eax,%eax
+  cb:	48 8b 94 24 88 01 00 	mov    0x188(%rsp),%rdx
+  d2:	00 
+  d3:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  da:	00 00 
+  dc:	75 44                	jne    122 <get_fs_usage+0x122>
+  de:	48 81 c4 90 01 00 00 	add    $0x190,%rsp
+  e5:	5b                   	pop    %rbx
+  e6:	5d                   	pop    %rbp
+  e7:	41 5c                	pop    %r12
+  e9:	c3                   	ret    
+  ea:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  f0:	48 8d bc 24 82 00 00 	lea    0x82(%rsp),%rdi
+  f7:	00 
+  f8:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # ff <get_fs_usage+0xff>
+  ff:	e8 00 00 00 00       	call   104 <get_fs_usage+0x104>
+ 104:	85 c0                	test   %eax,%eax
+ 106:	0f 88 64 ff ff ff    	js     70 <get_fs_usage+0x70>
+ 10c:	c7 05 00 00 00 00 01 	movl   $0x1,0x0(%rip)        # 116 <get_fs_usage+0x116>
+ 113:	00 00 00 
+ 116:	e9 1c ff ff ff       	jmp    37 <get_fs_usage+0x37>
+ 11b:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 120:	eb a9                	jmp    cb <get_fs_usage+0xcb>
+ 122:	e8 00 00 00 00       	call   127 <get_fs_usage+0x127>

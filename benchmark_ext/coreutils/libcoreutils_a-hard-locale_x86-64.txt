@@ -1,0 +1,39 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-hard-locale.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <hard_locale>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 81 ec 18 01 00 00 	sub    $0x118,%rsp
+   b:	ba 01 01 00 00       	mov    $0x101,%edx
+  10:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  17:	00 00 
+  19:	48 89 84 24 08 01 00 	mov    %rax,0x108(%rsp)
+  20:	00 
+  21:	31 c0                	xor    %eax,%eax
+  23:	48 89 e6             	mov    %rsp,%rsi
+  26:	e8 00 00 00 00       	call   2b <hard_locale+0x2b>
+  2b:	41 89 c0             	mov    %eax,%r8d
+  2e:	31 c0                	xor    %eax,%eax
+  30:	45 85 c0             	test   %r8d,%r8d
+  33:	75 15                	jne    4a <hard_locale+0x4a>
+  35:	66 83 3c 24 43       	cmpw   $0x43,(%rsp)
+  3a:	74 0e                	je     4a <hard_locale+0x4a>
+  3c:	81 3c 24 50 4f 53 49 	cmpl   $0x49534f50,(%rsp)
+  43:	74 23                	je     68 <hard_locale+0x68>
+  45:	b8 01 00 00 00       	mov    $0x1,%eax
+  4a:	48 8b 94 24 08 01 00 	mov    0x108(%rsp),%rdx
+  51:	00 
+  52:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  59:	00 00 
+  5b:	75 17                	jne    74 <hard_locale+0x74>
+  5d:	48 81 c4 18 01 00 00 	add    $0x118,%rsp
+  64:	c3                   	ret    
+  65:	0f 1f 00             	nopl   (%rax)
+  68:	31 c0                	xor    %eax,%eax
+  6a:	66 83 7c 24 04 58    	cmpw   $0x58,0x4(%rsp)
+  70:	75 d3                	jne    45 <hard_locale+0x45>
+  72:	eb d6                	jmp    4a <hard_locale+0x4a>
+  74:	e8 00 00 00 00       	call   79 <hard_locale+0x79>

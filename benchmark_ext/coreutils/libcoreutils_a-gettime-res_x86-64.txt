@@ -1,0 +1,76 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-gettime-res.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <gettime_res>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	31 ff                	xor    %edi,%edi
+   8:	41 54                	push   %r12
+   a:	55                   	push   %rbp
+   b:	53                   	push   %rbx
+   c:	48 83 ec 28          	sub    $0x28,%rsp
+  10:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  17:	00 00 
+  19:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  1e:	31 c0                	xor    %eax,%eax
+  20:	48 89 e6             	mov    %rsp,%rsi
+  23:	e8 00 00 00 00       	call   28 <gettime_res+0x28>
+  28:	4c 8b 6c 24 08       	mov    0x8(%rsp),%r13
+  2d:	4d 85 ed             	test   %r13,%r13
+  30:	0f 8e 9c 00 00 00    	jle    d2 <gettime_res+0xd2>
+  36:	49 83 fd 01          	cmp    $0x1,%r13
+  3a:	74 4c                	je     88 <gettime_res+0x88>
+  3c:	49 c7 c4 ff ff ff ff 	mov    $0xffffffffffffffff,%r12
+  43:	31 ed                	xor    %ebp,%ebp
+  45:	31 db                	xor    %ebx,%ebx
+  47:	eb 11                	jmp    5a <gettime_res+0x5a>
+  49:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  50:	49 39 d4             	cmp    %rdx,%r12
+  53:	75 15                	jne    6a <gettime_res+0x6a>
+  55:	bb 20 00 00 00       	mov    $0x20,%ebx
+  5a:	e8 00 00 00 00       	call   5f <gettime_res+0x5f>
+  5f:	48 89 c6             	mov    %rax,%rsi
+  62:	48 89 d1             	mov    %rdx,%rcx
+  65:	48 39 c5             	cmp    %rax,%rbp
+  68:	74 e6                	je     50 <gettime_res+0x50>
+  6a:	48 85 c9             	test   %rcx,%rcx
+  6d:	7f 41                	jg     b0 <gettime_res+0xb0>
+  6f:	83 c3 01             	add    $0x1,%ebx
+  72:	49 83 fd 01          	cmp    $0x1,%r13
+  76:	7e 10                	jle    88 <gettime_res+0x88>
+  78:	83 fb 1f             	cmp    $0x1f,%ebx
+  7b:	7f 0b                	jg     88 <gettime_res+0x88>
+  7d:	49 89 cc             	mov    %rcx,%r12
+  80:	48 89 f5             	mov    %rsi,%rbp
+  83:	eb d5                	jmp    5a <gettime_res+0x5a>
+  85:	0f 1f 00             	nopl   (%rax)
+  88:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  8d:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  94:	00 00 
+  96:	75 45                	jne    dd <gettime_res+0xdd>
+  98:	48 83 c4 28          	add    $0x28,%rsp
+  9c:	4c 89 e8             	mov    %r13,%rax
+  9f:	5b                   	pop    %rbx
+  a0:	5d                   	pop    %rbp
+  a1:	41 5c                	pop    %r12
+  a3:	41 5d                	pop    %r13
+  a5:	c3                   	ret    
+  a6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  ad:	00 00 00 
+  b0:	48 89 ca             	mov    %rcx,%rdx
+  b3:	4c 89 e8             	mov    %r13,%rax
+  b6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  bd:	00 00 00 
+  c0:	49 89 d5             	mov    %rdx,%r13
+  c3:	48 99                	cqto   
+  c5:	49 f7 fd             	idiv   %r13
+  c8:	4c 89 e8             	mov    %r13,%rax
+  cb:	48 85 d2             	test   %rdx,%rdx
+  ce:	75 f0                	jne    c0 <gettime_res+0xc0>
+  d0:	eb 9d                	jmp    6f <gettime_res+0x6f>
+  d2:	41 bd 00 ca 9a 3b    	mov    $0x3b9aca00,%r13d
+  d8:	e9 5f ff ff ff       	jmp    3c <gettime_res+0x3c>
+  dd:	e8 00 00 00 00       	call   e2 <gettime_res+0xe2>

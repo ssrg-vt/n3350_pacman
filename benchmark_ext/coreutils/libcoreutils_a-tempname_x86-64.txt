@@ -1,0 +1,253 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-tempname.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <try_nocreate>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	53                   	push   %rbx
+   5:	48 81 ec a0 00 00 00 	sub    $0xa0,%rsp
+   c:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  13:	00 00 
+  15:	48 89 84 24 98 00 00 	mov    %rax,0x98(%rsp)
+  1c:	00 
+  1d:	31 c0                	xor    %eax,%eax
+  1f:	48 89 e6             	mov    %rsp,%rsi
+  22:	e8 00 00 00 00       	call   27 <try_nocreate+0x27>
+  27:	89 c3                	mov    %eax,%ebx
+  29:	e8 00 00 00 00       	call   2e <try_nocreate+0x2e>
+  2e:	85 db                	test   %ebx,%ebx
+  30:	74 16                	je     48 <try_nocreate+0x48>
+  32:	8b 10                	mov    (%rax),%edx
+  34:	83 fa 4b             	cmp    $0x4b,%edx
+  37:	74 0f                	je     48 <try_nocreate+0x48>
+  39:	31 c0                	xor    %eax,%eax
+  3b:	83 fa 02             	cmp    $0x2,%edx
+  3e:	0f 95 c0             	setne  %al
+  41:	f7 d8                	neg    %eax
+  43:	eb 0e                	jmp    53 <try_nocreate+0x53>
+  45:	0f 1f 00             	nopl   (%rax)
+  48:	c7 00 11 00 00 00    	movl   $0x11,(%rax)
+  4e:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  53:	48 8b 94 24 98 00 00 	mov    0x98(%rsp),%rdx
+  5a:	00 
+  5b:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  62:	00 00 
+  64:	75 09                	jne    6f <try_nocreate+0x6f>
+  66:	48 81 c4 a0 00 00 00 	add    $0xa0,%rsp
+  6d:	5b                   	pop    %rbx
+  6e:	c3                   	ret    
+  6f:	e8 00 00 00 00       	call   74 <try_nocreate+0x74>
+  74:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  7b:	00 00 00 00 
+  7f:	90                   	nop
+
+0000000000000080 <try_dir>:
+  80:	f3 0f 1e fa          	endbr64 
+  84:	be c0 01 00 00       	mov    $0x1c0,%esi
+  89:	e9 00 00 00 00       	jmp    8e <try_dir+0xe>
+  8e:	66 90                	xchg   %ax,%ax
+
+0000000000000090 <try_file>:
+  90:	f3 0f 1e fa          	endbr64 
+  94:	8b 36                	mov    (%rsi),%esi
+  96:	ba 80 01 00 00       	mov    $0x180,%edx
+  9b:	31 c0                	xor    %eax,%eax
+  9d:	40 80 e6 3c          	and    $0x3c,%sil
+  a1:	40 80 ce c2          	or     $0xc2,%sil
+  a5:	e9 00 00 00 00       	jmp    aa <try_file+0x1a>
+  aa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000000b0 <try_tempname_len>:
+  b0:	f3 0f 1e fa          	endbr64 
+  b4:	41 57                	push   %r15
+  b6:	41 56                	push   %r14
+  b8:	49 89 fe             	mov    %rdi,%r14
+  bb:	41 55                	push   %r13
+  bd:	41 54                	push   %r12
+  bf:	55                   	push   %rbp
+  c0:	4c 89 c5             	mov    %r8,%rbp
+  c3:	53                   	push   %rbx
+  c4:	89 f3                	mov    %esi,%ebx
+  c6:	48 83 ec 78          	sub    $0x78,%rsp
+  ca:	48 89 54 24 18       	mov    %rdx,0x18(%rsp)
+  cf:	48 89 3c 24          	mov    %rdi,(%rsp)
+  d3:	48 89 4c 24 20       	mov    %rcx,0x20(%rsp)
+  d8:	4c 89 44 24 08       	mov    %r8,0x8(%rsp)
+  dd:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  e4:	00 00 
+  e6:	48 89 44 24 68       	mov    %rax,0x68(%rsp)
+  eb:	31 c0                	xor    %eax,%eax
+  ed:	e8 00 00 00 00       	call   f2 <try_tempname_len+0x42>
+  f2:	4c 89 f7             	mov    %r14,%rdi
+  f5:	48 c7 44 24 48 00 00 	movq   $0x0,0x48(%rsp)
+  fc:	00 00 
+  fe:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+ 103:	8b 00                	mov    (%rax),%eax
+ 105:	89 44 24 3c          	mov    %eax,0x3c(%rsp)
+ 109:	e8 00 00 00 00       	call   10e <try_tempname_len+0x5e>
+ 10e:	48 63 d3             	movslq %ebx,%rdx
+ 111:	48 01 ea             	add    %rbp,%rdx
+ 114:	48 39 c2             	cmp    %rax,%rdx
+ 117:	0f 87 ad 01 00 00    	ja     2ca <try_tempname_len+0x21a>
+ 11d:	48 29 d0             	sub    %rdx,%rax
+ 120:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 127 <try_tempname_len+0x77>
+ 127:	49 01 c6             	add    %rax,%r14
+ 12a:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+ 12f:	4c 89 f7             	mov    %r14,%rdi
+ 132:	4c 89 74 24 30       	mov    %r14,0x30(%rsp)
+ 137:	e8 00 00 00 00       	call   13c <try_tempname_len+0x8c>
+ 13c:	48 39 e8             	cmp    %rbp,%rax
+ 13f:	0f 82 85 01 00 00    	jb     2ca <try_tempname_len+0x21a>
+ 145:	c7 44 24 38 f8 a2 03 	movl   $0x3a2f8,0x38(%rsp)
+ 14c:	00 
+ 14d:	45 31 c0             	xor    %r8d,%r8d
+ 150:	4d 89 fd             	mov    %r15,%r13
+ 153:	4c 8d 35 00 00 00 00 	lea    0x0(%rip),%r14        # 15a <try_tempname_len+0xaa>
+ 15a:	45 89 c7             	mov    %r8d,%r15d
+ 15d:	0f 1f 00             	nopl   (%rax)
+ 160:	48 83 7c 24 08 00    	cmpq   $0x0,0x8(%rsp)
+ 166:	0f 84 04 01 00 00    	je     270 <try_tempname_len+0x1c0>
+ 16c:	48 8b 1c 24          	mov    (%rsp),%rbx
+ 170:	4c 8b 64 24 30       	mov    0x30(%rsp),%r12
+ 175:	48 bd 09 21 84 10 42 	movabs $0x8421084210842109,%rbp
+ 17c:	08 21 84 
+ 17f:	48 03 5c 24 08       	add    0x8(%rsp),%rbx
+ 184:	48 03 5c 24 28       	add    0x28(%rsp),%rbx
+ 189:	eb 43                	jmp    1ce <try_tempname_len+0x11e>
+ 18b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 190:	41 83 ef 01          	sub    $0x1,%r15d
+ 194:	4c 89 ea             	mov    %r13,%rdx
+ 197:	49 83 c4 01          	add    $0x1,%r12
+ 19b:	48 d1 ea             	shr    %rdx
+ 19e:	48 89 d0             	mov    %rdx,%rax
+ 1a1:	48 f7 e5             	mul    %rbp
+ 1a4:	48 c1 ea 04          	shr    $0x4,%rdx
+ 1a8:	48 89 d0             	mov    %rdx,%rax
+ 1ab:	48 c1 e0 05          	shl    $0x5,%rax
+ 1af:	48 29 d0             	sub    %rdx,%rax
+ 1b2:	48 01 c0             	add    %rax,%rax
+ 1b5:	49 29 c5             	sub    %rax,%r13
+ 1b8:	43 0f b6 04 2e       	movzbl (%r14,%r13,1),%eax
+ 1bd:	49 89 d5             	mov    %rdx,%r13
+ 1c0:	41 88 44 24 ff       	mov    %al,-0x1(%r12)
+ 1c5:	49 39 dc             	cmp    %rbx,%r12
+ 1c8:	0f 84 a2 00 00 00    	je     270 <try_tempname_len+0x1c0>
+ 1ce:	45 85 ff             	test   %r15d,%r15d
+ 1d1:	75 bd                	jne    190 <try_tempname_len+0xe0>
+ 1d3:	4c 8b 6c 24 48       	mov    0x48(%rsp),%r13
+ 1d8:	4c 8d 7c 24 48       	lea    0x48(%rsp),%r15
+ 1dd:	ba 01 00 00 00       	mov    $0x1,%edx
+ 1e2:	be 08 00 00 00       	mov    $0x8,%esi
+ 1e7:	4c 89 ff             	mov    %r15,%rdi
+ 1ea:	e8 00 00 00 00       	call   1ef <try_tempname_len+0x13f>
+ 1ef:	48 83 f8 08          	cmp    $0x8,%rax
+ 1f3:	74 5b                	je     250 <try_tempname_len+0x1a0>
+ 1f5:	49 bf fd b0 b0 87 e6 	movabs $0x27bb2ee687b0b0fd,%r15
+ 1fc:	2e bb 27 
+ 1ff:	48 8d 74 24 50       	lea    0x50(%rsp),%rsi
+ 204:	31 ff                	xor    %edi,%edi
+ 206:	e8 00 00 00 00       	call   20b <try_tempname_len+0x15b>
+ 20b:	4d 0f af ef          	imul   %r15,%r13
+ 20f:	b8 2d f3 04 b5       	mov    $0xb504f32d,%eax
+ 214:	49 01 c5             	add    %rax,%r13
+ 217:	4c 33 6c 24 50       	xor    0x50(%rsp),%r13
+ 21c:	4d 0f af ef          	imul   %r15,%r13
+ 220:	49 01 c5             	add    %rax,%r13
+ 223:	4c 33 6c 24 58       	xor    0x58(%rsp),%r13
+ 228:	e8 00 00 00 00       	call   22d <try_tempname_len+0x17d>
+ 22d:	4d 0f af ef          	imul   %r15,%r13
+ 231:	b9 2d f3 04 b5       	mov    $0xb504f32d,%ecx
+ 236:	49 01 cd             	add    %rcx,%r13
+ 239:	49 31 c5             	xor    %rax,%r13
+ 23c:	4c 89 6c 24 48       	mov    %r13,0x48(%rsp)
+ 241:	41 bf 09 00 00 00    	mov    $0x9,%r15d
+ 247:	e9 48 ff ff ff       	jmp    194 <try_tempname_len+0xe4>
+ 24c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 250:	48 b8 ff 53 a7 0a db 	movabs $0xf49998db0aa753ff,%rax
+ 257:	98 99 f4 
+ 25a:	4c 8b 6c 24 48       	mov    0x48(%rsp),%r13
+ 25f:	49 39 c5             	cmp    %rax,%r13
+ 262:	76 dd                	jbe    241 <try_tempname_len+0x191>
+ 264:	e9 74 ff ff ff       	jmp    1dd <try_tempname_len+0x12d>
+ 269:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 270:	48 8b 74 24 18       	mov    0x18(%rsp),%rsi
+ 275:	48 8b 3c 24          	mov    (%rsp),%rdi
+ 279:	48 8b 44 24 20       	mov    0x20(%rsp),%rax
+ 27e:	ff d0                	call   *%rax
+ 280:	85 c0                	test   %eax,%eax
+ 282:	79 39                	jns    2bd <try_tempname_len+0x20d>
+ 284:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 289:	83 38 11             	cmpl   $0x11,(%rax)
+ 28c:	75 0b                	jne    299 <try_tempname_len+0x1e9>
+ 28e:	83 6c 24 38 01       	subl   $0x1,0x38(%rsp)
+ 293:	0f 85 c7 fe ff ff    	jne    160 <try_tempname_len+0xb0>
+ 299:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 29e:	48 8b 54 24 68       	mov    0x68(%rsp),%rdx
+ 2a3:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 2aa:	00 00 
+ 2ac:	75 2e                	jne    2dc <try_tempname_len+0x22c>
+ 2ae:	48 83 c4 78          	add    $0x78,%rsp
+ 2b2:	5b                   	pop    %rbx
+ 2b3:	5d                   	pop    %rbp
+ 2b4:	41 5c                	pop    %r12
+ 2b6:	41 5d                	pop    %r13
+ 2b8:	41 5e                	pop    %r14
+ 2ba:	41 5f                	pop    %r15
+ 2bc:	c3                   	ret    
+ 2bd:	48 8b 4c 24 10       	mov    0x10(%rsp),%rcx
+ 2c2:	8b 7c 24 3c          	mov    0x3c(%rsp),%edi
+ 2c6:	89 39                	mov    %edi,(%rcx)
+ 2c8:	eb d4                	jmp    29e <try_tempname_len+0x1ee>
+ 2ca:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 2cf:	c7 00 16 00 00 00    	movl   $0x16,(%rax)
+ 2d5:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 2da:	eb c2                	jmp    29e <try_tempname_len+0x1ee>
+ 2dc:	e8 00 00 00 00       	call   2e1 <try_tempname_len+0x231>
+ 2e1:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 2e8:	00 00 00 00 
+ 2ec:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000000002f0 <gen_tempname_len>:
+ 2f0:	f3 0f 1e fa          	endbr64 
+ 2f4:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 2fb <gen_tempname_len+0xb>
+ 2fb:	48 63 c9             	movslq %ecx,%rcx
+ 2fe:	48 83 ec 18          	sub    $0x18,%rsp
+ 302:	48 8b 0c c8          	mov    (%rax,%rcx,8),%rcx
+ 306:	89 54 24 0c          	mov    %edx,0xc(%rsp)
+ 30a:	48 8d 54 24 0c       	lea    0xc(%rsp),%rdx
+ 30f:	e8 00 00 00 00       	call   314 <gen_tempname_len+0x24>
+ 314:	48 83 c4 18          	add    $0x18,%rsp
+ 318:	c3                   	ret    
+ 319:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000320 <gen_tempname>:
+ 320:	f3 0f 1e fa          	endbr64 
+ 324:	48 83 ec 18          	sub    $0x18,%rsp
+ 328:	48 63 c9             	movslq %ecx,%rcx
+ 32b:	41 b8 06 00 00 00    	mov    $0x6,%r8d
+ 331:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 338:	00 00 
+ 33a:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 33f:	31 c0                	xor    %eax,%eax
+ 341:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 348 <gen_tempname+0x28>
+ 348:	89 54 24 04          	mov    %edx,0x4(%rsp)
+ 34c:	48 8d 54 24 04       	lea    0x4(%rsp),%rdx
+ 351:	48 8b 0c c8          	mov    (%rax,%rcx,8),%rcx
+ 355:	e8 00 00 00 00       	call   35a <gen_tempname+0x3a>
+ 35a:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 35f:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 366:	00 00 
+ 368:	75 05                	jne    36f <gen_tempname+0x4f>
+ 36a:	48 83 c4 18          	add    $0x18,%rsp
+ 36e:	c3                   	ret    
+ 36f:	e8 00 00 00 00       	call   374 <gen_tempname+0x54>
+ 374:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 37b:	00 00 00 00 
+ 37f:	90                   	nop
+
+0000000000000380 <try_tempname>:
+ 380:	f3 0f 1e fa          	endbr64 
+ 384:	41 b8 06 00 00 00    	mov    $0x6,%r8d
+ 38a:	e9 21 fd ff ff       	jmp    b0 <try_tempname_len>

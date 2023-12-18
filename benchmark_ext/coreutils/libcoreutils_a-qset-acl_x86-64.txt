@@ -1,0 +1,34 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-qset-acl.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <qset_acl>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	55                   	push   %rbp
+   7:	48 83 ec 18          	sub    $0x18,%rsp
+   b:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  12:	00 00 
+  14:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  19:	31 c0                	xor    %eax,%eax
+  1b:	48 8d 6c 24 04       	lea    0x4(%rsp),%rbp
+  20:	89 54 24 04          	mov    %edx,0x4(%rsp)
+  24:	89 f2                	mov    %esi,%edx
+  26:	48 89 fe             	mov    %rdi,%rsi
+  29:	48 89 ef             	mov    %rbp,%rdi
+  2c:	e8 00 00 00 00       	call   31 <qset_acl+0x31>
+  31:	48 89 ef             	mov    %rbp,%rdi
+  34:	41 89 c4             	mov    %eax,%r12d
+  37:	e8 00 00 00 00       	call   3c <qset_acl+0x3c>
+  3c:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  41:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  48:	00 00 
+  4a:	75 0b                	jne    57 <qset_acl+0x57>
+  4c:	48 83 c4 18          	add    $0x18,%rsp
+  50:	44 89 e0             	mov    %r12d,%eax
+  53:	5d                   	pop    %rbp
+  54:	41 5c                	pop    %r12
+  56:	c3                   	ret    
+  57:	e8 00 00 00 00       	call   5c <qset_acl+0x5c>

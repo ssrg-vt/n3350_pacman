@@ -1,0 +1,62 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-cl-strtold.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <cl_strtold>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	55                   	push   %rbp
+   9:	48 89 fd             	mov    %rdi,%rbp
+   c:	53                   	push   %rbx
+   d:	48 89 f3             	mov    %rsi,%rbx
+  10:	48 83 ec 38          	sub    $0x38,%rsp
+  14:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1b:	00 00 
+  1d:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+  22:	31 c0                	xor    %eax,%eax
+  24:	48 8d 74 24 18       	lea    0x18(%rsp),%rsi
+  29:	e8 00 00 00 00       	call   2e <cl_strtold+0x2e>
+  2e:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  33:	d9 c0                	fld    %st(0)
+  35:	80 38 00             	cmpb   $0x0,(%rax)
+  38:	75 2e                	jne    68 <cl_strtold+0x68>
+  3a:	dd d9                	fstp   %st(1)
+  3c:	48 85 db             	test   %rbx,%rbx
+  3f:	74 08                	je     49 <cl_strtold+0x49>
+  41:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  46:	48 89 03             	mov    %rax,(%rbx)
+  49:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+  4e:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  55:	00 00 
+  57:	75 4f                	jne    a8 <cl_strtold+0xa8>
+  59:	48 83 c4 38          	add    $0x38,%rsp
+  5d:	5b                   	pop    %rbx
+  5e:	5d                   	pop    %rbp
+  5f:	41 5c                	pop    %r12
+  61:	41 5d                	pop    %r13
+  63:	c3                   	ret    
+  64:	0f 1f 40 00          	nopl   0x0(%rax)
+  68:	dd d8                	fstp   %st(0)
+  6a:	db 3c 24             	fstpt  (%rsp)
+  6d:	e8 00 00 00 00       	call   72 <cl_strtold+0x72>
+  72:	48 8d 74 24 20       	lea    0x20(%rsp),%rsi
+  77:	48 89 ef             	mov    %rbp,%rdi
+  7a:	44 8b 28             	mov    (%rax),%r13d
+  7d:	49 89 c4             	mov    %rax,%r12
+  80:	e8 00 00 00 00       	call   85 <cl_strtold+0x85>
+  85:	48 8b 44 24 20       	mov    0x20(%rsp),%rax
+  8a:	48 39 44 24 18       	cmp    %rax,0x18(%rsp)
+  8f:	db 2c 24             	fldt   (%rsp)
+  92:	73 0c                	jae    a0 <cl_strtold+0xa0>
+  94:	dd d8                	fstp   %st(0)
+  96:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  9b:	eb 9f                	jmp    3c <cl_strtold+0x3c>
+  9d:	0f 1f 00             	nopl   (%rax)
+  a0:	dd d9                	fstp   %st(1)
+  a2:	45 89 2c 24          	mov    %r13d,(%r12)
+  a6:	eb 94                	jmp    3c <cl_strtold+0x3c>
+  a8:	dd d8                	fstp   %st(0)
+  aa:	e8 00 00 00 00       	call   af <cl_strtold+0xaf>

@@ -1,0 +1,46 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xsize.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xsum>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 01 f7             	add    %rsi,%rdi
+   7:	48 c7 c0 ff ff ff ff 	mov    $0xffffffffffffffff,%rax
+   e:	48 0f 43 c7          	cmovae %rdi,%rax
+  12:	c3                   	ret    
+  13:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  1a:	00 00 00 00 
+  1e:	66 90                	xchg   %ax,%ax
+
+0000000000000020 <xsum3>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	48 01 f7             	add    %rsi,%rdi
+  27:	48 c7 c0 ff ff ff ff 	mov    $0xffffffffffffffff,%rax
+  2e:	48 0f 42 f8          	cmovb  %rax,%rdi
+  32:	48 01 fa             	add    %rdi,%rdx
+  35:	48 0f 43 c2          	cmovae %rdx,%rax
+  39:	c3                   	ret    
+  3a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000040 <xsum4>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	48 c7 c0 ff ff ff ff 	mov    $0xffffffffffffffff,%rax
+  4b:	48 01 f7             	add    %rsi,%rdi
+  4e:	48 0f 42 f8          	cmovb  %rax,%rdi
+  52:	48 01 fa             	add    %rdi,%rdx
+  55:	48 0f 42 d0          	cmovb  %rax,%rdx
+  59:	48 01 d1             	add    %rdx,%rcx
+  5c:	48 0f 43 c1          	cmovae %rcx,%rax
+  60:	c3                   	ret    
+  61:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  68:	00 00 00 00 
+  6c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000070 <xmax>:
+  70:	f3 0f 1e fa          	endbr64 
+  74:	48 39 f7             	cmp    %rsi,%rdi
+  77:	48 89 f0             	mov    %rsi,%rax
+  7a:	48 0f 43 c7          	cmovae %rdi,%rax
+  7e:	c3                   	ret    

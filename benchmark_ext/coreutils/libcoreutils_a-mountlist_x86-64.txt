@@ -1,0 +1,690 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mountlist.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <unescape_tab>:
+   0:	53                   	push   %rbx
+   1:	48 89 fb             	mov    %rdi,%rbx
+   4:	e8 00 00 00 00       	call   9 <unescape_tab+0x9>
+   9:	48 89 d9             	mov    %rbx,%rcx
+   c:	31 d2                	xor    %edx,%edx
+   e:	48 83 c0 01          	add    $0x1,%rax
+  12:	eb 13                	jmp    27 <unescape_tab+0x27>
+  14:	0f 1f 40 00          	nopl   0x0(%rax)
+  18:	44 88 01             	mov    %r8b,(%rcx)
+  1b:	48 83 c1 01          	add    $0x1,%rcx
+  1f:	48 39 f0             	cmp    %rsi,%rax
+  22:	76 5c                	jbe    80 <unescape_tab+0x80>
+  24:	48 89 f2             	mov    %rsi,%rdx
+  27:	44 0f b6 04 13       	movzbl (%rbx,%rdx,1),%r8d
+  2c:	48 8d 72 01          	lea    0x1(%rdx),%rsi
+  30:	41 80 f8 5c          	cmp    $0x5c,%r8b
+  34:	75 e2                	jne    18 <unescape_tab+0x18>
+  36:	4c 8d 4a 04          	lea    0x4(%rdx),%r9
+  3a:	49 39 c1             	cmp    %rax,%r9
+  3d:	73 d9                	jae    18 <unescape_tab+0x18>
+  3f:	0f b6 3c 33          	movzbl (%rbx,%rsi,1),%edi
+  43:	83 ef 30             	sub    $0x30,%edi
+  46:	40 80 ff 03          	cmp    $0x3,%dil
+  4a:	77 cc                	ja     18 <unescape_tab+0x18>
+  4c:	44 0f b6 5c 13 02    	movzbl 0x2(%rbx,%rdx,1),%r11d
+  52:	45 8d 53 d0          	lea    -0x30(%r11),%r10d
+  56:	41 80 fa 07          	cmp    $0x7,%r10b
+  5a:	77 bc                	ja     18 <unescape_tab+0x18>
+  5c:	44 0f b6 5c 13 03    	movzbl 0x3(%rbx,%rdx,1),%r11d
+  62:	41 83 eb 30          	sub    $0x30,%r11d
+  66:	41 80 fb 07          	cmp    $0x7,%r11b
+  6a:	77 ac                	ja     18 <unescape_tab+0x18>
+  6c:	41 8d 14 fa          	lea    (%r10,%rdi,8),%edx
+  70:	48 83 c1 01          	add    $0x1,%rcx
+  74:	4c 89 ce             	mov    %r9,%rsi
+  77:	41 8d 14 d3          	lea    (%r11,%rdx,8),%edx
+  7b:	88 51 ff             	mov    %dl,-0x1(%rcx)
+  7e:	eb a4                	jmp    24 <unescape_tab+0x24>
+  80:	5b                   	pop    %rbx
+  81:	c3                   	ret    
+  82:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  89:	00 00 00 00 
+  8d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000090 <read_file_system_list>:
+  90:	f3 0f 1e fa          	endbr64 
+  94:	41 57                	push   %r15
+  96:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 9d <read_file_system_list+0xd>
+  9d:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # a4 <read_file_system_list+0x14>
+  a4:	41 56                	push   %r14
+  a6:	41 55                	push   %r13
+  a8:	41 54                	push   %r12
+  aa:	55                   	push   %rbp
+  ab:	53                   	push   %rbx
+  ac:	48 83 ec 58          	sub    $0x58,%rsp
+  b0:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  b7:	00 00 
+  b9:	48 89 44 24 48       	mov    %rax,0x48(%rsp)
+  be:	31 c0                	xor    %eax,%eax
+  c0:	e8 00 00 00 00       	call   c5 <read_file_system_list+0x35>
+  c5:	48 85 c0             	test   %rax,%rax
+  c8:	0f 84 ad 06 00 00    	je     77b <read_file_system_list+0x6eb>
+  ce:	49 89 c4             	mov    %rax,%r12
+  d1:	48 8d 44 24 30       	lea    0x30(%rsp),%rax
+  d6:	48 c7 44 24 38 00 00 	movq   $0x0,0x38(%rsp)
+  dd:	00 00 
+  df:	4c 8d 74 24 40       	lea    0x40(%rsp),%r14
+  e4:	48 89 04 24          	mov    %rax,(%rsp)
+  e8:	48 8d 5c 24 38       	lea    0x38(%rsp),%rbx
+  ed:	4c 8d 3d 00 00 00 00 	lea    0x0(%rip),%r15        # f4 <read_file_system_list+0x64>
+  f4:	48 c7 44 24 40 00 00 	movq   $0x0,0x40(%rsp)
+  fb:	00 00 
+  fd:	0f 1f 00             	nopl   (%rax)
+ 100:	4c 89 e1             	mov    %r12,%rcx
+ 103:	ba 0a 00 00 00       	mov    $0xa,%edx
+ 108:	4c 89 f6             	mov    %r14,%rsi
+ 10b:	48 89 df             	mov    %rbx,%rdi
+ 10e:	e8 00 00 00 00       	call   113 <read_file_system_list+0x83>
+ 113:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+ 117:	0f 84 13 02 00 00    	je     330 <read_file_system_list+0x2a0>
+ 11d:	48 8b 7c 24 38       	mov    0x38(%rsp),%rdi
+ 122:	48 8d 4c 24 28       	lea    0x28(%rsp),%rcx
+ 127:	4c 89 fe             	mov    %r15,%rsi
+ 12a:	31 c0                	xor    %eax,%eax
+ 12c:	48 8d 54 24 24       	lea    0x24(%rsp),%rdx
+ 131:	4c 8d 44 24 2c       	lea    0x2c(%rsp),%r8
+ 136:	e8 00 00 00 00       	call   13b <read_file_system_list+0xab>
+ 13b:	83 e8 02             	sub    $0x2,%eax
+ 13e:	83 f8 01             	cmp    $0x1,%eax
+ 141:	77 bd                	ja     100 <read_file_system_list+0x70>
+ 143:	4c 63 6c 24 2c       	movslq 0x2c(%rsp),%r13
+ 148:	4c 03 6c 24 38       	add    0x38(%rsp),%r13
+ 14d:	be 20 00 00 00       	mov    $0x20,%esi
+ 152:	4c 89 ef             	mov    %r13,%rdi
+ 155:	e8 00 00 00 00       	call   15a <read_file_system_list+0xca>
+ 15a:	48 85 c0             	test   %rax,%rax
+ 15d:	74 a1                	je     100 <read_file_system_list+0x70>
+ 15f:	c6 00 00             	movb   $0x0,(%rax)
+ 162:	48 8d 68 01          	lea    0x1(%rax),%rbp
+ 166:	be 20 00 00 00       	mov    $0x20,%esi
+ 16b:	48 89 ef             	mov    %rbp,%rdi
+ 16e:	e8 00 00 00 00       	call   173 <read_file_system_list+0xe3>
+ 173:	48 85 c0             	test   %rax,%rax
+ 176:	74 88                	je     100 <read_file_system_list+0x70>
+ 178:	c6 00 00             	movb   $0x0,(%rax)
+ 17b:	48 8d 78 01          	lea    0x1(%rax),%rdi
+ 17f:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 186 <read_file_system_list+0xf6>
+ 186:	e8 00 00 00 00       	call   18b <read_file_system_list+0xfb>
+ 18b:	48 85 c0             	test   %rax,%rax
+ 18e:	0f 84 6c ff ff ff    	je     100 <read_file_system_list+0x70>
+ 194:	48 83 c0 03          	add    $0x3,%rax
+ 198:	be 20 00 00 00       	mov    $0x20,%esi
+ 19d:	48 89 c7             	mov    %rax,%rdi
+ 1a0:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 1a5:	e8 00 00 00 00       	call   1aa <read_file_system_list+0x11a>
+ 1aa:	48 85 c0             	test   %rax,%rax
+ 1ad:	0f 84 4d ff ff ff    	je     100 <read_file_system_list+0x70>
+ 1b3:	c6 00 00             	movb   $0x0,(%rax)
+ 1b6:	4c 8d 40 01          	lea    0x1(%rax),%r8
+ 1ba:	be 20 00 00 00       	mov    $0x20,%esi
+ 1bf:	4c 89 c7             	mov    %r8,%rdi
+ 1c2:	4c 89 44 24 10       	mov    %r8,0x10(%rsp)
+ 1c7:	e8 00 00 00 00       	call   1cc <read_file_system_list+0x13c>
+ 1cc:	48 85 c0             	test   %rax,%rax
+ 1cf:	0f 84 2b ff ff ff    	je     100 <read_file_system_list+0x70>
+ 1d5:	4c 8b 44 24 10       	mov    0x10(%rsp),%r8
+ 1da:	c6 00 00             	movb   $0x0,(%rax)
+ 1dd:	4c 89 c7             	mov    %r8,%rdi
+ 1e0:	4c 89 44 24 18       	mov    %r8,0x18(%rsp)
+ 1e5:	e8 16 fe ff ff       	call   0 <unescape_tab>
+ 1ea:	48 89 ef             	mov    %rbp,%rdi
+ 1ed:	e8 0e fe ff ff       	call   0 <unescape_tab>
+ 1f2:	4c 89 ef             	mov    %r13,%rdi
+ 1f5:	e8 06 fe ff ff       	call   0 <unescape_tab>
+ 1fa:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+ 1ff:	e8 fc fd ff ff       	call   0 <unescape_tab>
+ 204:	bf 38 00 00 00       	mov    $0x38,%edi
+ 209:	e8 00 00 00 00       	call   20e <read_file_system_list+0x17e>
+ 20e:	48 8b 7c 24 18       	mov    0x18(%rsp),%rdi
+ 213:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+ 218:	e8 00 00 00 00       	call   21d <read_file_system_list+0x18d>
+ 21d:	48 8b 54 24 10       	mov    0x10(%rsp),%rdx
+ 222:	48 89 ef             	mov    %rbp,%rdi
+ 225:	48 89 02             	mov    %rax,(%rdx)
+ 228:	e8 00 00 00 00       	call   22d <read_file_system_list+0x19d>
+ 22d:	48 8b 54 24 10       	mov    0x10(%rsp),%rdx
+ 232:	4c 89 ef             	mov    %r13,%rdi
+ 235:	41 bd 01 00 00 00    	mov    $0x1,%r13d
+ 23b:	48 89 42 08          	mov    %rax,0x8(%rdx)
+ 23f:	e8 00 00 00 00       	call   244 <read_file_system_list+0x1b4>
+ 244:	48 8b 54 24 10       	mov    0x10(%rsp),%rdx
+ 249:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+ 24e:	48 89 42 10          	mov    %rax,0x10(%rdx)
+ 252:	e8 00 00 00 00       	call   257 <read_file_system_list+0x1c7>
+ 257:	8b 4c 24 24          	mov    0x24(%rsp),%ecx
+ 25b:	48 8b 54 24 10       	mov    0x10(%rsp),%rdx
+ 260:	48 bf 00 00 00 00 00 	movabs $0xfffff00000000000,%rdi
+ 267:	f0 ff ff 
+ 26a:	48 89 c5             	mov    %rax,%rbp
+ 26d:	48 89 ce             	mov    %rcx,%rsi
+ 270:	48 89 42 18          	mov    %rax,0x18(%rdx)
+ 274:	48 c1 e1 20          	shl    $0x20,%rcx
+ 278:	8b 44 24 28          	mov    0x28(%rsp),%eax
+ 27c:	48 c1 e6 08          	shl    $0x8,%rsi
+ 280:	48 21 f9             	and    %rdi,%rcx
+ 283:	80 4a 28 04          	orb    $0x4,0x28(%rdx)
+ 287:	48 89 ef             	mov    %rbp,%rdi
+ 28a:	81 e6 00 ff 0f 00    	and    $0xfff00,%esi
+ 290:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+ 295:	48 09 f1             	or     %rsi,%rcx
+ 298:	0f b6 f0             	movzbl %al,%esi
+ 29b:	48 c1 e0 0c          	shl    $0xc,%rax
+ 29f:	48 09 f1             	or     %rsi,%rcx
+ 2a2:	48 be 00 00 f0 ff ff 	movabs $0xffffff00000,%rsi
+ 2a9:	0f 00 00 
+ 2ac:	48 21 f0             	and    %rsi,%rax
+ 2af:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2b6 <read_file_system_list+0x226>
+ 2b6:	48 09 c8             	or     %rcx,%rax
+ 2b9:	48 89 42 20          	mov    %rax,0x20(%rdx)
+ 2bd:	e8 00 00 00 00       	call   2c2 <read_file_system_list+0x232>
+ 2c2:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 2c7:	85 c0                	test   %eax,%eax
+ 2c9:	0f 85 c1 00 00 00    	jne    390 <read_file_system_list+0x300>
+ 2cf:	0f b6 42 28          	movzbl 0x28(%rdx),%eax
+ 2d3:	be 3a 00 00 00       	mov    $0x3a,%esi
+ 2d8:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+ 2dd:	83 e0 fe             	and    $0xfffffffe,%eax
+ 2e0:	44 09 e8             	or     %r13d,%eax
+ 2e3:	4c 8b 2a             	mov    (%rdx),%r13
+ 2e6:	88 42 28             	mov    %al,0x28(%rdx)
+ 2e9:	4c 89 ef             	mov    %r13,%rdi
+ 2ec:	e8 00 00 00 00       	call   2f1 <read_file_system_list+0x261>
+ 2f1:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 2f6:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 2fb:	48 85 c0             	test   %rax,%rax
+ 2fe:	0f 84 fc 01 00 00    	je     500 <read_file_system_list+0x470>
+ 304:	0f b6 42 28          	movzbl 0x28(%rdx),%eax
+ 308:	01 c9                	add    %ecx,%ecx
+ 30a:	83 e0 fd             	and    $0xfffffffd,%eax
+ 30d:	09 c8                	or     %ecx,%eax
+ 30f:	88 42 28             	mov    %al,0x28(%rdx)
+ 312:	48 8b 04 24          	mov    (%rsp),%rax
+ 316:	48 89 10             	mov    %rdx,(%rax)
+ 319:	48 8d 42 30          	lea    0x30(%rdx),%rax
+ 31d:	48 89 04 24          	mov    %rax,(%rsp)
+ 321:	e9 da fd ff ff       	jmp    100 <read_file_system_list+0x70>
+ 326:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 32d:	00 00 00 
+ 330:	48 8b 7c 24 38       	mov    0x38(%rsp),%rdi
+ 335:	e8 00 00 00 00       	call   33a <read_file_system_list+0x2aa>
+ 33a:	41 f6 04 24 20       	testb  $0x20,(%r12)
+ 33f:	0f 85 1b 03 00 00    	jne    660 <read_file_system_list+0x5d0>
+ 345:	4c 89 e7             	mov    %r12,%rdi
+ 348:	e8 00 00 00 00       	call   34d <read_file_system_list+0x2bd>
+ 34d:	83 f8 ff             	cmp    $0xffffffff,%eax
+ 350:	0f 84 9e 03 00 00    	je     6f4 <read_file_system_list+0x664>
+ 356:	48 8b 04 24          	mov    (%rsp),%rax
+ 35a:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+ 361:	4c 8b 74 24 30       	mov    0x30(%rsp),%r14
+ 366:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
+ 36b:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 372:	00 00 
+ 374:	0f 85 1a 07 00 00    	jne    a94 <read_file_system_list+0xa04>
+ 37a:	48 83 c4 58          	add    $0x58,%rsp
+ 37e:	4c 89 f0             	mov    %r14,%rax
+ 381:	5b                   	pop    %rbx
+ 382:	5d                   	pop    %rbp
+ 383:	41 5c                	pop    %r12
+ 385:	41 5d                	pop    %r13
+ 387:	41 5e                	pop    %r14
+ 389:	41 5f                	pop    %r15
+ 38b:	c3                   	ret    
+ 38c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 390:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 397 <read_file_system_list+0x307>
+ 397:	48 89 ef             	mov    %rbp,%rdi
+ 39a:	e8 00 00 00 00       	call   39f <read_file_system_list+0x30f>
+ 39f:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 3a4:	85 c0                	test   %eax,%eax
+ 3a6:	0f 84 23 ff ff ff    	je     2cf <read_file_system_list+0x23f>
+ 3ac:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 3b3 <read_file_system_list+0x323>
+ 3b3:	48 89 ef             	mov    %rbp,%rdi
+ 3b6:	e8 00 00 00 00       	call   3bb <read_file_system_list+0x32b>
+ 3bb:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 3c0:	85 c0                	test   %eax,%eax
+ 3c2:	0f 84 07 ff ff ff    	je     2cf <read_file_system_list+0x23f>
+ 3c8:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 3cf <read_file_system_list+0x33f>
+ 3cf:	48 89 ef             	mov    %rbp,%rdi
+ 3d2:	e8 00 00 00 00       	call   3d7 <read_file_system_list+0x347>
+ 3d7:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 3dc:	85 c0                	test   %eax,%eax
+ 3de:	0f 84 eb fe ff ff    	je     2cf <read_file_system_list+0x23f>
+ 3e4:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 3eb <read_file_system_list+0x35b>
+ 3eb:	48 89 ef             	mov    %rbp,%rdi
+ 3ee:	e8 00 00 00 00       	call   3f3 <read_file_system_list+0x363>
+ 3f3:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 3f8:	85 c0                	test   %eax,%eax
+ 3fa:	0f 84 cf fe ff ff    	je     2cf <read_file_system_list+0x23f>
+ 400:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 407 <read_file_system_list+0x377>
+ 407:	48 89 ef             	mov    %rbp,%rdi
+ 40a:	e8 00 00 00 00       	call   40f <read_file_system_list+0x37f>
+ 40f:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 414:	85 c0                	test   %eax,%eax
+ 416:	0f 84 b3 fe ff ff    	je     2cf <read_file_system_list+0x23f>
+ 41c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 423 <read_file_system_list+0x393>
+ 423:	48 89 ef             	mov    %rbp,%rdi
+ 426:	e8 00 00 00 00       	call   42b <read_file_system_list+0x39b>
+ 42b:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 430:	85 c0                	test   %eax,%eax
+ 432:	0f 84 97 fe ff ff    	je     2cf <read_file_system_list+0x23f>
+ 438:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 43f <read_file_system_list+0x3af>
+ 43f:	48 89 ef             	mov    %rbp,%rdi
+ 442:	e8 00 00 00 00       	call   447 <read_file_system_list+0x3b7>
+ 447:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 44c:	85 c0                	test   %eax,%eax
+ 44e:	0f 84 7b fe ff ff    	je     2cf <read_file_system_list+0x23f>
+ 454:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 45b <read_file_system_list+0x3cb>
+ 45b:	48 89 ef             	mov    %rbp,%rdi
+ 45e:	e8 00 00 00 00       	call   463 <read_file_system_list+0x3d3>
+ 463:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 468:	85 c0                	test   %eax,%eax
+ 46a:	0f 84 5f fe ff ff    	je     2cf <read_file_system_list+0x23f>
+ 470:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 477 <read_file_system_list+0x3e7>
+ 477:	48 89 ef             	mov    %rbp,%rdi
+ 47a:	e8 00 00 00 00       	call   47f <read_file_system_list+0x3ef>
+ 47f:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 484:	85 c0                	test   %eax,%eax
+ 486:	0f 84 43 fe ff ff    	je     2cf <read_file_system_list+0x23f>
+ 48c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 493 <read_file_system_list+0x403>
+ 493:	48 89 ef             	mov    %rbp,%rdi
+ 496:	e8 00 00 00 00       	call   49b <read_file_system_list+0x40b>
+ 49b:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 4a0:	85 c0                	test   %eax,%eax
+ 4a2:	0f 84 27 fe ff ff    	je     2cf <read_file_system_list+0x23f>
+ 4a8:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 4af <read_file_system_list+0x41f>
+ 4af:	48 89 ef             	mov    %rbp,%rdi
+ 4b2:	e8 00 00 00 00       	call   4b7 <read_file_system_list+0x427>
+ 4b7:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 4bc:	85 c0                	test   %eax,%eax
+ 4be:	0f 84 0b fe ff ff    	je     2cf <read_file_system_list+0x23f>
+ 4c4:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 4cb <read_file_system_list+0x43b>
+ 4cb:	48 89 ef             	mov    %rbp,%rdi
+ 4ce:	e8 00 00 00 00       	call   4d3 <read_file_system_list+0x443>
+ 4d3:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 4d8:	85 c0                	test   %eax,%eax
+ 4da:	0f 84 ef fd ff ff    	je     2cf <read_file_system_list+0x23f>
+ 4e0:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 4e7 <read_file_system_list+0x457>
+ 4e7:	48 89 ef             	mov    %rbp,%rdi
+ 4ea:	e8 00 00 00 00       	call   4ef <read_file_system_list+0x45f>
+ 4ef:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 4f4:	85 c0                	test   %eax,%eax
+ 4f6:	41 0f 94 c5          	sete   %r13b
+ 4fa:	e9 d0 fd ff ff       	jmp    2cf <read_file_system_list+0x23f>
+ 4ff:	90                   	nop
+ 500:	41 80 7d 00 2f       	cmpb   $0x2f,0x0(%r13)
+ 505:	0f 84 f9 01 00 00    	je     704 <read_file_system_list+0x674>
+ 50b:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 512 <read_file_system_list+0x482>
+ 512:	48 89 ef             	mov    %rbp,%rdi
+ 515:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+ 51a:	e8 00 00 00 00       	call   51f <read_file_system_list+0x48f>
+ 51f:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 524:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 529:	85 c0                	test   %eax,%eax
+ 52b:	0f 84 d3 fd ff ff    	je     304 <read_file_system_list+0x274>
+ 531:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 538 <read_file_system_list+0x4a8>
+ 538:	48 89 ef             	mov    %rbp,%rdi
+ 53b:	88 4c 24 10          	mov    %cl,0x10(%rsp)
+ 53f:	e8 00 00 00 00       	call   544 <read_file_system_list+0x4b4>
+ 544:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 549:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 54e:	85 c0                	test   %eax,%eax
+ 550:	0f 84 ae fd ff ff    	je     304 <read_file_system_list+0x274>
+ 556:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 55d <read_file_system_list+0x4cd>
+ 55d:	48 89 ef             	mov    %rbp,%rdi
+ 560:	e8 00 00 00 00       	call   565 <read_file_system_list+0x4d5>
+ 565:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 56a:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 56f:	85 c0                	test   %eax,%eax
+ 571:	0f 84 8d fd ff ff    	je     304 <read_file_system_list+0x274>
+ 577:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 57e <read_file_system_list+0x4ee>
+ 57e:	48 89 ef             	mov    %rbp,%rdi
+ 581:	e8 00 00 00 00       	call   586 <read_file_system_list+0x4f6>
+ 586:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 58b:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 590:	85 c0                	test   %eax,%eax
+ 592:	0f 84 6c fd ff ff    	je     304 <read_file_system_list+0x274>
+ 598:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 59f <read_file_system_list+0x50f>
+ 59f:	48 89 ef             	mov    %rbp,%rdi
+ 5a2:	e8 00 00 00 00       	call   5a7 <read_file_system_list+0x517>
+ 5a7:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 5ac:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 5b1:	85 c0                	test   %eax,%eax
+ 5b3:	0f 84 4b fd ff ff    	je     304 <read_file_system_list+0x274>
+ 5b9:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 5c0 <read_file_system_list+0x530>
+ 5c0:	48 89 ef             	mov    %rbp,%rdi
+ 5c3:	e8 00 00 00 00       	call   5c8 <read_file_system_list+0x538>
+ 5c8:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 5cd:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 5d2:	85 c0                	test   %eax,%eax
+ 5d4:	0f 84 2a fd ff ff    	je     304 <read_file_system_list+0x274>
+ 5da:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 5e1 <read_file_system_list+0x551>
+ 5e1:	48 89 ef             	mov    %rbp,%rdi
+ 5e4:	e8 00 00 00 00       	call   5e9 <read_file_system_list+0x559>
+ 5e9:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 5ee:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 5f3:	85 c0                	test   %eax,%eax
+ 5f5:	0f 84 09 fd ff ff    	je     304 <read_file_system_list+0x274>
+ 5fb:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 602 <read_file_system_list+0x572>
+ 602:	48 89 ef             	mov    %rbp,%rdi
+ 605:	e8 00 00 00 00       	call   60a <read_file_system_list+0x57a>
+ 60a:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 60f:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 614:	85 c0                	test   %eax,%eax
+ 616:	0f 84 e8 fc ff ff    	je     304 <read_file_system_list+0x274>
+ 61c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 623 <read_file_system_list+0x593>
+ 623:	48 89 ef             	mov    %rbp,%rdi
+ 626:	e8 00 00 00 00       	call   62b <read_file_system_list+0x59b>
+ 62b:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 630:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 635:	85 c0                	test   %eax,%eax
+ 637:	0f 84 c7 fc ff ff    	je     304 <read_file_system_list+0x274>
+ 63d:	4c 89 ee             	mov    %r13,%rsi
+ 640:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 647 <read_file_system_list+0x5b7>
+ 647:	e8 00 00 00 00       	call   64c <read_file_system_list+0x5bc>
+ 64c:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 651:	85 c0                	test   %eax,%eax
+ 653:	0f 94 c1             	sete   %cl
+ 656:	e9 a9 fc ff ff       	jmp    304 <read_file_system_list+0x274>
+ 65b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 660:	e8 00 00 00 00       	call   665 <read_file_system_list+0x5d5>
+ 665:	4c 89 e7             	mov    %r12,%rdi
+ 668:	44 8b 30             	mov    (%rax),%r14d
+ 66b:	49 89 c5             	mov    %rax,%r13
+ 66e:	e8 00 00 00 00       	call   673 <read_file_system_list+0x5e3>
+ 673:	45 89 75 00          	mov    %r14d,0x0(%r13)
+ 677:	48 8b 04 24          	mov    (%rsp),%rax
+ 67b:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+ 682:	48 8b 5c 24 30       	mov    0x30(%rsp),%rbx
+ 687:	48 85 db             	test   %rbx,%rbx
+ 68a:	75 16                	jne    6a2 <read_file_system_list+0x612>
+ 68c:	eb 4a                	jmp    6d8 <read_file_system_list+0x648>
+ 68e:	66 90                	xchg   %ax,%ax
+ 690:	48 89 ef             	mov    %rbp,%rdi
+ 693:	e8 00 00 00 00       	call   698 <read_file_system_list+0x608>
+ 698:	48 89 5c 24 30       	mov    %rbx,0x30(%rsp)
+ 69d:	48 85 db             	test   %rbx,%rbx
+ 6a0:	74 36                	je     6d8 <read_file_system_list+0x648>
+ 6a2:	48 89 dd             	mov    %rbx,%rbp
+ 6a5:	48 8b 5b 30          	mov    0x30(%rbx),%rbx
+ 6a9:	48 8b 7d 00          	mov    0x0(%rbp),%rdi
+ 6ad:	e8 00 00 00 00       	call   6b2 <read_file_system_list+0x622>
+ 6b2:	48 8b 7d 08          	mov    0x8(%rbp),%rdi
+ 6b6:	e8 00 00 00 00       	call   6bb <read_file_system_list+0x62b>
+ 6bb:	48 8b 7d 10          	mov    0x10(%rbp),%rdi
+ 6bf:	e8 00 00 00 00       	call   6c4 <read_file_system_list+0x634>
+ 6c4:	f6 45 28 04          	testb  $0x4,0x28(%rbp)
+ 6c8:	74 c6                	je     690 <read_file_system_list+0x600>
+ 6ca:	48 8b 7d 18          	mov    0x18(%rbp),%rdi
+ 6ce:	e8 00 00 00 00       	call   6d3 <read_file_system_list+0x643>
+ 6d3:	eb bb                	jmp    690 <read_file_system_list+0x600>
+ 6d5:	0f 1f 00             	nopl   (%rax)
+ 6d8:	45 89 75 00          	mov    %r14d,0x0(%r13)
+ 6dc:	45 31 f6             	xor    %r14d,%r14d
+ 6df:	e9 82 fc ff ff       	jmp    366 <read_file_system_list+0x2d6>
+ 6e4:	4c 89 f7             	mov    %r14,%rdi
+ 6e7:	e8 00 00 00 00       	call   6ec <read_file_system_list+0x65c>
+ 6ec:	85 c0                	test   %eax,%eax
+ 6ee:	0f 85 62 fc ff ff    	jne    356 <read_file_system_list+0x2c6>
+ 6f4:	e8 00 00 00 00       	call   6f9 <read_file_system_list+0x669>
+ 6f9:	44 8b 30             	mov    (%rax),%r14d
+ 6fc:	49 89 c5             	mov    %rax,%r13
+ 6ff:	e9 73 ff ff ff       	jmp    677 <read_file_system_list+0x5e7>
+ 704:	41 80 7d 01 2f       	cmpb   $0x2f,0x1(%r13)
+ 709:	0f 85 fc fd ff ff    	jne    50b <read_file_system_list+0x47b>
+ 70f:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 716 <read_file_system_list+0x686>
+ 716:	48 89 ef             	mov    %rbp,%rdi
+ 719:	88 4c 24 10          	mov    %cl,0x10(%rsp)
+ 71d:	e8 00 00 00 00       	call   722 <read_file_system_list+0x692>
+ 722:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 727:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 72c:	85 c0                	test   %eax,%eax
+ 72e:	0f 84 d0 fb ff ff    	je     304 <read_file_system_list+0x274>
+ 734:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 73b <read_file_system_list+0x6ab>
+ 73b:	48 89 ef             	mov    %rbp,%rdi
+ 73e:	e8 00 00 00 00       	call   743 <read_file_system_list+0x6b3>
+ 743:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 748:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 74d:	85 c0                	test   %eax,%eax
+ 74f:	0f 84 af fb ff ff    	je     304 <read_file_system_list+0x274>
+ 755:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 75c <read_file_system_list+0x6cc>
+ 75c:	48 89 ef             	mov    %rbp,%rdi
+ 75f:	e8 00 00 00 00       	call   764 <read_file_system_list+0x6d4>
+ 764:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 769:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 76e:	85 c0                	test   %eax,%eax
+ 770:	0f 84 8e fb ff ff    	je     304 <read_file_system_list+0x274>
+ 776:	e9 90 fd ff ff       	jmp    50b <read_file_system_list+0x47b>
+ 77b:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 782 <read_file_system_list+0x6f2>
+ 782:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 789 <read_file_system_list+0x6f9>
+ 789:	e8 00 00 00 00       	call   78e <read_file_system_list+0x6fe>
+ 78e:	49 89 c6             	mov    %rax,%r14
+ 791:	48 85 c0             	test   %rax,%rax
+ 794:	0f 84 cc fb ff ff    	je     366 <read_file_system_list+0x2d6>
+ 79a:	48 8d 44 24 30       	lea    0x30(%rsp),%rax
+ 79f:	4c 8d 3d 00 00 00 00 	lea    0x0(%rip),%r15        # 7a6 <read_file_system_list+0x716>
+ 7a6:	48 89 04 24          	mov    %rax,(%rsp)
+ 7aa:	eb 27                	jmp    7d3 <read_file_system_list+0x743>
+ 7ac:	0f b6 43 28          	movzbl 0x28(%rbx),%eax
+ 7b0:	45 01 e4             	add    %r12d,%r12d
+ 7b3:	48 c7 43 20 ff ff ff 	movq   $0xffffffffffffffff,0x20(%rbx)
+ 7ba:	ff 
+ 7bb:	83 e0 fd             	and    $0xfffffffd,%eax
+ 7be:	44 09 e0             	or     %r12d,%eax
+ 7c1:	88 43 28             	mov    %al,0x28(%rbx)
+ 7c4:	48 8b 04 24          	mov    (%rsp),%rax
+ 7c8:	48 89 18             	mov    %rbx,(%rax)
+ 7cb:	48 8d 43 30          	lea    0x30(%rbx),%rax
+ 7cf:	48 89 04 24          	mov    %rax,(%rsp)
+ 7d3:	4c 89 f7             	mov    %r14,%rdi
+ 7d6:	e8 00 00 00 00       	call   7db <read_file_system_list+0x74b>
+ 7db:	48 89 c5             	mov    %rax,%rbp
+ 7de:	48 85 c0             	test   %rax,%rax
+ 7e1:	0f 84 fd fe ff ff    	je     6e4 <read_file_system_list+0x654>
+ 7e7:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 7ee <read_file_system_list+0x75e>
+ 7ee:	48 89 ef             	mov    %rbp,%rdi
+ 7f1:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+ 7f7:	e8 00 00 00 00       	call   7fc <read_file_system_list+0x76c>
+ 7fc:	bf 38 00 00 00       	mov    $0x38,%edi
+ 801:	49 89 c5             	mov    %rax,%r13
+ 804:	e8 00 00 00 00       	call   809 <read_file_system_list+0x779>
+ 809:	48 8b 7d 00          	mov    0x0(%rbp),%rdi
+ 80d:	48 89 c3             	mov    %rax,%rbx
+ 810:	e8 00 00 00 00       	call   815 <read_file_system_list+0x785>
+ 815:	48 8b 7d 08          	mov    0x8(%rbp),%rdi
+ 819:	48 89 03             	mov    %rax,(%rbx)
+ 81c:	e8 00 00 00 00       	call   821 <read_file_system_list+0x791>
+ 821:	48 c7 43 10 00 00 00 	movq   $0x0,0x10(%rbx)
+ 828:	00 
+ 829:	48 8b 7d 10          	mov    0x10(%rbp),%rdi
+ 82d:	48 89 43 08          	mov    %rax,0x8(%rbx)
+ 831:	e8 00 00 00 00       	call   836 <read_file_system_list+0x7a6>
+ 836:	80 4b 28 04          	orb    $0x4,0x28(%rbx)
+ 83a:	4c 89 fe             	mov    %r15,%rsi
+ 83d:	48 89 43 18          	mov    %rax,0x18(%rbx)
+ 841:	48 89 c7             	mov    %rax,%rdi
+ 844:	48 89 c5             	mov    %rax,%rbp
+ 847:	e8 00 00 00 00       	call   84c <read_file_system_list+0x7bc>
+ 84c:	85 c0                	test   %eax,%eax
+ 84e:	0f 84 1a 01 00 00    	je     96e <read_file_system_list+0x8de>
+ 854:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 85b <read_file_system_list+0x7cb>
+ 85b:	48 89 ef             	mov    %rbp,%rdi
+ 85e:	e8 00 00 00 00       	call   863 <read_file_system_list+0x7d3>
+ 863:	85 c0                	test   %eax,%eax
+ 865:	0f 84 03 01 00 00    	je     96e <read_file_system_list+0x8de>
+ 86b:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 872 <read_file_system_list+0x7e2>
+ 872:	48 89 ef             	mov    %rbp,%rdi
+ 875:	e8 00 00 00 00       	call   87a <read_file_system_list+0x7ea>
+ 87a:	85 c0                	test   %eax,%eax
+ 87c:	0f 84 ec 00 00 00    	je     96e <read_file_system_list+0x8de>
+ 882:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 889 <read_file_system_list+0x7f9>
+ 889:	48 89 ef             	mov    %rbp,%rdi
+ 88c:	e8 00 00 00 00       	call   891 <read_file_system_list+0x801>
+ 891:	85 c0                	test   %eax,%eax
+ 893:	0f 84 d5 00 00 00    	je     96e <read_file_system_list+0x8de>
+ 899:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 8a0 <read_file_system_list+0x810>
+ 8a0:	48 89 ef             	mov    %rbp,%rdi
+ 8a3:	e8 00 00 00 00       	call   8a8 <read_file_system_list+0x818>
+ 8a8:	85 c0                	test   %eax,%eax
+ 8aa:	0f 84 be 00 00 00    	je     96e <read_file_system_list+0x8de>
+ 8b0:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 8b7 <read_file_system_list+0x827>
+ 8b7:	48 89 ef             	mov    %rbp,%rdi
+ 8ba:	e8 00 00 00 00       	call   8bf <read_file_system_list+0x82f>
+ 8bf:	85 c0                	test   %eax,%eax
+ 8c1:	0f 84 a7 00 00 00    	je     96e <read_file_system_list+0x8de>
+ 8c7:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 8ce <read_file_system_list+0x83e>
+ 8ce:	48 89 ef             	mov    %rbp,%rdi
+ 8d1:	e8 00 00 00 00       	call   8d6 <read_file_system_list+0x846>
+ 8d6:	85 c0                	test   %eax,%eax
+ 8d8:	0f 84 90 00 00 00    	je     96e <read_file_system_list+0x8de>
+ 8de:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 8e5 <read_file_system_list+0x855>
+ 8e5:	48 89 ef             	mov    %rbp,%rdi
+ 8e8:	e8 00 00 00 00       	call   8ed <read_file_system_list+0x85d>
+ 8ed:	85 c0                	test   %eax,%eax
+ 8ef:	74 7d                	je     96e <read_file_system_list+0x8de>
+ 8f1:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 8f8 <read_file_system_list+0x868>
+ 8f8:	48 89 ef             	mov    %rbp,%rdi
+ 8fb:	e8 00 00 00 00       	call   900 <read_file_system_list+0x870>
+ 900:	85 c0                	test   %eax,%eax
+ 902:	74 6a                	je     96e <read_file_system_list+0x8de>
+ 904:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 90b <read_file_system_list+0x87b>
+ 90b:	48 89 ef             	mov    %rbp,%rdi
+ 90e:	e8 00 00 00 00       	call   913 <read_file_system_list+0x883>
+ 913:	85 c0                	test   %eax,%eax
+ 915:	74 57                	je     96e <read_file_system_list+0x8de>
+ 917:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 91e <read_file_system_list+0x88e>
+ 91e:	48 89 ef             	mov    %rbp,%rdi
+ 921:	e8 00 00 00 00       	call   926 <read_file_system_list+0x896>
+ 926:	85 c0                	test   %eax,%eax
+ 928:	74 44                	je     96e <read_file_system_list+0x8de>
+ 92a:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 931 <read_file_system_list+0x8a1>
+ 931:	48 89 ef             	mov    %rbp,%rdi
+ 934:	e8 00 00 00 00       	call   939 <read_file_system_list+0x8a9>
+ 939:	85 c0                	test   %eax,%eax
+ 93b:	74 31                	je     96e <read_file_system_list+0x8de>
+ 93d:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 944 <read_file_system_list+0x8b4>
+ 944:	48 89 ef             	mov    %rbp,%rdi
+ 947:	e8 00 00 00 00       	call   94c <read_file_system_list+0x8bc>
+ 94c:	85 c0                	test   %eax,%eax
+ 94e:	74 1e                	je     96e <read_file_system_list+0x8de>
+ 950:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 957 <read_file_system_list+0x8c7>
+ 957:	48 89 ef             	mov    %rbp,%rdi
+ 95a:	e8 00 00 00 00       	call   95f <read_file_system_list+0x8cf>
+ 95f:	4d 85 ed             	test   %r13,%r13
+ 962:	41 0f 94 c4          	sete   %r12b
+ 966:	85 c0                	test   %eax,%eax
+ 968:	0f 94 c0             	sete   %al
+ 96b:	41 21 c4             	and    %eax,%r12d
+ 96e:	0f b6 43 28          	movzbl 0x28(%rbx),%eax
+ 972:	4c 8b 2b             	mov    (%rbx),%r13
+ 975:	be 3a 00 00 00       	mov    $0x3a,%esi
+ 97a:	83 e0 fe             	and    $0xfffffffe,%eax
+ 97d:	4c 89 ef             	mov    %r13,%rdi
+ 980:	44 09 e0             	or     %r12d,%eax
+ 983:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+ 989:	88 43 28             	mov    %al,0x28(%rbx)
+ 98c:	e8 00 00 00 00       	call   991 <read_file_system_list+0x901>
+ 991:	48 85 c0             	test   %rax,%rax
+ 994:	0f 85 12 fe ff ff    	jne    7ac <read_file_system_list+0x71c>
+ 99a:	41 80 7d 00 2f       	cmpb   $0x2f,0x0(%r13)
+ 99f:	0f 84 f4 00 00 00    	je     a99 <read_file_system_list+0xa09>
+ 9a5:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 9ac <read_file_system_list+0x91c>
+ 9ac:	48 89 ef             	mov    %rbp,%rdi
+ 9af:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+ 9b5:	e8 00 00 00 00       	call   9ba <read_file_system_list+0x92a>
+ 9ba:	85 c0                	test   %eax,%eax
+ 9bc:	0f 84 ea fd ff ff    	je     7ac <read_file_system_list+0x71c>
+ 9c2:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 9c9 <read_file_system_list+0x939>
+ 9c9:	48 89 ef             	mov    %rbp,%rdi
+ 9cc:	e8 00 00 00 00       	call   9d1 <read_file_system_list+0x941>
+ 9d1:	85 c0                	test   %eax,%eax
+ 9d3:	0f 84 d3 fd ff ff    	je     7ac <read_file_system_list+0x71c>
+ 9d9:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 9e0 <read_file_system_list+0x950>
+ 9e0:	48 89 ef             	mov    %rbp,%rdi
+ 9e3:	e8 00 00 00 00       	call   9e8 <read_file_system_list+0x958>
+ 9e8:	85 c0                	test   %eax,%eax
+ 9ea:	0f 84 bc fd ff ff    	je     7ac <read_file_system_list+0x71c>
+ 9f0:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 9f7 <read_file_system_list+0x967>
+ 9f7:	48 89 ef             	mov    %rbp,%rdi
+ 9fa:	e8 00 00 00 00       	call   9ff <read_file_system_list+0x96f>
+ 9ff:	85 c0                	test   %eax,%eax
+ a01:	0f 84 a5 fd ff ff    	je     7ac <read_file_system_list+0x71c>
+ a07:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # a0e <read_file_system_list+0x97e>
+ a0e:	48 89 ef             	mov    %rbp,%rdi
+ a11:	e8 00 00 00 00       	call   a16 <read_file_system_list+0x986>
+ a16:	85 c0                	test   %eax,%eax
+ a18:	0f 84 8e fd ff ff    	je     7ac <read_file_system_list+0x71c>
+ a1e:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # a25 <read_file_system_list+0x995>
+ a25:	48 89 ef             	mov    %rbp,%rdi
+ a28:	e8 00 00 00 00       	call   a2d <read_file_system_list+0x99d>
+ a2d:	85 c0                	test   %eax,%eax
+ a2f:	0f 84 77 fd ff ff    	je     7ac <read_file_system_list+0x71c>
+ a35:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # a3c <read_file_system_list+0x9ac>
+ a3c:	48 89 ef             	mov    %rbp,%rdi
+ a3f:	e8 00 00 00 00       	call   a44 <read_file_system_list+0x9b4>
+ a44:	85 c0                	test   %eax,%eax
+ a46:	0f 84 60 fd ff ff    	je     7ac <read_file_system_list+0x71c>
+ a4c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # a53 <read_file_system_list+0x9c3>
+ a53:	48 89 ef             	mov    %rbp,%rdi
+ a56:	e8 00 00 00 00       	call   a5b <read_file_system_list+0x9cb>
+ a5b:	85 c0                	test   %eax,%eax
+ a5d:	0f 84 49 fd ff ff    	je     7ac <read_file_system_list+0x71c>
+ a63:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # a6a <read_file_system_list+0x9da>
+ a6a:	48 89 ef             	mov    %rbp,%rdi
+ a6d:	e8 00 00 00 00       	call   a72 <read_file_system_list+0x9e2>
+ a72:	85 c0                	test   %eax,%eax
+ a74:	0f 84 32 fd ff ff    	je     7ac <read_file_system_list+0x71c>
+ a7a:	4c 89 ee             	mov    %r13,%rsi
+ a7d:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # a84 <read_file_system_list+0x9f4>
+ a84:	e8 00 00 00 00       	call   a89 <read_file_system_list+0x9f9>
+ a89:	85 c0                	test   %eax,%eax
+ a8b:	41 0f 94 c4          	sete   %r12b
+ a8f:	e9 18 fd ff ff       	jmp    7ac <read_file_system_list+0x71c>
+ a94:	e8 00 00 00 00       	call   a99 <read_file_system_list+0xa09>
+ a99:	41 80 7d 01 2f       	cmpb   $0x2f,0x1(%r13)
+ a9e:	0f 85 01 ff ff ff    	jne    9a5 <read_file_system_list+0x915>
+ aa4:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # aab <read_file_system_list+0xa1b>
+ aab:	48 89 ef             	mov    %rbp,%rdi
+ aae:	e8 00 00 00 00       	call   ab3 <read_file_system_list+0xa23>
+ ab3:	85 c0                	test   %eax,%eax
+ ab5:	0f 84 f1 fc ff ff    	je     7ac <read_file_system_list+0x71c>
+ abb:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # ac2 <read_file_system_list+0xa32>
+ ac2:	48 89 ef             	mov    %rbp,%rdi
+ ac5:	e8 00 00 00 00       	call   aca <read_file_system_list+0xa3a>
+ aca:	85 c0                	test   %eax,%eax
+ acc:	0f 84 da fc ff ff    	je     7ac <read_file_system_list+0x71c>
+ ad2:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # ad9 <read_file_system_list+0xa49>
+ ad9:	48 89 ef             	mov    %rbp,%rdi
+ adc:	e8 00 00 00 00       	call   ae1 <read_file_system_list+0xa51>
+ ae1:	85 c0                	test   %eax,%eax
+ ae3:	0f 84 c3 fc ff ff    	je     7ac <read_file_system_list+0x71c>
+ ae9:	e9 b7 fe ff ff       	jmp    9a5 <read_file_system_list+0x915>
+ aee:	66 90                	xchg   %ax,%ax
+
+0000000000000af0 <free_mount_entry>:
+ af0:	f3 0f 1e fa          	endbr64 
+ af4:	55                   	push   %rbp
+ af5:	48 89 fd             	mov    %rdi,%rbp
+ af8:	48 8b 3f             	mov    (%rdi),%rdi
+ afb:	e8 00 00 00 00       	call   b00 <free_mount_entry+0x10>
+ b00:	48 8b 7d 08          	mov    0x8(%rbp),%rdi
+ b04:	e8 00 00 00 00       	call   b09 <free_mount_entry+0x19>
+ b09:	48 8b 7d 10          	mov    0x10(%rbp),%rdi
+ b0d:	e8 00 00 00 00       	call   b12 <free_mount_entry+0x22>
+ b12:	f6 45 28 04          	testb  $0x4,0x28(%rbp)
+ b16:	75 10                	jne    b28 <free_mount_entry+0x38>
+ b18:	48 89 ef             	mov    %rbp,%rdi
+ b1b:	5d                   	pop    %rbp
+ b1c:	e9 00 00 00 00       	jmp    b21 <free_mount_entry+0x31>
+ b21:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ b28:	48 8b 7d 18          	mov    0x18(%rbp),%rdi
+ b2c:	e8 00 00 00 00       	call   b31 <free_mount_entry+0x41>
+ b31:	48 89 ef             	mov    %rbp,%rdi
+ b34:	5d                   	pop    %rbp
+ b35:	e9 00 00 00 00       	jmp    b3a <free_mount_entry+0x4a>

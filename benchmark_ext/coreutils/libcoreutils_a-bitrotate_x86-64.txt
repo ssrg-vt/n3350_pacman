@@ -1,0 +1,84 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-bitrotate.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rotl64>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 89 f8             	mov    %rdi,%rax
+   7:	89 f1                	mov    %esi,%ecx
+   9:	48 d3 c0             	rol    %cl,%rax
+   c:	c3                   	ret    
+   d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000010 <rotr64>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	48 89 f8             	mov    %rdi,%rax
+  17:	89 f1                	mov    %esi,%ecx
+  19:	48 d3 c8             	ror    %cl,%rax
+  1c:	c3                   	ret    
+  1d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000020 <rotl32>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	89 f8                	mov    %edi,%eax
+  26:	89 f1                	mov    %esi,%ecx
+  28:	d3 c0                	rol    %cl,%eax
+  2a:	c3                   	ret    
+  2b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000030 <rotr32>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	89 f8                	mov    %edi,%eax
+  36:	89 f1                	mov    %esi,%ecx
+  38:	d3 c8                	ror    %cl,%eax
+  3a:	c3                   	ret    
+  3b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000040 <rotl_sz>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	48 89 f8             	mov    %rdi,%rax
+  47:	89 f1                	mov    %esi,%ecx
+  49:	48 d3 c0             	rol    %cl,%rax
+  4c:	c3                   	ret    
+  4d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000050 <rotr_sz>:
+  50:	f3 0f 1e fa          	endbr64 
+  54:	48 89 f8             	mov    %rdi,%rax
+  57:	89 f1                	mov    %esi,%ecx
+  59:	48 d3 c8             	ror    %cl,%rax
+  5c:	c3                   	ret    
+  5d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000060 <rotl16>:
+  60:	f3 0f 1e fa          	endbr64 
+  64:	89 f8                	mov    %edi,%eax
+  66:	89 f1                	mov    %esi,%ecx
+  68:	66 d3 c0             	rol    %cl,%ax
+  6b:	c3                   	ret    
+  6c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000070 <rotr16>:
+  70:	f3 0f 1e fa          	endbr64 
+  74:	89 f8                	mov    %edi,%eax
+  76:	89 f1                	mov    %esi,%ecx
+  78:	66 d3 c8             	ror    %cl,%ax
+  7b:	c3                   	ret    
+  7c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000080 <rotl8>:
+  80:	f3 0f 1e fa          	endbr64 
+  84:	89 f8                	mov    %edi,%eax
+  86:	89 f1                	mov    %esi,%ecx
+  88:	d2 c0                	rol    %cl,%al
+  8a:	c3                   	ret    
+  8b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000090 <rotr8>:
+  90:	f3 0f 1e fa          	endbr64 
+  94:	89 f8                	mov    %edi,%eax
+  96:	89 f1                	mov    %esi,%ecx
+  98:	d2 c8                	ror    %cl,%al
+  9a:	c3                   	ret    

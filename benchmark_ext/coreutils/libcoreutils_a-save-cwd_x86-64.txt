@@ -1,0 +1,62 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-save-cwd.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <save_cwd>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	53                   	push   %rbx
+   5:	be 00 00 08 00       	mov    $0x80000,%esi
+   a:	48 89 fb             	mov    %rdi,%rbx
+   d:	31 c0                	xor    %eax,%eax
+   f:	48 c7 47 08 00 00 00 	movq   $0x0,0x8(%rdi)
+  16:	00 
+  17:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 1e <save_cwd+0x1e>
+  1e:	e8 00 00 00 00       	call   23 <save_cwd+0x23>
+  23:	45 31 c0             	xor    %r8d,%r8d
+  26:	89 03                	mov    %eax,(%rbx)
+  28:	85 c0                	test   %eax,%eax
+  2a:	78 0c                	js     38 <save_cwd+0x38>
+  2c:	44 89 c0             	mov    %r8d,%eax
+  2f:	5b                   	pop    %rbx
+  30:	c3                   	ret    
+  31:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  38:	31 f6                	xor    %esi,%esi
+  3a:	31 ff                	xor    %edi,%edi
+  3c:	e8 00 00 00 00       	call   41 <save_cwd+0x41>
+  41:	48 83 f8 01          	cmp    $0x1,%rax
+  45:	48 89 43 08          	mov    %rax,0x8(%rbx)
+  49:	5b                   	pop    %rbx
+  4a:	45 19 c0             	sbb    %r8d,%r8d
+  4d:	44 89 c0             	mov    %r8d,%eax
+  50:	c3                   	ret    
+  51:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  58:	00 00 00 00 
+  5c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000060 <restore_cwd>:
+  60:	f3 0f 1e fa          	endbr64 
+  64:	44 8b 07             	mov    (%rdi),%r8d
+  67:	45 85 c0             	test   %r8d,%r8d
+  6a:	78 0c                	js     78 <restore_cwd+0x18>
+  6c:	44 89 c7             	mov    %r8d,%edi
+  6f:	e9 00 00 00 00       	jmp    74 <restore_cwd+0x14>
+  74:	0f 1f 40 00          	nopl   0x0(%rax)
+  78:	48 8b 7f 08          	mov    0x8(%rdi),%rdi
+  7c:	e9 00 00 00 00       	jmp    81 <restore_cwd+0x21>
+  81:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  88:	00 00 00 00 
+  8c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000090 <free_cwd>:
+  90:	f3 0f 1e fa          	endbr64 
+  94:	53                   	push   %rbx
+  95:	48 89 fb             	mov    %rdi,%rbx
+  98:	8b 3f                	mov    (%rdi),%edi
+  9a:	85 ff                	test   %edi,%edi
+  9c:	78 05                	js     a3 <free_cwd+0x13>
+  9e:	e8 00 00 00 00       	call   a3 <free_cwd+0x13>
+  a3:	48 8b 7b 08          	mov    0x8(%rbx),%rdi
+  a7:	5b                   	pop    %rbx
+  a8:	e9 00 00 00 00       	jmp    ad <free_cwd+0x1d>

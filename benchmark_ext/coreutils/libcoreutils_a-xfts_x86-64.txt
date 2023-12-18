@@ -1,0 +1,45 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xfts.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xfts_open>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 83 ec 08          	sub    $0x8,%rsp
+   8:	81 ce 00 02 00 00    	or     $0x200,%esi
+   e:	e8 00 00 00 00       	call   13 <xfts_open+0x13>
+  13:	48 85 c0             	test   %rax,%rax
+  16:	74 08                	je     20 <xfts_open+0x20>
+  18:	48 83 c4 08          	add    $0x8,%rsp
+  1c:	c3                   	ret    
+  1d:	0f 1f 00             	nopl   (%rax)
+  20:	e8 00 00 00 00       	call   25 <xfts_open+0x25>
+  25:	83 38 16             	cmpl   $0x16,(%rax)
+  28:	74 06                	je     30 <xfts_open+0x30>
+  2a:	e8 00 00 00 00       	call   2f <xfts_open+0x2f>
+  2f:	90                   	nop
+  30:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 37 <xfts_open+0x37>
+  37:	ba 28 00 00 00       	mov    $0x28,%edx
+  3c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 43 <xfts_open+0x43>
+  43:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 4a <xfts_open+0x4a>
+  4a:	e8 00 00 00 00       	call   4f <xfts_open+0x4f>
+  4f:	90                   	nop
+
+0000000000000050 <cycle_warning_required>:
+  50:	f3 0f 1e fa          	endbr64 
+  54:	8b 47 48             	mov    0x48(%rdi),%eax
+  57:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+  5d:	83 e0 11             	and    $0x11,%eax
+  60:	83 f8 10             	cmp    $0x10,%eax
+  63:	74 08                	je     6d <cycle_warning_required+0x1d>
+  65:	45 31 c0             	xor    %r8d,%r8d
+  68:	83 f8 11             	cmp    $0x11,%eax
+  6b:	74 0b                	je     78 <cycle_warning_required+0x28>
+  6d:	44 89 c0             	mov    %r8d,%eax
+  70:	c3                   	ret    
+  71:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  78:	48 83 7e 58 00       	cmpq   $0x0,0x58(%rsi)
+  7d:	41 0f 95 c0          	setne  %r8b
+  81:	44 89 c0             	mov    %r8d,%eax
+  84:	c3                   	ret    

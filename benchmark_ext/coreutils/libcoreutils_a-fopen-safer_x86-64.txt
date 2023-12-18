@@ -1,0 +1,59 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-fopen-safer.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fopen_safer>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	55                   	push   %rbp
+   9:	48 89 f5             	mov    %rsi,%rbp
+   c:	e8 00 00 00 00       	call   11 <fopen_safer+0x11>
+  11:	49 89 c4             	mov    %rax,%r12
+  14:	48 85 c0             	test   %rax,%rax
+  17:	74 0d                	je     26 <fopen_safer+0x26>
+  19:	48 89 c7             	mov    %rax,%rdi
+  1c:	e8 00 00 00 00       	call   21 <fopen_safer+0x21>
+  21:	83 f8 02             	cmp    $0x2,%eax
+  24:	76 0a                	jbe    30 <fopen_safer+0x30>
+  26:	4c 89 e0             	mov    %r12,%rax
+  29:	5d                   	pop    %rbp
+  2a:	41 5c                	pop    %r12
+  2c:	41 5d                	pop    %r13
+  2e:	c3                   	ret    
+  2f:	90                   	nop
+  30:	89 c7                	mov    %eax,%edi
+  32:	e8 00 00 00 00       	call   37 <fopen_safer+0x37>
+  37:	41 89 c5             	mov    %eax,%r13d
+  3a:	85 c0                	test   %eax,%eax
+  3c:	78 42                	js     80 <fopen_safer+0x80>
+  3e:	4c 89 e7             	mov    %r12,%rdi
+  41:	e8 00 00 00 00       	call   46 <fopen_safer+0x46>
+  46:	85 c0                	test   %eax,%eax
+  48:	75 16                	jne    60 <fopen_safer+0x60>
+  4a:	48 89 ee             	mov    %rbp,%rsi
+  4d:	44 89 ef             	mov    %r13d,%edi
+  50:	e8 00 00 00 00       	call   55 <fopen_safer+0x55>
+  55:	49 89 c4             	mov    %rax,%r12
+  58:	48 85 c0             	test   %rax,%rax
+  5b:	75 c9                	jne    26 <fopen_safer+0x26>
+  5d:	0f 1f 00             	nopl   (%rax)
+  60:	e8 00 00 00 00       	call   65 <fopen_safer+0x65>
+  65:	44 89 ef             	mov    %r13d,%edi
+  68:	44 8b 20             	mov    (%rax),%r12d
+  6b:	48 89 c5             	mov    %rax,%rbp
+  6e:	e8 00 00 00 00       	call   73 <fopen_safer+0x73>
+  73:	44 89 65 00          	mov    %r12d,0x0(%rbp)
+  77:	45 31 e4             	xor    %r12d,%r12d
+  7a:	eb aa                	jmp    26 <fopen_safer+0x26>
+  7c:	0f 1f 40 00          	nopl   0x0(%rax)
+  80:	e8 00 00 00 00       	call   85 <fopen_safer+0x85>
+  85:	4c 89 e7             	mov    %r12,%rdi
+  88:	45 31 e4             	xor    %r12d,%r12d
+  8b:	44 8b 28             	mov    (%rax),%r13d
+  8e:	48 89 c5             	mov    %rax,%rbp
+  91:	e8 00 00 00 00       	call   96 <fopen_safer+0x96>
+  96:	44 89 6d 00          	mov    %r13d,0x0(%rbp)
+  9a:	eb 8a                	jmp    26 <fopen_safer+0x26>

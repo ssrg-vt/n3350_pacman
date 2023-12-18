@@ -1,0 +1,37 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-openat-safer.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <openat_safer>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 83 ec 58          	sub    $0x58,%rsp
+   8:	48 89 4c 24 38       	mov    %rcx,0x38(%rsp)
+   d:	31 c9                	xor    %ecx,%ecx
+   f:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  16:	00 00 
+  18:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  1d:	31 c0                	xor    %eax,%eax
+  1f:	f6 c2 40             	test   $0x40,%dl
+  22:	75 2c                	jne    50 <openat_safer+0x50>
+  24:	31 c0                	xor    %eax,%eax
+  26:	e8 00 00 00 00       	call   2b <openat_safer+0x2b>
+  2b:	89 c7                	mov    %eax,%edi
+  2d:	e8 00 00 00 00       	call   32 <openat_safer+0x32>
+  32:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+  37:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  3e:	00 00 
+  40:	75 2f                	jne    71 <openat_safer+0x71>
+  42:	48 83 c4 58          	add    $0x58,%rsp
+  46:	c3                   	ret    
+  47:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  4e:	00 00 
+  50:	48 8d 44 24 60       	lea    0x60(%rsp),%rax
+  55:	c7 04 24 18 00 00 00 	movl   $0x18,(%rsp)
+  5c:	8b 4c 24 38          	mov    0x38(%rsp),%ecx
+  60:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  65:	48 8d 44 24 20       	lea    0x20(%rsp),%rax
+  6a:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+  6f:	eb b3                	jmp    24 <openat_safer+0x24>
+  71:	e8 00 00 00 00       	call   76 <openat_safer+0x76>

@@ -1,0 +1,115 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-ftoastr.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <ftoastr>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	0f 28 d8             	movaps %xmm0,%xmm3
+   9:	66 0f ef d2          	pxor   %xmm2,%xmm2
+   d:	66 0f ef ed          	pxor   %xmm5,%xmm5
+  11:	41 56                	push   %r14
+  13:	0f 28 cb             	movaps %xmm3,%xmm1
+  16:	f3 0f 5a e8          	cvtss2sd %xmm0,%xmm5
+  1a:	41 bf 01 00 00 00    	mov    $0x1,%r15d
+  20:	41 55                	push   %r13
+  22:	41 89 cd             	mov    %ecx,%r13d
+  25:	f3 0f c2 ca 01       	cmpltss %xmm2,%xmm1
+  2a:	b9 25 2d 00 00       	mov    $0x2d25,%ecx
+  2f:	41 54                	push   %r12
+  31:	55                   	push   %rbp
+  32:	48 89 fd             	mov    %rdi,%rbp
+  35:	53                   	push   %rbx
+  36:	48 89 f3             	mov    %rsi,%rbx
+  39:	be 2a 2e 00 00       	mov    $0x2e2a,%esi
+  3e:	48 83 ec 38          	sub    $0x38,%rsp
+  42:	f3 0f 11 44 24 0c    	movss  %xmm0,0xc(%rsp)
+  48:	0f 57 05 00 00 00 00 	xorps  0x0(%rip),%xmm0        # 4f <ftoastr+0x4f>
+  4f:	4c 8d 74 24 1d       	lea    0x1d(%rsp),%r14
+  54:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  5b:	00 00 
+  5d:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+  62:	31 c0                	xor    %eax,%eax
+  64:	66 89 4c 24 1d       	mov    %cx,0x1d(%rsp)
+  69:	89 d0                	mov    %edx,%eax
+  6b:	89 d1                	mov    %edx,%ecx
+  6d:	83 e0 01             	and    $0x1,%eax
+  70:	d1 e9                	shr    %ecx
+  72:	0f 54 c1             	andps  %xmm1,%xmm0
+  75:	0f 55 cb             	andnps %xmm3,%xmm1
+  78:	83 e1 01             	and    $0x1,%ecx
+  7b:	48 8d 44 04 1e       	lea    0x1e(%rsp,%rax,1),%rax
+  80:	0f 56 c1             	orps   %xmm1,%xmm0
+  83:	f2 0f 11 2c 24       	movsd  %xmm5,(%rsp)
+  88:	c6 00 2b             	movb   $0x2b,(%rax)
+  8b:	48 01 c8             	add    %rcx,%rax
+  8e:	89 d1                	mov    %edx,%ecx
+  90:	f3 0f 10 0d 00 00 00 	movss  0x0(%rip),%xmm1        # 98 <ftoastr+0x98>
+  97:	00 
+  98:	c1 e9 02             	shr    $0x2,%ecx
+  9b:	c6 00 20             	movb   $0x20,(%rax)
+  9e:	83 e1 01             	and    $0x1,%ecx
+  a1:	48 01 c8             	add    %rcx,%rax
+  a4:	89 d1                	mov    %edx,%ecx
+  a6:	83 e2 10             	and    $0x10,%edx
+  a9:	c1 e9 03             	shr    $0x3,%ecx
+  ac:	c6 00 30             	movb   $0x30,(%rax)
+  af:	83 e1 01             	and    $0x1,%ecx
+  b2:	48 01 c8             	add    %rcx,%rax
+  b5:	83 fa 01             	cmp    $0x1,%edx
+  b8:	19 d2                	sbb    %edx,%edx
+  ba:	66 89 30             	mov    %si,(%rax)
+  bd:	83 e2 20             	and    $0x20,%edx
+  c0:	c6 40 02 2a          	movb   $0x2a,0x2(%rax)
+  c4:	83 c2 47             	add    $0x47,%edx
+  c7:	0f 2f c8             	comiss %xmm0,%xmm1
+  ca:	c6 40 04 00          	movb   $0x0,0x4(%rax)
+  ce:	88 50 03             	mov    %dl,0x3(%rax)
+  d1:	b8 06 00 00 00       	mov    $0x6,%eax
+  d6:	44 0f 46 f8          	cmovbe %eax,%r15d
+  da:	eb 08                	jmp    e4 <ftoastr+0xe4>
+  dc:	0f 1f 40 00          	nopl   0x0(%rax)
+  e0:	41 83 c7 01          	add    $0x1,%r15d
+  e4:	48 83 ec 08          	sub    $0x8,%rsp
+  e8:	ba 01 00 00 00       	mov    $0x1,%edx
+  ed:	45 89 e9             	mov    %r13d,%r9d
+  f0:	4d 89 f0             	mov    %r14,%r8
+  f3:	41 57                	push   %r15
+  f5:	f2 0f 10 44 24 10    	movsd  0x10(%rsp),%xmm0
+  fb:	48 89 de             	mov    %rbx,%rsi
+  fe:	48 89 ef             	mov    %rbp,%rdi
+ 101:	48 c7 c1 ff ff ff ff 	mov    $0xffffffffffffffff,%rcx
+ 108:	b8 01 00 00 00       	mov    $0x1,%eax
+ 10d:	e8 00 00 00 00       	call   112 <ftoastr+0x112>
+ 112:	41 89 c4             	mov    %eax,%r12d
+ 115:	58                   	pop    %rax
+ 116:	5a                   	pop    %rdx
+ 117:	45 85 e4             	test   %r12d,%r12d
+ 11a:	78 21                	js     13d <ftoastr+0x13d>
+ 11c:	41 83 ff 08          	cmp    $0x8,%r15d
+ 120:	7f 1b                	jg     13d <ftoastr+0x13d>
+ 122:	49 63 c4             	movslq %r12d,%rax
+ 125:	48 39 d8             	cmp    %rbx,%rax
+ 128:	73 b6                	jae    e0 <ftoastr+0xe0>
+ 12a:	31 f6                	xor    %esi,%esi
+ 12c:	48 89 ef             	mov    %rbp,%rdi
+ 12f:	e8 00 00 00 00       	call   134 <ftoastr+0x134>
+ 134:	0f 2e 44 24 0c       	ucomiss 0xc(%rsp),%xmm0
+ 139:	7a a5                	jp     e0 <ftoastr+0xe0>
+ 13b:	75 a3                	jne    e0 <ftoastr+0xe0>
+ 13d:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+ 142:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 149:	00 00 
+ 14b:	75 12                	jne    15f <ftoastr+0x15f>
+ 14d:	48 83 c4 38          	add    $0x38,%rsp
+ 151:	44 89 e0             	mov    %r12d,%eax
+ 154:	5b                   	pop    %rbx
+ 155:	5d                   	pop    %rbp
+ 156:	41 5c                	pop    %r12
+ 158:	41 5d                	pop    %r13
+ 15a:	41 5e                	pop    %r14
+ 15c:	41 5f                	pop    %r15
+ 15e:	c3                   	ret    
+ 15f:	e8 00 00 00 00       	call   164 <ftoastr+0x164>

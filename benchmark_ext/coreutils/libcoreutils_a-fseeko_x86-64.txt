@@ -1,0 +1,41 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-fseeko.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_fseeko>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	48 89 fd             	mov    %rdi,%rbp
+   8:	48 83 ec 10          	sub    $0x10,%rsp
+   c:	48 8b 47 08          	mov    0x8(%rdi),%rax
+  10:	48 39 47 10          	cmp    %rax,0x10(%rdi)
+  14:	74 12                	je     28 <rpl_fseeko+0x28>
+  16:	48 83 c4 10          	add    $0x10,%rsp
+  1a:	48 89 ef             	mov    %rbp,%rdi
+  1d:	5d                   	pop    %rbp
+  1e:	e9 00 00 00 00       	jmp    23 <rpl_fseeko+0x23>
+  23:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  28:	48 8b 47 20          	mov    0x20(%rdi),%rax
+  2c:	48 39 47 28          	cmp    %rax,0x28(%rdi)
+  30:	75 e4                	jne    16 <rpl_fseeko+0x16>
+  32:	48 83 7f 48 00       	cmpq   $0x0,0x48(%rdi)
+  37:	75 dd                	jne    16 <rpl_fseeko+0x16>
+  39:	89 54 24 0c          	mov    %edx,0xc(%rsp)
+  3d:	48 89 34 24          	mov    %rsi,(%rsp)
+  41:	e8 00 00 00 00       	call   46 <rpl_fseeko+0x46>
+  46:	8b 54 24 0c          	mov    0xc(%rsp),%edx
+  4a:	48 8b 34 24          	mov    (%rsp),%rsi
+  4e:	89 c7                	mov    %eax,%edi
+  50:	e8 00 00 00 00       	call   55 <rpl_fseeko+0x55>
+  55:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+  59:	74 13                	je     6e <rpl_fseeko+0x6e>
+  5b:	83 65 00 ef          	andl   $0xffffffef,0x0(%rbp)
+  5f:	48 89 85 90 00 00 00 	mov    %rax,0x90(%rbp)
+  66:	31 c0                	xor    %eax,%eax
+  68:	48 83 c4 10          	add    $0x10,%rsp
+  6c:	5d                   	pop    %rbp
+  6d:	c3                   	ret    
+  6e:	83 c8 ff             	or     $0xffffffff,%eax
+  71:	eb f5                	jmp    68 <rpl_fseeko+0x68>

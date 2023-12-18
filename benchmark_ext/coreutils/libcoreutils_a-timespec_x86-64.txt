@@ -1,0 +1,59 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-timespec.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <make_timespec>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 89 f8             	mov    %rdi,%rax
+   7:	48 89 f2             	mov    %rsi,%rdx
+   a:	c3                   	ret    
+   b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000010 <timespec_cmp>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	48 39 d7             	cmp    %rdx,%rdi
+  17:	0f 9f c2             	setg   %dl
+  1a:	0f 9c c0             	setl   %al
+  1d:	0f b6 c0             	movzbl %al,%eax
+  20:	0f b6 d2             	movzbl %dl,%edx
+  23:	29 c2                	sub    %eax,%edx
+  25:	31 c0                	xor    %eax,%eax
+  27:	48 39 ce             	cmp    %rcx,%rsi
+  2a:	0f 9c c1             	setl   %cl
+  2d:	0f 9f c0             	setg   %al
+  30:	0f b6 c9             	movzbl %cl,%ecx
+  33:	29 c8                	sub    %ecx,%eax
+  35:	8d 04 50             	lea    (%rax,%rdx,2),%eax
+  38:	c3                   	ret    
+  39:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000040 <timespec_sign>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	48 85 f6             	test   %rsi,%rsi
+  47:	0f 95 c2             	setne  %dl
+  4a:	31 c0                	xor    %eax,%eax
+  4c:	48 85 ff             	test   %rdi,%rdi
+  4f:	0f 94 c0             	sete   %al
+  52:	21 d0                	and    %edx,%eax
+  54:	31 d2                	xor    %edx,%edx
+  56:	48 85 ff             	test   %rdi,%rdi
+  59:	0f 9f c2             	setg   %dl
+  5c:	48 c1 ef 3f          	shr    $0x3f,%rdi
+  60:	29 fa                	sub    %edi,%edx
+  62:	01 d0                	add    %edx,%eax
+  64:	c3                   	ret    
+  65:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  6c:	00 00 00 00 
+
+0000000000000070 <timespectod>:
+  70:	f3 0f 1e fa          	endbr64 
+  74:	66 0f ef c9          	pxor   %xmm1,%xmm1
+  78:	66 0f ef c0          	pxor   %xmm0,%xmm0
+  7c:	f2 48 0f 2a cf       	cvtsi2sd %rdi,%xmm1
+  81:	f2 48 0f 2a c6       	cvtsi2sd %rsi,%xmm0
+  86:	f2 0f 5e 05 00 00 00 	divsd  0x0(%rip),%xmm0        # 8e <timespectod+0x1e>
+  8d:	00 
+  8e:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+  92:	c3                   	ret    

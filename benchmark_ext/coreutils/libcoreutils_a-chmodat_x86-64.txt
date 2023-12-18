@@ -1,0 +1,16 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-chmodat.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <chmodat>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	31 c9                	xor    %ecx,%ecx
+   6:	e9 00 00 00 00       	jmp    b <chmodat+0xb>
+   b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000010 <lchmodat>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	b9 00 01 00 00       	mov    $0x100,%ecx
+  19:	e9 00 00 00 00       	jmp    1e <lchmodat+0xe>

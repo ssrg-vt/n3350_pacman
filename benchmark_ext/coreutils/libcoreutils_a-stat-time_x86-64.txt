@@ -1,0 +1,65 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-stat-time.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <get_stat_atime_ns>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 8b 47 50          	mov    0x50(%rdi),%rax
+   8:	c3                   	ret    
+   9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000010 <get_stat_ctime_ns>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	48 8b 47 70          	mov    0x70(%rdi),%rax
+  18:	c3                   	ret    
+  19:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000020 <get_stat_mtime_ns>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	48 8b 47 60          	mov    0x60(%rdi),%rax
+  28:	c3                   	ret    
+  29:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000030 <get_stat_birthtime_ns>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	31 c0                	xor    %eax,%eax
+  36:	c3                   	ret    
+  37:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  3e:	00 00 
+
+0000000000000040 <get_stat_atime>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	48 8b 47 48          	mov    0x48(%rdi),%rax
+  48:	48 8b 57 50          	mov    0x50(%rdi),%rdx
+  4c:	c3                   	ret    
+  4d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000050 <get_stat_ctime>:
+  50:	f3 0f 1e fa          	endbr64 
+  54:	48 8b 47 68          	mov    0x68(%rdi),%rax
+  58:	48 8b 57 70          	mov    0x70(%rdi),%rdx
+  5c:	c3                   	ret    
+  5d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000060 <get_stat_mtime>:
+  60:	f3 0f 1e fa          	endbr64 
+  64:	48 8b 47 58          	mov    0x58(%rdi),%rax
+  68:	48 8b 57 60          	mov    0x60(%rdi),%rdx
+  6c:	c3                   	ret    
+  6d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000070 <get_stat_birthtime>:
+  70:	f3 0f 1e fa          	endbr64 
+  74:	48 c7 c0 ff ff ff ff 	mov    $0xffffffffffffffff,%rax
+  7b:	48 c7 c2 ff ff ff ff 	mov    $0xffffffffffffffff,%rdx
+  82:	c3                   	ret    
+  83:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  8a:	00 00 00 00 
+  8e:	66 90                	xchg   %ax,%ax
+
+0000000000000090 <stat_time_normalize>:
+  90:	f3 0f 1e fa          	endbr64 
+  94:	89 f8                	mov    %edi,%eax
+  96:	c3                   	ret    

@@ -1,0 +1,53 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-progname.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <set_program_name>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	55                   	push   %rbp
+   7:	53                   	push   %rbx
+   8:	48 85 ff             	test   %rdi,%rdi
+   b:	74 78                	je     85 <set_program_name+0x85>
+   d:	be 2f 00 00 00       	mov    $0x2f,%esi
+  12:	48 89 fb             	mov    %rdi,%rbx
+  15:	e8 00 00 00 00       	call   1a <set_program_name+0x1a>
+  1a:	48 89 c5             	mov    %rax,%rbp
+  1d:	48 85 c0             	test   %rax,%rax
+  20:	74 4a                	je     6c <set_program_name+0x6c>
+  22:	4c 8d 60 01          	lea    0x1(%rax),%r12
+  26:	4c 89 e0             	mov    %r12,%rax
+  29:	48 29 d8             	sub    %rbx,%rax
+  2c:	48 83 f8 06          	cmp    $0x6,%rax
+  30:	7e 3a                	jle    6c <set_program_name+0x6c>
+  32:	48 8d 7d fa          	lea    -0x6(%rbp),%rdi
+  36:	ba 07 00 00 00       	mov    $0x7,%edx
+  3b:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 42 <set_program_name+0x42>
+  42:	e8 00 00 00 00       	call   47 <set_program_name+0x47>
+  47:	85 c0                	test   %eax,%eax
+  49:	75 21                	jne    6c <set_program_name+0x6c>
+  4b:	80 7d 01 6c          	cmpb   $0x6c,0x1(%rbp)
+  4f:	75 2f                	jne    80 <set_program_name+0x80>
+  51:	41 80 7c 24 01 74    	cmpb   $0x74,0x1(%r12)
+  57:	75 27                	jne    80 <set_program_name+0x80>
+  59:	41 80 7c 24 02 2d    	cmpb   $0x2d,0x2(%r12)
+  5f:	75 1f                	jne    80 <set_program_name+0x80>
+  61:	48 8d 5d 04          	lea    0x4(%rbp),%rbx
+  65:	48 89 1d 00 00 00 00 	mov    %rbx,0x0(%rip)        # 6c <set_program_name+0x6c>
+  6c:	48 89 1d 00 00 00 00 	mov    %rbx,0x0(%rip)        # 73 <set_program_name+0x73>
+  73:	48 89 1d 00 00 00 00 	mov    %rbx,0x0(%rip)        # 7a <set_program_name+0x7a>
+  7a:	5b                   	pop    %rbx
+  7b:	5d                   	pop    %rbp
+  7c:	41 5c                	pop    %r12
+  7e:	c3                   	ret    
+  7f:	90                   	nop
+  80:	4c 89 e3             	mov    %r12,%rbx
+  83:	eb e7                	jmp    6c <set_program_name+0x6c>
+  85:	48 8b 0d 00 00 00 00 	mov    0x0(%rip),%rcx        # 8c <set_program_name+0x8c>
+  8c:	ba 37 00 00 00       	mov    $0x37,%edx
+  91:	be 01 00 00 00       	mov    $0x1,%esi
+  96:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 9d <set_program_name+0x9d>
+  9d:	e8 00 00 00 00       	call   a2 <set_program_name+0xa2>
+  a2:	e8 00 00 00 00       	call   a7 <set_program_name+0xa7>

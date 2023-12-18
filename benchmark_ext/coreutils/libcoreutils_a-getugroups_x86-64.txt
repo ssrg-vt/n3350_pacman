@@ -1,0 +1,101 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-getugroups.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <getugroups>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	49 89 f6             	mov    %rsi,%r14
+   b:	41 55                	push   %r13
+   d:	41 54                	push   %r12
+   f:	45 31 e4             	xor    %r12d,%r12d
+  12:	55                   	push   %rbp
+  13:	89 fd                	mov    %edi,%ebp
+  15:	53                   	push   %rbx
+  16:	48 89 d3             	mov    %rdx,%rbx
+  19:	48 83 ec 18          	sub    $0x18,%rsp
+  1d:	83 f9 ff             	cmp    $0xffffffff,%ecx
+  20:	74 0e                	je     30 <getugroups+0x30>
+  22:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+  28:	85 ff                	test   %edi,%edi
+  2a:	0f 85 e1 00 00 00    	jne    111 <getugroups+0x111>
+  30:	e8 00 00 00 00       	call   35 <getugroups+0x35>
+  35:	e8 00 00 00 00       	call   3a <getugroups+0x3a>
+  3a:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  3f:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  44:	c7 00 00 00 00 00    	movl   $0x0,(%rax)
+  4a:	e8 00 00 00 00       	call   4f <getugroups+0x4f>
+  4f:	49 89 c7             	mov    %rax,%r15
+  52:	48 85 c0             	test   %rax,%rax
+  55:	0f 84 c6 00 00 00    	je     121 <getugroups+0x121>
+  5b:	4c 8b 68 18          	mov    0x18(%rax),%r13
+  5f:	49 8b 75 00          	mov    0x0(%r13),%rsi
+  63:	48 85 f6             	test   %rsi,%rsi
+  66:	75 15                	jne    7d <getugroups+0x7d>
+  68:	eb d5                	jmp    3f <getugroups+0x3f>
+  6a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  70:	49 8b 75 08          	mov    0x8(%r13),%rsi
+  74:	49 83 c5 08          	add    $0x8,%r13
+  78:	48 85 f6             	test   %rsi,%rsi
+  7b:	74 c2                	je     3f <getugroups+0x3f>
+  7d:	48 89 df             	mov    %rbx,%rdi
+  80:	e8 00 00 00 00       	call   85 <getugroups+0x85>
+  85:	85 c0                	test   %eax,%eax
+  87:	75 e7                	jne    70 <getugroups+0x70>
+  89:	45 85 e4             	test   %r12d,%r12d
+  8c:	7e 2d                	jle    bb <getugroups+0xbb>
+  8e:	41 8d 4c 24 01       	lea    0x1(%r12),%ecx
+  93:	ba 01 00 00 00       	mov    $0x1,%edx
+  98:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  9f:	00 
+  a0:	4d 85 f6             	test   %r14,%r14
+  a3:	74 0b                	je     b0 <getugroups+0xb0>
+  a5:	41 8b 47 10          	mov    0x10(%r15),%eax
+  a9:	41 39 44 96 fc       	cmp    %eax,-0x4(%r14,%rdx,4)
+  ae:	74 c0                	je     70 <getugroups+0x70>
+  b0:	89 d0                	mov    %edx,%eax
+  b2:	48 83 c2 01          	add    $0x1,%rdx
+  b6:	48 39 ca             	cmp    %rcx,%rdx
+  b9:	75 e5                	jne    a0 <getugroups+0xa0>
+  bb:	44 39 e0             	cmp    %r12d,%eax
+  be:	75 b0                	jne    70 <getugroups+0x70>
+  c0:	85 ed                	test   %ebp,%ebp
+  c2:	74 10                	je     d4 <getugroups+0xd4>
+  c4:	44 39 e5             	cmp    %r12d,%ebp
+  c7:	7e 4f                	jle    118 <getugroups+0x118>
+  c9:	41 8b 57 10          	mov    0x10(%r15),%edx
+  cd:	49 63 c4             	movslq %r12d,%rax
+  d0:	41 89 14 86          	mov    %edx,(%r14,%rax,4)
+  d4:	41 81 fc ff ff ff 7f 	cmp    $0x7fffffff,%r12d
+  db:	74 06                	je     e3 <getugroups+0xe3>
+  dd:	41 83 c4 01          	add    $0x1,%r12d
+  e1:	eb 8d                	jmp    70 <getugroups+0x70>
+  e3:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  e8:	bb 4b 00 00 00       	mov    $0x4b,%ebx
+  ed:	c7 00 4b 00 00 00    	movl   $0x4b,(%rax)
+  f3:	e8 00 00 00 00       	call   f8 <getugroups+0xf8>
+  f8:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  fd:	89 18                	mov    %ebx,(%rax)
+  ff:	48 83 c4 18          	add    $0x18,%rsp
+ 103:	44 89 e0             	mov    %r12d,%eax
+ 106:	5b                   	pop    %rbx
+ 107:	5d                   	pop    %rbp
+ 108:	41 5c                	pop    %r12
+ 10a:	41 5d                	pop    %r13
+ 10c:	41 5e                	pop    %r14
+ 10e:	41 5f                	pop    %r15
+ 110:	c3                   	ret    
+ 111:	89 0e                	mov    %ecx,(%rsi)
+ 113:	e9 18 ff ff ff       	jmp    30 <getugroups+0x30>
+ 118:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 11d:	8b 18                	mov    (%rax),%ebx
+ 11f:	eb d2                	jmp    f3 <getugroups+0xf3>
+ 121:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 126:	8b 18                	mov    (%rax),%ebx
+ 128:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 12d:	85 db                	test   %ebx,%ebx
+ 12f:	44 0f 45 e0          	cmovne %eax,%r12d
+ 133:	eb be                	jmp    f3 <getugroups+0xf3>

@@ -1,0 +1,311 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xstrtoul.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xstrtoul>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	41 55                	push   %r13
+   a:	41 54                	push   %r12
+   c:	55                   	push   %rbp
+   d:	53                   	push   %rbx
+   e:	48 83 ec 38          	sub    $0x38,%rsp
+  12:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+  17:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1e:	00 00 
+  20:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+  25:	31 c0                	xor    %eax,%eax
+  27:	83 fa 24             	cmp    $0x24,%edx
+  2a:	0f 87 e0 03 00 00    	ja     410 <xstrtoul+0x410>
+  30:	49 89 f7             	mov    %rsi,%r15
+  33:	48 85 f6             	test   %rsi,%rsi
+  36:	48 8d 44 24 20       	lea    0x20(%rsp),%rax
+  3b:	48 89 fd             	mov    %rdi,%rbp
+  3e:	4c 0f 44 f8          	cmove  %rax,%r15
+  42:	41 89 d6             	mov    %edx,%r14d
+  45:	4d 89 c5             	mov    %r8,%r13
+  48:	e8 00 00 00 00       	call   4d <xstrtoul+0x4d>
+  4d:	c7 00 00 00 00 00    	movl   $0x0,(%rax)
+  53:	49 89 c4             	mov    %rax,%r12
+  56:	0f b6 5d 00          	movzbl 0x0(%rbp),%ebx
+  5a:	e8 00 00 00 00       	call   5f <xstrtoul+0x5f>
+  5f:	48 8b 08             	mov    (%rax),%rcx
+  62:	48 89 e8             	mov    %rbp,%rax
+  65:	eb 11                	jmp    78 <xstrtoul+0x78>
+  67:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  6e:	00 00 
+  70:	0f b6 58 01          	movzbl 0x1(%rax),%ebx
+  74:	48 83 c0 01          	add    $0x1,%rax
+  78:	0f b6 d3             	movzbl %bl,%edx
+  7b:	f6 44 51 01 20       	testb  $0x20,0x1(%rcx,%rdx,2)
+  80:	75 ee                	jne    70 <xstrtoul+0x70>
+  82:	80 fb 2d             	cmp    $0x2d,%bl
+  85:	74 74                	je     fb <xstrtoul+0xfb>
+  87:	44 89 f2             	mov    %r14d,%edx
+  8a:	4c 89 fe             	mov    %r15,%rsi
+  8d:	48 89 ef             	mov    %rbp,%rdi
+  90:	e8 00 00 00 00       	call   95 <xstrtoul+0x95>
+  95:	4d 8b 07             	mov    (%r15),%r8
+  98:	48 89 c3             	mov    %rax,%rbx
+  9b:	49 39 e8             	cmp    %rbp,%r8
+  9e:	74 68                	je     108 <xstrtoul+0x108>
+  a0:	41 8b 04 24          	mov    (%r12),%eax
+  a4:	85 c0                	test   %eax,%eax
+  a6:	75 48                	jne    f0 <xstrtoul+0xf0>
+  a8:	45 31 e4             	xor    %r12d,%r12d
+  ab:	4d 85 ed             	test   %r13,%r13
+  ae:	74 0d                	je     bd <xstrtoul+0xbd>
+  b0:	41 0f b6 28          	movzbl (%r8),%ebp
+  b4:	40 84 ed             	test   %bpl,%bpl
+  b7:	0f 85 c3 00 00 00    	jne    180 <xstrtoul+0x180>
+  bd:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  c2:	48 89 18             	mov    %rbx,(%rax)
+  c5:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+  ca:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  d1:	00 00 
+  d3:	0f 85 56 03 00 00    	jne    42f <xstrtoul+0x42f>
+  d9:	48 83 c4 38          	add    $0x38,%rsp
+  dd:	44 89 e0             	mov    %r12d,%eax
+  e0:	5b                   	pop    %rbx
+  e1:	5d                   	pop    %rbp
+  e2:	41 5c                	pop    %r12
+  e4:	41 5d                	pop    %r13
+  e6:	41 5e                	pop    %r14
+  e8:	41 5f                	pop    %r15
+  ea:	c3                   	ret    
+  eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  f0:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+  f6:	83 f8 22             	cmp    $0x22,%eax
+  f9:	74 b0                	je     ab <xstrtoul+0xab>
+  fb:	41 bc 04 00 00 00    	mov    $0x4,%r12d
+ 101:	eb c2                	jmp    c5 <xstrtoul+0xc5>
+ 103:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 108:	4c 89 44 24 10       	mov    %r8,0x10(%rsp)
+ 10d:	4d 85 ed             	test   %r13,%r13
+ 110:	74 e9                	je     fb <xstrtoul+0xfb>
+ 112:	0f b6 6d 00          	movzbl 0x0(%rbp),%ebp
+ 116:	40 84 ed             	test   %bpl,%bpl
+ 119:	74 e0                	je     fb <xstrtoul+0xfb>
+ 11b:	40 0f be f5          	movsbl %bpl,%esi
+ 11f:	4c 89 ef             	mov    %r13,%rdi
+ 122:	45 31 e4             	xor    %r12d,%r12d
+ 125:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 12a:	e8 00 00 00 00       	call   12f <xstrtoul+0x12f>
+ 12f:	4c 8b 44 24 10       	mov    0x10(%rsp),%r8
+ 134:	48 85 c0             	test   %rax,%rax
+ 137:	74 c2                	je     fb <xstrtoul+0xfb>
+ 139:	8d 45 bb             	lea    -0x45(%rbp),%eax
+ 13c:	41 b9 01 00 00 00    	mov    $0x1,%r9d
+ 142:	b9 00 04 00 00       	mov    $0x400,%ecx
+ 147:	3c 2f                	cmp    $0x2f,%al
+ 149:	77 10                	ja     15b <xstrtoul+0x15b>
+ 14b:	48 ba 45 b9 30 00 44 	movabs $0x81440030b945,%rdx
+ 152:	81 00 00 
+ 155:	48 0f a3 c2          	bt     %rax,%rdx
+ 159:	72 7c                	jb     1d7 <xstrtoul+0x1d7>
+ 15b:	83 ed 42             	sub    $0x42,%ebp
+ 15e:	40 80 fd 35          	cmp    $0x35,%bpl
+ 162:	77 37                	ja     19b <xstrtoul+0x19b>
+ 164:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 16b <xstrtoul+0x16b>
+ 16b:	40 0f b6 ed          	movzbl %bpl,%ebp
+ 16f:	48 63 04 aa          	movslq (%rdx,%rbp,4),%rax
+ 173:	48 01 d0             	add    %rdx,%rax
+ 176:	3e ff e0             	notrack jmp *%rax
+ 179:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 180:	40 0f be f5          	movsbl %bpl,%esi
+ 184:	4c 89 ef             	mov    %r13,%rdi
+ 187:	4c 89 44 24 10       	mov    %r8,0x10(%rsp)
+ 18c:	e8 00 00 00 00       	call   191 <xstrtoul+0x191>
+ 191:	4c 8b 44 24 10       	mov    0x10(%rsp),%r8
+ 196:	48 85 c0             	test   %rax,%rax
+ 199:	75 9e                	jne    139 <xstrtoul+0x139>
+ 19b:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 1a0:	41 83 cc 02          	or     $0x2,%r12d
+ 1a4:	48 89 18             	mov    %rbx,(%rax)
+ 1a7:	e9 19 ff ff ff       	jmp    c5 <xstrtoul+0xc5>
+ 1ac:	48 89 d8             	mov    %rbx,%rax
+ 1af:	48 f7 e1             	mul    %rcx
+ 1b2:	48 89 c3             	mov    %rax,%rbx
+ 1b5:	0f 80 ce 00 00 00    	jo     289 <xstrtoul+0x289>
+ 1bb:	4d 63 c9             	movslq %r9d,%r9
+ 1be:	44 89 e2             	mov    %r12d,%edx
+ 1c1:	4b 8d 04 08          	lea    (%r8,%r9,1),%rax
+ 1c5:	83 ca 02             	or     $0x2,%edx
+ 1c8:	49 89 07             	mov    %rax,(%r15)
+ 1cb:	80 38 00             	cmpb   $0x0,(%rax)
+ 1ce:	44 0f 45 e2          	cmovne %edx,%r12d
+ 1d2:	e9 e6 fe ff ff       	jmp    bd <xstrtoul+0xbd>
+ 1d7:	be 30 00 00 00       	mov    $0x30,%esi
+ 1dc:	4c 89 ef             	mov    %r13,%rdi
+ 1df:	44 89 4c 24 1c       	mov    %r9d,0x1c(%rsp)
+ 1e4:	89 4c 24 18          	mov    %ecx,0x18(%rsp)
+ 1e8:	4c 89 44 24 10       	mov    %r8,0x10(%rsp)
+ 1ed:	e8 00 00 00 00       	call   1f2 <xstrtoul+0x1f2>
+ 1f2:	4c 8b 44 24 10       	mov    0x10(%rsp),%r8
+ 1f7:	b9 00 04 00 00       	mov    $0x400,%ecx
+ 1fc:	41 b9 01 00 00 00    	mov    $0x1,%r9d
+ 202:	48 85 c0             	test   %rax,%rax
+ 205:	0f 84 50 ff ff ff    	je     15b <xstrtoul+0x15b>
+ 20b:	41 0f b6 40 01       	movzbl 0x1(%r8),%eax
+ 210:	3c 44                	cmp    $0x44,%al
+ 212:	0f 84 dd 01 00 00    	je     3f5 <xstrtoul+0x3f5>
+ 218:	3c 69                	cmp    $0x69,%al
+ 21a:	74 1d                	je     239 <xstrtoul+0x239>
+ 21c:	45 31 c9             	xor    %r9d,%r9d
+ 21f:	3c 42                	cmp    $0x42,%al
+ 221:	41 0f 94 c1          	sete   %r9b
+ 225:	41 83 c1 01          	add    $0x1,%r9d
+ 229:	3c 42                	cmp    $0x42,%al
+ 22b:	b8 e8 03 00 00       	mov    $0x3e8,%eax
+ 230:	48 0f 44 c8          	cmove  %rax,%rcx
+ 234:	e9 22 ff ff ff       	jmp    15b <xstrtoul+0x15b>
+ 239:	45 31 c9             	xor    %r9d,%r9d
+ 23c:	41 80 78 02 42       	cmpb   $0x42,0x2(%r8)
+ 241:	41 0f 94 c1          	sete   %r9b
+ 245:	47 8d 4c 09 01       	lea    0x1(%r9,%r9,1),%r9d
+ 24a:	e9 0c ff ff ff       	jmp    15b <xstrtoul+0x15b>
+ 24f:	48 89 d8             	mov    %rbx,%rax
+ 252:	48 f7 e1             	mul    %rcx
+ 255:	70 32                	jo     289 <xstrtoul+0x289>
+ 257:	48 f7 e1             	mul    %rcx
+ 25a:	48 c7 c3 ff ff ff ff 	mov    $0xffffffffffffffff,%rbx
+ 261:	0f 90 c2             	seto   %dl
+ 264:	0f b6 d2             	movzbl %dl,%edx
+ 267:	48 85 d2             	test   %rdx,%rdx
+ 26a:	ba 01 00 00 00       	mov    $0x1,%edx
+ 26f:	44 0f 45 e2          	cmovne %edx,%r12d
+ 273:	48 0f 44 d8          	cmove  %rax,%rbx
+ 277:	e9 3f ff ff ff       	jmp    1bb <xstrtoul+0x1bb>
+ 27c:	48 89 d8             	mov    %rbx,%rax
+ 27f:	48 f7 e1             	mul    %rcx
+ 282:	70 05                	jo     289 <xstrtoul+0x289>
+ 284:	48 f7 e1             	mul    %rcx
+ 287:	71 ce                	jno    257 <xstrtoul+0x257>
+ 289:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+ 28f:	48 83 cb ff          	or     $0xffffffffffffffff,%rbx
+ 293:	e9 23 ff ff ff       	jmp    1bb <xstrtoul+0x1bb>
+ 298:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 29f:	00 
+ 2a0:	be 04 00 00 00       	mov    $0x4,%esi
+ 2a5:	31 ff                	xor    %edi,%edi
+ 2a7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 2ae:	00 00 
+ 2b0:	48 89 d8             	mov    %rbx,%rax
+ 2b3:	48 f7 e1             	mul    %rcx
+ 2b6:	48 89 c3             	mov    %rax,%rbx
+ 2b9:	0f 80 75 01 00 00    	jo     434 <xstrtoul+0x434>
+ 2bf:	83 ee 01             	sub    $0x1,%esi
+ 2c2:	75 ec                	jne    2b0 <xstrtoul+0x2b0>
+ 2c4:	41 09 fc             	or     %edi,%r12d
+ 2c7:	e9 ef fe ff ff       	jmp    1bb <xstrtoul+0x1bb>
+ 2cc:	48 89 d8             	mov    %rbx,%rax
+ 2cf:	ba 01 00 00 00       	mov    $0x1,%edx
+ 2d4:	48 c1 e0 0a          	shl    $0xa,%rax
+ 2d8:	48 c1 eb 36          	shr    $0x36,%rbx
+ 2dc:	48 c7 c3 ff ff ff ff 	mov    $0xffffffffffffffff,%rbx
+ 2e3:	44 0f 45 e2          	cmovne %edx,%r12d
+ 2e7:	48 0f 44 d8          	cmove  %rax,%rbx
+ 2eb:	e9 cb fe ff ff       	jmp    1bb <xstrtoul+0x1bb>
+ 2f0:	48 8d 04 1b          	lea    (%rbx,%rbx,1),%rax
+ 2f4:	ba 01 00 00 00       	mov    $0x1,%edx
+ 2f9:	48 c1 eb 3f          	shr    $0x3f,%rbx
+ 2fd:	48 c7 c3 ff ff ff ff 	mov    $0xffffffffffffffff,%rbx
+ 304:	44 0f 45 e2          	cmovne %edx,%r12d
+ 308:	48 0f 44 d8          	cmove  %rax,%rbx
+ 30c:	e9 aa fe ff ff       	jmp    1bb <xstrtoul+0x1bb>
+ 311:	48 89 d8             	mov    %rbx,%rax
+ 314:	ba 01 00 00 00       	mov    $0x1,%edx
+ 319:	48 c1 e0 09          	shl    $0x9,%rax
+ 31d:	48 c1 eb 37          	shr    $0x37,%rbx
+ 321:	48 c7 c3 ff ff ff ff 	mov    $0xffffffffffffffff,%rbx
+ 328:	44 0f 45 e2          	cmovne %edx,%r12d
+ 32c:	48 0f 44 d8          	cmove  %rax,%rbx
+ 330:	e9 86 fe ff ff       	jmp    1bb <xstrtoul+0x1bb>
+ 335:	be 06 00 00 00       	mov    $0x6,%esi
+ 33a:	31 ff                	xor    %edi,%edi
+ 33c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 340:	48 89 d8             	mov    %rbx,%rax
+ 343:	48 f7 e1             	mul    %rcx
+ 346:	48 89 c3             	mov    %rax,%rbx
+ 349:	0f 80 f3 00 00 00    	jo     442 <xstrtoul+0x442>
+ 34f:	83 ee 01             	sub    $0x1,%esi
+ 352:	75 ec                	jne    340 <xstrtoul+0x340>
+ 354:	e9 6b ff ff ff       	jmp    2c4 <xstrtoul+0x2c4>
+ 359:	be 09 00 00 00       	mov    $0x9,%esi
+ 35e:	31 ff                	xor    %edi,%edi
+ 360:	48 89 d8             	mov    %rbx,%rax
+ 363:	48 f7 e1             	mul    %rcx
+ 366:	48 89 c3             	mov    %rax,%rbx
+ 369:	0f 80 e1 00 00 00    	jo     450 <xstrtoul+0x450>
+ 36f:	83 ee 01             	sub    $0x1,%esi
+ 372:	75 ec                	jne    360 <xstrtoul+0x360>
+ 374:	e9 4b ff ff ff       	jmp    2c4 <xstrtoul+0x2c4>
+ 379:	be 0a 00 00 00       	mov    $0xa,%esi
+ 37e:	31 ff                	xor    %edi,%edi
+ 380:	48 89 d8             	mov    %rbx,%rax
+ 383:	48 f7 e1             	mul    %rcx
+ 386:	48 89 c3             	mov    %rax,%rbx
+ 389:	0f 80 dd 00 00 00    	jo     46c <xstrtoul+0x46c>
+ 38f:	83 ee 01             	sub    $0x1,%esi
+ 392:	75 ec                	jne    380 <xstrtoul+0x380>
+ 394:	e9 2b ff ff ff       	jmp    2c4 <xstrtoul+0x2c4>
+ 399:	be 07 00 00 00       	mov    $0x7,%esi
+ 39e:	31 ff                	xor    %edi,%edi
+ 3a0:	48 89 d8             	mov    %rbx,%rax
+ 3a3:	48 f7 e1             	mul    %rcx
+ 3a6:	48 89 c3             	mov    %rax,%rbx
+ 3a9:	0f 80 af 00 00 00    	jo     45e <xstrtoul+0x45e>
+ 3af:	83 ee 01             	sub    $0x1,%esi
+ 3b2:	75 ec                	jne    3a0 <xstrtoul+0x3a0>
+ 3b4:	e9 0b ff ff ff       	jmp    2c4 <xstrtoul+0x2c4>
+ 3b9:	be 05 00 00 00       	mov    $0x5,%esi
+ 3be:	31 ff                	xor    %edi,%edi
+ 3c0:	48 89 d8             	mov    %rbx,%rax
+ 3c3:	48 f7 e1             	mul    %rcx
+ 3c6:	48 89 c3             	mov    %rax,%rbx
+ 3c9:	0f 80 ab 00 00 00    	jo     47a <xstrtoul+0x47a>
+ 3cf:	83 ee 01             	sub    $0x1,%esi
+ 3d2:	75 ec                	jne    3c0 <xstrtoul+0x3c0>
+ 3d4:	e9 eb fe ff ff       	jmp    2c4 <xstrtoul+0x2c4>
+ 3d9:	be 08 00 00 00       	mov    $0x8,%esi
+ 3de:	31 ff                	xor    %edi,%edi
+ 3e0:	48 89 d8             	mov    %rbx,%rax
+ 3e3:	48 f7 e1             	mul    %rcx
+ 3e6:	48 89 c3             	mov    %rax,%rbx
+ 3e9:	70 1a                	jo     405 <xstrtoul+0x405>
+ 3eb:	83 ee 01             	sub    $0x1,%esi
+ 3ee:	75 f0                	jne    3e0 <xstrtoul+0x3e0>
+ 3f0:	e9 cf fe ff ff       	jmp    2c4 <xstrtoul+0x2c4>
+ 3f5:	41 b9 02 00 00 00    	mov    $0x2,%r9d
+ 3fb:	b9 e8 03 00 00       	mov    $0x3e8,%ecx
+ 400:	e9 56 fd ff ff       	jmp    15b <xstrtoul+0x15b>
+ 405:	bf 01 00 00 00       	mov    $0x1,%edi
+ 40a:	48 83 cb ff          	or     $0xffffffffffffffff,%rbx
+ 40e:	eb db                	jmp    3eb <xstrtoul+0x3eb>
+ 410:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 417 <xstrtoul+0x417>
+ 417:	ba 56 00 00 00       	mov    $0x56,%edx
+ 41c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 423 <xstrtoul+0x423>
+ 423:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 42a <xstrtoul+0x42a>
+ 42a:	e8 00 00 00 00       	call   42f <xstrtoul+0x42f>
+ 42f:	e8 00 00 00 00       	call   434 <xstrtoul+0x434>
+ 434:	bf 01 00 00 00       	mov    $0x1,%edi
+ 439:	48 83 cb ff          	or     $0xffffffffffffffff,%rbx
+ 43d:	e9 7d fe ff ff       	jmp    2bf <xstrtoul+0x2bf>
+ 442:	bf 01 00 00 00       	mov    $0x1,%edi
+ 447:	48 83 cb ff          	or     $0xffffffffffffffff,%rbx
+ 44b:	e9 ff fe ff ff       	jmp    34f <xstrtoul+0x34f>
+ 450:	bf 01 00 00 00       	mov    $0x1,%edi
+ 455:	48 83 cb ff          	or     $0xffffffffffffffff,%rbx
+ 459:	e9 11 ff ff ff       	jmp    36f <xstrtoul+0x36f>
+ 45e:	bf 01 00 00 00       	mov    $0x1,%edi
+ 463:	48 83 cb ff          	or     $0xffffffffffffffff,%rbx
+ 467:	e9 43 ff ff ff       	jmp    3af <xstrtoul+0x3af>
+ 46c:	bf 01 00 00 00       	mov    $0x1,%edi
+ 471:	48 83 cb ff          	or     $0xffffffffffffffff,%rbx
+ 475:	e9 15 ff ff ff       	jmp    38f <xstrtoul+0x38f>
+ 47a:	bf 01 00 00 00       	mov    $0x1,%edi
+ 47f:	48 83 cb ff          	or     $0xffffffffffffffff,%rbx
+ 483:	e9 47 ff ff ff       	jmp    3cf <xstrtoul+0x3cf>

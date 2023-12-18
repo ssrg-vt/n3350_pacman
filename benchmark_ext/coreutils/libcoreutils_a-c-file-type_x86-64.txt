@@ -1,0 +1,40 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-c-file-type.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <c_file_type>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	8b 47 18             	mov    0x18(%rdi),%eax
+   7:	25 00 f0 00 00       	and    $0xf000,%eax
+   c:	3d 00 80 00 00       	cmp    $0x8000,%eax
+  11:	74 65                	je     78 <c_file_type+0x78>
+  13:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 1a <c_file_type+0x1a>
+  1a:	3d 00 40 00 00       	cmp    $0x4000,%eax
+  1f:	74 4f                	je     70 <c_file_type+0x70>
+  21:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 28 <c_file_type+0x28>
+  28:	3d 00 a0 00 00       	cmp    $0xa000,%eax
+  2d:	74 41                	je     70 <c_file_type+0x70>
+  2f:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 36 <c_file_type+0x36>
+  36:	3d 00 60 00 00       	cmp    $0x6000,%eax
+  3b:	74 33                	je     70 <c_file_type+0x70>
+  3d:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 44 <c_file_type+0x44>
+  44:	3d 00 20 00 00       	cmp    $0x2000,%eax
+  49:	74 25                	je     70 <c_file_type+0x70>
+  4b:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 52 <c_file_type+0x52>
+  52:	3d 00 10 00 00       	cmp    $0x1000,%eax
+  57:	74 17                	je     70 <c_file_type+0x70>
+  59:	3d 00 c0 00 00       	cmp    $0xc000,%eax
+  5e:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 65 <c_file_type+0x65>
+  65:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 6c <c_file_type+0x6c>
+  6c:	4c 0f 44 c0          	cmove  %rax,%r8
+  70:	4c 89 c0             	mov    %r8,%rax
+  73:	c3                   	ret    
+  74:	0f 1f 40 00          	nopl   0x0(%rax)
+  78:	48 83 7f 30 00       	cmpq   $0x0,0x30(%rdi)
+  7d:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 84 <c_file_type+0x84>
+  84:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 8b <c_file_type+0x8b>
+  8b:	4c 0f 45 c0          	cmovne %rax,%r8
+  8f:	4c 89 c0             	mov    %r8,%rax
+  92:	c3                   	ret    

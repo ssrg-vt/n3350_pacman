@@ -1,0 +1,30 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-umaxtostr.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <umaxtostr>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	c6 46 14 00          	movb   $0x0,0x14(%rsi)
+   8:	48 89 f9             	mov    %rdi,%rcx
+   b:	4c 8d 46 14          	lea    0x14(%rsi),%r8
+   f:	48 bf cd cc cc cc cc 	movabs $0xcccccccccccccccd,%rdi
+  16:	cc cc cc 
+  19:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  20:	48 89 c8             	mov    %rcx,%rax
+  23:	49 83 e8 01          	sub    $0x1,%r8
+  27:	48 f7 e7             	mul    %rdi
+  2a:	48 89 c8             	mov    %rcx,%rax
+  2d:	48 c1 ea 03          	shr    $0x3,%rdx
+  31:	48 8d 34 92          	lea    (%rdx,%rdx,4),%rsi
+  35:	48 01 f6             	add    %rsi,%rsi
+  38:	48 29 f0             	sub    %rsi,%rax
+  3b:	83 c0 30             	add    $0x30,%eax
+  3e:	41 88 00             	mov    %al,(%r8)
+  41:	48 89 c8             	mov    %rcx,%rax
+  44:	48 89 d1             	mov    %rdx,%rcx
+  47:	48 83 f8 09          	cmp    $0x9,%rax
+  4b:	77 d3                	ja     20 <umaxtostr+0x20>
+  4d:	4c 89 c0             	mov    %r8,%rax
+  50:	c3                   	ret    

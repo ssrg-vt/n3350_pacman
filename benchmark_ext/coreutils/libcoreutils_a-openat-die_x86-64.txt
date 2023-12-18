@@ -1,0 +1,42 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-openat-die.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <openat_save_fail>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	ba 05 00 00 00       	mov    $0x5,%edx
+   b:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 12 <openat_save_fail+0x12>
+  12:	55                   	push   %rbp
+  13:	89 fd                	mov    %edi,%ebp
+  15:	31 ff                	xor    %edi,%edi
+  17:	48 83 ec 08          	sub    $0x8,%rsp
+  1b:	44 8b 25 00 00 00 00 	mov    0x0(%rip),%r12d        # 22 <openat_save_fail+0x22>
+  22:	e8 00 00 00 00       	call   27 <openat_save_fail+0x27>
+  27:	89 ee                	mov    %ebp,%esi
+  29:	48 89 c2             	mov    %rax,%rdx
+  2c:	44 89 e7             	mov    %r12d,%edi
+  2f:	31 c0                	xor    %eax,%eax
+  31:	e8 00 00 00 00       	call   36 <openat_save_fail+0x36>
+  36:	e8 00 00 00 00       	call   3b <openat_save_fail+0x3b>
+  3b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000040 <openat_restore_fail>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	41 54                	push   %r12
+  46:	ba 05 00 00 00       	mov    $0x5,%edx
+  4b:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 52 <openat_restore_fail+0x12>
+  52:	55                   	push   %rbp
+  53:	89 fd                	mov    %edi,%ebp
+  55:	31 ff                	xor    %edi,%edi
+  57:	48 83 ec 08          	sub    $0x8,%rsp
+  5b:	44 8b 25 00 00 00 00 	mov    0x0(%rip),%r12d        # 62 <openat_restore_fail+0x22>
+  62:	e8 00 00 00 00       	call   67 <openat_restore_fail+0x27>
+  67:	89 ee                	mov    %ebp,%esi
+  69:	48 89 c2             	mov    %rax,%rdx
+  6c:	44 89 e7             	mov    %r12d,%edi
+  6f:	31 c0                	xor    %eax,%eax
+  71:	e8 00 00 00 00       	call   76 <openat_restore_fail+0x36>
+  76:	e8 00 00 00 00       	call   7b <openat_restore_fail+0x3b>

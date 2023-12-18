@@ -1,0 +1,476 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-version-etc.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <version_etc_arn>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	41 55                	push   %r13
+   a:	41 54                	push   %r12
+   c:	4d 89 cc             	mov    %r9,%r12
+   f:	55                   	push   %rbp
+  10:	48 89 fd             	mov    %rdi,%rbp
+  13:	53                   	push   %rbx
+  14:	4c 89 c3             	mov    %r8,%rbx
+  17:	48 83 ec 38          	sub    $0x38,%rsp
+  1b:	48 85 f6             	test   %rsi,%rsi
+  1e:	0f 84 4c 01 00 00    	je     170 <version_etc_arn+0x170>
+  24:	49 89 c9             	mov    %rcx,%r9
+  27:	49 89 d0             	mov    %rdx,%r8
+  2a:	48 89 f1             	mov    %rsi,%rcx
+  2d:	31 c0                	xor    %eax,%eax
+  2f:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 36 <version_etc_arn+0x36>
+  36:	be 01 00 00 00       	mov    $0x1,%esi
+  3b:	e8 00 00 00 00       	call   40 <version_etc_arn+0x40>
+  40:	31 ff                	xor    %edi,%edi
+  42:	ba 05 00 00 00       	mov    $0x5,%edx
+  47:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 4e <version_etc_arn+0x4e>
+  4e:	e8 00 00 00 00       	call   53 <version_etc_arn+0x53>
+  53:	41 b8 e7 07 00 00    	mov    $0x7e7,%r8d
+  59:	be 01 00 00 00       	mov    $0x1,%esi
+  5e:	48 89 ef             	mov    %rbp,%rdi
+  61:	48 89 c1             	mov    %rax,%rcx
+  64:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 6b <version_etc_arn+0x6b>
+  6b:	31 c0                	xor    %eax,%eax
+  6d:	e8 00 00 00 00       	call   72 <version_etc_arn+0x72>
+  72:	48 89 ee             	mov    %rbp,%rsi
+  75:	bf 0a 00 00 00       	mov    $0xa,%edi
+  7a:	e8 00 00 00 00       	call   7f <version_etc_arn+0x7f>
+  7f:	31 ff                	xor    %edi,%edi
+  81:	ba 05 00 00 00       	mov    $0x5,%edx
+  86:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 8d <version_etc_arn+0x8d>
+  8d:	e8 00 00 00 00       	call   92 <version_etc_arn+0x92>
+  92:	be 01 00 00 00       	mov    $0x1,%esi
+  97:	48 89 ef             	mov    %rbp,%rdi
+  9a:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # a1 <version_etc_arn+0xa1>
+  a1:	48 89 c2             	mov    %rax,%rdx
+  a4:	31 c0                	xor    %eax,%eax
+  a6:	e8 00 00 00 00       	call   ab <version_etc_arn+0xab>
+  ab:	48 89 ee             	mov    %rbp,%rsi
+  ae:	bf 0a 00 00 00       	mov    $0xa,%edi
+  b3:	e8 00 00 00 00       	call   b8 <version_etc_arn+0xb8>
+  b8:	49 83 fc 09          	cmp    $0x9,%r12
+  bc:	0f 87 52 03 00 00    	ja     414 <version_etc_arn+0x414>
+  c2:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # c9 <version_etc_arn+0xc9>
+  c9:	4a 63 04 a2          	movslq (%rdx,%r12,4),%rax
+  cd:	48 01 d0             	add    %rdx,%rax
+  d0:	3e ff e0             	notrack jmp *%rax
+  d3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  d8:	4c 8b 53 38          	mov    0x38(%rbx),%r10
+  dc:	4c 8b 4b 30          	mov    0x30(%rbx),%r9
+  e0:	ba 05 00 00 00       	mov    $0x5,%edx
+  e5:	31 ff                	xor    %edi,%edi
+  e7:	4c 8b 43 28          	mov    0x28(%rbx),%r8
+  eb:	48 8b 4b 20          	mov    0x20(%rbx),%rcx
+  ef:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # f6 <version_etc_arn+0xf6>
+  f6:	4c 8b 7b 18          	mov    0x18(%rbx),%r15
+  fa:	4c 8b 73 10          	mov    0x10(%rbx),%r14
+  fe:	4c 89 54 24 20       	mov    %r10,0x20(%rsp)
+ 103:	4c 8b 6b 08          	mov    0x8(%rbx),%r13
+ 107:	4c 8b 23             	mov    (%rbx),%r12
+ 10a:	4c 89 4c 24 18       	mov    %r9,0x18(%rsp)
+ 10f:	4c 89 44 24 10       	mov    %r8,0x10(%rsp)
+ 114:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+ 119:	e8 00 00 00 00       	call   11e <version_etc_arn+0x11e>
+ 11e:	48 83 ec 08          	sub    $0x8,%rsp
+ 122:	48 89 c2             	mov    %rax,%rdx
+ 125:	4c 8b 54 24 28       	mov    0x28(%rsp),%r10
+ 12a:	be 01 00 00 00       	mov    $0x1,%esi
+ 12f:	48 89 ef             	mov    %rbp,%rdi
+ 132:	31 c0                	xor    %eax,%eax
+ 134:	41 52                	push   %r10
+ 136:	4c 8b 4c 24 28       	mov    0x28(%rsp),%r9
+ 13b:	41 51                	push   %r9
+ 13d:	4c 8b 44 24 28       	mov    0x28(%rsp),%r8
+ 142:	4d 89 f1             	mov    %r14,%r9
+ 145:	41 50                	push   %r8
+ 147:	48 8b 4c 24 28       	mov    0x28(%rsp),%rcx
+ 14c:	4d 89 e8             	mov    %r13,%r8
+ 14f:	51                   	push   %rcx
+ 150:	4c 89 e1             	mov    %r12,%rcx
+ 153:	41 57                	push   %r15
+ 155:	e8 00 00 00 00       	call   15a <version_etc_arn+0x15a>
+ 15a:	48 83 c4 30          	add    $0x30,%rsp
+ 15e:	48 83 c4 38          	add    $0x38,%rsp
+ 162:	5b                   	pop    %rbx
+ 163:	5d                   	pop    %rbp
+ 164:	41 5c                	pop    %r12
+ 166:	41 5d                	pop    %r13
+ 168:	41 5e                	pop    %r14
+ 16a:	41 5f                	pop    %r15
+ 16c:	c3                   	ret    
+ 16d:	0f 1f 00             	nopl   (%rax)
+ 170:	49 89 c8             	mov    %rcx,%r8
+ 173:	be 01 00 00 00       	mov    $0x1,%esi
+ 178:	48 89 d1             	mov    %rdx,%rcx
+ 17b:	31 c0                	xor    %eax,%eax
+ 17d:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 184 <version_etc_arn+0x184>
+ 184:	e8 00 00 00 00       	call   189 <version_etc_arn+0x189>
+ 189:	e9 b2 fe ff ff       	jmp    40 <version_etc_arn+0x40>
+ 18e:	66 90                	xchg   %ax,%ax
+ 190:	4c 8b 5b 40          	mov    0x40(%rbx),%r11
+ 194:	4c 8b 53 38          	mov    0x38(%rbx),%r10
+ 198:	ba 05 00 00 00       	mov    $0x5,%edx
+ 19d:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 1a4 <version_etc_arn+0x1a4>
+ 1a4:	4c 8b 4b 30          	mov    0x30(%rbx),%r9
+ 1a8:	4c 8b 43 28          	mov    0x28(%rbx),%r8
+ 1ac:	48 8b 4b 20          	mov    0x20(%rbx),%rcx
+ 1b0:	4c 8b 7b 18          	mov    0x18(%rbx),%r15
+ 1b4:	4c 89 5c 24 28       	mov    %r11,0x28(%rsp)
+ 1b9:	4c 8b 73 10          	mov    0x10(%rbx),%r14
+ 1bd:	4c 8b 6b 08          	mov    0x8(%rbx),%r13
+ 1c1:	4c 89 54 24 20       	mov    %r10,0x20(%rsp)
+ 1c6:	4c 89 4c 24 18       	mov    %r9,0x18(%rsp)
+ 1cb:	4c 8b 23             	mov    (%rbx),%r12
+ 1ce:	4c 89 44 24 10       	mov    %r8,0x10(%rsp)
+ 1d3:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+ 1d8:	31 ff                	xor    %edi,%edi
+ 1da:	e8 00 00 00 00       	call   1df <version_etc_arn+0x1df>
+ 1df:	4c 8b 5c 24 28       	mov    0x28(%rsp),%r11
+ 1e4:	48 89 c2             	mov    %rax,%rdx
+ 1e7:	41 53                	push   %r11
+ 1e9:	e9 37 ff ff ff       	jmp    125 <version_etc_arn+0x125>
+ 1ee:	66 90                	xchg   %ax,%ax
+ 1f0:	4c 8b 23             	mov    (%rbx),%r12
+ 1f3:	ba 05 00 00 00       	mov    $0x5,%edx
+ 1f8:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 1ff <version_etc_arn+0x1ff>
+ 1ff:	31 ff                	xor    %edi,%edi
+ 201:	e8 00 00 00 00       	call   206 <version_etc_arn+0x206>
+ 206:	48 83 c4 38          	add    $0x38,%rsp
+ 20a:	48 89 ef             	mov    %rbp,%rdi
+ 20d:	be 01 00 00 00       	mov    $0x1,%esi
+ 212:	5b                   	pop    %rbx
+ 213:	48 89 c2             	mov    %rax,%rdx
+ 216:	5d                   	pop    %rbp
+ 217:	4c 89 e1             	mov    %r12,%rcx
+ 21a:	31 c0                	xor    %eax,%eax
+ 21c:	41 5c                	pop    %r12
+ 21e:	41 5d                	pop    %r13
+ 220:	41 5e                	pop    %r14
+ 222:	41 5f                	pop    %r15
+ 224:	e9 00 00 00 00       	jmp    229 <version_etc_arn+0x229>
+ 229:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 230:	4c 8b 6b 08          	mov    0x8(%rbx),%r13
+ 234:	4c 8b 23             	mov    (%rbx),%r12
+ 237:	ba 05 00 00 00       	mov    $0x5,%edx
+ 23c:	31 ff                	xor    %edi,%edi
+ 23e:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 245 <version_etc_arn+0x245>
+ 245:	e8 00 00 00 00       	call   24a <version_etc_arn+0x24a>
+ 24a:	48 83 c4 38          	add    $0x38,%rsp
+ 24e:	4d 89 e8             	mov    %r13,%r8
+ 251:	4c 89 e1             	mov    %r12,%rcx
+ 254:	5b                   	pop    %rbx
+ 255:	48 89 c2             	mov    %rax,%rdx
+ 258:	48 89 ef             	mov    %rbp,%rdi
+ 25b:	be 01 00 00 00       	mov    $0x1,%esi
+ 260:	5d                   	pop    %rbp
+ 261:	31 c0                	xor    %eax,%eax
+ 263:	41 5c                	pop    %r12
+ 265:	41 5d                	pop    %r13
+ 267:	41 5e                	pop    %r14
+ 269:	41 5f                	pop    %r15
+ 26b:	e9 00 00 00 00       	jmp    270 <version_etc_arn+0x270>
+ 270:	4c 8b 73 10          	mov    0x10(%rbx),%r14
+ 274:	4c 8b 6b 08          	mov    0x8(%rbx),%r13
+ 278:	ba 05 00 00 00       	mov    $0x5,%edx
+ 27d:	31 ff                	xor    %edi,%edi
+ 27f:	4c 8b 23             	mov    (%rbx),%r12
+ 282:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 289 <version_etc_arn+0x289>
+ 289:	e8 00 00 00 00       	call   28e <version_etc_arn+0x28e>
+ 28e:	48 83 c4 38          	add    $0x38,%rsp
+ 292:	4d 89 f1             	mov    %r14,%r9
+ 295:	4d 89 e8             	mov    %r13,%r8
+ 298:	5b                   	pop    %rbx
+ 299:	48 89 c2             	mov    %rax,%rdx
+ 29c:	4c 89 e1             	mov    %r12,%rcx
+ 29f:	48 89 ef             	mov    %rbp,%rdi
+ 2a2:	be 01 00 00 00       	mov    $0x1,%esi
+ 2a7:	5d                   	pop    %rbp
+ 2a8:	31 c0                	xor    %eax,%eax
+ 2aa:	41 5c                	pop    %r12
+ 2ac:	41 5d                	pop    %r13
+ 2ae:	41 5e                	pop    %r14
+ 2b0:	41 5f                	pop    %r15
+ 2b2:	e9 00 00 00 00       	jmp    2b7 <version_etc_arn+0x2b7>
+ 2b7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 2be:	00 00 
+ 2c0:	ba 05 00 00 00       	mov    $0x5,%edx
+ 2c5:	31 ff                	xor    %edi,%edi
+ 2c7:	4c 8b 7b 18          	mov    0x18(%rbx),%r15
+ 2cb:	4c 8b 73 10          	mov    0x10(%rbx),%r14
+ 2cf:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2d6 <version_etc_arn+0x2d6>
+ 2d6:	4c 8b 6b 08          	mov    0x8(%rbx),%r13
+ 2da:	4c 8b 23             	mov    (%rbx),%r12
+ 2dd:	e8 00 00 00 00       	call   2e2 <version_etc_arn+0x2e2>
+ 2e2:	48 83 ec 08          	sub    $0x8,%rsp
+ 2e6:	48 89 c2             	mov    %rax,%rdx
+ 2e9:	41 57                	push   %r15
+ 2eb:	4d 89 f1             	mov    %r14,%r9
+ 2ee:	4d 89 e8             	mov    %r13,%r8
+ 2f1:	4c 89 e1             	mov    %r12,%rcx
+ 2f4:	48 89 ef             	mov    %rbp,%rdi
+ 2f7:	be 01 00 00 00       	mov    $0x1,%esi
+ 2fc:	31 c0                	xor    %eax,%eax
+ 2fe:	e8 00 00 00 00       	call   303 <version_etc_arn+0x303>
+ 303:	58                   	pop    %rax
+ 304:	5a                   	pop    %rdx
+ 305:	48 83 c4 38          	add    $0x38,%rsp
+ 309:	5b                   	pop    %rbx
+ 30a:	5d                   	pop    %rbp
+ 30b:	41 5c                	pop    %r12
+ 30d:	41 5d                	pop    %r13
+ 30f:	41 5e                	pop    %r14
+ 311:	41 5f                	pop    %r15
+ 313:	c3                   	ret    
+ 314:	0f 1f 40 00          	nopl   0x0(%rax)
+ 318:	48 8b 4b 20          	mov    0x20(%rbx),%rcx
+ 31c:	ba 05 00 00 00       	mov    $0x5,%edx
+ 321:	31 ff                	xor    %edi,%edi
+ 323:	4c 8b 7b 18          	mov    0x18(%rbx),%r15
+ 327:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 32e <version_etc_arn+0x32e>
+ 32e:	4c 8b 73 10          	mov    0x10(%rbx),%r14
+ 332:	4c 8b 6b 08          	mov    0x8(%rbx),%r13
+ 336:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+ 33b:	4c 8b 23             	mov    (%rbx),%r12
+ 33e:	e8 00 00 00 00       	call   343 <version_etc_arn+0x343>
+ 343:	48 8b 4c 24 08       	mov    0x8(%rsp),%rcx
+ 348:	48 89 c2             	mov    %rax,%rdx
+ 34b:	51                   	push   %rcx
+ 34c:	eb 9b                	jmp    2e9 <version_etc_arn+0x2e9>
+ 34e:	66 90                	xchg   %ax,%ax
+ 350:	4c 8b 43 28          	mov    0x28(%rbx),%r8
+ 354:	48 8b 4b 20          	mov    0x20(%rbx),%rcx
+ 358:	ba 05 00 00 00       	mov    $0x5,%edx
+ 35d:	31 ff                	xor    %edi,%edi
+ 35f:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 366 <version_etc_arn+0x366>
+ 366:	4c 8b 7b 18          	mov    0x18(%rbx),%r15
+ 36a:	4c 8b 73 10          	mov    0x10(%rbx),%r14
+ 36e:	4c 8b 6b 08          	mov    0x8(%rbx),%r13
+ 372:	4c 8b 23             	mov    (%rbx),%r12
+ 375:	4c 89 44 24 10       	mov    %r8,0x10(%rsp)
+ 37a:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+ 37f:	e8 00 00 00 00       	call   384 <version_etc_arn+0x384>
+ 384:	48 83 ec 08          	sub    $0x8,%rsp
+ 388:	48 89 c2             	mov    %rax,%rdx
+ 38b:	4c 8b 44 24 18       	mov    0x18(%rsp),%r8
+ 390:	4d 89 f1             	mov    %r14,%r9
+ 393:	48 89 ef             	mov    %rbp,%rdi
+ 396:	be 01 00 00 00       	mov    $0x1,%esi
+ 39b:	31 c0                	xor    %eax,%eax
+ 39d:	41 50                	push   %r8
+ 39f:	48 8b 4c 24 18       	mov    0x18(%rsp),%rcx
+ 3a4:	4d 89 e8             	mov    %r13,%r8
+ 3a7:	51                   	push   %rcx
+ 3a8:	4c 89 e1             	mov    %r12,%rcx
+ 3ab:	41 57                	push   %r15
+ 3ad:	e8 00 00 00 00       	call   3b2 <version_etc_arn+0x3b2>
+ 3b2:	48 83 c4 20          	add    $0x20,%rsp
+ 3b6:	48 83 c4 38          	add    $0x38,%rsp
+ 3ba:	5b                   	pop    %rbx
+ 3bb:	5d                   	pop    %rbp
+ 3bc:	41 5c                	pop    %r12
+ 3be:	41 5d                	pop    %r13
+ 3c0:	41 5e                	pop    %r14
+ 3c2:	41 5f                	pop    %r15
+ 3c4:	c3                   	ret    
+ 3c5:	0f 1f 00             	nopl   (%rax)
+ 3c8:	4c 8b 4b 30          	mov    0x30(%rbx),%r9
+ 3cc:	4c 8b 43 28          	mov    0x28(%rbx),%r8
+ 3d0:	ba 05 00 00 00       	mov    $0x5,%edx
+ 3d5:	31 ff                	xor    %edi,%edi
+ 3d7:	48 8b 4b 20          	mov    0x20(%rbx),%rcx
+ 3db:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 3e2 <version_etc_arn+0x3e2>
+ 3e2:	4c 8b 7b 18          	mov    0x18(%rbx),%r15
+ 3e6:	4c 8b 73 10          	mov    0x10(%rbx),%r14
+ 3ea:	4c 8b 6b 08          	mov    0x8(%rbx),%r13
+ 3ee:	4c 89 4c 24 18       	mov    %r9,0x18(%rsp)
+ 3f3:	4c 89 44 24 10       	mov    %r8,0x10(%rsp)
+ 3f8:	4c 8b 23             	mov    (%rbx),%r12
+ 3fb:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+ 400:	e8 00 00 00 00       	call   405 <version_etc_arn+0x405>
+ 405:	4c 8b 4c 24 18       	mov    0x18(%rsp),%r9
+ 40a:	48 89 c2             	mov    %rax,%rdx
+ 40d:	41 51                	push   %r9
+ 40f:	e9 77 ff ff ff       	jmp    38b <version_etc_arn+0x38b>
+ 414:	4c 8b 5b 40          	mov    0x40(%rbx),%r11
+ 418:	4c 8b 53 38          	mov    0x38(%rbx),%r10
+ 41c:	ba 05 00 00 00       	mov    $0x5,%edx
+ 421:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 428 <version_etc_arn+0x428>
+ 428:	4c 8b 4b 30          	mov    0x30(%rbx),%r9
+ 42c:	4c 8b 43 28          	mov    0x28(%rbx),%r8
+ 430:	48 8b 4b 20          	mov    0x20(%rbx),%rcx
+ 434:	4c 8b 7b 18          	mov    0x18(%rbx),%r15
+ 438:	4c 89 5c 24 28       	mov    %r11,0x28(%rsp)
+ 43d:	4c 8b 73 10          	mov    0x10(%rbx),%r14
+ 441:	4c 8b 6b 08          	mov    0x8(%rbx),%r13
+ 445:	4c 89 54 24 20       	mov    %r10,0x20(%rsp)
+ 44a:	4c 89 4c 24 18       	mov    %r9,0x18(%rsp)
+ 44f:	4c 8b 23             	mov    (%rbx),%r12
+ 452:	4c 89 44 24 10       	mov    %r8,0x10(%rsp)
+ 457:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+ 45c:	e9 77 fd ff ff       	jmp    1d8 <version_etc_arn+0x1d8>
+ 461:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 468:	00 00 00 00 
+ 46c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000470 <version_etc_ar>:
+ 470:	f3 0f 1e fa          	endbr64 
+ 474:	45 31 c9             	xor    %r9d,%r9d
+ 477:	49 83 38 00          	cmpq   $0x0,(%r8)
+ 47b:	74 0e                	je     48b <version_etc_ar+0x1b>
+ 47d:	0f 1f 00             	nopl   (%rax)
+ 480:	49 83 c1 01          	add    $0x1,%r9
+ 484:	4b 83 3c c8 00       	cmpq   $0x0,(%r8,%r9,8)
+ 489:	75 f5                	jne    480 <version_etc_ar+0x10>
+ 48b:	e9 70 fb ff ff       	jmp    0 <version_etc_arn>
+
+0000000000000490 <version_etc_va>:
+ 490:	f3 0f 1e fa          	endbr64 
+ 494:	48 83 ec 68          	sub    $0x68,%rsp
+ 498:	49 89 cb             	mov    %rcx,%r11
+ 49b:	49 89 d2             	mov    %rdx,%r10
+ 49e:	4c 89 c1             	mov    %r8,%rcx
+ 4a1:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 4a8:	00 00 
+ 4aa:	48 89 44 24 58       	mov    %rax,0x58(%rsp)
+ 4af:	31 c0                	xor    %eax,%eax
+ 4b1:	45 31 c9             	xor    %r9d,%r9d
+ 4b4:	49 89 e0             	mov    %rsp,%r8
+ 4b7:	eb 28                	jmp    4e1 <version_etc_va+0x51>
+ 4b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 4c0:	89 c2                	mov    %eax,%edx
+ 4c2:	83 c0 08             	add    $0x8,%eax
+ 4c5:	48 03 51 10          	add    0x10(%rcx),%rdx
+ 4c9:	89 01                	mov    %eax,(%rcx)
+ 4cb:	48 8b 02             	mov    (%rdx),%rax
+ 4ce:	4b 89 04 c8          	mov    %rax,(%r8,%r9,8)
+ 4d2:	48 85 c0             	test   %rax,%rax
+ 4d5:	74 29                	je     500 <version_etc_va+0x70>
+ 4d7:	49 83 c1 01          	add    $0x1,%r9
+ 4db:	49 83 f9 0a          	cmp    $0xa,%r9
+ 4df:	74 1f                	je     500 <version_etc_va+0x70>
+ 4e1:	8b 01                	mov    (%rcx),%eax
+ 4e3:	83 f8 2f             	cmp    $0x2f,%eax
+ 4e6:	76 d8                	jbe    4c0 <version_etc_va+0x30>
+ 4e8:	48 8b 51 08          	mov    0x8(%rcx),%rdx
+ 4ec:	48 8d 42 08          	lea    0x8(%rdx),%rax
+ 4f0:	48 89 41 08          	mov    %rax,0x8(%rcx)
+ 4f4:	48 8b 02             	mov    (%rdx),%rax
+ 4f7:	4b 89 04 c8          	mov    %rax,(%r8,%r9,8)
+ 4fb:	48 85 c0             	test   %rax,%rax
+ 4fe:	75 d7                	jne    4d7 <version_etc_va+0x47>
+ 500:	4c 89 d9             	mov    %r11,%rcx
+ 503:	4c 89 d2             	mov    %r10,%rdx
+ 506:	e8 00 00 00 00       	call   50b <version_etc_va+0x7b>
+ 50b:	48 8b 44 24 58       	mov    0x58(%rsp),%rax
+ 510:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 517:	00 00 
+ 519:	75 05                	jne    520 <version_etc_va+0x90>
+ 51b:	48 83 c4 68          	add    $0x68,%rsp
+ 51f:	c3                   	ret    
+ 520:	e8 00 00 00 00       	call   525 <version_etc_va+0x95>
+ 525:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 52c:	00 00 00 00 
+
+0000000000000530 <version_etc>:
+ 530:	f3 0f 1e fa          	endbr64 
+ 534:	41 54                	push   %r12
+ 536:	49 89 fa             	mov    %rdi,%r10
+ 539:	49 89 f3             	mov    %rsi,%r11
+ 53c:	49 89 d4             	mov    %rdx,%r12
+ 53f:	ba 20 00 00 00       	mov    $0x20,%edx
+ 544:	48 81 ec b0 00 00 00 	sub    $0xb0,%rsp
+ 54b:	4c 89 84 24 a0 00 00 	mov    %r8,0xa0(%rsp)
+ 552:	00 
+ 553:	48 8d bc 24 80 00 00 	lea    0x80(%rsp),%rdi
+ 55a:	00 
+ 55b:	48 8d b4 24 c0 00 00 	lea    0xc0(%rsp),%rsi
+ 562:	00 
+ 563:	4c 89 8c 24 a8 00 00 	mov    %r9,0xa8(%rsp)
+ 56a:	00 
+ 56b:	4c 8d 44 24 20       	lea    0x20(%rsp),%r8
+ 570:	45 31 c9             	xor    %r9d,%r9d
+ 573:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 57a:	00 00 
+ 57c:	48 89 44 24 78       	mov    %rax,0x78(%rsp)
+ 581:	31 c0                	xor    %eax,%eax
+ 583:	48 8d 84 24 c0 00 00 	lea    0xc0(%rsp),%rax
+ 58a:	00 
+ 58b:	c7 44 24 08 20 00 00 	movl   $0x20,0x8(%rsp)
+ 592:	00 
+ 593:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+ 598:	48 89 7c 24 18       	mov    %rdi,0x18(%rsp)
+ 59d:	eb 1f                	jmp    5be <version_etc+0x8e>
+ 59f:	90                   	nop
+ 5a0:	89 d0                	mov    %edx,%eax
+ 5a2:	83 c2 08             	add    $0x8,%edx
+ 5a5:	48 01 f8             	add    %rdi,%rax
+ 5a8:	48 8b 00             	mov    (%rax),%rax
+ 5ab:	4b 89 04 c8          	mov    %rax,(%r8,%r9,8)
+ 5af:	48 85 c0             	test   %rax,%rax
+ 5b2:	74 2c                	je     5e0 <version_etc+0xb0>
+ 5b4:	49 83 c1 01          	add    $0x1,%r9
+ 5b8:	49 83 f9 0a          	cmp    $0xa,%r9
+ 5bc:	74 22                	je     5e0 <version_etc+0xb0>
+ 5be:	83 fa 2f             	cmp    $0x2f,%edx
+ 5c1:	76 dd                	jbe    5a0 <version_etc+0x70>
+ 5c3:	48 89 f0             	mov    %rsi,%rax
+ 5c6:	48 83 c6 08          	add    $0x8,%rsi
+ 5ca:	48 8b 00             	mov    (%rax),%rax
+ 5cd:	4b 89 04 c8          	mov    %rax,(%r8,%r9,8)
+ 5d1:	48 85 c0             	test   %rax,%rax
+ 5d4:	75 de                	jne    5b4 <version_etc+0x84>
+ 5d6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 5dd:	00 00 00 
+ 5e0:	4c 89 e2             	mov    %r12,%rdx
+ 5e3:	4c 89 de             	mov    %r11,%rsi
+ 5e6:	4c 89 d7             	mov    %r10,%rdi
+ 5e9:	e8 00 00 00 00       	call   5ee <version_etc+0xbe>
+ 5ee:	48 8b 44 24 78       	mov    0x78(%rsp),%rax
+ 5f3:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 5fa:	00 00 
+ 5fc:	75 0a                	jne    608 <version_etc+0xd8>
+ 5fe:	48 81 c4 b0 00 00 00 	add    $0xb0,%rsp
+ 605:	41 5c                	pop    %r12
+ 607:	c3                   	ret    
+ 608:	e8 00 00 00 00       	call   60d <version_etc+0xdd>
+ 60d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000610 <emit_bug_reporting_address>:
+ 610:	f3 0f 1e fa          	endbr64 
+ 614:	48 83 ec 08          	sub    $0x8,%rsp
+ 618:	48 8b 35 00 00 00 00 	mov    0x0(%rip),%rsi        # 61f <emit_bug_reporting_address+0xf>
+ 61f:	bf 0a 00 00 00       	mov    $0xa,%edi
+ 624:	e8 00 00 00 00       	call   629 <emit_bug_reporting_address+0x19>
+ 629:	ba 05 00 00 00       	mov    $0x5,%edx
+ 62e:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 635 <emit_bug_reporting_address+0x25>
+ 635:	31 ff                	xor    %edi,%edi
+ 637:	e8 00 00 00 00       	call   63c <emit_bug_reporting_address+0x2c>
+ 63c:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 643 <emit_bug_reporting_address+0x33>
+ 643:	bf 01 00 00 00       	mov    $0x1,%edi
+ 648:	48 89 c6             	mov    %rax,%rsi
+ 64b:	31 c0                	xor    %eax,%eax
+ 64d:	e8 00 00 00 00       	call   652 <emit_bug_reporting_address+0x42>
+ 652:	ba 05 00 00 00       	mov    $0x5,%edx
+ 657:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 65e <emit_bug_reporting_address+0x4e>
+ 65e:	31 ff                	xor    %edi,%edi
+ 660:	e8 00 00 00 00       	call   665 <emit_bug_reporting_address+0x55>
+ 665:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 66c <emit_bug_reporting_address+0x5c>
+ 66c:	bf 01 00 00 00       	mov    $0x1,%edi
+ 671:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 678 <emit_bug_reporting_address+0x68>
+ 678:	48 89 c6             	mov    %rax,%rsi
+ 67b:	31 c0                	xor    %eax,%eax
+ 67d:	e8 00 00 00 00       	call   682 <emit_bug_reporting_address+0x72>
+ 682:	ba 05 00 00 00       	mov    $0x5,%edx
+ 687:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 68e <emit_bug_reporting_address+0x7e>
+ 68e:	31 ff                	xor    %edi,%edi
+ 690:	e8 00 00 00 00       	call   695 <emit_bug_reporting_address+0x85>
+ 695:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 69c <emit_bug_reporting_address+0x8c>
+ 69c:	bf 01 00 00 00       	mov    $0x1,%edi
+ 6a1:	48 83 c4 08          	add    $0x8,%rsp
+ 6a5:	48 89 c6             	mov    %rax,%rsi
+ 6a8:	31 c0                	xor    %eax,%eax
+ 6aa:	e9 00 00 00 00       	jmp    6af <emit_bug_reporting_address+0x9f>

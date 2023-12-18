@@ -1,0 +1,56 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-basename-lgpl.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <last_component>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	0f b6 17             	movzbl (%rdi),%edx
+   7:	48 89 f8             	mov    %rdi,%rax
+   a:	80 fa 2f             	cmp    $0x2f,%dl
+   d:	75 0e                	jne    1d <last_component+0x1d>
+   f:	90                   	nop
+  10:	0f b6 50 01          	movzbl 0x1(%rax),%edx
+  14:	48 83 c0 01          	add    $0x1,%rax
+  18:	80 fa 2f             	cmp    $0x2f,%dl
+  1b:	74 f3                	je     10 <last_component+0x10>
+  1d:	84 d2                	test   %dl,%dl
+  1f:	74 3b                	je     5c <last_component+0x5c>
+  21:	48 89 c1             	mov    %rax,%rcx
+  24:	31 f6                	xor    %esi,%esi
+  26:	eb 1e                	jmp    46 <last_component+0x46>
+  28:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  2f:	00 
+  30:	40 84 f6             	test   %sil,%sil
+  33:	74 05                	je     3a <last_component+0x3a>
+  35:	48 89 c8             	mov    %rcx,%rax
+  38:	31 f6                	xor    %esi,%esi
+  3a:	0f b6 51 01          	movzbl 0x1(%rcx),%edx
+  3e:	48 83 c1 01          	add    $0x1,%rcx
+  42:	84 d2                	test   %dl,%dl
+  44:	74 16                	je     5c <last_component+0x5c>
+  46:	80 fa 2f             	cmp    $0x2f,%dl
+  49:	75 e5                	jne    30 <last_component+0x30>
+  4b:	0f b6 51 01          	movzbl 0x1(%rcx),%edx
+  4f:	48 83 c1 01          	add    $0x1,%rcx
+  53:	be 01 00 00 00       	mov    $0x1,%esi
+  58:	84 d2                	test   %dl,%dl
+  5a:	75 ea                	jne    46 <last_component+0x46>
+  5c:	c3                   	ret    
+  5d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000060 <base_len>:
+  60:	f3 0f 1e fa          	endbr64 
+  64:	53                   	push   %rbx
+  65:	48 89 fb             	mov    %rdi,%rbx
+  68:	e8 00 00 00 00       	call   6d <base_len+0xd>
+  6d:	48 83 f8 01          	cmp    $0x1,%rax
+  71:	76 0b                	jbe    7e <base_len+0x1e>
+  73:	80 7c 03 ff 2f       	cmpb   $0x2f,-0x1(%rbx,%rax,1)
+  78:	48 8d 50 ff          	lea    -0x1(%rax),%rdx
+  7c:	74 02                	je     80 <base_len+0x20>
+  7e:	5b                   	pop    %rbx
+  7f:	c3                   	ret    
+  80:	48 89 d0             	mov    %rdx,%rax
+  83:	eb e8                	jmp    6d <base_len+0xd>

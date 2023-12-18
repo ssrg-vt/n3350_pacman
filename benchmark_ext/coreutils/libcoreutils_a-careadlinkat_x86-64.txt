@@ -1,0 +1,156 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-careadlinkat.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <readlink_stk>:
+   0:	41 57                	push   %r15
+   2:	41 56                	push   %r14
+   4:	41 55                	push   %r13
+   6:	49 89 f5             	mov    %rsi,%r13
+   9:	41 54                	push   %r12
+   b:	41 89 fc             	mov    %edi,%r12d
+   e:	55                   	push   %rbp
+   f:	53                   	push   %rbx
+  10:	4c 89 c3             	mov    %r8,%rbx
+  13:	48 83 ec 18          	sub    $0x18,%rsp
+  17:	4d 85 c0             	test   %r8,%r8
+  1a:	48 8b 44 24 50       	mov    0x50(%rsp),%rax
+  1f:	4c 89 0c 24          	mov    %r9,(%rsp)
+  23:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  28:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 2f <readlink_stk+0x2f>
+  2f:	48 0f 44 d8          	cmove  %rax,%rbx
+  33:	48 85 d2             	test   %rdx,%rdx
+  36:	0f 84 a4 00 00 00    	je     e0 <readlink_stk+0xe0>
+  3c:	48 b8 ff ff ff ff ff 	movabs $0x7fffffffffffffff,%rax
+  43:	ff ff 7f 
+  46:	48 89 d5             	mov    %rdx,%rbp
+  49:	48 39 c1             	cmp    %rax,%rcx
+  4c:	48 0f 46 c1          	cmovbe %rcx,%rax
+  50:	49 89 c6             	mov    %rax,%r14
+  53:	49 89 ef             	mov    %rbp,%r15
+  56:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  5d:	00 00 00 
+  60:	48 8b 04 24          	mov    (%rsp),%rax
+  64:	4c 89 f1             	mov    %r14,%rcx
+  67:	4c 89 fa             	mov    %r15,%rdx
+  6a:	4c 89 ee             	mov    %r13,%rsi
+  6d:	44 89 e7             	mov    %r12d,%edi
+  70:	ff d0                	call   *%rax
+  72:	48 85 c0             	test   %rax,%rax
+  75:	78 79                	js     f0 <readlink_stk+0xf0>
+  77:	4c 39 f0             	cmp    %r14,%rax
+  7a:	0f 8c 90 00 00 00    	jl     110 <readlink_stk+0x110>
+  80:	4c 39 fd             	cmp    %r15,%rbp
+  83:	74 06                	je     8b <readlink_stk+0x8b>
+  85:	4c 89 ff             	mov    %r15,%rdi
+  88:	ff 53 10             	call   *0x10(%rbx)
+  8b:	48 b8 fe ff ff ff ff 	movabs $0x3ffffffffffffffe,%rax
+  92:	ff ff 3f 
+  95:	49 39 c6             	cmp    %rax,%r14
+  98:	0f 8f aa 00 00 00    	jg     148 <readlink_stk+0x148>
+  9e:	4f 8d 74 36 01       	lea    0x1(%r14,%r14,1),%r14
+  a3:	4c 89 f7             	mov    %r14,%rdi
+  a6:	ff 13                	call   *(%rbx)
+  a8:	49 89 c7             	mov    %rax,%r15
+  ab:	48 85 c0             	test   %rax,%rax
+  ae:	75 b0                	jne    60 <readlink_stk+0x60>
+  b0:	48 8b 43 18          	mov    0x18(%rbx),%rax
+  b4:	48 85 c0             	test   %rax,%rax
+  b7:	74 05                	je     be <readlink_stk+0xbe>
+  b9:	4c 89 f7             	mov    %r14,%rdi
+  bc:	ff d0                	call   *%rax
+  be:	e8 00 00 00 00       	call   c3 <readlink_stk+0xc3>
+  c3:	45 31 ff             	xor    %r15d,%r15d
+  c6:	c7 00 0c 00 00 00    	movl   $0xc,(%rax)
+  cc:	48 83 c4 18          	add    $0x18,%rsp
+  d0:	4c 89 f8             	mov    %r15,%rax
+  d3:	5b                   	pop    %rbx
+  d4:	5d                   	pop    %rbp
+  d5:	41 5c                	pop    %r12
+  d7:	41 5d                	pop    %r13
+  d9:	41 5e                	pop    %r14
+  db:	41 5f                	pop    %r15
+  dd:	c3                   	ret    
+  de:	66 90                	xchg   %ax,%ax
+  e0:	48 8b 6c 24 08       	mov    0x8(%rsp),%rbp
+  e5:	41 be 00 04 00 00    	mov    $0x400,%r14d
+  eb:	e9 63 ff ff ff       	jmp    53 <readlink_stk+0x53>
+  f0:	4c 39 fd             	cmp    %r15,%rbp
+  f3:	74 66                	je     15b <readlink_stk+0x15b>
+  f5:	e8 00 00 00 00       	call   fa <readlink_stk+0xfa>
+  fa:	4c 89 ff             	mov    %r15,%rdi
+  fd:	45 31 ff             	xor    %r15d,%r15d
+ 100:	44 8b 20             	mov    (%rax),%r12d
+ 103:	48 89 c5             	mov    %rax,%rbp
+ 106:	ff 53 10             	call   *0x10(%rbx)
+ 109:	44 89 65 00          	mov    %r12d,0x0(%rbp)
+ 10d:	eb bd                	jmp    cc <readlink_stk+0xcc>
+ 10f:	90                   	nop
+ 110:	41 c6 04 07 00       	movb   $0x0,(%r15,%rax,1)
+ 115:	4c 8d 60 01          	lea    0x1(%rax),%r12
+ 119:	4c 39 7c 24 08       	cmp    %r15,0x8(%rsp)
+ 11e:	74 43                	je     163 <readlink_stk+0x163>
+ 120:	4d 39 f4             	cmp    %r14,%r12
+ 123:	7d a7                	jge    cc <readlink_stk+0xcc>
+ 125:	4c 39 fd             	cmp    %r15,%rbp
+ 128:	74 a2                	je     cc <readlink_stk+0xcc>
+ 12a:	48 8b 43 08          	mov    0x8(%rbx),%rax
+ 12e:	48 85 c0             	test   %rax,%rax
+ 131:	74 99                	je     cc <readlink_stk+0xcc>
+ 133:	4c 89 ff             	mov    %r15,%rdi
+ 136:	4c 89 e6             	mov    %r12,%rsi
+ 139:	ff d0                	call   *%rax
+ 13b:	48 85 c0             	test   %rax,%rax
+ 13e:	4c 0f 45 f8          	cmovne %rax,%r15
+ 142:	eb 88                	jmp    cc <readlink_stk+0xcc>
+ 144:	0f 1f 40 00          	nopl   0x0(%rax)
+ 148:	e8 00 00 00 00       	call   14d <readlink_stk+0x14d>
+ 14d:	45 31 ff             	xor    %r15d,%r15d
+ 150:	c7 00 24 00 00 00    	movl   $0x24,(%rax)
+ 156:	e9 71 ff ff ff       	jmp    cc <readlink_stk+0xcc>
+ 15b:	45 31 ff             	xor    %r15d,%r15d
+ 15e:	e9 69 ff ff ff       	jmp    cc <readlink_stk+0xcc>
+ 163:	4c 89 e7             	mov    %r12,%rdi
+ 166:	ff 13                	call   *(%rbx)
+ 168:	48 89 c7             	mov    %rax,%rdi
+ 16b:	48 85 c0             	test   %rax,%rax
+ 16e:	74 1b                	je     18b <readlink_stk+0x18b>
+ 170:	48 8b 74 24 08       	mov    0x8(%rsp),%rsi
+ 175:	48 83 c4 18          	add    $0x18,%rsp
+ 179:	4c 89 e2             	mov    %r12,%rdx
+ 17c:	5b                   	pop    %rbx
+ 17d:	5d                   	pop    %rbp
+ 17e:	41 5c                	pop    %r12
+ 180:	41 5d                	pop    %r13
+ 182:	41 5e                	pop    %r14
+ 184:	41 5f                	pop    %r15
+ 186:	e9 00 00 00 00       	jmp    18b <readlink_stk+0x18b>
+ 18b:	4d 89 e6             	mov    %r12,%r14
+ 18e:	e9 1d ff ff ff       	jmp    b0 <readlink_stk+0xb0>
+ 193:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 19a:	00 00 00 00 
+ 19e:	66 90                	xchg   %ax,%ax
+
+00000000000001a0 <careadlinkat>:
+ 1a0:	f3 0f 1e fa          	endbr64 
+ 1a4:	48 81 ec 20 04 00 00 	sub    $0x420,%rsp
+ 1ab:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 1b2:	00 00 
+ 1b4:	48 89 84 24 10 04 00 	mov    %rax,0x410(%rsp)
+ 1bb:	00 
+ 1bc:	31 c0                	xor    %eax,%eax
+ 1be:	48 8d 44 24 08       	lea    0x8(%rsp),%rax
+ 1c3:	50                   	push   %rax
+ 1c4:	e8 37 fe ff ff       	call   0 <readlink_stk>
+ 1c9:	5a                   	pop    %rdx
+ 1ca:	59                   	pop    %rcx
+ 1cb:	48 8b 94 24 08 04 00 	mov    0x408(%rsp),%rdx
+ 1d2:	00 
+ 1d3:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 1da:	00 00 
+ 1dc:	75 08                	jne    1e6 <careadlinkat+0x46>
+ 1de:	48 81 c4 18 04 00 00 	add    $0x418,%rsp
+ 1e5:	c3                   	ret    
+ 1e6:	e8 00 00 00 00       	call   1eb <careadlinkat+0x4b>

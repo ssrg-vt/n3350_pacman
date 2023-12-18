@@ -1,0 +1,10 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-sig-handler.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <get_handler>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 8b 07             	mov    (%rdi),%rax
+   7:	c3                   	ret    

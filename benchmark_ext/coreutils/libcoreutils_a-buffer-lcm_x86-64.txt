@@ -1,0 +1,47 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-buffer-lcm.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <buffer_lcm>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 89 f9             	mov    %rdi,%rcx
+   7:	48 89 d7             	mov    %rdx,%rdi
+   a:	48 85 c9             	test   %rcx,%rcx
+   d:	75 21                	jne    30 <buffer_lcm+0x30>
+   f:	48 85 f6             	test   %rsi,%rsi
+  12:	b9 00 20 00 00       	mov    $0x2000,%ecx
+  17:	48 0f 45 ce          	cmovne %rsi,%rcx
+  1b:	48 39 f9             	cmp    %rdi,%rcx
+  1e:	48 89 f8             	mov    %rdi,%rax
+  21:	48 0f 46 c1          	cmovbe %rcx,%rax
+  25:	c3                   	ret    
+  26:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  2d:	00 00 00 
+  30:	48 85 f6             	test   %rsi,%rsi
+  33:	74 e6                	je     1b <buffer_lcm+0x1b>
+  35:	49 89 f0             	mov    %rsi,%r8
+  38:	48 89 c8             	mov    %rcx,%rax
+  3b:	31 d2                	xor    %edx,%edx
+  3d:	49 f7 f0             	div    %r8
+  40:	48 85 d2             	test   %rdx,%rdx
+  43:	75 2b                	jne    70 <buffer_lcm+0x70>
+  45:	31 d2                	xor    %edx,%edx
+  47:	48 89 c8             	mov    %rcx,%rax
+  4a:	49 f7 f0             	div    %r8
+  4d:	49 89 c0             	mov    %rax,%r8
+  50:	48 89 f0             	mov    %rsi,%rax
+  53:	49 f7 e0             	mul    %r8
+  56:	0f 90 c2             	seto   %dl
+  59:	0f b6 d2             	movzbl %dl,%edx
+  5c:	48 39 f8             	cmp    %rdi,%rax
+  5f:	77 ba                	ja     1b <buffer_lcm+0x1b>
+  61:	48 85 d2             	test   %rdx,%rdx
+  64:	75 b5                	jne    1b <buffer_lcm+0x1b>
+  66:	c3                   	ret    
+  67:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  6e:	00 00 
+  70:	4c 89 c0             	mov    %r8,%rax
+  73:	49 89 d0             	mov    %rdx,%r8
+  76:	eb c3                	jmp    3b <buffer_lcm+0x3b>

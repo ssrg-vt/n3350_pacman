@@ -1,0 +1,147 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-pipe2.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_pipe2>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	55                   	push   %rbp
+   9:	89 f5                	mov    %esi,%ebp
+   b:	53                   	push   %rbx
+   c:	48 89 fb             	mov    %rdi,%rbx
+   f:	48 83 ec 08          	sub    $0x8,%rsp
+  13:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        # 19 <rpl_pipe2+0x19>
+  19:	4c 8b 2f             	mov    (%rdi),%r13
+  1c:	85 c0                	test   %eax,%eax
+  1e:	0f 89 4c 01 00 00    	jns    170 <rpl_pipe2+0x170>
+  24:	41 89 ec             	mov    %ebp,%r12d
+  27:	41 81 e4 ff f7 f7 ff 	and    $0xfff7f7ff,%r12d
+  2e:	0f 85 7c 01 00 00    	jne    1b0 <rpl_pipe2+0x1b0>
+  34:	48 89 df             	mov    %rbx,%rdi
+  37:	e8 00 00 00 00       	call   3c <rpl_pipe2+0x3c>
+  3c:	85 c0                	test   %eax,%eax
+  3e:	0f 88 82 01 00 00    	js     1c6 <rpl_pipe2+0x1c6>
+  44:	f7 c5 00 08 00 00    	test   $0x800,%ebp
+  4a:	75 24                	jne    70 <rpl_pipe2+0x70>
+  4c:	81 e5 00 00 08 00    	and    $0x80000,%ebp
+  52:	0f 85 a8 00 00 00    	jne    100 <rpl_pipe2+0x100>
+  58:	48 83 c4 08          	add    $0x8,%rsp
+  5c:	44 89 e0             	mov    %r12d,%eax
+  5f:	5b                   	pop    %rbx
+  60:	5d                   	pop    %rbp
+  61:	41 5c                	pop    %r12
+  63:	41 5d                	pop    %r13
+  65:	c3                   	ret    
+  66:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  6d:	00 00 00 
+  70:	8b 7b 04             	mov    0x4(%rbx),%edi
+  73:	31 d2                	xor    %edx,%edx
+  75:	31 c0                	xor    %eax,%eax
+  77:	be 03 00 00 00       	mov    $0x3,%esi
+  7c:	e8 00 00 00 00       	call   81 <rpl_pipe2+0x81>
+  81:	85 c0                	test   %eax,%eax
+  83:	78 4b                	js     d0 <rpl_pipe2+0xd0>
+  85:	80 cc 08             	or     $0x8,%ah
+  88:	8b 7b 04             	mov    0x4(%rbx),%edi
+  8b:	be 04 00 00 00       	mov    $0x4,%esi
+  90:	89 c2                	mov    %eax,%edx
+  92:	31 c0                	xor    %eax,%eax
+  94:	e8 00 00 00 00       	call   99 <rpl_pipe2+0x99>
+  99:	83 f8 ff             	cmp    $0xffffffff,%eax
+  9c:	74 32                	je     d0 <rpl_pipe2+0xd0>
+  9e:	8b 3b                	mov    (%rbx),%edi
+  a0:	31 d2                	xor    %edx,%edx
+  a2:	31 c0                	xor    %eax,%eax
+  a4:	be 03 00 00 00       	mov    $0x3,%esi
+  a9:	e8 00 00 00 00       	call   ae <rpl_pipe2+0xae>
+  ae:	85 c0                	test   %eax,%eax
+  b0:	78 1e                	js     d0 <rpl_pipe2+0xd0>
+  b2:	80 cc 08             	or     $0x8,%ah
+  b5:	8b 3b                	mov    (%rbx),%edi
+  b7:	be 04 00 00 00       	mov    $0x4,%esi
+  bc:	89 c2                	mov    %eax,%edx
+  be:	31 c0                	xor    %eax,%eax
+  c0:	e8 00 00 00 00       	call   c5 <rpl_pipe2+0xc5>
+  c5:	83 f8 ff             	cmp    $0xffffffff,%eax
+  c8:	75 82                	jne    4c <rpl_pipe2+0x4c>
+  ca:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  d0:	e8 00 00 00 00       	call   d5 <rpl_pipe2+0xd5>
+  d5:	8b 3b                	mov    (%rbx),%edi
+  d7:	44 8b 20             	mov    (%rax),%r12d
+  da:	48 89 c5             	mov    %rax,%rbp
+  dd:	e8 00 00 00 00       	call   e2 <rpl_pipe2+0xe2>
+  e2:	8b 7b 04             	mov    0x4(%rbx),%edi
+  e5:	e8 00 00 00 00       	call   ea <rpl_pipe2+0xea>
+  ea:	4c 89 2b             	mov    %r13,(%rbx)
+  ed:	44 89 65 00          	mov    %r12d,0x0(%rbp)
+  f1:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+  f7:	e9 5c ff ff ff       	jmp    58 <rpl_pipe2+0x58>
+  fc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 100:	8b 7b 04             	mov    0x4(%rbx),%edi
+ 103:	31 d2                	xor    %edx,%edx
+ 105:	31 c0                	xor    %eax,%eax
+ 107:	be 01 00 00 00       	mov    $0x1,%esi
+ 10c:	e8 00 00 00 00       	call   111 <rpl_pipe2+0x111>
+ 111:	85 c0                	test   %eax,%eax
+ 113:	78 bb                	js     d0 <rpl_pipe2+0xd0>
+ 115:	83 c8 01             	or     $0x1,%eax
+ 118:	8b 7b 04             	mov    0x4(%rbx),%edi
+ 11b:	be 02 00 00 00       	mov    $0x2,%esi
+ 120:	89 c2                	mov    %eax,%edx
+ 122:	31 c0                	xor    %eax,%eax
+ 124:	e8 00 00 00 00       	call   129 <rpl_pipe2+0x129>
+ 129:	83 f8 ff             	cmp    $0xffffffff,%eax
+ 12c:	74 a2                	je     d0 <rpl_pipe2+0xd0>
+ 12e:	8b 3b                	mov    (%rbx),%edi
+ 130:	31 d2                	xor    %edx,%edx
+ 132:	31 c0                	xor    %eax,%eax
+ 134:	be 01 00 00 00       	mov    $0x1,%esi
+ 139:	e8 00 00 00 00       	call   13e <rpl_pipe2+0x13e>
+ 13e:	85 c0                	test   %eax,%eax
+ 140:	78 8e                	js     d0 <rpl_pipe2+0xd0>
+ 142:	83 c8 01             	or     $0x1,%eax
+ 145:	8b 3b                	mov    (%rbx),%edi
+ 147:	be 02 00 00 00       	mov    $0x2,%esi
+ 14c:	89 c2                	mov    %eax,%edx
+ 14e:	31 c0                	xor    %eax,%eax
+ 150:	e8 00 00 00 00       	call   155 <rpl_pipe2+0x155>
+ 155:	83 f8 ff             	cmp    $0xffffffff,%eax
+ 158:	0f 84 72 ff ff ff    	je     d0 <rpl_pipe2+0xd0>
+ 15e:	48 83 c4 08          	add    $0x8,%rsp
+ 162:	44 89 e0             	mov    %r12d,%eax
+ 165:	5b                   	pop    %rbx
+ 166:	5d                   	pop    %rbp
+ 167:	41 5c                	pop    %r12
+ 169:	41 5d                	pop    %r13
+ 16b:	c3                   	ret    
+ 16c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 170:	e8 00 00 00 00       	call   175 <rpl_pipe2+0x175>
+ 175:	41 89 c4             	mov    %eax,%r12d
+ 178:	85 c0                	test   %eax,%eax
+ 17a:	79 0a                	jns    186 <rpl_pipe2+0x186>
+ 17c:	e8 00 00 00 00       	call   181 <rpl_pipe2+0x181>
+ 181:	83 38 26             	cmpl   $0x26,(%rax)
+ 184:	74 1a                	je     1a0 <rpl_pipe2+0x1a0>
+ 186:	c7 05 00 00 00 00 01 	movl   $0x1,0x0(%rip)        # 190 <rpl_pipe2+0x190>
+ 18d:	00 00 00 
+ 190:	48 83 c4 08          	add    $0x8,%rsp
+ 194:	44 89 e0             	mov    %r12d,%eax
+ 197:	5b                   	pop    %rbx
+ 198:	5d                   	pop    %rbp
+ 199:	41 5c                	pop    %r12
+ 19b:	41 5d                	pop    %r13
+ 19d:	c3                   	ret    
+ 19e:	66 90                	xchg   %ax,%ax
+ 1a0:	c7 05 00 00 00 00 ff 	movl   $0xffffffff,0x0(%rip)        # 1aa <rpl_pipe2+0x1aa>
+ 1a7:	ff ff ff 
+ 1aa:	e9 75 fe ff ff       	jmp    24 <rpl_pipe2+0x24>
+ 1af:	90                   	nop
+ 1b0:	e8 00 00 00 00       	call   1b5 <rpl_pipe2+0x1b5>
+ 1b5:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+ 1bb:	c7 00 16 00 00 00    	movl   $0x16,(%rax)
+ 1c1:	e9 92 fe ff ff       	jmp    58 <rpl_pipe2+0x58>
+ 1c6:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+ 1cc:	e9 87 fe ff ff       	jmp    58 <rpl_pipe2+0x58>

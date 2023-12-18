@@ -1,0 +1,16 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-priv-set.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <priv_set_remove_linkdir>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+   9:	c3                   	ret    
+   a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000010 <priv_set_restore_linkdir>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  19:	c3                   	ret    

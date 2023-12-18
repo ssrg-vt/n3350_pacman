@@ -1,0 +1,50 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xasprintf.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xasprintf>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 81 ec d8 00 00 00 	sub    $0xd8,%rsp
+   b:	48 89 74 24 28       	mov    %rsi,0x28(%rsp)
+  10:	48 89 54 24 30       	mov    %rdx,0x30(%rsp)
+  15:	48 89 4c 24 38       	mov    %rcx,0x38(%rsp)
+  1a:	4c 89 44 24 40       	mov    %r8,0x40(%rsp)
+  1f:	4c 89 4c 24 48       	mov    %r9,0x48(%rsp)
+  24:	84 c0                	test   %al,%al
+  26:	74 37                	je     5f <xasprintf+0x5f>
+  28:	0f 29 44 24 50       	movaps %xmm0,0x50(%rsp)
+  2d:	0f 29 4c 24 60       	movaps %xmm1,0x60(%rsp)
+  32:	0f 29 54 24 70       	movaps %xmm2,0x70(%rsp)
+  37:	0f 29 9c 24 80 00 00 	movaps %xmm3,0x80(%rsp)
+  3e:	00 
+  3f:	0f 29 a4 24 90 00 00 	movaps %xmm4,0x90(%rsp)
+  46:	00 
+  47:	0f 29 ac 24 a0 00 00 	movaps %xmm5,0xa0(%rsp)
+  4e:	00 
+  4f:	0f 29 b4 24 b0 00 00 	movaps %xmm6,0xb0(%rsp)
+  56:	00 
+  57:	0f 29 bc 24 c0 00 00 	movaps %xmm7,0xc0(%rsp)
+  5e:	00 
+  5f:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  66:	00 00 
+  68:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  6d:	31 c0                	xor    %eax,%eax
+  6f:	48 8d 84 24 e0 00 00 	lea    0xe0(%rsp),%rax
+  76:	00 
+  77:	48 89 e6             	mov    %rsp,%rsi
+  7a:	c7 04 24 08 00 00 00 	movl   $0x8,(%rsp)
+  81:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  86:	48 8d 44 24 20       	lea    0x20(%rsp),%rax
+  8b:	c7 44 24 04 30 00 00 	movl   $0x30,0x4(%rsp)
+  92:	00 
+  93:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+  98:	e8 00 00 00 00       	call   9d <xasprintf+0x9d>
+  9d:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+  a2:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  a9:	00 00 
+  ab:	75 08                	jne    b5 <xasprintf+0xb5>
+  ad:	48 81 c4 d8 00 00 00 	add    $0xd8,%rsp
+  b4:	c3                   	ret    
+  b5:	e8 00 00 00 00       	call   ba <xasprintf+0xba>

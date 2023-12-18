@@ -1,0 +1,31 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-areadlink.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <careadlinkatcwd>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	83 ff 9c             	cmp    $0xffffff9c,%edi
+   7:	0f 85 00 00 00 00    	jne    d <careadlinkatcwd+0xd>
+   d:	48 89 f7             	mov    %rsi,%rdi
+  10:	48 89 d6             	mov    %rdx,%rsi
+  13:	48 89 ca             	mov    %rcx,%rdx
+  16:	e9 00 00 00 00       	jmp    1b <careadlinkatcwd+0x1b>
+  1b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000020 <areadlink>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	48 89 fe             	mov    %rdi,%rsi
+  27:	4c 8d 0d d2 ff ff ff 	lea    -0x2e(%rip),%r9        # 0 <careadlinkatcwd>
+  2e:	45 31 c0             	xor    %r8d,%r8d
+  31:	31 c9                	xor    %ecx,%ecx
+  33:	31 d2                	xor    %edx,%edx
+  35:	bf 9c ff ff ff       	mov    $0xffffff9c,%edi
+  3a:	e9 00 00 00 00       	jmp    3f <areadlink+0x1f>
+
+Disassembly of section .text.unlikely:
+
+0000000000000000 <careadlinkatcwd.cold>:
+   0:	50                   	push   %rax
+   1:	e8 00 00 00 00       	call   6 <careadlinkatcwd.cold+0x6>

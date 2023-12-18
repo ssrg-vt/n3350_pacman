@@ -1,0 +1,22 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-freadptr.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <freadptr>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 8b 47 20          	mov    0x20(%rdi),%rax
+   8:	48 39 47 28          	cmp    %rax,0x28(%rdi)
+   c:	77 1a                	ja     28 <freadptr+0x28>
+   e:	4c 8b 47 08          	mov    0x8(%rdi),%r8
+  12:	48 8b 47 10          	mov    0x10(%rdi),%rax
+  16:	4c 29 c0             	sub    %r8,%rax
+  19:	74 0d                	je     28 <freadptr+0x28>
+  1b:	48 89 06             	mov    %rax,(%rsi)
+  1e:	4c 89 c0             	mov    %r8,%rax
+  21:	c3                   	ret    
+  22:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  28:	45 31 c0             	xor    %r8d,%r8d
+  2b:	4c 89 c0             	mov    %r8,%rax
+  2e:	c3                   	ret    

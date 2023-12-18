@@ -1,0 +1,25 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-acl-errno-valid.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <acl_errno_valid>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	83 ff 26             	cmp    $0x26,%edi
+   7:	74 27                	je     30 <acl_errno_valid+0x30>
+   9:	7f 15                	jg     20 <acl_errno_valid+0x20>
+   b:	31 c0                	xor    %eax,%eax
+   d:	83 ff 10             	cmp    $0x10,%edi
+  10:	74 20                	je     32 <acl_errno_valid+0x32>
+  12:	83 ff 16             	cmp    $0x16,%edi
+  15:	0f 95 c0             	setne  %al
+  18:	c3                   	ret    
+  19:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  20:	83 ff 5f             	cmp    $0x5f,%edi
+  23:	0f 95 c0             	setne  %al
+  26:	c3                   	ret    
+  27:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  2e:	00 00 
+  30:	31 c0                	xor    %eax,%eax
+  32:	c3                   	ret    

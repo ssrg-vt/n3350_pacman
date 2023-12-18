@@ -1,0 +1,62 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-opendir-safer.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <opendir_safer>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 56                	push   %r14
+   6:	41 55                	push   %r13
+   8:	41 54                	push   %r12
+   a:	55                   	push   %rbp
+   b:	53                   	push   %rbx
+   c:	e8 00 00 00 00       	call   11 <opendir_safer+0x11>
+  11:	49 89 c4             	mov    %rax,%r12
+  14:	48 85 c0             	test   %rax,%rax
+  17:	74 0d                	je     26 <opendir_safer+0x26>
+  19:	48 89 c7             	mov    %rax,%rdi
+  1c:	e8 00 00 00 00       	call   21 <opendir_safer+0x21>
+  21:	83 f8 02             	cmp    $0x2,%eax
+  24:	76 12                	jbe    38 <opendir_safer+0x38>
+  26:	5b                   	pop    %rbx
+  27:	4c 89 e0             	mov    %r12,%rax
+  2a:	5d                   	pop    %rbp
+  2b:	41 5c                	pop    %r12
+  2d:	41 5d                	pop    %r13
+  2f:	41 5e                	pop    %r14
+  31:	c3                   	ret    
+  32:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  38:	89 c7                	mov    %eax,%edi
+  3a:	ba 03 00 00 00       	mov    $0x3,%edx
+  3f:	be 06 04 00 00       	mov    $0x406,%esi
+  44:	31 c0                	xor    %eax,%eax
+  46:	e8 00 00 00 00       	call   4b <opendir_safer+0x4b>
+  4b:	89 c5                	mov    %eax,%ebp
+  4d:	e8 00 00 00 00       	call   52 <opendir_safer+0x52>
+  52:	48 89 c3             	mov    %rax,%rbx
+  55:	85 ed                	test   %ebp,%ebp
+  57:	79 27                	jns    80 <opendir_safer+0x80>
+  59:	44 8b 30             	mov    (%rax),%r14d
+  5c:	45 31 ed             	xor    %r13d,%r13d
+  5f:	4c 89 e7             	mov    %r12,%rdi
+  62:	4d 89 ec             	mov    %r13,%r12
+  65:	e8 00 00 00 00       	call   6a <opendir_safer+0x6a>
+  6a:	44 89 33             	mov    %r14d,(%rbx)
+  6d:	4c 89 e0             	mov    %r12,%rax
+  70:	5b                   	pop    %rbx
+  71:	5d                   	pop    %rbp
+  72:	41 5c                	pop    %r12
+  74:	41 5d                	pop    %r13
+  76:	41 5e                	pop    %r14
+  78:	c3                   	ret    
+  79:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  80:	89 ef                	mov    %ebp,%edi
+  82:	e8 00 00 00 00       	call   87 <opendir_safer+0x87>
+  87:	44 8b 33             	mov    (%rbx),%r14d
+  8a:	49 89 c5             	mov    %rax,%r13
+  8d:	48 85 c0             	test   %rax,%rax
+  90:	75 cd                	jne    5f <opendir_safer+0x5f>
+  92:	89 ef                	mov    %ebp,%edi
+  94:	e8 00 00 00 00       	call   99 <opendir_safer+0x99>
+  99:	eb c4                	jmp    5f <opendir_safer+0x5f>

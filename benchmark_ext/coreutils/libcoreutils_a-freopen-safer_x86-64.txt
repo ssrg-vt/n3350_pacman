@@ -1,0 +1,190 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-freopen-safer.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <freopen_safer>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	41 55                	push   %r13
+   a:	49 89 f5             	mov    %rsi,%r13
+   d:	41 54                	push   %r12
+   f:	49 89 d4             	mov    %rdx,%r12
+  12:	55                   	push   %rbp
+  13:	48 89 fd             	mov    %rdi,%rbp
+  16:	48 89 d7             	mov    %rdx,%rdi
+  19:	53                   	push   %rbx
+  1a:	48 83 ec 18          	sub    $0x18,%rsp
+  1e:	e8 00 00 00 00       	call   23 <freopen_safer+0x23>
+  23:	83 f8 01             	cmp    $0x1,%eax
+  26:	0f 84 34 01 00 00    	je     160 <freopen_safer+0x160>
+  2c:	83 f8 02             	cmp    $0x2,%eax
+  2f:	0f 84 ab 01 00 00    	je     1e0 <freopen_safer+0x1e0>
+  35:	85 c0                	test   %eax,%eax
+  37:	0f 84 40 01 00 00    	je     17d <freopen_safer+0x17d>
+  3d:	be 02 00 00 00       	mov    $0x2,%esi
+  42:	bf 02 00 00 00       	mov    $0x2,%edi
+  47:	e8 00 00 00 00       	call   4c <freopen_safer+0x4c>
+  4c:	83 f8 02             	cmp    $0x2,%eax
+  4f:	41 0f 95 c6          	setne  %r14b
+  53:	be 01 00 00 00       	mov    $0x1,%esi
+  58:	bf 01 00 00 00       	mov    $0x1,%edi
+  5d:	e8 00 00 00 00       	call   62 <freopen_safer+0x62>
+  62:	83 f8 01             	cmp    $0x1,%eax
+  65:	89 44 24 0c          	mov    %eax,0xc(%rsp)
+  69:	41 0f 95 c7          	setne  %r15b
+  6d:	31 f6                	xor    %esi,%esi
+  6f:	31 ff                	xor    %edi,%edi
+  71:	e8 00 00 00 00       	call   76 <freopen_safer+0x76>
+  76:	89 44 24 08          	mov    %eax,0x8(%rsp)
+  7a:	e8 00 00 00 00       	call   7f <freopen_safer+0x7f>
+  7f:	8b 54 24 08          	mov    0x8(%rsp),%edx
+  83:	48 89 c3             	mov    %rax,%rbx
+  86:	85 d2                	test   %edx,%edx
+  88:	0f 85 a2 00 00 00    	jne    130 <freopen_safer+0x130>
+  8e:	83 7c 24 0c 01       	cmpl   $0x1,0xc(%rsp)
+  93:	c6 44 24 08 00       	movb   $0x0,0x8(%rsp)
+  98:	0f 84 b2 01 00 00    	je     250 <freopen_safer+0x250>
+  9e:	31 f6                	xor    %esi,%esi
+  a0:	31 c0                	xor    %eax,%eax
+  a2:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # a9 <freopen_safer+0xa9>
+  a9:	e8 00 00 00 00       	call   ae <freopen_safer+0xae>
+  ae:	83 f8 01             	cmp    $0x1,%eax
+  b1:	0f 85 39 01 00 00    	jne    1f0 <freopen_safer+0x1f0>
+  b7:	41 bf 01 00 00 00    	mov    $0x1,%r15d
+  bd:	45 84 f6             	test   %r14b,%r14b
+  c0:	0f 84 c2 00 00 00    	je     188 <freopen_safer+0x188>
+  c6:	31 f6                	xor    %esi,%esi
+  c8:	31 c0                	xor    %eax,%eax
+  ca:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # d1 <freopen_safer+0xd1>
+  d1:	e8 00 00 00 00       	call   d6 <freopen_safer+0xd6>
+  d6:	83 f8 02             	cmp    $0x2,%eax
+  d9:	0f 84 a9 00 00 00    	je     188 <freopen_safer+0x188>
+  df:	85 c0                	test   %eax,%eax
+  e1:	0f 89 79 01 00 00    	jns    260 <freopen_safer+0x260>
+  e7:	8b 2b                	mov    (%rbx),%ebp
+  e9:	45 31 e4             	xor    %r12d,%r12d
+  ec:	bf 02 00 00 00       	mov    $0x2,%edi
+  f1:	e8 00 00 00 00       	call   f6 <freopen_safer+0xf6>
+  f6:	45 84 ff             	test   %r15b,%r15b
+  f9:	0f 84 b6 00 00 00    	je     1b5 <freopen_safer+0x1b5>
+  ff:	90                   	nop
+ 100:	bf 01 00 00 00       	mov    $0x1,%edi
+ 105:	e8 00 00 00 00       	call   10a <freopen_safer+0x10a>
+ 10a:	80 7c 24 08 00       	cmpb   $0x0,0x8(%rsp)
+ 10f:	0f 84 ab 00 00 00    	je     1c0 <freopen_safer+0x1c0>
+ 115:	31 ff                	xor    %edi,%edi
+ 117:	e8 00 00 00 00       	call   11c <freopen_safer+0x11c>
+ 11c:	4d 85 e4             	test   %r12,%r12
+ 11f:	0f 85 a4 00 00 00    	jne    1c9 <freopen_safer+0x1c9>
+ 125:	89 2b                	mov    %ebp,(%rbx)
+ 127:	e9 9d 00 00 00       	jmp    1c9 <freopen_safer+0x1c9>
+ 12c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 130:	31 f6                	xor    %esi,%esi
+ 132:	31 c0                	xor    %eax,%eax
+ 134:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 13b <freopen_safer+0x13b>
+ 13b:	e8 00 00 00 00       	call   140 <freopen_safer+0x140>
+ 140:	85 c0                	test   %eax,%eax
+ 142:	0f 84 f8 00 00 00    	je     240 <freopen_safer+0x240>
+ 148:	85 c0                	test   %eax,%eax
+ 14a:	0f 89 30 01 00 00    	jns    280 <freopen_safer+0x280>
+ 150:	c6 44 24 08 01       	movb   $0x1,0x8(%rsp)
+ 155:	8b 2b                	mov    (%rbx),%ebp
+ 157:	45 31 e4             	xor    %r12d,%r12d
+ 15a:	eb 47                	jmp    1a3 <freopen_safer+0x1a3>
+ 15c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 160:	31 f6                	xor    %esi,%esi
+ 162:	31 ff                	xor    %edi,%edi
+ 164:	e8 00 00 00 00       	call   169 <freopen_safer+0x169>
+ 169:	41 89 c6             	mov    %eax,%r14d
+ 16c:	e8 00 00 00 00       	call   171 <freopen_safer+0x171>
+ 171:	48 89 c3             	mov    %rax,%rbx
+ 174:	45 85 f6             	test   %r14d,%r14d
+ 177:	0f 85 9b 00 00 00    	jne    218 <freopen_safer+0x218>
+ 17d:	c6 44 24 08 00       	movb   $0x0,0x8(%rsp)
+ 182:	45 31 f6             	xor    %r14d,%r14d
+ 185:	45 31 ff             	xor    %r15d,%r15d
+ 188:	4c 89 e2             	mov    %r12,%rdx
+ 18b:	48 89 ef             	mov    %rbp,%rdi
+ 18e:	4c 89 ee             	mov    %r13,%rsi
+ 191:	e8 00 00 00 00       	call   196 <freopen_safer+0x196>
+ 196:	49 89 c4             	mov    %rax,%r12
+ 199:	e8 00 00 00 00       	call   19e <freopen_safer+0x19e>
+ 19e:	8b 28                	mov    (%rax),%ebp
+ 1a0:	48 89 c3             	mov    %rax,%rbx
+ 1a3:	45 84 f6             	test   %r14b,%r14b
+ 1a6:	0f 85 40 ff ff ff    	jne    ec <freopen_safer+0xec>
+ 1ac:	45 84 ff             	test   %r15b,%r15b
+ 1af:	0f 85 4b ff ff ff    	jne    100 <freopen_safer+0x100>
+ 1b5:	80 7c 24 08 00       	cmpb   $0x0,0x8(%rsp)
+ 1ba:	0f 85 55 ff ff ff    	jne    115 <freopen_safer+0x115>
+ 1c0:	4d 85 e4             	test   %r12,%r12
+ 1c3:	0f 84 5c ff ff ff    	je     125 <freopen_safer+0x125>
+ 1c9:	48 83 c4 18          	add    $0x18,%rsp
+ 1cd:	4c 89 e0             	mov    %r12,%rax
+ 1d0:	5b                   	pop    %rbx
+ 1d1:	5d                   	pop    %rbp
+ 1d2:	41 5c                	pop    %r12
+ 1d4:	41 5d                	pop    %r13
+ 1d6:	41 5e                	pop    %r14
+ 1d8:	41 5f                	pop    %r15
+ 1da:	c3                   	ret    
+ 1db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 1e0:	45 31 f6             	xor    %r14d,%r14d
+ 1e3:	e9 6b fe ff ff       	jmp    53 <freopen_safer+0x53>
+ 1e8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 1ef:	00 
+ 1f0:	85 c0                	test   %eax,%eax
+ 1f2:	0f 89 b8 00 00 00    	jns    2b0 <freopen_safer+0x2b0>
+ 1f8:	8b 2b                	mov    (%rbx),%ebp
+ 1fa:	45 31 e4             	xor    %r12d,%r12d
+ 1fd:	45 84 f6             	test   %r14b,%r14b
+ 200:	0f 84 fa fe ff ff    	je     100 <freopen_safer+0x100>
+ 206:	bf 02 00 00 00       	mov    $0x2,%edi
+ 20b:	e8 00 00 00 00       	call   210 <freopen_safer+0x210>
+ 210:	e9 eb fe ff ff       	jmp    100 <freopen_safer+0x100>
+ 215:	0f 1f 00             	nopl   (%rax)
+ 218:	31 f6                	xor    %esi,%esi
+ 21a:	31 c0                	xor    %eax,%eax
+ 21c:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 223 <freopen_safer+0x223>
+ 223:	e8 00 00 00 00       	call   228 <freopen_safer+0x228>
+ 228:	85 c0                	test   %eax,%eax
+ 22a:	75 74                	jne    2a0 <freopen_safer+0x2a0>
+ 22c:	c6 44 24 08 01       	movb   $0x1,0x8(%rsp)
+ 231:	45 31 f6             	xor    %r14d,%r14d
+ 234:	45 31 ff             	xor    %r15d,%r15d
+ 237:	e9 4c ff ff ff       	jmp    188 <freopen_safer+0x188>
+ 23c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 240:	83 7c 24 0c 01       	cmpl   $0x1,0xc(%rsp)
+ 245:	c6 44 24 08 01       	movb   $0x1,0x8(%rsp)
+ 24a:	0f 85 4e fe ff ff    	jne    9e <freopen_safer+0x9e>
+ 250:	45 31 ff             	xor    %r15d,%r15d
+ 253:	e9 65 fe ff ff       	jmp    bd <freopen_safer+0xbd>
+ 258:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 25f:	00 
+ 260:	89 c7                	mov    %eax,%edi
+ 262:	bd 09 00 00 00       	mov    $0x9,%ebp
+ 267:	e8 00 00 00 00       	call   26c <freopen_safer+0x26c>
+ 26c:	c7 03 09 00 00 00    	movl   $0x9,(%rbx)
+ 272:	e9 72 fe ff ff       	jmp    e9 <freopen_safer+0xe9>
+ 277:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 27e:	00 00 
+ 280:	89 c7                	mov    %eax,%edi
+ 282:	bd 09 00 00 00       	mov    $0x9,%ebp
+ 287:	45 31 e4             	xor    %r12d,%r12d
+ 28a:	e8 00 00 00 00       	call   28f <freopen_safer+0x28f>
+ 28f:	c7 03 09 00 00 00    	movl   $0x9,(%rbx)
+ 295:	c6 44 24 08 01       	movb   $0x1,0x8(%rsp)
+ 29a:	e9 04 ff ff ff       	jmp    1a3 <freopen_safer+0x1a3>
+ 29f:	90                   	nop
+ 2a0:	45 31 f6             	xor    %r14d,%r14d
+ 2a3:	45 31 ff             	xor    %r15d,%r15d
+ 2a6:	e9 9d fe ff ff       	jmp    148 <freopen_safer+0x148>
+ 2ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 2b0:	89 c7                	mov    %eax,%edi
+ 2b2:	bd 09 00 00 00       	mov    $0x9,%ebp
+ 2b7:	e8 00 00 00 00       	call   2bc <freopen_safer+0x2bc>
+ 2bc:	c7 03 09 00 00 00    	movl   $0x9,(%rbx)
+ 2c2:	e9 33 ff ff ff       	jmp    1fa <freopen_safer+0x1fa>

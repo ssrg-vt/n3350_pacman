@@ -1,0 +1,52 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mbrtowc.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_mbrtowc>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	49 89 f5             	mov    %rsi,%r13
+   9:	41 54                	push   %r12
+   b:	55                   	push   %rbp
+   c:	48 89 d5             	mov    %rdx,%rbp
+   f:	53                   	push   %rbx
+  10:	48 89 fb             	mov    %rdi,%rbx
+  13:	48 83 ec 18          	sub    $0x18,%rsp
+  17:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1e:	00 00 
+  20:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  25:	31 c0                	xor    %eax,%eax
+  27:	48 85 ff             	test   %rdi,%rdi
+  2a:	48 8d 44 24 04       	lea    0x4(%rsp),%rax
+  2f:	48 0f 44 d8          	cmove  %rax,%rbx
+  33:	48 89 df             	mov    %rbx,%rdi
+  36:	e8 00 00 00 00       	call   3b <rpl_mbrtowc+0x3b>
+  3b:	49 89 c4             	mov    %rax,%r12
+  3e:	48 83 f8 fd          	cmp    $0xfffffffffffffffd,%rax
+  42:	76 05                	jbe    49 <rpl_mbrtowc+0x49>
+  44:	48 85 ed             	test   %rbp,%rbp
+  47:	75 27                	jne    70 <rpl_mbrtowc+0x70>
+  49:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  4e:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  55:	00 00 
+  57:	75 31                	jne    8a <rpl_mbrtowc+0x8a>
+  59:	48 83 c4 18          	add    $0x18,%rsp
+  5d:	4c 89 e0             	mov    %r12,%rax
+  60:	5b                   	pop    %rbx
+  61:	5d                   	pop    %rbp
+  62:	41 5c                	pop    %r12
+  64:	41 5d                	pop    %r13
+  66:	c3                   	ret    
+  67:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  6e:	00 00 
+  70:	31 ff                	xor    %edi,%edi
+  72:	e8 00 00 00 00       	call   77 <rpl_mbrtowc+0x77>
+  77:	84 c0                	test   %al,%al
+  79:	75 ce                	jne    49 <rpl_mbrtowc+0x49>
+  7b:	41 0f b6 45 00       	movzbl 0x0(%r13),%eax
+  80:	41 bc 01 00 00 00    	mov    $0x1,%r12d
+  86:	89 03                	mov    %eax,(%rbx)
+  88:	eb bf                	jmp    49 <rpl_mbrtowc+0x49>
+  8a:	e8 00 00 00 00       	call   8f <rpl_mbrtowc+0x8f>

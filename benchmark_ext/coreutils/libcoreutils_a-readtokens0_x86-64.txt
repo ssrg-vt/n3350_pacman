@@ -1,0 +1,244 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-readtokens0.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <save_token>:
+   0:	41 54                	push   %r12
+   2:	55                   	push   %rbp
+   3:	53                   	push   %rbx
+   4:	48 8b 47 30          	mov    0x30(%rdi),%rax
+   8:	48 89 fb             	mov    %rdi,%rbx
+   b:	4c 8b 67 28          	mov    0x28(%rdi),%r12
+   f:	48 89 c5             	mov    %rax,%rbp
+  12:	4c 29 e5             	sub    %r12,%rbp
+  15:	48 83 ed 01          	sub    $0x1,%rbp
+  19:	4c 39 e0             	cmp    %r12,%rax
+  1c:	0f 84 be 00 00 00    	je     e0 <save_token+0xe0>
+  22:	48 8b 53 48          	mov    0x48(%rbx),%rdx
+  26:	48 01 d0             	add    %rdx,%rax
+  29:	48 f7 d2             	not    %rdx
+  2c:	48 21 d0             	and    %rdx,%rax
+  2f:	48 8b 53 38          	mov    0x38(%rbx),%rdx
+  33:	48 89 c6             	mov    %rax,%rsi
+  36:	48 2b 73 20          	sub    0x20(%rbx),%rsi
+  3a:	48 89 d1             	mov    %rdx,%rcx
+  3d:	48 2b 4b 20          	sub    0x20(%rbx),%rcx
+  41:	48 39 ce             	cmp    %rcx,%rsi
+  44:	48 0f 46 d0          	cmovbe %rax,%rdx
+  48:	48 8b 83 90 00 00 00 	mov    0x90(%rbx),%rax
+  4f:	48 89 53 30          	mov    %rdx,0x30(%rbx)
+  53:	48 89 53 28          	mov    %rdx,0x28(%rbx)
+  57:	48 8b 93 88 00 00 00 	mov    0x88(%rbx),%rdx
+  5e:	48 29 d0             	sub    %rdx,%rax
+  61:	48 83 f8 07          	cmp    $0x7,%rax
+  65:	76 39                	jbe    a0 <save_token+0xa0>
+  67:	4c 89 22             	mov    %r12,(%rdx)
+  6a:	48 8b 93 e0 00 00 00 	mov    0xe0(%rbx),%rdx
+  71:	48 8b 83 e8 00 00 00 	mov    0xe8(%rbx),%rax
+  78:	48 83 83 88 00 00 00 	addq   $0x8,0x88(%rbx)
+  7f:	08 
+  80:	48 29 d0             	sub    %rdx,%rax
+  83:	48 83 f8 07          	cmp    $0x7,%rax
+  87:	76 37                	jbe    c0 <save_token+0xc0>
+  89:	48 89 2a             	mov    %rbp,(%rdx)
+  8c:	48 83 83 e0 00 00 00 	addq   $0x8,0xe0(%rbx)
+  93:	08 
+  94:	48 83 03 01          	addq   $0x1,(%rbx)
+  98:	5b                   	pop    %rbx
+  99:	5d                   	pop    %rbp
+  9a:	41 5c                	pop    %r12
+  9c:	c3                   	ret    
+  9d:	0f 1f 00             	nopl   (%rax)
+  a0:	48 8d 7b 70          	lea    0x70(%rbx),%rdi
+  a4:	be 08 00 00 00       	mov    $0x8,%esi
+  a9:	e8 00 00 00 00       	call   ae <save_token+0xae>
+  ae:	48 8b 93 88 00 00 00 	mov    0x88(%rbx),%rdx
+  b5:	eb b0                	jmp    67 <save_token+0x67>
+  b7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  be:	00 00 
+  c0:	48 8d bb c8 00 00 00 	lea    0xc8(%rbx),%rdi
+  c7:	be 08 00 00 00       	mov    $0x8,%esi
+  cc:	e8 00 00 00 00       	call   d1 <save_token+0xd1>
+  d1:	48 8b 93 e0 00 00 00 	mov    0xe0(%rbx),%rdx
+  d8:	eb af                	jmp    89 <save_token+0x89>
+  da:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  e0:	80 4f 68 02          	orb    $0x2,0x68(%rdi)
+  e4:	e9 39 ff ff ff       	jmp    22 <save_token+0x22>
+  e9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000000f0 <readtokens0_init>:
+  f0:	f3 0f 1e fa          	endbr64 
+  f4:	41 54                	push   %r12
+  f6:	4c 8b 25 00 00 00 00 	mov    0x0(%rip),%r12        # fd <readtokens0_init+0xd>
+  fd:	31 d2                	xor    %edx,%edx
+  ff:	31 f6                	xor    %esi,%esi
+ 101:	55                   	push   %rbp
+ 102:	48 8b 2d 00 00 00 00 	mov    0x0(%rip),%rbp        # 109 <readtokens0_init+0x19>
+ 109:	53                   	push   %rbx
+ 10a:	4c 89 e1             	mov    %r12,%rcx
+ 10d:	48 89 fb             	mov    %rdi,%rbx
+ 110:	48 8d 7f 18          	lea    0x18(%rdi),%rdi
+ 114:	48 c7 47 e8 00 00 00 	movq   $0x0,-0x18(%rdi)
+ 11b:	00 
+ 11c:	49 89 e8             	mov    %rbp,%r8
+ 11f:	48 c7 47 f0 00 00 00 	movq   $0x0,-0x10(%rdi)
+ 126:	00 
+ 127:	48 c7 47 f8 00 00 00 	movq   $0x0,-0x8(%rdi)
+ 12e:	00 
+ 12f:	e8 00 00 00 00       	call   134 <readtokens0_init+0x44>
+ 134:	48 8d 7b 70          	lea    0x70(%rbx),%rdi
+ 138:	49 89 e8             	mov    %rbp,%r8
+ 13b:	4c 89 e1             	mov    %r12,%rcx
+ 13e:	31 d2                	xor    %edx,%edx
+ 140:	31 f6                	xor    %esi,%esi
+ 142:	e8 00 00 00 00       	call   147 <readtokens0_init+0x57>
+ 147:	48 8d bb c8 00 00 00 	lea    0xc8(%rbx),%rdi
+ 14e:	49 89 e8             	mov    %rbp,%r8
+ 151:	5b                   	pop    %rbx
+ 152:	4c 89 e1             	mov    %r12,%rcx
+ 155:	5d                   	pop    %rbp
+ 156:	31 d2                	xor    %edx,%edx
+ 158:	31 f6                	xor    %esi,%esi
+ 15a:	41 5c                	pop    %r12
+ 15c:	e9 00 00 00 00       	jmp    161 <readtokens0_init+0x71>
+ 161:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 168:	00 00 00 00 
+ 16c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000170 <readtokens0_free>:
+ 170:	f3 0f 1e fa          	endbr64 
+ 174:	53                   	push   %rbx
+ 175:	31 f6                	xor    %esi,%esi
+ 177:	48 89 fb             	mov    %rdi,%rbx
+ 17a:	48 8d 7f 18          	lea    0x18(%rdi),%rdi
+ 17e:	e8 00 00 00 00       	call   183 <readtokens0_free+0x13>
+ 183:	48 8d 7b 70          	lea    0x70(%rbx),%rdi
+ 187:	31 f6                	xor    %esi,%esi
+ 189:	e8 00 00 00 00       	call   18e <readtokens0_free+0x1e>
+ 18e:	48 8d bb c8 00 00 00 	lea    0xc8(%rbx),%rdi
+ 195:	31 f6                	xor    %esi,%esi
+ 197:	5b                   	pop    %rbx
+ 198:	e9 00 00 00 00       	jmp    19d <readtokens0_free+0x2d>
+ 19d:	0f 1f 00             	nopl   (%rax)
+
+00000000000001a0 <readtokens0>:
+ 1a0:	f3 0f 1e fa          	endbr64 
+ 1a4:	41 55                	push   %r13
+ 1a6:	4c 8d 6e 18          	lea    0x18(%rsi),%r13
+ 1aa:	41 54                	push   %r12
+ 1ac:	49 89 fc             	mov    %rdi,%r12
+ 1af:	55                   	push   %rbp
+ 1b0:	48 89 f5             	mov    %rsi,%rbp
+ 1b3:	53                   	push   %rbx
+ 1b4:	48 83 ec 08          	sub    $0x8,%rsp
+ 1b8:	eb 14                	jmp    1ce <readtokens0+0x2e>
+ 1ba:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 1c0:	48 8d 50 01          	lea    0x1(%rax),%rdx
+ 1c4:	48 89 55 30          	mov    %rdx,0x30(%rbp)
+ 1c8:	88 18                	mov    %bl,(%rax)
+ 1ca:	85 db                	test   %ebx,%ebx
+ 1cc:	74 42                	je     210 <readtokens0+0x70>
+ 1ce:	4c 89 e7             	mov    %r12,%rdi
+ 1d1:	e8 00 00 00 00       	call   1d6 <readtokens0+0x36>
+ 1d6:	89 c3                	mov    %eax,%ebx
+ 1d8:	48 8b 45 30          	mov    0x30(%rbp),%rax
+ 1dc:	83 fb ff             	cmp    $0xffffffff,%ebx
+ 1df:	74 3f                	je     220 <readtokens0+0x80>
+ 1e1:	48 39 45 38          	cmp    %rax,0x38(%rbp)
+ 1e5:	75 d9                	jne    1c0 <readtokens0+0x20>
+ 1e7:	be 01 00 00 00       	mov    $0x1,%esi
+ 1ec:	4c 89 ef             	mov    %r13,%rdi
+ 1ef:	e8 00 00 00 00       	call   1f4 <readtokens0+0x54>
+ 1f4:	48 8b 45 30          	mov    0x30(%rbp),%rax
+ 1f8:	48 8d 50 01          	lea    0x1(%rax),%rdx
+ 1fc:	48 89 55 30          	mov    %rdx,0x30(%rbp)
+ 200:	88 18                	mov    %bl,(%rax)
+ 202:	85 db                	test   %ebx,%ebx
+ 204:	75 c8                	jne    1ce <readtokens0+0x2e>
+ 206:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 20d:	00 00 00 
+ 210:	48 89 ef             	mov    %rbp,%rdi
+ 213:	e8 e8 fd ff ff       	call   0 <save_token>
+ 218:	eb b4                	jmp    1ce <readtokens0+0x2e>
+ 21a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 220:	48 3b 45 28          	cmp    0x28(%rbp),%rax
+ 224:	74 1d                	je     243 <readtokens0+0xa3>
+ 226:	48 3b 45 38          	cmp    0x38(%rbp),%rax
+ 22a:	0f 84 3c 01 00 00    	je     36c <readtokens0+0x1cc>
+ 230:	48 8d 50 01          	lea    0x1(%rax),%rdx
+ 234:	48 89 ef             	mov    %rbp,%rdi
+ 237:	48 89 55 30          	mov    %rdx,0x30(%rbp)
+ 23b:	c6 00 00             	movb   $0x0,(%rax)
+ 23e:	e8 bd fd ff ff       	call   0 <save_token>
+ 243:	48 8b 95 88 00 00 00 	mov    0x88(%rbp),%rdx
+ 24a:	48 8b 85 90 00 00 00 	mov    0x90(%rbp),%rax
+ 251:	48 29 d0             	sub    %rdx,%rax
+ 254:	48 83 f8 07          	cmp    $0x7,%rax
+ 258:	0f 86 d2 00 00 00    	jbe    330 <readtokens0+0x190>
+ 25e:	48 c7 02 00 00 00 00 	movq   $0x0,(%rdx)
+ 265:	48 8b 85 88 00 00 00 	mov    0x88(%rbp),%rax
+ 26c:	48 8b 8d 80 00 00 00 	mov    0x80(%rbp),%rcx
+ 273:	48 83 c0 08          	add    $0x8,%rax
+ 277:	48 39 c8             	cmp    %rcx,%rax
+ 27a:	0f 84 e0 00 00 00    	je     360 <readtokens0+0x1c0>
+ 280:	48 8b 95 a0 00 00 00 	mov    0xa0(%rbp),%rdx
+ 287:	48 89 4d 08          	mov    %rcx,0x8(%rbp)
+ 28b:	48 8b 8d d8 00 00 00 	mov    0xd8(%rbp),%rcx
+ 292:	48 01 d0             	add    %rdx,%rax
+ 295:	48 f7 d2             	not    %rdx
+ 298:	48 21 d0             	and    %rdx,%rax
+ 29b:	48 8b 95 90 00 00 00 	mov    0x90(%rbp),%rdx
+ 2a2:	48 89 c7             	mov    %rax,%rdi
+ 2a5:	48 2b 7d 78          	sub    0x78(%rbp),%rdi
+ 2a9:	48 89 d6             	mov    %rdx,%rsi
+ 2ac:	48 2b 75 78          	sub    0x78(%rbp),%rsi
+ 2b0:	48 39 f7             	cmp    %rsi,%rdi
+ 2b3:	48 0f 46 d0          	cmovbe %rax,%rdx
+ 2b7:	48 8b 85 e0 00 00 00 	mov    0xe0(%rbp),%rax
+ 2be:	48 89 95 88 00 00 00 	mov    %rdx,0x88(%rbp)
+ 2c5:	48 89 95 80 00 00 00 	mov    %rdx,0x80(%rbp)
+ 2cc:	48 39 c8             	cmp    %rcx,%rax
+ 2cf:	74 7f                	je     350 <readtokens0+0x1b0>
+ 2d1:	48 8b 95 f8 00 00 00 	mov    0xf8(%rbp),%rdx
+ 2d8:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+ 2dc:	48 01 d0             	add    %rdx,%rax
+ 2df:	48 f7 d2             	not    %rdx
+ 2e2:	48 21 d0             	and    %rdx,%rax
+ 2e5:	48 8b 95 e8 00 00 00 	mov    0xe8(%rbp),%rdx
+ 2ec:	48 89 c7             	mov    %rax,%rdi
+ 2ef:	48 2b bd d0 00 00 00 	sub    0xd0(%rbp),%rdi
+ 2f6:	48 89 d6             	mov    %rdx,%rsi
+ 2f9:	48 2b b5 d0 00 00 00 	sub    0xd0(%rbp),%rsi
+ 300:	48 39 f7             	cmp    %rsi,%rdi
+ 303:	4c 89 e7             	mov    %r12,%rdi
+ 306:	48 0f 46 d0          	cmovbe %rax,%rdx
+ 30a:	48 89 95 e0 00 00 00 	mov    %rdx,0xe0(%rbp)
+ 311:	48 89 95 d8 00 00 00 	mov    %rdx,0xd8(%rbp)
+ 318:	e8 00 00 00 00       	call   31d <readtokens0+0x17d>
+ 31d:	85 c0                	test   %eax,%eax
+ 31f:	0f 94 c0             	sete   %al
+ 322:	48 83 c4 08          	add    $0x8,%rsp
+ 326:	5b                   	pop    %rbx
+ 327:	5d                   	pop    %rbp
+ 328:	41 5c                	pop    %r12
+ 32a:	41 5d                	pop    %r13
+ 32c:	c3                   	ret    
+ 32d:	0f 1f 00             	nopl   (%rax)
+ 330:	48 8d 7d 70          	lea    0x70(%rbp),%rdi
+ 334:	be 08 00 00 00       	mov    $0x8,%esi
+ 339:	e8 00 00 00 00       	call   33e <readtokens0+0x19e>
+ 33e:	48 8b 95 88 00 00 00 	mov    0x88(%rbp),%rdx
+ 345:	e9 14 ff ff ff       	jmp    25e <readtokens0+0xbe>
+ 34a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 350:	80 8d 18 01 00 00 02 	orb    $0x2,0x118(%rbp)
+ 357:	e9 75 ff ff ff       	jmp    2d1 <readtokens0+0x131>
+ 35c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 360:	80 8d c0 00 00 00 02 	orb    $0x2,0xc0(%rbp)
+ 367:	e9 14 ff ff ff       	jmp    280 <readtokens0+0xe0>
+ 36c:	48 8d 7d 18          	lea    0x18(%rbp),%rdi
+ 370:	be 01 00 00 00       	mov    $0x1,%esi
+ 375:	e8 00 00 00 00       	call   37a <readtokens0+0x1da>
+ 37a:	48 8b 45 30          	mov    0x30(%rbp),%rax
+ 37e:	e9 ad fe ff ff       	jmp    230 <readtokens0+0x90>

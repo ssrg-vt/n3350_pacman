@@ -1,0 +1,16 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-chownat.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <chownat>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	45 31 c0             	xor    %r8d,%r8d
+   7:	e9 00 00 00 00       	jmp    c <chownat+0xc>
+   c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000010 <lchownat>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	41 b8 00 01 00 00    	mov    $0x100,%r8d
+  1a:	e9 00 00 00 00       	jmp    1f <lchownat+0xf>

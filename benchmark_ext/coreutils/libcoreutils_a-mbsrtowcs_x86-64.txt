@@ -1,0 +1,139 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mbsrtowcs.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_mbsrtowcs>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	49 89 cf             	mov    %rcx,%r15
+   9:	41 56                	push   %r14
+   b:	41 55                	push   %r13
+   d:	41 54                	push   %r12
+   f:	55                   	push   %rbp
+  10:	53                   	push   %rbx
+  11:	48 83 ec 18          	sub    $0x18,%rsp
+  15:	48 8b 1e             	mov    (%rsi),%rbx
+  18:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1f:	00 00 
+  21:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  26:	31 c0                	xor    %eax,%eax
+  28:	48 85 c9             	test   %rcx,%rcx
+  2b:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 32 <rpl_mbsrtowcs+0x32>
+  32:	4c 0f 44 f8          	cmove  %rax,%r15
+  36:	48 85 ff             	test   %rdi,%rdi
+  39:	0f 84 d1 00 00 00    	je     110 <rpl_mbsrtowcs+0x110>
+  3f:	49 89 f5             	mov    %rsi,%r13
+  42:	48 89 d5             	mov    %rdx,%rbp
+  45:	48 85 d2             	test   %rdx,%rdx
+  48:	0f 84 76 01 00 00    	je     1c4 <rpl_mbsrtowcs+0x1c4>
+  4e:	49 89 fc             	mov    %rdi,%r12
+  51:	49 89 fe             	mov    %rdi,%r14
+  54:	0f 1f 40 00          	nopl   0x0(%rax)
+  58:	80 3b 00             	cmpb   $0x0,(%rbx)
+  5b:	ba 01 00 00 00       	mov    $0x1,%edx
+  60:	74 26                	je     88 <rpl_mbsrtowcs+0x88>
+  62:	80 7b 01 00          	cmpb   $0x0,0x1(%rbx)
+  66:	ba 02 00 00 00       	mov    $0x2,%edx
+  6b:	74 1b                	je     88 <rpl_mbsrtowcs+0x88>
+  6d:	80 7b 02 00          	cmpb   $0x0,0x2(%rbx)
+  71:	ba 03 00 00 00       	mov    $0x3,%edx
+  76:	74 10                	je     88 <rpl_mbsrtowcs+0x88>
+  78:	80 7b 03 00          	cmpb   $0x0,0x3(%rbx)
+  7c:	ba 04 00 00 00       	mov    $0x4,%edx
+  81:	75 75                	jne    f8 <rpl_mbsrtowcs+0xf8>
+  83:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  88:	4c 89 f9             	mov    %r15,%rcx
+  8b:	48 89 de             	mov    %rbx,%rsi
+  8e:	4c 89 f7             	mov    %r14,%rdi
+  91:	e8 00 00 00 00       	call   96 <rpl_mbsrtowcs+0x96>
+  96:	48 83 f8 fe          	cmp    $0xfffffffffffffffe,%rax
+  9a:	0f 84 00 00 00 00    	je     a0 <rpl_mbsrtowcs+0xa0>
+  a0:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+  a4:	0f 84 d6 00 00 00    	je     180 <rpl_mbsrtowcs+0x180>
+  aa:	48 85 c0             	test   %rax,%rax
+  ad:	0f 84 ed 00 00 00    	je     1a0 <rpl_mbsrtowcs+0x1a0>
+  b3:	48 01 c3             	add    %rax,%rbx
+  b6:	49 83 c6 04          	add    $0x4,%r14
+  ba:	48 83 ed 01          	sub    $0x1,%rbp
+  be:	75 98                	jne    58 <rpl_mbsrtowcs+0x58>
+  c0:	4d 29 e6             	sub    %r12,%r14
+  c3:	49 c1 fe 02          	sar    $0x2,%r14
+  c7:	49 89 5d 00          	mov    %rbx,0x0(%r13)
+  cb:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  d0:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  d7:	00 00 
+  d9:	0f 85 ed 00 00 00    	jne    1cc <rpl_mbsrtowcs+0x1cc>
+  df:	48 83 c4 18          	add    $0x18,%rsp
+  e3:	4c 89 f0             	mov    %r14,%rax
+  e6:	5b                   	pop    %rbx
+  e7:	5d                   	pop    %rbp
+  e8:	41 5c                	pop    %r12
+  ea:	41 5d                	pop    %r13
+  ec:	41 5e                	pop    %r14
+  ee:	41 5f                	pop    %r15
+  f0:	c3                   	ret    
+  f1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  f8:	48 8d 7b 04          	lea    0x4(%rbx),%rdi
+  fc:	be 0c 00 00 00       	mov    $0xc,%esi
+ 101:	e8 00 00 00 00       	call   106 <rpl_mbsrtowcs+0x106>
+ 106:	48 8d 50 04          	lea    0x4(%rax),%rdx
+ 10a:	e9 79 ff ff ff       	jmp    88 <rpl_mbsrtowcs+0x88>
+ 10f:	90                   	nop
+ 110:	49 8b 07             	mov    (%r15),%rax
+ 113:	45 31 f6             	xor    %r14d,%r14d
+ 116:	48 89 e5             	mov    %rsp,%rbp
+ 119:	48 89 04 24          	mov    %rax,(%rsp)
+ 11d:	0f 1f 00             	nopl   (%rax)
+ 120:	80 3b 00             	cmpb   $0x0,(%rbx)
+ 123:	ba 01 00 00 00       	mov    $0x1,%edx
+ 128:	74 26                	je     150 <rpl_mbsrtowcs+0x150>
+ 12a:	80 7b 01 00          	cmpb   $0x0,0x1(%rbx)
+ 12e:	ba 02 00 00 00       	mov    $0x2,%edx
+ 133:	74 1b                	je     150 <rpl_mbsrtowcs+0x150>
+ 135:	80 7b 02 00          	cmpb   $0x0,0x2(%rbx)
+ 139:	ba 03 00 00 00       	mov    $0x3,%edx
+ 13e:	74 10                	je     150 <rpl_mbsrtowcs+0x150>
+ 140:	80 7b 03 00          	cmpb   $0x0,0x3(%rbx)
+ 144:	ba 04 00 00 00       	mov    $0x4,%edx
+ 149:	75 65                	jne    1b0 <rpl_mbsrtowcs+0x1b0>
+ 14b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 150:	31 ff                	xor    %edi,%edi
+ 152:	48 89 e9             	mov    %rbp,%rcx
+ 155:	48 89 de             	mov    %rbx,%rsi
+ 158:	e8 00 00 00 00       	call   15d <rpl_mbsrtowcs+0x15d>
+ 15d:	48 83 f8 fe          	cmp    $0xfffffffffffffffe,%rax
+ 161:	0f 84 00 00 00 00    	je     167 <rpl_mbsrtowcs+0x167>
+ 167:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+ 16b:	74 17                	je     184 <rpl_mbsrtowcs+0x184>
+ 16d:	48 85 c0             	test   %rax,%rax
+ 170:	0f 84 55 ff ff ff    	je     cb <rpl_mbsrtowcs+0xcb>
+ 176:	48 01 c3             	add    %rax,%rbx
+ 179:	49 83 c6 01          	add    $0x1,%r14
+ 17d:	eb a1                	jmp    120 <rpl_mbsrtowcs+0x120>
+ 17f:	90                   	nop
+ 180:	49 89 5d 00          	mov    %rbx,0x0(%r13)
+ 184:	e8 00 00 00 00       	call   189 <rpl_mbsrtowcs+0x189>
+ 189:	49 c7 c6 ff ff ff ff 	mov    $0xffffffffffffffff,%r14
+ 190:	c7 00 54 00 00 00    	movl   $0x54,(%rax)
+ 196:	e9 30 ff ff ff       	jmp    cb <rpl_mbsrtowcs+0xcb>
+ 19b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 1a0:	4d 29 e6             	sub    %r12,%r14
+ 1a3:	31 db                	xor    %ebx,%ebx
+ 1a5:	49 c1 fe 02          	sar    $0x2,%r14
+ 1a9:	e9 19 ff ff ff       	jmp    c7 <rpl_mbsrtowcs+0xc7>
+ 1ae:	66 90                	xchg   %ax,%ax
+ 1b0:	48 8d 7b 04          	lea    0x4(%rbx),%rdi
+ 1b4:	be 0c 00 00 00       	mov    $0xc,%esi
+ 1b9:	e8 00 00 00 00       	call   1be <rpl_mbsrtowcs+0x1be>
+ 1be:	48 8d 50 04          	lea    0x4(%rax),%rdx
+ 1c2:	eb 8c                	jmp    150 <rpl_mbsrtowcs+0x150>
+ 1c4:	45 31 f6             	xor    %r14d,%r14d
+ 1c7:	e9 fb fe ff ff       	jmp    c7 <rpl_mbsrtowcs+0xc7>
+ 1cc:	e8 00 00 00 00       	call   1d1 <rpl_mbsrtowcs+0x1d1>
+
+Disassembly of section .text.unlikely:
+
+0000000000000000 <rpl_mbsrtowcs.cold>:
+   0:	e8 00 00 00 00       	call   5 <rpl_mbsrtowcs.cold+0x5>

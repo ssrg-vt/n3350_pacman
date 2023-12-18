@@ -1,0 +1,43 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-targetdir.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <target_dirfd_valid>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	83 ff ff             	cmp    $0xffffffff,%edi
+   7:	0f 95 c0             	setne  %al
+   a:	c3                   	ret    
+   b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000010 <target_directory_operand>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	0f b6 07             	movzbl (%rdi),%eax
+  17:	48 89 f9             	mov    %rdi,%rcx
+  1a:	eb 08                	jmp    24 <target_directory_operand+0x14>
+  1c:	0f 1f 40 00          	nopl   0x0(%rax)
+  20:	84 c0                	test   %al,%al
+  22:	74 3c                	je     60 <target_directory_operand+0x50>
+  24:	48 8d 51 01          	lea    0x1(%rcx),%rdx
+  28:	3c 2e                	cmp    $0x2e,%al
+  2a:	75 20                	jne    4c <target_directory_operand+0x3c>
+  2c:	0f b6 41 01          	movzbl 0x1(%rcx),%eax
+  30:	3c 2f                	cmp    $0x2f,%al
+  32:	75 14                	jne    48 <target_directory_operand+0x38>
+  34:	0f b6 42 01          	movzbl 0x1(%rdx),%eax
+  38:	48 8d 4a 01          	lea    0x1(%rdx),%rcx
+  3c:	3c 2f                	cmp    $0x2f,%al
+  3e:	75 e0                	jne    20 <target_directory_operand+0x10>
+  40:	48 89 ca             	mov    %rcx,%rdx
+  43:	eb ef                	jmp    34 <target_directory_operand+0x24>
+  45:	0f 1f 00             	nopl   (%rax)
+  48:	84 c0                	test   %al,%al
+  4a:	74 14                	je     60 <target_directory_operand+0x50>
+  4c:	be 00 00 21 00       	mov    $0x210000,%esi
+  51:	31 c0                	xor    %eax,%eax
+  53:	e9 00 00 00 00       	jmp    58 <target_directory_operand+0x48>
+  58:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  5f:	00 
+  60:	b8 9c ff ff ff       	mov    $0xffffff9c,%eax
+  65:	c3                   	ret    

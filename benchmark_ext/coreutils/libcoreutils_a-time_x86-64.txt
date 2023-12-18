@@ -1,0 +1,37 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-time.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_time>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	53                   	push   %rbx
+   5:	31 f6                	xor    %esi,%esi
+   7:	48 89 fb             	mov    %rdi,%rbx
+   a:	48 83 ec 20          	sub    $0x20,%rsp
+   e:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  15:	00 00 
+  17:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  1c:	31 c0                	xor    %eax,%eax
+  1e:	48 89 e7             	mov    %rsp,%rdi
+  21:	e8 00 00 00 00       	call   26 <rpl_time+0x26>
+  26:	85 c0                	test   %eax,%eax
+  28:	0f 88 00 00 00 00    	js     2e <rpl_time+0x2e>
+  2e:	48 8b 04 24          	mov    (%rsp),%rax
+  32:	48 85 db             	test   %rbx,%rbx
+  35:	74 03                	je     3a <rpl_time+0x3a>
+  37:	48 89 03             	mov    %rax,(%rbx)
+  3a:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+  3f:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  46:	00 00 
+  48:	75 06                	jne    50 <rpl_time+0x50>
+  4a:	48 83 c4 20          	add    $0x20,%rsp
+  4e:	5b                   	pop    %rbx
+  4f:	c3                   	ret    
+  50:	e8 00 00 00 00       	call   55 <rpl_time+0x55>
+
+Disassembly of section .text.unlikely:
+
+0000000000000000 <rpl_time.cold>:
+   0:	e8 00 00 00 00       	call   5 <rpl_time.cold+0x5>

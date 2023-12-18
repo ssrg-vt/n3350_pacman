@@ -1,0 +1,158 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mbscasecmp.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mbscasecmp>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	41 55                	push   %r13
+   a:	41 54                	push   %r12
+   c:	45 31 e4             	xor    %r12d,%r12d
+   f:	55                   	push   %rbp
+  10:	53                   	push   %rbx
+  11:	48 83 ec 38          	sub    $0x38,%rsp
+  15:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1c:	00 00 
+  1e:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+  23:	31 c0                	xor    %eax,%eax
+  25:	48 39 fe             	cmp    %rdi,%rsi
+  28:	0f 84 8b 00 00 00    	je     b9 <mbscasecmp+0xb9>
+  2e:	48 89 fb             	mov    %rdi,%rbx
+  31:	48 89 f5             	mov    %rsi,%rbp
+  34:	e8 00 00 00 00       	call   39 <mbscasecmp+0x39>
+  39:	48 83 f8 01          	cmp    $0x1,%rax
+  3d:	0f 86 9d 00 00 00    	jbe    e0 <mbscasecmp+0xe0>
+  43:	4c 8d 6c 24 20       	lea    0x20(%rsp),%r13
+  48:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  4f:	00 
+  50:	44 0f b6 23          	movzbl (%rbx),%r12d
+  54:	45 84 e4             	test   %r12b,%r12b
+  57:	0f 88 d3 00 00 00    	js     130 <mbscasecmp+0x130>
+  5d:	45 0f be f4          	movsbl %r12b,%r14d
+  61:	b8 01 00 00 00       	mov    $0x1,%eax
+  66:	45 31 c0             	xor    %r8d,%r8d
+  69:	44 0f be 7d 00       	movsbl 0x0(%rbp),%r15d
+  6e:	48 01 c3             	add    %rax,%rbx
+  71:	45 84 ff             	test   %r15b,%r15b
+  74:	0f 88 2e 01 00 00    	js     1a8 <mbscasecmp+0x1a8>
+  7a:	44 89 f9             	mov    %r15d,%ecx
+  7d:	45 31 e4             	xor    %r12d,%r12d
+  80:	b8 01 00 00 00       	mov    $0x1,%eax
+  85:	48 01 c5             	add    %rax,%rbp
+  88:	41 0f b6 c0          	movzbl %r8b,%eax
+  8c:	44 89 f2             	mov    %r14d,%edx
+  8f:	44 29 e0             	sub    %r12d,%eax
+  92:	29 ca                	sub    %ecx,%edx
+  94:	41 89 c4             	mov    %eax,%r12d
+  97:	41 c1 e4 0e          	shl    $0xe,%r12d
+  9b:	41 01 d4             	add    %edx,%r12d
+  9e:	0f 94 c2             	sete   %dl
+  a1:	0f b6 d2             	movzbl %dl,%edx
+  a4:	09 c2                	or     %eax,%edx
+  a6:	0f 84 dc 00 00 00    	je     188 <mbscasecmp+0x188>
+  ac:	31 c0                	xor    %eax,%eax
+  ae:	45 85 f6             	test   %r14d,%r14d
+  b1:	0f 94 c0             	sete   %al
+  b4:	44 09 e0             	or     %r12d,%eax
+  b7:	74 97                	je     50 <mbscasecmp+0x50>
+  b9:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+  be:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  c5:	00 00 
+  c7:	0f 85 46 01 00 00    	jne    213 <mbscasecmp+0x213>
+  cd:	48 83 c4 38          	add    $0x38,%rsp
+  d1:	44 89 e0             	mov    %r12d,%eax
+  d4:	5b                   	pop    %rbx
+  d5:	5d                   	pop    %rbp
+  d6:	41 5c                	pop    %r12
+  d8:	41 5d                	pop    %r13
+  da:	41 5e                	pop    %r14
+  dc:	41 5f                	pop    %r15
+  de:	c3                   	ret    
+  df:	90                   	nop
+  e0:	44 0f b6 2b          	movzbl (%rbx),%r13d
+  e4:	44 0f b6 75 00       	movzbl 0x0(%rbp),%r14d
+  e9:	48 83 c3 01          	add    $0x1,%rbx
+  ed:	45 31 e4             	xor    %r12d,%r12d
+  f0:	48 83 c5 01          	add    $0x1,%rbp
+  f4:	45 38 ee             	cmp    %r13b,%r14b
+  f7:	74 21                	je     11a <mbscasecmp+0x11a>
+  f9:	e8 00 00 00 00       	call   fe <mbscasecmp+0xfe>
+  fe:	48 8b 10             	mov    (%rax),%rdx
+ 101:	42 8b 04 aa          	mov    (%rdx,%r13,4),%eax
+ 105:	41 89 c5             	mov    %eax,%r13d
+ 108:	41 38 c6             	cmp    %al,%r14b
+ 10b:	74 0d                	je     11a <mbscasecmp+0x11a>
+ 10d:	42 0f b6 14 b2       	movzbl (%rdx,%r14,4),%edx
+ 112:	0f b6 c0             	movzbl %al,%eax
+ 115:	29 d0                	sub    %edx,%eax
+ 117:	41 89 c4             	mov    %eax,%r12d
+ 11a:	31 c0                	xor    %eax,%eax
+ 11c:	45 84 ed             	test   %r13b,%r13b
+ 11f:	0f 94 c0             	sete   %al
+ 122:	44 09 e0             	or     %r12d,%eax
+ 125:	74 b9                	je     e0 <mbscasecmp+0xe0>
+ 127:	eb 90                	jmp    b9 <mbscasecmp+0xb9>
+ 129:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 130:	80 7b 01 01          	cmpb   $0x1,0x1(%rbx)
+ 134:	48 89 da             	mov    %rbx,%rdx
+ 137:	48 8d 7c 24 1c       	lea    0x1c(%rsp),%rdi
+ 13c:	4c 89 e9             	mov    %r13,%rcx
+ 13f:	48 83 da fe          	sbb    $0xfffffffffffffffe,%rdx
+ 143:	48 89 de             	mov    %rbx,%rsi
+ 146:	c7 44 24 20 00 00 00 	movl   $0x0,0x20(%rsp)
+ 14d:	00 
+ 14e:	80 3a 01             	cmpb   $0x1,(%rdx)
+ 151:	48 83 da ff          	sbb    $0xffffffffffffffff,%rdx
+ 155:	80 3a 01             	cmpb   $0x1,(%rdx)
+ 158:	48 83 da ff          	sbb    $0xffffffffffffffff,%rdx
+ 15c:	48 29 da             	sub    %rbx,%rdx
+ 15f:	e8 00 00 00 00       	call   164 <mbscasecmp+0x164>
+ 164:	44 8b 74 24 1c       	mov    0x1c(%rsp),%r14d
+ 169:	45 31 c0             	xor    %r8d,%r8d
+ 16c:	48 85 c0             	test   %rax,%rax
+ 16f:	0f 89 f4 fe ff ff    	jns    69 <mbscasecmp+0x69>
+ 175:	45 89 e0             	mov    %r12d,%r8d
+ 178:	b8 01 00 00 00       	mov    $0x1,%eax
+ 17d:	45 31 f6             	xor    %r14d,%r14d
+ 180:	e9 e4 fe ff ff       	jmp    69 <mbscasecmp+0x69>
+ 185:	0f 1f 00             	nopl   (%rax)
+ 188:	44 89 f7             	mov    %r14d,%edi
+ 18b:	e8 00 00 00 00       	call   190 <mbscasecmp+0x190>
+ 190:	44 89 ff             	mov    %r15d,%edi
+ 193:	41 89 c4             	mov    %eax,%r12d
+ 196:	e8 00 00 00 00       	call   19b <mbscasecmp+0x19b>
+ 19b:	41 29 c4             	sub    %eax,%r12d
+ 19e:	e9 09 ff ff ff       	jmp    ac <mbscasecmp+0xac>
+ 1a3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 1a8:	80 7d 01 01          	cmpb   $0x1,0x1(%rbp)
+ 1ac:	48 89 ea             	mov    %rbp,%rdx
+ 1af:	48 8d 7c 24 1c       	lea    0x1c(%rsp),%rdi
+ 1b4:	4c 89 e9             	mov    %r13,%rcx
+ 1b7:	48 83 da fe          	sbb    $0xfffffffffffffffe,%rdx
+ 1bb:	48 89 ee             	mov    %rbp,%rsi
+ 1be:	44 88 44 24 0f       	mov    %r8b,0xf(%rsp)
+ 1c3:	80 3a 01             	cmpb   $0x1,(%rdx)
+ 1c6:	c7 44 24 20 00 00 00 	movl   $0x0,0x20(%rsp)
+ 1cd:	00 
+ 1ce:	48 83 da ff          	sbb    $0xffffffffffffffff,%rdx
+ 1d2:	80 3a 01             	cmpb   $0x1,(%rdx)
+ 1d5:	48 83 da ff          	sbb    $0xffffffffffffffff,%rdx
+ 1d9:	48 29 ea             	sub    %rbp,%rdx
+ 1dc:	e8 00 00 00 00       	call   1e1 <mbscasecmp+0x1e1>
+ 1e1:	44 0f b6 44 24 0f    	movzbl 0xf(%rsp),%r8d
+ 1e7:	48 85 c0             	test   %rax,%rax
+ 1ea:	78 14                	js     200 <mbscasecmp+0x200>
+ 1ec:	44 8b 7c 24 1c       	mov    0x1c(%rsp),%r15d
+ 1f1:	45 31 e4             	xor    %r12d,%r12d
+ 1f4:	44 89 f9             	mov    %r15d,%ecx
+ 1f7:	e9 89 fe ff ff       	jmp    85 <mbscasecmp+0x85>
+ 1fc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 200:	45 0f b6 e7          	movzbl %r15b,%r12d
+ 204:	31 c9                	xor    %ecx,%ecx
+ 206:	b8 01 00 00 00       	mov    $0x1,%eax
+ 20b:	45 31 ff             	xor    %r15d,%r15d
+ 20e:	e9 72 fe ff ff       	jmp    85 <mbscasecmp+0x85>
+ 213:	e8 00 00 00 00       	call   218 <mbscasecmp+0x218>

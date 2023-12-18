@@ -1,0 +1,168 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-fcntl.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_fcntl>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	55                   	push   %rbp
+   9:	48 83 ec 60          	sub    $0x60,%rsp
+   d:	48 89 54 24 40       	mov    %rdx,0x40(%rsp)
+  12:	48 89 4c 24 48       	mov    %rcx,0x48(%rsp)
+  17:	4c 89 44 24 50       	mov    %r8,0x50(%rsp)
+  1c:	4c 89 4c 24 58       	mov    %r9,0x58(%rsp)
+  21:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  28:	00 00 
+  2a:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+  2f:	31 c0                	xor    %eax,%eax
+  31:	48 8d 84 24 80 00 00 	lea    0x80(%rsp),%rax
+  38:	00 
+  39:	c7 44 24 10 10 00 00 	movl   $0x10,0x10(%rsp)
+  40:	00 
+  41:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  46:	48 8d 44 24 30       	lea    0x30(%rsp),%rax
+  4b:	48 89 44 24 20       	mov    %rax,0x20(%rsp)
+  50:	85 f6                	test   %esi,%esi
+  52:	0f 84 98 00 00 00    	je     f0 <rpl_fcntl+0xf0>
+  58:	81 fe 06 04 00 00    	cmp    $0x406,%esi
+  5e:	0f 84 c4 00 00 00    	je     128 <rpl_fcntl+0x128>
+  64:	83 fe 0b             	cmp    $0xb,%esi
+  67:	7f 27                	jg     90 <rpl_fcntl+0x90>
+  69:	85 f6                	test   %esi,%esi
+  6b:	7f 5b                	jg     c8 <rpl_fcntl+0xc8>
+  6d:	8b 44 24 10          	mov    0x10(%rsp),%eax
+  71:	83 f8 2f             	cmp    $0x2f,%eax
+  74:	0f 87 e6 01 00 00    	ja     260 <rpl_fcntl+0x260>
+  7a:	48 03 44 24 20       	add    0x20(%rsp),%rax
+  7f:	48 8b 10             	mov    (%rax),%rdx
+  82:	31 c0                	xor    %eax,%eax
+  84:	e8 00 00 00 00       	call   89 <rpl_fcntl+0x89>
+  89:	41 89 c4             	mov    %eax,%r12d
+  8c:	eb 76                	jmp    104 <rpl_fcntl+0x104>
+  8e:	66 90                	xchg   %ax,%ax
+  90:	8d 8e 00 fc ff ff    	lea    -0x400(%rsi),%ecx
+  96:	83 f9 0a             	cmp    $0xa,%ecx
+  99:	77 d2                	ja     6d <rpl_fcntl+0x6d>
+  9b:	b8 01 00 00 00       	mov    $0x1,%eax
+  a0:	48 d3 e0             	shl    %cl,%rax
+  a3:	a9 c5 02 00 00       	test   $0x2c5,%eax
+  a8:	0f 85 c2 00 00 00    	jne    170 <rpl_fcntl+0x170>
+  ae:	a9 02 05 00 00       	test   $0x502,%eax
+  b3:	74 b8                	je     6d <rpl_fcntl+0x6d>
+  b5:	31 c0                	xor    %eax,%eax
+  b7:	e8 00 00 00 00       	call   bc <rpl_fcntl+0xbc>
+  bc:	41 89 c4             	mov    %eax,%r12d
+  bf:	eb 43                	jmp    104 <rpl_fcntl+0x104>
+  c1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  c8:	b8 01 00 00 00       	mov    $0x1,%eax
+  cd:	89 f1                	mov    %esi,%ecx
+  cf:	48 d3 e0             	shl    %cl,%rax
+  d2:	a9 14 05 00 00       	test   $0x514,%eax
+  d7:	0f 85 93 00 00 00    	jne    170 <rpl_fcntl+0x170>
+  dd:	a9 0a 0a 00 00       	test   $0xa0a,%eax
+  e2:	75 d1                	jne    b5 <rpl_fcntl+0xb5>
+  e4:	eb 87                	jmp    6d <rpl_fcntl+0x6d>
+  e6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  ed:	00 00 00 
+  f0:	48 8b 44 24 20       	mov    0x20(%rsp),%rax
+  f5:	31 f6                	xor    %esi,%esi
+  f7:	8b 50 10             	mov    0x10(%rax),%edx
+  fa:	31 c0                	xor    %eax,%eax
+  fc:	e8 00 00 00 00       	call   101 <rpl_fcntl+0x101>
+ 101:	41 89 c4             	mov    %eax,%r12d
+ 104:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+ 109:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 110:	00 00 
+ 112:	0f 85 52 01 00 00    	jne    26a <rpl_fcntl+0x26a>
+ 118:	48 83 c4 60          	add    $0x60,%rsp
+ 11c:	44 89 e0             	mov    %r12d,%eax
+ 11f:	5d                   	pop    %rbp
+ 120:	41 5c                	pop    %r12
+ 122:	41 5d                	pop    %r13
+ 124:	c3                   	ret    
+ 125:	0f 1f 00             	nopl   (%rax)
+ 128:	48 8b 44 24 20       	mov    0x20(%rsp),%rax
+ 12d:	c7 44 24 10 18 00 00 	movl   $0x18,0x10(%rsp)
+ 134:	00 
+ 135:	44 8b 68 10          	mov    0x10(%rax),%r13d
+ 139:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        # 13f <rpl_fcntl+0x13f>
+ 13f:	44 89 ea             	mov    %r13d,%edx
+ 142:	85 c0                	test   %eax,%eax
+ 144:	78 52                	js     198 <rpl_fcntl+0x198>
+ 146:	be 06 04 00 00       	mov    $0x406,%esi
+ 14b:	31 c0                	xor    %eax,%eax
+ 14d:	89 7c 24 0c          	mov    %edi,0xc(%rsp)
+ 151:	e8 00 00 00 00       	call   156 <rpl_fcntl+0x156>
+ 156:	41 89 c4             	mov    %eax,%r12d
+ 159:	85 c0                	test   %eax,%eax
+ 15b:	0f 88 af 00 00 00    	js     210 <rpl_fcntl+0x210>
+ 161:	c7 05 00 00 00 00 01 	movl   $0x1,0x0(%rip)        # 16b <rpl_fcntl+0x16b>
+ 168:	00 00 00 
+ 16b:	eb 97                	jmp    104 <rpl_fcntl+0x104>
+ 16d:	0f 1f 00             	nopl   (%rax)
+ 170:	8b 44 24 10          	mov    0x10(%rsp),%eax
+ 174:	83 f8 2f             	cmp    $0x2f,%eax
+ 177:	0f 87 d3 00 00 00    	ja     250 <rpl_fcntl+0x250>
+ 17d:	48 03 44 24 20       	add    0x20(%rsp),%rax
+ 182:	8b 10                	mov    (%rax),%edx
+ 184:	31 c0                	xor    %eax,%eax
+ 186:	e8 00 00 00 00       	call   18b <rpl_fcntl+0x18b>
+ 18b:	41 89 c4             	mov    %eax,%r12d
+ 18e:	e9 71 ff ff ff       	jmp    104 <rpl_fcntl+0x104>
+ 193:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 198:	31 f6                	xor    %esi,%esi
+ 19a:	31 c0                	xor    %eax,%eax
+ 19c:	e8 00 00 00 00       	call   1a1 <rpl_fcntl+0x1a1>
+ 1a1:	41 89 c4             	mov    %eax,%r12d
+ 1a4:	85 c0                	test   %eax,%eax
+ 1a6:	0f 88 58 ff ff ff    	js     104 <rpl_fcntl+0x104>
+ 1ac:	83 3d 00 00 00 00 ff 	cmpl   $0xffffffff,0x0(%rip)        # 1b3 <rpl_fcntl+0x1b3>
+ 1b3:	0f 85 4b ff ff ff    	jne    104 <rpl_fcntl+0x104>
+ 1b9:	31 c0                	xor    %eax,%eax
+ 1bb:	be 01 00 00 00       	mov    $0x1,%esi
+ 1c0:	44 89 e7             	mov    %r12d,%edi
+ 1c3:	e8 00 00 00 00       	call   1c8 <rpl_fcntl+0x1c8>
+ 1c8:	85 c0                	test   %eax,%eax
+ 1ca:	78 1d                	js     1e9 <rpl_fcntl+0x1e9>
+ 1cc:	83 c8 01             	or     $0x1,%eax
+ 1cf:	be 02 00 00 00       	mov    $0x2,%esi
+ 1d4:	44 89 e7             	mov    %r12d,%edi
+ 1d7:	89 c2                	mov    %eax,%edx
+ 1d9:	31 c0                	xor    %eax,%eax
+ 1db:	e8 00 00 00 00       	call   1e0 <rpl_fcntl+0x1e0>
+ 1e0:	83 f8 ff             	cmp    $0xffffffff,%eax
+ 1e3:	0f 85 1b ff ff ff    	jne    104 <rpl_fcntl+0x104>
+ 1e9:	e8 00 00 00 00       	call   1ee <rpl_fcntl+0x1ee>
+ 1ee:	44 89 e7             	mov    %r12d,%edi
+ 1f1:	41 83 cc ff          	or     $0xffffffff,%r12d
+ 1f5:	44 8b 28             	mov    (%rax),%r13d
+ 1f8:	48 89 c5             	mov    %rax,%rbp
+ 1fb:	e8 00 00 00 00       	call   200 <rpl_fcntl+0x200>
+ 200:	44 89 6d 00          	mov    %r13d,0x0(%rbp)
+ 204:	e9 fb fe ff ff       	jmp    104 <rpl_fcntl+0x104>
+ 209:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 210:	e8 00 00 00 00       	call   215 <rpl_fcntl+0x215>
+ 215:	8b 7c 24 0c          	mov    0xc(%rsp),%edi
+ 219:	83 38 16             	cmpl   $0x16,(%rax)
+ 21c:	0f 85 3f ff ff ff    	jne    161 <rpl_fcntl+0x161>
+ 222:	44 89 ea             	mov    %r13d,%edx
+ 225:	31 f6                	xor    %esi,%esi
+ 227:	31 c0                	xor    %eax,%eax
+ 229:	e8 00 00 00 00       	call   22e <rpl_fcntl+0x22e>
+ 22e:	41 89 c4             	mov    %eax,%r12d
+ 231:	85 c0                	test   %eax,%eax
+ 233:	0f 88 cb fe ff ff    	js     104 <rpl_fcntl+0x104>
+ 239:	c7 05 00 00 00 00 ff 	movl   $0xffffffff,0x0(%rip)        # 243 <rpl_fcntl+0x243>
+ 240:	ff ff ff 
+ 243:	e9 71 ff ff ff       	jmp    1b9 <rpl_fcntl+0x1b9>
+ 248:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 24f:	00 
+ 250:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+ 255:	e9 28 ff ff ff       	jmp    182 <rpl_fcntl+0x182>
+ 25a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 260:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+ 265:	e9 15 fe ff ff       	jmp    7f <rpl_fcntl+0x7f>
+ 26a:	e8 00 00 00 00       	call   26f <rpl_fcntl+0x26f>

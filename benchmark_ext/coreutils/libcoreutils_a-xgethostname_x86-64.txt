@@ -1,0 +1,82 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xgethostname.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xgethostname>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 56                	push   %r14
+   6:	45 31 f6             	xor    %r14d,%r14d
+   9:	41 55                	push   %r13
+   b:	49 bd fe ef bf ff ef 	movabs $0xffffffefffbfeffe,%r13
+  12:	ff ff ff 
+  15:	41 54                	push   %r12
+  17:	55                   	push   %rbp
+  18:	53                   	push   %rbx
+  19:	48 83 c4 80          	add    $0xffffffffffffff80,%rsp
+  1d:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  24:	00 00 
+  26:	48 89 44 24 78       	mov    %rax,0x78(%rsp)
+  2b:	31 c0                	xor    %eax,%eax
+  2d:	48 8d 6c 24 10       	lea    0x10(%rsp),%rbp
+  32:	48 c7 44 24 08 64 00 	movq   $0x64,0x8(%rsp)
+  39:	00 00 
+  3b:	e8 00 00 00 00       	call   40 <xgethostname+0x40>
+  40:	48 89 c3             	mov    %rax,%rbx
+  43:	b8 64 00 00 00       	mov    $0x64,%eax
+  48:	eb 35                	jmp    7f <xgethostname+0x7f>
+  4a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  50:	49 0f a3 c5          	bt     %rax,%r13
+  54:	72 6d                	jb     c3 <xgethostname+0xc3>
+  56:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+  5b:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+  61:	48 c7 c1 ff ff ff ff 	mov    $0xffffffffffffffff,%rcx
+  68:	31 ff                	xor    %edi,%edi
+  6a:	ba 01 00 00 00       	mov    $0x1,%edx
+  6f:	e8 00 00 00 00       	call   74 <xgethostname+0x74>
+  74:	48 89 c5             	mov    %rax,%rbp
+  77:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  7c:	49 89 ee             	mov    %rbp,%r14
+  7f:	c6 44 05 ff 00       	movb   $0x0,-0x1(%rbp,%rax,1)
+  84:	4c 8d 60 ff          	lea    -0x1(%rax),%r12
+  88:	48 89 ef             	mov    %rbp,%rdi
+  8b:	c7 03 00 00 00 00    	movl   $0x0,(%rbx)
+  91:	4c 89 e6             	mov    %r12,%rsi
+  94:	e8 00 00 00 00       	call   99 <xgethostname+0x99>
+  99:	85 c0                	test   %eax,%eax
+  9b:	75 17                	jne    b4 <xgethostname+0xb4>
+  9d:	48 89 ef             	mov    %rbp,%rdi
+  a0:	e8 00 00 00 00       	call   a5 <xgethostname+0xa5>
+  a5:	48 83 c0 01          	add    $0x1,%rax
+  a9:	49 39 c4             	cmp    %rax,%r12
+  ac:	7f 42                	jg     f0 <xgethostname+0xf0>
+  ae:	c7 03 00 00 00 00    	movl   $0x0,(%rbx)
+  b4:	4c 89 f7             	mov    %r14,%rdi
+  b7:	e8 00 00 00 00       	call   bc <xgethostname+0xbc>
+  bc:	8b 03                	mov    (%rbx),%eax
+  be:	83 f8 24             	cmp    $0x24,%eax
+  c1:	76 8d                	jbe    50 <xgethostname+0x50>
+  c3:	45 31 f6             	xor    %r14d,%r14d
+  c6:	48 8b 44 24 78       	mov    0x78(%rsp),%rax
+  cb:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  d2:	00 00 
+  d4:	75 2f                	jne    105 <xgethostname+0x105>
+  d6:	48 83 ec 80          	sub    $0xffffffffffffff80,%rsp
+  da:	4c 89 f0             	mov    %r14,%rax
+  dd:	5b                   	pop    %rbx
+  de:	5d                   	pop    %rbp
+  df:	41 5c                	pop    %r12
+  e1:	41 5d                	pop    %r13
+  e3:	41 5e                	pop    %r14
+  e5:	c3                   	ret    
+  e6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  ed:	00 00 00 
+  f0:	4d 85 f6             	test   %r14,%r14
+  f3:	75 d1                	jne    c6 <xgethostname+0xc6>
+  f5:	48 89 c6             	mov    %rax,%rsi
+  f8:	48 89 ef             	mov    %rbp,%rdi
+  fb:	e8 00 00 00 00       	call   100 <xgethostname+0x100>
+ 100:	49 89 c6             	mov    %rax,%r14
+ 103:	eb c1                	jmp    c6 <xgethostname+0xc6>
+ 105:	e8 00 00 00 00       	call   10a <xgethostname+0x10a>

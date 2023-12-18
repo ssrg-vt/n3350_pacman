@@ -1,0 +1,52 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-inttostr.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <inttostr>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	c6 46 0b 00          	movb   $0x0,0xb(%rsi)
+   8:	4c 8d 46 0b          	lea    0xb(%rsi),%r8
+   c:	89 f8                	mov    %edi,%eax
+   e:	be cd cc cc cc       	mov    $0xcccccccd,%esi
+  13:	85 ff                	test   %edi,%edi
+  15:	78 31                	js     48 <inttostr+0x48>
+  17:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  1e:	00 00 
+  20:	89 c2                	mov    %eax,%edx
+  22:	49 83 e8 01          	sub    $0x1,%r8
+  26:	48 0f af d6          	imul   %rsi,%rdx
+  2a:	48 c1 ea 23          	shr    $0x23,%rdx
+  2e:	8d 0c 92             	lea    (%rdx,%rdx,4),%ecx
+  31:	01 c9                	add    %ecx,%ecx
+  33:	29 c8                	sub    %ecx,%eax
+  35:	83 c0 30             	add    $0x30,%eax
+  38:	41 88 00             	mov    %al,(%r8)
+  3b:	89 d0                	mov    %edx,%eax
+  3d:	85 d2                	test   %edx,%edx
+  3f:	75 df                	jne    20 <inttostr+0x20>
+  41:	4c 89 c0             	mov    %r8,%rax
+  44:	c3                   	ret    
+  45:	0f 1f 00             	nopl   (%rax)
+  48:	bf 30 00 00 00       	mov    $0x30,%edi
+  4d:	0f 1f 00             	nopl   (%rax)
+  50:	48 63 d0             	movslq %eax,%rdx
+  53:	89 c1                	mov    %eax,%ecx
+  55:	4c 89 c6             	mov    %r8,%rsi
+  58:	49 83 e8 01          	sub    $0x1,%r8
+  5c:	48 69 d2 67 66 66 66 	imul   $0x66666667,%rdx,%rdx
+  63:	c1 f9 1f             	sar    $0x1f,%ecx
+  66:	48 c1 fa 22          	sar    $0x22,%rdx
+  6a:	29 ca                	sub    %ecx,%edx
+  6c:	8d 0c 92             	lea    (%rdx,%rdx,4),%ecx
+  6f:	8d 0c 4f             	lea    (%rdi,%rcx,2),%ecx
+  72:	29 c1                	sub    %eax,%ecx
+  74:	89 d0                	mov    %edx,%eax
+  76:	41 88 08             	mov    %cl,(%r8)
+  79:	85 d2                	test   %edx,%edx
+  7b:	75 d3                	jne    50 <inttostr+0x50>
+  7d:	41 c6 40 ff 2d       	movb   $0x2d,-0x1(%r8)
+  82:	4c 8d 46 fe          	lea    -0x2(%rsi),%r8
+  86:	4c 89 c0             	mov    %r8,%rax
+  89:	c3                   	ret    

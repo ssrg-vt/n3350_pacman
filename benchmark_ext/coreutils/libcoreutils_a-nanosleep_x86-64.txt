@@ -1,0 +1,64 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-nanosleep.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_nanosleep>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	55                   	push   %rbp
+   7:	53                   	push   %rbx
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  13:	00 00 
+  15:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  1a:	31 c0                	xor    %eax,%eax
+  1c:	48 81 7f 08 ff c9 9a 	cmpq   $0x3b9ac9ff,0x8(%rdi)
+  23:	3b 
+  24:	0f 87 8e 00 00 00    	ja     b8 <rpl_nanosleep+0xb8>
+  2a:	f3 0f 6f 07          	movdqu (%rdi),%xmm0
+  2e:	48 8b 1f             	mov    (%rdi),%rbx
+  31:	48 89 f5             	mov    %rsi,%rbp
+  34:	49 89 e4             	mov    %rsp,%r12
+  37:	0f 29 04 24          	movaps %xmm0,(%rsp)
+  3b:	48 81 fb 00 a4 1f 00 	cmp    $0x1fa400,%rbx
+  42:	7f 1e                	jg     62 <rpl_nanosleep+0x62>
+  44:	eb 4a                	jmp    90 <rpl_nanosleep+0x90>
+  46:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  4d:	00 00 00 
+  50:	48 c7 44 24 08 00 00 	movq   $0x0,0x8(%rsp)
+  57:	00 00 
+  59:	48 81 fb 00 a4 1f 00 	cmp    $0x1fa400,%rbx
+  60:	7e 2e                	jle    90 <rpl_nanosleep+0x90>
+  62:	48 89 ee             	mov    %rbp,%rsi
+  65:	4c 89 e7             	mov    %r12,%rdi
+  68:	48 c7 04 24 00 a4 1f 	movq   $0x1fa400,(%rsp)
+  6f:	00 
+  70:	48 81 eb 00 a4 1f 00 	sub    $0x1fa400,%rbx
+  77:	e8 00 00 00 00       	call   7c <rpl_nanosleep+0x7c>
+  7c:	85 c0                	test   %eax,%eax
+  7e:	74 d0                	je     50 <rpl_nanosleep+0x50>
+  80:	48 85 ed             	test   %rbp,%rbp
+  83:	74 1a                	je     9f <rpl_nanosleep+0x9f>
+  85:	48 01 5d 00          	add    %rbx,0x0(%rbp)
+  89:	eb 14                	jmp    9f <rpl_nanosleep+0x9f>
+  8b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  90:	48 89 ee             	mov    %rbp,%rsi
+  93:	4c 89 e7             	mov    %r12,%rdi
+  96:	48 89 1c 24          	mov    %rbx,(%rsp)
+  9a:	e8 00 00 00 00       	call   9f <rpl_nanosleep+0x9f>
+  9f:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+  a4:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  ab:	00 00 
+  ad:	75 1b                	jne    ca <rpl_nanosleep+0xca>
+  af:	48 83 c4 20          	add    $0x20,%rsp
+  b3:	5b                   	pop    %rbx
+  b4:	5d                   	pop    %rbp
+  b5:	41 5c                	pop    %r12
+  b7:	c3                   	ret    
+  b8:	e8 00 00 00 00       	call   bd <rpl_nanosleep+0xbd>
+  bd:	c7 00 16 00 00 00    	movl   $0x16,(%rax)
+  c3:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  c8:	eb d5                	jmp    9f <rpl_nanosleep+0x9f>
+  ca:	e8 00 00 00 00       	call   cf <rpl_nanosleep+0xcf>

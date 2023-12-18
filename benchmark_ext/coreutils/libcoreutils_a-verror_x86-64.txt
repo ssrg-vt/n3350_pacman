@@ -1,0 +1,70 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-verror.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <verror_at_line>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 89 cf             	mov    %ecx,%r15d
+   9:	41 56                	push   %r14
+   b:	41 89 f6             	mov    %esi,%r14d
+   e:	4c 89 ce             	mov    %r9,%rsi
+  11:	41 55                	push   %r13
+  13:	41 89 fd             	mov    %edi,%r13d
+  16:	4c 89 c7             	mov    %r8,%rdi
+  19:	41 54                	push   %r12
+  1b:	49 89 d4             	mov    %rdx,%r12
+  1e:	55                   	push   %rbp
+  1f:	e8 00 00 00 00       	call   24 <verror_at_line+0x24>
+  24:	48 85 c0             	test   %rax,%rax
+  27:	74 50                	je     79 <verror_at_line+0x79>
+  29:	48 89 c5             	mov    %rax,%rbp
+  2c:	4d 85 e4             	test   %r12,%r12
+  2f:	74 2f                	je     60 <verror_at_line+0x60>
+  31:	49 89 c1             	mov    %rax,%r9
+  34:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 3b <verror_at_line+0x3b>
+  3b:	44 89 f9             	mov    %r15d,%ecx
+  3e:	4c 89 e2             	mov    %r12,%rdx
+  41:	44 89 f6             	mov    %r14d,%esi
+  44:	44 89 ef             	mov    %r13d,%edi
+  47:	31 c0                	xor    %eax,%eax
+  49:	e8 00 00 00 00       	call   4e <verror_at_line+0x4e>
+  4e:	48 89 ef             	mov    %rbp,%rdi
+  51:	5d                   	pop    %rbp
+  52:	41 5c                	pop    %r12
+  54:	41 5d                	pop    %r13
+  56:	41 5e                	pop    %r14
+  58:	41 5f                	pop    %r15
+  5a:	e9 00 00 00 00       	jmp    5f <verror_at_line+0x5f>
+  5f:	90                   	nop
+  60:	48 89 c1             	mov    %rax,%rcx
+  63:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 6a <verror_at_line+0x6a>
+  6a:	44 89 f6             	mov    %r14d,%esi
+  6d:	44 89 ef             	mov    %r13d,%edi
+  70:	31 c0                	xor    %eax,%eax
+  72:	e8 00 00 00 00       	call   77 <verror_at_line+0x77>
+  77:	eb d5                	jmp    4e <verror_at_line+0x4e>
+  79:	ba 05 00 00 00       	mov    $0x5,%edx
+  7e:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 85 <verror_at_line+0x85>
+  85:	31 ff                	xor    %edi,%edi
+  87:	e8 00 00 00 00       	call   8c <verror_at_line+0x8c>
+  8c:	49 89 c4             	mov    %rax,%r12
+  8f:	e8 00 00 00 00       	call   94 <verror_at_line+0x94>
+  94:	4c 89 e2             	mov    %r12,%rdx
+  97:	31 ff                	xor    %edi,%edi
+  99:	8b 30                	mov    (%rax),%esi
+  9b:	31 c0                	xor    %eax,%eax
+  9d:	e8 00 00 00 00       	call   a2 <verror_at_line+0xa2>
+  a2:	e8 00 00 00 00       	call   a7 <verror_at_line+0xa7>
+  a7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  ae:	00 00 
+
+00000000000000b0 <verror>:
+  b0:	f3 0f 1e fa          	endbr64 
+  b4:	49 89 d0             	mov    %rdx,%r8
+  b7:	49 89 c9             	mov    %rcx,%r9
+  ba:	31 d2                	xor    %edx,%edx
+  bc:	31 c9                	xor    %ecx,%ecx
+  be:	e9 3d ff ff ff       	jmp    0 <verror_at_line>

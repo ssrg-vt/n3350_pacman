@@ -1,0 +1,270 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-idcache.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <getuser>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	55                   	push   %rbp
+   7:	89 fd                	mov    %edi,%ebp
+   9:	53                   	push   %rbx
+   a:	48 8b 1d 00 00 00 00 	mov    0x0(%rip),%rbx        # 11 <getuser+0x11>
+  11:	48 85 db             	test   %rbx,%rbx
+  14:	75 13                	jne    29 <getuser+0x29>
+  16:	eb 28                	jmp    40 <getuser+0x40>
+  18:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  1f:	00 
+  20:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+  24:	48 85 db             	test   %rbx,%rbx
+  27:	74 17                	je     40 <getuser+0x40>
+  29:	39 2b                	cmp    %ebp,(%rbx)
+  2b:	75 f3                	jne    20 <getuser+0x20>
+  2d:	31 c0                	xor    %eax,%eax
+  2f:	80 7b 10 00          	cmpb   $0x0,0x10(%rbx)
+  33:	74 04                	je     39 <getuser+0x39>
+  35:	48 8d 43 10          	lea    0x10(%rbx),%rax
+  39:	5b                   	pop    %rbx
+  3a:	5d                   	pop    %rbp
+  3b:	41 5c                	pop    %r12
+  3d:	c3                   	ret    
+  3e:	66 90                	xchg   %ax,%ax
+  40:	89 ef                	mov    %ebp,%edi
+  42:	4c 8d 25 00 00 00 00 	lea    0x0(%rip),%r12        # 49 <getuser+0x49>
+  49:	e8 00 00 00 00       	call   4e <getuser+0x4e>
+  4e:	bf 18 00 00 00       	mov    $0x18,%edi
+  53:	48 85 c0             	test   %rax,%rax
+  56:	74 13                	je     6b <getuser+0x6b>
+  58:	4c 8b 20             	mov    (%rax),%r12
+  5b:	4c 89 e7             	mov    %r12,%rdi
+  5e:	e8 00 00 00 00       	call   63 <getuser+0x63>
+  63:	48 8d 78 18          	lea    0x18(%rax),%rdi
+  67:	48 83 e7 f8          	and    $0xfffffffffffffff8,%rdi
+  6b:	e8 00 00 00 00       	call   70 <getuser+0x70>
+  70:	4c 89 e6             	mov    %r12,%rsi
+  73:	89 28                	mov    %ebp,(%rax)
+  75:	48 8d 78 10          	lea    0x10(%rax),%rdi
+  79:	48 89 c3             	mov    %rax,%rbx
+  7c:	e8 00 00 00 00       	call   81 <getuser+0x81>
+  81:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 88 <getuser+0x88>
+  88:	48 89 1d 00 00 00 00 	mov    %rbx,0x0(%rip)        # 8f <getuser+0x8f>
+  8f:	48 89 43 08          	mov    %rax,0x8(%rbx)
+  93:	eb 98                	jmp    2d <getuser+0x2d>
+  95:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  9c:	00 00 00 00 
+
+00000000000000a0 <getuidbyname>:
+  a0:	f3 0f 1e fa          	endbr64 
+  a4:	41 54                	push   %r12
+  a6:	55                   	push   %rbp
+  a7:	48 89 fd             	mov    %rdi,%rbp
+  aa:	53                   	push   %rbx
+  ab:	48 8b 1d 00 00 00 00 	mov    0x0(%rip),%rbx        # b2 <getuidbyname+0x12>
+  b2:	48 85 db             	test   %rbx,%rbx
+  b5:	74 39                	je     f0 <getuidbyname+0x50>
+  b7:	44 0f b6 27          	movzbl (%rdi),%r12d
+  bb:	eb 0c                	jmp    c9 <getuidbyname+0x29>
+  bd:	0f 1f 00             	nopl   (%rax)
+  c0:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+  c4:	48 85 db             	test   %rbx,%rbx
+  c7:	74 27                	je     f0 <getuidbyname+0x50>
+  c9:	44 38 63 10          	cmp    %r12b,0x10(%rbx)
+  cd:	75 f1                	jne    c0 <getuidbyname+0x20>
+  cf:	48 8d 7b 10          	lea    0x10(%rbx),%rdi
+  d3:	48 89 ee             	mov    %rbp,%rsi
+  d6:	e8 00 00 00 00       	call   db <getuidbyname+0x3b>
+  db:	85 c0                	test   %eax,%eax
+  dd:	75 e1                	jne    c0 <getuidbyname+0x20>
+  df:	49 89 dc             	mov    %rbx,%r12
+  e2:	5b                   	pop    %rbx
+  e3:	5d                   	pop    %rbp
+  e4:	4c 89 e0             	mov    %r12,%rax
+  e7:	41 5c                	pop    %r12
+  e9:	c3                   	ret    
+  ea:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  f0:	48 8b 1d 00 00 00 00 	mov    0x0(%rip),%rbx        # f7 <getuidbyname+0x57>
+  f7:	48 85 db             	test   %rbx,%rbx
+  fa:	74 3c                	je     138 <getuidbyname+0x98>
+  fc:	44 0f b6 65 00       	movzbl 0x0(%rbp),%r12d
+ 101:	eb 0e                	jmp    111 <getuidbyname+0x71>
+ 103:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 108:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+ 10c:	48 85 db             	test   %rbx,%rbx
+ 10f:	74 27                	je     138 <getuidbyname+0x98>
+ 111:	44 38 63 10          	cmp    %r12b,0x10(%rbx)
+ 115:	75 f1                	jne    108 <getuidbyname+0x68>
+ 117:	48 8d 7b 10          	lea    0x10(%rbx),%rdi
+ 11b:	48 89 ee             	mov    %rbp,%rsi
+ 11e:	e8 00 00 00 00       	call   123 <getuidbyname+0x83>
+ 123:	85 c0                	test   %eax,%eax
+ 125:	75 e1                	jne    108 <getuidbyname+0x68>
+ 127:	45 31 e4             	xor    %r12d,%r12d
+ 12a:	5b                   	pop    %rbx
+ 12b:	5d                   	pop    %rbp
+ 12c:	4c 89 e0             	mov    %r12,%rax
+ 12f:	41 5c                	pop    %r12
+ 131:	c3                   	ret    
+ 132:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 138:	48 89 ef             	mov    %rbp,%rdi
+ 13b:	e8 00 00 00 00       	call   140 <getuidbyname+0xa0>
+ 140:	48 89 ef             	mov    %rbp,%rdi
+ 143:	49 89 c4             	mov    %rax,%r12
+ 146:	e8 00 00 00 00       	call   14b <getuidbyname+0xab>
+ 14b:	48 8d 78 18          	lea    0x18(%rax),%rdi
+ 14f:	48 83 e7 f8          	and    $0xfffffffffffffff8,%rdi
+ 153:	e8 00 00 00 00       	call   158 <getuidbyname+0xb8>
+ 158:	48 89 ee             	mov    %rbp,%rsi
+ 15b:	48 8d 78 10          	lea    0x10(%rax),%rdi
+ 15f:	48 89 c3             	mov    %rax,%rbx
+ 162:	e8 00 00 00 00       	call   167 <getuidbyname+0xc7>
+ 167:	4d 85 e4             	test   %r12,%r12
+ 16a:	74 24                	je     190 <getuidbyname+0xf0>
+ 16c:	41 8b 44 24 10       	mov    0x10(%r12),%eax
+ 171:	89 03                	mov    %eax,(%rbx)
+ 173:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 17a <getuidbyname+0xda>
+ 17a:	48 89 1d 00 00 00 00 	mov    %rbx,0x0(%rip)        # 181 <getuidbyname+0xe1>
+ 181:	48 89 43 08          	mov    %rax,0x8(%rbx)
+ 185:	e9 55 ff ff ff       	jmp    df <getuidbyname+0x3f>
+ 18a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 190:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 197 <getuidbyname+0xf7>
+ 197:	48 89 1d 00 00 00 00 	mov    %rbx,0x0(%rip)        # 19e <getuidbyname+0xfe>
+ 19e:	48 89 43 08          	mov    %rax,0x8(%rbx)
+ 1a2:	4c 89 e0             	mov    %r12,%rax
+ 1a5:	5b                   	pop    %rbx
+ 1a6:	5d                   	pop    %rbp
+ 1a7:	41 5c                	pop    %r12
+ 1a9:	c3                   	ret    
+ 1aa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000001b0 <getgroup>:
+ 1b0:	f3 0f 1e fa          	endbr64 
+ 1b4:	41 54                	push   %r12
+ 1b6:	55                   	push   %rbp
+ 1b7:	89 fd                	mov    %edi,%ebp
+ 1b9:	53                   	push   %rbx
+ 1ba:	48 8b 1d 00 00 00 00 	mov    0x0(%rip),%rbx        # 1c1 <getgroup+0x11>
+ 1c1:	48 85 db             	test   %rbx,%rbx
+ 1c4:	75 13                	jne    1d9 <getgroup+0x29>
+ 1c6:	eb 28                	jmp    1f0 <getgroup+0x40>
+ 1c8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 1cf:	00 
+ 1d0:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+ 1d4:	48 85 db             	test   %rbx,%rbx
+ 1d7:	74 17                	je     1f0 <getgroup+0x40>
+ 1d9:	39 2b                	cmp    %ebp,(%rbx)
+ 1db:	75 f3                	jne    1d0 <getgroup+0x20>
+ 1dd:	31 c0                	xor    %eax,%eax
+ 1df:	80 7b 10 00          	cmpb   $0x0,0x10(%rbx)
+ 1e3:	74 04                	je     1e9 <getgroup+0x39>
+ 1e5:	48 8d 43 10          	lea    0x10(%rbx),%rax
+ 1e9:	5b                   	pop    %rbx
+ 1ea:	5d                   	pop    %rbp
+ 1eb:	41 5c                	pop    %r12
+ 1ed:	c3                   	ret    
+ 1ee:	66 90                	xchg   %ax,%ax
+ 1f0:	89 ef                	mov    %ebp,%edi
+ 1f2:	4c 8d 25 00 00 00 00 	lea    0x0(%rip),%r12        # 1f9 <getgroup+0x49>
+ 1f9:	e8 00 00 00 00       	call   1fe <getgroup+0x4e>
+ 1fe:	bf 18 00 00 00       	mov    $0x18,%edi
+ 203:	48 85 c0             	test   %rax,%rax
+ 206:	74 13                	je     21b <getgroup+0x6b>
+ 208:	4c 8b 20             	mov    (%rax),%r12
+ 20b:	4c 89 e7             	mov    %r12,%rdi
+ 20e:	e8 00 00 00 00       	call   213 <getgroup+0x63>
+ 213:	48 8d 78 18          	lea    0x18(%rax),%rdi
+ 217:	48 83 e7 f8          	and    $0xfffffffffffffff8,%rdi
+ 21b:	e8 00 00 00 00       	call   220 <getgroup+0x70>
+ 220:	4c 89 e6             	mov    %r12,%rsi
+ 223:	89 28                	mov    %ebp,(%rax)
+ 225:	48 8d 78 10          	lea    0x10(%rax),%rdi
+ 229:	48 89 c3             	mov    %rax,%rbx
+ 22c:	e8 00 00 00 00       	call   231 <getgroup+0x81>
+ 231:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 238 <getgroup+0x88>
+ 238:	48 89 1d 00 00 00 00 	mov    %rbx,0x0(%rip)        # 23f <getgroup+0x8f>
+ 23f:	48 89 43 08          	mov    %rax,0x8(%rbx)
+ 243:	eb 98                	jmp    1dd <getgroup+0x2d>
+ 245:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 24c:	00 00 00 00 
+
+0000000000000250 <getgidbyname>:
+ 250:	f3 0f 1e fa          	endbr64 
+ 254:	41 54                	push   %r12
+ 256:	55                   	push   %rbp
+ 257:	48 89 fd             	mov    %rdi,%rbp
+ 25a:	53                   	push   %rbx
+ 25b:	48 8b 1d 00 00 00 00 	mov    0x0(%rip),%rbx        # 262 <getgidbyname+0x12>
+ 262:	48 85 db             	test   %rbx,%rbx
+ 265:	74 39                	je     2a0 <getgidbyname+0x50>
+ 267:	44 0f b6 27          	movzbl (%rdi),%r12d
+ 26b:	eb 0c                	jmp    279 <getgidbyname+0x29>
+ 26d:	0f 1f 00             	nopl   (%rax)
+ 270:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+ 274:	48 85 db             	test   %rbx,%rbx
+ 277:	74 27                	je     2a0 <getgidbyname+0x50>
+ 279:	44 38 63 10          	cmp    %r12b,0x10(%rbx)
+ 27d:	75 f1                	jne    270 <getgidbyname+0x20>
+ 27f:	48 8d 7b 10          	lea    0x10(%rbx),%rdi
+ 283:	48 89 ee             	mov    %rbp,%rsi
+ 286:	e8 00 00 00 00       	call   28b <getgidbyname+0x3b>
+ 28b:	85 c0                	test   %eax,%eax
+ 28d:	75 e1                	jne    270 <getgidbyname+0x20>
+ 28f:	49 89 dc             	mov    %rbx,%r12
+ 292:	5b                   	pop    %rbx
+ 293:	5d                   	pop    %rbp
+ 294:	4c 89 e0             	mov    %r12,%rax
+ 297:	41 5c                	pop    %r12
+ 299:	c3                   	ret    
+ 29a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 2a0:	48 8b 1d 00 00 00 00 	mov    0x0(%rip),%rbx        # 2a7 <getgidbyname+0x57>
+ 2a7:	48 85 db             	test   %rbx,%rbx
+ 2aa:	74 3c                	je     2e8 <getgidbyname+0x98>
+ 2ac:	44 0f b6 65 00       	movzbl 0x0(%rbp),%r12d
+ 2b1:	eb 0e                	jmp    2c1 <getgidbyname+0x71>
+ 2b3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 2b8:	48 8b 5b 08          	mov    0x8(%rbx),%rbx
+ 2bc:	48 85 db             	test   %rbx,%rbx
+ 2bf:	74 27                	je     2e8 <getgidbyname+0x98>
+ 2c1:	44 38 63 10          	cmp    %r12b,0x10(%rbx)
+ 2c5:	75 f1                	jne    2b8 <getgidbyname+0x68>
+ 2c7:	48 8d 7b 10          	lea    0x10(%rbx),%rdi
+ 2cb:	48 89 ee             	mov    %rbp,%rsi
+ 2ce:	e8 00 00 00 00       	call   2d3 <getgidbyname+0x83>
+ 2d3:	85 c0                	test   %eax,%eax
+ 2d5:	75 e1                	jne    2b8 <getgidbyname+0x68>
+ 2d7:	45 31 e4             	xor    %r12d,%r12d
+ 2da:	5b                   	pop    %rbx
+ 2db:	5d                   	pop    %rbp
+ 2dc:	4c 89 e0             	mov    %r12,%rax
+ 2df:	41 5c                	pop    %r12
+ 2e1:	c3                   	ret    
+ 2e2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 2e8:	48 89 ef             	mov    %rbp,%rdi
+ 2eb:	e8 00 00 00 00       	call   2f0 <getgidbyname+0xa0>
+ 2f0:	48 89 ef             	mov    %rbp,%rdi
+ 2f3:	49 89 c4             	mov    %rax,%r12
+ 2f6:	e8 00 00 00 00       	call   2fb <getgidbyname+0xab>
+ 2fb:	48 8d 78 18          	lea    0x18(%rax),%rdi
+ 2ff:	48 83 e7 f8          	and    $0xfffffffffffffff8,%rdi
+ 303:	e8 00 00 00 00       	call   308 <getgidbyname+0xb8>
+ 308:	48 89 ee             	mov    %rbp,%rsi
+ 30b:	48 8d 78 10          	lea    0x10(%rax),%rdi
+ 30f:	48 89 c3             	mov    %rax,%rbx
+ 312:	e8 00 00 00 00       	call   317 <getgidbyname+0xc7>
+ 317:	4d 85 e4             	test   %r12,%r12
+ 31a:	74 24                	je     340 <getgidbyname+0xf0>
+ 31c:	41 8b 44 24 10       	mov    0x10(%r12),%eax
+ 321:	89 03                	mov    %eax,(%rbx)
+ 323:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 32a <getgidbyname+0xda>
+ 32a:	48 89 1d 00 00 00 00 	mov    %rbx,0x0(%rip)        # 331 <getgidbyname+0xe1>
+ 331:	48 89 43 08          	mov    %rax,0x8(%rbx)
+ 335:	e9 55 ff ff ff       	jmp    28f <getgidbyname+0x3f>
+ 33a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 340:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 347 <getgidbyname+0xf7>
+ 347:	48 89 1d 00 00 00 00 	mov    %rbx,0x0(%rip)        # 34e <getgidbyname+0xfe>
+ 34e:	48 89 43 08          	mov    %rax,0x8(%rbx)
+ 352:	4c 89 e0             	mov    %r12,%rax
+ 355:	5b                   	pop    %rbx
+ 356:	5d                   	pop    %rbp
+ 357:	41 5c                	pop    %r12
+ 359:	c3                   	ret    

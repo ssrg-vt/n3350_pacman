@@ -1,0 +1,21 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xgetgroups.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xgetgroups>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	e8 00 00 00 00       	call   b <xgetgroups+0xb>
+   b:	41 89 c4             	mov    %eax,%r12d
+   e:	83 f8 ff             	cmp    $0xffffffff,%eax
+  11:	74 0d                	je     20 <xgetgroups+0x20>
+  13:	44 89 e0             	mov    %r12d,%eax
+  16:	41 5c                	pop    %r12
+  18:	c3                   	ret    
+  19:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  20:	e8 00 00 00 00       	call   25 <xgetgroups+0x25>
+  25:	83 38 0c             	cmpl   $0xc,(%rax)
+  28:	75 e9                	jne    13 <xgetgroups+0x13>
+  2a:	e8 00 00 00 00       	call   2f <xgetgroups+0x2f>

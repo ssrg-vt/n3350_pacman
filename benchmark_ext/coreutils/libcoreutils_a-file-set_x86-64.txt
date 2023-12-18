@@ -1,0 +1,80 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-file-set.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <record_file>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 85 ff             	test   %rdi,%rdi
+   7:	74 77                	je     80 <record_file+0x80>
+   9:	41 55                	push   %r13
+   b:	49 89 f5             	mov    %rsi,%r13
+   e:	41 54                	push   %r12
+  10:	49 89 fc             	mov    %rdi,%r12
+  13:	bf 18 00 00 00       	mov    $0x18,%edi
+  18:	55                   	push   %rbp
+  19:	53                   	push   %rbx
+  1a:	48 89 d3             	mov    %rdx,%rbx
+  1d:	48 83 ec 08          	sub    $0x8,%rsp
+  21:	e8 00 00 00 00       	call   26 <record_file+0x26>
+  26:	4c 89 ef             	mov    %r13,%rdi
+  29:	48 89 c5             	mov    %rax,%rbp
+  2c:	e8 00 00 00 00       	call   31 <record_file+0x31>
+  31:	48 89 ee             	mov    %rbp,%rsi
+  34:	4c 89 e7             	mov    %r12,%rdi
+  37:	48 89 45 00          	mov    %rax,0x0(%rbp)
+  3b:	48 8b 43 08          	mov    0x8(%rbx),%rax
+  3f:	48 89 45 08          	mov    %rax,0x8(%rbp)
+  43:	48 8b 03             	mov    (%rbx),%rax
+  46:	48 89 45 10          	mov    %rax,0x10(%rbp)
+  4a:	e8 00 00 00 00       	call   4f <record_file+0x4f>
+  4f:	48 85 c0             	test   %rax,%rax
+  52:	74 2d                	je     81 <record_file+0x81>
+  54:	48 39 c5             	cmp    %rax,%rbp
+  57:	74 17                	je     70 <record_file+0x70>
+  59:	48 83 c4 08          	add    $0x8,%rsp
+  5d:	48 89 ef             	mov    %rbp,%rdi
+  60:	5b                   	pop    %rbx
+  61:	5d                   	pop    %rbp
+  62:	41 5c                	pop    %r12
+  64:	41 5d                	pop    %r13
+  66:	e9 00 00 00 00       	jmp    6b <record_file+0x6b>
+  6b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  70:	48 83 c4 08          	add    $0x8,%rsp
+  74:	5b                   	pop    %rbx
+  75:	5d                   	pop    %rbp
+  76:	41 5c                	pop    %r12
+  78:	41 5d                	pop    %r13
+  7a:	c3                   	ret    
+  7b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  80:	c3                   	ret    
+  81:	e8 00 00 00 00       	call   86 <record_file+0x86>
+  86:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  8d:	00 00 00 
+
+0000000000000090 <seen_file>:
+  90:	f3 0f 1e fa          	endbr64 
+  94:	48 83 ec 28          	sub    $0x28,%rsp
+  98:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  9f:	00 00 
+  a1:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  a6:	31 c0                	xor    %eax,%eax
+  a8:	48 85 ff             	test   %rdi,%rdi
+  ab:	74 23                	je     d0 <seen_file+0x40>
+  ad:	48 8b 42 08          	mov    0x8(%rdx),%rax
+  b1:	48 89 34 24          	mov    %rsi,(%rsp)
+  b5:	48 89 e6             	mov    %rsp,%rsi
+  b8:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  bd:	48 8b 02             	mov    (%rdx),%rax
+  c0:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+  c5:	e8 00 00 00 00       	call   ca <seen_file+0x3a>
+  ca:	48 85 c0             	test   %rax,%rax
+  cd:	0f 95 c0             	setne  %al
+  d0:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+  d5:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  dc:	00 00 
+  de:	75 05                	jne    e5 <seen_file+0x55>
+  e0:	48 83 c4 28          	add    $0x28,%rsp
+  e4:	c3                   	ret    
+  e5:	e8 00 00 00 00       	call   ea <seen_file+0x5a>

@@ -1,0 +1,407 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-userspec.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <parse_with_separator>:
+   0:	41 57                	push   %r15
+   2:	49 89 f2             	mov    %rsi,%r10
+   5:	41 56                	push   %r14
+   7:	41 be ff ff ff ff    	mov    $0xffffffff,%r14d
+   d:	41 55                	push   %r13
+   f:	41 54                	push   %r12
+  11:	49 89 cc             	mov    %rcx,%r12
+  14:	55                   	push   %rbp
+  15:	4c 89 cd             	mov    %r9,%rbp
+  18:	53                   	push   %rbx
+  19:	4c 89 c3             	mov    %r8,%rbx
+  1c:	48 83 ec 58          	sub    $0x58,%rsp
+  20:	48 89 54 24 10       	mov    %rdx,0x10(%rsp)
+  25:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  2c:	00 00 
+  2e:	48 89 44 24 48       	mov    %rax,0x48(%rsp)
+  33:	8b 02                	mov    (%rdx),%eax
+  35:	89 44 24 08          	mov    %eax,0x8(%rsp)
+  39:	48 85 c9             	test   %rcx,%rcx
+  3c:	74 03                	je     41 <parse_with_separator+0x41>
+  3e:	44 8b 31             	mov    (%rcx),%r14d
+  41:	48 85 db             	test   %rbx,%rbx
+  44:	74 07                	je     4d <parse_with_separator+0x4d>
+  46:	48 c7 03 00 00 00 00 	movq   $0x0,(%rbx)
+  4d:	48 85 ed             	test   %rbp,%rbp
+  50:	74 08                	je     5a <parse_with_separator+0x5a>
+  52:	48 c7 45 00 00 00 00 	movq   $0x0,0x0(%rbp)
+  59:	00 
+  5a:	4d 85 d2             	test   %r10,%r10
+  5d:	0f 84 bd 01 00 00    	je     220 <parse_with_separator+0x220>
+  63:	4d 89 d7             	mov    %r10,%r15
+  66:	49 29 ff             	sub    %rdi,%r15
+  69:	0f 85 b1 00 00 00    	jne    120 <parse_with_separator+0x120>
+  6f:	41 0f b6 42 01       	movzbl 0x1(%r10),%eax
+  74:	84 c0                	test   %al,%al
+  76:	0f 84 d4 01 00 00    	je     250 <parse_with_separator+0x250>
+  7c:	4d 8d 7a 01          	lea    0x1(%r10),%r15
+  80:	45 31 ed             	xor    %r13d,%r13d
+  83:	3c 2b                	cmp    $0x2b,%al
+  85:	0f 84 15 01 00 00    	je     1a0 <parse_with_separator+0x1a0>
+  8b:	4c 89 ff             	mov    %r15,%rdi
+  8e:	e8 00 00 00 00       	call   93 <parse_with_separator+0x93>
+  93:	48 85 c0             	test   %rax,%rax
+  96:	0f 84 04 01 00 00    	je     1a0 <parse_with_separator+0x1a0>
+  9c:	44 8b 70 10          	mov    0x10(%rax),%r14d
+  a0:	e8 00 00 00 00       	call   a5 <parse_with_separator+0xa5>
+  a5:	4c 89 ff             	mov    %r15,%rdi
+  a8:	e8 00 00 00 00       	call   ad <parse_with_separator+0xad>
+  ad:	49 89 c2             	mov    %rax,%r10
+  b0:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+  b5:	8b 4c 24 08          	mov    0x8(%rsp),%ecx
+  b9:	89 08                	mov    %ecx,(%rax)
+  bb:	4d 85 e4             	test   %r12,%r12
+  be:	74 04                	je     c4 <parse_with_separator+0xc4>
+  c0:	45 89 34 24          	mov    %r14d,(%r12)
+  c4:	48 85 db             	test   %rbx,%rbx
+  c7:	74 06                	je     cf <parse_with_separator+0xcf>
+  c9:	4c 89 2b             	mov    %r13,(%rbx)
+  cc:	45 31 ed             	xor    %r13d,%r13d
+  cf:	48 85 ed             	test   %rbp,%rbp
+  d2:	74 07                	je     db <parse_with_separator+0xdb>
+  d4:	4c 89 55 00          	mov    %r10,0x0(%rbp)
+  d8:	45 31 d2             	xor    %r10d,%r10d
+  db:	4c 89 ef             	mov    %r13,%rdi
+  de:	4c 89 54 24 08       	mov    %r10,0x8(%rsp)
+  e3:	e8 00 00 00 00       	call   e8 <parse_with_separator+0xe8>
+  e8:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+  ed:	e8 00 00 00 00       	call   f2 <parse_with_separator+0xf2>
+  f2:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
+  f7:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  fe:	00 00 
+ 100:	0f 85 7c 02 00 00    	jne    382 <parse_with_separator+0x382>
+ 106:	48 83 c4 58          	add    $0x58,%rsp
+ 10a:	31 c0                	xor    %eax,%eax
+ 10c:	5b                   	pop    %rbx
+ 10d:	5d                   	pop    %rbp
+ 10e:	41 5c                	pop    %r12
+ 110:	41 5d                	pop    %r13
+ 112:	41 5e                	pop    %r14
+ 114:	41 5f                	pop    %r15
+ 116:	c3                   	ret    
+ 117:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 11e:	00 00 
+ 120:	49 8d 77 01          	lea    0x1(%r15),%rsi
+ 124:	4c 89 54 24 08       	mov    %r10,0x8(%rsp)
+ 129:	e8 00 00 00 00       	call   12e <parse_with_separator+0x12e>
+ 12e:	4c 8b 54 24 08       	mov    0x8(%rsp),%r10
+ 133:	42 c6 04 38 00       	movb   $0x0,(%rax,%r15,1)
+ 138:	49 89 c5             	mov    %rax,%r13
+ 13b:	41 80 7a 01 00       	cmpb   $0x0,0x1(%r10)
+ 140:	0f 84 4a 01 00 00    	je     290 <parse_with_separator+0x290>
+ 146:	4d 8d 7a 01          	lea    0x1(%r10),%r15
+ 14a:	31 c0                	xor    %eax,%eax
+ 14c:	4d 85 d2             	test   %r10,%r10
+ 14f:	0f 95 c2             	setne  %dl
+ 152:	21 c2                	and    %eax,%edx
+ 154:	41 80 7d 00 2b       	cmpb   $0x2b,0x0(%r13)
+ 159:	88 54 24 18          	mov    %dl,0x18(%rsp)
+ 15d:	0f 84 54 01 00 00    	je     2b7 <parse_with_separator+0x2b7>
+ 163:	4c 89 ef             	mov    %r13,%rdi
+ 166:	e8 00 00 00 00       	call   16b <parse_with_separator+0x16b>
+ 16b:	48 85 c0             	test   %rax,%rax
+ 16e:	0f 84 3c 01 00 00    	je     2b0 <parse_with_separator+0x2b0>
+ 174:	8b 48 10             	mov    0x10(%rax),%ecx
+ 177:	80 7c 24 18 00       	cmpb   $0x0,0x18(%rsp)
+ 17c:	89 4c 24 08          	mov    %ecx,0x8(%rsp)
+ 180:	0f 85 b2 01 00 00    	jne    338 <parse_with_separator+0x338>
+ 186:	e8 00 00 00 00       	call   18b <parse_with_separator+0x18b>
+ 18b:	4d 85 ff             	test   %r15,%r15
+ 18e:	0f 84 f3 01 00 00    	je     387 <parse_with_separator+0x387>
+ 194:	41 0f b6 07          	movzbl (%r15),%eax
+ 198:	3c 2b                	cmp    $0x2b,%al
+ 19a:	0f 85 eb fe ff ff    	jne    8b <parse_with_separator+0x8b>
+ 1a0:	31 f6                	xor    %esi,%esi
+ 1a2:	48 8d 4c 24 28       	lea    0x28(%rsp),%rcx
+ 1a7:	ba 0a 00 00 00       	mov    $0xa,%edx
+ 1ac:	4c 89 ff             	mov    %r15,%rdi
+ 1af:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 1b6 <parse_with_separator+0x1b6>
+ 1b6:	e8 00 00 00 00       	call   1bb <parse_with_separator+0x1bb>
+ 1bb:	85 c0                	test   %eax,%eax
+ 1bd:	0f 84 9d 00 00 00    	je     260 <parse_with_separator+0x260>
+ 1c3:	e8 00 00 00 00       	call   1c8 <parse_with_separator+0x1c8>
+ 1c8:	4c 89 ff             	mov    %r15,%rdi
+ 1cb:	4c 8d 25 00 00 00 00 	lea    0x0(%rip),%r12        # 1d2 <parse_with_separator+0x1d2>
+ 1d2:	e8 00 00 00 00       	call   1d7 <parse_with_separator+0x1d7>
+ 1d7:	48 89 c5             	mov    %rax,%rbp
+ 1da:	4c 89 ef             	mov    %r13,%rdi
+ 1dd:	e8 00 00 00 00       	call   1e2 <parse_with_separator+0x1e2>
+ 1e2:	48 89 ef             	mov    %rbp,%rdi
+ 1e5:	e8 00 00 00 00       	call   1ea <parse_with_separator+0x1ea>
+ 1ea:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
+ 1ef:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 1f6:	00 00 
+ 1f8:	0f 85 84 01 00 00    	jne    382 <parse_with_separator+0x382>
+ 1fe:	48 83 c4 58          	add    $0x58,%rsp
+ 202:	4c 89 e6             	mov    %r12,%rsi
+ 205:	ba 05 00 00 00       	mov    $0x5,%edx
+ 20a:	31 ff                	xor    %edi,%edi
+ 20c:	5b                   	pop    %rbx
+ 20d:	5d                   	pop    %rbp
+ 20e:	41 5c                	pop    %r12
+ 210:	41 5d                	pop    %r13
+ 212:	41 5e                	pop    %r14
+ 214:	41 5f                	pop    %r15
+ 216:	e9 00 00 00 00       	jmp    21b <parse_with_separator+0x21b>
+ 21b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 220:	45 31 ed             	xor    %r13d,%r13d
+ 223:	80 3f 00             	cmpb   $0x0,(%rdi)
+ 226:	0f 84 84 fe ff ff    	je     b0 <parse_with_separator+0xb0>
+ 22c:	4c 89 54 24 08       	mov    %r10,0x8(%rsp)
+ 231:	45 31 ff             	xor    %r15d,%r15d
+ 234:	e8 00 00 00 00       	call   239 <parse_with_separator+0x239>
+ 239:	4c 8b 54 24 08       	mov    0x8(%rsp),%r10
+ 23e:	49 89 c5             	mov    %rax,%r13
+ 241:	b8 01 00 00 00       	mov    $0x1,%eax
+ 246:	e9 01 ff ff ff       	jmp    14c <parse_with_separator+0x14c>
+ 24b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 250:	45 31 ed             	xor    %r13d,%r13d
+ 253:	45 31 d2             	xor    %r10d,%r10d
+ 256:	e9 55 fe ff ff       	jmp    b0 <parse_with_separator+0xb0>
+ 25b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 260:	4c 8b 74 24 28       	mov    0x28(%rsp),%r14
+ 265:	b8 fe ff ff ff       	mov    $0xfffffffe,%eax
+ 26a:	49 39 c6             	cmp    %rax,%r14
+ 26d:	0f 87 50 ff ff ff    	ja     1c3 <parse_with_separator+0x1c3>
+ 273:	e8 00 00 00 00       	call   278 <parse_with_separator+0x278>
+ 278:	4c 89 ff             	mov    %r15,%rdi
+ 27b:	31 ed                	xor    %ebp,%ebp
+ 27d:	e8 00 00 00 00       	call   282 <parse_with_separator+0x282>
+ 282:	49 89 c2             	mov    %rax,%r10
+ 285:	e9 26 fe ff ff       	jmp    b0 <parse_with_separator+0xb0>
+ 28a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 290:	80 38 2b             	cmpb   $0x2b,(%rax)
+ 293:	0f 85 f6 00 00 00    	jne    38f <parse_with_separator+0x38f>
+ 299:	e8 00 00 00 00       	call   29e <parse_with_separator+0x29e>
+ 29e:	31 ed                	xor    %ebp,%ebp
+ 2a0:	4c 8d 25 00 00 00 00 	lea    0x0(%rip),%r12        # 2a7 <parse_with_separator+0x2a7>
+ 2a7:	e9 2e ff ff ff       	jmp    1da <parse_with_separator+0x1da>
+ 2ac:	0f 1f 40 00          	nopl   0x0(%rax)
+ 2b0:	80 7c 24 18 00       	cmpb   $0x0,0x18(%rsp)
+ 2b5:	75 e2                	jne    299 <parse_with_separator+0x299>
+ 2b7:	31 f6                	xor    %esi,%esi
+ 2b9:	48 8d 4c 24 28       	lea    0x28(%rsp),%rcx
+ 2be:	ba 0a 00 00 00       	mov    $0xa,%edx
+ 2c3:	4c 89 ef             	mov    %r13,%rdi
+ 2c6:	4c 8d 05 00 00 00 00 	lea    0x0(%rip),%r8        # 2cd <parse_with_separator+0x2cd>
+ 2cd:	e8 00 00 00 00       	call   2d2 <parse_with_separator+0x2d2>
+ 2d2:	85 c0                	test   %eax,%eax
+ 2d4:	75 4a                	jne    320 <parse_with_separator+0x320>
+ 2d6:	48 8b 5c 24 28       	mov    0x28(%rsp),%rbx
+ 2db:	b8 fe ff ff ff       	mov    $0xfffffffe,%eax
+ 2e0:	89 5c 24 08          	mov    %ebx,0x8(%rsp)
+ 2e4:	48 39 c3             	cmp    %rax,%rbx
+ 2e7:	77 37                	ja     320 <parse_with_separator+0x320>
+ 2e9:	e8 00 00 00 00       	call   2ee <parse_with_separator+0x2ee>
+ 2ee:	4d 85 ff             	test   %r15,%r15
+ 2f1:	75 1d                	jne    310 <parse_with_separator+0x310>
+ 2f3:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 2f8:	45 31 d2             	xor    %r10d,%r10d
+ 2fb:	89 18                	mov    %ebx,(%rax)
+ 2fd:	4d 85 e4             	test   %r12,%r12
+ 300:	0f 84 c9 fd ff ff    	je     cf <parse_with_separator+0xcf>
+ 306:	45 89 34 24          	mov    %r14d,(%r12)
+ 30a:	e9 c0 fd ff ff       	jmp    cf <parse_with_separator+0xcf>
+ 30f:	90                   	nop
+ 310:	41 0f b6 07          	movzbl (%r15),%eax
+ 314:	31 db                	xor    %ebx,%ebx
+ 316:	e9 68 fd ff ff       	jmp    83 <parse_with_separator+0x83>
+ 31b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 320:	e8 00 00 00 00       	call   325 <parse_with_separator+0x325>
+ 325:	31 ed                	xor    %ebp,%ebp
+ 327:	4c 8d 25 00 00 00 00 	lea    0x0(%rip),%r12        # 32e <parse_with_separator+0x32e>
+ 32e:	e9 a7 fe ff ff       	jmp    1da <parse_with_separator+0x1da>
+ 333:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 338:	44 8b 70 14          	mov    0x14(%rax),%r14d
+ 33c:	44 89 f7             	mov    %r14d,%edi
+ 33f:	e8 00 00 00 00       	call   344 <parse_with_separator+0x344>
+ 344:	48 85 c0             	test   %rax,%rax
+ 347:	74 27                	je     370 <parse_with_separator+0x370>
+ 349:	48 8b 38             	mov    (%rax),%rdi
+ 34c:	e8 00 00 00 00       	call   351 <parse_with_separator+0x351>
+ 351:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+ 356:	e8 00 00 00 00       	call   35b <parse_with_separator+0x35b>
+ 35b:	e8 00 00 00 00       	call   360 <parse_with_separator+0x360>
+ 360:	4c 8b 54 24 18       	mov    0x18(%rsp),%r10
+ 365:	e9 46 fd ff ff       	jmp    b0 <parse_with_separator+0xb0>
+ 36a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 370:	44 89 f7             	mov    %r14d,%edi
+ 373:	48 8d 74 24 30       	lea    0x30(%rsp),%rsi
+ 378:	e8 00 00 00 00       	call   37d <parse_with_separator+0x37d>
+ 37d:	48 89 c7             	mov    %rax,%rdi
+ 380:	eb ca                	jmp    34c <parse_with_separator+0x34c>
+ 382:	e8 00 00 00 00       	call   387 <parse_with_separator+0x387>
+ 387:	45 31 d2             	xor    %r10d,%r10d
+ 38a:	e9 21 fd ff ff       	jmp    b0 <parse_with_separator+0xb0>
+ 38f:	48 89 c7             	mov    %rax,%rdi
+ 392:	e8 00 00 00 00       	call   397 <parse_with_separator+0x397>
+ 397:	48 85 c0             	test   %rax,%rax
+ 39a:	0f 84 f9 fe ff ff    	je     299 <parse_with_separator+0x299>
+ 3a0:	c6 44 24 18 01       	movb   $0x1,0x18(%rsp)
+ 3a5:	45 31 ff             	xor    %r15d,%r15d
+ 3a8:	e9 c7 fd ff ff       	jmp    174 <parse_with_separator+0x174>
+ 3ad:	0f 1f 00             	nopl   (%rax)
+
+00000000000003b0 <parse_user_spec_warn>:
+ 3b0:	f3 0f 1e fa          	endbr64 
+ 3b4:	41 57                	push   %r15
+ 3b6:	4d 89 c7             	mov    %r8,%r15
+ 3b9:	41 56                	push   %r14
+ 3bb:	49 89 ce             	mov    %rcx,%r14
+ 3be:	41 55                	push   %r13
+ 3c0:	49 89 f5             	mov    %rsi,%r13
+ 3c3:	41 54                	push   %r12
+ 3c5:	55                   	push   %rbp
+ 3c6:	48 89 fd             	mov    %rdi,%rbp
+ 3c9:	53                   	push   %rbx
+ 3ca:	4c 89 cb             	mov    %r9,%rbx
+ 3cd:	48 83 ec 18          	sub    $0x18,%rsp
+ 3d1:	48 85 d2             	test   %rdx,%rdx
+ 3d4:	0f 84 9e 00 00 00    	je     478 <parse_user_spec_warn+0xc8>
+ 3da:	be 3a 00 00 00       	mov    $0x3a,%esi
+ 3df:	49 89 d4             	mov    %rdx,%r12
+ 3e2:	e8 00 00 00 00       	call   3e7 <parse_user_spec_warn+0x37>
+ 3e7:	4d 89 f9             	mov    %r15,%r9
+ 3ea:	4d 89 f0             	mov    %r14,%r8
+ 3ed:	4c 89 e1             	mov    %r12,%rcx
+ 3f0:	48 89 c6             	mov    %rax,%rsi
+ 3f3:	4c 89 ea             	mov    %r13,%rdx
+ 3f6:	48 89 ef             	mov    %rbp,%rdi
+ 3f9:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 3fe:	e8 fd fb ff ff       	call   0 <parse_with_separator>
+ 403:	48 8b 74 24 08       	mov    0x8(%rsp),%rsi
+ 408:	49 89 c2             	mov    %rax,%r10
+ 40b:	48 85 f6             	test   %rsi,%rsi
+ 40e:	75 48                	jne    458 <parse_user_spec_warn+0xa8>
+ 410:	48 85 c0             	test   %rax,%rax
+ 413:	74 43                	je     458 <parse_user_spec_warn+0xa8>
+ 415:	be 2e 00 00 00       	mov    $0x2e,%esi
+ 41a:	48 89 ef             	mov    %rbp,%rdi
+ 41d:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 422:	e8 00 00 00 00       	call   427 <parse_user_spec_warn+0x77>
+ 427:	4c 8b 54 24 08       	mov    0x8(%rsp),%r10
+ 42c:	48 85 c0             	test   %rax,%rax
+ 42f:	48 89 c6             	mov    %rax,%rsi
+ 432:	74 24                	je     458 <parse_user_spec_warn+0xa8>
+ 434:	4d 89 f9             	mov    %r15,%r9
+ 437:	4d 89 f0             	mov    %r14,%r8
+ 43a:	4c 89 e1             	mov    %r12,%rcx
+ 43d:	4c 89 ea             	mov    %r13,%rdx
+ 440:	48 89 ef             	mov    %rbp,%rdi
+ 443:	e8 b8 fb ff ff       	call   0 <parse_with_separator>
+ 448:	4c 8b 54 24 08       	mov    0x8(%rsp),%r10
+ 44d:	48 85 c0             	test   %rax,%rax
+ 450:	74 3e                	je     490 <parse_user_spec_warn+0xe0>
+ 452:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 458:	48 85 db             	test   %rbx,%rbx
+ 45b:	74 04                	je     461 <parse_user_spec_warn+0xb1>
+ 45d:	31 c0                	xor    %eax,%eax
+ 45f:	88 03                	mov    %al,(%rbx)
+ 461:	48 83 c4 18          	add    $0x18,%rsp
+ 465:	4c 89 d0             	mov    %r10,%rax
+ 468:	5b                   	pop    %rbx
+ 469:	5d                   	pop    %rbp
+ 46a:	41 5c                	pop    %r12
+ 46c:	41 5d                	pop    %r13
+ 46e:	41 5e                	pop    %r14
+ 470:	41 5f                	pop    %r15
+ 472:	c3                   	ret    
+ 473:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 478:	4d 89 c1             	mov    %r8,%r9
+ 47b:	48 89 f2             	mov    %rsi,%rdx
+ 47e:	49 89 c8             	mov    %rcx,%r8
+ 481:	31 f6                	xor    %esi,%esi
+ 483:	31 c9                	xor    %ecx,%ecx
+ 485:	e8 76 fb ff ff       	call   0 <parse_with_separator>
+ 48a:	49 89 c2             	mov    %rax,%r10
+ 48d:	eb c9                	jmp    458 <parse_user_spec_warn+0xa8>
+ 48f:	90                   	nop
+ 490:	b8 01 00 00 00       	mov    $0x1,%eax
+ 495:	4c 8d 15 00 00 00 00 	lea    0x0(%rip),%r10        # 49c <parse_user_spec_warn+0xec>
+ 49c:	48 85 db             	test   %rbx,%rbx
+ 49f:	75 be                	jne    45f <parse_user_spec_warn+0xaf>
+ 4a1:	45 31 d2             	xor    %r10d,%r10d
+ 4a4:	eb bb                	jmp    461 <parse_user_spec_warn+0xb1>
+ 4a6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 4ad:	00 00 00 
+
+00000000000004b0 <parse_user_spec>:
+ 4b0:	f3 0f 1e fa          	endbr64 
+ 4b4:	41 57                	push   %r15
+ 4b6:	41 56                	push   %r14
+ 4b8:	4d 89 c6             	mov    %r8,%r14
+ 4bb:	41 55                	push   %r13
+ 4bd:	49 89 f5             	mov    %rsi,%r13
+ 4c0:	41 54                	push   %r12
+ 4c2:	55                   	push   %rbp
+ 4c3:	48 89 fd             	mov    %rdi,%rbp
+ 4c6:	53                   	push   %rbx
+ 4c7:	48 89 cb             	mov    %rcx,%rbx
+ 4ca:	48 83 ec 18          	sub    $0x18,%rsp
+ 4ce:	48 85 d2             	test   %rdx,%rdx
+ 4d1:	0f 84 89 00 00 00    	je     560 <parse_user_spec+0xb0>
+ 4d7:	be 3a 00 00 00       	mov    $0x3a,%esi
+ 4dc:	49 89 d4             	mov    %rdx,%r12
+ 4df:	e8 00 00 00 00       	call   4e4 <parse_user_spec+0x34>
+ 4e4:	4d 89 f1             	mov    %r14,%r9
+ 4e7:	49 89 d8             	mov    %rbx,%r8
+ 4ea:	4c 89 e1             	mov    %r12,%rcx
+ 4ed:	4c 89 ea             	mov    %r13,%rdx
+ 4f0:	48 89 c6             	mov    %rax,%rsi
+ 4f3:	48 89 ef             	mov    %rbp,%rdi
+ 4f6:	49 89 c7             	mov    %rax,%r15
+ 4f9:	e8 02 fb ff ff       	call   0 <parse_with_separator>
+ 4fe:	49 89 c2             	mov    %rax,%r10
+ 501:	4d 85 ff             	test   %r15,%r15
+ 504:	75 42                	jne    548 <parse_user_spec+0x98>
+ 506:	48 85 c0             	test   %rax,%rax
+ 509:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 50e:	74 70                	je     580 <parse_user_spec+0xd0>
+ 510:	be 2e 00 00 00       	mov    $0x2e,%esi
+ 515:	48 89 ef             	mov    %rbp,%rdi
+ 518:	e8 00 00 00 00       	call   51d <parse_user_spec+0x6d>
+ 51d:	4c 8b 54 24 08       	mov    0x8(%rsp),%r10
+ 522:	48 85 c0             	test   %rax,%rax
+ 525:	48 89 c6             	mov    %rax,%rsi
+ 528:	74 1e                	je     548 <parse_user_spec+0x98>
+ 52a:	4d 89 f1             	mov    %r14,%r9
+ 52d:	49 89 d8             	mov    %rbx,%r8
+ 530:	4c 89 e1             	mov    %r12,%rcx
+ 533:	4c 89 ea             	mov    %r13,%rdx
+ 536:	48 89 ef             	mov    %rbp,%rdi
+ 539:	e8 c2 fa ff ff       	call   0 <parse_with_separator>
+ 53e:	4c 8b 54 24 08       	mov    0x8(%rsp),%r10
+ 543:	48 85 c0             	test   %rax,%rax
+ 546:	74 38                	je     580 <parse_user_spec+0xd0>
+ 548:	48 83 c4 18          	add    $0x18,%rsp
+ 54c:	4c 89 d0             	mov    %r10,%rax
+ 54f:	5b                   	pop    %rbx
+ 550:	5d                   	pop    %rbp
+ 551:	41 5c                	pop    %r12
+ 553:	41 5d                	pop    %r13
+ 555:	41 5e                	pop    %r14
+ 557:	41 5f                	pop    %r15
+ 559:	c3                   	ret    
+ 55a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 560:	48 83 c4 18          	add    $0x18,%rsp
+ 564:	4d 89 c1             	mov    %r8,%r9
+ 567:	48 89 f2             	mov    %rsi,%rdx
+ 56a:	49 89 c8             	mov    %rcx,%r8
+ 56d:	5b                   	pop    %rbx
+ 56e:	31 c9                	xor    %ecx,%ecx
+ 570:	5d                   	pop    %rbp
+ 571:	31 f6                	xor    %esi,%esi
+ 573:	41 5c                	pop    %r12
+ 575:	41 5d                	pop    %r13
+ 577:	41 5e                	pop    %r14
+ 579:	41 5f                	pop    %r15
+ 57b:	e9 80 fa ff ff       	jmp    0 <parse_with_separator>
+ 580:	45 31 d2             	xor    %r10d,%r10d
+ 583:	eb c3                	jmp    548 <parse_user_spec+0x98>

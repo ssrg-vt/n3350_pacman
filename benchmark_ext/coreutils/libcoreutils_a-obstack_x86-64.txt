@@ -1,0 +1,280 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-obstack.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <print_and_abort>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	50                   	push   %rax
+   5:	58                   	pop    %rax
+   6:	ba 05 00 00 00       	mov    $0x5,%edx
+   b:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 12 <print_and_abort+0x12>
+  12:	31 ff                	xor    %edi,%edi
+  14:	48 83 ec 08          	sub    $0x8,%rsp
+  18:	e8 00 00 00 00       	call   1d <print_and_abort+0x1d>
+  1d:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 24 <print_and_abort+0x24>
+  24:	be 01 00 00 00       	mov    $0x1,%esi
+  29:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 30 <print_and_abort+0x30>
+  30:	48 89 c1             	mov    %rax,%rcx
+  33:	31 c0                	xor    %eax,%eax
+  35:	e8 00 00 00 00       	call   3a <print_and_abort+0x3a>
+  3a:	8b 3d 00 00 00 00    	mov    0x0(%rip),%edi        # 40 <print_and_abort+0x40>
+  40:	e8 00 00 00 00       	call   45 <print_and_abort+0x45>
+  45:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  4c:	00 00 00 00 
+
+0000000000000050 <_obstack_begin_worker>:
+  50:	41 54                	push   %r12
+  52:	55                   	push   %rbp
+  53:	53                   	push   %rbx
+  54:	48 89 fb             	mov    %rdi,%rbx
+  57:	48 85 d2             	test   %rdx,%rdx
+  5a:	74 6c                	je     c8 <_obstack_begin_worker+0x78>
+  5c:	48 89 d5             	mov    %rdx,%rbp
+  5f:	4c 8d 62 ff          	lea    -0x1(%rdx),%r12
+  63:	b8 e0 0f 00 00       	mov    $0xfe0,%eax
+  68:	48 85 f6             	test   %rsi,%rsi
+  6b:	4c 89 63 30          	mov    %r12,0x30(%rbx)
+  6f:	48 0f 44 f0          	cmove  %rax,%rsi
+  73:	48 8b 43 38          	mov    0x38(%rbx),%rax
+  77:	48 89 33             	mov    %rsi,(%rbx)
+  7a:	f6 43 50 01          	testb  $0x1,0x50(%rbx)
+  7e:	74 58                	je     d8 <_obstack_begin_worker+0x88>
+  80:	48 8b 7b 48          	mov    0x48(%rbx),%rdi
+  84:	ff d0                	call   *%rax
+  86:	48 89 43 08          	mov    %rax,0x8(%rbx)
+  8a:	48 85 c0             	test   %rax,%rax
+  8d:	74 50                	je     df <_obstack_begin_worker+0x8f>
+  8f:	4a 8d 54 20 10       	lea    0x10(%rax,%r12,1),%rdx
+  94:	48 f7 dd             	neg    %rbp
+  97:	48 21 ea             	and    %rbp,%rdx
+  9a:	48 89 53 10          	mov    %rdx,0x10(%rbx)
+  9e:	48 89 53 18          	mov    %rdx,0x18(%rbx)
+  a2:	48 8b 13             	mov    (%rbx),%rdx
+  a5:	48 01 c2             	add    %rax,%rdx
+  a8:	48 89 10             	mov    %rdx,(%rax)
+  ab:	48 89 53 20          	mov    %rdx,0x20(%rbx)
+  af:	48 c7 40 08 00 00 00 	movq   $0x0,0x8(%rax)
+  b6:	00 
+  b7:	b8 01 00 00 00       	mov    $0x1,%eax
+  bc:	80 63 50 f9          	andb   $0xf9,0x50(%rbx)
+  c0:	5b                   	pop    %rbx
+  c1:	5d                   	pop    %rbp
+  c2:	41 5c                	pop    %r12
+  c4:	c3                   	ret    
+  c5:	0f 1f 00             	nopl   (%rax)
+  c8:	41 bc 0f 00 00 00    	mov    $0xf,%r12d
+  ce:	bd 10 00 00 00       	mov    $0x10,%ebp
+  d3:	eb 8e                	jmp    63 <_obstack_begin_worker+0x13>
+  d5:	0f 1f 00             	nopl   (%rax)
+  d8:	48 89 f7             	mov    %rsi,%rdi
+  db:	ff d0                	call   *%rax
+  dd:	eb a7                	jmp    86 <_obstack_begin_worker+0x36>
+  df:	ff 15 00 00 00 00    	call   *0x0(%rip)        # e5 <_obstack_begin_worker+0x95>
+  e5:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  ec:	00 00 00 00 
+
+00000000000000f0 <_obstack_begin>:
+  f0:	f3 0f 1e fa          	endbr64 
+  f4:	80 67 50 fe          	andb   $0xfe,0x50(%rdi)
+  f8:	48 89 4f 38          	mov    %rcx,0x38(%rdi)
+  fc:	4c 89 47 40          	mov    %r8,0x40(%rdi)
+ 100:	e9 4b ff ff ff       	jmp    50 <_obstack_begin_worker>
+ 105:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 10c:	00 00 00 00 
+
+0000000000000110 <_obstack_begin_1>:
+ 110:	f3 0f 1e fa          	endbr64 
+ 114:	80 4f 50 01          	orb    $0x1,0x50(%rdi)
+ 118:	48 89 4f 38          	mov    %rcx,0x38(%rdi)
+ 11c:	4c 89 47 40          	mov    %r8,0x40(%rdi)
+ 120:	4c 89 4f 48          	mov    %r9,0x48(%rdi)
+ 124:	e9 27 ff ff ff       	jmp    50 <_obstack_begin_worker>
+ 129:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000130 <_obstack_newchunk>:
+ 130:	f3 0f 1e fa          	endbr64 
+ 134:	41 56                	push   %r14
+ 136:	31 c9                	xor    %ecx,%ecx
+ 138:	41 55                	push   %r13
+ 13a:	41 54                	push   %r12
+ 13c:	55                   	push   %rbp
+ 13d:	53                   	push   %rbx
+ 13e:	48 89 fb             	mov    %rdi,%rbx
+ 141:	4c 8b 6f 18          	mov    0x18(%rdi),%r13
+ 145:	4c 2b 6f 10          	sub    0x10(%rdi),%r13
+ 149:	48 8b 13             	mov    (%rbx),%rdx
+ 14c:	4c 01 ee             	add    %r13,%rsi
+ 14f:	4c 89 e8             	mov    %r13,%rax
+ 152:	48 8b 6f 08          	mov    0x8(%rdi),%rbp
+ 156:	0f 92 c1             	setb   %cl
+ 159:	48 03 77 30          	add    0x30(%rdi),%rsi
+ 15d:	40 0f 92 c7          	setb   %dil
+ 161:	48 c1 e8 03          	shr    $0x3,%rax
+ 165:	48 39 d6             	cmp    %rdx,%rsi
+ 168:	48 8d 44 06 64       	lea    0x64(%rsi,%rax,1),%rax
+ 16d:	48 0f 42 f2          	cmovb  %rdx,%rsi
+ 171:	48 39 f0             	cmp    %rsi,%rax
+ 174:	48 0f 43 f0          	cmovae %rax,%rsi
+ 178:	48 85 c9             	test   %rcx,%rcx
+ 17b:	0f 85 ce 00 00 00    	jne    24f <_obstack_newchunk+0x11f>
+ 181:	40 0f b6 ff          	movzbl %dil,%edi
+ 185:	48 85 ff             	test   %rdi,%rdi
+ 188:	0f 85 c1 00 00 00    	jne    24f <_obstack_newchunk+0x11f>
+ 18e:	48 8b 43 38          	mov    0x38(%rbx),%rax
+ 192:	49 89 f6             	mov    %rsi,%r14
+ 195:	f6 43 50 01          	testb  $0x1,0x50(%rbx)
+ 199:	75 7d                	jne    218 <_obstack_newchunk+0xe8>
+ 19b:	48 89 f7             	mov    %rsi,%rdi
+ 19e:	ff d0                	call   *%rax
+ 1a0:	49 89 c4             	mov    %rax,%r12
+ 1a3:	4d 85 e4             	test   %r12,%r12
+ 1a6:	0f 84 a3 00 00 00    	je     24f <_obstack_newchunk+0x11f>
+ 1ac:	4b 8d 04 34          	lea    (%r12,%r14,1),%rax
+ 1b0:	4c 89 63 08          	mov    %r12,0x8(%rbx)
+ 1b4:	48 8b 73 10          	mov    0x10(%rbx),%rsi
+ 1b8:	4c 89 ea             	mov    %r13,%rdx
+ 1bb:	49 89 6c 24 08       	mov    %rbp,0x8(%r12)
+ 1c0:	48 89 43 20          	mov    %rax,0x20(%rbx)
+ 1c4:	49 89 04 24          	mov    %rax,(%r12)
+ 1c8:	48 8b 43 30          	mov    0x30(%rbx),%rax
+ 1cc:	4d 8d 74 04 10       	lea    0x10(%r12,%rax,1),%r14
+ 1d1:	48 f7 d0             	not    %rax
+ 1d4:	49 21 c6             	and    %rax,%r14
+ 1d7:	4c 89 f7             	mov    %r14,%rdi
+ 1da:	e8 00 00 00 00       	call   1df <_obstack_newchunk+0xaf>
+ 1df:	0f b6 53 50          	movzbl 0x50(%rbx),%edx
+ 1e3:	f6 c2 02             	test   $0x2,%dl
+ 1e6:	75 15                	jne    1fd <_obstack_newchunk+0xcd>
+ 1e8:	48 8b 43 30          	mov    0x30(%rbx),%rax
+ 1ec:	48 8d 4c 05 10       	lea    0x10(%rbp,%rax,1),%rcx
+ 1f1:	48 f7 d0             	not    %rax
+ 1f4:	48 21 c8             	and    %rcx,%rax
+ 1f7:	48 39 43 10          	cmp    %rax,0x10(%rbx)
+ 1fb:	74 2b                	je     228 <_obstack_newchunk+0xf8>
+ 1fd:	4c 89 73 10          	mov    %r14,0x10(%rbx)
+ 201:	4d 01 ee             	add    %r13,%r14
+ 204:	4c 89 73 18          	mov    %r14,0x18(%rbx)
+ 208:	80 63 50 fd          	andb   $0xfd,0x50(%rbx)
+ 20c:	5b                   	pop    %rbx
+ 20d:	5d                   	pop    %rbp
+ 20e:	41 5c                	pop    %r12
+ 210:	41 5d                	pop    %r13
+ 212:	41 5e                	pop    %r14
+ 214:	c3                   	ret    
+ 215:	0f 1f 00             	nopl   (%rax)
+ 218:	48 8b 7b 48          	mov    0x48(%rbx),%rdi
+ 21c:	ff d0                	call   *%rax
+ 21e:	49 89 c4             	mov    %rax,%r12
+ 221:	eb 80                	jmp    1a3 <_obstack_newchunk+0x73>
+ 223:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 228:	48 8b 45 08          	mov    0x8(%rbp),%rax
+ 22c:	83 e2 01             	and    $0x1,%edx
+ 22f:	49 89 44 24 08       	mov    %rax,0x8(%r12)
+ 234:	48 8b 43 40          	mov    0x40(%rbx),%rax
+ 238:	74 0e                	je     248 <_obstack_newchunk+0x118>
+ 23a:	48 8b 7b 48          	mov    0x48(%rbx),%rdi
+ 23e:	48 89 ee             	mov    %rbp,%rsi
+ 241:	ff d0                	call   *%rax
+ 243:	eb b8                	jmp    1fd <_obstack_newchunk+0xcd>
+ 245:	0f 1f 00             	nopl   (%rax)
+ 248:	48 89 ef             	mov    %rbp,%rdi
+ 24b:	ff d0                	call   *%rax
+ 24d:	eb ae                	jmp    1fd <_obstack_newchunk+0xcd>
+ 24f:	ff 15 00 00 00 00    	call   *0x0(%rip)        # 255 <_obstack_newchunk+0x125>
+ 255:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 25c:	00 00 00 00 
+
+0000000000000260 <_obstack_allocated_p>:
+ 260:	f3 0f 1e fa          	endbr64 
+ 264:	48 8b 47 08          	mov    0x8(%rdi),%rax
+ 268:	48 85 c0             	test   %rax,%rax
+ 26b:	74 29                	je     296 <_obstack_allocated_p+0x36>
+ 26d:	0f 1f 00             	nopl   (%rax)
+ 270:	48 39 c6             	cmp    %rax,%rsi
+ 273:	76 05                	jbe    27a <_obstack_allocated_p+0x1a>
+ 275:	48 39 30             	cmp    %rsi,(%rax)
+ 278:	73 16                	jae    290 <_obstack_allocated_p+0x30>
+ 27a:	48 8b 40 08          	mov    0x8(%rax),%rax
+ 27e:	48 85 c0             	test   %rax,%rax
+ 281:	75 ed                	jne    270 <_obstack_allocated_p+0x10>
+ 283:	31 c0                	xor    %eax,%eax
+ 285:	c3                   	ret    
+ 286:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 28d:	00 00 00 
+ 290:	b8 01 00 00 00       	mov    $0x1,%eax
+ 295:	c3                   	ret    
+ 296:	c3                   	ret    
+ 297:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 29e:	00 00 
+
+00000000000002a0 <_obstack_free>:
+ 2a0:	f3 0f 1e fa          	endbr64 
+ 2a4:	41 54                	push   %r12
+ 2a6:	49 89 f4             	mov    %rsi,%r12
+ 2a9:	55                   	push   %rbp
+ 2aa:	53                   	push   %rbx
+ 2ab:	48 8b 77 08          	mov    0x8(%rdi),%rsi
+ 2af:	48 89 fb             	mov    %rdi,%rbx
+ 2b2:	48 85 f6             	test   %rsi,%rsi
+ 2b5:	75 1b                	jne    2d2 <_obstack_free+0x32>
+ 2b7:	eb 42                	jmp    2fb <_obstack_free+0x5b>
+ 2b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 2c0:	48 8b 7b 48          	mov    0x48(%rbx),%rdi
+ 2c4:	ff d0                	call   *%rax
+ 2c6:	80 4b 50 02          	orb    $0x2,0x50(%rbx)
+ 2ca:	48 85 ed             	test   %rbp,%rbp
+ 2cd:	74 2c                	je     2fb <_obstack_free+0x5b>
+ 2cf:	48 89 ee             	mov    %rbp,%rsi
+ 2d2:	4c 39 e6             	cmp    %r12,%rsi
+ 2d5:	73 08                	jae    2df <_obstack_free+0x3f>
+ 2d7:	48 8b 06             	mov    (%rsi),%rax
+ 2da:	4c 39 e0             	cmp    %r12,%rax
+ 2dd:	73 31                	jae    310 <_obstack_free+0x70>
+ 2df:	48 8b 6e 08          	mov    0x8(%rsi),%rbp
+ 2e3:	48 8b 43 40          	mov    0x40(%rbx),%rax
+ 2e7:	f6 43 50 01          	testb  $0x1,0x50(%rbx)
+ 2eb:	75 d3                	jne    2c0 <_obstack_free+0x20>
+ 2ed:	48 89 f7             	mov    %rsi,%rdi
+ 2f0:	ff d0                	call   *%rax
+ 2f2:	80 4b 50 02          	orb    $0x2,0x50(%rbx)
+ 2f6:	48 85 ed             	test   %rbp,%rbp
+ 2f9:	75 d4                	jne    2cf <_obstack_free+0x2f>
+ 2fb:	4d 85 e4             	test   %r12,%r12
+ 2fe:	0f 85 00 00 00 00    	jne    304 <_obstack_free+0x64>
+ 304:	5b                   	pop    %rbx
+ 305:	5d                   	pop    %rbp
+ 306:	41 5c                	pop    %r12
+ 308:	c3                   	ret    
+ 309:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 310:	4c 89 63 18          	mov    %r12,0x18(%rbx)
+ 314:	4c 89 63 10          	mov    %r12,0x10(%rbx)
+ 318:	48 89 43 20          	mov    %rax,0x20(%rbx)
+ 31c:	48 89 73 08          	mov    %rsi,0x8(%rbx)
+ 320:	5b                   	pop    %rbx
+ 321:	5d                   	pop    %rbp
+ 322:	41 5c                	pop    %r12
+ 324:	c3                   	ret    
+ 325:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 32c:	00 00 00 00 
+
+0000000000000330 <_obstack_memory_used>:
+ 330:	f3 0f 1e fa          	endbr64 
+ 334:	48 8b 47 08          	mov    0x8(%rdi),%rax
+ 338:	45 31 c0             	xor    %r8d,%r8d
+ 33b:	48 85 c0             	test   %rax,%rax
+ 33e:	74 12                	je     352 <_obstack_memory_used+0x22>
+ 340:	48 8b 10             	mov    (%rax),%rdx
+ 343:	48 29 c2             	sub    %rax,%rdx
+ 346:	48 8b 40 08          	mov    0x8(%rax),%rax
+ 34a:	49 01 d0             	add    %rdx,%r8
+ 34d:	48 85 c0             	test   %rax,%rax
+ 350:	75 ee                	jne    340 <_obstack_memory_used+0x10>
+ 352:	4c 89 c0             	mov    %r8,%rax
+ 355:	c3                   	ret    
+
+Disassembly of section .text.unlikely:
+
+0000000000000000 <_obstack_free.cold>:
+   0:	e8 00 00 00 00       	call   5 <_obstack_free.cold+0x5>

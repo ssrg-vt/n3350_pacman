@@ -1,0 +1,264 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-read-file.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fread_file>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	41 55                	push   %r13
+   a:	41 54                	push   %r12
+   c:	55                   	push   %rbp
+   d:	53                   	push   %rbx
+   e:	48 81 ec c8 00 00 00 	sub    $0xc8,%rsp
+  15:	48 89 7c 24 08       	mov    %rdi,0x8(%rsp)
+  1a:	89 74 24 14          	mov    %esi,0x14(%rsp)
+  1e:	48 89 54 24 18       	mov    %rdx,0x18(%rsp)
+  23:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  2a:	00 00 
+  2c:	48 89 84 24 b8 00 00 	mov    %rax,0xb8(%rsp)
+  33:	00 
+  34:	31 c0                	xor    %eax,%eax
+  36:	e8 00 00 00 00       	call   3b <fread_file+0x3b>
+  3b:	48 8d 74 24 20       	lea    0x20(%rsp),%rsi
+  40:	89 c7                	mov    %eax,%edi
+  42:	e8 00 00 00 00       	call   47 <fread_file+0x47>
+  47:	85 c0                	test   %eax,%eax
+  49:	78 14                	js     5f <fread_file+0x5f>
+  4b:	8b 44 24 38          	mov    0x38(%rsp),%eax
+  4f:	25 00 f0 00 00       	and    $0xf000,%eax
+  54:	3d 00 80 00 00       	cmp    $0x8000,%eax
+  59:	0f 84 e1 01 00 00    	je     240 <fread_file+0x240>
+  5f:	41 bd 00 20 00 00    	mov    $0x2000,%r13d
+  65:	4c 89 ef             	mov    %r13,%rdi
+  68:	e8 00 00 00 00       	call   6d <fread_file+0x6d>
+  6d:	48 89 c5             	mov    %rax,%rbp
+  70:	48 85 c0             	test   %rax,%rax
+  73:	0f 84 dc 00 00 00    	je     155 <fread_file+0x155>
+  79:	49 be ff ff ff ff ff 	movabs $0x7fffffffffffffff,%r14
+  80:	ff ff 7f 
+  83:	31 db                	xor    %ebx,%ebx
+  85:	eb 46                	jmp    cd <fread_file+0xcd>
+  87:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  8e:	00 00 
+  90:	48 89 cf             	mov    %rcx,%rdi
+  93:	e8 00 00 00 00       	call   98 <fread_file+0x98>
+  98:	49 89 c7             	mov    %rax,%r15
+  9b:	48 85 c0             	test   %rax,%rax
+  9e:	0f 84 00 02 00 00    	je     2a4 <fread_file+0x2a4>
+  a4:	4c 89 ea             	mov    %r13,%rdx
+  a7:	48 89 ee             	mov    %rbp,%rsi
+  aa:	48 89 c7             	mov    %rax,%rdi
+  ad:	e8 00 00 00 00       	call   b2 <fread_file+0xb2>
+  b2:	48 89 ef             	mov    %rbp,%rdi
+  b5:	4c 89 ea             	mov    %r13,%rdx
+  b8:	31 f6                	xor    %esi,%esi
+  ba:	e8 00 00 00 00       	call   bf <fread_file+0xbf>
+  bf:	48 89 ef             	mov    %rbp,%rdi
+  c2:	e8 00 00 00 00       	call   c7 <fread_file+0xc7>
+  c7:	4d 89 e5             	mov    %r12,%r13
+  ca:	4c 89 fd             	mov    %r15,%rbp
+  cd:	4d 89 ef             	mov    %r13,%r15
+  d0:	48 8b 4c 24 08       	mov    0x8(%rsp),%rcx
+  d5:	48 8d 7c 1d 00       	lea    0x0(%rbp,%rbx,1),%rdi
+  da:	be 01 00 00 00       	mov    $0x1,%esi
+  df:	49 29 df             	sub    %rbx,%r15
+  e2:	4c 89 fa             	mov    %r15,%rdx
+  e5:	e8 00 00 00 00       	call   ea <fread_file+0xea>
+  ea:	48 01 c3             	add    %rax,%rbx
+  ed:	49 39 c7             	cmp    %rax,%r15
+  f0:	0f 85 92 00 00 00    	jne    188 <fread_file+0x188>
+  f6:	4d 39 f5             	cmp    %r14,%r13
+  f9:	0f 84 09 01 00 00    	je     208 <fread_file+0x208>
+  ff:	4c 89 e9             	mov    %r13,%rcx
+ 102:	4c 89 f0             	mov    %r14,%rax
+ 105:	48 d1 e9             	shr    %rcx
+ 108:	48 29 c8             	sub    %rcx,%rax
+ 10b:	4c 01 e9             	add    %r13,%rcx
+ 10e:	4c 39 e8             	cmp    %r13,%rax
+ 111:	49 0f 46 ce          	cmovbe %r14,%rcx
+ 115:	49 89 cc             	mov    %rcx,%r12
+ 118:	f6 44 24 14 02       	testb  $0x2,0x14(%rsp)
+ 11d:	0f 85 6d ff ff ff    	jne    90 <fread_file+0x90>
+ 123:	48 89 ce             	mov    %rcx,%rsi
+ 126:	48 89 ef             	mov    %rbp,%rdi
+ 129:	e8 00 00 00 00       	call   12e <fread_file+0x12e>
+ 12e:	49 89 c7             	mov    %rax,%r15
+ 131:	48 85 c0             	test   %rax,%rax
+ 134:	75 91                	jne    c7 <fread_file+0xc7>
+ 136:	e8 00 00 00 00       	call   13b <fread_file+0x13b>
+ 13b:	44 8b 38             	mov    (%rax),%r15d
+ 13e:	49 89 c6             	mov    %rax,%r14
+ 141:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 148:	48 89 ef             	mov    %rbp,%rdi
+ 14b:	31 ed                	xor    %ebp,%ebp
+ 14d:	e8 00 00 00 00       	call   152 <fread_file+0x152>
+ 152:	45 89 3e             	mov    %r15d,(%r14)
+ 155:	48 8b 84 24 b8 00 00 	mov    0xb8(%rsp),%rax
+ 15c:	00 
+ 15d:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 164:	00 00 
+ 166:	0f 85 62 01 00 00    	jne    2ce <fread_file+0x2ce>
+ 16c:	48 81 c4 c8 00 00 00 	add    $0xc8,%rsp
+ 173:	48 89 e8             	mov    %rbp,%rax
+ 176:	5b                   	pop    %rbx
+ 177:	5d                   	pop    %rbp
+ 178:	41 5c                	pop    %r12
+ 17a:	41 5d                	pop    %r13
+ 17c:	41 5e                	pop    %r14
+ 17e:	41 5f                	pop    %r15
+ 180:	c3                   	ret    
+ 181:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 188:	e8 00 00 00 00       	call   18d <fread_file+0x18d>
+ 18d:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+ 192:	44 8b 38             	mov    (%rax),%r15d
+ 195:	49 89 c6             	mov    %rax,%r14
+ 198:	e8 00 00 00 00       	call   19d <fread_file+0x19d>
+ 19d:	85 c0                	test   %eax,%eax
+ 19f:	75 75                	jne    216 <fread_file+0x216>
+ 1a1:	49 8d 45 ff          	lea    -0x1(%r13),%rax
+ 1a5:	48 39 d8             	cmp    %rbx,%rax
+ 1a8:	76 49                	jbe    1f3 <fread_file+0x1f3>
+ 1aa:	48 8d 73 01          	lea    0x1(%rbx),%rsi
+ 1ae:	f6 44 24 14 02       	testb  $0x2,0x14(%rsp)
+ 1b3:	0f 84 d7 00 00 00    	je     290 <fread_file+0x290>
+ 1b9:	48 89 f7             	mov    %rsi,%rdi
+ 1bc:	e8 00 00 00 00       	call   1c1 <fread_file+0x1c1>
+ 1c1:	49 89 c4             	mov    %rax,%r12
+ 1c4:	48 85 c0             	test   %rax,%rax
+ 1c7:	0f 84 ea 00 00 00    	je     2b7 <fread_file+0x2b7>
+ 1cd:	48 89 ee             	mov    %rbp,%rsi
+ 1d0:	48 89 da             	mov    %rbx,%rdx
+ 1d3:	48 89 c7             	mov    %rax,%rdi
+ 1d6:	e8 00 00 00 00       	call   1db <fread_file+0x1db>
+ 1db:	48 89 ef             	mov    %rbp,%rdi
+ 1de:	4c 89 ea             	mov    %r13,%rdx
+ 1e1:	31 f6                	xor    %esi,%esi
+ 1e3:	e8 00 00 00 00       	call   1e8 <fread_file+0x1e8>
+ 1e8:	48 89 ef             	mov    %rbp,%rdi
+ 1eb:	4c 89 e5             	mov    %r12,%rbp
+ 1ee:	e8 00 00 00 00       	call   1f3 <fread_file+0x1f3>
+ 1f3:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+ 1f8:	c6 44 1d 00 00       	movb   $0x0,0x0(%rbp,%rbx,1)
+ 1fd:	48 89 18             	mov    %rbx,(%rax)
+ 200:	e9 50 ff ff ff       	jmp    155 <fread_file+0x155>
+ 205:	0f 1f 00             	nopl   (%rax)
+ 208:	e8 00 00 00 00       	call   20d <fread_file+0x20d>
+ 20d:	41 bf 0c 00 00 00    	mov    $0xc,%r15d
+ 213:	49 89 c6             	mov    %rax,%r14
+ 216:	f6 44 24 14 02       	testb  $0x2,0x14(%rsp)
+ 21b:	0f 84 27 ff ff ff    	je     148 <fread_file+0x148>
+ 221:	48 89 ef             	mov    %rbp,%rdi
+ 224:	4c 89 ea             	mov    %r13,%rdx
+ 227:	31 f6                	xor    %esi,%esi
+ 229:	e8 00 00 00 00       	call   22e <fread_file+0x22e>
+ 22e:	48 89 ef             	mov    %rbp,%rdi
+ 231:	31 ed                	xor    %ebp,%ebp
+ 233:	e8 00 00 00 00       	call   238 <fread_file+0x238>
+ 238:	45 89 3e             	mov    %r15d,(%r14)
+ 23b:	e9 15 ff ff ff       	jmp    155 <fread_file+0x155>
+ 240:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+ 245:	e8 00 00 00 00       	call   24a <fread_file+0x24a>
+ 24a:	48 85 c0             	test   %rax,%rax
+ 24d:	0f 88 0c fe ff ff    	js     5f <fread_file+0x5f>
+ 253:	48 8b 54 24 50       	mov    0x50(%rsp),%rdx
+ 258:	48 39 c2             	cmp    %rax,%rdx
+ 25b:	0f 8e fe fd ff ff    	jle    5f <fread_file+0x5f>
+ 261:	48 29 c2             	sub    %rax,%rdx
+ 264:	48 b8 ff ff ff ff ff 	movabs $0x7fffffffffffffff,%rax
+ 26b:	ff ff 7f 
+ 26e:	4c 8d 6a 01          	lea    0x1(%rdx),%r13
+ 272:	48 39 c2             	cmp    %rax,%rdx
+ 275:	0f 85 ea fd ff ff    	jne    65 <fread_file+0x65>
+ 27b:	e8 00 00 00 00       	call   280 <fread_file+0x280>
+ 280:	31 ed                	xor    %ebp,%ebp
+ 282:	c7 00 0c 00 00 00    	movl   $0xc,(%rax)
+ 288:	e9 c8 fe ff ff       	jmp    155 <fread_file+0x155>
+ 28d:	0f 1f 00             	nopl   (%rax)
+ 290:	48 89 ef             	mov    %rbp,%rdi
+ 293:	e8 00 00 00 00       	call   298 <fread_file+0x298>
+ 298:	48 85 c0             	test   %rax,%rax
+ 29b:	48 0f 45 e8          	cmovne %rax,%rbp
+ 29f:	e9 4f ff ff ff       	jmp    1f3 <fread_file+0x1f3>
+ 2a4:	e8 00 00 00 00       	call   2a9 <fread_file+0x2a9>
+ 2a9:	4d 89 e5             	mov    %r12,%r13
+ 2ac:	44 8b 38             	mov    (%rax),%r15d
+ 2af:	49 89 c6             	mov    %rax,%r14
+ 2b2:	e9 6a ff ff ff       	jmp    221 <fread_file+0x221>
+ 2b7:	4c 89 ea             	mov    %r13,%rdx
+ 2ba:	48 8d 7c 1d 00       	lea    0x0(%rbp,%rbx,1),%rdi
+ 2bf:	31 f6                	xor    %esi,%esi
+ 2c1:	48 29 da             	sub    %rbx,%rdx
+ 2c4:	e8 00 00 00 00       	call   2c9 <fread_file+0x2c9>
+ 2c9:	e9 25 ff ff ff       	jmp    1f3 <fread_file+0x1f3>
+ 2ce:	e8 00 00 00 00       	call   2d3 <fread_file+0x2d3>
+ 2d3:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 2da:	00 00 00 00 
+ 2de:	66 90                	xchg   %ax,%ax
+
+00000000000002e0 <read_file>:
+ 2e0:	f3 0f 1e fa          	endbr64 
+ 2e4:	41 56                	push   %r14
+ 2e6:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 2ed <read_file+0xd>
+ 2ed:	41 55                	push   %r13
+ 2ef:	41 54                	push   %r12
+ 2f1:	55                   	push   %rbp
+ 2f2:	89 f5                	mov    %esi,%ebp
+ 2f4:	83 e6 01             	and    $0x1,%esi
+ 2f7:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2fe <read_file+0x1e>
+ 2fe:	53                   	push   %rbx
+ 2ff:	48 0f 44 f0          	cmove  %rax,%rsi
+ 303:	48 89 d3             	mov    %rdx,%rbx
+ 306:	e8 00 00 00 00       	call   30b <read_file+0x2b>
+ 30b:	48 85 c0             	test   %rax,%rax
+ 30e:	74 62                	je     372 <read_file+0x92>
+ 310:	41 89 ee             	mov    %ebp,%r14d
+ 313:	49 89 c4             	mov    %rax,%r12
+ 316:	41 83 e6 02          	and    $0x2,%r14d
+ 31a:	75 2c                	jne    348 <read_file+0x68>
+ 31c:	4c 89 e7             	mov    %r12,%rdi
+ 31f:	48 89 da             	mov    %rbx,%rdx
+ 322:	89 ee                	mov    %ebp,%esi
+ 324:	e8 00 00 00 00       	call   329 <read_file+0x49>
+ 329:	4c 89 e7             	mov    %r12,%rdi
+ 32c:	49 89 c5             	mov    %rax,%r13
+ 32f:	e8 00 00 00 00       	call   334 <read_file+0x54>
+ 334:	85 c0                	test   %eax,%eax
+ 336:	75 28                	jne    360 <read_file+0x80>
+ 338:	5b                   	pop    %rbx
+ 339:	4c 89 e8             	mov    %r13,%rax
+ 33c:	5d                   	pop    %rbp
+ 33d:	41 5c                	pop    %r12
+ 33f:	41 5d                	pop    %r13
+ 341:	41 5e                	pop    %r14
+ 343:	c3                   	ret    
+ 344:	0f 1f 40 00          	nopl   0x0(%rax)
+ 348:	31 c9                	xor    %ecx,%ecx
+ 34a:	ba 02 00 00 00       	mov    $0x2,%edx
+ 34f:	31 f6                	xor    %esi,%esi
+ 351:	48 89 c7             	mov    %rax,%rdi
+ 354:	e8 00 00 00 00       	call   359 <read_file+0x79>
+ 359:	eb c1                	jmp    31c <read_file+0x3c>
+ 35b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 360:	4d 85 ed             	test   %r13,%r13
+ 363:	74 0d                	je     372 <read_file+0x92>
+ 365:	45 85 f6             	test   %r14d,%r14d
+ 368:	75 1e                	jne    388 <read_file+0xa8>
+ 36a:	4c 89 ef             	mov    %r13,%rdi
+ 36d:	e8 00 00 00 00       	call   372 <read_file+0x92>
+ 372:	45 31 ed             	xor    %r13d,%r13d
+ 375:	5b                   	pop    %rbx
+ 376:	5d                   	pop    %rbp
+ 377:	4c 89 e8             	mov    %r13,%rax
+ 37a:	41 5c                	pop    %r12
+ 37c:	41 5d                	pop    %r13
+ 37e:	41 5e                	pop    %r14
+ 380:	c3                   	ret    
+ 381:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 388:	48 8b 13             	mov    (%rbx),%rdx
+ 38b:	31 f6                	xor    %esi,%esi
+ 38d:	4c 89 ef             	mov    %r13,%rdi
+ 390:	e8 00 00 00 00       	call   395 <read_file+0xb5>
+ 395:	eb d3                	jmp    36a <read_file+0x8a>

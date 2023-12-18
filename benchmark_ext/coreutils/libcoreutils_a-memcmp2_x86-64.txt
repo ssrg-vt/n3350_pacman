@@ -1,0 +1,28 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-memcmp2.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <memcmp2>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	48 89 f5             	mov    %rsi,%rbp
+   8:	48 89 d6             	mov    %rdx,%rsi
+   b:	48 89 ca             	mov    %rcx,%rdx
+   e:	53                   	push   %rbx
+   f:	48 89 cb             	mov    %rcx,%rbx
+  12:	48 83 ec 08          	sub    $0x8,%rsp
+  16:	48 39 cd             	cmp    %rcx,%rbp
+  19:	48 0f 46 d5          	cmovbe %rbp,%rdx
+  1d:	e8 00 00 00 00       	call   22 <memcmp2+0x22>
+  22:	85 c0                	test   %eax,%eax
+  24:	75 0b                	jne    31 <memcmp2+0x31>
+  26:	31 c0                	xor    %eax,%eax
+  28:	48 39 dd             	cmp    %rbx,%rbp
+  2b:	0f 97 c0             	seta   %al
+  2e:	83 d8 00             	sbb    $0x0,%eax
+  31:	48 83 c4 08          	add    $0x8,%rsp
+  35:	5b                   	pop    %rbx
+  36:	5d                   	pop    %rbp
+  37:	c3                   	ret    

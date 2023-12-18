@@ -1,0 +1,15 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-dirname.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <dir_name>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 83 ec 08          	sub    $0x8,%rsp
+   8:	e8 00 00 00 00       	call   d <dir_name+0xd>
+   d:	48 85 c0             	test   %rax,%rax
+  10:	74 05                	je     17 <dir_name+0x17>
+  12:	48 83 c4 08          	add    $0x8,%rsp
+  16:	c3                   	ret    
+  17:	e8 00 00 00 00       	call   1c <dir_name+0x1c>

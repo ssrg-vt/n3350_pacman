@@ -1,0 +1,35 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-memcasecmp.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <memcasecmp>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 85 d2             	test   %rdx,%rdx
+   7:	74 41                	je     4a <memcasecmp+0x4a>
+   9:	41 54                	push   %r12
+   b:	49 89 f4             	mov    %rsi,%r12
+   e:	55                   	push   %rbp
+   f:	48 89 fd             	mov    %rdi,%rbp
+  12:	53                   	push   %rbx
+  13:	48 89 d3             	mov    %rdx,%rbx
+  16:	e8 00 00 00 00       	call   1b <memcasecmp+0x1b>
+  1b:	31 c9                	xor    %ecx,%ecx
+  1d:	4c 8b 00             	mov    (%rax),%r8
+  20:	eb 0f                	jmp    31 <memcasecmp+0x31>
+  22:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  28:	48 83 c1 01          	add    $0x1,%rcx
+  2c:	48 39 d9             	cmp    %rbx,%rcx
+  2f:	74 14                	je     45 <memcasecmp+0x45>
+  31:	0f b6 44 0d 00       	movzbl 0x0(%rbp,%rcx,1),%eax
+  36:	45 0f b6 0c 0c       	movzbl (%r12,%rcx,1),%r9d
+  3b:	41 8b 04 80          	mov    (%r8,%rax,4),%eax
+  3f:	43 2b 04 88          	sub    (%r8,%r9,4),%eax
+  43:	74 e3                	je     28 <memcasecmp+0x28>
+  45:	5b                   	pop    %rbx
+  46:	5d                   	pop    %rbp
+  47:	41 5c                	pop    %r12
+  49:	c3                   	ret    
+  4a:	31 c0                	xor    %eax,%eax
+  4c:	c3                   	ret    

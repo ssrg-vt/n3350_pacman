@@ -1,0 +1,32 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-gettime.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <gettime>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 89 fe             	mov    %rdi,%rsi
+   7:	31 ff                	xor    %edi,%edi
+   9:	e9 00 00 00 00       	jmp    e <gettime+0xe>
+   e:	66 90                	xchg   %ax,%ax
+
+0000000000000010 <current_timespec>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	48 83 ec 28          	sub    $0x28,%rsp
+  18:	31 ff                	xor    %edi,%edi
+  1a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  21:	00 00 
+  23:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  28:	31 c0                	xor    %eax,%eax
+  2a:	48 89 e6             	mov    %rsp,%rsi
+  2d:	e8 00 00 00 00       	call   32 <current_timespec+0x22>
+  32:	48 8b 04 24          	mov    (%rsp),%rax
+  36:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+  3b:	48 8b 4c 24 18       	mov    0x18(%rsp),%rcx
+  40:	64 48 2b 0c 25 28 00 	sub    %fs:0x28,%rcx
+  47:	00 00 
+  49:	75 05                	jne    50 <current_timespec+0x40>
+  4b:	48 83 c4 28          	add    $0x28,%rsp
+  4f:	c3                   	ret    
+  50:	e8 00 00 00 00       	call   55 <current_timespec+0x45>

@@ -1,0 +1,149 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-tmpdir.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <path_search>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	41 55                	push   %r13
+   a:	41 54                	push   %r12
+   c:	49 89 fc             	mov    %rdi,%r12
+   f:	55                   	push   %rbp
+  10:	48 89 d5             	mov    %rdx,%rbp
+  13:	53                   	push   %rbx
+  14:	44 89 c3             	mov    %r8d,%ebx
+  17:	48 81 ec b8 00 00 00 	sub    $0xb8,%rsp
+  1e:	48 89 74 24 08       	mov    %rsi,0x8(%rsp)
+  23:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  2a:	00 00 
+  2c:	48 89 84 24 a8 00 00 	mov    %rax,0xa8(%rsp)
+  33:	00 
+  34:	31 c0                	xor    %eax,%eax
+  36:	48 85 c9             	test   %rcx,%rcx
+  39:	74 0c                	je     47 <path_search+0x47>
+  3b:	80 39 00             	cmpb   $0x0,(%rcx)
+  3e:	49 89 ce             	mov    %rcx,%r14
+  41:	0f 85 b9 00 00 00    	jne    100 <path_search+0x100>
+  47:	41 bd 04 00 00 00    	mov    $0x4,%r13d
+  4d:	4c 8d 35 00 00 00 00 	lea    0x0(%rip),%r14        # 54 <path_search+0x54>
+  54:	84 db                	test   %bl,%bl
+  56:	0f 85 c3 00 00 00    	jne    11f <path_search+0x11f>
+  5c:	48 85 ed             	test   %rbp,%rbp
+  5f:	0f 84 2b 01 00 00    	je     190 <path_search+0x190>
+  65:	48 89 ef             	mov    %rbp,%rdi
+  68:	45 31 ff             	xor    %r15d,%r15d
+  6b:	e8 00 00 00 00       	call   70 <path_search+0x70>
+  70:	48 89 c3             	mov    %rax,%rbx
+  73:	31 c0                	xor    %eax,%eax
+  75:	48 85 db             	test   %rbx,%rbx
+  78:	0f 85 72 01 00 00    	jne    1f0 <path_search+0x1f0>
+  7e:	49 8d 44 05 07       	lea    0x7(%r13,%rax,1),%rax
+  83:	48 01 d8             	add    %rbx,%rax
+  86:	48 3b 44 24 08       	cmp    0x8(%rsp),%rax
+  8b:	0f 87 7f 01 00 00    	ja     210 <path_search+0x210>
+  91:	48 89 da             	mov    %rbx,%rdx
+  94:	48 89 ee             	mov    %rbp,%rsi
+  97:	4c 89 e7             	mov    %r12,%rdi
+  9a:	e8 00 00 00 00       	call   9f <path_search+0x9f>
+  9f:	41 80 ff 01          	cmp    $0x1,%r15b
+  a3:	49 8d 3c 1c          	lea    (%r12,%rbx,1),%rdi
+  a7:	4d 89 f1             	mov    %r14,%r9
+  aa:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # b1 <path_search+0xb1>
+  b1:	45 89 e8             	mov    %r13d,%r8d
+  b4:	be 01 00 00 00       	mov    $0x1,%esi
+  b9:	48 c7 c2 ff ff ff ff 	mov    $0xffffffffffffffff,%rdx
+  c0:	48 83 d1 00          	adc    $0x0,%rcx
+  c4:	31 c0                	xor    %eax,%eax
+  c6:	e8 00 00 00 00       	call   cb <path_search+0xcb>
+  cb:	31 c0                	xor    %eax,%eax
+  cd:	48 8b 94 24 a8 00 00 	mov    0xa8(%rsp),%rdx
+  d4:	00 
+  d5:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  dc:	00 00 
+  de:	0f 85 41 01 00 00    	jne    225 <path_search+0x225>
+  e4:	48 81 c4 b8 00 00 00 	add    $0xb8,%rsp
+  eb:	5b                   	pop    %rbx
+  ec:	5d                   	pop    %rbp
+  ed:	41 5c                	pop    %r12
+  ef:	41 5d                	pop    %r13
+  f1:	41 5e                	pop    %r14
+  f3:	41 5f                	pop    %r15
+  f5:	c3                   	ret    
+  f6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  fd:	00 00 00 
+ 100:	48 89 cf             	mov    %rcx,%rdi
+ 103:	e8 00 00 00 00       	call   108 <path_search+0x108>
+ 108:	49 89 c5             	mov    %rax,%r13
+ 10b:	b8 05 00 00 00       	mov    $0x5,%eax
+ 110:	49 39 c5             	cmp    %rax,%r13
+ 113:	4c 0f 47 e8          	cmova  %rax,%r13
+ 117:	84 db                	test   %bl,%bl
+ 119:	0f 84 3d ff ff ff    	je     5c <path_search+0x5c>
+ 11f:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 126 <path_search+0x126>
+ 126:	4c 8d 7c 24 10       	lea    0x10(%rsp),%r15
+ 12b:	e8 00 00 00 00       	call   130 <path_search+0x130>
+ 130:	48 89 c3             	mov    %rax,%rbx
+ 133:	48 85 c0             	test   %rax,%rax
+ 136:	74 28                	je     160 <path_search+0x160>
+ 138:	4c 89 fe             	mov    %r15,%rsi
+ 13b:	48 89 c7             	mov    %rax,%rdi
+ 13e:	e8 00 00 00 00       	call   143 <path_search+0x143>
+ 143:	85 c0                	test   %eax,%eax
+ 145:	75 19                	jne    160 <path_search+0x160>
+ 147:	8b 44 24 28          	mov    0x28(%rsp),%eax
+ 14b:	25 00 f0 00 00       	and    $0xf000,%eax
+ 150:	3d 00 40 00 00       	cmp    $0x4000,%eax
+ 155:	0f 84 a5 00 00 00    	je     200 <path_search+0x200>
+ 15b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 160:	48 85 ed             	test   %rbp,%rbp
+ 163:	74 30                	je     195 <path_search+0x195>
+ 165:	4c 89 fe             	mov    %r15,%rsi
+ 168:	48 89 ef             	mov    %rbp,%rdi
+ 16b:	e8 00 00 00 00       	call   170 <path_search+0x170>
+ 170:	85 c0                	test   %eax,%eax
+ 172:	75 21                	jne    195 <path_search+0x195>
+ 174:	8b 44 24 28          	mov    0x28(%rsp),%eax
+ 178:	25 00 f0 00 00       	and    $0xf000,%eax
+ 17d:	3d 00 40 00 00       	cmp    $0x4000,%eax
+ 182:	75 11                	jne    195 <path_search+0x195>
+ 184:	e9 dc fe ff ff       	jmp    65 <path_search+0x65>
+ 189:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 190:	4c 8d 7c 24 10       	lea    0x10(%rsp),%r15
+ 195:	48 8d 2d 00 00 00 00 	lea    0x0(%rip),%rbp        # 19c <path_search+0x19c>
+ 19c:	4c 89 fe             	mov    %r15,%rsi
+ 19f:	48 89 ef             	mov    %rbp,%rdi
+ 1a2:	e8 00 00 00 00       	call   1a7 <path_search+0x1a7>
+ 1a7:	85 c0                	test   %eax,%eax
+ 1a9:	74 15                	je     1c0 <path_search+0x1c0>
+ 1ab:	e8 00 00 00 00       	call   1b0 <path_search+0x1b0>
+ 1b0:	c7 00 02 00 00 00    	movl   $0x2,(%rax)
+ 1b6:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 1bb:	e9 0d ff ff ff       	jmp    cd <path_search+0xcd>
+ 1c0:	8b 44 24 28          	mov    0x28(%rsp),%eax
+ 1c4:	25 00 f0 00 00       	and    $0xf000,%eax
+ 1c9:	3d 00 40 00 00       	cmp    $0x4000,%eax
+ 1ce:	75 db                	jne    1ab <path_search+0x1ab>
+ 1d0:	b8 03 00 00 00       	mov    $0x3,%eax
+ 1d5:	bb 04 00 00 00       	mov    $0x4,%ebx
+ 1da:	80 7c 05 00 2f       	cmpb   $0x2f,0x0(%rbp,%rax,1)
+ 1df:	0f 95 c0             	setne  %al
+ 1e2:	41 0f 95 c7          	setne  %r15b
+ 1e6:	0f b6 c0             	movzbl %al,%eax
+ 1e9:	e9 90 fe ff ff       	jmp    7e <path_search+0x7e>
+ 1ee:	66 90                	xchg   %ax,%ax
+ 1f0:	48 8d 43 ff          	lea    -0x1(%rbx),%rax
+ 1f4:	eb e4                	jmp    1da <path_search+0x1da>
+ 1f6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 1fd:	00 00 00 
+ 200:	48 89 dd             	mov    %rbx,%rbp
+ 203:	e9 5d fe ff ff       	jmp    65 <path_search+0x65>
+ 208:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 20f:	00 
+ 210:	e8 00 00 00 00       	call   215 <path_search+0x215>
+ 215:	c7 00 16 00 00 00    	movl   $0x16,(%rax)
+ 21b:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 220:	e9 a8 fe ff ff       	jmp    cd <path_search+0xcd>
+ 225:	e8 00 00 00 00       	call   22a <.LC3+0x219>

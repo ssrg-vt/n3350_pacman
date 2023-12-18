@@ -1,0 +1,195 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-sha512.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <sha384_init_ctx>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	e9 00 00 00 00       	jmp    9 <sha384_init_ctx+0x9>
+   9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000010 <sha384_finish_ctx>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	41 54                	push   %r12
+  16:	49 89 f4             	mov    %rsi,%r12
+  19:	48 89 fe             	mov    %rdi,%rsi
+  1c:	4c 89 e7             	mov    %r12,%rdi
+  1f:	e8 00 00 00 00       	call   24 <sha384_finish_ctx+0x14>
+  24:	4c 89 e0             	mov    %r12,%rax
+  27:	41 5c                	pop    %r12
+  29:	c3                   	ret    
+  2a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000030 <sha384_buffer>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	e9 00 00 00 00       	jmp    39 <sha384_buffer+0x9>
+  39:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000040 <sha384_read_ctx>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	41 54                	push   %r12
+  46:	49 89 f4             	mov    %rsi,%r12
+  49:	48 81 ec e0 00 00 00 	sub    $0xe0,%rsp
+  50:	f3 0f 6f 07          	movdqu (%rdi),%xmm0
+  54:	f3 0f 6f 4f 10       	movdqu 0x10(%rdi),%xmm1
+  59:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  60:	00 00 
+  62:	48 89 84 24 d8 00 00 	mov    %rax,0xd8(%rsp)
+  69:	00 
+  6a:	31 c0                	xor    %eax,%eax
+  6c:	f3 0f 6f 57 20       	movdqu 0x20(%rdi),%xmm2
+  71:	f3 0f 6f 5f 30       	movdqu 0x30(%rdi),%xmm3
+  76:	48 89 e6             	mov    %rsp,%rsi
+  79:	f3 0f 6f 67 40       	movdqu 0x40(%rdi),%xmm4
+  7e:	f3 0f 6f 6f 50       	movdqu 0x50(%rdi),%xmm5
+  83:	0f 29 04 24          	movaps %xmm0,(%rsp)
+  87:	f3 0f 6f 77 60       	movdqu 0x60(%rdi),%xmm6
+  8c:	f3 0f 6f 7f 70       	movdqu 0x70(%rdi),%xmm7
+  91:	0f 29 4c 24 10       	movaps %xmm1,0x10(%rsp)
+  96:	f3 0f 6f 87 80 00 00 	movdqu 0x80(%rdi),%xmm0
+  9d:	00 
+  9e:	f3 0f 6f 8f 90 00 00 	movdqu 0x90(%rdi),%xmm1
+  a5:	00 
+  a6:	0f 29 54 24 20       	movaps %xmm2,0x20(%rsp)
+  ab:	48 8b 87 d0 00 00 00 	mov    0xd0(%rdi),%rax
+  b2:	f3 0f 6f 97 a0 00 00 	movdqu 0xa0(%rdi),%xmm2
+  b9:	00 
+  ba:	0f 29 5c 24 30       	movaps %xmm3,0x30(%rsp)
+  bf:	0f 29 64 24 40       	movaps %xmm4,0x40(%rsp)
+  c4:	f3 0f 6f 9f b0 00 00 	movdqu 0xb0(%rdi),%xmm3
+  cb:	00 
+  cc:	f3 0f 6f a7 c0 00 00 	movdqu 0xc0(%rdi),%xmm4
+  d3:	00 
+  d4:	4c 89 e7             	mov    %r12,%rdi
+  d7:	48 89 84 24 d0 00 00 	mov    %rax,0xd0(%rsp)
+  de:	00 
+  df:	0f 29 6c 24 50       	movaps %xmm5,0x50(%rsp)
+  e4:	0f 29 74 24 60       	movaps %xmm6,0x60(%rsp)
+  e9:	0f 29 7c 24 70       	movaps %xmm7,0x70(%rsp)
+  ee:	0f 29 84 24 80 00 00 	movaps %xmm0,0x80(%rsp)
+  f5:	00 
+  f6:	0f 29 8c 24 90 00 00 	movaps %xmm1,0x90(%rsp)
+  fd:	00 
+  fe:	0f 29 94 24 a0 00 00 	movaps %xmm2,0xa0(%rsp)
+ 105:	00 
+ 106:	0f 29 9c 24 b0 00 00 	movaps %xmm3,0xb0(%rsp)
+ 10d:	00 
+ 10e:	0f 29 a4 24 c0 00 00 	movaps %xmm4,0xc0(%rsp)
+ 115:	00 
+ 116:	e8 00 00 00 00       	call   11b <sha384_read_ctx+0xdb>
+ 11b:	48 8b 84 24 d8 00 00 	mov    0xd8(%rsp),%rax
+ 122:	00 
+ 123:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 12a:	00 00 
+ 12c:	75 0d                	jne    13b <sha384_read_ctx+0xfb>
+ 12e:	48 81 c4 e0 00 00 00 	add    $0xe0,%rsp
+ 135:	4c 89 e0             	mov    %r12,%rax
+ 138:	41 5c                	pop    %r12
+ 13a:	c3                   	ret    
+ 13b:	e8 00 00 00 00       	call   140 <sha512_init_ctx>
+
+0000000000000140 <sha512_init_ctx>:
+ 140:	f3 0f 1e fa          	endbr64 
+ 144:	e9 00 00 00 00       	jmp    149 <sha512_init_ctx+0x9>
+ 149:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000150 <sha512_process_bytes>:
+ 150:	f3 0f 1e fa          	endbr64 
+ 154:	49 89 f8             	mov    %rdi,%r8
+ 157:	48 89 d7             	mov    %rdx,%rdi
+ 15a:	48 89 f2             	mov    %rsi,%rdx
+ 15d:	4c 89 c6             	mov    %r8,%rsi
+ 160:	e9 00 00 00 00       	jmp    165 <sha512_process_bytes+0x15>
+ 165:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 16c:	00 00 00 00 
+
+0000000000000170 <sha512_process_block>:
+ 170:	f3 0f 1e fa          	endbr64 
+ 174:	49 89 f8             	mov    %rdi,%r8
+ 177:	48 89 d7             	mov    %rdx,%rdi
+ 17a:	48 89 f2             	mov    %rsi,%rdx
+ 17d:	4c 89 c6             	mov    %r8,%rsi
+ 180:	e9 00 00 00 00       	jmp    185 <sha512_process_block+0x15>
+ 185:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 18c:	00 00 00 00 
+
+0000000000000190 <sha512_finish_ctx>:
+ 190:	f3 0f 1e fa          	endbr64 
+ 194:	41 54                	push   %r12
+ 196:	49 89 f4             	mov    %rsi,%r12
+ 199:	48 89 fe             	mov    %rdi,%rsi
+ 19c:	4c 89 e7             	mov    %r12,%rdi
+ 19f:	e8 00 00 00 00       	call   1a4 <sha512_finish_ctx+0x14>
+ 1a4:	4c 89 e0             	mov    %r12,%rax
+ 1a7:	41 5c                	pop    %r12
+ 1a9:	c3                   	ret    
+ 1aa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000001b0 <sha512_buffer>:
+ 1b0:	f3 0f 1e fa          	endbr64 
+ 1b4:	e9 00 00 00 00       	jmp    1b9 <sha512_buffer+0x9>
+ 1b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000001c0 <sha512_read_ctx>:
+ 1c0:	f3 0f 1e fa          	endbr64 
+ 1c4:	41 54                	push   %r12
+ 1c6:	49 89 f4             	mov    %rsi,%r12
+ 1c9:	48 81 ec e0 00 00 00 	sub    $0xe0,%rsp
+ 1d0:	f3 0f 6f 07          	movdqu (%rdi),%xmm0
+ 1d4:	f3 0f 6f 4f 10       	movdqu 0x10(%rdi),%xmm1
+ 1d9:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 1e0:	00 00 
+ 1e2:	48 89 84 24 d8 00 00 	mov    %rax,0xd8(%rsp)
+ 1e9:	00 
+ 1ea:	31 c0                	xor    %eax,%eax
+ 1ec:	f3 0f 6f 57 20       	movdqu 0x20(%rdi),%xmm2
+ 1f1:	f3 0f 6f 5f 30       	movdqu 0x30(%rdi),%xmm3
+ 1f6:	48 89 e6             	mov    %rsp,%rsi
+ 1f9:	f3 0f 6f 67 40       	movdqu 0x40(%rdi),%xmm4
+ 1fe:	f3 0f 6f 6f 50       	movdqu 0x50(%rdi),%xmm5
+ 203:	0f 29 04 24          	movaps %xmm0,(%rsp)
+ 207:	f3 0f 6f 77 60       	movdqu 0x60(%rdi),%xmm6
+ 20c:	f3 0f 6f 7f 70       	movdqu 0x70(%rdi),%xmm7
+ 211:	0f 29 4c 24 10       	movaps %xmm1,0x10(%rsp)
+ 216:	f3 0f 6f 87 80 00 00 	movdqu 0x80(%rdi),%xmm0
+ 21d:	00 
+ 21e:	f3 0f 6f 8f 90 00 00 	movdqu 0x90(%rdi),%xmm1
+ 225:	00 
+ 226:	0f 29 54 24 20       	movaps %xmm2,0x20(%rsp)
+ 22b:	48 8b 87 d0 00 00 00 	mov    0xd0(%rdi),%rax
+ 232:	f3 0f 6f 97 a0 00 00 	movdqu 0xa0(%rdi),%xmm2
+ 239:	00 
+ 23a:	0f 29 5c 24 30       	movaps %xmm3,0x30(%rsp)
+ 23f:	0f 29 64 24 40       	movaps %xmm4,0x40(%rsp)
+ 244:	f3 0f 6f 9f b0 00 00 	movdqu 0xb0(%rdi),%xmm3
+ 24b:	00 
+ 24c:	f3 0f 6f a7 c0 00 00 	movdqu 0xc0(%rdi),%xmm4
+ 253:	00 
+ 254:	4c 89 e7             	mov    %r12,%rdi
+ 257:	48 89 84 24 d0 00 00 	mov    %rax,0xd0(%rsp)
+ 25e:	00 
+ 25f:	0f 29 6c 24 50       	movaps %xmm5,0x50(%rsp)
+ 264:	0f 29 74 24 60       	movaps %xmm6,0x60(%rsp)
+ 269:	0f 29 7c 24 70       	movaps %xmm7,0x70(%rsp)
+ 26e:	0f 29 84 24 80 00 00 	movaps %xmm0,0x80(%rsp)
+ 275:	00 
+ 276:	0f 29 8c 24 90 00 00 	movaps %xmm1,0x90(%rsp)
+ 27d:	00 
+ 27e:	0f 29 94 24 a0 00 00 	movaps %xmm2,0xa0(%rsp)
+ 285:	00 
+ 286:	0f 29 9c 24 b0 00 00 	movaps %xmm3,0xb0(%rsp)
+ 28d:	00 
+ 28e:	0f 29 a4 24 c0 00 00 	movaps %xmm4,0xc0(%rsp)
+ 295:	00 
+ 296:	e8 00 00 00 00       	call   29b <sha512_read_ctx+0xdb>
+ 29b:	48 8b 84 24 d8 00 00 	mov    0xd8(%rsp),%rax
+ 2a2:	00 
+ 2a3:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 2aa:	00 00 
+ 2ac:	75 0d                	jne    2bb <sha512_read_ctx+0xfb>
+ 2ae:	48 81 c4 e0 00 00 00 	add    $0xe0,%rsp
+ 2b5:	4c 89 e0             	mov    %r12,%rax
+ 2b8:	41 5c                	pop    %r12
+ 2ba:	c3                   	ret    
+ 2bb:	e8 00 00 00 00       	call   2c0 <sha512_read_ctx+0x100>

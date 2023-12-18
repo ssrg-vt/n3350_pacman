@@ -1,0 +1,455 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-backupfile.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <set_simple_backup_suffix>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	53                   	push   %rbx
+   5:	48 89 fb             	mov    %rdi,%rbx
+   8:	48 85 ff             	test   %rdi,%rdi
+   b:	74 33                	je     40 <set_simple_backup_suffix+0x40>
+   d:	80 3b 00             	cmpb   $0x0,(%rbx)
+  10:	75 16                	jne    28 <set_simple_backup_suffix+0x28>
+  12:	48 8d 1d 00 00 00 00 	lea    0x0(%rip),%rbx        # 19 <set_simple_backup_suffix+0x19>
+  19:	48 89 1d 00 00 00 00 	mov    %rbx,0x0(%rip)        # 20 <set_simple_backup_suffix+0x20>
+  20:	5b                   	pop    %rbx
+  21:	c3                   	ret    
+  22:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  28:	48 89 df             	mov    %rbx,%rdi
+  2b:	e8 00 00 00 00       	call   30 <set_simple_backup_suffix+0x30>
+  30:	48 39 c3             	cmp    %rax,%rbx
+  33:	75 dd                	jne    12 <set_simple_backup_suffix+0x12>
+  35:	48 89 1d 00 00 00 00 	mov    %rbx,0x0(%rip)        # 3c <set_simple_backup_suffix+0x3c>
+  3c:	5b                   	pop    %rbx
+  3d:	c3                   	ret    
+  3e:	66 90                	xchg   %ax,%ax
+  40:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 47 <set_simple_backup_suffix+0x47>
+  47:	e8 00 00 00 00       	call   4c <set_simple_backup_suffix+0x4c>
+  4c:	48 89 c3             	mov    %rax,%rbx
+  4f:	48 85 c0             	test   %rax,%rax
+  52:	74 be                	je     12 <set_simple_backup_suffix+0x12>
+  54:	eb b7                	jmp    d <set_simple_backup_suffix+0xd>
+  56:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  5d:	00 00 00 
+
+0000000000000060 <backupfile_internal>:
+  60:	f3 0f 1e fa          	endbr64 
+  64:	41 57                	push   %r15
+  66:	41 56                	push   %r14
+  68:	41 55                	push   %r13
+  6a:	41 54                	push   %r12
+  6c:	55                   	push   %rbp
+  6d:	53                   	push   %rbx
+  6e:	48 89 f3             	mov    %rsi,%rbx
+  71:	48 81 ec 98 00 00 00 	sub    $0x98,%rsp
+  78:	89 7c 24 40          	mov    %edi,0x40(%rsp)
+  7c:	48 89 f7             	mov    %rsi,%rdi
+  7f:	48 89 74 24 38       	mov    %rsi,0x38(%rsp)
+  84:	89 54 24 24          	mov    %edx,0x24(%rsp)
+  88:	88 4c 24 47          	mov    %cl,0x47(%rsp)
+  8c:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  93:	00 00 
+  95:	48 89 84 24 88 00 00 	mov    %rax,0x88(%rsp)
+  9c:	00 
+  9d:	31 c0                	xor    %eax,%eax
+  9f:	e8 00 00 00 00       	call   a4 <backupfile_internal+0x44>
+  a4:	49 89 c6             	mov    %rax,%r14
+  a7:	48 89 c7             	mov    %rax,%rdi
+  aa:	48 89 44 24 68       	mov    %rax,0x68(%rsp)
+  af:	e8 00 00 00 00       	call   b4 <backupfile_internal+0x54>
+  b4:	49 29 de             	sub    %rbx,%r14
+  b7:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # be <backupfile_internal+0x5e>
+  be:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  c3:	4c 01 f0             	add    %r14,%rax
+  c6:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+  cb:	48 85 ff             	test   %rdi,%rdi
+  ce:	0f 84 8a 05 00 00    	je     65e <backupfile_internal+0x5fe>
+  d4:	e8 00 00 00 00       	call   d9 <backupfile_internal+0x79>
+  d9:	48 83 c0 01          	add    $0x1,%rax
+  dd:	48 89 c6             	mov    %rax,%rsi
+  e0:	48 89 44 24 70       	mov    %rax,0x70(%rsp)
+  e5:	b8 09 00 00 00       	mov    $0x9,%eax
+  ea:	48 39 c6             	cmp    %rax,%rsi
+  ed:	48 0f 4d c6          	cmovge %rsi,%rax
+  f1:	48 8b 74 24 10       	mov    0x10(%rsp),%rsi
+  f6:	48 8d 44 06 01       	lea    0x1(%rsi,%rax,1),%rax
+  fb:	48 89 c7             	mov    %rax,%rdi
+  fe:	48 89 44 24 58       	mov    %rax,0x58(%rsp)
+ 103:	e8 00 00 00 00       	call   108 <backupfile_internal+0xa8>
+ 108:	49 89 c4             	mov    %rax,%r12
+ 10b:	48 85 c0             	test   %rax,%rax
+ 10e:	0f 84 cc 02 00 00    	je     3e0 <backupfile_internal+0x380>
+ 114:	48 c7 44 24 60 00 00 	movq   $0x0,0x60(%rsp)
+ 11b:	00 00 
+ 11d:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 122:	31 ed                	xor    %ebp,%ebp
+ 124:	c7 84 24 84 00 00 00 	movl   $0xffffffff,0x84(%rsp)
+ 12b:	ff ff ff ff 
+ 12f:	48 8d 58 04          	lea    0x4(%rax),%rbx
+ 133:	48 8b 54 24 10       	mov    0x10(%rsp),%rdx
+ 138:	48 8b 74 24 38       	mov    0x38(%rsp),%rsi
+ 13d:	4c 89 e7             	mov    %r12,%rdi
+ 140:	e8 00 00 00 00       	call   145 <backupfile_internal+0xe5>
+ 145:	83 7c 24 24 01       	cmpl   $0x1,0x24(%rsp)
+ 14a:	0f 84 10 03 00 00    	je     460 <backupfile_internal+0x400>
+ 150:	48 85 ed             	test   %rbp,%rbp
+ 153:	0f 84 37 04 00 00    	je     590 <backupfile_internal+0x530>
+ 159:	48 89 ef             	mov    %rbp,%rdi
+ 15c:	e8 00 00 00 00       	call   161 <backupfile_internal+0x101>
+ 161:	48 8b 44 24 58       	mov    0x58(%rsp),%rax
+ 166:	c7 44 24 18 02 00 00 	movl   $0x2,0x18(%rsp)
+ 16d:	00 
+ 16e:	48 c7 44 24 28 01 00 	movq   $0x1,0x28(%rsp)
+ 175:	00 00 
+ 177:	48 89 44 24 30       	mov    %rax,0x30(%rsp)
+ 17c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 180:	48 89 ef             	mov    %rbp,%rdi
+ 183:	e8 00 00 00 00       	call   188 <backupfile_internal+0x128>
+ 188:	48 85 c0             	test   %rax,%rax
+ 18b:	0f 84 9f 01 00 00    	je     330 <backupfile_internal+0x2d0>
+ 191:	4c 8d 68 13          	lea    0x13(%rax),%r13
+ 195:	4c 89 ef             	mov    %r13,%rdi
+ 198:	e8 00 00 00 00       	call   19d <backupfile_internal+0x13d>
+ 19d:	48 39 d8             	cmp    %rbx,%rax
+ 1a0:	72 de                	jb     180 <backupfile_internal+0x120>
+ 1a2:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 1a7:	4b 8d 3c 34          	lea    (%r12,%r14,1),%rdi
+ 1ab:	4c 89 ee             	mov    %r13,%rsi
+ 1ae:	4c 8d 78 02          	lea    0x2(%rax),%r15
+ 1b2:	4c 89 fa             	mov    %r15,%rdx
+ 1b5:	e8 00 00 00 00       	call   1ba <backupfile_internal+0x15a>
+ 1ba:	85 c0                	test   %eax,%eax
+ 1bc:	75 c2                	jne    180 <backupfile_internal+0x120>
+ 1be:	4d 01 fd             	add    %r15,%r13
+ 1c1:	41 0f b6 45 00       	movzbl 0x0(%r13),%eax
+ 1c6:	8d 50 cf             	lea    -0x31(%rax),%edx
+ 1c9:	80 fa 08             	cmp    $0x8,%dl
+ 1cc:	77 b2                	ja     180 <backupfile_internal+0x120>
+ 1ce:	3c 39                	cmp    $0x39,%al
+ 1d0:	41 0f be 45 01       	movsbl 0x1(%r13),%eax
+ 1d5:	41 0f 94 c0          	sete   %r8b
+ 1d9:	89 c2                	mov    %eax,%edx
+ 1db:	83 e8 30             	sub    $0x30,%eax
+ 1de:	83 f8 09             	cmp    $0x9,%eax
+ 1e1:	0f 87 99 03 00 00    	ja     580 <backupfile_internal+0x520>
+ 1e7:	41 bf 01 00 00 00    	mov    $0x1,%r15d
+ 1ed:	0f 1f 00             	nopl   (%rax)
+ 1f0:	80 fa 39             	cmp    $0x39,%dl
+ 1f3:	0f 94 c0             	sete   %al
+ 1f6:	49 83 c7 01          	add    $0x1,%r15
+ 1fa:	41 21 c0             	and    %eax,%r8d
+ 1fd:	43 0f be 44 3d 00    	movsbl 0x0(%r13,%r15,1),%eax
+ 203:	4c 89 f9             	mov    %r15,%rcx
+ 206:	89 c2                	mov    %eax,%edx
+ 208:	83 e8 30             	sub    $0x30,%eax
+ 20b:	83 f8 09             	cmp    $0x9,%eax
+ 20e:	76 e0                	jbe    1f0 <backupfile_internal+0x190>
+ 210:	80 fa 7e             	cmp    $0x7e,%dl
+ 213:	0f 85 67 ff ff ff    	jne    180 <backupfile_internal+0x120>
+ 219:	41 80 7c 0d 01 00    	cmpb   $0x0,0x1(%r13,%rcx,1)
+ 21f:	0f 85 5b ff ff ff    	jne    180 <backupfile_internal+0x120>
+ 225:	4c 39 7c 24 28       	cmp    %r15,0x28(%rsp)
+ 22a:	0f 8d e0 01 00 00    	jge    410 <backupfile_internal+0x3b0>
+ 230:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 235:	4c 8d 48 02          	lea    0x2(%rax),%r9
+ 239:	41 0f b6 d0          	movzbl %r8b,%edx
+ 23d:	41 0f b6 f0          	movzbl %r8b,%esi
+ 241:	4a 8d 04 3a          	lea    (%rdx,%r15,1),%rax
+ 245:	89 74 24 18          	mov    %esi,0x18(%rsp)
+ 249:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+ 24e:	4a 8d 44 08 02       	lea    0x2(%rax,%r9,1),%rax
+ 253:	48 3b 44 24 30       	cmp    0x30(%rsp),%rax
+ 258:	0f 8e 81 03 00 00    	jle    5df <backupfile_internal+0x57f>
+ 25e:	48 89 c6             	mov    %rax,%rsi
+ 261:	48 d1 fe             	sar    %rsi
+ 264:	48 01 c6             	add    %rax,%rsi
+ 267:	0f 80 85 04 00 00    	jo     6f2 <backupfile_internal+0x692>
+ 26d:	48 89 74 24 30       	mov    %rsi,0x30(%rsp)
+ 272:	48 8b 44 24 30       	mov    0x30(%rsp),%rax
+ 277:	31 f6                	xor    %esi,%esi
+ 279:	4c 89 e7             	mov    %r12,%rdi
+ 27c:	48 89 54 24 50       	mov    %rdx,0x50(%rsp)
+ 281:	48 89 4c 24 48       	mov    %rcx,0x48(%rsp)
+ 286:	48 85 c0             	test   %rax,%rax
+ 289:	40 0f 94 c6          	sete   %sil
+ 28d:	48 09 c6             	or     %rax,%rsi
+ 290:	e8 00 00 00 00       	call   295 <backupfile_internal+0x235>
+ 295:	48 8b 4c 24 48       	mov    0x48(%rsp),%rcx
+ 29a:	48 8b 54 24 50       	mov    0x50(%rsp),%rdx
+ 29f:	48 85 c0             	test   %rax,%rax
+ 2a2:	49 89 c0             	mov    %rax,%r8
+ 2a5:	0f 84 3c 03 00 00    	je     5e7 <backupfile_internal+0x587>
+ 2ab:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 2b0:	48 89 4c 24 50       	mov    %rcx,0x50(%rsp)
+ 2b5:	b9 2e 7e 00 00       	mov    $0x7e2e,%ecx
+ 2ba:	4c 89 ee             	mov    %r13,%rsi
+ 2bd:	4c 89 44 24 48       	mov    %r8,0x48(%rsp)
+ 2c2:	4c 01 c0             	add    %r8,%rax
+ 2c5:	66 89 08             	mov    %cx,(%rax)
+ 2c8:	48 8d 7c 10 02       	lea    0x2(%rax,%rdx,1),%rdi
+ 2cd:	49 8d 57 02          	lea    0x2(%r15),%rdx
+ 2d1:	c6 40 02 30          	movb   $0x30,0x2(%rax)
+ 2d5:	e8 00 00 00 00       	call   2da <backupfile_internal+0x27a>
+ 2da:	48 8b 4c 24 50       	mov    0x50(%rsp),%rcx
+ 2df:	4c 8b 44 24 48       	mov    0x48(%rsp),%r8
+ 2e4:	48 89 c7             	mov    %rax,%rdi
+ 2e7:	48 01 cf             	add    %rcx,%rdi
+ 2ea:	0f b6 57 ff          	movzbl -0x1(%rdi),%edx
+ 2ee:	48 8d 47 ff          	lea    -0x1(%rdi),%rax
+ 2f2:	80 fa 39             	cmp    $0x39,%dl
+ 2f5:	75 19                	jne    310 <backupfile_internal+0x2b0>
+ 2f7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 2fe:	00 00 
+ 300:	c6 00 30             	movb   $0x30,(%rax)
+ 303:	0f b6 50 ff          	movzbl -0x1(%rax),%edx
+ 307:	48 83 e8 01          	sub    $0x1,%rax
+ 30b:	80 fa 39             	cmp    $0x39,%dl
+ 30e:	74 f0                	je     300 <backupfile_internal+0x2a0>
+ 310:	83 c2 01             	add    $0x1,%edx
+ 313:	48 89 ef             	mov    %rbp,%rdi
+ 316:	4d 89 c4             	mov    %r8,%r12
+ 319:	88 10                	mov    %dl,(%rax)
+ 31b:	e8 00 00 00 00       	call   320 <backupfile_internal+0x2c0>
+ 320:	48 85 c0             	test   %rax,%rax
+ 323:	0f 85 68 fe ff ff    	jne    191 <backupfile_internal+0x131>
+ 329:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 330:	83 7c 24 18 02       	cmpl   $0x2,0x18(%rsp)
+ 335:	0f 84 5d 01 00 00    	je     498 <backupfile_internal+0x438>
+ 33b:	83 7c 24 18 01       	cmpl   $0x1,0x18(%rsp)
+ 340:	0f 84 5d 01 00 00    	je     4a3 <backupfile_internal+0x443>
+ 346:	41 bf 01 00 00 00    	mov    $0x1,%r15d
+ 34c:	80 7c 24 47 00       	cmpb   $0x0,0x47(%rsp)
+ 351:	0f 84 f1 02 00 00    	je     648 <backupfile_internal+0x5e8>
+ 357:	8b 84 24 84 00 00 00 	mov    0x84(%rsp),%eax
+ 35e:	85 c0                	test   %eax,%eax
+ 360:	0f 88 22 01 00 00    	js     488 <backupfile_internal+0x428>
+ 366:	89 44 24 40          	mov    %eax,0x40(%rsp)
+ 36a:	48 8b 74 24 68       	mov    0x68(%rsp),%rsi
+ 36f:	4b 8d 0c 34          	lea    (%r12,%r14,1),%rcx
+ 373:	8b 7c 24 40          	mov    0x40(%rsp),%edi
+ 377:	45 31 c0             	xor    %r8d,%r8d
+ 37a:	83 7c 24 24 01       	cmpl   $0x1,0x24(%rsp)
+ 37f:	41 0f 95 c0          	setne  %r8b
+ 383:	89 fa                	mov    %edi,%edx
+ 385:	e8 00 00 00 00       	call   38a <backupfile_internal+0x32a>
+ 38a:	85 c0                	test   %eax,%eax
+ 38c:	0f 84 b6 02 00 00    	je     648 <backupfile_internal+0x5e8>
+ 392:	e8 00 00 00 00       	call   397 <backupfile_internal+0x337>
+ 397:	8b 10                	mov    (%rax),%edx
+ 399:	83 fa 11             	cmp    $0x11,%edx
+ 39c:	75 09                	jne    3a7 <backupfile_internal+0x347>
+ 39e:	45 84 ff             	test   %r15b,%r15b
+ 3a1:	0f 85 8c fd ff ff    	jne    133 <backupfile_internal+0xd3>
+ 3a7:	41 89 d7             	mov    %edx,%r15d
+ 3aa:	48 89 c2             	mov    %rax,%rdx
+ 3ad:	48 85 ed             	test   %rbp,%rbp
+ 3b0:	74 12                	je     3c4 <backupfile_internal+0x364>
+ 3b2:	48 89 ef             	mov    %rbp,%rdi
+ 3b5:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 3ba:	e8 00 00 00 00       	call   3bf <backupfile_internal+0x35f>
+ 3bf:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 3c4:	4c 89 e7             	mov    %r12,%rdi
+ 3c7:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+ 3cc:	45 31 e4             	xor    %r12d,%r12d
+ 3cf:	e8 00 00 00 00       	call   3d4 <backupfile_internal+0x374>
+ 3d4:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 3d9:	44 89 3a             	mov    %r15d,(%rdx)
+ 3dc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 3e0:	48 8b 84 24 88 00 00 	mov    0x88(%rsp),%rax
+ 3e7:	00 
+ 3e8:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 3ef:	00 00 
+ 3f1:	0f 85 f6 02 00 00    	jne    6ed <backupfile_internal+0x68d>
+ 3f7:	48 81 c4 98 00 00 00 	add    $0x98,%rsp
+ 3fe:	4c 89 e0             	mov    %r12,%rax
+ 401:	5b                   	pop    %rbx
+ 402:	5d                   	pop    %rbp
+ 403:	41 5c                	pop    %r12
+ 405:	41 5d                	pop    %r13
+ 407:	41 5e                	pop    %r14
+ 409:	41 5f                	pop    %r15
+ 40b:	c3                   	ret    
+ 40c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 410:	44 88 44 24 48       	mov    %r8b,0x48(%rsp)
+ 415:	0f 85 65 fd ff ff    	jne    180 <backupfile_internal+0x120>
+ 41b:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 420:	48 89 ca             	mov    %rcx,%rdx
+ 423:	4c 89 ee             	mov    %r13,%rsi
+ 426:	48 89 4c 24 50       	mov    %rcx,0x50(%rsp)
+ 42b:	4c 8d 48 02          	lea    0x2(%rax),%r9
+ 42f:	4b 8d 3c 0c          	lea    (%r12,%r9,1),%rdi
+ 433:	4c 89 4c 24 78       	mov    %r9,0x78(%rsp)
+ 438:	e8 00 00 00 00       	call   43d <backupfile_internal+0x3dd>
+ 43d:	48 8b 4c 24 50       	mov    0x50(%rsp),%rcx
+ 442:	4c 8b 4c 24 78       	mov    0x78(%rsp),%r9
+ 447:	85 c0                	test   %eax,%eax
+ 449:	44 0f b6 44 24 48    	movzbl 0x48(%rsp),%r8d
+ 44f:	0f 8e e4 fd ff ff    	jle    239 <backupfile_internal+0x1d9>
+ 455:	e9 26 fd ff ff       	jmp    180 <backupfile_internal+0x120>
+ 45a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 460:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 465:	48 8b 54 24 70       	mov    0x70(%rsp),%rdx
+ 46a:	41 bf 01 00 00 00    	mov    $0x1,%r15d
+ 470:	48 8b 35 00 00 00 00 	mov    0x0(%rip),%rsi        # 477 <backupfile_internal+0x417>
+ 477:	49 8d 3c 04          	lea    (%r12,%rax,1),%rdi
+ 47b:	e8 00 00 00 00       	call   480 <backupfile_internal+0x420>
+ 480:	e9 c7 fe ff ff       	jmp    34c <backupfile_internal+0x2ec>
+ 485:	0f 1f 00             	nopl   (%rax)
+ 488:	48 8b 74 24 38       	mov    0x38(%rsp),%rsi
+ 48d:	4c 89 e1             	mov    %r12,%rcx
+ 490:	e9 de fe ff ff       	jmp    373 <backupfile_internal+0x313>
+ 495:	0f 1f 00             	nopl   (%rax)
+ 498:	83 7c 24 24 02       	cmpl   $0x2,0x24(%rsp)
+ 49d:	0f 84 7e 01 00 00    	je     621 <backupfile_internal+0x5c1>
+ 4a3:	4c 89 e7             	mov    %r12,%rdi
+ 4a6:	41 bf 01 00 00 00    	mov    $0x1,%r15d
+ 4ac:	e8 00 00 00 00       	call   4b1 <backupfile_internal+0x451>
+ 4b1:	48 89 c7             	mov    %rax,%rdi
+ 4b4:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+ 4b9:	e8 00 00 00 00       	call   4be <backupfile_internal+0x45e>
+ 4be:	48 89 c1             	mov    %rax,%rcx
+ 4c1:	48 83 f8 0e          	cmp    $0xe,%rax
+ 4c5:	0f 8e 81 fe ff ff    	jle    34c <backupfile_internal+0x2ec>
+ 4cb:	8b bc 24 84 00 00 00 	mov    0x84(%rsp),%edi
+ 4d2:	48 83 7c 24 60 00    	cmpq   $0x0,0x60(%rsp)
+ 4d8:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 4dd:	89 7c 24 28          	mov    %edi,0x28(%rsp)
+ 4e1:	75 62                	jne    545 <backupfile_internal+0x4e5>
+ 4e3:	48 89 44 24 30       	mov    %rax,0x30(%rsp)
+ 4e8:	e8 00 00 00 00       	call   4ed <backupfile_internal+0x48d>
+ 4ed:	8b 7c 24 28          	mov    0x28(%rsp),%edi
+ 4f1:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 4f6:	48 8b 4c 24 30       	mov    0x30(%rsp),%rcx
+ 4fb:	49 89 c7             	mov    %rax,%r15
+ 4fe:	85 ff                	test   %edi,%edi
+ 500:	0f 88 9d 01 00 00    	js     6a3 <backupfile_internal+0x643>
+ 506:	c7 00 00 00 00 00    	movl   $0x0,(%rax)
+ 50c:	be 03 00 00 00       	mov    $0x3,%esi
+ 511:	48 89 4c 24 28       	mov    %rcx,0x28(%rsp)
+ 516:	48 89 54 24 18       	mov    %rdx,0x18(%rsp)
+ 51b:	e8 00 00 00 00       	call   520 <backupfile_internal+0x4c0>
+ 520:	41 83 3f 01          	cmpl   $0x1,(%r15)
+ 524:	48 8b 4c 24 28       	mov    0x28(%rsp),%rcx
+ 529:	48 83 d8 00          	sbb    $0x0,%rax
+ 52d:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 532:	48 89 44 24 60       	mov    %rax,0x60(%rsp)
+ 537:	48 8b 74 24 60       	mov    0x60(%rsp),%rsi
+ 53c:	48 85 f6             	test   %rsi,%rsi
+ 53f:	0f 88 c5 00 00 00    	js     60a <backupfile_internal+0x5aa>
+ 545:	48 3b 4c 24 60       	cmp    0x60(%rsp),%rcx
+ 54a:	0f 8e f6 fd ff ff    	jle    346 <backupfile_internal+0x2e6>
+ 550:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 555:	48 8b 74 24 60       	mov    0x60(%rsp),%rsi
+ 55a:	4c 01 e0             	add    %r12,%rax
+ 55d:	48 8d 4e ff          	lea    -0x1(%rsi),%rcx
+ 561:	48 29 d0             	sub    %rdx,%rax
+ 564:	48 39 f0             	cmp    %rsi,%rax
+ 567:	48 0f 4d c1          	cmovge %rcx,%rax
+ 56b:	45 31 ff             	xor    %r15d,%r15d
+ 56e:	c6 04 02 7e          	movb   $0x7e,(%rdx,%rax,1)
+ 572:	c6 44 02 01 00       	movb   $0x0,0x1(%rdx,%rax,1)
+ 577:	e9 d0 fd ff ff       	jmp    34c <backupfile_internal+0x2ec>
+ 57c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 580:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 585:	41 bf 01 00 00 00    	mov    $0x1,%r15d
+ 58b:	e9 80 fc ff ff       	jmp    210 <backupfile_internal+0x1b0>
+ 590:	4f 8d 3c 34          	lea    (%r12,%r14,1),%r15
+ 594:	be 2e 00 00 00       	mov    $0x2e,%esi
+ 599:	8b 7c 24 40          	mov    0x40(%rsp),%edi
+ 59d:	31 d2                	xor    %edx,%edx
+ 59f:	45 0f b7 2f          	movzwl (%r15),%r13d
+ 5a3:	66 41 89 37          	mov    %si,(%r15)
+ 5a7:	48 8d 8c 24 84 00 00 	lea    0x84(%rsp),%rcx
+ 5ae:	00 
+ 5af:	4c 89 e6             	mov    %r12,%rsi
+ 5b2:	e8 00 00 00 00       	call   5b7 <backupfile_internal+0x557>
+ 5b7:	48 89 c5             	mov    %rax,%rbp
+ 5ba:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 5bf:	49 8d 14 07          	lea    (%r15,%rax,1),%rdx
+ 5c3:	48 85 ed             	test   %rbp,%rbp
+ 5c6:	0f 84 30 01 00 00    	je     6fc <backupfile_internal+0x69c>
+ 5cc:	66 45 89 2f          	mov    %r13w,(%r15)
+ 5d0:	c7 02 2e 7e 31 7e    	movl   $0x7e317e2e,(%rdx)
+ 5d6:	c6 42 04 00          	movb   $0x0,0x4(%rdx)
+ 5da:	e9 82 fb ff ff       	jmp    161 <backupfile_internal+0x101>
+ 5df:	4d 89 e0             	mov    %r12,%r8
+ 5e2:	e9 c4 fc ff ff       	jmp    2ab <backupfile_internal+0x24b>
+ 5e7:	48 89 ef             	mov    %rbp,%rdi
+ 5ea:	e8 00 00 00 00       	call   5ef <backupfile_internal+0x58f>
+ 5ef:	4c 89 e7             	mov    %r12,%rdi
+ 5f2:	45 31 e4             	xor    %r12d,%r12d
+ 5f5:	e8 00 00 00 00       	call   5fa <backupfile_internal+0x59a>
+ 5fa:	e8 00 00 00 00       	call   5ff <backupfile_internal+0x59f>
+ 5ff:	c7 00 0c 00 00 00    	movl   $0xc,(%rax)
+ 605:	e9 d6 fd ff ff       	jmp    3e0 <backupfile_internal+0x380>
+ 60a:	48 83 fe ff          	cmp    $0xffffffffffffffff,%rsi
+ 60e:	b8 0e 00 00 00       	mov    $0xe,%eax
+ 613:	48 0f 44 c6          	cmove  %rsi,%rax
+ 617:	48 89 44 24 60       	mov    %rax,0x60(%rsp)
+ 61c:	e9 2f ff ff ff       	jmp    550 <backupfile_internal+0x4f0>
+ 621:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 626:	48 8b 54 24 70       	mov    0x70(%rsp),%rdx
+ 62b:	48 8b 35 00 00 00 00 	mov    0x0(%rip),%rsi        # 632 <backupfile_internal+0x5d2>
+ 632:	49 8d 3c 04          	lea    (%r12,%rax,1),%rdi
+ 636:	e8 00 00 00 00       	call   63b <backupfile_internal+0x5db>
+ 63b:	c7 44 24 24 01 00 00 	movl   $0x1,0x24(%rsp)
+ 642:	00 
+ 643:	e9 5b fe ff ff       	jmp    4a3 <backupfile_internal+0x443>
+ 648:	48 85 ed             	test   %rbp,%rbp
+ 64b:	0f 84 8f fd ff ff    	je     3e0 <backupfile_internal+0x380>
+ 651:	48 89 ef             	mov    %rbp,%rdi
+ 654:	e8 00 00 00 00       	call   659 <backupfile_internal+0x5f9>
+ 659:	e9 82 fd ff ff       	jmp    3e0 <backupfile_internal+0x380>
+ 65e:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 665 <backupfile_internal+0x605>
+ 665:	e8 00 00 00 00       	call   66a <backupfile_internal+0x60a>
+ 66a:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 671 <backupfile_internal+0x611>
+ 671:	48 89 c3             	mov    %rax,%rbx
+ 674:	48 85 c0             	test   %rax,%rax
+ 677:	74 1e                	je     697 <backupfile_internal+0x637>
+ 679:	80 38 00             	cmpb   $0x0,(%rax)
+ 67c:	74 19                	je     697 <backupfile_internal+0x637>
+ 67e:	48 89 c7             	mov    %rax,%rdi
+ 681:	e8 00 00 00 00       	call   686 <backupfile_internal+0x626>
+ 686:	48 89 c7             	mov    %rax,%rdi
+ 689:	48 39 c3             	cmp    %rax,%rbx
+ 68c:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 693 <backupfile_internal+0x633>
+ 693:	48 0f 45 f8          	cmovne %rax,%rdi
+ 697:	48 89 3d 00 00 00 00 	mov    %rdi,0x0(%rip)        # 69e <backupfile_internal+0x63e>
+ 69e:	e9 31 fa ff ff       	jmp    d4 <backupfile_internal+0x74>
+ 6a3:	b8 2e 00 00 00       	mov    $0x2e,%eax
+ 6a8:	44 0f b7 02          	movzwl (%rdx),%r8d
+ 6ac:	be 03 00 00 00       	mov    $0x3,%esi
+ 6b1:	4c 89 e7             	mov    %r12,%rdi
+ 6b4:	66 89 02             	mov    %ax,(%rdx)
+ 6b7:	41 c7 07 00 00 00 00 	movl   $0x0,(%r15)
+ 6be:	44 89 44 24 28       	mov    %r8d,0x28(%rsp)
+ 6c3:	e8 00 00 00 00       	call   6c8 <backupfile_internal+0x668>
+ 6c8:	41 83 3f 01          	cmpl   $0x1,(%r15)
+ 6cc:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 6d1:	44 8b 44 24 28       	mov    0x28(%rsp),%r8d
+ 6d6:	48 83 d8 00          	sbb    $0x0,%rax
+ 6da:	48 8b 4c 24 30       	mov    0x30(%rsp),%rcx
+ 6df:	48 89 44 24 60       	mov    %rax,0x60(%rsp)
+ 6e4:	66 44 89 02          	mov    %r8w,(%rdx)
+ 6e8:	e9 4a fe ff ff       	jmp    537 <backupfile_internal+0x4d7>
+ 6ed:	e8 00 00 00 00       	call   6f2 <backupfile_internal+0x692>
+ 6f2:	48 89 44 24 30       	mov    %rax,0x30(%rsp)
+ 6f7:	e9 76 fb ff ff       	jmp    272 <backupfile_internal+0x212>
+ 6fc:	48 89 54 24 28       	mov    %rdx,0x28(%rsp)
+ 701:	e8 00 00 00 00       	call   706 <backupfile_internal+0x6a6>
+ 706:	48 8b 54 24 28       	mov    0x28(%rsp),%rdx
+ 70b:	66 45 89 2f          	mov    %r13w,(%r15)
+ 70f:	83 38 0c             	cmpl   $0xc,(%rax)
+ 712:	0f 94 c0             	sete   %al
+ 715:	c7 02 2e 7e 31 7e    	movl   $0x7e317e2e,(%rdx)
+ 71b:	0f b6 c0             	movzbl %al,%eax
+ 71e:	c6 42 04 00          	movb   $0x0,0x4(%rdx)
+ 722:	83 c0 02             	add    $0x2,%eax
+ 725:	89 44 24 18          	mov    %eax,0x18(%rsp)
+ 729:	83 f8 02             	cmp    $0x2,%eax
+ 72c:	0f 84 66 fd ff ff    	je     498 <backupfile_internal+0x438>
+ 732:	83 7c 24 18 03       	cmpl   $0x3,0x18(%rsp)
+ 737:	0f 84 b2 fe ff ff    	je     5ef <backupfile_internal+0x58f>
+ 73d:	e9 f9 fb ff ff       	jmp    33b <backupfile_internal+0x2db>

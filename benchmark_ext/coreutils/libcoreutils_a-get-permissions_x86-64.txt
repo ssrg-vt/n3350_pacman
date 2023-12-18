@@ -1,0 +1,11 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-get-permissions.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <get_permissions>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	89 11                	mov    %edx,(%rcx)
+   6:	31 c0                	xor    %eax,%eax
+   8:	c3                   	ret    

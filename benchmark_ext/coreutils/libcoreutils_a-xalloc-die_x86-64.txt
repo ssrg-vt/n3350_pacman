@@ -1,0 +1,21 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xalloc-die.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xalloc_die>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	ba 05 00 00 00       	mov    $0x5,%edx
+   a:	8b 2d 00 00 00 00    	mov    0x0(%rip),%ebp        # 10 <xalloc_die+0x10>
+  10:	31 ff                	xor    %edi,%edi
+  12:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 19 <xalloc_die+0x19>
+  19:	e8 00 00 00 00       	call   1e <xalloc_die+0x1e>
+  1e:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 25 <xalloc_die+0x25>
+  25:	31 f6                	xor    %esi,%esi
+  27:	89 ef                	mov    %ebp,%edi
+  29:	48 89 c1             	mov    %rax,%rcx
+  2c:	31 c0                	xor    %eax,%eax
+  2e:	e8 00 00 00 00       	call   33 <xalloc_die+0x33>
+  33:	e8 00 00 00 00       	call   38 <.LC1+0x27>

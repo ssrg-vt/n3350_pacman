@@ -1,0 +1,54 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-offtostr.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <offtostr>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	c6 46 14 00          	movb   $0x0,0x14(%rsi)
+   8:	4c 8d 46 14          	lea    0x14(%rsi),%r8
+   c:	48 89 f9             	mov    %rdi,%rcx
+   f:	48 be cd cc cc cc cc 	movabs $0xcccccccccccccccd,%rsi
+  16:	cc cc cc 
+  19:	48 85 ff             	test   %rdi,%rdi
+  1c:	78 32                	js     50 <offtostr+0x50>
+  1e:	66 90                	xchg   %ax,%ax
+  20:	48 89 c8             	mov    %rcx,%rax
+  23:	49 83 e8 01          	sub    $0x1,%r8
+  27:	48 f7 e6             	mul    %rsi
+  2a:	48 c1 ea 03          	shr    $0x3,%rdx
+  2e:	48 8d 04 92          	lea    (%rdx,%rdx,4),%rax
+  32:	48 01 c0             	add    %rax,%rax
+  35:	48 29 c1             	sub    %rax,%rcx
+  38:	83 c1 30             	add    $0x30,%ecx
+  3b:	41 88 08             	mov    %cl,(%r8)
+  3e:	48 89 d1             	mov    %rdx,%rcx
+  41:	48 85 d2             	test   %rdx,%rdx
+  44:	75 da                	jne    20 <offtostr+0x20>
+  46:	4c 89 c0             	mov    %r8,%rax
+  49:	c3                   	ret    
+  4a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  50:	49 b9 67 66 66 66 66 	movabs $0x6666666666666667,%r9
+  57:	66 66 66 
+  5a:	bf 30 00 00 00       	mov    $0x30,%edi
+  5f:	90                   	nop
+  60:	48 89 c8             	mov    %rcx,%rax
+  63:	4c 89 c6             	mov    %r8,%rsi
+  66:	49 83 e8 01          	sub    $0x1,%r8
+  6a:	49 f7 e9             	imul   %r9
+  6d:	48 89 c8             	mov    %rcx,%rax
+  70:	48 c1 f8 3f          	sar    $0x3f,%rax
+  74:	48 c1 fa 02          	sar    $0x2,%rdx
+  78:	48 29 c2             	sub    %rax,%rdx
+  7b:	48 8d 04 92          	lea    (%rdx,%rdx,4),%rax
+  7f:	8d 04 47             	lea    (%rdi,%rax,2),%eax
+  82:	29 c8                	sub    %ecx,%eax
+  84:	48 89 d1             	mov    %rdx,%rcx
+  87:	41 88 00             	mov    %al,(%r8)
+  8a:	48 85 d2             	test   %rdx,%rdx
+  8d:	75 d1                	jne    60 <offtostr+0x60>
+  8f:	41 c6 40 ff 2d       	movb   $0x2d,-0x1(%r8)
+  94:	4c 8d 46 fe          	lea    -0x2(%rsi),%r8
+  98:	4c 89 c0             	mov    %r8,%rax
+  9b:	c3                   	ret    

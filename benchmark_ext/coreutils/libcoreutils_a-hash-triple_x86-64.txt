@@ -1,0 +1,31 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-hash-triple.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <triple_hash_no_name>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 8b 47 08          	mov    0x8(%rdi),%rax
+   8:	31 d2                	xor    %edx,%edx
+   a:	48 f7 f6             	div    %rsi
+   d:	48 89 d0             	mov    %rdx,%rax
+  10:	c3                   	ret    
+  11:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  18:	00 00 00 00 
+  1c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000020 <triple_compare>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	48 8b 47 10          	mov    0x10(%rdi),%rax
+  28:	48 8b 57 08          	mov    0x8(%rdi),%rdx
+  2c:	48 33 46 10          	xor    0x10(%rsi),%rax
+  30:	48 33 56 08          	xor    0x8(%rsi),%rdx
+  34:	48 09 d0             	or     %rdx,%rax
+  37:	74 07                	je     40 <triple_compare+0x20>
+  39:	31 c0                	xor    %eax,%eax
+  3b:	c3                   	ret    
+  3c:	0f 1f 40 00          	nopl   0x0(%rax)
+  40:	48 8b 36             	mov    (%rsi),%rsi
+  43:	48 8b 3f             	mov    (%rdi),%rdi
+  46:	e9 00 00 00 00       	jmp    4b <triple_compare+0x2b>

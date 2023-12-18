@@ -1,0 +1,14 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-alignalloc.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <alignfree>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	e9 00 00 00 00       	jmp    9 <alignfree+0x9>
+   9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000010 <alignalloc>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	e9 00 00 00 00       	jmp    19 <alignalloc+0x9>

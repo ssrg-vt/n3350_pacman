@@ -1,0 +1,75 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mbslen.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mbslen>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	55                   	push   %rbp
+   7:	48 89 fd             	mov    %rdi,%rbp
+   a:	53                   	push   %rbx
+   b:	48 83 ec 20          	sub    $0x20,%rsp
+   f:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  16:	00 00 
+  18:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  1d:	31 c0                	xor    %eax,%eax
+  1f:	e8 00 00 00 00       	call   24 <mbslen+0x24>
+  24:	48 83 f8 01          	cmp    $0x1,%rax
+  28:	0f 86 92 00 00 00    	jbe    c0 <mbslen+0xc0>
+  2e:	0f b6 55 00          	movzbl 0x0(%rbp),%edx
+  32:	45 31 e4             	xor    %r12d,%r12d
+  35:	84 d2                	test   %dl,%dl
+  37:	74 1f                	je     58 <mbslen+0x58>
+  39:	48 8d 5c 24 10       	lea    0x10(%rsp),%rbx
+  3e:	66 90                	xchg   %ax,%ax
+  40:	49 83 c4 01          	add    $0x1,%r12
+  44:	b8 01 00 00 00       	mov    $0x1,%eax
+  49:	84 d2                	test   %dl,%dl
+  4b:	78 2b                	js     78 <mbslen+0x78>
+  4d:	48 01 c5             	add    %rax,%rbp
+  50:	0f b6 55 00          	movzbl 0x0(%rbp),%edx
+  54:	84 d2                	test   %dl,%dl
+  56:	75 e8                	jne    40 <mbslen+0x40>
+  58:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  5d:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  64:	00 00 
+  66:	75 78                	jne    e0 <mbslen+0xe0>
+  68:	48 83 c4 20          	add    $0x20,%rsp
+  6c:	4c 89 e0             	mov    %r12,%rax
+  6f:	5b                   	pop    %rbx
+  70:	5d                   	pop    %rbp
+  71:	41 5c                	pop    %r12
+  73:	c3                   	ret    
+  74:	0f 1f 40 00          	nopl   0x0(%rax)
+  78:	80 7d 01 01          	cmpb   $0x1,0x1(%rbp)
+  7c:	48 89 ea             	mov    %rbp,%rdx
+  7f:	48 8d 7c 24 0c       	lea    0xc(%rsp),%rdi
+  84:	48 89 d9             	mov    %rbx,%rcx
+  87:	48 83 da fe          	sbb    $0xfffffffffffffffe,%rdx
+  8b:	48 89 ee             	mov    %rbp,%rsi
+  8e:	c7 44 24 10 00 00 00 	movl   $0x0,0x10(%rsp)
+  95:	00 
+  96:	80 3a 01             	cmpb   $0x1,(%rdx)
+  99:	48 83 da ff          	sbb    $0xffffffffffffffff,%rdx
+  9d:	80 3a 01             	cmpb   $0x1,(%rdx)
+  a0:	48 83 da ff          	sbb    $0xffffffffffffffff,%rdx
+  a4:	48 29 ea             	sub    %rbp,%rdx
+  a7:	e8 00 00 00 00       	call   ac <mbslen+0xac>
+  ac:	ba 01 00 00 00       	mov    $0x1,%edx
+  b1:	48 85 c0             	test   %rax,%rax
+  b4:	48 0f 48 c2          	cmovs  %rdx,%rax
+  b8:	eb 93                	jmp    4d <mbslen+0x4d>
+  ba:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  c0:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  c5:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  cc:	00 00 
+  ce:	75 10                	jne    e0 <mbslen+0xe0>
+  d0:	48 83 c4 20          	add    $0x20,%rsp
+  d4:	48 89 ef             	mov    %rbp,%rdi
+  d7:	5b                   	pop    %rbx
+  d8:	5d                   	pop    %rbp
+  d9:	41 5c                	pop    %r12
+  db:	e9 00 00 00 00       	jmp    e0 <mbslen+0xe0>
+  e0:	e8 00 00 00 00       	call   e5 <mbslen+0xe5>

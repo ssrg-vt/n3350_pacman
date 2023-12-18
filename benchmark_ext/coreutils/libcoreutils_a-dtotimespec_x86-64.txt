@@ -1,0 +1,56 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-dtotimespec.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <dtotimespec>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	49 b8 00 00 00 00 00 	movabs $0x8000000000000000,%r8
+   b:	00 00 80 
+   e:	31 d2                	xor    %edx,%edx
+  10:	66 0f 2f 05 00 00 00 	comisd 0x0(%rip),%xmm0        # 18 <dtotimespec+0x18>
+  17:	00 
+  18:	0f 86 85 00 00 00    	jbe    a3 <dtotimespec+0xa3>
+  1e:	f2 0f 10 0d 00 00 00 	movsd  0x0(%rip),%xmm1        # 26 <dtotimespec+0x26>
+  25:	00 
+  26:	ba ff c9 9a 3b       	mov    $0x3b9ac9ff,%edx
+  2b:	49 b8 ff ff ff ff ff 	movabs $0x7fffffffffffffff,%r8
+  32:	ff ff 7f 
+  35:	66 0f 2f c8          	comisd %xmm0,%xmm1
+  39:	76 68                	jbe    a3 <dtotimespec+0xa3>
+  3b:	f2 4c 0f 2c c0       	cvttsd2si %xmm0,%r8
+  40:	66 0f ef c9          	pxor   %xmm1,%xmm1
+  44:	31 d2                	xor    %edx,%edx
+  46:	f2 49 0f 2a c8       	cvtsi2sd %r8,%xmm1
+  4b:	f2 0f 5c c1          	subsd  %xmm1,%xmm0
+  4f:	f2 0f 59 05 00 00 00 	mulsd  0x0(%rip),%xmm0        # 57 <dtotimespec+0x57>
+  56:	00 
+  57:	66 0f ef c9          	pxor   %xmm1,%xmm1
+  5b:	f2 48 0f 2c c0       	cvttsd2si %xmm0,%rax
+  60:	f2 48 0f 2a c8       	cvtsi2sd %rax,%xmm1
+  65:	66 0f 2f c1          	comisd %xmm1,%xmm0
+  69:	0f 97 c2             	seta   %dl
+  6c:	48 8d 0c 02          	lea    (%rdx,%rax,1),%rcx
+  70:	48 ba b3 94 d6 26 e8 	movabs $0x112e0be826d694b3,%rdx
+  77:	0b 2e 11 
+  7a:	48 89 c8             	mov    %rcx,%rax
+  7d:	48 f7 ea             	imul   %rdx
+  80:	48 89 d0             	mov    %rdx,%rax
+  83:	48 89 ca             	mov    %rcx,%rdx
+  86:	48 c1 fa 3f          	sar    $0x3f,%rdx
+  8a:	48 c1 f8 1a          	sar    $0x1a,%rax
+  8e:	48 29 d0             	sub    %rdx,%rax
+  91:	49 01 c0             	add    %rax,%r8
+  94:	48 69 c0 00 ca 9a 3b 	imul   $0x3b9aca00,%rax,%rax
+  9b:	48 29 c1             	sub    %rax,%rcx
+  9e:	48 89 ca             	mov    %rcx,%rdx
+  a1:	78 0d                	js     b0 <dtotimespec+0xb0>
+  a3:	4c 89 c0             	mov    %r8,%rax
+  a6:	c3                   	ret    
+  a7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  ae:	00 00 
+  b0:	49 83 e8 01          	sub    $0x1,%r8
+  b4:	48 81 c2 00 ca 9a 3b 	add    $0x3b9aca00,%rdx
+  bb:	4c 89 c0             	mov    %r8,%rax
+  be:	c3                   	ret    

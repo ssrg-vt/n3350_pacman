@@ -1,0 +1,146 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mbswidth.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mbsnwidth>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	4c 8d 3c 37          	lea    (%rdi,%rsi,1),%r15
+   a:	41 56                	push   %r14
+   c:	41 55                	push   %r13
+   e:	41 89 d5             	mov    %edx,%r13d
+  11:	41 54                	push   %r12
+  13:	55                   	push   %rbp
+  14:	53                   	push   %rbx
+  15:	48 89 fb             	mov    %rdi,%rbx
+  18:	48 83 ec 28          	sub    $0x28,%rsp
+  1c:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  23:	00 00 
+  25:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  2a:	31 c0                	xor    %eax,%eax
+  2c:	e8 00 00 00 00       	call   31 <mbsnwidth+0x31>
+  31:	48 83 f8 01          	cmp    $0x1,%rax
+  35:	0f 86 0d 01 00 00    	jbe    148 <mbsnwidth+0x148>
+  3b:	45 31 e4             	xor    %r12d,%r12d
+  3e:	4c 39 fb             	cmp    %r15,%rbx
+  41:	73 65                	jae    a8 <mbsnwidth+0xa8>
+  43:	48 8d 6c 24 10       	lea    0x10(%rsp),%rbp
+  48:	eb 13                	jmp    5d <mbsnwidth+0x5d>
+  4a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  50:	48 83 c3 01          	add    $0x1,%rbx
+  54:	41 83 c4 01          	add    $0x1,%r12d
+  58:	4c 39 fb             	cmp    %r15,%rbx
+  5b:	73 4b                	jae    a8 <mbsnwidth+0xa8>
+  5d:	0f be 03             	movsbl (%rbx),%eax
+  60:	83 e8 20             	sub    $0x20,%eax
+  63:	83 f8 5e             	cmp    $0x5e,%eax
+  66:	76 e8                	jbe    50 <mbsnwidth+0x50>
+  68:	4c 89 fa             	mov    %r15,%rdx
+  6b:	48 8d 7c 24 0c       	lea    0xc(%rsp),%rdi
+  70:	48 89 e9             	mov    %rbp,%rcx
+  73:	48 89 de             	mov    %rbx,%rsi
+  76:	48 29 da             	sub    %rbx,%rdx
+  79:	48 c7 45 00 00 00 00 	movq   $0x0,0x0(%rbp)
+  80:	00 
+  81:	e8 00 00 00 00       	call   86 <mbsnwidth+0x86>
+  86:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+  8a:	74 44                	je     d0 <mbsnwidth+0xd0>
+  8c:	48 83 f8 fe          	cmp    $0xfffffffffffffffe,%rax
+  90:	75 56                	jne    e8 <mbsnwidth+0xe8>
+  92:	41 f6 c5 01          	test   $0x1,%r13b
+  96:	75 42                	jne    da <mbsnwidth+0xda>
+  98:	4c 89 fb             	mov    %r15,%rbx
+  9b:	41 83 c4 01          	add    $0x1,%r12d
+  9f:	4c 39 fb             	cmp    %r15,%rbx
+  a2:	72 b9                	jb     5d <mbsnwidth+0x5d>
+  a4:	0f 1f 40 00          	nopl   0x0(%rax)
+  a8:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  ad:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  b4:	00 00 
+  b6:	0f 85 ef 00 00 00    	jne    1ab <mbsnwidth+0x1ab>
+  bc:	48 83 c4 28          	add    $0x28,%rsp
+  c0:	44 89 e0             	mov    %r12d,%eax
+  c3:	5b                   	pop    %rbx
+  c4:	5d                   	pop    %rbp
+  c5:	41 5c                	pop    %r12
+  c7:	41 5d                	pop    %r13
+  c9:	41 5e                	pop    %r14
+  cb:	41 5f                	pop    %r15
+  cd:	c3                   	ret    
+  ce:	66 90                	xchg   %ax,%ax
+  d0:	41 f6 c5 01          	test   $0x1,%r13b
+  d4:	0f 84 76 ff ff ff    	je     50 <mbsnwidth+0x50>
+  da:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+  e0:	eb c6                	jmp    a8 <mbsnwidth+0xa8>
+  e2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  e8:	48 85 c0             	test   %rax,%rax
+  eb:	ba 01 00 00 00       	mov    $0x1,%edx
+  f0:	8b 7c 24 0c          	mov    0xc(%rsp),%edi
+  f4:	48 0f 45 d0          	cmovne %rax,%rdx
+  f8:	49 89 d6             	mov    %rdx,%r14
+  fb:	e8 00 00 00 00       	call   100 <mbsnwidth+0x100>
+ 100:	85 c0                	test   %eax,%eax
+ 102:	78 1c                	js     120 <mbsnwidth+0x120>
+ 104:	ba ff ff ff 7f       	mov    $0x7fffffff,%edx
+ 109:	44 29 e2             	sub    %r12d,%edx
+ 10c:	39 c2                	cmp    %eax,%edx
+ 10e:	0f 8c 8c 00 00 00    	jl     1a0 <mbsnwidth+0x1a0>
+ 114:	41 01 c4             	add    %eax,%r12d
+ 117:	4c 01 f3             	add    %r14,%rbx
+ 11a:	e9 39 ff ff ff       	jmp    58 <mbsnwidth+0x58>
+ 11f:	90                   	nop
+ 120:	41 f6 c5 02          	test   $0x2,%r13b
+ 124:	75 b4                	jne    da <mbsnwidth+0xda>
+ 126:	8b 7c 24 0c          	mov    0xc(%rsp),%edi
+ 12a:	e8 00 00 00 00       	call   12f <mbsnwidth+0x12f>
+ 12f:	85 c0                	test   %eax,%eax
+ 131:	75 e4                	jne    117 <mbsnwidth+0x117>
+ 133:	41 81 fc ff ff ff 7f 	cmp    $0x7fffffff,%r12d
+ 13a:	74 64                	je     1a0 <mbsnwidth+0x1a0>
+ 13c:	41 83 c4 01          	add    $0x1,%r12d
+ 140:	eb d5                	jmp    117 <mbsnwidth+0x117>
+ 142:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 148:	45 31 e4             	xor    %r12d,%r12d
+ 14b:	4c 39 fb             	cmp    %r15,%rbx
+ 14e:	0f 83 54 ff ff ff    	jae    a8 <mbsnwidth+0xa8>
+ 154:	e8 00 00 00 00       	call   159 <mbsnwidth+0x159>
+ 159:	45 31 e4             	xor    %r12d,%r12d
+ 15c:	41 83 e5 02          	and    $0x2,%r13d
+ 160:	48 8b 10             	mov    (%rax),%rdx
+ 163:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 168:	0f b6 03             	movzbl (%rbx),%eax
+ 16b:	48 83 c3 01          	add    $0x1,%rbx
+ 16f:	0f b7 04 42          	movzwl (%rdx,%rax,2),%eax
+ 173:	f6 c4 40             	test   $0x40,%ah
+ 176:	75 0d                	jne    185 <mbsnwidth+0x185>
+ 178:	45 85 ed             	test   %r13d,%r13d
+ 17b:	0f 85 59 ff ff ff    	jne    da <mbsnwidth+0xda>
+ 181:	a8 02                	test   $0x2,%al
+ 183:	75 11                	jne    196 <mbsnwidth+0x196>
+ 185:	41 81 fc ff ff ff 7f 	cmp    $0x7fffffff,%r12d
+ 18c:	0f 84 16 ff ff ff    	je     a8 <mbsnwidth+0xa8>
+ 192:	41 83 c4 01          	add    $0x1,%r12d
+ 196:	49 39 df             	cmp    %rbx,%r15
+ 199:	75 cd                	jne    168 <mbsnwidth+0x168>
+ 19b:	e9 08 ff ff ff       	jmp    a8 <mbsnwidth+0xa8>
+ 1a0:	41 bc ff ff ff 7f    	mov    $0x7fffffff,%r12d
+ 1a6:	e9 fd fe ff ff       	jmp    a8 <mbsnwidth+0xa8>
+ 1ab:	e8 00 00 00 00       	call   1b0 <gnu_mbswidth>
+
+00000000000001b0 <gnu_mbswidth>:
+ 1b0:	f3 0f 1e fa          	endbr64 
+ 1b4:	41 54                	push   %r12
+ 1b6:	41 89 f4             	mov    %esi,%r12d
+ 1b9:	55                   	push   %rbp
+ 1ba:	48 89 fd             	mov    %rdi,%rbp
+ 1bd:	48 83 ec 08          	sub    $0x8,%rsp
+ 1c1:	e8 00 00 00 00       	call   1c6 <gnu_mbswidth+0x16>
+ 1c6:	48 83 c4 08          	add    $0x8,%rsp
+ 1ca:	44 89 e2             	mov    %r12d,%edx
+ 1cd:	48 89 ef             	mov    %rbp,%rdi
+ 1d0:	48 89 c6             	mov    %rax,%rsi
+ 1d3:	5d                   	pop    %rbp
+ 1d4:	41 5c                	pop    %r12
+ 1d6:	e9 25 fe ff ff       	jmp    0 <mbsnwidth>

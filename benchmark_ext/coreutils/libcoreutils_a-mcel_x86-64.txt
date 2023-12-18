@@ -1,0 +1,257 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mcel.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mcel_ch>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	40 0f b6 f6          	movzbl %sil,%esi
+   8:	89 f8                	mov    %edi,%eax
+   a:	48 c1 e6 28          	shl    $0x28,%rsi
+   e:	48 09 f0             	or     %rsi,%rax
+  11:	c3                   	ret    
+  12:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  19:	00 00 00 00 
+  1d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000020 <mcel_err>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	40 0f b6 c7          	movzbl %dil,%eax
+  28:	48 c1 e0 20          	shl    $0x20,%rax
+  2c:	48 0f ba e8 28       	bts    $0x28,%rax
+  31:	c3                   	ret    
+  32:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  39:	00 00 00 00 
+  3d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000040 <mcel_cmp>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	48 89 f8             	mov    %rdi,%rax
+  47:	48 89 f2             	mov    %rsi,%rdx
+  4a:	29 f7                	sub    %esi,%edi
+  4c:	48 c1 e8 20          	shr    $0x20,%rax
+  50:	48 c1 ea 20          	shr    $0x20,%rdx
+  54:	0f b6 d2             	movzbl %dl,%edx
+  57:	0f b6 c0             	movzbl %al,%eax
+  5a:	29 d0                	sub    %edx,%eax
+  5c:	c1 e0 0e             	shl    $0xe,%eax
+  5f:	01 f8                	add    %edi,%eax
+  61:	c3                   	ret    
+  62:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  69:	00 00 00 00 
+  6d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000070 <mcel_tocmp>:
+  70:	f3 0f 1e fa          	endbr64 
+  74:	48 89 f1             	mov    %rsi,%rcx
+  77:	48 89 d0             	mov    %rdx,%rax
+  7a:	41 54                	push   %r12
+  7c:	41 89 d4             	mov    %edx,%r12d
+  7f:	48 c1 e9 20          	shr    $0x20,%rcx
+  83:	48 c1 e8 20          	shr    $0x20,%rax
+  87:	55                   	push   %rbp
+  88:	0f b6 c0             	movzbl %al,%eax
+  8b:	0f b6 c9             	movzbl %cl,%ecx
+  8e:	53                   	push   %rbx
+  8f:	48 89 fb             	mov    %rdi,%rbx
+  92:	29 c1                	sub    %eax,%ecx
+  94:	89 f7                	mov    %esi,%edi
+  96:	29 d6                	sub    %edx,%esi
+  98:	31 d2                	xor    %edx,%edx
+  9a:	89 c8                	mov    %ecx,%eax
+  9c:	c1 e0 0e             	shl    $0xe,%eax
+  9f:	01 f0                	add    %esi,%eax
+  a1:	0f 94 c2             	sete   %dl
+  a4:	09 ca                	or     %ecx,%edx
+  a6:	74 08                	je     b0 <mcel_tocmp+0x40>
+  a8:	5b                   	pop    %rbx
+  a9:	5d                   	pop    %rbp
+  aa:	41 5c                	pop    %r12
+  ac:	c3                   	ret    
+  ad:	0f 1f 00             	nopl   (%rax)
+  b0:	ff d3                	call   *%rbx
+  b2:	44 89 e7             	mov    %r12d,%edi
+  b5:	89 c5                	mov    %eax,%ebp
+  b7:	ff d3                	call   *%rbx
+  b9:	5b                   	pop    %rbx
+  ba:	41 89 c0             	mov    %eax,%r8d
+  bd:	89 e8                	mov    %ebp,%eax
+  bf:	5d                   	pop    %rbp
+  c0:	41 5c                	pop    %r12
+  c2:	44 29 c0             	sub    %r8d,%eax
+  c5:	c3                   	ret    
+  c6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  cd:	00 00 00 
+
+00000000000000d0 <mcel_isbasic>:
+  d0:	f3 0f 1e fa          	endbr64 
+  d4:	89 f8                	mov    %edi,%eax
+  d6:	f7 d0                	not    %eax
+  d8:	c0 e8 07             	shr    $0x7,%al
+  db:	c3                   	ret    
+  dc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000000000e0 <mcel_scan>:
+  e0:	f3 0f 1e fa          	endbr64 
+  e4:	53                   	push   %rbx
+  e5:	48 83 ec 20          	sub    $0x20,%rsp
+  e9:	0f b6 1f             	movzbl (%rdi),%ebx
+  ec:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  f3:	00 00 
+  f5:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  fa:	31 c0                	xor    %eax,%eax
+  fc:	84 db                	test   %bl,%bl
+  fe:	78 20                	js     120 <mcel_scan+0x40>
+ 100:	0f be c3             	movsbl %bl,%eax
+ 103:	48 0f ba e8 28       	bts    $0x28,%rax
+ 108:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 10d:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 114:	00 00 
+ 116:	75 56                	jne    16e <mcel_scan+0x8e>
+ 118:	48 83 c4 20          	add    $0x20,%rsp
+ 11c:	5b                   	pop    %rbx
+ 11d:	c3                   	ret    
+ 11e:	66 90                	xchg   %ax,%ax
+ 120:	48 89 f2             	mov    %rsi,%rdx
+ 123:	4c 8d 44 24 0c       	lea    0xc(%rsp),%r8
+ 128:	48 89 fe             	mov    %rdi,%rsi
+ 12b:	c7 44 24 10 00 00 00 	movl   $0x0,0x10(%rsp)
+ 132:	00 
+ 133:	48 29 fa             	sub    %rdi,%rdx
+ 136:	48 8d 4c 24 10       	lea    0x10(%rsp),%rcx
+ 13b:	4c 89 c7             	mov    %r8,%rdi
+ 13e:	e8 00 00 00 00       	call   143 <mcel_scan+0x63>
+ 143:	48 85 c0             	test   %rax,%rax
+ 146:	78 18                	js     160 <mcel_scan+0x80>
+ 148:	0f b6 d0             	movzbl %al,%edx
+ 14b:	8b 44 24 0c          	mov    0xc(%rsp),%eax
+ 14f:	48 c1 e2 28          	shl    $0x28,%rdx
+ 153:	48 09 d0             	or     %rdx,%rax
+ 156:	eb b0                	jmp    108 <mcel_scan+0x28>
+ 158:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 15f:	00 
+ 160:	0f b6 c3             	movzbl %bl,%eax
+ 163:	48 c1 e0 20          	shl    $0x20,%rax
+ 167:	48 0f ba e8 28       	bts    $0x28,%rax
+ 16c:	eb 9a                	jmp    108 <mcel_scan+0x28>
+ 16e:	e8 00 00 00 00       	call   173 <mcel_scan+0x93>
+ 173:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 17a:	00 00 00 00 
+ 17e:	66 90                	xchg   %ax,%ax
+
+0000000000000180 <mcel_scant>:
+ 180:	f3 0f 1e fa          	endbr64 
+ 184:	53                   	push   %rbx
+ 185:	48 83 ec 20          	sub    $0x20,%rsp
+ 189:	0f b6 1f             	movzbl (%rdi),%ebx
+ 18c:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 193:	00 00 
+ 195:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+ 19a:	31 c0                	xor    %eax,%eax
+ 19c:	84 db                	test   %bl,%bl
+ 19e:	78 20                	js     1c0 <mcel_scant+0x40>
+ 1a0:	0f be c3             	movsbl %bl,%eax
+ 1a3:	48 0f ba e8 28       	bts    $0x28,%rax
+ 1a8:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 1ad:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 1b4:	00 00 
+ 1b6:	75 7c                	jne    234 <mcel_scant+0xb4>
+ 1b8:	48 83 c4 20          	add    $0x20,%rsp
+ 1bc:	5b                   	pop    %rbx
+ 1bd:	c3                   	ret    
+ 1be:	66 90                	xchg   %ax,%ax
+ 1c0:	31 c0                	xor    %eax,%eax
+ 1c2:	40 38 77 01          	cmp    %sil,0x1(%rdi)
+ 1c6:	49 89 f8             	mov    %rdi,%r8
+ 1c9:	c7 44 24 10 00 00 00 	movl   $0x0,0x10(%rsp)
+ 1d0:	00 
+ 1d1:	0f 95 c0             	setne  %al
+ 1d4:	48 8d 4c 24 10       	lea    0x10(%rsp),%rcx
+ 1d9:	48 8d 54 07 01       	lea    0x1(%rdi,%rax,1),%rdx
+ 1de:	31 c0                	xor    %eax,%eax
+ 1e0:	40 38 32             	cmp    %sil,(%rdx)
+ 1e3:	0f 95 c0             	setne  %al
+ 1e6:	48 01 c2             	add    %rax,%rdx
+ 1e9:	31 c0                	xor    %eax,%eax
+ 1eb:	40 38 32             	cmp    %sil,(%rdx)
+ 1ee:	4c 89 c6             	mov    %r8,%rsi
+ 1f1:	0f 95 c0             	setne  %al
+ 1f4:	48 01 c2             	add    %rax,%rdx
+ 1f7:	48 29 fa             	sub    %rdi,%rdx
+ 1fa:	48 8d 7c 24 0c       	lea    0xc(%rsp),%rdi
+ 1ff:	e8 00 00 00 00       	call   204 <mcel_scant+0x84>
+ 204:	48 89 c2             	mov    %rax,%rdx
+ 207:	48 85 c0             	test   %rax,%rax
+ 20a:	78 1c                	js     228 <mcel_scant+0xa8>
+ 20c:	8b 44 24 0c          	mov    0xc(%rsp),%eax
+ 210:	0f b6 ca             	movzbl %dl,%ecx
+ 213:	31 d2                	xor    %edx,%edx
+ 215:	48 c1 e2 20          	shl    $0x20,%rdx
+ 219:	48 c1 e1 28          	shl    $0x28,%rcx
+ 21d:	48 09 d0             	or     %rdx,%rax
+ 220:	48 09 c8             	or     %rcx,%rax
+ 223:	eb 83                	jmp    1a8 <mcel_scant+0x28>
+ 225:	0f 1f 00             	nopl   (%rax)
+ 228:	0f b6 d3             	movzbl %bl,%edx
+ 22b:	b9 01 00 00 00       	mov    $0x1,%ecx
+ 230:	31 c0                	xor    %eax,%eax
+ 232:	eb e1                	jmp    215 <mcel_scant+0x95>
+ 234:	e8 00 00 00 00       	call   239 <mcel_scant+0xb9>
+ 239:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000240 <mcel_scanz>:
+ 240:	f3 0f 1e fa          	endbr64 
+ 244:	53                   	push   %rbx
+ 245:	48 83 ec 20          	sub    $0x20,%rsp
+ 249:	0f b6 1f             	movzbl (%rdi),%ebx
+ 24c:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 253:	00 00 
+ 255:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+ 25a:	31 c0                	xor    %eax,%eax
+ 25c:	84 db                	test   %bl,%bl
+ 25e:	78 38                	js     298 <mcel_scanz+0x58>
+ 260:	0f be c3             	movsbl %bl,%eax
+ 263:	ba 01 00 00 00       	mov    $0x1,%edx
+ 268:	31 c9                	xor    %ecx,%ecx
+ 26a:	48 c1 e1 20          	shl    $0x20,%rcx
+ 26e:	0f b6 d2             	movzbl %dl,%edx
+ 271:	48 c1 e2 28          	shl    $0x28,%rdx
+ 275:	48 09 c8             	or     %rcx,%rax
+ 278:	48 09 d0             	or     %rdx,%rax
+ 27b:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 280:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 287:	00 00 
+ 289:	75 6c                	jne    2f7 <mcel_scanz+0xb7>
+ 28b:	48 83 c4 20          	add    $0x20,%rsp
+ 28f:	5b                   	pop    %rbx
+ 290:	c3                   	ret    
+ 291:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 298:	80 7f 01 01          	cmpb   $0x1,0x1(%rdi)
+ 29c:	48 89 fa             	mov    %rdi,%rdx
+ 29f:	48 8d 4c 24 10       	lea    0x10(%rsp),%rcx
+ 2a4:	48 89 fe             	mov    %rdi,%rsi
+ 2a7:	48 83 da fe          	sbb    $0xfffffffffffffffe,%rdx
+ 2ab:	c7 44 24 10 00 00 00 	movl   $0x0,0x10(%rsp)
+ 2b2:	00 
+ 2b3:	80 3a 01             	cmpb   $0x1,(%rdx)
+ 2b6:	48 83 da ff          	sbb    $0xffffffffffffffff,%rdx
+ 2ba:	31 c0                	xor    %eax,%eax
+ 2bc:	80 3a 00             	cmpb   $0x0,(%rdx)
+ 2bf:	0f 95 c0             	setne  %al
+ 2c2:	48 01 c2             	add    %rax,%rdx
+ 2c5:	48 29 fa             	sub    %rdi,%rdx
+ 2c8:	48 8d 7c 24 0c       	lea    0xc(%rsp),%rdi
+ 2cd:	e8 00 00 00 00       	call   2d2 <mcel_scanz+0x92>
+ 2d2:	48 89 c2             	mov    %rax,%rdx
+ 2d5:	48 85 c0             	test   %rax,%rax
+ 2d8:	78 0e                	js     2e8 <mcel_scanz+0xa8>
+ 2da:	8b 44 24 0c          	mov    0xc(%rsp),%eax
+ 2de:	31 c9                	xor    %ecx,%ecx
+ 2e0:	eb 88                	jmp    26a <mcel_scanz+0x2a>
+ 2e2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 2e8:	0f b6 cb             	movzbl %bl,%ecx
+ 2eb:	ba 01 00 00 00       	mov    $0x1,%edx
+ 2f0:	31 c0                	xor    %eax,%eax
+ 2f2:	e9 73 ff ff ff       	jmp    26a <mcel_scanz+0x2a>
+ 2f7:	e8 00 00 00 00       	call   2fc <mcel_scanz+0xbc>

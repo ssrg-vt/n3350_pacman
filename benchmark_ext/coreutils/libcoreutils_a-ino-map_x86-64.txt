@@ -1,0 +1,123 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-ino-map.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <ino_hash>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 8b 07             	mov    (%rdi),%rax
+   7:	31 d2                	xor    %edx,%edx
+   9:	48 f7 f6             	div    %rsi
+   c:	48 89 d0             	mov    %rdx,%rax
+   f:	c3                   	ret    
+
+0000000000000010 <ino_compare>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	48 8b 06             	mov    (%rsi),%rax
+  17:	48 39 07             	cmp    %rax,(%rdi)
+  1a:	0f 94 c0             	sete   %al
+  1d:	c3                   	ret    
+  1e:	66 90                	xchg   %ax,%ax
+
+0000000000000020 <ino_map_alloc>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	41 54                	push   %r12
+  26:	53                   	push   %rbx
+  27:	48 89 fb             	mov    %rdi,%rbx
+  2a:	bf 18 00 00 00       	mov    $0x18,%edi
+  2f:	48 83 ec 08          	sub    $0x8,%rsp
+  33:	e8 00 00 00 00       	call   38 <ino_map_alloc+0x18>
+  38:	49 89 c4             	mov    %rax,%r12
+  3b:	48 85 c0             	test   %rax,%rax
+  3e:	74 38                	je     78 <ino_map_alloc+0x58>
+  40:	4c 8b 05 00 00 00 00 	mov    0x0(%rip),%r8        # 47 <ino_map_alloc+0x27>
+  47:	48 8d 0d c2 ff ff ff 	lea    -0x3e(%rip),%rcx        # 10 <ino_compare>
+  4e:	31 f6                	xor    %esi,%esi
+  50:	bf fd 03 00 00       	mov    $0x3fd,%edi
+  55:	48 8d 15 a4 ff ff ff 	lea    -0x5c(%rip),%rdx        # 0 <ino_hash>
+  5c:	e8 00 00 00 00       	call   61 <ino_map_alloc+0x41>
+  61:	49 89 04 24          	mov    %rax,(%r12)
+  65:	48 85 c0             	test   %rax,%rax
+  68:	74 19                	je     83 <ino_map_alloc+0x63>
+  6a:	49 89 5c 24 08       	mov    %rbx,0x8(%r12)
+  6f:	49 c7 44 24 10 00 00 	movq   $0x0,0x10(%r12)
+  76:	00 00 
+  78:	48 83 c4 08          	add    $0x8,%rsp
+  7c:	4c 89 e0             	mov    %r12,%rax
+  7f:	5b                   	pop    %rbx
+  80:	41 5c                	pop    %r12
+  82:	c3                   	ret    
+  83:	4c 89 e7             	mov    %r12,%rdi
+  86:	45 31 e4             	xor    %r12d,%r12d
+  89:	e8 00 00 00 00       	call   8e <ino_map_alloc+0x6e>
+  8e:	eb e8                	jmp    78 <ino_map_alloc+0x58>
+
+0000000000000090 <ino_map_free>:
+  90:	f3 0f 1e fa          	endbr64 
+  94:	55                   	push   %rbp
+  95:	48 89 fd             	mov    %rdi,%rbp
+  98:	48 8b 3f             	mov    (%rdi),%rdi
+  9b:	e8 00 00 00 00       	call   a0 <ino_map_free+0x10>
+  a0:	48 8b 7d 10          	mov    0x10(%rbp),%rdi
+  a4:	e8 00 00 00 00       	call   a9 <ino_map_free+0x19>
+  a9:	48 89 ef             	mov    %rbp,%rdi
+  ac:	5d                   	pop    %rbp
+  ad:	e9 00 00 00 00       	jmp    b2 <ino_map_free+0x22>
+  b2:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  b9:	00 00 00 00 
+  bd:	0f 1f 00             	nopl   (%rax)
+
+00000000000000c0 <ino_map_insert>:
+  c0:	f3 0f 1e fa          	endbr64 
+  c4:	41 54                	push   %r12
+  c6:	49 89 f4             	mov    %rsi,%r12
+  c9:	55                   	push   %rbp
+  ca:	48 89 fd             	mov    %rdi,%rbp
+  cd:	53                   	push   %rbx
+  ce:	48 8b 5f 10          	mov    0x10(%rdi),%rbx
+  d2:	48 85 db             	test   %rbx,%rbx
+  d5:	74 51                	je     128 <ino_map_insert+0x68>
+  d7:	48 39 33             	cmp    %rsi,(%rbx)
+  da:	74 74                	je     150 <ino_map_insert+0x90>
+  dc:	4c 89 23             	mov    %r12,(%rbx)
+  df:	48 8b 7d 00          	mov    0x0(%rbp),%rdi
+  e3:	48 89 de             	mov    %rbx,%rsi
+  e6:	e8 00 00 00 00       	call   eb <ino_map_insert+0x2b>
+  eb:	48 85 c0             	test   %rax,%rax
+  ee:	74 50                	je     140 <ino_map_insert+0x80>
+  f0:	48 39 c3             	cmp    %rax,%rbx
+  f3:	74 13                	je     108 <ino_map_insert+0x48>
+  f5:	48 8b 40 08          	mov    0x8(%rax),%rax
+  f9:	48 89 43 08          	mov    %rax,0x8(%rbx)
+  fd:	5b                   	pop    %rbx
+  fe:	5d                   	pop    %rbp
+  ff:	41 5c                	pop    %r12
+ 101:	c3                   	ret    
+ 102:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 108:	48 8b 45 08          	mov    0x8(%rbp),%rax
+ 10c:	48 c7 45 10 00 00 00 	movq   $0x0,0x10(%rbp)
+ 113:	00 
+ 114:	48 8d 50 01          	lea    0x1(%rax),%rdx
+ 118:	48 89 55 08          	mov    %rdx,0x8(%rbp)
+ 11c:	48 89 43 08          	mov    %rax,0x8(%rbx)
+ 120:	5b                   	pop    %rbx
+ 121:	5d                   	pop    %rbp
+ 122:	41 5c                	pop    %r12
+ 124:	c3                   	ret    
+ 125:	0f 1f 00             	nopl   (%rax)
+ 128:	bf 10 00 00 00       	mov    $0x10,%edi
+ 12d:	e8 00 00 00 00       	call   132 <ino_map_insert+0x72>
+ 132:	48 89 45 10          	mov    %rax,0x10(%rbp)
+ 136:	48 89 c3             	mov    %rax,%rbx
+ 139:	48 85 c0             	test   %rax,%rax
+ 13c:	75 9e                	jne    dc <ino_map_insert+0x1c>
+ 13e:	66 90                	xchg   %ax,%ax
+ 140:	48 c7 c0 ff ff ff ff 	mov    $0xffffffffffffffff,%rax
+ 147:	eb b4                	jmp    fd <ino_map_insert+0x3d>
+ 149:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 150:	48 8b 43 08          	mov    0x8(%rbx),%rax
+ 154:	5b                   	pop    %rbx
+ 155:	5d                   	pop    %rbp
+ 156:	41 5c                	pop    %r12
+ 158:	c3                   	ret    

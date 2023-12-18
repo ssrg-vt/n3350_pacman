@@ -1,0 +1,14 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-dup-safer-flag.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <dup_safer_flag>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	81 e6 00 00 08 00    	and    $0x80000,%esi
+   a:	b8 06 04 00 00       	mov    $0x406,%eax
+   f:	ba 03 00 00 00       	mov    $0x3,%edx
+  14:	0f 45 f0             	cmovne %eax,%esi
+  17:	31 c0                	xor    %eax,%eax
+  19:	e9 00 00 00 00       	jmp    1e <dup_safer_flag+0x1e>

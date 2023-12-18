@@ -1,0 +1,35 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-printf-frexp.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <printf_frexp>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	53                   	push   %rbx
+   5:	48 89 fb             	mov    %rdi,%rbx
+   8:	48 83 ec 10          	sub    $0x10,%rsp
+   c:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  13:	00 00 
+  15:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  1a:	31 c0                	xor    %eax,%eax
+  1c:	48 8d 7c 24 04       	lea    0x4(%rsp),%rdi
+  21:	e8 00 00 00 00       	call   26 <printf_frexp+0x26>
+  26:	8b 7c 24 04          	mov    0x4(%rsp),%edi
+  2a:	f2 0f 58 c0          	addsd  %xmm0,%xmm0
+  2e:	8d 47 ff             	lea    -0x1(%rdi),%eax
+  31:	3d 02 fc ff ff       	cmp    $0xfffffc02,%eax
+  36:	7c 18                	jl     50 <printf_frexp+0x50>
+  38:	89 03                	mov    %eax,(%rbx)
+  3a:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  3f:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  46:	00 00 
+  48:	75 18                	jne    62 <printf_frexp+0x62>
+  4a:	48 83 c4 10          	add    $0x10,%rsp
+  4e:	5b                   	pop    %rbx
+  4f:	c3                   	ret    
+  50:	81 c7 fd 03 00 00    	add    $0x3fd,%edi
+  56:	e8 00 00 00 00       	call   5b <printf_frexp+0x5b>
+  5b:	b8 02 fc ff ff       	mov    $0xfffffc02,%eax
+  60:	eb d6                	jmp    38 <printf_frexp+0x38>
+  62:	e8 00 00 00 00       	call   67 <printf_frexp+0x67>

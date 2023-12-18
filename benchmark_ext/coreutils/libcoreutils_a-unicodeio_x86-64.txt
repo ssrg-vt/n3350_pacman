@@ -1,0 +1,251 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-unicodeio.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fwrite_success_callback>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 83 ec 08          	sub    $0x8,%rsp
+   8:	48 89 d1             	mov    %rdx,%rcx
+   b:	48 89 f2             	mov    %rsi,%rdx
+   e:	be 01 00 00 00       	mov    $0x1,%esi
+  13:	e8 00 00 00 00       	call   18 <fwrite_success_callback+0x18>
+  18:	31 c0                	xor    %eax,%eax
+  1a:	48 83 c4 08          	add    $0x8,%rsp
+  1e:	c3                   	ret    
+  1f:	90                   	nop
+
+0000000000000020 <exit_failure_callback>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	41 54                	push   %r12
+  26:	ba 05 00 00 00       	mov    $0x5,%edx
+  2b:	41 89 fc             	mov    %edi,%r12d
+  2e:	53                   	push   %rbx
+  2f:	48 83 ec 08          	sub    $0x8,%rsp
+  33:	48 85 f6             	test   %rsi,%rsi
+  36:	74 34                	je     6c <exit_failure_callback+0x4c>
+  38:	31 ff                	xor    %edi,%edi
+  3a:	e8 00 00 00 00       	call   3f <exit_failure_callback+0x1f>
+  3f:	ba 05 00 00 00       	mov    $0x5,%edx
+  44:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 4b <exit_failure_callback+0x2b>
+  4b:	31 ff                	xor    %edi,%edi
+  4d:	48 89 c3             	mov    %rax,%rbx
+  50:	e8 00 00 00 00       	call   55 <exit_failure_callback+0x35>
+  55:	49 89 d8             	mov    %rbx,%r8
+  58:	44 89 e1             	mov    %r12d,%ecx
+  5b:	31 f6                	xor    %esi,%esi
+  5d:	48 89 c2             	mov    %rax,%rdx
+  60:	bf 01 00 00 00       	mov    $0x1,%edi
+  65:	31 c0                	xor    %eax,%eax
+  67:	e8 00 00 00 00       	call   6c <exit_failure_callback+0x4c>
+  6c:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 73 <exit_failure_callback+0x53>
+  73:	31 ff                	xor    %edi,%edi
+  75:	e8 00 00 00 00       	call   7a <exit_failure_callback+0x5a>
+  7a:	44 89 e1             	mov    %r12d,%ecx
+  7d:	31 f6                	xor    %esi,%esi
+  7f:	bf 01 00 00 00       	mov    $0x1,%edi
+  84:	48 89 c2             	mov    %rax,%rdx
+  87:	31 c0                	xor    %eax,%eax
+  89:	e8 00 00 00 00       	call   8e <exit_failure_callback+0x6e>
+  8e:	66 90                	xchg   %ax,%ax
+
+0000000000000090 <fallback_failure_callback>:
+  90:	f3 0f 1e fa          	endbr64 
+  94:	89 f9                	mov    %edi,%ecx
+  96:	48 83 ec 08          	sub    $0x8,%rsp
+  9a:	48 89 d7             	mov    %rdx,%rdi
+  9d:	81 f9 ff ff 00 00    	cmp    $0xffff,%ecx
+  a3:	77 23                	ja     c8 <fallback_failure_callback+0x38>
+  a5:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # ac <fallback_failure_callback+0x1c>
+  ac:	be 01 00 00 00       	mov    $0x1,%esi
+  b1:	31 c0                	xor    %eax,%eax
+  b3:	e8 00 00 00 00       	call   b8 <fallback_failure_callback+0x28>
+  b8:	48 c7 c0 ff ff ff ff 	mov    $0xffffffffffffffff,%rax
+  bf:	48 83 c4 08          	add    $0x8,%rsp
+  c3:	c3                   	ret    
+  c4:	0f 1f 40 00          	nopl   0x0(%rax)
+  c8:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # cf <fallback_failure_callback+0x3f>
+  cf:	be 01 00 00 00       	mov    $0x1,%esi
+  d4:	31 c0                	xor    %eax,%eax
+  d6:	e8 00 00 00 00       	call   db <fallback_failure_callback+0x4b>
+  db:	48 c7 c0 ff ff ff ff 	mov    $0xffffffffffffffff,%rax
+  e2:	48 83 c4 08          	add    $0x8,%rsp
+  e6:	c3                   	ret    
+  e7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  ee:	00 00 
+
+00000000000000f0 <unicode_to_mb>:
+  f0:	f3 0f 1e fa          	endbr64 
+  f4:	41 57                	push   %r15
+  f6:	41 56                	push   %r14
+  f8:	41 55                	push   %r13
+  fa:	49 89 cd             	mov    %rcx,%r13
+  fd:	41 54                	push   %r12
+  ff:	49 89 d4             	mov    %rdx,%r12
+ 102:	55                   	push   %rbp
+ 103:	89 fd                	mov    %edi,%ebp
+ 105:	53                   	push   %rbx
+ 106:	48 89 f3             	mov    %rsi,%rbx
+ 109:	48 83 ec 78          	sub    $0x78,%rsp
+ 10d:	8b 15 00 00 00 00    	mov    0x0(%rip),%edx        # 113 <unicode_to_mb+0x23>
+ 113:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 11a:	00 00 
+ 11c:	48 89 44 24 68       	mov    %rax,0x68(%rsp)
+ 121:	31 c0                	xor    %eax,%eax
+ 123:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        # 129 <unicode_to_mb+0x39>
+ 129:	85 c0                	test   %eax,%eax
+ 12b:	0f 84 0f 01 00 00    	je     240 <unicode_to_mb+0x150>
+ 131:	85 d2                	test   %edx,%edx
+ 133:	75 0e                	jne    143 <unicode_to_mb+0x53>
+ 135:	48 83 3d 00 00 00 00 	cmpq   $0xffffffffffffffff,0x0(%rip)        # 13d <unicode_to_mb+0x4d>
+ 13c:	ff 
+ 13d:	0f 84 9d 01 00 00    	je     2e0 <unicode_to_mb+0x1f0>
+ 143:	83 fd 7f             	cmp    $0x7f,%ebp
+ 146:	0f 87 34 01 00 00    	ja     280 <unicode_to_mb+0x190>
+ 14c:	40 88 6c 24 3a       	mov    %bpl,0x3a(%rsp)
+ 151:	be 01 00 00 00       	mov    $0x1,%esi
+ 156:	4c 8d 74 24 3a       	lea    0x3a(%rsp),%r14
+ 15b:	85 d2                	test   %edx,%edx
+ 15d:	74 31                	je     190 <unicode_to_mb+0xa0>
+ 15f:	4c 89 ea             	mov    %r13,%rdx
+ 162:	4c 89 f7             	mov    %r14,%rdi
+ 165:	ff d3                	call   *%rbx
+ 167:	48 8b 54 24 68       	mov    0x68(%rsp),%rdx
+ 16c:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 173:	00 00 
+ 175:	0f 85 d5 01 00 00    	jne    350 <unicode_to_mb+0x260>
+ 17b:	48 83 c4 78          	add    $0x78,%rsp
+ 17f:	5b                   	pop    %rbx
+ 180:	5d                   	pop    %rbp
+ 181:	41 5c                	pop    %r12
+ 183:	41 5d                	pop    %r13
+ 185:	41 5e                	pop    %r14
+ 187:	41 5f                	pop    %r15
+ 189:	c3                   	ret    
+ 18a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 190:	4c 8d 7c 24 28       	lea    0x28(%rsp),%r15
+ 195:	4c 89 74 24 18       	mov    %r14,0x18(%rsp)
+ 19a:	4c 8d 44 24 30       	lea    0x30(%rsp),%r8
+ 19f:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 1a6 <unicode_to_mb+0xb6>
+ 1a6:	48 89 74 24 20       	mov    %rsi,0x20(%rsp)
+ 1ab:	4c 8d 74 24 40       	lea    0x40(%rsp),%r14
+ 1b0:	48 8d 54 24 20       	lea    0x20(%rsp),%rdx
+ 1b5:	4c 89 f9             	mov    %r15,%rcx
+ 1b8:	48 8d 74 24 18       	lea    0x18(%rsp),%rsi
+ 1bd:	4c 89 74 24 28       	mov    %r14,0x28(%rsp)
+ 1c2:	48 c7 44 24 30 19 00 	movq   $0x19,0x30(%rsp)
+ 1c9:	00 00 
+ 1cb:	4c 89 44 24 08       	mov    %r8,0x8(%rsp)
+ 1d0:	e8 00 00 00 00       	call   1d5 <unicode_to_mb+0xe5>
+ 1d5:	48 83 7c 24 20 00    	cmpq   $0x0,0x20(%rsp)
+ 1db:	0f 85 ef 00 00 00    	jne    2d0 <unicode_to_mb+0x1e0>
+ 1e1:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+ 1e5:	0f 84 e5 00 00 00    	je     2d0 <unicode_to_mb+0x1e0>
+ 1eb:	48 85 c0             	test   %rax,%rax
+ 1ee:	4c 8b 44 24 08       	mov    0x8(%rsp),%r8
+ 1f3:	74 12                	je     207 <unicode_to_mb+0x117>
+ 1f5:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+ 1fa:	4c 29 f0             	sub    %r14,%rax
+ 1fd:	48 83 f8 01          	cmp    $0x1,%rax
+ 201:	0f 84 b9 00 00 00    	je     2c0 <unicode_to_mb+0x1d0>
+ 207:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 20e <unicode_to_mb+0x11e>
+ 20e:	31 d2                	xor    %edx,%edx
+ 210:	31 f6                	xor    %esi,%esi
+ 212:	4c 89 f9             	mov    %r15,%rcx
+ 215:	e8 00 00 00 00       	call   21a <unicode_to_mb+0x12a>
+ 21a:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+ 21e:	0f 84 ac 00 00 00    	je     2d0 <unicode_to_mb+0x1e0>
+ 224:	48 8b 74 24 28       	mov    0x28(%rsp),%rsi
+ 229:	4c 89 ea             	mov    %r13,%rdx
+ 22c:	4c 89 f7             	mov    %r14,%rdi
+ 22f:	4c 29 f6             	sub    %r14,%rsi
+ 232:	ff d3                	call   *%rbx
+ 234:	e9 2e ff ff ff       	jmp    167 <unicode_to_mb+0x77>
+ 239:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 240:	e8 00 00 00 00       	call   245 <unicode_to_mb+0x155>
+ 245:	4c 8d 3d 00 00 00 00 	lea    0x0(%rip),%r15        # 24c <unicode_to_mb+0x15c>
+ 24c:	4c 89 fe             	mov    %r15,%rsi
+ 24f:	48 89 c7             	mov    %rax,%rdi
+ 252:	49 89 c6             	mov    %rax,%r14
+ 255:	e8 00 00 00 00       	call   25a <unicode_to_mb+0x16a>
+ 25a:	31 d2                	xor    %edx,%edx
+ 25c:	85 c0                	test   %eax,%eax
+ 25e:	0f 94 c2             	sete   %dl
+ 261:	89 15 00 00 00 00    	mov    %edx,0x0(%rip)        # 267 <unicode_to_mb+0x177>
+ 267:	0f 85 a3 00 00 00    	jne    310 <unicode_to_mb+0x220>
+ 26d:	c7 05 00 00 00 00 01 	movl   $0x1,0x0(%rip)        # 277 <unicode_to_mb+0x187>
+ 274:	00 00 00 
+ 277:	e9 b5 fe ff ff       	jmp    131 <unicode_to_mb+0x41>
+ 27c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 280:	4c 8d 74 24 3a       	lea    0x3a(%rsp),%r14
+ 285:	ba 06 00 00 00       	mov    $0x6,%edx
+ 28a:	89 ee                	mov    %ebp,%esi
+ 28c:	4c 89 f7             	mov    %r14,%rdi
+ 28f:	e8 00 00 00 00       	call   294 <unicode_to_mb+0x1a4>
+ 294:	85 c0                	test   %eax,%eax
+ 296:	79 18                	jns    2b0 <unicode_to_mb+0x1c0>
+ 298:	4c 89 ea             	mov    %r13,%rdx
+ 29b:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2a2 <unicode_to_mb+0x1b2>
+ 2a2:	89 ef                	mov    %ebp,%edi
+ 2a4:	41 ff d4             	call   *%r12
+ 2a7:	e9 bb fe ff ff       	jmp    167 <unicode_to_mb+0x77>
+ 2ac:	0f 1f 40 00          	nopl   0x0(%rax)
+ 2b0:	8b 15 00 00 00 00    	mov    0x0(%rip),%edx        # 2b6 <unicode_to_mb+0x1c6>
+ 2b6:	48 63 f0             	movslq %eax,%rsi
+ 2b9:	e9 9d fe ff ff       	jmp    15b <unicode_to_mb+0x6b>
+ 2be:	66 90                	xchg   %ax,%ax
+ 2c0:	80 7c 24 40 3f       	cmpb   $0x3f,0x40(%rsp)
+ 2c5:	0f 85 3c ff ff ff    	jne    207 <unicode_to_mb+0x117>
+ 2cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 2d0:	4c 89 ea             	mov    %r13,%rdx
+ 2d3:	31 f6                	xor    %esi,%esi
+ 2d5:	89 ef                	mov    %ebp,%edi
+ 2d7:	41 ff d4             	call   *%r12
+ 2da:	e9 88 fe ff ff       	jmp    167 <unicode_to_mb+0x77>
+ 2df:	90                   	nop
+ 2e0:	48 8b 44 24 68       	mov    0x68(%rsp),%rax
+ 2e5:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 2ec:	00 00 
+ 2ee:	75 60                	jne    350 <unicode_to_mb+0x260>
+ 2f0:	48 83 c4 78          	add    $0x78,%rsp
+ 2f4:	4c 89 ea             	mov    %r13,%rdx
+ 2f7:	89 ef                	mov    %ebp,%edi
+ 2f9:	4c 89 e0             	mov    %r12,%rax
+ 2fc:	5b                   	pop    %rbx
+ 2fd:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 304 <unicode_to_mb+0x214>
+ 304:	5d                   	pop    %rbp
+ 305:	41 5c                	pop    %r12
+ 307:	41 5d                	pop    %r13
+ 309:	41 5e                	pop    %r14
+ 30b:	41 5f                	pop    %r15
+ 30d:	ff e0                	jmp    *%rax
+ 30f:	90                   	nop
+ 310:	4c 89 fe             	mov    %r15,%rsi
+ 313:	4c 89 f7             	mov    %r14,%rdi
+ 316:	e8 00 00 00 00       	call   31b <unicode_to_mb+0x22b>
+ 31b:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 322 <unicode_to_mb+0x232>
+ 322:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+ 326:	74 10                	je     338 <unicode_to_mb+0x248>
+ 328:	8b 15 00 00 00 00    	mov    0x0(%rip),%edx        # 32e <unicode_to_mb+0x23e>
+ 32e:	e9 3a ff ff ff       	jmp    26d <unicode_to_mb+0x17d>
+ 333:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 338:	4c 89 fe             	mov    %r15,%rsi
+ 33b:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 342 <unicode_to_mb+0x252>
+ 342:	e8 00 00 00 00       	call   347 <unicode_to_mb+0x257>
+ 347:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 34e <unicode_to_mb+0x25e>
+ 34e:	eb d8                	jmp    328 <unicode_to_mb+0x238>
+ 350:	e8 00 00 00 00       	call   355 <unicode_to_mb+0x265>
+ 355:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 35c:	00 00 00 00 
+
+0000000000000360 <print_unicode_char>:
+ 360:	f3 0f 1e fa          	endbr64 
+ 364:	85 d2                	test   %edx,%edx
+ 366:	48 8d 05 23 fd ff ff 	lea    -0x2dd(%rip),%rax        # 90 <fallback_failure_callback>
+ 36d:	48 8d 15 ac fc ff ff 	lea    -0x354(%rip),%rdx        # 20 <exit_failure_callback>
+ 374:	48 89 f9             	mov    %rdi,%rcx
+ 377:	48 0f 44 d0          	cmove  %rax,%rdx
+ 37b:	89 f7                	mov    %esi,%edi
+ 37d:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 384 <print_unicode_char+0x24>
+ 384:	e9 67 fd ff ff       	jmp    f0 <unicode_to_mb>

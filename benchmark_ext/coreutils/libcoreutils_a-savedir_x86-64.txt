@@ -1,0 +1,259 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-savedir.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <direntry_cmp_inode>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 8b 46 08          	mov    0x8(%rsi),%rax
+   8:	48 39 47 08          	cmp    %rax,0x8(%rdi)
+   c:	0f 97 c0             	seta   %al
+   f:	0f b6 c0             	movzbl %al,%eax
+  12:	83 d8 00             	sbb    $0x0,%eax
+  15:	c3                   	ret    
+  16:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  1d:	00 00 00 
+
+0000000000000020 <direntry_cmp_name>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	48 8b 36             	mov    (%rsi),%rsi
+  27:	48 8b 3f             	mov    (%rdi),%rdi
+  2a:	e9 00 00 00 00       	jmp    2f <direntry_cmp_name+0xf>
+  2f:	90                   	nop
+
+0000000000000030 <streamsavedir>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	41 57                	push   %r15
+  36:	89 f6                	mov    %esi,%esi
+  38:	41 56                	push   %r14
+  3a:	41 55                	push   %r13
+  3c:	41 54                	push   %r12
+  3e:	55                   	push   %rbp
+  3f:	53                   	push   %rbx
+  40:	48 83 ec 48          	sub    $0x48,%rsp
+  44:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  4b:	00 00 
+  4d:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
+  52:	31 c0                	xor    %eax,%eax
+  54:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 5b <streamsavedir+0x2b>
+  5b:	48 c7 44 24 28 00 00 	movq   $0x0,0x28(%rsp)
+  62:	00 00 
+  64:	48 c7 44 24 30 00 00 	movq   $0x0,0x30(%rsp)
+  6b:	00 00 
+  6d:	48 8b 04 f0          	mov    (%rax,%rsi,8),%rax
+  71:	48 89 04 24          	mov    %rax,(%rsp)
+  75:	48 85 ff             	test   %rdi,%rdi
+  78:	0f 84 8d 02 00 00    	je     30b <streamsavedir+0x2db>
+  7e:	48 89 fd             	mov    %rdi,%rbp
+  81:	31 db                	xor    %ebx,%ebx
+  83:	45 31 ed             	xor    %r13d,%r13d
+  86:	45 31 ff             	xor    %r15d,%r15d
+  89:	e8 00 00 00 00       	call   8e <streamsavedir+0x5e>
+  8e:	45 31 f6             	xor    %r14d,%r14d
+  91:	49 89 c4             	mov    %rax,%r12
+  94:	eb 0e                	jmp    a4 <streamsavedir+0x74>
+  96:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  9d:	00 00 00 
+  a0:	84 c0                	test   %al,%al
+  a2:	75 3c                	jne    e0 <streamsavedir+0xb0>
+  a4:	41 c7 04 24 00 00 00 	movl   $0x0,(%r12)
+  ab:	00 
+  ac:	48 89 ef             	mov    %rbp,%rdi
+  af:	e8 00 00 00 00       	call   b4 <streamsavedir+0x84>
+  b4:	49 89 c1             	mov    %rax,%r9
+  b7:	48 85 c0             	test   %rax,%rax
+  ba:	0f 84 a0 00 00 00    	je     160 <streamsavedir+0x130>
+  c0:	4c 8d 50 13          	lea    0x13(%rax),%r10
+  c4:	0f b6 40 13          	movzbl 0x13(%rax),%eax
+  c8:	3c 2e                	cmp    $0x2e,%al
+  ca:	75 d4                	jne    a0 <streamsavedir+0x70>
+  cc:	41 0f b6 41 14       	movzbl 0x14(%r9),%eax
+  d1:	3c 2e                	cmp    $0x2e,%al
+  d3:	75 cb                	jne    a0 <streamsavedir+0x70>
+  d5:	41 0f b6 41 15       	movzbl 0x15(%r9),%eax
+  da:	84 c0                	test   %al,%al
+  dc:	74 c6                	je     a4 <streamsavedir+0x74>
+  de:	66 90                	xchg   %ax,%ax
+  e0:	4c 89 d7             	mov    %r10,%rdi
+  e3:	4c 89 54 24 08       	mov    %r10,0x8(%rsp)
+  e8:	4c 89 4c 24 10       	mov    %r9,0x10(%rsp)
+  ed:	e8 00 00 00 00       	call   f2 <streamsavedir+0xc2>
+  f2:	48 83 3c 24 00       	cmpq   $0x0,(%rsp)
+  f7:	4c 8b 54 24 08       	mov    0x8(%rsp),%r10
+  fc:	4c 8d 58 01          	lea    0x1(%rax),%r11
+ 100:	0f 84 1a 01 00 00    	je     220 <streamsavedir+0x1f0>
+ 106:	4c 39 6c 24 30       	cmp    %r13,0x30(%rsp)
+ 10b:	4c 8b 4c 24 10       	mov    0x10(%rsp),%r9
+ 110:	0f 84 4a 01 00 00    	je     260 <streamsavedir+0x230>
+ 116:	4c 89 ea             	mov    %r13,%rdx
+ 119:	4c 89 d7             	mov    %r10,%rdi
+ 11c:	4c 89 4c 24 18       	mov    %r9,0x18(%rsp)
+ 121:	49 83 c5 01          	add    $0x1,%r13
+ 125:	48 c1 e2 04          	shl    $0x4,%rdx
+ 129:	4c 89 5c 24 10       	mov    %r11,0x10(%rsp)
+ 12e:	4c 01 fa             	add    %r15,%rdx
+ 131:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+ 136:	e8 00 00 00 00       	call   13b <streamsavedir+0x10b>
+ 13b:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 140:	4c 8b 4c 24 18       	mov    0x18(%rsp),%r9
+ 145:	4c 8b 5c 24 10       	mov    0x10(%rsp),%r11
+ 14a:	48 89 02             	mov    %rax,(%rdx)
+ 14d:	49 8b 01             	mov    (%r9),%rax
+ 150:	48 89 42 08          	mov    %rax,0x8(%rdx)
+ 154:	4c 01 db             	add    %r11,%rbx
+ 157:	e9 48 ff ff ff       	jmp    a4 <streamsavedir+0x74>
+ 15c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 160:	41 8b 04 24          	mov    (%r12),%eax
+ 164:	85 c0                	test   %eax,%eax
+ 166:	0f 85 87 01 00 00    	jne    2f3 <streamsavedir+0x2c3>
+ 16c:	48 83 3c 24 00       	cmpq   $0x0,(%rsp)
+ 171:	0f 84 d9 00 00 00    	je     250 <streamsavedir+0x220>
+ 177:	48 8d 6b 01          	lea    0x1(%rbx),%rbp
+ 17b:	4d 85 ed             	test   %r13,%r13
+ 17e:	75 10                	jne    190 <streamsavedir+0x160>
+ 180:	48 89 ef             	mov    %rbp,%rdi
+ 183:	e8 00 00 00 00       	call   188 <streamsavedir+0x158>
+ 188:	49 89 c6             	mov    %rax,%r14
+ 18b:	48 89 c3             	mov    %rax,%rbx
+ 18e:	eb 5d                	jmp    1ed <streamsavedir+0x1bd>
+ 190:	48 8b 0c 24          	mov    (%rsp),%rcx
+ 194:	4c 89 ee             	mov    %r13,%rsi
+ 197:	ba 10 00 00 00       	mov    $0x10,%edx
+ 19c:	4c 89 ff             	mov    %r15,%rdi
+ 19f:	49 c1 e5 04          	shl    $0x4,%r13
+ 1a3:	31 db                	xor    %ebx,%ebx
+ 1a5:	e8 00 00 00 00       	call   1aa <streamsavedir+0x17a>
+ 1aa:	48 89 ef             	mov    %rbp,%rdi
+ 1ad:	4d 01 fd             	add    %r15,%r13
+ 1b0:	4c 89 fd             	mov    %r15,%rbp
+ 1b3:	e8 00 00 00 00       	call   1b8 <streamsavedir+0x188>
+ 1b8:	49 89 c6             	mov    %rax,%r14
+ 1bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 1c0:	48 8b 75 00          	mov    0x0(%rbp),%rsi
+ 1c4:	4d 8d 24 1e          	lea    (%r14,%rbx,1),%r12
+ 1c8:	48 83 c5 10          	add    $0x10,%rbp
+ 1cc:	4c 89 e7             	mov    %r12,%rdi
+ 1cf:	e8 00 00 00 00       	call   1d4 <streamsavedir+0x1a4>
+ 1d4:	48 8b 7d f0          	mov    -0x10(%rbp),%rdi
+ 1d8:	4c 29 e0             	sub    %r12,%rax
+ 1db:	48 8d 5c 03 01       	lea    0x1(%rbx,%rax,1),%rbx
+ 1e0:	e8 00 00 00 00       	call   1e5 <streamsavedir+0x1b5>
+ 1e5:	49 39 ed             	cmp    %rbp,%r13
+ 1e8:	75 d6                	jne    1c0 <streamsavedir+0x190>
+ 1ea:	4c 01 f3             	add    %r14,%rbx
+ 1ed:	4c 89 ff             	mov    %r15,%rdi
+ 1f0:	e8 00 00 00 00       	call   1f5 <streamsavedir+0x1c5>
+ 1f5:	c6 03 00             	movb   $0x0,(%rbx)
+ 1f8:	48 8b 44 24 38       	mov    0x38(%rsp),%rax
+ 1fd:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 204:	00 00 
+ 206:	0f 85 07 01 00 00    	jne    313 <streamsavedir+0x2e3>
+ 20c:	48 83 c4 48          	add    $0x48,%rsp
+ 210:	4c 89 f0             	mov    %r14,%rax
+ 213:	5b                   	pop    %rbx
+ 214:	5d                   	pop    %rbp
+ 215:	41 5c                	pop    %r12
+ 217:	41 5d                	pop    %r13
+ 219:	41 5e                	pop    %r14
+ 21b:	41 5f                	pop    %r15
+ 21d:	c3                   	ret    
+ 21e:	66 90                	xchg   %ax,%ax
+ 220:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+ 225:	48 29 d8             	sub    %rbx,%rax
+ 228:	4c 39 d8             	cmp    %r11,%rax
+ 22b:	7e 73                	jle    2a0 <streamsavedir+0x270>
+ 22d:	4c 89 da             	mov    %r11,%rdx
+ 230:	49 8d 3c 1e          	lea    (%r14,%rbx,1),%rdi
+ 234:	4c 89 d6             	mov    %r10,%rsi
+ 237:	4c 89 5c 24 08       	mov    %r11,0x8(%rsp)
+ 23c:	e8 00 00 00 00       	call   241 <streamsavedir+0x211>
+ 241:	4c 8b 5c 24 08       	mov    0x8(%rsp),%r11
+ 246:	e9 09 ff ff ff       	jmp    154 <streamsavedir+0x124>
+ 24b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 250:	48 3b 5c 24 28       	cmp    0x28(%rsp),%rbx
+ 255:	0f 84 84 00 00 00    	je     2df <streamsavedir+0x2af>
+ 25b:	4c 01 f3             	add    %r14,%rbx
+ 25e:	eb 95                	jmp    1f5 <streamsavedir+0x1c5>
+ 260:	4c 89 ff             	mov    %r15,%rdi
+ 263:	48 8d 74 24 30       	lea    0x30(%rsp),%rsi
+ 268:	41 b8 10 00 00 00    	mov    $0x10,%r8d
+ 26e:	48 c7 c1 ff ff ff ff 	mov    $0xffffffffffffffff,%rcx
+ 275:	ba 01 00 00 00       	mov    $0x1,%edx
+ 27a:	4c 89 54 24 18       	mov    %r10,0x18(%rsp)
+ 27f:	4c 89 5c 24 08       	mov    %r11,0x8(%rsp)
+ 284:	e8 00 00 00 00       	call   289 <streamsavedir+0x259>
+ 289:	4c 8b 54 24 18       	mov    0x18(%rsp),%r10
+ 28e:	4c 8b 4c 24 10       	mov    0x10(%rsp),%r9
+ 293:	4c 8b 5c 24 08       	mov    0x8(%rsp),%r11
+ 298:	49 89 c7             	mov    %rax,%r15
+ 29b:	e9 76 fe ff ff       	jmp    116 <streamsavedir+0xe6>
+ 2a0:	4c 89 da             	mov    %r11,%rdx
+ 2a3:	4c 89 f7             	mov    %r14,%rdi
+ 2a6:	48 8d 74 24 28       	lea    0x28(%rsp),%rsi
+ 2ab:	4c 89 54 24 10       	mov    %r10,0x10(%rsp)
+ 2b0:	48 29 c2             	sub    %rax,%rdx
+ 2b3:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+ 2b9:	4c 89 5c 24 08       	mov    %r11,0x8(%rsp)
+ 2be:	48 b9 fe ff ff ff ff 	movabs $0x7ffffffffffffffe,%rcx
+ 2c5:	ff ff 7f 
+ 2c8:	e8 00 00 00 00       	call   2cd <streamsavedir+0x29d>
+ 2cd:	4c 8b 54 24 10       	mov    0x10(%rsp),%r10
+ 2d2:	4c 8b 5c 24 08       	mov    0x8(%rsp),%r11
+ 2d7:	49 89 c6             	mov    %rax,%r14
+ 2da:	e9 4e ff ff ff       	jmp    22d <streamsavedir+0x1fd>
+ 2df:	4c 89 f7             	mov    %r14,%rdi
+ 2e2:	48 8d 73 01          	lea    0x1(%rbx),%rsi
+ 2e6:	e8 00 00 00 00       	call   2eb <streamsavedir+0x2bb>
+ 2eb:	49 89 c6             	mov    %rax,%r14
+ 2ee:	e9 68 ff ff ff       	jmp    25b <streamsavedir+0x22b>
+ 2f3:	4c 89 ff             	mov    %r15,%rdi
+ 2f6:	e8 00 00 00 00       	call   2fb <streamsavedir+0x2cb>
+ 2fb:	4c 89 f7             	mov    %r14,%rdi
+ 2fe:	45 31 f6             	xor    %r14d,%r14d
+ 301:	e8 00 00 00 00       	call   306 <streamsavedir+0x2d6>
+ 306:	e9 ed fe ff ff       	jmp    1f8 <streamsavedir+0x1c8>
+ 30b:	45 31 f6             	xor    %r14d,%r14d
+ 30e:	e9 e5 fe ff ff       	jmp    1f8 <streamsavedir+0x1c8>
+ 313:	e8 00 00 00 00       	call   318 <streamsavedir+0x2e8>
+ 318:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 31f:	00 
+
+0000000000000320 <savedir>:
+ 320:	f3 0f 1e fa          	endbr64 
+ 324:	41 54                	push   %r12
+ 326:	41 89 f4             	mov    %esi,%r12d
+ 329:	55                   	push   %rbp
+ 32a:	48 83 ec 08          	sub    $0x8,%rsp
+ 32e:	e8 00 00 00 00       	call   333 <savedir+0x13>
+ 333:	48 85 c0             	test   %rax,%rax
+ 336:	74 28                	je     360 <savedir+0x40>
+ 338:	48 89 c5             	mov    %rax,%rbp
+ 33b:	44 89 e6             	mov    %r12d,%esi
+ 33e:	48 89 c7             	mov    %rax,%rdi
+ 341:	e8 00 00 00 00       	call   346 <savedir+0x26>
+ 346:	48 89 ef             	mov    %rbp,%rdi
+ 349:	49 89 c4             	mov    %rax,%r12
+ 34c:	e8 00 00 00 00       	call   351 <savedir+0x31>
+ 351:	85 c0                	test   %eax,%eax
+ 353:	75 1b                	jne    370 <savedir+0x50>
+ 355:	48 83 c4 08          	add    $0x8,%rsp
+ 359:	4c 89 e0             	mov    %r12,%rax
+ 35c:	5d                   	pop    %rbp
+ 35d:	41 5c                	pop    %r12
+ 35f:	c3                   	ret    
+ 360:	45 31 e4             	xor    %r12d,%r12d
+ 363:	48 83 c4 08          	add    $0x8,%rsp
+ 367:	4c 89 e0             	mov    %r12,%rax
+ 36a:	5d                   	pop    %rbp
+ 36b:	41 5c                	pop    %r12
+ 36d:	c3                   	ret    
+ 36e:	66 90                	xchg   %ax,%ax
+ 370:	4c 89 e7             	mov    %r12,%rdi
+ 373:	45 31 e4             	xor    %r12d,%r12d
+ 376:	e8 00 00 00 00       	call   37b <savedir+0x5b>
+ 37b:	48 83 c4 08          	add    $0x8,%rsp
+ 37f:	4c 89 e0             	mov    %r12,%rax
+ 382:	5d                   	pop    %rbp
+ 383:	41 5c                	pop    %r12
+ 385:	c3                   	ret    

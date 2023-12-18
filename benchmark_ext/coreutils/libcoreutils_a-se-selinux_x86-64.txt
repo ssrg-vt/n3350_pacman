@@ -1,0 +1,170 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-se-selinux.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <getcon>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 83 ec 08          	sub    $0x8,%rsp
+   8:	e8 00 00 00 00       	call   d <getcon+0xd>
+   d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  13:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  18:	48 83 c4 08          	add    $0x8,%rsp
+  1c:	c3                   	ret    
+  1d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000020 <freecon>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	c3                   	ret    
+  25:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  2c:	00 00 00 00 
+
+0000000000000030 <getfscreatecon>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	48 83 ec 08          	sub    $0x8,%rsp
+  38:	e8 00 00 00 00       	call   3d <getfscreatecon+0xd>
+  3d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  43:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  48:	48 83 c4 08          	add    $0x8,%rsp
+  4c:	c3                   	ret    
+  4d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000050 <setfscreatecon>:
+  50:	f3 0f 1e fa          	endbr64 
+  54:	48 83 ec 08          	sub    $0x8,%rsp
+  58:	e8 00 00 00 00       	call   5d <setfscreatecon+0xd>
+  5d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  63:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  68:	48 83 c4 08          	add    $0x8,%rsp
+  6c:	c3                   	ret    
+  6d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000070 <matchpathcon>:
+  70:	f3 0f 1e fa          	endbr64 
+  74:	48 83 ec 08          	sub    $0x8,%rsp
+  78:	e8 00 00 00 00       	call   7d <matchpathcon+0xd>
+  7d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  83:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  88:	48 83 c4 08          	add    $0x8,%rsp
+  8c:	c3                   	ret    
+  8d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000090 <getfilecon>:
+  90:	f3 0f 1e fa          	endbr64 
+  94:	48 83 ec 08          	sub    $0x8,%rsp
+  98:	e8 00 00 00 00       	call   9d <getfilecon+0xd>
+  9d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  a3:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  a8:	48 83 c4 08          	add    $0x8,%rsp
+  ac:	c3                   	ret    
+  ad:	0f 1f 00             	nopl   (%rax)
+
+00000000000000b0 <lgetfilecon>:
+  b0:	f3 0f 1e fa          	endbr64 
+  b4:	48 83 ec 08          	sub    $0x8,%rsp
+  b8:	e8 00 00 00 00       	call   bd <lgetfilecon+0xd>
+  bd:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  c3:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  c8:	48 83 c4 08          	add    $0x8,%rsp
+  cc:	c3                   	ret    
+  cd:	0f 1f 00             	nopl   (%rax)
+
+00000000000000d0 <fgetfilecon>:
+  d0:	f3 0f 1e fa          	endbr64 
+  d4:	48 83 ec 08          	sub    $0x8,%rsp
+  d8:	e8 00 00 00 00       	call   dd <fgetfilecon+0xd>
+  dd:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  e3:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  e8:	48 83 c4 08          	add    $0x8,%rsp
+  ec:	c3                   	ret    
+  ed:	0f 1f 00             	nopl   (%rax)
+
+00000000000000f0 <setfilecon>:
+  f0:	f3 0f 1e fa          	endbr64 
+  f4:	48 83 ec 08          	sub    $0x8,%rsp
+  f8:	e8 00 00 00 00       	call   fd <setfilecon+0xd>
+  fd:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 103:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 108:	48 83 c4 08          	add    $0x8,%rsp
+ 10c:	c3                   	ret    
+ 10d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000110 <lsetfilecon>:
+ 110:	f3 0f 1e fa          	endbr64 
+ 114:	48 83 ec 08          	sub    $0x8,%rsp
+ 118:	e8 00 00 00 00       	call   11d <lsetfilecon+0xd>
+ 11d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 123:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 128:	48 83 c4 08          	add    $0x8,%rsp
+ 12c:	c3                   	ret    
+ 12d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000130 <fsetfilecon>:
+ 130:	f3 0f 1e fa          	endbr64 
+ 134:	48 83 ec 08          	sub    $0x8,%rsp
+ 138:	e8 00 00 00 00       	call   13d <fsetfilecon+0xd>
+ 13d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 143:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 148:	48 83 c4 08          	add    $0x8,%rsp
+ 14c:	c3                   	ret    
+ 14d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000150 <security_check_context>:
+ 150:	f3 0f 1e fa          	endbr64 
+ 154:	48 83 ec 08          	sub    $0x8,%rsp
+ 158:	e8 00 00 00 00       	call   15d <security_check_context+0xd>
+ 15d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 163:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 168:	48 83 c4 08          	add    $0x8,%rsp
+ 16c:	c3                   	ret    
+ 16d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000170 <security_check_context_raw>:
+ 170:	f3 0f 1e fa          	endbr64 
+ 174:	48 83 ec 08          	sub    $0x8,%rsp
+ 178:	e8 00 00 00 00       	call   17d <security_check_context_raw+0xd>
+ 17d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 183:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 188:	48 83 c4 08          	add    $0x8,%rsp
+ 18c:	c3                   	ret    
+ 18d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000190 <setexeccon>:
+ 190:	f3 0f 1e fa          	endbr64 
+ 194:	48 83 ec 08          	sub    $0x8,%rsp
+ 198:	e8 00 00 00 00       	call   19d <setexeccon+0xd>
+ 19d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 1a3:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 1a8:	48 83 c4 08          	add    $0x8,%rsp
+ 1ac:	c3                   	ret    
+ 1ad:	0f 1f 00             	nopl   (%rax)
+
+00000000000001b0 <security_compute_create>:
+ 1b0:	f3 0f 1e fa          	endbr64 
+ 1b4:	48 83 ec 08          	sub    $0x8,%rsp
+ 1b8:	e8 00 00 00 00       	call   1bd <security_compute_create+0xd>
+ 1bd:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 1c3:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 1c8:	48 83 c4 08          	add    $0x8,%rsp
+ 1cc:	c3                   	ret    
+ 1cd:	0f 1f 00             	nopl   (%rax)
+
+00000000000001d0 <string_to_security_class>:
+ 1d0:	f3 0f 1e fa          	endbr64 
+ 1d4:	48 83 ec 08          	sub    $0x8,%rsp
+ 1d8:	e8 00 00 00 00       	call   1dd <string_to_security_class+0xd>
+ 1dd:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 1e3:	31 c0                	xor    %eax,%eax
+ 1e5:	48 83 c4 08          	add    $0x8,%rsp
+ 1e9:	c3                   	ret    
+ 1ea:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000001f0 <matchpathcon_init_prefix>:
+ 1f0:	f3 0f 1e fa          	endbr64 
+ 1f4:	48 83 ec 08          	sub    $0x8,%rsp
+ 1f8:	e8 00 00 00 00       	call   1fd <matchpathcon_init_prefix+0xd>
+ 1fd:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+ 203:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 208:	48 83 c4 08          	add    $0x8,%rsp
+ 20c:	c3                   	ret    

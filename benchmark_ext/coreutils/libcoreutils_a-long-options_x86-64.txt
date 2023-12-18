@@ -1,0 +1,175 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-long-options.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <parse_long_options>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 56                	push   %r14
+   6:	41 55                	push   %r13
+   8:	49 89 cd             	mov    %rcx,%r13
+   b:	41 54                	push   %r12
+   d:	4d 89 c4             	mov    %r8,%r12
+  10:	55                   	push   %rbp
+  11:	48 89 d5             	mov    %rdx,%rbp
+  14:	53                   	push   %rbx
+  15:	4c 89 cb             	mov    %r9,%rbx
+  18:	48 81 ec d0 00 00 00 	sub    $0xd0,%rsp
+  1f:	84 c0                	test   %al,%al
+  21:	74 37                	je     5a <parse_long_options+0x5a>
+  23:	0f 29 44 24 50       	movaps %xmm0,0x50(%rsp)
+  28:	0f 29 4c 24 60       	movaps %xmm1,0x60(%rsp)
+  2d:	0f 29 54 24 70       	movaps %xmm2,0x70(%rsp)
+  32:	0f 29 9c 24 80 00 00 	movaps %xmm3,0x80(%rsp)
+  39:	00 
+  3a:	0f 29 a4 24 90 00 00 	movaps %xmm4,0x90(%rsp)
+  41:	00 
+  42:	0f 29 ac 24 a0 00 00 	movaps %xmm5,0xa0(%rsp)
+  49:	00 
+  4a:	0f 29 b4 24 b0 00 00 	movaps %xmm6,0xb0(%rsp)
+  51:	00 
+  52:	0f 29 bc 24 c0 00 00 	movaps %xmm7,0xc0(%rsp)
+  59:	00 
+  5a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  61:	00 00 
+  63:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  68:	31 c0                	xor    %eax,%eax
+  6a:	44 8b 35 00 00 00 00 	mov    0x0(%rip),%r14d        # 71 <parse_long_options+0x71>
+  71:	c7 05 00 00 00 00 00 	movl   $0x0,0x0(%rip)        # 7b <parse_long_options+0x7b>
+  78:	00 00 00 
+  7b:	83 ff 02             	cmp    $0x2,%edi
+  7e:	74 38                	je     b8 <parse_long_options+0xb8>
+  80:	44 89 35 00 00 00 00 	mov    %r14d,0x0(%rip)        # 87 <parse_long_options+0x87>
+  87:	c7 05 00 00 00 00 00 	movl   $0x0,0x0(%rip)        # 91 <parse_long_options+0x91>
+  8e:	00 00 00 
+  91:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  96:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  9d:	00 00 
+  9f:	0f 85 8c 00 00 00    	jne    131 <parse_long_options+0x131>
+  a5:	48 81 c4 d0 00 00 00 	add    $0xd0,%rsp
+  ac:	5b                   	pop    %rbx
+  ad:	5d                   	pop    %rbp
+  ae:	41 5c                	pop    %r12
+  b0:	41 5d                	pop    %r13
+  b2:	41 5e                	pop    %r14
+  b4:	c3                   	ret    
+  b5:	0f 1f 00             	nopl   (%rax)
+  b8:	45 31 c0             	xor    %r8d,%r8d
+  bb:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # c2 <parse_long_options+0xc2>
+  c2:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # c9 <parse_long_options+0xc9>
+  c9:	e8 00 00 00 00       	call   ce <parse_long_options+0xce>
+  ce:	83 f8 ff             	cmp    $0xffffffff,%eax
+  d1:	74 ad                	je     80 <parse_long_options+0x80>
+  d3:	83 f8 68             	cmp    $0x68,%eax
+  d6:	74 50                	je     128 <parse_long_options+0x128>
+  d8:	83 f8 76             	cmp    $0x76,%eax
+  db:	75 a3                	jne    80 <parse_long_options+0x80>
+  dd:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # e4 <parse_long_options+0xe4>
+  e4:	49 89 e0             	mov    %rsp,%r8
+  e7:	4c 89 e1             	mov    %r12,%rcx
+  ea:	4c 89 ea             	mov    %r13,%rdx
+  ed:	48 8d 84 24 00 01 00 	lea    0x100(%rsp),%rax
+  f4:	00 
+  f5:	48 89 ee             	mov    %rbp,%rsi
+  f8:	c7 04 24 30 00 00 00 	movl   $0x30,(%rsp)
+  ff:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 104:	48 8d 44 24 20       	lea    0x20(%rsp),%rax
+ 109:	c7 44 24 04 30 00 00 	movl   $0x30,0x4(%rsp)
+ 110:	00 
+ 111:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+ 116:	e8 00 00 00 00       	call   11b <parse_long_options+0x11b>
+ 11b:	31 ff                	xor    %edi,%edi
+ 11d:	e8 00 00 00 00       	call   122 <parse_long_options+0x122>
+ 122:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 128:	31 ff                	xor    %edi,%edi
+ 12a:	ff d3                	call   *%rbx
+ 12c:	e9 4f ff ff ff       	jmp    80 <parse_long_options+0x80>
+ 131:	e8 00 00 00 00       	call   136 <parse_long_options+0x136>
+ 136:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 13d:	00 00 00 
+
+0000000000000140 <parse_gnu_standard_options_only>:
+ 140:	f3 0f 1e fa          	endbr64 
+ 144:	41 56                	push   %r14
+ 146:	41 55                	push   %r13
+ 148:	4d 89 c5             	mov    %r8,%r13
+ 14b:	41 54                	push   %r12
+ 14d:	49 89 cc             	mov    %rcx,%r12
+ 150:	55                   	push   %rbp
+ 151:	48 89 d5             	mov    %rdx,%rbp
+ 154:	53                   	push   %rbx
+ 155:	48 81 ec d0 00 00 00 	sub    $0xd0,%rsp
+ 15c:	4c 8b b4 24 00 01 00 	mov    0x100(%rsp),%r14
+ 163:	00 
+ 164:	84 c0                	test   %al,%al
+ 166:	74 37                	je     19f <parse_gnu_standard_options_only+0x5f>
+ 168:	0f 29 44 24 50       	movaps %xmm0,0x50(%rsp)
+ 16d:	0f 29 4c 24 60       	movaps %xmm1,0x60(%rsp)
+ 172:	0f 29 54 24 70       	movaps %xmm2,0x70(%rsp)
+ 177:	0f 29 9c 24 80 00 00 	movaps %xmm3,0x80(%rsp)
+ 17e:	00 
+ 17f:	0f 29 a4 24 90 00 00 	movaps %xmm4,0x90(%rsp)
+ 186:	00 
+ 187:	0f 29 ac 24 a0 00 00 	movaps %xmm5,0xa0(%rsp)
+ 18e:	00 
+ 18f:	0f 29 b4 24 b0 00 00 	movaps %xmm6,0xb0(%rsp)
+ 196:	00 
+ 197:	0f 29 bc 24 c0 00 00 	movaps %xmm7,0xc0(%rsp)
+ 19e:	00 
+ 19f:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 1a6:	00 00 
+ 1a8:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+ 1ad:	31 c0                	xor    %eax,%eax
+ 1af:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 1b6 <parse_gnu_standard_options_only+0x76>
+ 1b6:	45 84 c9             	test   %r9b,%r9b
+ 1b9:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 1c0 <parse_gnu_standard_options_only+0x80>
+ 1c0:	48 0f 44 d0          	cmove  %rax,%rdx
+ 1c4:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 1cb <parse_gnu_standard_options_only+0x8b>
+ 1cb:	45 31 c0             	xor    %r8d,%r8d
+ 1ce:	8b 1d 00 00 00 00    	mov    0x0(%rip),%ebx        # 1d4 <parse_gnu_standard_options_only+0x94>
+ 1d4:	c7 05 00 00 00 00 01 	movl   $0x1,0x0(%rip)        # 1de <parse_gnu_standard_options_only+0x9e>
+ 1db:	00 00 00 
+ 1de:	e8 00 00 00 00       	call   1e3 <parse_gnu_standard_options_only+0xa3>
+ 1e3:	83 f8 ff             	cmp    $0xffffffff,%eax
+ 1e6:	74 17                	je     1ff <parse_gnu_standard_options_only+0xbf>
+ 1e8:	83 f8 68             	cmp    $0x68,%eax
+ 1eb:	0f 84 7f 00 00 00    	je     270 <parse_gnu_standard_options_only+0x130>
+ 1f1:	83 f8 76             	cmp    $0x76,%eax
+ 1f4:	74 32                	je     228 <parse_gnu_standard_options_only+0xe8>
+ 1f6:	8b 3d 00 00 00 00    	mov    0x0(%rip),%edi        # 1fc <parse_gnu_standard_options_only+0xbc>
+ 1fc:	41 ff d6             	call   *%r14
+ 1ff:	89 1d 00 00 00 00    	mov    %ebx,0x0(%rip)        # 205 <parse_gnu_standard_options_only+0xc5>
+ 205:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+ 20a:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 211:	00 00 
+ 213:	75 62                	jne    277 <parse_gnu_standard_options_only+0x137>
+ 215:	48 81 c4 d0 00 00 00 	add    $0xd0,%rsp
+ 21c:	5b                   	pop    %rbx
+ 21d:	5d                   	pop    %rbp
+ 21e:	41 5c                	pop    %r12
+ 220:	41 5d                	pop    %r13
+ 222:	41 5e                	pop    %r14
+ 224:	c3                   	ret    
+ 225:	0f 1f 00             	nopl   (%rax)
+ 228:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 22f <parse_gnu_standard_options_only+0xef>
+ 22f:	49 89 e0             	mov    %rsp,%r8
+ 232:	4c 89 e9             	mov    %r13,%rcx
+ 235:	4c 89 e2             	mov    %r12,%rdx
+ 238:	48 8d 84 24 08 01 00 	lea    0x108(%rsp),%rax
+ 23f:	00 
+ 240:	48 89 ee             	mov    %rbp,%rsi
+ 243:	c7 04 24 30 00 00 00 	movl   $0x30,(%rsp)
+ 24a:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 24f:	48 8d 44 24 20       	lea    0x20(%rsp),%rax
+ 254:	c7 44 24 04 30 00 00 	movl   $0x30,0x4(%rsp)
+ 25b:	00 
+ 25c:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+ 261:	e8 00 00 00 00       	call   266 <parse_gnu_standard_options_only+0x126>
+ 266:	31 ff                	xor    %edi,%edi
+ 268:	e8 00 00 00 00       	call   26d <parse_gnu_standard_options_only+0x12d>
+ 26d:	0f 1f 00             	nopl   (%rax)
+ 270:	31 ff                	xor    %edi,%edi
+ 272:	41 ff d6             	call   *%r14
+ 275:	eb 88                	jmp    1ff <parse_gnu_standard_options_only+0xbf>
+ 277:	e8 00 00 00 00       	call   27c <parse_gnu_standard_options_only+0x13c>

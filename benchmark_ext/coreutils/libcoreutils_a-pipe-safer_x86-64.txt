@@ -1,0 +1,43 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-pipe-safer.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <pipe_safer>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	55                   	push   %rbp
+   7:	53                   	push   %rbx
+   8:	48 89 fb             	mov    %rdi,%rbx
+   b:	e8 00 00 00 00       	call   10 <pipe_safer+0x10>
+  10:	85 c0                	test   %eax,%eax
+  12:	75 4d                	jne    61 <pipe_safer+0x61>
+  14:	8b 3b                	mov    (%rbx),%edi
+  16:	41 89 c4             	mov    %eax,%r12d
+  19:	e8 00 00 00 00       	call   1e <pipe_safer+0x1e>
+  1e:	89 03                	mov    %eax,(%rbx)
+  20:	85 c0                	test   %eax,%eax
+  22:	78 1c                	js     40 <pipe_safer+0x40>
+  24:	8b 7b 04             	mov    0x4(%rbx),%edi
+  27:	e8 00 00 00 00       	call   2c <pipe_safer+0x2c>
+  2c:	89 43 04             	mov    %eax,0x4(%rbx)
+  2f:	85 c0                	test   %eax,%eax
+  31:	78 11                	js     44 <pipe_safer+0x44>
+  33:	44 89 e0             	mov    %r12d,%eax
+  36:	5b                   	pop    %rbx
+  37:	5d                   	pop    %rbp
+  38:	41 5c                	pop    %r12
+  3a:	c3                   	ret    
+  3b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  40:	48 83 c3 04          	add    $0x4,%rbx
+  44:	e8 00 00 00 00       	call   49 <pipe_safer+0x49>
+  49:	8b 3b                	mov    (%rbx),%edi
+  4b:	8b 28                	mov    (%rax),%ebp
+  4d:	49 89 c4             	mov    %rax,%r12
+  50:	e8 00 00 00 00       	call   55 <pipe_safer+0x55>
+  55:	41 89 2c 24          	mov    %ebp,(%r12)
+  59:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+  5f:	eb d2                	jmp    33 <pipe_safer+0x33>
+  61:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+  67:	eb ca                	jmp    33 <pipe_safer+0x33>

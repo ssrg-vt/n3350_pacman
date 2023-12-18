@@ -1,0 +1,51 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-malloca.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mmalloca>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	49 89 f8             	mov    %rdi,%r8
+   7:	49 83 c0 20          	add    $0x20,%r8
+   b:	78 37                	js     44 <mmalloca+0x44>
+   d:	49 39 f8             	cmp    %rdi,%r8
+  10:	72 32                	jb     44 <mmalloca+0x44>
+  12:	48 83 ec 08          	sub    $0x8,%rsp
+  16:	4c 89 c7             	mov    %r8,%rdi
+  19:	e8 00 00 00 00       	call   1e <mmalloca+0x1e>
+  1e:	48 85 c0             	test   %rax,%rax
+  21:	74 1a                	je     3d <mmalloca+0x3d>
+  23:	48 8d 50 10          	lea    0x10(%rax),%rdx
+  27:	48 83 e2 e0          	and    $0xffffffffffffffe0,%rdx
+  2b:	48 29 c2             	sub    %rax,%rdx
+  2e:	48 83 c2 10          	add    $0x10,%rdx
+  32:	48 01 d0             	add    %rdx,%rax
+  35:	88 50 ff             	mov    %dl,-0x1(%rax)
+  38:	48 83 c4 08          	add    $0x8,%rsp
+  3c:	c3                   	ret    
+  3d:	31 c0                	xor    %eax,%eax
+  3f:	48 83 c4 08          	add    $0x8,%rsp
+  43:	c3                   	ret    
+  44:	31 c0                	xor    %eax,%eax
+  46:	c3                   	ret    
+  47:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  4e:	00 00 
+
+0000000000000050 <freea>:
+  50:	f3 0f 1e fa          	endbr64 
+  54:	40 f6 c7 0f          	test   $0xf,%dil
+  58:	0f 85 00 00 00 00    	jne    5e <freea+0xe>
+  5e:	40 f6 c7 10          	test   $0x10,%dil
+  62:	75 04                	jne    68 <freea+0x18>
+  64:	c3                   	ret    
+  65:	0f 1f 00             	nopl   (%rax)
+  68:	0f b6 47 ff          	movzbl -0x1(%rdi),%eax
+  6c:	48 29 c7             	sub    %rax,%rdi
+  6f:	e9 00 00 00 00       	jmp    74 <freea+0x24>
+
+Disassembly of section .text.unlikely:
+
+0000000000000000 <freea.cold>:
+   0:	50                   	push   %rax
+   1:	e8 00 00 00 00       	call   6 <freea.cold+0x6>

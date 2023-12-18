@@ -1,0 +1,198 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-xprintf.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <xvprintf>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	55                   	push   %rbp
+   9:	e8 00 00 00 00       	call   e <xvprintf+0xe>
+   e:	41 89 c4             	mov    %eax,%r12d
+  11:	85 c0                	test   %eax,%eax
+  13:	78 0b                	js     20 <xvprintf+0x20>
+  15:	44 89 e0             	mov    %r12d,%eax
+  18:	5d                   	pop    %rbp
+  19:	41 5c                	pop    %r12
+  1b:	41 5d                	pop    %r13
+  1d:	c3                   	ret    
+  1e:	66 90                	xchg   %ax,%ax
+  20:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 27 <xvprintf+0x27>
+  27:	e8 00 00 00 00       	call   2c <xvprintf+0x2c>
+  2c:	85 c0                	test   %eax,%eax
+  2e:	75 e5                	jne    15 <xvprintf+0x15>
+  30:	31 ff                	xor    %edi,%edi
+  32:	ba 05 00 00 00       	mov    $0x5,%edx
+  37:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 3e <xvprintf+0x3e>
+  3e:	8b 2d 00 00 00 00    	mov    0x0(%rip),%ebp        # 44 <xvprintf+0x44>
+  44:	e8 00 00 00 00       	call   49 <xvprintf+0x49>
+  49:	49 89 c5             	mov    %rax,%r13
+  4c:	e8 00 00 00 00       	call   51 <xvprintf+0x51>
+  51:	4c 89 ea             	mov    %r13,%rdx
+  54:	89 ef                	mov    %ebp,%edi
+  56:	8b 30                	mov    (%rax),%esi
+  58:	31 c0                	xor    %eax,%eax
+  5a:	e8 00 00 00 00       	call   5f <xvprintf+0x5f>
+  5f:	eb b4                	jmp    15 <xvprintf+0x15>
+  61:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  68:	00 00 00 00 
+  6c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000070 <xprintf>:
+  70:	f3 0f 1e fa          	endbr64 
+  74:	48 81 ec d8 00 00 00 	sub    $0xd8,%rsp
+  7b:	48 89 74 24 28       	mov    %rsi,0x28(%rsp)
+  80:	48 89 54 24 30       	mov    %rdx,0x30(%rsp)
+  85:	48 89 4c 24 38       	mov    %rcx,0x38(%rsp)
+  8a:	4c 89 44 24 40       	mov    %r8,0x40(%rsp)
+  8f:	4c 89 4c 24 48       	mov    %r9,0x48(%rsp)
+  94:	84 c0                	test   %al,%al
+  96:	74 37                	je     cf <xprintf+0x5f>
+  98:	0f 29 44 24 50       	movaps %xmm0,0x50(%rsp)
+  9d:	0f 29 4c 24 60       	movaps %xmm1,0x60(%rsp)
+  a2:	0f 29 54 24 70       	movaps %xmm2,0x70(%rsp)
+  a7:	0f 29 9c 24 80 00 00 	movaps %xmm3,0x80(%rsp)
+  ae:	00 
+  af:	0f 29 a4 24 90 00 00 	movaps %xmm4,0x90(%rsp)
+  b6:	00 
+  b7:	0f 29 ac 24 a0 00 00 	movaps %xmm5,0xa0(%rsp)
+  be:	00 
+  bf:	0f 29 b4 24 b0 00 00 	movaps %xmm6,0xb0(%rsp)
+  c6:	00 
+  c7:	0f 29 bc 24 c0 00 00 	movaps %xmm7,0xc0(%rsp)
+  ce:	00 
+  cf:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  d6:	00 00 
+  d8:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  dd:	31 c0                	xor    %eax,%eax
+  df:	48 8d 84 24 e0 00 00 	lea    0xe0(%rsp),%rax
+  e6:	00 
+  e7:	48 89 e6             	mov    %rsp,%rsi
+  ea:	c7 04 24 08 00 00 00 	movl   $0x8,(%rsp)
+  f1:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  f6:	48 8d 44 24 20       	lea    0x20(%rsp),%rax
+  fb:	c7 44 24 04 30 00 00 	movl   $0x30,0x4(%rsp)
+ 102:	00 
+ 103:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+ 108:	e8 00 00 00 00       	call   10d <xprintf+0x9d>
+ 10d:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 112:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 119:	00 00 
+ 11b:	75 08                	jne    125 <xprintf+0xb5>
+ 11d:	48 81 c4 d8 00 00 00 	add    $0xd8,%rsp
+ 124:	c3                   	ret    
+ 125:	e8 00 00 00 00       	call   12a <xprintf+0xba>
+ 12a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000130 <xfprintf>:
+ 130:	f3 0f 1e fa          	endbr64 
+ 134:	41 55                	push   %r13
+ 136:	41 54                	push   %r12
+ 138:	55                   	push   %rbp
+ 139:	48 89 fd             	mov    %rdi,%rbp
+ 13c:	48 81 ec d0 00 00 00 	sub    $0xd0,%rsp
+ 143:	48 89 54 24 30       	mov    %rdx,0x30(%rsp)
+ 148:	48 89 4c 24 38       	mov    %rcx,0x38(%rsp)
+ 14d:	4c 89 44 24 40       	mov    %r8,0x40(%rsp)
+ 152:	4c 89 4c 24 48       	mov    %r9,0x48(%rsp)
+ 157:	84 c0                	test   %al,%al
+ 159:	74 37                	je     192 <xfprintf+0x62>
+ 15b:	0f 29 44 24 50       	movaps %xmm0,0x50(%rsp)
+ 160:	0f 29 4c 24 60       	movaps %xmm1,0x60(%rsp)
+ 165:	0f 29 54 24 70       	movaps %xmm2,0x70(%rsp)
+ 16a:	0f 29 9c 24 80 00 00 	movaps %xmm3,0x80(%rsp)
+ 171:	00 
+ 172:	0f 29 a4 24 90 00 00 	movaps %xmm4,0x90(%rsp)
+ 179:	00 
+ 17a:	0f 29 ac 24 a0 00 00 	movaps %xmm5,0xa0(%rsp)
+ 181:	00 
+ 182:	0f 29 b4 24 b0 00 00 	movaps %xmm6,0xb0(%rsp)
+ 189:	00 
+ 18a:	0f 29 bc 24 c0 00 00 	movaps %xmm7,0xc0(%rsp)
+ 191:	00 
+ 192:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 199:	00 00 
+ 19b:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+ 1a0:	31 c0                	xor    %eax,%eax
+ 1a2:	48 8d 84 24 f0 00 00 	lea    0xf0(%rsp),%rax
+ 1a9:	00 
+ 1aa:	48 89 e2             	mov    %rsp,%rdx
+ 1ad:	48 89 ef             	mov    %rbp,%rdi
+ 1b0:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 1b5:	48 8d 44 24 20       	lea    0x20(%rsp),%rax
+ 1ba:	c7 04 24 10 00 00 00 	movl   $0x10,(%rsp)
+ 1c1:	c7 44 24 04 30 00 00 	movl   $0x30,0x4(%rsp)
+ 1c8:	00 
+ 1c9:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+ 1ce:	e8 00 00 00 00       	call   1d3 <xfprintf+0xa3>
+ 1d3:	41 89 c4             	mov    %eax,%r12d
+ 1d6:	85 c0                	test   %eax,%eax
+ 1d8:	78 26                	js     200 <xfprintf+0xd0>
+ 1da:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+ 1df:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 1e6:	00 00 
+ 1e8:	75 53                	jne    23d <xfprintf+0x10d>
+ 1ea:	48 81 c4 d0 00 00 00 	add    $0xd0,%rsp
+ 1f1:	44 89 e0             	mov    %r12d,%eax
+ 1f4:	5d                   	pop    %rbp
+ 1f5:	41 5c                	pop    %r12
+ 1f7:	41 5d                	pop    %r13
+ 1f9:	c3                   	ret    
+ 1fa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 200:	48 89 ef             	mov    %rbp,%rdi
+ 203:	e8 00 00 00 00       	call   208 <xfprintf+0xd8>
+ 208:	85 c0                	test   %eax,%eax
+ 20a:	75 ce                	jne    1da <xfprintf+0xaa>
+ 20c:	31 ff                	xor    %edi,%edi
+ 20e:	ba 05 00 00 00       	mov    $0x5,%edx
+ 213:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 21a <xfprintf+0xea>
+ 21a:	8b 2d 00 00 00 00    	mov    0x0(%rip),%ebp        # 220 <xfprintf+0xf0>
+ 220:	e8 00 00 00 00       	call   225 <xfprintf+0xf5>
+ 225:	49 89 c5             	mov    %rax,%r13
+ 228:	e8 00 00 00 00       	call   22d <xfprintf+0xfd>
+ 22d:	4c 89 ea             	mov    %r13,%rdx
+ 230:	89 ef                	mov    %ebp,%edi
+ 232:	8b 30                	mov    (%rax),%esi
+ 234:	31 c0                	xor    %eax,%eax
+ 236:	e8 00 00 00 00       	call   23b <xfprintf+0x10b>
+ 23b:	eb 9d                	jmp    1da <xfprintf+0xaa>
+ 23d:	e8 00 00 00 00       	call   242 <xfprintf+0x112>
+ 242:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 249:	00 00 00 00 
+ 24d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000250 <xvfprintf>:
+ 250:	f3 0f 1e fa          	endbr64 
+ 254:	41 55                	push   %r13
+ 256:	41 54                	push   %r12
+ 258:	55                   	push   %rbp
+ 259:	48 89 fd             	mov    %rdi,%rbp
+ 25c:	e8 00 00 00 00       	call   261 <xvfprintf+0x11>
+ 261:	41 89 c4             	mov    %eax,%r12d
+ 264:	85 c0                	test   %eax,%eax
+ 266:	78 10                	js     278 <xvfprintf+0x28>
+ 268:	44 89 e0             	mov    %r12d,%eax
+ 26b:	5d                   	pop    %rbp
+ 26c:	41 5c                	pop    %r12
+ 26e:	41 5d                	pop    %r13
+ 270:	c3                   	ret    
+ 271:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 278:	48 89 ef             	mov    %rbp,%rdi
+ 27b:	e8 00 00 00 00       	call   280 <xvfprintf+0x30>
+ 280:	85 c0                	test   %eax,%eax
+ 282:	75 e4                	jne    268 <xvfprintf+0x18>
+ 284:	31 ff                	xor    %edi,%edi
+ 286:	ba 05 00 00 00       	mov    $0x5,%edx
+ 28b:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 292 <xvfprintf+0x42>
+ 292:	8b 2d 00 00 00 00    	mov    0x0(%rip),%ebp        # 298 <xvfprintf+0x48>
+ 298:	e8 00 00 00 00       	call   29d <xvfprintf+0x4d>
+ 29d:	49 89 c5             	mov    %rax,%r13
+ 2a0:	e8 00 00 00 00       	call   2a5 <xvfprintf+0x55>
+ 2a5:	4c 89 ea             	mov    %r13,%rdx
+ 2a8:	89 ef                	mov    %ebp,%edi
+ 2aa:	8b 30                	mov    (%rax),%esi
+ 2ac:	31 c0                	xor    %eax,%eax
+ 2ae:	e8 00 00 00 00       	call   2b3 <xvfprintf+0x63>
+ 2b3:	eb b3                	jmp    268 <xvfprintf+0x18>

@@ -1,0 +1,33 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-se-label.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <selabel_lookup>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 83 ec 08          	sub    $0x8,%rsp
+   8:	e8 00 00 00 00       	call   d <selabel_lookup+0xd>
+   d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  13:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  18:	48 83 c4 08          	add    $0x8,%rsp
+  1c:	c3                   	ret    
+  1d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000020 <selabel_open>:
+  20:	f3 0f 1e fa          	endbr64 
+  24:	48 83 ec 08          	sub    $0x8,%rsp
+  28:	e8 00 00 00 00       	call   2d <selabel_open+0xd>
+  2d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  33:	31 c0                	xor    %eax,%eax
+  35:	48 83 c4 08          	add    $0x8,%rsp
+  39:	c3                   	ret    
+  3a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000040 <selabel_close>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	48 83 ec 08          	sub    $0x8,%rsp
+  48:	e8 00 00 00 00       	call   4d <selabel_close+0xd>
+  4d:	c7 00 5f 00 00 00    	movl   $0x5f,(%rax)
+  53:	48 83 c4 08          	add    $0x8,%rsp
+  57:	c3                   	ret    

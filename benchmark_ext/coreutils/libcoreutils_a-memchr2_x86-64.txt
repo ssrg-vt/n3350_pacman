@@ -1,0 +1,105 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-memchr2.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <memchr2>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 89 d2             	mov    %edx,%r10d
+   7:	48 89 ca             	mov    %rcx,%rdx
+   a:	44 38 d6             	cmp    %r10b,%sil
+   d:	0f 84 05 01 00 00    	je     118 <memchr2+0x118>
+  13:	41 89 f1             	mov    %esi,%r9d
+  16:	45 89 d0             	mov    %r10d,%r8d
+  19:	48 85 c9             	test   %rcx,%rcx
+  1c:	75 21                	jne    3f <memchr2+0x3f>
+  1e:	eb 25                	jmp    45 <memchr2+0x45>
+  20:	0f b6 07             	movzbl (%rdi),%eax
+  23:	44 38 c0             	cmp    %r8b,%al
+  26:	0f 84 e4 00 00 00    	je     110 <memchr2+0x110>
+  2c:	44 38 c8             	cmp    %r9b,%al
+  2f:	0f 84 db 00 00 00    	je     110 <memchr2+0x110>
+  35:	48 83 c7 01          	add    $0x1,%rdi
+  39:	48 83 ea 01          	sub    $0x1,%rdx
+  3d:	74 06                	je     45 <memchr2+0x45>
+  3f:	40 f6 c7 07          	test   $0x7,%dil
+  43:	75 db                	jne    20 <memchr2+0x20>
+  45:	40 0f b6 f6          	movzbl %sil,%esi
+  49:	45 0f b6 d2          	movzbl %r10b,%r10d
+  4d:	55                   	push   %rbp
+  4e:	89 f1                	mov    %esi,%ecx
+  50:	44 89 d0             	mov    %r10d,%eax
+  53:	53                   	push   %rbx
+  54:	c1 e1 08             	shl    $0x8,%ecx
+  57:	c1 e0 08             	shl    $0x8,%eax
+  5a:	09 f1                	or     %esi,%ecx
+  5c:	44 09 d0             	or     %r10d,%eax
+  5f:	48 63 c9             	movslq %ecx,%rcx
+  62:	48 98                	cltq   
+  64:	48 89 ce             	mov    %rcx,%rsi
+  67:	48 c1 e6 10          	shl    $0x10,%rsi
+  6b:	48 09 ce             	or     %rcx,%rsi
+  6e:	48 89 c1             	mov    %rax,%rcx
+  71:	48 c1 e1 10          	shl    $0x10,%rcx
+  75:	49 89 f3             	mov    %rsi,%r11
+  78:	48 09 c8             	or     %rcx,%rax
+  7b:	49 c1 e3 20          	shl    $0x20,%r11
+  7f:	48 89 c3             	mov    %rax,%rbx
+  82:	49 09 f3             	or     %rsi,%r11
+  85:	48 c1 e3 20          	shl    $0x20,%rbx
+  89:	48 09 c3             	or     %rax,%rbx
+  8c:	48 83 fa 07          	cmp    $0x7,%rdx
+  90:	0f 86 92 00 00 00    	jbe    128 <memchr2+0x128>
+  96:	49 ba ff fe fe fe fe 	movabs $0xfefefefefefefeff,%r10
+  9d:	fe fe fe 
+  a0:	48 bd 80 80 80 80 80 	movabs $0x8080808080808080,%rbp
+  a7:	80 80 80 
+  aa:	eb 12                	jmp    be <memchr2+0xbe>
+  ac:	0f 1f 40 00          	nopl   0x0(%rax)
+  b0:	48 83 ea 08          	sub    $0x8,%rdx
+  b4:	48 83 c7 08          	add    $0x8,%rdi
+  b8:	48 83 fa 07          	cmp    $0x7,%rdx
+  bc:	76 6a                	jbe    128 <memchr2+0x128>
+  be:	48 8b 37             	mov    (%rdi),%rsi
+  c1:	48 8b 07             	mov    (%rdi),%rax
+  c4:	4c 31 de             	xor    %r11,%rsi
+  c7:	48 31 d8             	xor    %rbx,%rax
+  ca:	4a 8d 0c 16          	lea    (%rsi,%r10,1),%rcx
+  ce:	48 f7 d6             	not    %rsi
+  d1:	48 21 f1             	and    %rsi,%rcx
+  d4:	4a 8d 34 10          	lea    (%rax,%r10,1),%rsi
+  d8:	48 f7 d0             	not    %rax
+  db:	48 21 f0             	and    %rsi,%rax
+  de:	48 09 c8             	or     %rcx,%rax
+  e1:	48 85 e8             	test   %rbp,%rax
+  e4:	74 ca                	je     b0 <memchr2+0xb0>
+  e6:	48 01 fa             	add    %rdi,%rdx
+  e9:	48 89 f8             	mov    %rdi,%rax
+  ec:	eb 10                	jmp    fe <memchr2+0xfe>
+  ee:	66 90                	xchg   %ax,%ax
+  f0:	44 38 c1             	cmp    %r8b,%cl
+  f3:	74 3d                	je     132 <memchr2+0x132>
+  f5:	48 83 c0 01          	add    $0x1,%rax
+  f9:	48 39 d0             	cmp    %rdx,%rax
+  fc:	74 32                	je     130 <memchr2+0x130>
+  fe:	0f b6 08             	movzbl (%rax),%ecx
+ 101:	44 38 c9             	cmp    %r9b,%cl
+ 104:	75 ea                	jne    f0 <memchr2+0xf0>
+ 106:	5b                   	pop    %rbx
+ 107:	5d                   	pop    %rbp
+ 108:	c3                   	ret    
+ 109:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 110:	48 89 f8             	mov    %rdi,%rax
+ 113:	c3                   	ret    
+ 114:	0f 1f 40 00          	nopl   0x0(%rax)
+ 118:	40 0f b6 f6          	movzbl %sil,%esi
+ 11c:	e9 00 00 00 00       	jmp    121 <memchr2+0x121>
+ 121:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 128:	48 85 d2             	test   %rdx,%rdx
+ 12b:	75 b9                	jne    e6 <memchr2+0xe6>
+ 12d:	0f 1f 00             	nopl   (%rax)
+ 130:	31 c0                	xor    %eax,%eax
+ 132:	5b                   	pop    %rbx
+ 133:	5d                   	pop    %rbp
+ 134:	c3                   	ret    

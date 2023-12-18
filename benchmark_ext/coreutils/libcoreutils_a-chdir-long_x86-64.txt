@@ -1,0 +1,242 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-chdir-long.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <cdb_free.part.0>:
+   0:	50                   	push   %rax
+   1:	58                   	pop    %rax
+   2:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 9 <cdb_free.part.0+0x9>
+   9:	ba 3f 00 00 00       	mov    $0x3f,%edx
+   e:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 15 <cdb_free.part.0+0x15>
+  15:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 1c <cdb_free.part.0+0x1c>
+  1c:	48 83 ec 08          	sub    $0x8,%rsp
+  20:	e8 00 00 00 00       	call   25 <cdb_free.part.0+0x25>
+  25:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  2c:	00 00 00 00 
+
+0000000000000030 <chdir_long>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	41 57                	push   %r15
+  36:	41 56                	push   %r14
+  38:	41 55                	push   %r13
+  3a:	41 54                	push   %r12
+  3c:	55                   	push   %rbp
+  3d:	48 89 fd             	mov    %rdi,%rbp
+  40:	53                   	push   %rbx
+  41:	48 83 ec 18          	sub    $0x18,%rsp
+  45:	e8 00 00 00 00       	call   4a <chdir_long+0x1a>
+  4a:	41 89 c4             	mov    %eax,%r12d
+  4d:	85 c0                	test   %eax,%eax
+  4f:	0f 84 4b 01 00 00    	je     1a0 <chdir_long+0x170>
+  55:	e8 00 00 00 00       	call   5a <chdir_long+0x2a>
+  5a:	83 38 24             	cmpl   $0x24,(%rax)
+  5d:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  62:	0f 85 38 01 00 00    	jne    1a0 <chdir_long+0x170>
+  68:	48 89 ef             	mov    %rbp,%rdi
+  6b:	e8 00 00 00 00       	call   70 <chdir_long+0x40>
+  70:	48 89 c3             	mov    %rax,%rbx
+  73:	48 85 c0             	test   %rax,%rax
+  76:	0f 84 d7 02 00 00    	je     353 <chdir_long+0x323>
+  7c:	48 3d ff 0f 00 00    	cmp    $0xfff,%rax
+  82:	0f 86 ea 02 00 00    	jbe    372 <chdir_long+0x342>
+  88:	4c 8d 25 00 00 00 00 	lea    0x0(%rip),%r12        # 8f <chdir_long+0x5f>
+  8f:	48 89 ef             	mov    %rbp,%rdi
+  92:	4c 89 e6             	mov    %r12,%rsi
+  95:	e8 00 00 00 00       	call   9a <chdir_long+0x6a>
+  9a:	49 89 c7             	mov    %rax,%r15
+  9d:	48 83 f8 02          	cmp    $0x2,%rax
+  a1:	0f 84 41 01 00 00    	je     1e8 <chdir_long+0x1b8>
+  a7:	49 89 ee             	mov    %rbp,%r14
+  aa:	41 bd 9c ff ff ff    	mov    $0xffffff9c,%r13d
+  b0:	48 85 c0             	test   %rax,%rax
+  b3:	0f 85 ff 00 00 00    	jne    1b8 <chdir_long+0x188>
+  b9:	41 80 3e 2f          	cmpb   $0x2f,(%r14)
+  bd:	0f 84 ce 02 00 00    	je     391 <chdir_long+0x361>
+  c3:	48 01 dd             	add    %rbx,%rbp
+  c6:	49 39 ee             	cmp    %rbp,%r14
+  c9:	0f 87 e1 02 00 00    	ja     3b0 <chdir_long+0x380>
+  cf:	48 89 e8             	mov    %rbp,%rax
+  d2:	4c 29 f0             	sub    %r14,%rax
+  d5:	48 3d ff 0f 00 00    	cmp    $0xfff,%rax
+  db:	7f 36                	jg     113 <chdir_long+0xe3>
+  dd:	e9 61 01 00 00       	jmp    243 <chdir_long+0x213>
+  e2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  e8:	c6 03 2f             	movb   $0x2f,(%rbx)
+  eb:	48 83 c3 01          	add    $0x1,%rbx
+  ef:	4c 89 e6             	mov    %r12,%rsi
+  f2:	48 89 df             	mov    %rbx,%rdi
+  f5:	e8 00 00 00 00       	call   fa <chdir_long+0xca>
+  fa:	4c 8d 34 03          	lea    (%rbx,%rax,1),%r14
+  fe:	48 89 e8             	mov    %rbp,%rax
+ 101:	4c 29 f0             	sub    %r14,%rax
+ 104:	48 3d ff 0f 00 00    	cmp    $0xfff,%rax
+ 10a:	0f 8e 40 01 00 00    	jle    250 <chdir_long+0x220>
+ 110:	45 89 fd             	mov    %r15d,%r13d
+ 113:	ba 00 10 00 00       	mov    $0x1000,%edx
+ 118:	be 2f 00 00 00       	mov    $0x2f,%esi
+ 11d:	4c 89 f7             	mov    %r14,%rdi
+ 120:	e8 00 00 00 00       	call   125 <chdir_long+0xf5>
+ 125:	48 89 c3             	mov    %rax,%rbx
+ 128:	48 85 c0             	test   %rax,%rax
+ 12b:	0f 84 6f 01 00 00    	je     2a0 <chdir_long+0x270>
+ 131:	c6 00 00             	movb   $0x0,(%rax)
+ 134:	4c 29 f0             	sub    %r14,%rax
+ 137:	48 3d ff 0f 00 00    	cmp    $0xfff,%rax
+ 13d:	0f 8f e9 01 00 00    	jg     32c <chdir_long+0x2fc>
+ 143:	ba 00 09 01 00       	mov    $0x10900,%edx
+ 148:	4c 89 f6             	mov    %r14,%rsi
+ 14b:	44 89 ef             	mov    %r13d,%edi
+ 14e:	31 c0                	xor    %eax,%eax
+ 150:	e8 00 00 00 00       	call   155 <chdir_long+0x125>
+ 155:	41 89 c7             	mov    %eax,%r15d
+ 158:	85 c0                	test   %eax,%eax
+ 15a:	78 24                	js     180 <chdir_long+0x150>
+ 15c:	45 85 ed             	test   %r13d,%r13d
+ 15f:	78 87                	js     e8 <chdir_long+0xb8>
+ 161:	44 89 ef             	mov    %r13d,%edi
+ 164:	e8 00 00 00 00       	call   169 <chdir_long+0x139>
+ 169:	85 c0                	test   %eax,%eax
+ 16b:	0f 84 77 ff ff ff    	je     e8 <chdir_long+0xb8>
+ 171:	e8 8a fe ff ff       	call   0 <cdb_free.part.0>
+ 176:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 17d:	00 00 00 
+ 180:	c6 03 2f             	movb   $0x2f,(%rbx)
+ 183:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 188:	8b 18                	mov    (%rax),%ebx
+ 18a:	45 85 ed             	test   %r13d,%r13d
+ 18d:	0f 89 54 01 00 00    	jns    2e7 <chdir_long+0x2b7>
+ 193:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 198:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+ 19e:	89 18                	mov    %ebx,(%rax)
+ 1a0:	48 83 c4 18          	add    $0x18,%rsp
+ 1a4:	44 89 e0             	mov    %r12d,%eax
+ 1a7:	5b                   	pop    %rbx
+ 1a8:	5d                   	pop    %rbp
+ 1a9:	41 5c                	pop    %r12
+ 1ab:	41 5d                	pop    %r13
+ 1ad:	41 5e                	pop    %r14
+ 1af:	41 5f                	pop    %r15
+ 1b1:	c3                   	ret    
+ 1b2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 1b8:	ba 00 09 01 00       	mov    $0x10900,%edx
+ 1bd:	4c 89 e6             	mov    %r12,%rsi
+ 1c0:	bf 9c ff ff ff       	mov    $0xffffff9c,%edi
+ 1c5:	31 c0                	xor    %eax,%eax
+ 1c7:	e8 00 00 00 00       	call   1cc <chdir_long+0x19c>
+ 1cc:	41 89 c5             	mov    %eax,%r13d
+ 1cf:	85 c0                	test   %eax,%eax
+ 1d1:	0f 88 49 01 00 00    	js     320 <chdir_long+0x2f0>
+ 1d7:	4e 8d 74 3d 00       	lea    0x0(%rbp,%r15,1),%r14
+ 1dc:	e9 d8 fe ff ff       	jmp    b9 <chdir_long+0x89>
+ 1e1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 1e8:	48 8d 53 fd          	lea    -0x3(%rbx),%rdx
+ 1ec:	48 8d 7d 03          	lea    0x3(%rbp),%rdi
+ 1f0:	be 2f 00 00 00       	mov    $0x2f,%esi
+ 1f5:	e8 00 00 00 00       	call   1fa <chdir_long+0x1ca>
+ 1fa:	49 89 c6             	mov    %rax,%r14
+ 1fd:	48 85 c0             	test   %rax,%rax
+ 200:	0f 84 fa 00 00 00    	je     300 <chdir_long+0x2d0>
+ 206:	c6 00 00             	movb   $0x0,(%rax)
+ 209:	ba 00 09 01 00       	mov    $0x10900,%edx
+ 20e:	48 89 ee             	mov    %rbp,%rsi
+ 211:	bf 9c ff ff ff       	mov    $0xffffff9c,%edi
+ 216:	31 c0                	xor    %eax,%eax
+ 218:	e8 00 00 00 00       	call   21d <chdir_long+0x1ed>
+ 21d:	41 c6 06 2f          	movb   $0x2f,(%r14)
+ 221:	41 89 c5             	mov    %eax,%r13d
+ 224:	85 c0                	test   %eax,%eax
+ 226:	0f 88 f4 00 00 00    	js     320 <chdir_long+0x2f0>
+ 22c:	49 83 c6 01          	add    $0x1,%r14
+ 230:	4c 89 e6             	mov    %r12,%rsi
+ 233:	4c 89 f7             	mov    %r14,%rdi
+ 236:	e8 00 00 00 00       	call   23b <chdir_long+0x20b>
+ 23b:	49 01 c6             	add    %rax,%r14
+ 23e:	e9 76 fe ff ff       	jmp    b9 <chdir_long+0x89>
+ 243:	45 89 ef             	mov    %r13d,%r15d
+ 246:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 24d:	00 00 00 
+ 250:	4c 39 f5             	cmp    %r14,%rbp
+ 253:	76 6b                	jbe    2c0 <chdir_long+0x290>
+ 255:	ba 00 09 01 00       	mov    $0x10900,%edx
+ 25a:	4c 89 f6             	mov    %r14,%rsi
+ 25d:	44 89 ff             	mov    %r15d,%edi
+ 260:	31 c0                	xor    %eax,%eax
+ 262:	e8 00 00 00 00       	call   267 <chdir_long+0x237>
+ 267:	41 89 c5             	mov    %eax,%r13d
+ 26a:	85 c0                	test   %eax,%eax
+ 26c:	0f 88 d9 00 00 00    	js     34b <chdir_long+0x31b>
+ 272:	45 85 ff             	test   %r15d,%r15d
+ 275:	0f 89 90 00 00 00    	jns    30b <chdir_long+0x2db>
+ 27b:	44 89 ef             	mov    %r13d,%edi
+ 27e:	e8 00 00 00 00       	call   283 <chdir_long+0x253>
+ 283:	85 c0                	test   %eax,%eax
+ 285:	75 59                	jne    2e0 <chdir_long+0x2b0>
+ 287:	44 89 ef             	mov    %r13d,%edi
+ 28a:	e8 00 00 00 00       	call   28f <chdir_long+0x25f>
+ 28f:	85 c0                	test   %eax,%eax
+ 291:	0f 85 da fe ff ff    	jne    171 <chdir_long+0x141>
+ 297:	45 31 e4             	xor    %r12d,%r12d
+ 29a:	e9 01 ff ff ff       	jmp    1a0 <chdir_long+0x170>
+ 29f:	90                   	nop
+ 2a0:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 2a5:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+ 2ab:	c7 00 24 00 00 00    	movl   $0x24,(%rax)
+ 2b1:	e9 ea fe ff ff       	jmp    1a0 <chdir_long+0x170>
+ 2b6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 2bd:	00 00 00 
+ 2c0:	44 89 ff             	mov    %r15d,%edi
+ 2c3:	45 89 fd             	mov    %r15d,%r13d
+ 2c6:	e8 00 00 00 00       	call   2cb <chdir_long+0x29b>
+ 2cb:	85 c0                	test   %eax,%eax
+ 2cd:	0f 85 b0 fe ff ff    	jne    183 <chdir_long+0x153>
+ 2d3:	45 85 ff             	test   %r15d,%r15d
+ 2d6:	78 bf                	js     297 <chdir_long+0x267>
+ 2d8:	eb ad                	jmp    287 <chdir_long+0x257>
+ 2da:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 2e0:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 2e5:	8b 18                	mov    (%rax),%ebx
+ 2e7:	44 89 ef             	mov    %r13d,%edi
+ 2ea:	e8 00 00 00 00       	call   2ef <chdir_long+0x2bf>
+ 2ef:	85 c0                	test   %eax,%eax
+ 2f1:	0f 84 9c fe ff ff    	je     193 <chdir_long+0x163>
+ 2f7:	e9 75 fe ff ff       	jmp    171 <chdir_long+0x141>
+ 2fc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 300:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+ 306:	e9 95 fe ff ff       	jmp    1a0 <chdir_long+0x170>
+ 30b:	44 89 ff             	mov    %r15d,%edi
+ 30e:	e8 00 00 00 00       	call   313 <chdir_long+0x2e3>
+ 313:	85 c0                	test   %eax,%eax
+ 315:	0f 84 60 ff ff ff    	je     27b <chdir_long+0x24b>
+ 31b:	e9 51 fe ff ff       	jmp    171 <chdir_long+0x141>
+ 320:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 325:	8b 18                	mov    (%rax),%ebx
+ 327:	e9 67 fe ff ff       	jmp    193 <chdir_long+0x163>
+ 32c:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 333 <chdir_long+0x303>
+ 333:	ba b2 00 00 00       	mov    $0xb2,%edx
+ 338:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 33f <chdir_long+0x30f>
+ 33f:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 346 <chdir_long+0x316>
+ 346:	e8 00 00 00 00       	call   34b <chdir_long+0x31b>
+ 34b:	45 89 fd             	mov    %r15d,%r13d
+ 34e:	e9 30 fe ff ff       	jmp    183 <chdir_long+0x153>
+ 353:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 35a <chdir_long+0x32a>
+ 35a:	ba 7d 00 00 00       	mov    $0x7d,%edx
+ 35f:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 366 <chdir_long+0x336>
+ 366:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 36d <chdir_long+0x33d>
+ 36d:	e8 00 00 00 00       	call   372 <chdir_long+0x342>
+ 372:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 379 <chdir_long+0x349>
+ 379:	ba 7e 00 00 00       	mov    $0x7e,%edx
+ 37e:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 385 <chdir_long+0x355>
+ 385:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 38c <chdir_long+0x35c>
+ 38c:	e8 00 00 00 00       	call   391 <chdir_long+0x361>
+ 391:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 398 <chdir_long+0x368>
+ 398:	ba a1 00 00 00       	mov    $0xa1,%edx
+ 39d:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 3a4 <chdir_long+0x374>
+ 3a4:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 3ab <chdir_long+0x37b>
+ 3ab:	e8 00 00 00 00       	call   3b0 <chdir_long+0x380>
+ 3b0:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 3b7 <chdir_long+0x387>
+ 3b7:	ba a2 00 00 00       	mov    $0xa2,%edx
+ 3bc:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 3c3 <chdir_long+0x393>
+ 3c3:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 3ca <chdir_long+0x39a>
+ 3ca:	e8 00 00 00 00       	call   3cf <.LC7+0x380>

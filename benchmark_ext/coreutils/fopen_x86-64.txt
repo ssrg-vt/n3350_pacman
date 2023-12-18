@@ -1,0 +1,155 @@
+
+/home/lalitssrg/coreutils/lib/fopen.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_fopen>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	49 89 ff             	mov    %rdi,%r15
+   9:	41 56                	push   %r14
+   b:	49 89 f6             	mov    %rsi,%r14
+   e:	41 55                	push   %r13
+  10:	41 54                	push   %r12
+  12:	55                   	push   %rbp
+  13:	53                   	push   %rbx
+  14:	48 81 ec 88 00 00 00 	sub    $0x88,%rsp
+  1b:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  22:	00 00 
+  24:	48 89 44 24 78       	mov    %rax,0x78(%rsp)
+  29:	31 c0                	xor    %eax,%eax
+  2b:	0f b6 06             	movzbl (%rsi),%eax
+  2e:	84 c0                	test   %al,%al
+  30:	0f 84 f2 01 00 00    	je     228 <rpl_fopen+0x228>
+  36:	4c 8d 64 24 20       	lea    0x20(%rsp),%r12
+  3b:	45 31 c0             	xor    %r8d,%r8d
+  3e:	31 ed                	xor    %ebp,%ebp
+  40:	45 31 ed             	xor    %r13d,%r13d
+  43:	4c 89 e3             	mov    %r12,%rbx
+  46:	48 8d 4c 24 70       	lea    0x70(%rsp),%rcx
+  4b:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 52 <rpl_fopen+0x52>
+  52:	3c 2b                	cmp    $0x2b,%al
+  54:	0f 84 d2 00 00 00    	je     12c <rpl_fopen+0x12c>
+  5a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  60:	83 e8 61             	sub    $0x61,%eax
+  63:	3c 17                	cmp    $0x17,%al
+  65:	77 11                	ja     78 <rpl_fopen+0x78>
+  67:	0f b6 c0             	movzbl %al,%eax
+  6a:	48 63 04 82          	movslq (%rdx,%rax,4),%rax
+  6e:	48 01 d0             	add    %rdx,%rax
+  71:	3e ff e0             	notrack jmp *%rax
+  74:	0f 1f 40 00          	nopl   0x0(%rax)
+  78:	48 89 f7             	mov    %rsi,%rdi
+  7b:	44 88 44 24 1f       	mov    %r8b,0x1f(%rsp)
+  80:	48 89 74 24 10       	mov    %rsi,0x10(%rsp)
+  85:	e8 00 00 00 00       	call   8a <rpl_fopen+0x8a>
+  8a:	48 8d 54 24 70       	lea    0x70(%rsp),%rdx
+  8f:	48 8b 74 24 10       	mov    0x10(%rsp),%rsi
+  94:	48 89 df             	mov    %rbx,%rdi
+  97:	48 29 da             	sub    %rbx,%rdx
+  9a:	b9 51 00 00 00       	mov    $0x51,%ecx
+  9f:	48 39 c2             	cmp    %rax,%rdx
+  a2:	48 0f 47 d0          	cmova  %rax,%rdx
+  a6:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+  ab:	e8 00 00 00 00       	call   b0 <rpl_fopen+0xb0>
+  b0:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+  b5:	44 0f b6 44 24 1f    	movzbl 0x1f(%rsp),%r8d
+  bb:	48 01 d3             	add    %rdx,%rbx
+  be:	c6 03 00             	movb   $0x0,(%rbx)
+  c1:	45 84 c0             	test   %r8b,%r8b
+  c4:	0f 85 06 01 00 00    	jne    1d0 <rpl_fopen+0x1d0>
+  ca:	4c 89 f6             	mov    %r14,%rsi
+  cd:	4c 89 ff             	mov    %r15,%rdi
+  d0:	e8 00 00 00 00       	call   d5 <rpl_fopen+0xd5>
+  d5:	49 89 c5             	mov    %rax,%r13
+  d8:	48 8b 44 24 78       	mov    0x78(%rsp),%rax
+  dd:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  e4:	00 00 
+  e6:	0f 85 46 01 00 00    	jne    232 <rpl_fopen+0x232>
+  ec:	48 81 c4 88 00 00 00 	add    $0x88,%rsp
+  f3:	4c 89 e8             	mov    %r13,%rax
+  f6:	5b                   	pop    %rbx
+  f7:	5d                   	pop    %rbp
+  f8:	41 5c                	pop    %r12
+  fa:	41 5d                	pop    %r13
+  fc:	41 5e                	pop    %r14
+  fe:	41 5f                	pop    %r15
+ 100:	c3                   	ret    
+ 101:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 108:	40 80 cd 80          	or     $0x80,%bpl
+ 10c:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+ 112:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 118:	0f b6 46 01          	movzbl 0x1(%rsi),%eax
+ 11c:	48 83 c6 01          	add    $0x1,%rsi
+ 120:	84 c0                	test   %al,%al
+ 122:	74 9a                	je     be <rpl_fopen+0xbe>
+ 124:	3c 2b                	cmp    $0x2b,%al
+ 126:	0f 85 34 ff ff ff    	jne    60 <rpl_fopen+0x60>
+ 12c:	41 bd 02 00 00 00    	mov    $0x2,%r13d
+ 132:	48 39 cb             	cmp    %rcx,%rbx
+ 135:	73 e1                	jae    118 <rpl_fopen+0x118>
+ 137:	c6 03 2b             	movb   $0x2b,(%rbx)
+ 13a:	48 83 c3 01          	add    $0x1,%rbx
+ 13e:	eb d8                	jmp    118 <rpl_fopen+0x118>
+ 140:	81 cd 40 02 00 00    	or     $0x240,%ebp
+ 146:	41 bd 01 00 00 00    	mov    $0x1,%r13d
+ 14c:	48 39 cb             	cmp    %rcx,%rbx
+ 14f:	73 c7                	jae    118 <rpl_fopen+0x118>
+ 151:	c6 03 77             	movb   $0x77,(%rbx)
+ 154:	48 83 c3 01          	add    $0x1,%rbx
+ 158:	eb be                	jmp    118 <rpl_fopen+0x118>
+ 15a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 160:	45 31 ed             	xor    %r13d,%r13d
+ 163:	48 39 cb             	cmp    %rcx,%rbx
+ 166:	73 b0                	jae    118 <rpl_fopen+0x118>
+ 168:	c6 03 72             	movb   $0x72,(%rbx)
+ 16b:	48 83 c3 01          	add    $0x1,%rbx
+ 16f:	eb a7                	jmp    118 <rpl_fopen+0x118>
+ 171:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 178:	81 cd 00 00 08 00    	or     $0x80000,%ebp
+ 17e:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+ 184:	eb 92                	jmp    118 <rpl_fopen+0x118>
+ 186:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 18d:	00 00 00 
+ 190:	48 39 cb             	cmp    %rcx,%rbx
+ 193:	73 83                	jae    118 <rpl_fopen+0x118>
+ 195:	c6 03 62             	movb   $0x62,(%rbx)
+ 198:	48 83 c3 01          	add    $0x1,%rbx
+ 19c:	e9 77 ff ff ff       	jmp    118 <rpl_fopen+0x118>
+ 1a1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 1a8:	81 cd 40 04 00 00    	or     $0x440,%ebp
+ 1ae:	41 bd 01 00 00 00    	mov    $0x1,%r13d
+ 1b4:	48 39 cb             	cmp    %rcx,%rbx
+ 1b7:	0f 83 5b ff ff ff    	jae    118 <rpl_fopen+0x118>
+ 1bd:	c6 03 61             	movb   $0x61,(%rbx)
+ 1c0:	48 83 c3 01          	add    $0x1,%rbx
+ 1c4:	e9 4f ff ff ff       	jmp    118 <rpl_fopen+0x118>
+ 1c9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 1d0:	89 ee                	mov    %ebp,%esi
+ 1d2:	ba b6 01 00 00       	mov    $0x1b6,%edx
+ 1d7:	4c 89 ff             	mov    %r15,%rdi
+ 1da:	31 c0                	xor    %eax,%eax
+ 1dc:	44 09 ee             	or     %r13d,%esi
+ 1df:	45 31 ed             	xor    %r13d,%r13d
+ 1e2:	e8 00 00 00 00       	call   1e7 <rpl_fopen+0x1e7>
+ 1e7:	89 c5                	mov    %eax,%ebp
+ 1e9:	85 c0                	test   %eax,%eax
+ 1eb:	0f 88 e7 fe ff ff    	js     d8 <rpl_fopen+0xd8>
+ 1f1:	4c 89 e6             	mov    %r12,%rsi
+ 1f4:	89 ef                	mov    %ebp,%edi
+ 1f6:	e8 00 00 00 00       	call   1fb <rpl_fopen+0x1fb>
+ 1fb:	49 89 c5             	mov    %rax,%r13
+ 1fe:	48 85 c0             	test   %rax,%rax
+ 201:	0f 85 d1 fe ff ff    	jne    d8 <rpl_fopen+0xd8>
+ 207:	e8 00 00 00 00       	call   20c <rpl_fopen+0x20c>
+ 20c:	89 ef                	mov    %ebp,%edi
+ 20e:	44 8b 20             	mov    (%rax),%r12d
+ 211:	48 89 c3             	mov    %rax,%rbx
+ 214:	e8 00 00 00 00       	call   219 <rpl_fopen+0x219>
+ 219:	44 89 23             	mov    %r12d,(%rbx)
+ 21c:	e9 b7 fe ff ff       	jmp    d8 <rpl_fopen+0xd8>
+ 221:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 228:	c6 44 24 20 00       	movb   $0x0,0x20(%rsp)
+ 22d:	e9 98 fe ff ff       	jmp    ca <rpl_fopen+0xca>
+ 232:	e8 00 00 00 00       	call   237 <rpl_fopen+0x237>

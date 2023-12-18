@@ -1,0 +1,464 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-savewd.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <savewd_init>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	c7 07 00 00 00 00    	movl   $0x0,(%rdi)
+   a:	c3                   	ret    
+   b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000010 <savewd_errno>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	31 c0                	xor    %eax,%eax
+  16:	83 3f 04             	cmpl   $0x4,(%rdi)
+  19:	74 05                	je     20 <savewd_errno+0x10>
+  1b:	c3                   	ret    
+  1c:	0f 1f 40 00          	nopl   0x0(%rax)
+  20:	8b 47 04             	mov    0x4(%rdi),%eax
+  23:	c3                   	ret    
+  24:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  2b:	00 00 00 00 
+  2f:	90                   	nop
+
+0000000000000030 <savewd_chdir>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	41 56                	push   %r14
+  36:	49 89 f6             	mov    %rsi,%r14
+  39:	41 55                	push   %r13
+  3b:	41 89 d5             	mov    %edx,%r13d
+  3e:	41 54                	push   %r12
+  40:	49 89 fc             	mov    %rdi,%r12
+  43:	55                   	push   %rbp
+  44:	53                   	push   %rbx
+  45:	48 89 cb             	mov    %rcx,%rbx
+  48:	48 85 c9             	test   %rcx,%rcx
+  4b:	0f 84 af 01 00 00    	je     200 <savewd_chdir+0x1d0>
+  51:	89 d6                	mov    %edx,%esi
+  53:	4c 89 f7             	mov    %r14,%rdi
+  56:	c1 e6 11             	shl    $0x11,%esi
+  59:	81 e6 00 00 02 00    	and    $0x20000,%esi
+  5f:	81 ce 00 09 01 00    	or     $0x10900,%esi
+  65:	e8 00 00 00 00       	call   6a <savewd_chdir+0x3a>
+  6a:	89 03                	mov    %eax,(%rbx)
+  6c:	89 c5                	mov    %eax,%ebp
+  6e:	e8 00 00 00 00       	call   73 <savewd_chdir+0x43>
+  73:	8b 00                	mov    (%rax),%eax
+  75:	89 43 04             	mov    %eax,0x4(%rbx)
+  78:	85 ed                	test   %ebp,%ebp
+  7a:	0f 88 e0 00 00 00    	js     160 <savewd_chdir+0x130>
+  80:	41 83 e5 02          	and    $0x2,%r13d
+  84:	0f 85 7e 00 00 00    	jne    108 <savewd_chdir+0xd8>
+  8a:	41 8b 04 24          	mov    (%r12),%eax
+  8e:	83 f8 03             	cmp    $0x3,%eax
+  91:	0f 84 e9 01 00 00    	je     280 <savewd_chdir+0x250>
+  97:	0f 87 a3 00 00 00    	ja     140 <savewd_chdir+0x110>
+  9d:	85 c0                	test   %eax,%eax
+  9f:	0f 85 a3 00 00 00    	jne    148 <savewd_chdir+0x118>
+  a5:	31 f6                	xor    %esi,%esi
+  a7:	31 c0                	xor    %eax,%eax
+  a9:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # b0 <savewd_chdir+0x80>
+  b0:	e8 00 00 00 00       	call   b5 <savewd_chdir+0x85>
+  b5:	85 c0                	test   %eax,%eax
+  b7:	0f 88 73 01 00 00    	js     230 <savewd_chdir+0x200>
+  bd:	41 c7 04 24 01 00 00 	movl   $0x1,(%r12)
+  c4:	00 
+  c5:	41 89 44 24 04       	mov    %eax,0x4(%r12)
+  ca:	85 ed                	test   %ebp,%ebp
+  cc:	79 7a                	jns    148 <savewd_chdir+0x118>
+  ce:	66 90                	xchg   %ax,%ax
+  d0:	4c 89 f7             	mov    %r14,%rdi
+  d3:	e8 00 00 00 00       	call   d8 <savewd_chdir+0xa8>
+  d8:	41 89 c5             	mov    %eax,%r13d
+  db:	85 c0                	test   %eax,%eax
+  dd:	75 4f                	jne    12e <savewd_chdir+0xfe>
+  df:	41 8b 04 24          	mov    (%r12),%eax
+  e3:	83 f8 03             	cmp    $0x3,%eax
+  e6:	0f 84 b4 01 00 00    	je     2a0 <savewd_chdir+0x270>
+  ec:	0f 87 fe 00 00 00    	ja     1f0 <savewd_chdir+0x1c0>
+  f2:	83 f8 01             	cmp    $0x1,%eax
+  f5:	0f 85 c5 00 00 00    	jne    1c0 <savewd_chdir+0x190>
+  fb:	41 c7 04 24 02 00 00 	movl   $0x2,(%r12)
+ 102:	00 
+ 103:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 108:	48 85 db             	test   %rbx,%rbx
+ 10b:	0f 94 c0             	sete   %al
+ 10e:	45 31 ed             	xor    %r13d,%r13d
+ 111:	85 ed                	test   %ebp,%ebp
+ 113:	78 19                	js     12e <savewd_chdir+0xfe>
+ 115:	84 c0                	test   %al,%al
+ 117:	74 15                	je     12e <savewd_chdir+0xfe>
+ 119:	e8 00 00 00 00       	call   11e <savewd_chdir+0xee>
+ 11e:	89 ef                	mov    %ebp,%edi
+ 120:	44 8b 20             	mov    (%rax),%r12d
+ 123:	48 89 c3             	mov    %rax,%rbx
+ 126:	e8 00 00 00 00       	call   12b <savewd_chdir+0xfb>
+ 12b:	44 89 23             	mov    %r12d,(%rbx)
+ 12e:	5b                   	pop    %rbx
+ 12f:	44 89 e8             	mov    %r13d,%eax
+ 132:	5d                   	pop    %rbp
+ 133:	41 5c                	pop    %r12
+ 135:	41 5d                	pop    %r13
+ 137:	41 5e                	pop    %r14
+ 139:	c3                   	ret    
+ 13a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 140:	83 e8 04             	sub    $0x4,%eax
+ 143:	83 f8 01             	cmp    $0x1,%eax
+ 146:	77 54                	ja     19c <savewd_chdir+0x16c>
+ 148:	89 ef                	mov    %ebp,%edi
+ 14a:	e8 00 00 00 00       	call   14f <savewd_chdir+0x11f>
+ 14f:	41 89 c5             	mov    %eax,%r13d
+ 152:	85 c0                	test   %eax,%eax
+ 154:	74 89                	je     df <savewd_chdir+0xaf>
+ 156:	48 85 db             	test   %rbx,%rbx
+ 159:	0f 94 c0             	sete   %al
+ 15c:	eb b3                	jmp    111 <savewd_chdir+0xe1>
+ 15e:	66 90                	xchg   %ax,%ax
+ 160:	e8 00 00 00 00       	call   165 <savewd_chdir+0x135>
+ 165:	83 38 0d             	cmpl   $0xd,(%rax)
+ 168:	0f 85 b2 01 00 00    	jne    320 <savewd_chdir+0x2f0>
+ 16e:	41 8b 04 24          	mov    (%r12),%eax
+ 172:	83 f8 03             	cmp    $0x3,%eax
+ 175:	0f 84 e5 00 00 00    	je     260 <savewd_chdir+0x230>
+ 17b:	77 13                	ja     190 <savewd_chdir+0x160>
+ 17d:	85 c0                	test   %eax,%eax
+ 17f:	0f 84 20 ff ff ff    	je     a5 <savewd_chdir+0x75>
+ 185:	e9 46 ff ff ff       	jmp    d0 <savewd_chdir+0xa0>
+ 18a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 190:	83 e8 04             	sub    $0x4,%eax
+ 193:	83 f8 01             	cmp    $0x1,%eax
+ 196:	0f 86 34 ff ff ff    	jbe    d0 <savewd_chdir+0xa0>
+ 19c:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 1a3 <savewd_chdir+0x173>
+ 1a3:	ba 5b 00 00 00       	mov    $0x5b,%edx
+ 1a8:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 1af <savewd_chdir+0x17f>
+ 1af:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 1b6 <savewd_chdir+0x186>
+ 1b6:	e8 00 00 00 00       	call   1bb <savewd_chdir+0x18b>
+ 1bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 1c0:	83 f8 02             	cmp    $0x2,%eax
+ 1c3:	0f 84 3f ff ff ff    	je     108 <savewd_chdir+0xd8>
+ 1c9:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 1d0 <savewd_chdir+0x1a0>
+ 1d0:	ba 97 00 00 00       	mov    $0x97,%edx
+ 1d5:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 1dc <savewd_chdir+0x1ac>
+ 1dc:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 1e3 <savewd_chdir+0x1b3>
+ 1e3:	e8 00 00 00 00       	call   1e8 <savewd_chdir+0x1b8>
+ 1e8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 1ef:	00 
+ 1f0:	83 e8 04             	sub    $0x4,%eax
+ 1f3:	83 f8 01             	cmp    $0x1,%eax
+ 1f6:	0f 86 0c ff ff ff    	jbe    108 <savewd_chdir+0xd8>
+ 1fc:	eb cb                	jmp    1c9 <savewd_chdir+0x199>
+ 1fe:	66 90                	xchg   %ax,%ax
+ 200:	bd ff ff ff ff       	mov    $0xffffffff,%ebp
+ 205:	f6 c2 01             	test   $0x1,%dl
+ 208:	0f 84 60 ff ff ff    	je     16e <savewd_chdir+0x13e>
+ 20e:	89 d6                	mov    %edx,%esi
+ 210:	4c 89 f7             	mov    %r14,%rdi
+ 213:	c1 e6 11             	shl    $0x11,%esi
+ 216:	81 e6 00 00 02 00    	and    $0x20000,%esi
+ 21c:	81 ce 00 09 01 00    	or     $0x10900,%esi
+ 222:	e8 00 00 00 00       	call   227 <savewd_chdir+0x1f7>
+ 227:	89 c5                	mov    %eax,%ebp
+ 229:	e9 4a fe ff ff       	jmp    78 <savewd_chdir+0x48>
+ 22e:	66 90                	xchg   %ax,%ax
+ 230:	e8 00 00 00 00       	call   235 <savewd_chdir+0x205>
+ 235:	8b 10                	mov    (%rax),%edx
+ 237:	83 fa 0d             	cmp    $0xd,%edx
+ 23a:	0f 84 90 00 00 00    	je     2d0 <savewd_chdir+0x2a0>
+ 240:	83 fa 74             	cmp    $0x74,%edx
+ 243:	0f 84 87 00 00 00    	je     2d0 <savewd_chdir+0x2a0>
+ 249:	41 c7 04 24 04 00 00 	movl   $0x4,(%r12)
+ 250:	00 
+ 251:	8b 00                	mov    (%rax),%eax
+ 253:	41 89 44 24 04       	mov    %eax,0x4(%r12)
+ 258:	e9 6d fe ff ff       	jmp    ca <savewd_chdir+0x9a>
+ 25d:	0f 1f 00             	nopl   (%rax)
+ 260:	41 8b 54 24 04       	mov    0x4(%r12),%edx
+ 265:	85 d2                	test   %edx,%edx
+ 267:	0f 89 63 fe ff ff    	jns    d0 <savewd_chdir+0xa0>
+ 26d:	e8 00 00 00 00       	call   272 <savewd_chdir+0x242>
+ 272:	41 89 44 24 04       	mov    %eax,0x4(%r12)
+ 277:	85 c0                	test   %eax,%eax
+ 279:	75 75                	jne    2f0 <savewd_chdir+0x2c0>
+ 27b:	e9 50 fe ff ff       	jmp    d0 <savewd_chdir+0xa0>
+ 280:	41 8b 44 24 04       	mov    0x4(%r12),%eax
+ 285:	85 c0                	test   %eax,%eax
+ 287:	0f 89 bb fe ff ff    	jns    148 <savewd_chdir+0x118>
+ 28d:	e8 00 00 00 00       	call   292 <savewd_chdir+0x262>
+ 292:	41 89 44 24 04       	mov    %eax,0x4(%r12)
+ 297:	85 c0                	test   %eax,%eax
+ 299:	75 55                	jne    2f0 <savewd_chdir+0x2c0>
+ 29b:	e9 a8 fe ff ff       	jmp    148 <savewd_chdir+0x118>
+ 2a0:	45 8b 6c 24 04       	mov    0x4(%r12),%r13d
+ 2a5:	45 85 ed             	test   %r13d,%r13d
+ 2a8:	0f 84 a8 fe ff ff    	je     156 <savewd_chdir+0x126>
+ 2ae:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 2b5 <savewd_chdir+0x285>
+ 2b5:	ba 93 00 00 00       	mov    $0x93,%edx
+ 2ba:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2c1 <savewd_chdir+0x291>
+ 2c1:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 2c8 <savewd_chdir+0x298>
+ 2c8:	e8 00 00 00 00       	call   2cd <savewd_chdir+0x29d>
+ 2cd:	0f 1f 00             	nopl   (%rax)
+ 2d0:	48 b8 03 00 00 00 ff 	movabs $0xffffffff00000003,%rax
+ 2d7:	ff ff ff 
+ 2da:	49 89 04 24          	mov    %rax,(%r12)
+ 2de:	e8 00 00 00 00       	call   2e3 <savewd_chdir+0x2b3>
+ 2e3:	41 89 44 24 04       	mov    %eax,0x4(%r12)
+ 2e8:	85 c0                	test   %eax,%eax
+ 2ea:	0f 84 da fd ff ff    	je     ca <savewd_chdir+0x9a>
+ 2f0:	85 c0                	test   %eax,%eax
+ 2f2:	7f 1c                	jg     310 <savewd_chdir+0x2e0>
+ 2f4:	41 c7 04 24 04 00 00 	movl   $0x4,(%r12)
+ 2fb:	00 
+ 2fc:	e8 00 00 00 00       	call   301 <savewd_chdir+0x2d1>
+ 301:	8b 00                	mov    (%rax),%eax
+ 303:	41 89 44 24 04       	mov    %eax,0x4(%r12)
+ 308:	e9 bd fd ff ff       	jmp    ca <savewd_chdir+0x9a>
+ 30d:	0f 1f 00             	nopl   (%rax)
+ 310:	b8 01 00 00 00       	mov    $0x1,%eax
+ 315:	41 bd fe ff ff ff    	mov    $0xfffffffe,%r13d
+ 31b:	e9 f1 fd ff ff       	jmp    111 <savewd_chdir+0xe1>
+ 320:	41 bd ff ff ff ff    	mov    $0xffffffff,%r13d
+ 326:	e9 03 fe ff ff       	jmp    12e <savewd_chdir+0xfe>
+ 32b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000330 <savewd_restore>:
+ 330:	f3 0f 1e fa          	endbr64 
+ 334:	41 54                	push   %r12
+ 336:	55                   	push   %rbp
+ 337:	53                   	push   %rbx
+ 338:	48 89 fb             	mov    %rdi,%rbx
+ 33b:	48 83 ec 10          	sub    $0x10,%rsp
+ 33f:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 346:	00 00 
+ 348:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 34d:	8b 07                	mov    (%rdi),%eax
+ 34f:	83 f8 03             	cmp    $0x3,%eax
+ 352:	74 4c                	je     3a0 <savewd_restore+0x70>
+ 354:	77 22                	ja     378 <savewd_restore+0x48>
+ 356:	83 f8 02             	cmp    $0x2,%eax
+ 359:	75 5d                	jne    3b8 <savewd_restore+0x88>
+ 35b:	8b 7f 04             	mov    0x4(%rdi),%edi
+ 35e:	e8 00 00 00 00       	call   363 <savewd_restore+0x33>
+ 363:	85 c0                	test   %eax,%eax
+ 365:	0f 85 a6 00 00 00    	jne    411 <savewd_restore+0xe1>
+ 36b:	c7 03 01 00 00 00    	movl   $0x1,(%rbx)
+ 371:	eb 47                	jmp    3ba <savewd_restore+0x8a>
+ 373:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 378:	83 f8 04             	cmp    $0x4,%eax
+ 37b:	0f 85 e1 00 00 00    	jne    462 <savewd_restore+0x132>
+ 381:	44 8b 67 04          	mov    0x4(%rdi),%r12d
+ 385:	e8 00 00 00 00       	call   38a <savewd_restore+0x5a>
+ 38a:	48 89 c5             	mov    %rax,%rbp
+ 38d:	44 89 65 00          	mov    %r12d,0x0(%rbp)
+ 391:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 396:	eb 22                	jmp    3ba <savewd_restore+0x8a>
+ 398:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 39f:	00 
+ 3a0:	8b 6f 04             	mov    0x4(%rdi),%ebp
+ 3a3:	85 ed                	test   %ebp,%ebp
+ 3a5:	0f 84 db 00 00 00    	je     486 <savewd_restore+0x156>
+ 3ab:	4c 8d 64 24 04       	lea    0x4(%rsp),%r12
+ 3b0:	7f 38                	jg     3ea <savewd_restore+0xba>
+ 3b2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 3b8:	31 c0                	xor    %eax,%eax
+ 3ba:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+ 3bf:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 3c6:	00 00 
+ 3c8:	0f 85 b3 00 00 00    	jne    481 <savewd_restore+0x151>
+ 3ce:	48 83 c4 10          	add    $0x10,%rsp
+ 3d2:	5b                   	pop    %rbx
+ 3d3:	5d                   	pop    %rbp
+ 3d4:	41 5c                	pop    %r12
+ 3d6:	c3                   	ret    
+ 3d7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 3de:	00 00 
+ 3e0:	e8 00 00 00 00       	call   3e5 <savewd_restore+0xb5>
+ 3e5:	83 38 04             	cmpl   $0x4,(%rax)
+ 3e8:	75 59                	jne    443 <savewd_restore+0x113>
+ 3ea:	31 d2                	xor    %edx,%edx
+ 3ec:	4c 89 e6             	mov    %r12,%rsi
+ 3ef:	89 ef                	mov    %ebp,%edi
+ 3f1:	e8 00 00 00 00       	call   3f6 <savewd_restore+0xc6>
+ 3f6:	85 c0                	test   %eax,%eax
+ 3f8:	78 e6                	js     3e0 <savewd_restore+0xb0>
+ 3fa:	8b 44 24 04          	mov    0x4(%rsp),%eax
+ 3fe:	c7 43 04 ff ff ff ff 	movl   $0xffffffff,0x4(%rbx)
+ 405:	89 c7                	mov    %eax,%edi
+ 407:	83 e7 7f             	and    $0x7f,%edi
+ 40a:	75 2c                	jne    438 <savewd_restore+0x108>
+ 40c:	0f b6 c4             	movzbl %ah,%eax
+ 40f:	eb a9                	jmp    3ba <savewd_restore+0x8a>
+ 411:	e8 00 00 00 00       	call   416 <savewd_restore+0xe6>
+ 416:	8b 7b 04             	mov    0x4(%rbx),%edi
+ 419:	44 8b 20             	mov    (%rax),%r12d
+ 41c:	48 89 c5             	mov    %rax,%rbp
+ 41f:	e8 00 00 00 00       	call   424 <savewd_restore+0xf4>
+ 424:	c7 03 04 00 00 00    	movl   $0x4,(%rbx)
+ 42a:	44 89 63 04          	mov    %r12d,0x4(%rbx)
+ 42e:	e9 5a ff ff ff       	jmp    38d <savewd_restore+0x5d>
+ 433:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 438:	e8 00 00 00 00       	call   43d <savewd_restore+0x10d>
+ 43d:	8b 44 24 04          	mov    0x4(%rsp),%eax
+ 441:	eb c9                	jmp    40c <savewd_restore+0xdc>
+ 443:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 44a <savewd_restore+0x11a>
+ 44a:	ba d0 00 00 00       	mov    $0xd0,%edx
+ 44f:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 456 <savewd_restore+0x126>
+ 456:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 45d <savewd_restore+0x12d>
+ 45d:	e8 00 00 00 00       	call   462 <savewd_restore+0x132>
+ 462:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 469 <savewd_restore+0x139>
+ 469:	ba da 00 00 00       	mov    $0xda,%edx
+ 46e:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 475 <savewd_restore+0x145>
+ 475:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 47c <savewd_restore+0x14c>
+ 47c:	e8 00 00 00 00       	call   481 <savewd_restore+0x151>
+ 481:	e8 00 00 00 00       	call   486 <savewd_restore+0x156>
+ 486:	89 f7                	mov    %esi,%edi
+ 488:	e8 00 00 00 00       	call   48d <savewd_restore+0x15d>
+ 48d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000490 <savewd_finish>:
+ 490:	f3 0f 1e fa          	endbr64 
+ 494:	53                   	push   %rbx
+ 495:	8b 07                	mov    (%rdi),%eax
+ 497:	48 89 fb             	mov    %rdi,%rbx
+ 49a:	83 f8 03             	cmp    $0x3,%eax
+ 49d:	74 41                	je     4e0 <savewd_finish+0x50>
+ 49f:	77 17                	ja     4b8 <savewd_finish+0x28>
+ 4a1:	85 c0                	test   %eax,%eax
+ 4a3:	74 08                	je     4ad <savewd_finish+0x1d>
+ 4a5:	8b 7f 04             	mov    0x4(%rdi),%edi
+ 4a8:	e8 00 00 00 00       	call   4ad <savewd_finish+0x1d>
+ 4ad:	c7 03 05 00 00 00    	movl   $0x5,(%rbx)
+ 4b3:	5b                   	pop    %rbx
+ 4b4:	c3                   	ret    
+ 4b5:	0f 1f 00             	nopl   (%rax)
+ 4b8:	83 f8 04             	cmp    $0x4,%eax
+ 4bb:	74 f0                	je     4ad <savewd_finish+0x1d>
+ 4bd:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 4c4 <savewd_finish+0x34>
+ 4c4:	ba f3 00 00 00       	mov    $0xf3,%edx
+ 4c9:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 4d0 <savewd_finish+0x40>
+ 4d0:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 4d7 <savewd_finish+0x47>
+ 4d7:	e8 00 00 00 00       	call   4dc <savewd_finish+0x4c>
+ 4dc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 4e0:	8b 47 04             	mov    0x4(%rdi),%eax
+ 4e3:	85 c0                	test   %eax,%eax
+ 4e5:	78 c6                	js     4ad <savewd_finish+0x1d>
+ 4e7:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 4ee <savewd_finish+0x5e>
+ 4ee:	ba ef 00 00 00       	mov    $0xef,%edx
+ 4f3:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 4fa <savewd_finish+0x6a>
+ 4fa:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 501 <savewd_finish+0x71>
+ 501:	e8 00 00 00 00       	call   506 <savewd_finish+0x76>
+ 506:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 50d:	00 00 00 
+
+0000000000000510 <savewd_process_files>:
+ 510:	f3 0f 1e fa          	endbr64 
+ 514:	41 57                	push   %r15
+ 516:	41 56                	push   %r14
+ 518:	41 55                	push   %r13
+ 51a:	41 54                	push   %r12
+ 51c:	49 89 cc             	mov    %rcx,%r12
+ 51f:	55                   	push   %rbp
+ 520:	48 89 d5             	mov    %rdx,%rbp
+ 523:	53                   	push   %rbx
+ 524:	48 83 ec 38          	sub    $0x38,%rsp
+ 528:	89 7c 24 18          	mov    %edi,0x18(%rsp)
+ 52c:	48 89 74 24 10       	mov    %rsi,0x10(%rsp)
+ 531:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 538:	00 00 
+ 53a:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+ 53f:	31 c0                	xor    %eax,%eax
+ 541:	8d 47 ff             	lea    -0x1(%rdi),%eax
+ 544:	c7 44 24 20 00 00 00 	movl   $0x0,0x20(%rsp)
+ 54b:	00 
+ 54c:	89 44 24 1c          	mov    %eax,0x1c(%rsp)
+ 550:	85 c0                	test   %eax,%eax
+ 552:	0f 88 a8 00 00 00    	js     600 <savewd_process_files+0xf0>
+ 558:	41 89 c6             	mov    %eax,%r14d
+ 55b:	48 98                	cltq   
+ 55d:	48 8d 04 c6          	lea    (%rsi,%rax,8),%rax
+ 561:	eb 17                	jmp    57a <savewd_process_files+0x6a>
+ 563:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 568:	41 83 ee 01          	sub    $0x1,%r14d
+ 56c:	48 83 e8 08          	sub    $0x8,%rax
+ 570:	41 83 fe ff          	cmp    $0xffffffff,%r14d
+ 574:	0f 84 86 00 00 00    	je     600 <savewd_process_files+0xf0>
+ 57a:	48 8b 10             	mov    (%rax),%rdx
+ 57d:	80 3a 2f             	cmpb   $0x2f,(%rdx)
+ 580:	74 e6                	je     568 <savewd_process_files+0x58>
+ 582:	45 85 f6             	test   %r14d,%r14d
+ 585:	7e 79                	jle    600 <savewd_process_files+0xf0>
+ 587:	48 8b 4c 24 10       	mov    0x10(%rsp),%rcx
+ 58c:	41 8d 46 ff          	lea    -0x1(%r14),%eax
+ 590:	45 31 ff             	xor    %r15d,%r15d
+ 593:	48 8d 5c 24 20       	lea    0x20(%rsp),%rbx
+ 598:	48 8d 44 c1 08       	lea    0x8(%rcx,%rax,8),%rax
+ 59d:	49 89 cd             	mov    %rcx,%r13
+ 5a0:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+ 5a5:	31 c0                	xor    %eax,%eax
+ 5a7:	eb 44                	jmp    5ed <savewd_process_files+0xdd>
+ 5a9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 5b0:	49 8b 7d 00          	mov    0x0(%r13),%rdi
+ 5b4:	4c 89 e2             	mov    %r12,%rdx
+ 5b7:	48 89 de             	mov    %rbx,%rsi
+ 5ba:	ff d5                	call   *%rbp
+ 5bc:	41 39 c7             	cmp    %eax,%r15d
+ 5bf:	44 0f 4c f8          	cmovl  %eax,%r15d
+ 5c3:	49 8b 45 08          	mov    0x8(%r13),%rax
+ 5c7:	80 38 2f             	cmpb   $0x2f,(%rax)
+ 5ca:	74 12                	je     5de <savewd_process_files+0xce>
+ 5cc:	44 89 fe             	mov    %r15d,%esi
+ 5cf:	48 89 df             	mov    %rbx,%rdi
+ 5d2:	e8 00 00 00 00       	call   5d7 <savewd_process_files+0xc7>
+ 5d7:	41 39 c7             	cmp    %eax,%r15d
+ 5da:	44 0f 4c f8          	cmovl  %eax,%r15d
+ 5de:	49 83 c5 08          	add    $0x8,%r13
+ 5e2:	4c 3b 6c 24 08       	cmp    0x8(%rsp),%r13
+ 5e7:	74 22                	je     60b <savewd_process_files+0xfb>
+ 5e9:	8b 44 24 20          	mov    0x20(%rsp),%eax
+ 5ed:	83 f8 03             	cmp    $0x3,%eax
+ 5f0:	75 be                	jne    5b0 <savewd_process_files+0xa0>
+ 5f2:	8b 44 24 24          	mov    0x24(%rsp),%eax
+ 5f6:	85 c0                	test   %eax,%eax
+ 5f8:	7f c9                	jg     5c3 <savewd_process_files+0xb3>
+ 5fa:	eb b4                	jmp    5b0 <savewd_process_files+0xa0>
+ 5fc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 600:	45 31 ff             	xor    %r15d,%r15d
+ 603:	45 31 f6             	xor    %r14d,%r14d
+ 606:	48 8d 5c 24 20       	lea    0x20(%rsp),%rbx
+ 60b:	48 89 df             	mov    %rbx,%rdi
+ 60e:	e8 00 00 00 00       	call   613 <savewd_process_files+0x103>
+ 613:	44 39 74 24 18       	cmp    %r14d,0x18(%rsp)
+ 618:	7e 42                	jle    65c <savewd_process_files+0x14c>
+ 61a:	8b 54 24 1c          	mov    0x1c(%rsp),%edx
+ 61e:	48 8b 4c 24 10       	mov    0x10(%rsp),%rcx
+ 623:	49 63 c6             	movslq %r14d,%rax
+ 626:	44 29 f2             	sub    %r14d,%edx
+ 629:	4c 8d 2c c1          	lea    (%rcx,%rax,8),%r13
+ 62d:	4c 8d 34 02          	lea    (%rdx,%rax,1),%r14
+ 631:	4e 8d 74 f1 08       	lea    0x8(%rcx,%r14,8),%r14
+ 636:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+ 63d:	00 00 00 
+ 640:	49 8b 7d 00          	mov    0x0(%r13),%rdi
+ 644:	4c 89 e2             	mov    %r12,%rdx
+ 647:	48 89 de             	mov    %rbx,%rsi
+ 64a:	ff d5                	call   *%rbp
+ 64c:	41 39 c7             	cmp    %eax,%r15d
+ 64f:	44 0f 4c f8          	cmovl  %eax,%r15d
+ 653:	49 83 c5 08          	add    $0x8,%r13
+ 657:	4d 39 f5             	cmp    %r14,%r13
+ 65a:	75 e4                	jne    640 <savewd_process_files+0x130>
+ 65c:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+ 661:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 668:	00 00 
+ 66a:	75 12                	jne    67e <savewd_process_files+0x16e>
+ 66c:	48 83 c4 38          	add    $0x38,%rsp
+ 670:	44 89 f8             	mov    %r15d,%eax
+ 673:	5b                   	pop    %rbx
+ 674:	5d                   	pop    %rbp
+ 675:	41 5c                	pop    %r12
+ 677:	41 5d                	pop    %r13
+ 679:	41 5e                	pop    %r14
+ 67b:	41 5f                	pop    %r15
+ 67d:	c3                   	ret    
+ 67e:	e8 00 00 00 00       	call   683 <savewd_process_files+0x173>

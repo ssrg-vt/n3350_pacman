@@ -1,0 +1,44 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-safe-write.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <safe_write>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 89 fd             	mov    %edi,%r13d
+   9:	41 54                	push   %r12
+   b:	55                   	push   %rbp
+   c:	48 89 f5             	mov    %rsi,%rbp
+   f:	53                   	push   %rbx
+  10:	48 89 d3             	mov    %rdx,%rbx
+  13:	48 83 ec 08          	sub    $0x8,%rsp
+  17:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  1e:	00 00 
+  20:	48 89 da             	mov    %rbx,%rdx
+  23:	48 89 ee             	mov    %rbp,%rsi
+  26:	44 89 ef             	mov    %r13d,%edi
+  29:	e8 00 00 00 00       	call   2e <safe_write+0x2e>
+  2e:	49 89 c4             	mov    %rax,%r12
+  31:	48 85 c0             	test   %rax,%rax
+  34:	79 2a                	jns    60 <safe_write+0x60>
+  36:	e8 00 00 00 00       	call   3b <safe_write+0x3b>
+  3b:	8b 00                	mov    (%rax),%eax
+  3d:	83 f8 04             	cmp    $0x4,%eax
+  40:	74 de                	je     20 <safe_write+0x20>
+  42:	83 f8 16             	cmp    $0x16,%eax
+  45:	75 19                	jne    60 <safe_write+0x60>
+  47:	48 81 fb 00 00 f0 7f 	cmp    $0x7ff00000,%rbx
+  4e:	76 10                	jbe    60 <safe_write+0x60>
+  50:	bb 00 00 f0 7f       	mov    $0x7ff00000,%ebx
+  55:	eb c9                	jmp    20 <safe_write+0x20>
+  57:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  5e:	00 00 
+  60:	48 83 c4 08          	add    $0x8,%rsp
+  64:	4c 89 e0             	mov    %r12,%rax
+  67:	5b                   	pop    %rbx
+  68:	5d                   	pop    %rbp
+  69:	41 5c                	pop    %r12
+  6b:	41 5d                	pop    %r13
+  6d:	c3                   	ret    

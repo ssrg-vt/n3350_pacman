@@ -1,0 +1,58 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-printf-frexpl.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <printf_frexpl>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	53                   	push   %rbx
+   6:	48 89 fb             	mov    %rdi,%rbx
+   9:	48 83 ec 18          	sub    $0x18,%rsp
+   d:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  14:	00 00 
+  16:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  1b:	31 c0                	xor    %eax,%eax
+  1d:	d9 7c 24 04          	fnstcw 0x4(%rsp)
+  21:	0f b7 6c 24 04       	movzwl 0x4(%rsp),%ebp
+  26:	89 e8                	mov    %ebp,%eax
+  28:	80 cc 03             	or     $0x3,%ah
+  2b:	66 89 44 24 04       	mov    %ax,0x4(%rsp)
+  30:	d9 6c 24 04          	fldcw  0x4(%rsp)
+  34:	48 8d 7c 24 04       	lea    0x4(%rsp),%rdi
+  39:	ff 74 24 38          	push   0x38(%rsp)
+  3d:	ff 74 24 38          	push   0x38(%rsp)
+  41:	e8 00 00 00 00       	call   46 <printf_frexpl+0x46>
+  46:	8b 7c 24 14          	mov    0x14(%rsp),%edi
+  4a:	d8 c0                	fadd   %st(0),%st
+  4c:	8d 47 ff             	lea    -0x1(%rdi),%eax
+  4f:	89 44 24 14          	mov    %eax,0x14(%rsp)
+  53:	59                   	pop    %rcx
+  54:	5e                   	pop    %rsi
+  55:	3d 02 c0 ff ff       	cmp    $0xffffc002,%eax
+  5a:	7c 24                	jl     80 <printf_frexpl+0x80>
+  5c:	66 89 6c 24 02       	mov    %bp,0x2(%rsp)
+  61:	d9 6c 24 02          	fldcw  0x2(%rsp)
+  65:	89 03                	mov    %eax,(%rbx)
+  67:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  6c:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  73:	00 00 
+  75:	75 2c                	jne    a3 <printf_frexpl+0xa3>
+  77:	48 83 c4 18          	add    $0x18,%rsp
+  7b:	5b                   	pop    %rbx
+  7c:	5d                   	pop    %rbp
+  7d:	c3                   	ret    
+  7e:	66 90                	xchg   %ax,%ax
+  80:	48 83 ec 10          	sub    $0x10,%rsp
+  84:	81 c7 fd 3f 00 00    	add    $0x3ffd,%edi
+  8a:	db 3c 24             	fstpt  (%rsp)
+  8d:	e8 00 00 00 00       	call   92 <printf_frexpl+0x92>
+  92:	c7 44 24 14 02 c0 ff 	movl   $0xffffc002,0x14(%rsp)
+  99:	ff 
+  9a:	58                   	pop    %rax
+  9b:	b8 02 c0 ff ff       	mov    $0xffffc002,%eax
+  a0:	5a                   	pop    %rdx
+  a1:	eb b9                	jmp    5c <printf_frexpl+0x5c>
+  a3:	dd d8                	fstp   %st(0)
+  a5:	e8 00 00 00 00       	call   aa <printf_frexpl+0xaa>

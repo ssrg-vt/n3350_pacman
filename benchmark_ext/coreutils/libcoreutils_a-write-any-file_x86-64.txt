@@ -1,0 +1,21 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-write-any-file.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <can_write_any_file>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	80 3d 00 00 00 00 00 	cmpb   $0x0,0x0(%rip)        # b <can_write_any_file+0xb>
+   b:	74 0b                	je     18 <can_write_any_file+0x18>
+   d:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 14 <can_write_any_file+0x14>
+  14:	c3                   	ret    
+  15:	0f 1f 00             	nopl   (%rax)
+  18:	48 83 ec 08          	sub    $0x8,%rsp
+  1c:	e8 00 00 00 00       	call   21 <can_write_any_file+0x21>
+  21:	c6 05 00 00 00 00 01 	movb   $0x1,0x0(%rip)        # 28 <can_write_any_file+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	0f 94 c0             	sete   %al
+  2d:	88 05 00 00 00 00    	mov    %al,0x0(%rip)        # 33 <can_write_any_file+0x33>
+  33:	48 83 c4 08          	add    $0x8,%rsp
+  37:	c3                   	ret    

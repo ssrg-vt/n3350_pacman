@@ -1,0 +1,3 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-unlinkdir.o:     file format elf64-x86-64
+

@@ -1,0 +1,52 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-full-read.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <full_read>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	41 54                	push   %r12
+   8:	55                   	push   %rbp
+   9:	53                   	push   %rbx
+   a:	48 83 ec 08          	sub    $0x8,%rsp
+   e:	48 85 d2             	test   %rdx,%rdx
+  11:	74 66                	je     79 <full_read+0x79>
+  13:	41 89 fc             	mov    %edi,%r12d
+  16:	48 89 f5             	mov    %rsi,%rbp
+  19:	48 89 d3             	mov    %rdx,%rbx
+  1c:	45 31 ed             	xor    %r13d,%r13d
+  1f:	eb 17                	jmp    38 <full_read+0x38>
+  21:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  28:	48 85 c0             	test   %rax,%rax
+  2b:	74 33                	je     60 <full_read+0x60>
+  2d:	49 01 c5             	add    %rax,%r13
+  30:	48 01 c5             	add    %rax,%rbp
+  33:	48 29 c3             	sub    %rax,%rbx
+  36:	74 14                	je     4c <full_read+0x4c>
+  38:	48 89 da             	mov    %rbx,%rdx
+  3b:	48 89 ee             	mov    %rbp,%rsi
+  3e:	44 89 e7             	mov    %r12d,%edi
+  41:	e8 00 00 00 00       	call   46 <full_read+0x46>
+  46:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+  4a:	75 dc                	jne    28 <full_read+0x28>
+  4c:	48 83 c4 08          	add    $0x8,%rsp
+  50:	4c 89 e8             	mov    %r13,%rax
+  53:	5b                   	pop    %rbx
+  54:	5d                   	pop    %rbp
+  55:	41 5c                	pop    %r12
+  57:	41 5d                	pop    %r13
+  59:	c3                   	ret    
+  5a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  60:	e8 00 00 00 00       	call   65 <full_read+0x65>
+  65:	c7 00 00 00 00 00    	movl   $0x0,(%rax)
+  6b:	48 83 c4 08          	add    $0x8,%rsp
+  6f:	4c 89 e8             	mov    %r13,%rax
+  72:	5b                   	pop    %rbx
+  73:	5d                   	pop    %rbp
+  74:	41 5c                	pop    %r12
+  76:	41 5d                	pop    %r13
+  78:	c3                   	ret    
+  79:	45 31 ed             	xor    %r13d,%r13d
+  7c:	eb ce                	jmp    4c <full_read+0x4c>

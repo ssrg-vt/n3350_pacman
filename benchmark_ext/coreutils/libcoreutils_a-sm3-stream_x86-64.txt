@@ -1,0 +1,91 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-sm3-stream.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <sm3_stream>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	49 89 ff             	mov    %rdi,%r15
+   9:	bf 48 80 00 00       	mov    $0x8048,%edi
+   e:	41 56                	push   %r14
+  10:	41 55                	push   %r13
+  12:	49 89 f5             	mov    %rsi,%r13
+  15:	41 54                	push   %r12
+  17:	55                   	push   %rbp
+  18:	53                   	push   %rbx
+  19:	48 81 ec c8 00 00 00 	sub    $0xc8,%rsp
+  20:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  27:	00 00 
+  29:	48 89 84 24 b8 00 00 	mov    %rax,0xb8(%rsp)
+  30:	00 
+  31:	31 c0                	xor    %eax,%eax
+  33:	e8 00 00 00 00       	call   38 <sm3_stream+0x38>
+  38:	48 85 c0             	test   %rax,%rax
+  3b:	0f 84 ce 00 00 00    	je     10f <sm3_stream+0x10f>
+  41:	49 89 e6             	mov    %rsp,%r14
+  44:	49 89 c4             	mov    %rax,%r12
+  47:	bb 00 80 00 00       	mov    $0x8000,%ebx
+  4c:	4c 89 f7             	mov    %r14,%rdi
+  4f:	e8 00 00 00 00       	call   54 <sm3_stream+0x54>
+  54:	31 ed                	xor    %ebp,%ebp
+  56:	eb 15                	jmp    6d <sm3_stream+0x6d>
+  58:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  5f:	00 
+  60:	41 8b 17             	mov    (%r15),%edx
+  63:	48 85 c0             	test   %rax,%rax
+  66:	74 40                	je     a8 <sm3_stream+0xa8>
+  68:	83 e2 10             	and    $0x10,%edx
+  6b:	75 40                	jne    ad <sm3_stream+0xad>
+  6d:	48 89 da             	mov    %rbx,%rdx
+  70:	49 8d 3c 2c          	lea    (%r12,%rbp,1),%rdi
+  74:	4c 89 f9             	mov    %r15,%rcx
+  77:	be 01 00 00 00       	mov    $0x1,%esi
+  7c:	48 29 ea             	sub    %rbp,%rdx
+  7f:	e8 00 00 00 00       	call   84 <sm3_stream+0x84>
+  84:	48 01 c5             	add    %rax,%rbp
+  87:	48 81 fd 00 80 00 00 	cmp    $0x8000,%rbp
+  8e:	75 d0                	jne    60 <sm3_stream+0x60>
+  90:	4c 89 f2             	mov    %r14,%rdx
+  93:	be 00 80 00 00       	mov    $0x8000,%esi
+  98:	4c 89 e7             	mov    %r12,%rdi
+  9b:	e8 00 00 00 00       	call   a0 <sm3_stream+0xa0>
+  a0:	eb b2                	jmp    54 <sm3_stream+0x54>
+  a2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+  a8:	83 e2 20             	and    $0x20,%edx
+  ab:	75 53                	jne    100 <sm3_stream+0x100>
+  ad:	48 85 ed             	test   %rbp,%rbp
+  b0:	75 3e                	jne    f0 <sm3_stream+0xf0>
+  b2:	4c 89 ee             	mov    %r13,%rsi
+  b5:	4c 89 f7             	mov    %r14,%rdi
+  b8:	e8 00 00 00 00       	call   bd <sm3_stream+0xbd>
+  bd:	4c 89 e7             	mov    %r12,%rdi
+  c0:	e8 00 00 00 00       	call   c5 <sm3_stream+0xc5>
+  c5:	31 c0                	xor    %eax,%eax
+  c7:	48 8b 94 24 b8 00 00 	mov    0xb8(%rsp),%rdx
+  ce:	00 
+  cf:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  d6:	00 00 
+  d8:	75 3c                	jne    116 <sm3_stream+0x116>
+  da:	48 81 c4 c8 00 00 00 	add    $0xc8,%rsp
+  e1:	5b                   	pop    %rbx
+  e2:	5d                   	pop    %rbp
+  e3:	41 5c                	pop    %r12
+  e5:	41 5d                	pop    %r13
+  e7:	41 5e                	pop    %r14
+  e9:	41 5f                	pop    %r15
+  eb:	c3                   	ret    
+  ec:	0f 1f 40 00          	nopl   0x0(%rax)
+  f0:	4c 89 f2             	mov    %r14,%rdx
+  f3:	48 89 ee             	mov    %rbp,%rsi
+  f6:	4c 89 e7             	mov    %r12,%rdi
+  f9:	e8 00 00 00 00       	call   fe <sm3_stream+0xfe>
+  fe:	eb b2                	jmp    b2 <sm3_stream+0xb2>
+ 100:	4c 89 e7             	mov    %r12,%rdi
+ 103:	e8 00 00 00 00       	call   108 <sm3_stream+0x108>
+ 108:	b8 01 00 00 00       	mov    $0x1,%eax
+ 10d:	eb b8                	jmp    c7 <sm3_stream+0xc7>
+ 10f:	b8 01 00 00 00       	mov    $0x1,%eax
+ 114:	eb b1                	jmp    c7 <sm3_stream+0xc7>
+ 116:	e8 00 00 00 00       	call   11b <sm3_stream+0x11b>

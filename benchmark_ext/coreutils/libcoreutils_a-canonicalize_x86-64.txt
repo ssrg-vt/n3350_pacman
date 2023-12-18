@@ -1,0 +1,551 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-canonicalize.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <canonicalize_filename_mode>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 89 f7             	mov    %esi,%r15d
+   9:	41 56                	push   %r14
+   b:	41 83 e7 03          	and    $0x3,%r15d
+   f:	41 55                	push   %r13
+  11:	41 54                	push   %r12
+  13:	55                   	push   %rbp
+  14:	53                   	push   %rbx
+  15:	48 81 ec 38 0d 00 00 	sub    $0xd38,%rsp
+  1c:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  23:	00 00 
+  25:	48 89 84 24 28 0d 00 	mov    %rax,0xd28(%rsp)
+  2c:	00 
+  2d:	31 c0                	xor    %eax,%eax
+  2f:	48 8d 84 24 00 01 00 	lea    0x100(%rsp),%rax
+  36:	00 
+  37:	48 c7 84 24 f8 00 00 	movq   $0x400,0xf8(%rsp)
+  3e:	00 00 04 00 00 
+  43:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  48:	48 89 84 24 f0 00 00 	mov    %rax,0xf0(%rsp)
+  4f:	00 
+  50:	48 8d 84 24 10 05 00 	lea    0x510(%rsp),%rax
+  57:	00 
+  58:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  5d:	48 89 84 24 00 05 00 	mov    %rax,0x500(%rsp)
+  64:	00 
+  65:	48 8d 84 24 20 09 00 	lea    0x920(%rsp),%rax
+  6c:	00 
+  6d:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+  72:	48 89 84 24 10 09 00 	mov    %rax,0x910(%rsp)
+  79:	00 
+  7a:	41 8d 47 ff          	lea    -0x1(%r15),%eax
+  7e:	48 c7 84 24 08 05 00 	movq   $0x400,0x508(%rsp)
+  85:	00 00 04 00 00 
+  8a:	48 c7 84 24 18 09 00 	movq   $0x400,0x918(%rsp)
+  91:	00 00 04 00 00 
+  96:	44 85 f8             	test   %r15d,%eax
+  99:	0f 85 f1 00 00 00    	jne    190 <canonicalize_filename_mode+0x190>
+  9f:	48 89 fd             	mov    %rdi,%rbp
+  a2:	48 85 ff             	test   %rdi,%rdi
+  a5:	0f 84 e5 00 00 00    	je     190 <canonicalize_filename_mode+0x190>
+  ab:	0f b6 07             	movzbl (%rdi),%eax
+  ae:	84 c0                	test   %al,%al
+  b0:	0f 84 c2 02 00 00    	je     378 <canonicalize_filename_mode+0x378>
+  b6:	89 f3                	mov    %esi,%ebx
+  b8:	4c 8b 64 24 08       	mov    0x8(%rsp),%r12
+  bd:	be 00 04 00 00       	mov    $0x400,%esi
+  c2:	4c 8d ac 24 f0 00 00 	lea    0xf0(%rsp),%r13
+  c9:	00 
+  ca:	3c 2f                	cmp    $0x2f,%al
+  cc:	0f 84 ce 00 00 00    	je     1a0 <canonicalize_filename_mode+0x1a0>
+  d2:	4c 89 e7             	mov    %r12,%rdi
+  d5:	e8 00 00 00 00       	call   da <canonicalize_filename_mode+0xda>
+  da:	49 89 c6             	mov    %rax,%r14
+  dd:	48 85 c0             	test   %rax,%rax
+  e0:	0f 85 0a 04 00 00    	jne    4f0 <canonicalize_filename_mode+0x4f0>
+  e6:	e8 00 00 00 00       	call   eb <canonicalize_filename_mode+0xeb>
+  eb:	8b 00                	mov    (%rax),%eax
+  ed:	83 f8 0c             	cmp    $0xc,%eax
+  f0:	0f 84 78 02 00 00    	je     36e <canonicalize_filename_mode+0x36e>
+  f6:	83 f8 22             	cmp    $0x22,%eax
+  f9:	74 6d                	je     168 <canonicalize_filename_mode+0x168>
+  fb:	48 8b bc 24 10 09 00 	mov    0x910(%rsp),%rdi
+ 102:	00 
+ 103:	48 3b 7c 24 10       	cmp    0x10(%rsp),%rdi
+ 108:	74 05                	je     10f <canonicalize_filename_mode+0x10f>
+ 10a:	e8 00 00 00 00       	call   10f <canonicalize_filename_mode+0x10f>
+ 10f:	48 8b bc 24 00 05 00 	mov    0x500(%rsp),%rdi
+ 116:	00 
+ 117:	48 3b 7c 24 18       	cmp    0x18(%rsp),%rdi
+ 11c:	74 05                	je     123 <canonicalize_filename_mode+0x123>
+ 11e:	e8 00 00 00 00       	call   123 <canonicalize_filename_mode+0x123>
+ 123:	48 8b bc 24 f0 00 00 	mov    0xf0(%rsp),%rdi
+ 12a:	00 
+ 12b:	48 3b 7c 24 08       	cmp    0x8(%rsp),%rdi
+ 130:	74 05                	je     137 <canonicalize_filename_mode+0x137>
+ 132:	e8 00 00 00 00       	call   137 <canonicalize_filename_mode+0x137>
+ 137:	48 8b 84 24 28 0d 00 	mov    0xd28(%rsp),%rax
+ 13e:	00 
+ 13f:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 146:	00 00 
+ 148:	0f 85 1c 07 00 00    	jne    86a <canonicalize_filename_mode+0x86a>
+ 14e:	48 81 c4 38 0d 00 00 	add    $0xd38,%rsp
+ 155:	4c 89 f0             	mov    %r14,%rax
+ 158:	5b                   	pop    %rbx
+ 159:	5d                   	pop    %rbp
+ 15a:	41 5c                	pop    %r12
+ 15c:	41 5d                	pop    %r13
+ 15e:	41 5e                	pop    %r14
+ 160:	41 5f                	pop    %r15
+ 162:	c3                   	ret    
+ 163:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 168:	4c 89 ef             	mov    %r13,%rdi
+ 16b:	e8 00 00 00 00       	call   170 <canonicalize_filename_mode+0x170>
+ 170:	84 c0                	test   %al,%al
+ 172:	0f 84 f6 01 00 00    	je     36e <canonicalize_filename_mode+0x36e>
+ 178:	4c 8b a4 24 f0 00 00 	mov    0xf0(%rsp),%r12
+ 17f:	00 
+ 180:	48 8b b4 24 f8 00 00 	mov    0xf8(%rsp),%rsi
+ 187:	00 
+ 188:	e9 45 ff ff ff       	jmp    d2 <canonicalize_filename_mode+0xd2>
+ 18d:	0f 1f 00             	nopl   (%rax)
+ 190:	e8 00 00 00 00       	call   195 <canonicalize_filename_mode+0x195>
+ 195:	c7 00 16 00 00 00    	movl   $0x16,(%rax)
+ 19b:	45 31 f6             	xor    %r14d,%r14d
+ 19e:	eb 83                	jmp    123 <canonicalize_filename_mode+0x123>
+ 1a0:	c6 84 24 00 01 00 00 	movb   $0x2f,0x100(%rsp)
+ 1a7:	2f 
+ 1a8:	4c 8d 9c 24 01 01 00 	lea    0x101(%rsp),%r11
+ 1af:	00 
+ 1b0:	83 e3 04             	and    $0x4,%ebx
+ 1b3:	c6 44 24 43 00       	movb   $0x0,0x43(%rsp)
+ 1b8:	45 31 f6             	xor    %r14d,%r14d
+ 1bb:	48 8d 8c 24 10 09 00 	lea    0x910(%rsp),%rcx
+ 1c2:	00 
+ 1c3:	89 5c 24 34          	mov    %ebx,0x34(%rsp)
+ 1c7:	4d 89 f5             	mov    %r14,%r13
+ 1ca:	45 89 fe             	mov    %r15d,%r14d
+ 1cd:	c7 44 24 44 00 00 00 	movl   $0x0,0x44(%rsp)
+ 1d4:	00 
+ 1d5:	48 89 4c 24 38       	mov    %rcx,0x38(%rsp)
+ 1da:	3c 2f                	cmp    $0x2f,%al
+ 1dc:	0f 85 7e 02 00 00    	jne    460 <canonicalize_filename_mode+0x460>
+ 1e2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 1e8:	0f b6 55 01          	movzbl 0x1(%rbp),%edx
+ 1ec:	48 83 c5 01          	add    $0x1,%rbp
+ 1f0:	80 fa 2f             	cmp    $0x2f,%dl
+ 1f3:	74 f3                	je     1e8 <canonicalize_filename_mode+0x1e8>
+ 1f5:	84 d2                	test   %dl,%dl
+ 1f7:	0f 84 8b 00 00 00    	je     288 <canonicalize_filename_mode+0x288>
+ 1fd:	48 89 2c 24          	mov    %rbp,(%rsp)
+ 201:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 208:	48 89 eb             	mov    %rbp,%rbx
+ 20b:	0f b6 45 01          	movzbl 0x1(%rbp),%eax
+ 20f:	48 83 c5 01          	add    $0x1,%rbp
+ 213:	84 c0                	test   %al,%al
+ 215:	74 04                	je     21b <canonicalize_filename_mode+0x21b>
+ 217:	3c 2f                	cmp    $0x2f,%al
+ 219:	75 ed                	jne    208 <canonicalize_filename_mode+0x208>
+ 21b:	48 89 e9             	mov    %rbp,%rcx
+ 21e:	48 2b 0c 24          	sub    (%rsp),%rcx
+ 222:	48 89 4c 24 20       	mov    %rcx,0x20(%rsp)
+ 227:	74 5f                	je     288 <canonicalize_filename_mode+0x288>
+ 229:	48 83 f9 01          	cmp    $0x1,%rcx
+ 22d:	0f 84 bd 00 00 00    	je     2f0 <canonicalize_filename_mode+0x2f0>
+ 233:	80 fa 2e             	cmp    $0x2e,%dl
+ 236:	0f 85 b9 00 00 00    	jne    2f5 <canonicalize_filename_mode+0x2f5>
+ 23c:	48 83 7c 24 20 02    	cmpq   $0x2,0x20(%rsp)
+ 242:	0f 85 ad 00 00 00    	jne    2f5 <canonicalize_filename_mode+0x2f5>
+ 248:	48 8b 0c 24          	mov    (%rsp),%rcx
+ 24c:	80 79 01 2e          	cmpb   $0x2e,0x1(%rcx)
+ 250:	0f 85 9f 00 00 00    	jne    2f5 <canonicalize_filename_mode+0x2f5>
+ 256:	49 8d 54 24 01       	lea    0x1(%r12),%rdx
+ 25b:	49 39 d3             	cmp    %rdx,%r11
+ 25e:	76 20                	jbe    280 <canonicalize_filename_mode+0x280>
+ 260:	49 83 eb 01          	sub    $0x1,%r11
+ 264:	4d 39 e3             	cmp    %r12,%r11
+ 267:	76 17                	jbe    280 <canonicalize_filename_mode+0x280>
+ 269:	41 80 7b ff 2f       	cmpb   $0x2f,-0x1(%r11)
+ 26e:	74 10                	je     280 <canonicalize_filename_mode+0x280>
+ 270:	49 83 eb 01          	sub    $0x1,%r11
+ 274:	4d 39 e3             	cmp    %r12,%r11
+ 277:	75 f0                	jne    269 <canonicalize_filename_mode+0x269>
+ 279:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 280:	84 c0                	test   %al,%al
+ 282:	0f 85 52 ff ff ff    	jne    1da <canonicalize_filename_mode+0x1da>
+ 288:	49 8d 44 24 01       	lea    0x1(%r12),%rax
+ 28d:	4d 89 ee             	mov    %r13,%r14
+ 290:	4d 8d 6b 01          	lea    0x1(%r11),%r13
+ 294:	49 39 c3             	cmp    %rax,%r11
+ 297:	76 0f                	jbe    2a8 <canonicalize_filename_mode+0x2a8>
+ 299:	41 80 7b ff 2f       	cmpb   $0x2f,-0x1(%r11)
+ 29e:	4d 8d 6b 01          	lea    0x1(%r11),%r13
+ 2a2:	0f 84 a9 01 00 00    	je     451 <canonicalize_filename_mode+0x451>
+ 2a8:	4d 85 f6             	test   %r14,%r14
+ 2ab:	74 10                	je     2bd <canonicalize_filename_mode+0x2bd>
+ 2ad:	4c 89 f7             	mov    %r14,%rdi
+ 2b0:	4c 89 1c 24          	mov    %r11,(%rsp)
+ 2b4:	e8 00 00 00 00       	call   2b9 <canonicalize_filename_mode+0x2b9>
+ 2b9:	4c 8b 1c 24          	mov    (%rsp),%r11
+ 2bd:	41 c6 03 00          	movb   $0x0,(%r11)
+ 2c1:	4d 29 e5             	sub    %r12,%r13
+ 2c4:	4c 89 ef             	mov    %r13,%rdi
+ 2c7:	e8 00 00 00 00       	call   2cc <canonicalize_filename_mode+0x2cc>
+ 2cc:	48 89 c7             	mov    %rax,%rdi
+ 2cf:	48 85 c0             	test   %rax,%rax
+ 2d2:	0f 84 96 00 00 00    	je     36e <canonicalize_filename_mode+0x36e>
+ 2d8:	4c 89 ea             	mov    %r13,%rdx
+ 2db:	4c 89 e6             	mov    %r12,%rsi
+ 2de:	e8 00 00 00 00       	call   2e3 <canonicalize_filename_mode+0x2e3>
+ 2e3:	49 89 c6             	mov    %rax,%r14
+ 2e6:	e9 10 fe ff ff       	jmp    fb <canonicalize_filename_mode+0xfb>
+ 2eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 2f0:	80 fa 2e             	cmp    $0x2e,%dl
+ 2f3:	74 8b                	je     280 <canonicalize_filename_mode+0x280>
+ 2f5:	41 80 7b ff 2f       	cmpb   $0x2f,-0x1(%r11)
+ 2fa:	74 08                	je     304 <canonicalize_filename_mode+0x304>
+ 2fc:	41 c6 03 2f          	movb   $0x2f,(%r11)
+ 300:	49 83 c3 01          	add    $0x1,%r11
+ 304:	48 8b 44 24 20       	mov    0x20(%rsp),%rax
+ 309:	48 8d b4 24 f0 00 00 	lea    0xf0(%rsp),%rsi
+ 310:	00 
+ 311:	48 8d 48 02          	lea    0x2(%rax),%rcx
+ 315:	48 8b 84 24 f8 00 00 	mov    0xf8(%rsp),%rax
+ 31c:	00 
+ 31d:	4c 01 e0             	add    %r12,%rax
+ 320:	4c 29 d8             	sub    %r11,%rax
+ 323:	48 39 c8             	cmp    %rcx,%rax
+ 326:	73 73                	jae    39b <canonicalize_filename_mode+0x39b>
+ 328:	48 89 5c 24 28       	mov    %rbx,0x28(%rsp)
+ 32d:	4c 89 e2             	mov    %r12,%rdx
+ 330:	48 89 cb             	mov    %rcx,%rbx
+ 333:	49 89 ec             	mov    %rbp,%r12
+ 336:	49 89 f7             	mov    %rsi,%r15
+ 339:	eb 21                	jmp    35c <canonicalize_filename_mode+0x35c>
+ 33b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 340:	48 8b 84 24 f8 00 00 	mov    0xf8(%rsp),%rax
+ 347:	00 
+ 348:	48 8b 94 24 f0 00 00 	mov    0xf0(%rsp),%rdx
+ 34f:	00 
+ 350:	48 29 e8             	sub    %rbp,%rax
+ 353:	4c 8d 1c 2a          	lea    (%rdx,%rbp,1),%r11
+ 357:	48 39 d8             	cmp    %rbx,%rax
+ 35a:	73 34                	jae    390 <canonicalize_filename_mode+0x390>
+ 35c:	49 29 d3             	sub    %rdx,%r11
+ 35f:	4c 89 ff             	mov    %r15,%rdi
+ 362:	4c 89 dd             	mov    %r11,%rbp
+ 365:	e8 00 00 00 00       	call   36a <canonicalize_filename_mode+0x36a>
+ 36a:	84 c0                	test   %al,%al
+ 36c:	75 d2                	jne    340 <canonicalize_filename_mode+0x340>
+ 36e:	e8 00 00 00 00       	call   373 <canonicalize_filename_mode+0x373>
+ 373:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 378:	e8 00 00 00 00       	call   37d <canonicalize_filename_mode+0x37d>
+ 37d:	c7 00 02 00 00 00    	movl   $0x2,(%rax)
+ 383:	e9 13 fe ff ff       	jmp    19b <canonicalize_filename_mode+0x19b>
+ 388:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 38f:	00 
+ 390:	48 8b 5c 24 28       	mov    0x28(%rsp),%rbx
+ 395:	4c 89 e5             	mov    %r12,%rbp
+ 398:	49 89 d4             	mov    %rdx,%r12
+ 39b:	48 8b 54 24 20       	mov    0x20(%rsp),%rdx
+ 3a0:	48 8b 34 24          	mov    (%rsp),%rsi
+ 3a4:	4c 89 df             	mov    %r11,%rdi
+ 3a7:	e8 00 00 00 00       	call   3ac <canonicalize_filename_mode+0x3ac>
+ 3ac:	8b 4c 24 34          	mov    0x34(%rsp),%ecx
+ 3b0:	c6 00 00             	movb   $0x0,(%rax)
+ 3b3:	49 89 c3             	mov    %rax,%r11
+ 3b6:	85 c9                	test   %ecx,%ecx
+ 3b8:	0f 84 6a 01 00 00    	je     528 <canonicalize_filename_mode+0x528>
+ 3be:	41 83 fe 02          	cmp    $0x2,%r14d
+ 3c2:	74 7c                	je     440 <canonicalize_filename_mode+0x440>
+ 3c4:	0f b6 45 00          	movzbl 0x0(%rbp),%eax
+ 3c8:	3c 2f                	cmp    $0x2f,%al
+ 3ca:	0f 85 b0 00 00 00    	jne    480 <canonicalize_filename_mode+0x480>
+ 3d0:	48 89 ea             	mov    %rbp,%rdx
+ 3d3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 3d8:	48 89 d6             	mov    %rdx,%rsi
+ 3db:	0f b6 4a 01          	movzbl 0x1(%rdx),%ecx
+ 3df:	48 83 c2 01          	add    $0x1,%rdx
+ 3e3:	80 f9 2f             	cmp    $0x2f,%cl
+ 3e6:	74 f0                	je     3d8 <canonicalize_filename_mode+0x3d8>
+ 3e8:	48 83 c6 02          	add    $0x2,%rsi
+ 3ec:	84 c9                	test   %cl,%cl
+ 3ee:	0f 84 84 01 00 00    	je     578 <canonicalize_filename_mode+0x578>
+ 3f4:	80 f9 2e             	cmp    $0x2e,%cl
+ 3f7:	0f 85 83 00 00 00    	jne    480 <canonicalize_filename_mode+0x480>
+ 3fd:	0f b6 4a 01          	movzbl 0x1(%rdx),%ecx
+ 401:	84 c9                	test   %cl,%cl
+ 403:	0f 84 6f 01 00 00    	je     578 <canonicalize_filename_mode+0x578>
+ 409:	80 f9 2e             	cmp    $0x2e,%cl
+ 40c:	74 5d                	je     46b <canonicalize_filename_mode+0x46b>
+ 40e:	80 f9 2f             	cmp    $0x2f,%cl
+ 411:	75 6d                	jne    480 <canonicalize_filename_mode+0x480>
+ 413:	48 89 f2             	mov    %rsi,%rdx
+ 416:	eb c0                	jmp    3d8 <canonicalize_filename_mode+0x3d8>
+ 418:	84 c0                	test   %al,%al
+ 41a:	0f 85 ba fd ff ff    	jne    1da <canonicalize_filename_mode+0x1da>
+ 420:	31 d2                	xor    %edx,%edx
+ 422:	b9 00 02 00 00       	mov    $0x200,%ecx
+ 427:	4c 89 e6             	mov    %r12,%rsi
+ 42a:	bf 9c ff ff ff       	mov    $0xffffff9c,%edi
+ 42f:	4c 89 1c 24          	mov    %r11,(%rsp)
+ 433:	e8 00 00 00 00       	call   438 <canonicalize_filename_mode+0x438>
+ 438:	4c 8b 1c 24          	mov    (%rsp),%r11
+ 43c:	85 c0                	test   %eax,%eax
+ 43e:	75 5a                	jne    49a <canonicalize_filename_mode+0x49a>
+ 440:	0f b6 43 01          	movzbl 0x1(%rbx),%eax
+ 444:	84 c0                	test   %al,%al
+ 446:	0f 85 8e fd ff ff    	jne    1da <canonicalize_filename_mode+0x1da>
+ 44c:	e9 37 fe ff ff       	jmp    288 <canonicalize_filename_mode+0x288>
+ 451:	4d 89 dd             	mov    %r11,%r13
+ 454:	49 83 eb 01          	sub    $0x1,%r11
+ 458:	e9 4b fe ff ff       	jmp    2a8 <canonicalize_filename_mode+0x2a8>
+ 45d:	0f 1f 00             	nopl   (%rax)
+ 460:	48 89 2c 24          	mov    %rbp,(%rsp)
+ 464:	89 c2                	mov    %eax,%edx
+ 466:	e9 9d fd ff ff       	jmp    208 <canonicalize_filename_mode+0x208>
+ 46b:	0f b6 52 02          	movzbl 0x2(%rdx),%edx
+ 46f:	84 d2                	test   %dl,%dl
+ 471:	0f 84 01 01 00 00    	je     578 <canonicalize_filename_mode+0x578>
+ 477:	80 fa 2f             	cmp    $0x2f,%dl
+ 47a:	0f 84 f8 00 00 00    	je     578 <canonicalize_filename_mode+0x578>
+ 480:	8b 54 24 34          	mov    0x34(%rsp),%edx
+ 484:	85 d2                	test   %edx,%edx
+ 486:	75 90                	jne    418 <canonicalize_filename_mode+0x418>
+ 488:	4c 89 1c 24          	mov    %r11,(%rsp)
+ 48c:	e8 00 00 00 00       	call   491 <canonicalize_filename_mode+0x491>
+ 491:	4c 8b 1c 24          	mov    (%rsp),%r11
+ 495:	83 38 16             	cmpl   $0x16,(%rax)
+ 498:	74 a6                	je     440 <canonicalize_filename_mode+0x440>
+ 49a:	4c 89 1c 24          	mov    %r11,(%rsp)
+ 49e:	41 83 fe 01          	cmp    $0x1,%r14d
+ 4a2:	75 2d                	jne    4d1 <canonicalize_filename_mode+0x4d1>
+ 4a4:	e8 00 00 00 00       	call   4a9 <canonicalize_filename_mode+0x4a9>
+ 4a9:	83 38 02             	cmpl   $0x2,(%rax)
+ 4ac:	75 23                	jne    4d1 <canonicalize_filename_mode+0x4d1>
+ 4ae:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 4b5 <canonicalize_filename_mode+0x4b5>
+ 4b5:	48 89 ef             	mov    %rbp,%rdi
+ 4b8:	e8 00 00 00 00       	call   4bd <canonicalize_filename_mode+0x4bd>
+ 4bd:	80 7c 05 00 00       	cmpb   $0x0,0x0(%rbp,%rax,1)
+ 4c2:	75 0d                	jne    4d1 <canonicalize_filename_mode+0x4d1>
+ 4c4:	0f b6 43 01          	movzbl 0x1(%rbx),%eax
+ 4c8:	4c 8b 1c 24          	mov    (%rsp),%r11
+ 4cc:	e9 af fd ff ff       	jmp    280 <canonicalize_filename_mode+0x280>
+ 4d1:	4d 89 ee             	mov    %r13,%r14
+ 4d4:	4d 85 f6             	test   %r14,%r14
+ 4d7:	0f 84 1e fc ff ff    	je     fb <canonicalize_filename_mode+0xfb>
+ 4dd:	4c 89 f7             	mov    %r14,%rdi
+ 4e0:	45 31 f6             	xor    %r14d,%r14d
+ 4e3:	e8 00 00 00 00       	call   4e8 <canonicalize_filename_mode+0x4e8>
+ 4e8:	e9 0e fc ff ff       	jmp    fb <canonicalize_filename_mode+0xfb>
+ 4ed:	0f 1f 00             	nopl   (%rax)
+ 4f0:	31 f6                	xor    %esi,%esi
+ 4f2:	4c 89 e7             	mov    %r12,%rdi
+ 4f5:	e8 00 00 00 00       	call   4fa <canonicalize_filename_mode+0x4fa>
+ 4fa:	49 89 c3             	mov    %rax,%r11
+ 4fd:	0f b6 45 00          	movzbl 0x0(%rbp),%eax
+ 501:	84 c0                	test   %al,%al
+ 503:	0f 85 a7 fc ff ff    	jne    1b0 <canonicalize_filename_mode+0x1b0>
+ 509:	49 8d 44 24 01       	lea    0x1(%r12),%rax
+ 50e:	4d 8d 6b 01          	lea    0x1(%r11),%r13
+ 512:	49 39 c3             	cmp    %rax,%r11
+ 515:	0f 86 a2 fd ff ff    	jbe    2bd <canonicalize_filename_mode+0x2bd>
+ 51b:	45 31 f6             	xor    %r14d,%r14d
+ 51e:	e9 76 fd ff ff       	jmp    299 <canonicalize_filename_mode+0x299>
+ 523:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 528:	48 89 5c 24 20       	mov    %rbx,0x20(%rsp)
+ 52d:	4c 8b 7c 24 38       	mov    0x38(%rsp),%r15
+ 532:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+ 537:	48 89 6c 24 48       	mov    %rbp,0x48(%rsp)
+ 53c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 540:	48 8b 84 24 18 09 00 	mov    0x918(%rsp),%rax
+ 547:	00 
+ 548:	48 8b 9c 24 10 09 00 	mov    0x910(%rsp),%rbx
+ 54f:	00 
+ 550:	4c 89 e7             	mov    %r12,%rdi
+ 553:	48 8d 68 ff          	lea    -0x1(%rax),%rbp
+ 557:	48 89 de             	mov    %rbx,%rsi
+ 55a:	48 89 ea             	mov    %rbp,%rdx
+ 55d:	e8 00 00 00 00       	call   562 <canonicalize_filename_mode+0x562>
+ 562:	48 39 c5             	cmp    %rax,%rbp
+ 565:	7f 21                	jg     588 <canonicalize_filename_mode+0x588>
+ 567:	4c 89 ff             	mov    %r15,%rdi
+ 56a:	e8 00 00 00 00       	call   56f <canonicalize_filename_mode+0x56f>
+ 56f:	84 c0                	test   %al,%al
+ 571:	75 cd                	jne    540 <canonicalize_filename_mode+0x540>
+ 573:	e9 f6 fd ff ff       	jmp    36e <canonicalize_filename_mode+0x36e>
+ 578:	0f b7 05 00 00 00 00 	movzwl 0x0(%rip),%eax        # 57f <canonicalize_filename_mode+0x57f>
+ 57f:	66 41 89 03          	mov    %ax,(%r11)
+ 583:	e9 98 fe ff ff       	jmp    420 <canonicalize_filename_mode+0x420>
+ 588:	49 89 df             	mov    %rbx,%r15
+ 58b:	4c 8b 5c 24 28       	mov    0x28(%rsp),%r11
+ 590:	48 8b 5c 24 20       	mov    0x20(%rsp),%rbx
+ 595:	49 89 c2             	mov    %rax,%r10
+ 598:	48 8b 6c 24 48       	mov    0x48(%rsp),%rbp
+ 59d:	48 85 c0             	test   %rax,%rax
+ 5a0:	0f 88 18 fe ff ff    	js     3be <canonicalize_filename_mode+0x3be>
+ 5a6:	83 7c 24 44 13       	cmpl   $0x13,0x44(%rsp)
+ 5ab:	0f 8e 3c 02 00 00    	jle    7ed <canonicalize_filename_mode+0x7ed>
+ 5b1:	48 8b 04 24          	mov    (%rsp),%rax
+ 5b5:	80 38 00             	cmpb   $0x0,(%rax)
+ 5b8:	0f 84 c3 00 00 00    	je     681 <canonicalize_filename_mode+0x681>
+ 5be:	48 89 c2             	mov    %rax,%rdx
+ 5c1:	4c 8d 4c 24 60       	lea    0x60(%rsp),%r9
+ 5c6:	4c 89 54 24 58       	mov    %r10,0x58(%rsp)
+ 5cb:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 5d2 <canonicalize_filename_mode+0x5d2>
+ 5d2:	48 29 ea             	sub    %rbp,%rdx
+ 5d5:	4c 89 ce             	mov    %r9,%rsi
+ 5d8:	4c 89 5c 24 48       	mov    %r11,0x48(%rsp)
+ 5dd:	4c 01 da             	add    %r11,%rdx
+ 5e0:	4c 89 4c 24 20       	mov    %r9,0x20(%rsp)
+ 5e5:	c6 02 00             	movb   $0x0,(%rdx)
+ 5e8:	41 80 3c 24 00       	cmpb   $0x0,(%r12)
+ 5ed:	49 0f 45 fc          	cmovne %r12,%rdi
+ 5f1:	48 89 54 24 28       	mov    %rdx,0x28(%rsp)
+ 5f6:	e8 00 00 00 00       	call   5fb <canonicalize_filename_mode+0x5fb>
+ 5fb:	85 c0                	test   %eax,%eax
+ 5fd:	0f 85 ce fe ff ff    	jne    4d1 <canonicalize_filename_mode+0x4d1>
+ 603:	48 8b 04 24          	mov    (%rsp),%rax
+ 607:	48 8b 54 24 28       	mov    0x28(%rsp),%rdx
+ 60c:	4d 85 ed             	test   %r13,%r13
+ 60f:	4c 8b 4c 24 20       	mov    0x20(%rsp),%r9
+ 614:	4c 8b 5c 24 48       	mov    0x48(%rsp),%r11
+ 619:	0f b6 00             	movzbl (%rax),%eax
+ 61c:	4c 8b 54 24 58       	mov    0x58(%rsp),%r10
+ 621:	88 02                	mov    %al,(%rdx)
+ 623:	0f 84 ce 01 00 00    	je     7f7 <canonicalize_filename_mode+0x7f7>
+ 629:	48 8b 34 24          	mov    (%rsp),%rsi
+ 62d:	4c 89 ca             	mov    %r9,%rdx
+ 630:	4c 89 ef             	mov    %r13,%rdi
+ 633:	4c 89 5c 24 48       	mov    %r11,0x48(%rsp)
+ 638:	4c 89 54 24 28       	mov    %r10,0x28(%rsp)
+ 63d:	4c 89 4c 24 20       	mov    %r9,0x20(%rsp)
+ 642:	e8 00 00 00 00       	call   647 <canonicalize_filename_mode+0x647>
+ 647:	4c 8b 4c 24 20       	mov    0x20(%rsp),%r9
+ 64c:	4c 8b 54 24 28       	mov    0x28(%rsp),%r10
+ 651:	84 c0                	test   %al,%al
+ 653:	4c 8b 5c 24 48       	mov    0x48(%rsp),%r11
+ 658:	0f 85 c7 00 00 00    	jne    725 <canonicalize_filename_mode+0x725>
+ 65e:	48 8b 34 24          	mov    (%rsp),%rsi
+ 662:	4c 89 ca             	mov    %r9,%rdx
+ 665:	4c 89 ef             	mov    %r13,%rdi
+ 668:	4c 89 5c 24 28       	mov    %r11,0x28(%rsp)
+ 66d:	4c 89 54 24 20       	mov    %r10,0x20(%rsp)
+ 672:	e8 00 00 00 00       	call   677 <canonicalize_filename_mode+0x677>
+ 677:	4c 8b 54 24 20       	mov    0x20(%rsp),%r10
+ 67c:	4c 8b 5c 24 28       	mov    0x28(%rsp),%r11
+ 681:	80 7c 24 43 00       	cmpb   $0x0,0x43(%rsp)
+ 686:	43 c6 04 17 00       	movb   $0x0,(%r15,%r10,1)
+ 68b:	4c 89 5c 24 48       	mov    %r11,0x48(%rsp)
+ 690:	4c 8b 8c 24 00 05 00 	mov    0x500(%rsp),%r9
+ 697:	00 
+ 698:	0f 84 a4 00 00 00    	je     742 <canonicalize_filename_mode+0x742>
+ 69e:	48 89 e8             	mov    %rbp,%rax
+ 6a1:	48 89 ef             	mov    %rbp,%rdi
+ 6a4:	4c 89 54 24 28       	mov    %r10,0x28(%rsp)
+ 6a9:	4c 29 c8             	sub    %r9,%rax
+ 6ac:	4c 89 4c 24 20       	mov    %r9,0x20(%rsp)
+ 6b1:	48 89 44 24 50       	mov    %rax,0x50(%rsp)
+ 6b6:	e8 00 00 00 00       	call   6bb <canonicalize_filename_mode+0x6bb>
+ 6bb:	4c 8b 54 24 28       	mov    0x28(%rsp),%r10
+ 6c0:	4c 8b 4c 24 20       	mov    0x20(%rsp),%r9
+ 6c5:	48 89 04 24          	mov    %rax,(%rsp)
+ 6c9:	4c 8b 5c 24 48       	mov    0x48(%rsp),%r11
+ 6ce:	4c 01 d0             	add    %r10,%rax
+ 6d1:	48 3b 84 24 08 05 00 	cmp    0x508(%rsp),%rax
+ 6d8:	00 
+ 6d9:	0f 82 7d 01 00 00    	jb     85c <canonicalize_filename_mode+0x85c>
+ 6df:	48 8d 9c 24 00 05 00 	lea    0x500(%rsp),%rbx
+ 6e6:	00 
+ 6e7:	48 89 6c 24 48       	mov    %rbp,0x48(%rsp)
+ 6ec:	4c 89 54 24 20       	mov    %r10,0x20(%rsp)
+ 6f1:	48 89 dd             	mov    %rbx,%rbp
+ 6f4:	48 89 c3             	mov    %rax,%rbx
+ 6f7:	4c 89 5c 24 28       	mov    %r11,0x28(%rsp)
+ 6fc:	eb 16                	jmp    714 <canonicalize_filename_mode+0x714>
+ 6fe:	4c 8b 8c 24 00 05 00 	mov    0x500(%rsp),%r9
+ 705:	00 
+ 706:	48 39 9c 24 08 05 00 	cmp    %rbx,0x508(%rsp)
+ 70d:	00 
+ 70e:	0f 87 2e 01 00 00    	ja     842 <canonicalize_filename_mode+0x842>
+ 714:	48 89 ef             	mov    %rbp,%rdi
+ 717:	e8 00 00 00 00       	call   71c <canonicalize_filename_mode+0x71c>
+ 71c:	84 c0                	test   %al,%al
+ 71e:	75 de                	jne    6fe <canonicalize_filename_mode+0x6fe>
+ 720:	e9 49 fc ff ff       	jmp    36e <canonicalize_filename_mode+0x36e>
+ 725:	41 83 fe 02          	cmp    $0x2,%r14d
+ 729:	0f 84 11 fd ff ff    	je     440 <canonicalize_filename_mode+0x440>
+ 72f:	e8 00 00 00 00       	call   734 <canonicalize_filename_mode+0x734>
+ 734:	4d 89 ee             	mov    %r13,%r14
+ 737:	c7 00 28 00 00 00    	movl   $0x28,(%rax)
+ 73d:	e9 92 fd ff ff       	jmp    4d4 <canonicalize_filename_mode+0x4d4>
+ 742:	48 89 ef             	mov    %rbp,%rdi
+ 745:	4c 89 4c 24 28       	mov    %r9,0x28(%rsp)
+ 74a:	4c 89 54 24 20       	mov    %r10,0x20(%rsp)
+ 74f:	e8 00 00 00 00       	call   754 <canonicalize_filename_mode+0x754>
+ 754:	4c 8b 54 24 20       	mov    0x20(%rsp),%r10
+ 759:	4c 8b 4c 24 28       	mov    0x28(%rsp),%r9
+ 75e:	48 89 04 24          	mov    %rax,(%rsp)
+ 762:	4c 8b 5c 24 48       	mov    0x48(%rsp),%r11
+ 767:	4c 01 d0             	add    %r10,%rax
+ 76a:	48 3b 84 24 08 05 00 	cmp    0x508(%rsp),%rax
+ 771:	00 
+ 772:	0f 83 67 ff ff ff    	jae    6df <canonicalize_filename_mode+0x6df>
+ 778:	48 8b 14 24          	mov    (%rsp),%rdx
+ 77c:	4b 8d 3c 11          	lea    (%r9,%r10,1),%rdi
+ 780:	48 89 ee             	mov    %rbp,%rsi
+ 783:	4c 89 5c 24 28       	mov    %r11,0x28(%rsp)
+ 788:	4c 89 54 24 20       	mov    %r10,0x20(%rsp)
+ 78d:	48 83 c2 01          	add    $0x1,%rdx
+ 791:	4c 89 0c 24          	mov    %r9,(%rsp)
+ 795:	e8 00 00 00 00       	call   79a <canonicalize_filename_mode+0x79a>
+ 79a:	48 8b 54 24 20       	mov    0x20(%rsp),%rdx
+ 79f:	48 8b 3c 24          	mov    (%rsp),%rdi
+ 7a3:	4c 89 fe             	mov    %r15,%rsi
+ 7a6:	e8 00 00 00 00       	call   7ab <canonicalize_filename_mode+0x7ab>
+ 7ab:	41 80 3f 2f          	cmpb   $0x2f,(%r15)
+ 7af:	4c 8b 5c 24 28       	mov    0x28(%rsp),%r11
+ 7b4:	49 8d 54 24 01       	lea    0x1(%r12),%rdx
+ 7b9:	48 89 c5             	mov    %rax,%rbp
+ 7bc:	0f 84 ad 00 00 00    	je     86f <canonicalize_filename_mode+0x86f>
+ 7c2:	c6 44 24 43 01       	movb   $0x1,0x43(%rsp)
+ 7c7:	0f b6 00             	movzbl (%rax),%eax
+ 7ca:	49 39 d3             	cmp    %rdx,%r11
+ 7cd:	0f 86 ad fa ff ff    	jbe    280 <canonicalize_filename_mode+0x280>
+ 7d3:	49 83 eb 01          	sub    $0x1,%r11
+ 7d7:	4d 39 e3             	cmp    %r12,%r11
+ 7da:	74 07                	je     7e3 <canonicalize_filename_mode+0x7e3>
+ 7dc:	41 80 7b ff 2f       	cmpb   $0x2f,-0x1(%r11)
+ 7e1:	75 f0                	jne    7d3 <canonicalize_filename_mode+0x7d3>
+ 7e3:	c6 44 24 43 01       	movb   $0x1,0x43(%rsp)
+ 7e8:	e9 93 fa ff ff       	jmp    280 <canonicalize_filename_mode+0x280>
+ 7ed:	83 44 24 44 01       	addl   $0x1,0x44(%rsp)
+ 7f2:	e9 8a fe ff ff       	jmp    681 <canonicalize_filename_mode+0x681>
+ 7f7:	4c 8b 05 00 00 00 00 	mov    0x0(%rip),%r8        # 7fe <canonicalize_filename_mode+0x7fe>
+ 7fe:	48 8b 0d 00 00 00 00 	mov    0x0(%rip),%rcx        # 805 <canonicalize_filename_mode+0x805>
+ 805:	31 f6                	xor    %esi,%esi
+ 807:	bf 07 00 00 00       	mov    $0x7,%edi
+ 80c:	48 8b 15 00 00 00 00 	mov    0x0(%rip),%rdx        # 813 <canonicalize_filename_mode+0x813>
+ 813:	4c 89 4c 24 28       	mov    %r9,0x28(%rsp)
+ 818:	4c 89 54 24 20       	mov    %r10,0x20(%rsp)
+ 81d:	e8 00 00 00 00       	call   822 <canonicalize_filename_mode+0x822>
+ 822:	4c 8b 54 24 20       	mov    0x20(%rsp),%r10
+ 827:	4c 8b 4c 24 28       	mov    0x28(%rsp),%r9
+ 82c:	48 85 c0             	test   %rax,%rax
+ 82f:	4c 8b 5c 24 48       	mov    0x48(%rsp),%r11
+ 834:	49 89 c5             	mov    %rax,%r13
+ 837:	0f 85 ec fd ff ff    	jne    629 <canonicalize_filename_mode+0x629>
+ 83d:	e9 2c fb ff ff       	jmp    36e <canonicalize_filename_mode+0x36e>
+ 842:	80 7c 24 43 00       	cmpb   $0x0,0x43(%rsp)
+ 847:	4c 8b 54 24 20       	mov    0x20(%rsp),%r10
+ 84c:	4c 8b 5c 24 28       	mov    0x28(%rsp),%r11
+ 851:	48 8b 6c 24 48       	mov    0x48(%rsp),%rbp
+ 856:	0f 84 1c ff ff ff    	je     778 <canonicalize_filename_mode+0x778>
+ 85c:	48 8b 44 24 50       	mov    0x50(%rsp),%rax
+ 861:	49 8d 2c 01          	lea    (%r9,%rax,1),%rbp
+ 865:	e9 0e ff ff ff       	jmp    778 <canonicalize_filename_mode+0x778>
+ 86a:	e8 00 00 00 00       	call   86f <canonicalize_filename_mode+0x86f>
+ 86f:	41 c6 04 24 2f       	movb   $0x2f,(%r12)
+ 874:	49 89 d3             	mov    %rdx,%r11
+ 877:	0f b6 00             	movzbl (%rax),%eax
+ 87a:	c6 44 24 43 01       	movb   $0x1,0x43(%rsp)
+ 87f:	e9 fc f9 ff ff       	jmp    280 <canonicalize_filename_mode+0x280>

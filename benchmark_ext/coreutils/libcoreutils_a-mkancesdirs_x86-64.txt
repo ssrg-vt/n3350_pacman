@@ -1,0 +1,131 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mkancesdirs.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mkancesdirs>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	41 55                	push   %r13
+   a:	41 54                	push   %r12
+   c:	55                   	push   %rbp
+   d:	53                   	push   %rbx
+   e:	48 83 ec 28          	sub    $0x28,%rsp
+  12:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+  17:	0f b6 17             	movzbl (%rdi),%edx
+  1a:	48 89 34 24          	mov    %rsi,(%rsp)
+  1e:	48 89 4c 24 10       	mov    %rcx,0x10(%rsp)
+  23:	84 d2                	test   %dl,%dl
+  25:	0f 84 72 01 00 00    	je     19d <mkancesdirs+0x19d>
+  2b:	49 89 ff             	mov    %rdi,%r15
+  2e:	48 8d 5f 02          	lea    0x2(%rdi),%rbx
+  32:	49 89 fc             	mov    %rdi,%r12
+  35:	45 31 f6             	xor    %r14d,%r14d
+  38:	45 31 ed             	xor    %r13d,%r13d
+  3b:	eb 22                	jmp    5f <mkancesdirs+0x5f>
+  3d:	0f 1f 00             	nopl   (%rax)
+  40:	84 c0                	test   %al,%al
+  42:	41 0f 95 c0          	setne  %r8b
+  46:	80 fa 2f             	cmp    $0x2f,%dl
+  49:	0f 94 c2             	sete   %dl
+  4c:	41 20 d0             	and    %dl,%r8b
+  4f:	75 27                	jne    78 <mkancesdirs+0x78>
+  51:	84 c0                	test   %al,%al
+  53:	0f 84 c7 00 00 00    	je     120 <mkancesdirs+0x120>
+  59:	48 83 c3 01          	add    $0x1,%rbx
+  5d:	89 c2                	mov    %eax,%edx
+  5f:	0f b6 43 ff          	movzbl -0x1(%rbx),%eax
+  63:	48 8d 6b ff          	lea    -0x1(%rbx),%rbp
+  67:	3c 2f                	cmp    $0x2f,%al
+  69:	75 d5                	jne    40 <mkancesdirs+0x40>
+  6b:	80 fa 2f             	cmp    $0x2f,%dl
+  6e:	4c 0f 45 ed          	cmovne %rbp,%r13
+  72:	eb e5                	jmp    59 <mkancesdirs+0x59>
+  74:	0f 1f 40 00          	nopl   0x0(%rax)
+  78:	4d 85 ed             	test   %r13,%r13
+  7b:	74 dc                	je     59 <mkancesdirs+0x59>
+  7d:	4c 89 ea             	mov    %r13,%rdx
+  80:	4c 29 e2             	sub    %r12,%rdx
+  83:	48 83 fa 01          	cmp    $0x1,%rdx
+  87:	0f 84 d3 00 00 00    	je     160 <mkancesdirs+0x160>
+  8d:	41 c6 45 00 00       	movb   $0x0,0x0(%r13)
+  92:	48 83 fa 02          	cmp    $0x2,%rdx
+  96:	0f 84 9c 00 00 00    	je     138 <mkancesdirs+0x138>
+  9c:	44 88 44 24 1b       	mov    %r8b,0x1b(%rsp)
+  a1:	48 8b 54 24 10       	mov    0x10(%rsp),%rdx
+  a6:	4c 89 e6             	mov    %r12,%rsi
+  a9:	4c 89 ff             	mov    %r15,%rdi
+  ac:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  b1:	ff d0                	call   *%rax
+  b3:	c7 44 24 1c 00 00 00 	movl   $0x0,0x1c(%rsp)
+  ba:	00 
+  bb:	44 0f b6 44 24 1b    	movzbl 0x1b(%rsp),%r8d
+  c1:	ba 01 00 00 00       	mov    $0x1,%edx
+  c6:	85 c0                	test   %eax,%eax
+  c8:	79 17                	jns    e1 <mkancesdirs+0xe1>
+  ca:	e8 00 00 00 00       	call   cf <mkancesdirs+0xcf>
+  cf:	41 80 fe 01          	cmp    $0x1,%r14b
+  d3:	45 89 f0             	mov    %r14d,%r8d
+  d6:	8b 00                	mov    (%rax),%eax
+  d8:	19 d2                	sbb    %edx,%edx
+  da:	83 c2 01             	add    $0x1,%edx
+  dd:	89 44 24 1c          	mov    %eax,0x1c(%rsp)
+  e1:	48 8b 3c 24          	mov    (%rsp),%rdi
+  e5:	31 c9                	xor    %ecx,%ecx
+  e7:	4c 89 e6             	mov    %r12,%rsi
+  ea:	44 88 44 24 1b       	mov    %r8b,0x1b(%rsp)
+  ef:	e8 00 00 00 00       	call   f4 <mkancesdirs+0xf4>
+  f4:	41 89 c6             	mov    %eax,%r14d
+  f7:	83 f8 ff             	cmp    $0xffffffff,%eax
+  fa:	74 7c                	je     178 <mkancesdirs+0x178>
+  fc:	41 c6 45 00 2f       	movb   $0x2f,0x0(%r13)
+ 101:	85 c0                	test   %eax,%eax
+ 103:	75 73                	jne    178 <mkancesdirs+0x178>
+ 105:	0f b6 43 ff          	movzbl -0x1(%rbx),%eax
+ 109:	44 0f b6 74 24 1b    	movzbl 0x1b(%rsp),%r14d
+ 10f:	49 89 ec             	mov    %rbp,%r12
+ 112:	84 c0                	test   %al,%al
+ 114:	0f 85 3f ff ff ff    	jne    59 <mkancesdirs+0x59>
+ 11a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 120:	4c 89 e0             	mov    %r12,%rax
+ 123:	4c 29 f8             	sub    %r15,%rax
+ 126:	48 83 c4 28          	add    $0x28,%rsp
+ 12a:	5b                   	pop    %rbx
+ 12b:	5d                   	pop    %rbp
+ 12c:	41 5c                	pop    %r12
+ 12e:	41 5d                	pop    %r13
+ 130:	41 5e                	pop    %r14
+ 132:	41 5f                	pop    %r15
+ 134:	c3                   	ret    
+ 135:	0f 1f 00             	nopl   (%rax)
+ 138:	41 80 3c 24 2e       	cmpb   $0x2e,(%r12)
+ 13d:	0f 85 59 ff ff ff    	jne    9c <mkancesdirs+0x9c>
+ 143:	41 80 7c 24 01 2e    	cmpb   $0x2e,0x1(%r12)
+ 149:	0f 85 4d ff ff ff    	jne    9c <mkancesdirs+0x9c>
+ 14f:	c7 44 24 1c 00 00 00 	movl   $0x0,0x1c(%rsp)
+ 156:	00 
+ 157:	45 31 c0             	xor    %r8d,%r8d
+ 15a:	31 d2                	xor    %edx,%edx
+ 15c:	eb 83                	jmp    e1 <mkancesdirs+0xe1>
+ 15e:	66 90                	xchg   %ax,%ax
+ 160:	41 80 3c 24 2e       	cmpb   $0x2e,(%r12)
+ 165:	74 2e                	je     195 <mkancesdirs+0x195>
+ 167:	41 c6 45 00 00       	movb   $0x0,0x0(%r13)
+ 16c:	e9 2b ff ff ff       	jmp    9c <mkancesdirs+0x9c>
+ 171:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 178:	8b 44 24 1c          	mov    0x1c(%rsp),%eax
+ 17c:	85 c0                	test   %eax,%eax
+ 17e:	74 10                	je     190 <mkancesdirs+0x190>
+ 180:	e8 00 00 00 00       	call   185 <mkancesdirs+0x185>
+ 185:	83 38 02             	cmpl   $0x2,(%rax)
+ 188:	75 06                	jne    190 <mkancesdirs+0x190>
+ 18a:	8b 4c 24 1c          	mov    0x1c(%rsp),%ecx
+ 18e:	89 08                	mov    %ecx,(%rax)
+ 190:	49 63 c6             	movslq %r14d,%rax
+ 193:	eb 91                	jmp    126 <mkancesdirs+0x126>
+ 195:	49 89 ec             	mov    %rbp,%r12
+ 198:	e9 bc fe ff ff       	jmp    59 <mkancesdirs+0x59>
+ 19d:	31 c0                	xor    %eax,%eax
+ 19f:	eb 85                	jmp    126 <mkancesdirs+0x126>

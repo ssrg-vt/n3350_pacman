@@ -1,0 +1,163 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-dirchownmod.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <dirchownmod>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 89 ff             	mov    %edi,%r15d
+   9:	41 56                	push   %r14
+   b:	45 89 c6             	mov    %r8d,%r14d
+   e:	41 55                	push   %r13
+  10:	41 89 cd             	mov    %ecx,%r13d
+  13:	41 54                	push   %r12
+  15:	55                   	push   %rbp
+  16:	48 89 f5             	mov    %rsi,%rbp
+  19:	53                   	push   %rbx
+  1a:	44 89 cb             	mov    %r9d,%ebx
+  1d:	48 81 ec b8 00 00 00 	sub    $0xb8,%rsp
+  24:	89 54 24 08          	mov    %edx,0x8(%rsp)
+  28:	48 8d 74 24 10       	lea    0x10(%rsp),%rsi
+  2d:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  34:	00 00 
+  36:	48 89 84 24 a8 00 00 	mov    %rax,0xa8(%rsp)
+  3d:	00 
+  3e:	31 c0                	xor    %eax,%eax
+  40:	85 ff                	test   %edi,%edi
+  42:	0f 88 88 00 00 00    	js     d0 <dirchownmod+0xd0>
+  48:	e8 00 00 00 00       	call   4d <dirchownmod+0x4d>
+  4d:	41 89 c4             	mov    %eax,%r12d
+  50:	85 c0                	test   %eax,%eax
+  52:	0f 85 61 01 00 00    	jne    1b9 <dirchownmod+0x1b9>
+  58:	8b 4c 24 28          	mov    0x28(%rsp),%ecx
+  5c:	89 c8                	mov    %ecx,%eax
+  5e:	25 00 f0 00 00       	and    $0xf000,%eax
+  63:	3d 00 40 00 00       	cmp    $0x4000,%eax
+  68:	0f 85 a2 00 00 00    	jne    110 <dirchownmod+0x110>
+  6e:	41 83 fd ff          	cmp    $0xffffffff,%r13d
+  72:	0f 84 c0 00 00 00    	je     138 <dirchownmod+0x138>
+  78:	44 39 6c 24 2c       	cmp    %r13d,0x2c(%rsp)
+  7d:	0f 84 b5 00 00 00    	je     138 <dirchownmod+0x138>
+  83:	45 85 ff             	test   %r15d,%r15d
+  86:	0f 89 0c 01 00 00    	jns    198 <dirchownmod+0x198>
+  8c:	83 7c 24 08 ff       	cmpl   $0xffffffff,0x8(%rsp)
+  91:	89 4c 24 0c          	mov    %ecx,0xc(%rsp)
+  95:	44 89 f2             	mov    %r14d,%edx
+  98:	44 89 ee             	mov    %r13d,%esi
+  9b:	48 89 ef             	mov    %rbp,%rdi
+  9e:	0f 84 4c 01 00 00    	je     1f0 <dirchownmod+0x1f0>
+  a4:	e8 00 00 00 00       	call   a9 <dirchownmod+0xa9>
+  a9:	8b 4c 24 0c          	mov    0xc(%rsp),%ecx
+  ad:	41 89 c4             	mov    %eax,%r12d
+  b0:	45 85 e4             	test   %r12d,%r12d
+  b3:	75 2e                	jne    e3 <dirchownmod+0xe3>
+  b5:	f6 c1 49             	test   $0x49,%cl
+  b8:	0f 84 8b 00 00 00    	je     149 <dirchownmod+0x149>
+  be:	89 ca                	mov    %ecx,%edx
+  c0:	81 e2 00 0c 00 00    	and    $0xc00,%edx
+  c6:	e9 80 00 00 00       	jmp    14b <dirchownmod+0x14b>
+  cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  d0:	48 89 ef             	mov    %rbp,%rdi
+  d3:	e8 00 00 00 00       	call   d8 <dirchownmod+0xd8>
+  d8:	41 89 c4             	mov    %eax,%r12d
+  db:	85 c0                	test   %eax,%eax
+  dd:	0f 84 4f 01 00 00    	je     232 <dirchownmod+0x232>
+  e3:	48 8b 84 24 a8 00 00 	mov    0xa8(%rsp),%rax
+  ea:	00 
+  eb:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  f2:	00 00 
+  f4:	0f 85 33 01 00 00    	jne    22d <dirchownmod+0x22d>
+  fa:	48 81 c4 b8 00 00 00 	add    $0xb8,%rsp
+ 101:	44 89 e0             	mov    %r12d,%eax
+ 104:	5b                   	pop    %rbx
+ 105:	5d                   	pop    %rbp
+ 106:	41 5c                	pop    %r12
+ 108:	41 5d                	pop    %r13
+ 10a:	41 5e                	pop    %r14
+ 10c:	41 5f                	pop    %r15
+ 10e:	c3                   	ret    
+ 10f:	90                   	nop
+ 110:	e8 00 00 00 00       	call   115 <dirchownmod+0x115>
+ 115:	bd 14 00 00 00       	mov    $0x14,%ebp
+ 11a:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+ 120:	c7 00 14 00 00 00    	movl   $0x14,(%rax)
+ 126:	48 89 c3             	mov    %rax,%rbx
+ 129:	44 89 ff             	mov    %r15d,%edi
+ 12c:	e8 00 00 00 00       	call   131 <dirchownmod+0x131>
+ 131:	89 2b                	mov    %ebp,(%rbx)
+ 133:	eb ae                	jmp    e3 <dirchownmod+0xe3>
+ 135:	0f 1f 00             	nopl   (%rax)
+ 138:	41 83 fe ff          	cmp    $0xffffffff,%r14d
+ 13c:	74 0b                	je     149 <dirchownmod+0x149>
+ 13e:	44 39 74 24 30       	cmp    %r14d,0x30(%rsp)
+ 143:	0f 85 3a ff ff ff    	jne    83 <dirchownmod+0x83>
+ 149:	31 d2                	xor    %edx,%edx
+ 14b:	89 c8                	mov    %ecx,%eax
+ 14d:	31 d8                	xor    %ebx,%eax
+ 14f:	09 d0                	or     %edx,%eax
+ 151:	85 84 24 f0 00 00 00 	test   %eax,0xf0(%rsp)
+ 158:	74 76                	je     1d0 <dirchownmod+0x1d0>
+ 15a:	8b b4 24 f0 00 00 00 	mov    0xf0(%rsp),%esi
+ 161:	f7 d6                	not    %esi
+ 163:	21 ce                	and    %ecx,%esi
+ 165:	81 e6 ff 0f 00 00    	and    $0xfff,%esi
+ 16b:	09 de                	or     %ebx,%esi
+ 16d:	45 85 ff             	test   %r15d,%r15d
+ 170:	0f 89 92 00 00 00    	jns    208 <dirchownmod+0x208>
+ 176:	83 7c 24 08 ff       	cmpl   $0xffffffff,0x8(%rsp)
+ 17b:	48 89 ef             	mov    %rbp,%rdi
+ 17e:	0f 84 9c 00 00 00    	je     220 <dirchownmod+0x220>
+ 184:	e8 00 00 00 00       	call   189 <dirchownmod+0x189>
+ 189:	41 89 c4             	mov    %eax,%r12d
+ 18c:	e9 52 ff ff ff       	jmp    e3 <dirchownmod+0xe3>
+ 191:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 198:	44 89 f2             	mov    %r14d,%edx
+ 19b:	44 89 ee             	mov    %r13d,%esi
+ 19e:	44 89 ff             	mov    %r15d,%edi
+ 1a1:	89 4c 24 0c          	mov    %ecx,0xc(%rsp)
+ 1a5:	e8 00 00 00 00       	call   1aa <dirchownmod+0x1aa>
+ 1aa:	8b 4c 24 0c          	mov    0xc(%rsp),%ecx
+ 1ae:	85 c0                	test   %eax,%eax
+ 1b0:	41 89 c4             	mov    %eax,%r12d
+ 1b3:	0f 84 fc fe ff ff    	je     b5 <dirchownmod+0xb5>
+ 1b9:	e8 00 00 00 00       	call   1be <dirchownmod+0x1be>
+ 1be:	8b 28                	mov    (%rax),%ebp
+ 1c0:	48 89 c3             	mov    %rax,%rbx
+ 1c3:	e9 61 ff ff ff       	jmp    129 <dirchownmod+0x129>
+ 1c8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 1cf:	00 
+ 1d0:	45 31 e4             	xor    %r12d,%r12d
+ 1d3:	45 85 ff             	test   %r15d,%r15d
+ 1d6:	0f 88 07 ff ff ff    	js     e3 <dirchownmod+0xe3>
+ 1dc:	0f 1f 40 00          	nopl   0x0(%rax)
+ 1e0:	44 89 ff             	mov    %r15d,%edi
+ 1e3:	e8 00 00 00 00       	call   1e8 <dirchownmod+0x1e8>
+ 1e8:	41 89 c4             	mov    %eax,%r12d
+ 1eb:	e9 f3 fe ff ff       	jmp    e3 <dirchownmod+0xe3>
+ 1f0:	e8 00 00 00 00       	call   1f5 <dirchownmod+0x1f5>
+ 1f5:	8b 4c 24 0c          	mov    0xc(%rsp),%ecx
+ 1f9:	41 89 c4             	mov    %eax,%r12d
+ 1fc:	e9 af fe ff ff       	jmp    b0 <dirchownmod+0xb0>
+ 201:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 208:	44 89 ff             	mov    %r15d,%edi
+ 20b:	e8 00 00 00 00       	call   210 <dirchownmod+0x210>
+ 210:	41 89 c4             	mov    %eax,%r12d
+ 213:	85 c0                	test   %eax,%eax
+ 215:	74 c9                	je     1e0 <dirchownmod+0x1e0>
+ 217:	eb a0                	jmp    1b9 <dirchownmod+0x1b9>
+ 219:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+ 220:	e8 00 00 00 00       	call   225 <dirchownmod+0x225>
+ 225:	41 89 c4             	mov    %eax,%r12d
+ 228:	e9 b6 fe ff ff       	jmp    e3 <dirchownmod+0xe3>
+ 22d:	e8 00 00 00 00       	call   232 <dirchownmod+0x232>
+ 232:	8b 4c 24 28          	mov    0x28(%rsp),%ecx
+ 236:	89 c8                	mov    %ecx,%eax
+ 238:	25 00 f0 00 00       	and    $0xf000,%eax
+ 23d:	3d 00 40 00 00       	cmp    $0x4000,%eax
+ 242:	0f 84 26 fe ff ff    	je     6e <dirchownmod+0x6e>
+ 248:	e8 00 00 00 00       	call   24d <dirchownmod+0x24d>
+ 24d:	41 83 cc ff          	or     $0xffffffff,%r12d
+ 251:	c7 00 14 00 00 00    	movl   $0x14,(%rax)
+ 257:	e9 87 fe ff ff       	jmp    e3 <dirchownmod+0xe3>

@@ -1,0 +1,116 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-areadlink-with-size.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <areadlink_with_size>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	41 55                	push   %r13
+   a:	41 54                	push   %r12
+   c:	55                   	push   %rbp
+   d:	48 89 fd             	mov    %rdi,%rbp
+  10:	53                   	push   %rbx
+  11:	bb 80 00 00 00       	mov    $0x80,%ebx
+  16:	48 81 ec a8 00 00 00 	sub    $0xa8,%rsp
+  1d:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  24:	00 00 
+  26:	48 89 84 24 98 00 00 	mov    %rax,0x98(%rsp)
+  2d:	00 
+  2e:	31 c0                	xor    %eax,%eax
+  30:	48 85 f6             	test   %rsi,%rsi
+  33:	41 0f 95 c6          	setne  %r14b
+  37:	74 14                	je     4d <areadlink_with_size+0x4d>
+  39:	48 8d 5e 01          	lea    0x1(%rsi),%rbx
+  3d:	48 81 fe 01 04 00 00 	cmp    $0x401,%rsi
+  44:	b8 01 04 00 00       	mov    $0x401,%eax
+  49:	48 0f 43 d8          	cmovae %rax,%rbx
+  4d:	49 bc ff ff ff ff ff 	movabs $0x3fffffffffffffff,%r12
+  54:	ff ff 3f 
+  57:	48 8d 44 24 10       	lea    0x10(%rsp),%rax
+  5c:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  61:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  68:	48 81 fb 80 00 00 00 	cmp    $0x80,%rbx
+  6f:	75 42                	jne    b3 <areadlink_with_size+0xb3>
+  71:	4c 8b 6c 24 08       	mov    0x8(%rsp),%r13
+  76:	45 31 ff             	xor    %r15d,%r15d
+  79:	45 84 f6             	test   %r14b,%r14b
+  7c:	75 35                	jne    b3 <areadlink_with_size+0xb3>
+  7e:	48 89 da             	mov    %rbx,%rdx
+  81:	4c 89 ee             	mov    %r13,%rsi
+  84:	48 89 ef             	mov    %rbp,%rdi
+  87:	e8 00 00 00 00       	call   8c <areadlink_with_size+0x8c>
+  8c:	48 85 c0             	test   %rax,%rax
+  8f:	78 5f                	js     f0 <areadlink_with_size+0xf0>
+  91:	48 39 c3             	cmp    %rax,%rbx
+  94:	0f 87 8e 00 00 00    	ja     128 <areadlink_with_size+0x128>
+  9a:	4c 89 ff             	mov    %r15,%rdi
+  9d:	e8 00 00 00 00       	call   a2 <areadlink_with_size+0xa2>
+  a2:	4c 39 e3             	cmp    %r12,%rbx
+  a5:	77 29                	ja     d0 <areadlink_with_size+0xd0>
+  a7:	48 01 db             	add    %rbx,%rbx
+  aa:	48 81 fb 80 00 00 00 	cmp    $0x80,%rbx
+  b1:	74 be                	je     71 <areadlink_with_size+0x71>
+  b3:	48 89 df             	mov    %rbx,%rdi
+  b6:	e8 00 00 00 00       	call   bb <areadlink_with_size+0xbb>
+  bb:	49 89 c5             	mov    %rax,%r13
+  be:	48 85 c0             	test   %rax,%rax
+  c1:	0f 84 89 00 00 00    	je     150 <areadlink_with_size+0x150>
+  c7:	49 89 c7             	mov    %rax,%r15
+  ca:	eb b2                	jmp    7e <areadlink_with_size+0x7e>
+  cc:	0f 1f 40 00          	nopl   0x0(%rax)
+  d0:	48 b8 ff ff ff ff ff 	movabs $0x7fffffffffffffff,%rax
+  d7:	ff ff 7f 
+  da:	48 39 c3             	cmp    %rax,%rbx
+  dd:	74 71                	je     150 <areadlink_with_size+0x150>
+  df:	48 bb ff ff ff ff ff 	movabs $0x7fffffffffffffff,%rbx
+  e6:	ff ff 7f 
+  e9:	e9 7a ff ff ff       	jmp    68 <areadlink_with_size+0x68>
+  ee:	66 90                	xchg   %ax,%ax
+  f0:	4c 89 ff             	mov    %r15,%rdi
+  f3:	45 31 ff             	xor    %r15d,%r15d
+  f6:	e8 00 00 00 00       	call   fb <areadlink_with_size+0xfb>
+  fb:	48 8b 84 24 98 00 00 	mov    0x98(%rsp),%rax
+ 102:	00 
+ 103:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 10a:	00 00 
+ 10c:	75 75                	jne    183 <areadlink_with_size+0x183>
+ 10e:	48 81 c4 a8 00 00 00 	add    $0xa8,%rsp
+ 115:	4c 89 f8             	mov    %r15,%rax
+ 118:	5b                   	pop    %rbx
+ 119:	5d                   	pop    %rbp
+ 11a:	41 5c                	pop    %r12
+ 11c:	41 5d                	pop    %r13
+ 11e:	41 5e                	pop    %r14
+ 120:	41 5f                	pop    %r15
+ 122:	c3                   	ret    
+ 123:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 128:	41 c6 44 05 00 00    	movb   $0x0,0x0(%r13,%rax,1)
+ 12e:	4c 8d 60 01          	lea    0x1(%rax),%r12
+ 132:	4d 85 ff             	test   %r15,%r15
+ 135:	74 29                	je     160 <areadlink_with_size+0x160>
+ 137:	4c 39 e3             	cmp    %r12,%rbx
+ 13a:	76 bf                	jbe    fb <areadlink_with_size+0xfb>
+ 13c:	4c 89 ff             	mov    %r15,%rdi
+ 13f:	4c 89 e6             	mov    %r12,%rsi
+ 142:	e8 00 00 00 00       	call   147 <areadlink_with_size+0x147>
+ 147:	48 85 c0             	test   %rax,%rax
+ 14a:	4c 0f 45 f8          	cmovne %rax,%r15
+ 14e:	eb ab                	jmp    fb <areadlink_with_size+0xfb>
+ 150:	e8 00 00 00 00       	call   155 <areadlink_with_size+0x155>
+ 155:	45 31 ff             	xor    %r15d,%r15d
+ 158:	c7 00 0c 00 00 00    	movl   $0xc,(%rax)
+ 15e:	eb 9b                	jmp    fb <areadlink_with_size+0xfb>
+ 160:	4c 89 e7             	mov    %r12,%rdi
+ 163:	e8 00 00 00 00       	call   168 <areadlink_with_size+0x168>
+ 168:	49 89 c7             	mov    %rax,%r15
+ 16b:	48 85 c0             	test   %rax,%rax
+ 16e:	74 8b                	je     fb <areadlink_with_size+0xfb>
+ 170:	4c 89 e2             	mov    %r12,%rdx
+ 173:	4c 89 ee             	mov    %r13,%rsi
+ 176:	48 89 c7             	mov    %rax,%rdi
+ 179:	e8 00 00 00 00       	call   17e <areadlink_with_size+0x17e>
+ 17e:	e9 78 ff ff ff       	jmp    fb <areadlink_with_size+0xfb>
+ 183:	e8 00 00 00 00       	call   188 <areadlink_with_size+0x188>

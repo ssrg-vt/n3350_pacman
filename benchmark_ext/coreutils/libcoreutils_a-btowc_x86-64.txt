@@ -1,0 +1,36 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-btowc.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <rpl_btowc>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   %r12
+   6:	41 bc ff ff ff ff    	mov    $0xffffffff,%r12d
+   c:	48 83 ec 20          	sub    $0x20,%rsp
+  10:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  17:	00 00 
+  19:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+  1e:	31 c0                	xor    %eax,%eax
+  20:	83 ff ff             	cmp    $0xffffffff,%edi
+  23:	74 31                	je     56 <rpl_btowc+0x56>
+  25:	40 88 7c 24 17       	mov    %dil,0x17(%rsp)
+  2a:	48 8d 4c 24 0c       	lea    0xc(%rsp),%rcx
+  2f:	48 8d 74 24 17       	lea    0x17(%rsp),%rsi
+  34:	ba 01 00 00 00       	mov    $0x1,%edx
+  39:	48 c7 44 24 0c 00 00 	movq   $0x0,0xc(%rsp)
+  40:	00 00 
+  42:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
+  47:	e8 00 00 00 00       	call   4c <rpl_btowc+0x4c>
+  4c:	48 83 f8 fe          	cmp    $0xfffffffffffffffe,%rax
+  50:	44 0f 42 64 24 08    	cmovb  0x8(%rsp),%r12d
+  56:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  5b:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  62:	00 00 
+  64:	75 0a                	jne    70 <rpl_btowc+0x70>
+  66:	48 83 c4 20          	add    $0x20,%rsp
+  6a:	44 89 e0             	mov    %r12d,%eax
+  6d:	41 5c                	pop    %r12
+  6f:	c3                   	ret    
+  70:	e8 00 00 00 00       	call   75 <rpl_btowc+0x75>

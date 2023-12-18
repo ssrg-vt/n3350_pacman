@@ -1,0 +1,44 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-c-strcasecmp.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <c_strcasecmp>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 39 f7             	cmp    %rsi,%rdi
+   7:	74 57                	je     60 <c_strcasecmp+0x60>
+   9:	53                   	push   %rbx
+   a:	31 d2                	xor    %edx,%edx
+   c:	eb 23                	jmp    31 <c_strcasecmp+0x31>
+   e:	66 90                	xchg   %ax,%ax
+  10:	83 c0 20             	add    $0x20,%eax
+  13:	41 83 c0 20          	add    $0x20,%r8d
+  17:	41 83 fa 19          	cmp    $0x19,%r10d
+  1b:	77 0b                	ja     28 <c_strcasecmp+0x28>
+  1d:	41 8d 59 20          	lea    0x20(%r9),%ebx
+  21:	83 c1 20             	add    $0x20,%ecx
+  24:	85 c0                	test   %eax,%eax
+  26:	74 33                	je     5b <c_strcasecmp+0x5b>
+  28:	48 83 c2 01          	add    $0x1,%rdx
+  2c:	41 38 c8             	cmp    %cl,%r8b
+  2f:	75 2a                	jne    5b <c_strcasecmp+0x5b>
+  31:	0f b6 04 17          	movzbl (%rdi,%rdx,1),%eax
+  35:	44 0f b6 0c 16       	movzbl (%rsi,%rdx,1),%r9d
+  3a:	44 8d 58 bf          	lea    -0x41(%rax),%r11d
+  3e:	41 89 c0             	mov    %eax,%r8d
+  41:	44 89 c9             	mov    %r9d,%ecx
+  44:	44 89 cb             	mov    %r9d,%ebx
+  47:	45 8d 51 bf          	lea    -0x41(%r9),%r10d
+  4b:	41 83 fb 19          	cmp    $0x19,%r11d
+  4f:	76 bf                	jbe    10 <c_strcasecmp+0x10>
+  51:	41 83 fa 19          	cmp    $0x19,%r10d
+  55:	76 c6                	jbe    1d <c_strcasecmp+0x1d>
+  57:	85 c0                	test   %eax,%eax
+  59:	75 cd                	jne    28 <c_strcasecmp+0x28>
+  5b:	29 d8                	sub    %ebx,%eax
+  5d:	5b                   	pop    %rbx
+  5e:	c3                   	ret    
+  5f:	90                   	nop
+  60:	31 c0                	xor    %eax,%eax
+  62:	c3                   	ret    

@@ -1,0 +1,101 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-openat-proc.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <openat_proc_name>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 56                	push   %r14
+   6:	41 55                	push   %r13
+   8:	41 54                	push   %r12
+   a:	55                   	push   %rbp
+   b:	53                   	push   %rbx
+   c:	48 89 fb             	mov    %rdi,%rbx
+   f:	48 83 ec 30          	sub    $0x30,%rsp
+  13:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1a:	00 00 
+  1c:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+  21:	31 c0                	xor    %eax,%eax
+  23:	80 3a 00             	cmpb   $0x0,(%rdx)
+  26:	0f 84 c4 00 00 00    	je     f0 <openat_proc_name+0xf0>
+  2c:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        # 32 <openat_proc_name+0x32>
+  32:	41 89 f4             	mov    %esi,%r12d
+  35:	48 89 d5             	mov    %rdx,%rbp
+  38:	85 c0                	test   %eax,%eax
+  3a:	0f 84 88 00 00 00    	je     c8 <openat_proc_name+0xc8>
+  40:	85 c0                	test   %eax,%eax
+  42:	78 79                	js     bd <openat_proc_name+0xbd>
+  44:	48 89 ef             	mov    %rbp,%rdi
+  47:	e8 00 00 00 00       	call   4c <openat_proc_name+0x4c>
+  4c:	48 8d 78 1b          	lea    0x1b(%rax),%rdi
+  50:	48 81 ff c0 0f 00 00 	cmp    $0xfc0,%rdi
+  57:	77 57                	ja     b0 <openat_proc_name+0xb0>
+  59:	45 89 e0             	mov    %r12d,%r8d
+  5c:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 63 <openat_proc_name+0x63>
+  63:	48 89 df             	mov    %rbx,%rdi
+  66:	31 c0                	xor    %eax,%eax
+  68:	48 c7 c2 ff ff ff ff 	mov    $0xffffffffffffffff,%rdx
+  6f:	be 01 00 00 00       	mov    $0x1,%esi
+  74:	e8 00 00 00 00       	call   79 <openat_proc_name+0x79>
+  79:	48 89 ee             	mov    %rbp,%rsi
+  7c:	48 63 f8             	movslq %eax,%rdi
+  7f:	48 01 df             	add    %rbx,%rdi
+  82:	e8 00 00 00 00       	call   87 <openat_proc_name+0x87>
+  87:	48 89 d8             	mov    %rbx,%rax
+  8a:	48 8b 54 24 28       	mov    0x28(%rsp),%rdx
+  8f:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  96:	00 00 
+  98:	0f 85 b1 00 00 00    	jne    14f <openat_proc_name+0x14f>
+  9e:	48 83 c4 30          	add    $0x30,%rsp
+  a2:	5b                   	pop    %rbx
+  a3:	5d                   	pop    %rbp
+  a4:	41 5c                	pop    %r12
+  a6:	41 5d                	pop    %r13
+  a8:	41 5e                	pop    %r14
+  aa:	c3                   	ret    
+  ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  b0:	e8 00 00 00 00       	call   b5 <openat_proc_name+0xb5>
+  b5:	48 89 c3             	mov    %rax,%rbx
+  b8:	48 85 c0             	test   %rax,%rax
+  bb:	75 9c                	jne    59 <openat_proc_name+0x59>
+  bd:	31 c0                	xor    %eax,%eax
+  bf:	eb c9                	jmp    8a <openat_proc_name+0x8a>
+  c1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  c8:	be 00 09 09 00       	mov    $0x90900,%esi
+  cd:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # d4 <openat_proc_name+0xd4>
+  d4:	e8 00 00 00 00       	call   d9 <openat_proc_name+0xd9>
+  d9:	41 89 c5             	mov    %eax,%r13d
+  dc:	85 c0                	test   %eax,%eax
+  de:	79 20                	jns    100 <openat_proc_name+0x100>
+  e0:	c7 05 00 00 00 00 ff 	movl   $0xffffffff,0x0(%rip)        # ea <openat_proc_name+0xea>
+  e7:	ff ff ff 
+  ea:	31 c0                	xor    %eax,%eax
+  ec:	eb 9c                	jmp    8a <openat_proc_name+0x8a>
+  ee:	66 90                	xchg   %ax,%ax
+  f0:	c6 07 00             	movb   $0x0,(%rdi)
+  f3:	48 89 f8             	mov    %rdi,%rax
+  f6:	eb 92                	jmp    8a <openat_proc_name+0x8a>
+  f8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  ff:	00 
+ 100:	49 89 e6             	mov    %rsp,%r14
+ 103:	41 89 c0             	mov    %eax,%r8d
+ 106:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 10d <openat_proc_name+0x10d>
+ 10d:	31 c0                	xor    %eax,%eax
+ 10f:	ba 20 00 00 00       	mov    $0x20,%edx
+ 114:	be 01 00 00 00       	mov    $0x1,%esi
+ 119:	4c 89 f7             	mov    %r14,%rdi
+ 11c:	e8 00 00 00 00       	call   121 <openat_proc_name+0x121>
+ 121:	31 f6                	xor    %esi,%esi
+ 123:	4c 89 f7             	mov    %r14,%rdi
+ 126:	e8 00 00 00 00       	call   12b <openat_proc_name+0x12b>
+ 12b:	44 89 ef             	mov    %r13d,%edi
+ 12e:	83 f8 01             	cmp    $0x1,%eax
+ 131:	19 c0                	sbb    %eax,%eax
+ 133:	83 e0 02             	and    $0x2,%eax
+ 136:	83 e8 01             	sub    $0x1,%eax
+ 139:	89 05 00 00 00 00    	mov    %eax,0x0(%rip)        # 13f <openat_proc_name+0x13f>
+ 13f:	e8 00 00 00 00       	call   144 <openat_proc_name+0x144>
+ 144:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        # 14a <openat_proc_name+0x14a>
+ 14a:	e9 f1 fe ff ff       	jmp    40 <openat_proc_name+0x40>
+ 14f:	e8 00 00 00 00       	call   154 <.LC2+0x12f>

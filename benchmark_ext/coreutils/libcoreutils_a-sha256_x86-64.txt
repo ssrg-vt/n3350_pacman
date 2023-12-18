@@ -1,0 +1,142 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-sha256.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <sha224_init_ctx>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	e9 00 00 00 00       	jmp    9 <sha224_init_ctx+0x9>
+   9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000010 <sha224_finish_ctx>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	41 54                	push   %r12
+  16:	49 89 f4             	mov    %rsi,%r12
+  19:	48 89 fe             	mov    %rdi,%rsi
+  1c:	4c 89 e7             	mov    %r12,%rdi
+  1f:	e8 00 00 00 00       	call   24 <sha224_finish_ctx+0x14>
+  24:	4c 89 e0             	mov    %r12,%rax
+  27:	41 5c                	pop    %r12
+  29:	c3                   	ret    
+  2a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000030 <sha224_buffer>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	e9 00 00 00 00       	jmp    39 <sha224_buffer+0x9>
+  39:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000040 <sha224_read_ctx>:
+  40:	f3 0f 1e fa          	endbr64 
+  44:	41 54                	push   %r12
+  46:	49 89 f4             	mov    %rsi,%r12
+  49:	48 83 c4 80          	add    $0xffffffffffffff80,%rsp
+  4d:	f3 0f 6f 07          	movdqu (%rdi),%xmm0
+  51:	f3 0f 6f 4f 10       	movdqu 0x10(%rdi),%xmm1
+  56:	f3 0f 6f 57 20       	movdqu 0x20(%rdi),%xmm2
+  5b:	f3 0f 6f 5f 30       	movdqu 0x30(%rdi),%xmm3
+  60:	48 89 e6             	mov    %rsp,%rsi
+  63:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  6a:	00 00 
+  6c:	48 89 44 24 78       	mov    %rax,0x78(%rsp)
+  71:	31 c0                	xor    %eax,%eax
+  73:	f3 0f 6f 67 40       	movdqu 0x40(%rdi),%xmm4
+  78:	f3 0f 6f 6f 50       	movdqu 0x50(%rdi),%xmm5
+  7d:	0f 29 04 24          	movaps %xmm0,(%rsp)
+  81:	f3 0f 6f 77 60       	movdqu 0x60(%rdi),%xmm6
+  86:	4c 89 e7             	mov    %r12,%rdi
+  89:	0f 29 4c 24 10       	movaps %xmm1,0x10(%rsp)
+  8e:	0f 29 54 24 20       	movaps %xmm2,0x20(%rsp)
+  93:	0f 29 5c 24 30       	movaps %xmm3,0x30(%rsp)
+  98:	0f 29 64 24 40       	movaps %xmm4,0x40(%rsp)
+  9d:	0f 29 6c 24 50       	movaps %xmm5,0x50(%rsp)
+  a2:	0f 29 74 24 60       	movaps %xmm6,0x60(%rsp)
+  a7:	e8 00 00 00 00       	call   ac <sha224_read_ctx+0x6c>
+  ac:	48 8b 44 24 78       	mov    0x78(%rsp),%rax
+  b1:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  b8:	00 00 
+  ba:	75 0a                	jne    c6 <sha224_read_ctx+0x86>
+  bc:	48 83 ec 80          	sub    $0xffffffffffffff80,%rsp
+  c0:	4c 89 e0             	mov    %r12,%rax
+  c3:	41 5c                	pop    %r12
+  c5:	c3                   	ret    
+  c6:	e8 00 00 00 00       	call   cb <sha224_read_ctx+0x8b>
+  cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000000d0 <sha256_init_ctx>:
+  d0:	f3 0f 1e fa          	endbr64 
+  d4:	e9 00 00 00 00       	jmp    d9 <sha256_init_ctx+0x9>
+  d9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000000e0 <sha256_process_bytes>:
+  e0:	f3 0f 1e fa          	endbr64 
+  e4:	49 89 f8             	mov    %rdi,%r8
+  e7:	48 89 d7             	mov    %rdx,%rdi
+  ea:	48 89 f2             	mov    %rsi,%rdx
+  ed:	4c 89 c6             	mov    %r8,%rsi
+  f0:	e9 00 00 00 00       	jmp    f5 <sha256_process_bytes+0x15>
+  f5:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  fc:	00 00 00 00 
+
+0000000000000100 <sha256_process_block>:
+ 100:	f3 0f 1e fa          	endbr64 
+ 104:	49 89 f8             	mov    %rdi,%r8
+ 107:	48 89 d7             	mov    %rdx,%rdi
+ 10a:	48 89 f2             	mov    %rsi,%rdx
+ 10d:	4c 89 c6             	mov    %r8,%rsi
+ 110:	e9 00 00 00 00       	jmp    115 <sha256_process_block+0x15>
+ 115:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+ 11c:	00 00 00 00 
+
+0000000000000120 <sha256_finish_ctx>:
+ 120:	f3 0f 1e fa          	endbr64 
+ 124:	41 54                	push   %r12
+ 126:	49 89 f4             	mov    %rsi,%r12
+ 129:	48 89 fe             	mov    %rdi,%rsi
+ 12c:	4c 89 e7             	mov    %r12,%rdi
+ 12f:	e8 00 00 00 00       	call   134 <sha256_finish_ctx+0x14>
+ 134:	4c 89 e0             	mov    %r12,%rax
+ 137:	41 5c                	pop    %r12
+ 139:	c3                   	ret    
+ 13a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000140 <sha256_buffer>:
+ 140:	f3 0f 1e fa          	endbr64 
+ 144:	e9 00 00 00 00       	jmp    149 <sha256_buffer+0x9>
+ 149:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000150 <sha256_read_ctx>:
+ 150:	f3 0f 1e fa          	endbr64 
+ 154:	41 54                	push   %r12
+ 156:	49 89 f4             	mov    %rsi,%r12
+ 159:	48 83 c4 80          	add    $0xffffffffffffff80,%rsp
+ 15d:	f3 0f 6f 07          	movdqu (%rdi),%xmm0
+ 161:	f3 0f 6f 4f 10       	movdqu 0x10(%rdi),%xmm1
+ 166:	f3 0f 6f 57 20       	movdqu 0x20(%rdi),%xmm2
+ 16b:	f3 0f 6f 5f 30       	movdqu 0x30(%rdi),%xmm3
+ 170:	48 89 e6             	mov    %rsp,%rsi
+ 173:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 17a:	00 00 
+ 17c:	48 89 44 24 78       	mov    %rax,0x78(%rsp)
+ 181:	31 c0                	xor    %eax,%eax
+ 183:	f3 0f 6f 67 40       	movdqu 0x40(%rdi),%xmm4
+ 188:	f3 0f 6f 6f 50       	movdqu 0x50(%rdi),%xmm5
+ 18d:	0f 29 04 24          	movaps %xmm0,(%rsp)
+ 191:	f3 0f 6f 77 60       	movdqu 0x60(%rdi),%xmm6
+ 196:	4c 89 e7             	mov    %r12,%rdi
+ 199:	0f 29 4c 24 10       	movaps %xmm1,0x10(%rsp)
+ 19e:	0f 29 54 24 20       	movaps %xmm2,0x20(%rsp)
+ 1a3:	0f 29 5c 24 30       	movaps %xmm3,0x30(%rsp)
+ 1a8:	0f 29 64 24 40       	movaps %xmm4,0x40(%rsp)
+ 1ad:	0f 29 6c 24 50       	movaps %xmm5,0x50(%rsp)
+ 1b2:	0f 29 74 24 60       	movaps %xmm6,0x60(%rsp)
+ 1b7:	e8 00 00 00 00       	call   1bc <sha256_read_ctx+0x6c>
+ 1bc:	48 8b 44 24 78       	mov    0x78(%rsp),%rax
+ 1c1:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+ 1c8:	00 00 
+ 1ca:	75 0a                	jne    1d6 <sha256_read_ctx+0x86>
+ 1cc:	48 83 ec 80          	sub    $0xffffffffffffff80,%rsp
+ 1d0:	4c 89 e0             	mov    %r12,%rax
+ 1d3:	41 5c                	pop    %r12
+ 1d5:	c3                   	ret    
+ 1d6:	e8 00 00 00 00       	call   1db <sha256_read_ctx+0x8b>

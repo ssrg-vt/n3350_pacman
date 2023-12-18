@@ -1,0 +1,35 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-isapipe.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <isapipe>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 81 ec a8 00 00 00 	sub    $0xa8,%rsp
+   b:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  12:	00 00 
+  14:	48 89 84 24 98 00 00 	mov    %rax,0x98(%rsp)
+  1b:	00 
+  1c:	31 c0                	xor    %eax,%eax
+  1e:	48 89 e6             	mov    %rsp,%rsi
+  21:	e8 00 00 00 00       	call   26 <isapipe+0x26>
+  26:	85 c0                	test   %eax,%eax
+  28:	75 08                	jne    32 <isapipe+0x32>
+  2a:	48 83 7c 24 10 01    	cmpq   $0x1,0x10(%rsp)
+  30:	76 1e                	jbe    50 <isapipe+0x50>
+  32:	48 8b 94 24 98 00 00 	mov    0x98(%rsp),%rdx
+  39:	00 
+  3a:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  41:	00 00 
+  43:	75 21                	jne    66 <isapipe+0x66>
+  45:	48 81 c4 a8 00 00 00 	add    $0xa8,%rsp
+  4c:	c3                   	ret    
+  4d:	0f 1f 00             	nopl   (%rax)
+  50:	8b 44 24 18          	mov    0x18(%rsp),%eax
+  54:	25 00 f0 00 00       	and    $0xf000,%eax
+  59:	3d 00 10 00 00       	cmp    $0x1000,%eax
+  5e:	0f 94 c0             	sete   %al
+  61:	0f b6 c0             	movzbl %al,%eax
+  64:	eb cc                	jmp    32 <isapipe+0x32>
+  66:	e8 00 00 00 00       	call   6b <isapipe+0x6b>

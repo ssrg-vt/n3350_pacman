@@ -1,0 +1,45 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-qcopy-acl.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <qcopy_acl>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 55                	push   %r13
+   6:	49 89 d5             	mov    %rdx,%r13
+   9:	44 89 c2             	mov    %r8d,%edx
+   c:	41 54                	push   %r12
+   e:	41 89 cc             	mov    %ecx,%r12d
+  11:	55                   	push   %rbp
+  12:	48 83 ec 10          	sub    $0x10,%rsp
+  16:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  1d:	00 00 
+  1f:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  24:	31 c0                	xor    %eax,%eax
+  26:	48 8d 6c 24 04       	lea    0x4(%rsp),%rbp
+  2b:	48 89 e9             	mov    %rbp,%rcx
+  2e:	e8 00 00 00 00       	call   33 <qcopy_acl+0x33>
+  33:	85 c0                	test   %eax,%eax
+  35:	75 39                	jne    70 <qcopy_acl+0x70>
+  37:	44 89 e2             	mov    %r12d,%edx
+  3a:	48 89 ef             	mov    %rbp,%rdi
+  3d:	4c 89 ee             	mov    %r13,%rsi
+  40:	e8 00 00 00 00       	call   45 <qcopy_acl+0x45>
+  45:	48 89 ef             	mov    %rbp,%rdi
+  48:	41 89 c4             	mov    %eax,%r12d
+  4b:	e8 00 00 00 00       	call   50 <qcopy_acl+0x50>
+  50:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  55:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  5c:	00 00 
+  5e:	75 18                	jne    78 <qcopy_acl+0x78>
+  60:	48 83 c4 10          	add    $0x10,%rsp
+  64:	44 89 e0             	mov    %r12d,%eax
+  67:	5d                   	pop    %rbp
+  68:	41 5c                	pop    %r12
+  6a:	41 5d                	pop    %r13
+  6c:	c3                   	ret    
+  6d:	0f 1f 00             	nopl   (%rax)
+  70:	41 bc fe ff ff ff    	mov    $0xfffffffe,%r12d
+  76:	eb d8                	jmp    50 <qcopy_acl+0x50>
+  78:	e8 00 00 00 00       	call   7d <qcopy_acl+0x7d>

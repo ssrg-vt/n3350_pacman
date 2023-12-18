@@ -1,0 +1,236 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-mpsort.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mpsort_with_tmp.part.0>:
+   0:	41 57                	push   %r15
+   2:	48 89 f0             	mov    %rsi,%rax
+   5:	41 56                	push   %r14
+   7:	48 d1 e8             	shr    %rax
+   a:	41 55                	push   %r13
+   c:	41 54                	push   %r12
+   e:	55                   	push   %rbp
+   f:	48 89 cd             	mov    %rcx,%rbp
+  12:	53                   	push   %rbx
+  13:	48 89 fb             	mov    %rdi,%rbx
+  16:	48 83 ec 38          	sub    $0x38,%rsp
+  1a:	48 89 74 24 10       	mov    %rsi,0x10(%rsp)
+  1f:	48 29 c6             	sub    %rax,%rsi
+  22:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  27:	48 8d 04 c7          	lea    (%rdi,%rax,8),%rax
+  2b:	48 89 54 24 18       	mov    %rdx,0x18(%rsp)
+  30:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+  35:	48 83 fe 02          	cmp    $0x2,%rsi
+  39:	0f 87 f1 01 00 00    	ja     230 <mpsort_with_tmp.part.0+0x230>
+  3f:	0f 84 c3 00 00 00    	je     108 <mpsort_with_tmp.part.0+0x108>
+  45:	48 83 7c 24 10 03    	cmpq   $0x3,0x10(%rsp)
+  4b:	0f 85 e7 00 00 00    	jne    138 <mpsort_with_tmp.part.0+0x138>
+  51:	4c 8b 33             	mov    (%rbx),%r14
+  54:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+  59:	4c 89 30             	mov    %r14,(%rax)
+  5c:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+  61:	48 c7 04 24 00 00 00 	movq   $0x0,(%rsp)
+  68:	00 
+  69:	45 31 ff             	xor    %r15d,%r15d
+  6c:	4c 8b 6c 24 08       	mov    0x8(%rsp),%r13
+  71:	4c 8b 20             	mov    (%rax),%r12
+  74:	0f 1f 40 00          	nopl   0x0(%rax)
+  78:	4c 89 e6             	mov    %r12,%rsi
+  7b:	4c 89 f7             	mov    %r14,%rdi
+  7e:	49 83 c7 01          	add    $0x1,%r15
+  82:	ff d5                	call   *%rbp
+  84:	85 c0                	test   %eax,%eax
+  86:	7e 24                	jle    ac <mpsort_with_tmp.part.0+0xac>
+  88:	4e 89 64 fb f8       	mov    %r12,-0x8(%rbx,%r15,8)
+  8d:	49 83 c5 01          	add    $0x1,%r13
+  91:	4c 39 6c 24 10       	cmp    %r13,0x10(%rsp)
+  96:	74 38                	je     d0 <mpsort_with_tmp.part.0+0xd0>
+  98:	4e 8b 24 eb          	mov    (%rbx,%r13,8),%r12
+  9c:	4c 89 f7             	mov    %r14,%rdi
+  9f:	49 83 c7 01          	add    $0x1,%r15
+  a3:	4c 89 e6             	mov    %r12,%rsi
+  a6:	ff d5                	call   *%rbp
+  a8:	85 c0                	test   %eax,%eax
+  aa:	7f dc                	jg     88 <mpsort_with_tmp.part.0+0x88>
+  ac:	48 83 04 24 01       	addq   $0x1,(%rsp)
+  b1:	48 8b 04 24          	mov    (%rsp),%rax
+  b5:	4e 89 74 fb f8       	mov    %r14,-0x8(%rbx,%r15,8)
+  ba:	48 39 44 24 08       	cmp    %rax,0x8(%rsp)
+  bf:	0f 84 5b 01 00 00    	je     220 <mpsort_with_tmp.part.0+0x220>
+  c5:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+  ca:	4c 8b 34 c2          	mov    (%rdx,%rax,8),%r14
+  ce:	eb a8                	jmp    78 <mpsort_with_tmp.part.0+0x78>
+  d0:	48 8b 04 24          	mov    (%rsp),%rax
+  d4:	4c 8b 64 24 08       	mov    0x8(%rsp),%r12
+  d9:	4a 8d 3c fb          	lea    (%rbx,%r15,8),%rdi
+  dd:	48 8b 4c 24 18       	mov    0x18(%rsp),%rcx
+  e2:	48 83 c4 38          	add    $0x38,%rsp
+  e6:	49 29 c4             	sub    %rax,%r12
+  e9:	5b                   	pop    %rbx
+  ea:	5d                   	pop    %rbp
+  eb:	4a 8d 14 e5 00 00 00 	lea    0x0(,%r12,8),%rdx
+  f2:	00 
+  f3:	48 8d 34 c1          	lea    (%rcx,%rax,8),%rsi
+  f7:	41 5c                	pop    %r12
+  f9:	41 5d                	pop    %r13
+  fb:	41 5e                	pop    %r14
+  fd:	41 5f                	pop    %r15
+  ff:	e9 00 00 00 00       	jmp    104 <mpsort_with_tmp.part.0+0x104>
+ 104:	0f 1f 40 00          	nopl   0x0(%rax)
+ 108:	4c 8b 30             	mov    (%rax),%r14
+ 10b:	4c 8b 60 08          	mov    0x8(%rax),%r12
+ 10f:	49 89 c7             	mov    %rax,%r15
+ 112:	4c 89 e6             	mov    %r12,%rsi
+ 115:	4c 89 f7             	mov    %r14,%rdi
+ 118:	ff d1                	call   *%rcx
+ 11a:	85 c0                	test   %eax,%eax
+ 11c:	0f 8e 23 ff ff ff    	jle    45 <mpsort_with_tmp.part.0+0x45>
+ 122:	48 83 7c 24 10 03    	cmpq   $0x3,0x10(%rsp)
+ 128:	4d 89 27             	mov    %r12,(%r15)
+ 12b:	4d 89 77 08          	mov    %r14,0x8(%r15)
+ 12f:	0f 84 1c ff ff ff    	je     51 <mpsort_with_tmp.part.0+0x51>
+ 135:	0f 1f 00             	nopl   (%rax)
+ 138:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+ 13d:	48 8b 74 24 08       	mov    0x8(%rsp),%rsi
+ 142:	48 c1 e8 02          	shr    $0x2,%rax
+ 146:	48 29 c6             	sub    %rax,%rsi
+ 149:	48 89 44 24 20       	mov    %rax,0x20(%rsp)
+ 14e:	4c 8d 3c c3          	lea    (%rbx,%rax,8),%r15
+ 152:	48 83 fe 02          	cmp    $0x2,%rsi
+ 156:	0f 87 05 01 00 00    	ja     261 <mpsort_with_tmp.part.0+0x261>
+ 15c:	0f 84 33 01 00 00    	je     295 <mpsort_with_tmp.part.0+0x295>
+ 162:	48 83 7c 24 20 02    	cmpq   $0x2,0x20(%rsp)
+ 168:	0f 87 d6 00 00 00    	ja     244 <mpsort_with_tmp.part.0+0x244>
+ 16e:	4c 8b 33             	mov    (%rbx),%r14
+ 171:	0f 84 ff 00 00 00    	je     276 <mpsort_with_tmp.part.0+0x276>
+ 177:	4d 8b 3f             	mov    (%r15),%r15
+ 17a:	48 c7 04 24 00 00 00 	movq   $0x0,(%rsp)
+ 181:	00 
+ 182:	4c 8b 64 24 20       	mov    0x20(%rsp),%r12
+ 187:	4c 8b 6c 24 18       	mov    0x18(%rsp),%r13
+ 18c:	0f 1f 40 00          	nopl   0x0(%rax)
+ 190:	4c 89 fe             	mov    %r15,%rsi
+ 193:	4c 89 f7             	mov    %r14,%rdi
+ 196:	49 83 c5 08          	add    $0x8,%r13
+ 19a:	ff d5                	call   *%rbp
+ 19c:	85 c0                	test   %eax,%eax
+ 19e:	7e 23                	jle    1c3 <mpsort_with_tmp.part.0+0x1c3>
+ 1a0:	4d 89 7d f8          	mov    %r15,-0x8(%r13)
+ 1a4:	49 83 c4 01          	add    $0x1,%r12
+ 1a8:	4c 39 64 24 08       	cmp    %r12,0x8(%rsp)
+ 1ad:	74 3f                	je     1ee <mpsort_with_tmp.part.0+0x1ee>
+ 1af:	4e 8b 3c e3          	mov    (%rbx,%r12,8),%r15
+ 1b3:	4c 89 f7             	mov    %r14,%rdi
+ 1b6:	49 83 c5 08          	add    $0x8,%r13
+ 1ba:	4c 89 fe             	mov    %r15,%rsi
+ 1bd:	ff d5                	call   *%rbp
+ 1bf:	85 c0                	test   %eax,%eax
+ 1c1:	7f dd                	jg     1a0 <mpsort_with_tmp.part.0+0x1a0>
+ 1c3:	48 83 04 24 01       	addq   $0x1,(%rsp)
+ 1c8:	48 8b 04 24          	mov    (%rsp),%rax
+ 1cc:	4d 89 75 f8          	mov    %r14,-0x8(%r13)
+ 1d0:	48 39 44 24 20       	cmp    %rax,0x20(%rsp)
+ 1d5:	74 09                	je     1e0 <mpsort_with_tmp.part.0+0x1e0>
+ 1d7:	4c 8b 34 c3          	mov    (%rbx,%rax,8),%r14
+ 1db:	eb b3                	jmp    190 <mpsort_with_tmp.part.0+0x190>
+ 1dd:	0f 1f 00             	nopl   (%rax)
+ 1e0:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+ 1e5:	4c 89 24 24          	mov    %r12,(%rsp)
+ 1e9:	48 89 44 24 20       	mov    %rax,0x20(%rsp)
+ 1ee:	48 8b 04 24          	mov    (%rsp),%rax
+ 1f2:	48 8b 54 24 20       	mov    0x20(%rsp),%rdx
+ 1f7:	4c 89 ef             	mov    %r13,%rdi
+ 1fa:	48 29 c2             	sub    %rax,%rdx
+ 1fd:	48 8d 34 c3          	lea    (%rbx,%rax,8),%rsi
+ 201:	48 c1 e2 03          	shl    $0x3,%rdx
+ 205:	e8 00 00 00 00       	call   20a <mpsort_with_tmp.part.0+0x20a>
+ 20a:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+ 20f:	4c 8b 30             	mov    (%rax),%r14
+ 212:	e9 45 fe ff ff       	jmp    5c <mpsort_with_tmp.part.0+0x5c>
+ 217:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 21e:	00 00 
+ 220:	48 83 c4 38          	add    $0x38,%rsp
+ 224:	5b                   	pop    %rbx
+ 225:	5d                   	pop    %rbp
+ 226:	41 5c                	pop    %r12
+ 228:	41 5d                	pop    %r13
+ 22a:	41 5e                	pop    %r14
+ 22c:	41 5f                	pop    %r15
+ 22e:	c3                   	ret    
+ 22f:	90                   	nop
+ 230:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 235:	48 8b 7c 24 28       	mov    0x28(%rsp),%rdi
+ 23a:	e8 c1 fd ff ff       	call   0 <mpsort_with_tmp.part.0>
+ 23f:	e9 01 fe ff ff       	jmp    45 <mpsort_with_tmp.part.0+0x45>
+ 244:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 249:	48 8b 74 24 20       	mov    0x20(%rsp),%rsi
+ 24e:	48 89 e9             	mov    %rbp,%rcx
+ 251:	48 89 df             	mov    %rbx,%rdi
+ 254:	e8 a7 fd ff ff       	call   0 <mpsort_with_tmp.part.0>
+ 259:	4c 8b 33             	mov    (%rbx),%r14
+ 25c:	e9 16 ff ff ff       	jmp    177 <mpsort_with_tmp.part.0+0x177>
+ 261:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+ 266:	48 89 e9             	mov    %rbp,%rcx
+ 269:	4c 89 ff             	mov    %r15,%rdi
+ 26c:	e8 8f fd ff ff       	call   0 <mpsort_with_tmp.part.0>
+ 271:	e9 ec fe ff ff       	jmp    162 <mpsort_with_tmp.part.0+0x162>
+ 276:	4c 8b 63 08          	mov    0x8(%rbx),%r12
+ 27a:	4c 89 f7             	mov    %r14,%rdi
+ 27d:	4c 89 e6             	mov    %r12,%rsi
+ 280:	ff d5                	call   *%rbp
+ 282:	85 c0                	test   %eax,%eax
+ 284:	7e d3                	jle    259 <mpsort_with_tmp.part.0+0x259>
+ 286:	4c 89 73 08          	mov    %r14,0x8(%rbx)
+ 28a:	4d 89 e6             	mov    %r12,%r14
+ 28d:	4c 89 23             	mov    %r12,(%rbx)
+ 290:	e9 e2 fe ff ff       	jmp    177 <mpsort_with_tmp.part.0+0x177>
+ 295:	4d 8b 27             	mov    (%r15),%r12
+ 298:	4d 8b 6f 08          	mov    0x8(%r15),%r13
+ 29c:	4c 89 e7             	mov    %r12,%rdi
+ 29f:	4c 89 ee             	mov    %r13,%rsi
+ 2a2:	ff d5                	call   *%rbp
+ 2a4:	85 c0                	test   %eax,%eax
+ 2a6:	0f 8e b6 fe ff ff    	jle    162 <mpsort_with_tmp.part.0+0x162>
+ 2ac:	4d 89 2f             	mov    %r13,(%r15)
+ 2af:	4d 89 67 08          	mov    %r12,0x8(%r15)
+ 2b3:	e9 aa fe ff ff       	jmp    162 <mpsort_with_tmp.part.0+0x162>
+ 2b8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 2bf:	00 
+
+00000000000002c0 <mpsort>:
+ 2c0:	f3 0f 1e fa          	endbr64 
+ 2c4:	41 54                	push   %r12
+ 2c6:	55                   	push   %rbp
+ 2c7:	48 89 fd             	mov    %rdi,%rbp
+ 2ca:	53                   	push   %rbx
+ 2cb:	48 83 fe 02          	cmp    $0x2,%rsi
+ 2cf:	77 2f                	ja     300 <mpsort+0x40>
+ 2d1:	74 0d                	je     2e0 <mpsort+0x20>
+ 2d3:	5b                   	pop    %rbx
+ 2d4:	5d                   	pop    %rbp
+ 2d5:	41 5c                	pop    %r12
+ 2d7:	c3                   	ret    
+ 2d8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+ 2df:	00 
+ 2e0:	4c 8b 67 08          	mov    0x8(%rdi),%r12
+ 2e4:	48 8b 1f             	mov    (%rdi),%rbx
+ 2e7:	4c 89 e6             	mov    %r12,%rsi
+ 2ea:	48 89 df             	mov    %rbx,%rdi
+ 2ed:	ff d2                	call   *%rdx
+ 2ef:	85 c0                	test   %eax,%eax
+ 2f1:	7e e0                	jle    2d3 <mpsort+0x13>
+ 2f3:	4c 89 65 00          	mov    %r12,0x0(%rbp)
+ 2f7:	48 89 5d 08          	mov    %rbx,0x8(%rbp)
+ 2fb:	5b                   	pop    %rbx
+ 2fc:	5d                   	pop    %rbp
+ 2fd:	41 5c                	pop    %r12
+ 2ff:	c3                   	ret    
+ 300:	4c 8d 04 f7          	lea    (%rdi,%rsi,8),%r8
+ 304:	5b                   	pop    %rbx
+ 305:	48 89 d1             	mov    %rdx,%rcx
+ 308:	5d                   	pop    %rbp
+ 309:	4c 89 c2             	mov    %r8,%rdx
+ 30c:	41 5c                	pop    %r12
+ 30e:	e9 ed fc ff ff       	jmp    0 <mpsort_with_tmp.part.0>

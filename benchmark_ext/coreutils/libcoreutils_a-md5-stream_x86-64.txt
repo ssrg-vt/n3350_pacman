@@ -1,0 +1,167 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-md5-stream.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <md5_init_ctx>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	e9 00 00 00 00       	jmp    9 <md5_init_ctx+0x9>
+   9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000010 <md5_process_bytes>:
+  10:	f3 0f 1e fa          	endbr64 
+  14:	49 89 f8             	mov    %rdi,%r8
+  17:	48 89 d7             	mov    %rdx,%rdi
+  1a:	48 89 f2             	mov    %rsi,%rdx
+  1d:	4c 89 c6             	mov    %r8,%rsi
+  20:	e9 00 00 00 00       	jmp    25 <md5_process_bytes+0x15>
+  25:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  2c:	00 00 00 00 
+
+0000000000000030 <md5_process_block>:
+  30:	f3 0f 1e fa          	endbr64 
+  34:	49 89 f8             	mov    %rdi,%r8
+  37:	48 89 d7             	mov    %rdx,%rdi
+  3a:	48 89 f2             	mov    %rsi,%rdx
+  3d:	4c 89 c6             	mov    %r8,%rsi
+  40:	e9 00 00 00 00       	jmp    45 <md5_process_block+0x15>
+  45:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+  4c:	00 00 00 00 
+
+0000000000000050 <md5_finish_ctx>:
+  50:	f3 0f 1e fa          	endbr64 
+  54:	41 54                	push   %r12
+  56:	49 89 f4             	mov    %rsi,%r12
+  59:	48 89 fe             	mov    %rdi,%rsi
+  5c:	4c 89 e7             	mov    %r12,%rdi
+  5f:	e8 00 00 00 00       	call   64 <md5_finish_ctx+0x14>
+  64:	4c 89 e0             	mov    %r12,%rax
+  67:	41 5c                	pop    %r12
+  69:	c3                   	ret    
+  6a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000070 <md5_buffer>:
+  70:	f3 0f 1e fa          	endbr64 
+  74:	e9 00 00 00 00       	jmp    79 <md5_buffer+0x9>
+  79:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000080 <md5_read_ctx>:
+  80:	f3 0f 1e fa          	endbr64 
+  84:	41 54                	push   %r12
+  86:	49 89 f4             	mov    %rsi,%r12
+  89:	48 83 ec 70          	sub    $0x70,%rsp
+  8d:	f3 0f 6f 07          	movdqu (%rdi),%xmm0
+  91:	f3 0f 6f 4f 10       	movdqu 0x10(%rdi),%xmm1
+  96:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  9d:	00 00 
+  9f:	48 89 44 24 68       	mov    %rax,0x68(%rsp)
+  a4:	31 c0                	xor    %eax,%eax
+  a6:	48 8b 47 50          	mov    0x50(%rdi),%rax
+  aa:	f3 0f 6f 57 20       	movdqu 0x20(%rdi),%xmm2
+  af:	48 89 e6             	mov    %rsp,%rsi
+  b2:	f3 0f 6f 5f 30       	movdqu 0x30(%rdi),%xmm3
+  b7:	f3 0f 6f 67 40       	movdqu 0x40(%rdi),%xmm4
+  bc:	0f 29 04 24          	movaps %xmm0,(%rsp)
+  c0:	48 89 44 24 50       	mov    %rax,0x50(%rsp)
+  c5:	8b 47 58             	mov    0x58(%rdi),%eax
+  c8:	4c 89 e7             	mov    %r12,%rdi
+  cb:	0f 29 4c 24 10       	movaps %xmm1,0x10(%rsp)
+  d0:	89 44 24 58          	mov    %eax,0x58(%rsp)
+  d4:	0f 29 54 24 20       	movaps %xmm2,0x20(%rsp)
+  d9:	0f 29 5c 24 30       	movaps %xmm3,0x30(%rsp)
+  de:	0f 29 64 24 40       	movaps %xmm4,0x40(%rsp)
+  e3:	e8 00 00 00 00       	call   e8 <md5_read_ctx+0x68>
+  e8:	48 8b 44 24 68       	mov    0x68(%rsp),%rax
+  ed:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+  f4:	00 00 
+  f6:	75 0a                	jne    102 <md5_read_ctx+0x82>
+  f8:	48 83 c4 70          	add    $0x70,%rsp
+  fc:	4c 89 e0             	mov    %r12,%rax
+  ff:	41 5c                	pop    %r12
+ 101:	c3                   	ret    
+ 102:	e8 00 00 00 00       	call   107 <md5_read_ctx+0x87>
+ 107:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 10e:	00 00 
+
+0000000000000110 <md5_stream>:
+ 110:	f3 0f 1e fa          	endbr64 
+ 114:	41 57                	push   %r15
+ 116:	49 89 ff             	mov    %rdi,%r15
+ 119:	bf 48 80 00 00       	mov    $0x8048,%edi
+ 11e:	41 56                	push   %r14
+ 120:	41 55                	push   %r13
+ 122:	49 89 f5             	mov    %rsi,%r13
+ 125:	41 54                	push   %r12
+ 127:	55                   	push   %rbp
+ 128:	53                   	push   %rbx
+ 129:	48 83 ec 78          	sub    $0x78,%rsp
+ 12d:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+ 134:	00 00 
+ 136:	48 89 44 24 68       	mov    %rax,0x68(%rsp)
+ 13b:	31 c0                	xor    %eax,%eax
+ 13d:	e8 00 00 00 00       	call   142 <md5_stream+0x32>
+ 142:	48 85 c0             	test   %rax,%rax
+ 145:	0f 84 ca 00 00 00    	je     215 <md5_stream+0x105>
+ 14b:	49 89 e6             	mov    %rsp,%r14
+ 14e:	48 89 c5             	mov    %rax,%rbp
+ 151:	bb 00 80 00 00       	mov    $0x8000,%ebx
+ 156:	4c 89 f7             	mov    %r14,%rdi
+ 159:	e8 00 00 00 00       	call   15e <md5_stream+0x4e>
+ 15e:	45 31 e4             	xor    %r12d,%r12d
+ 161:	eb 2e                	jmp    191 <md5_stream+0x81>
+ 163:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+ 168:	48 89 da             	mov    %rbx,%rdx
+ 16b:	4a 8d 7c 25 00       	lea    0x0(%rbp,%r12,1),%rdi
+ 170:	4c 89 f9             	mov    %r15,%rcx
+ 173:	be 01 00 00 00       	mov    $0x1,%esi
+ 178:	4c 29 e2             	sub    %r12,%rdx
+ 17b:	e8 00 00 00 00       	call   180 <md5_stream+0x70>
+ 180:	49 01 c4             	add    %rax,%r12
+ 183:	49 81 fc 00 80 00 00 	cmp    $0x8000,%r12
+ 18a:	74 44                	je     1d0 <md5_stream+0xc0>
+ 18c:	48 85 c0             	test   %rax,%rax
+ 18f:	74 57                	je     1e8 <md5_stream+0xd8>
+ 191:	41 f6 07 10          	testb  $0x10,(%r15)
+ 195:	74 d1                	je     168 <md5_stream+0x58>
+ 197:	4d 85 e4             	test   %r12,%r12
+ 19a:	75 64                	jne    200 <md5_stream+0xf0>
+ 19c:	4c 89 f6             	mov    %r14,%rsi
+ 19f:	4c 89 ef             	mov    %r13,%rdi
+ 1a2:	e8 00 00 00 00       	call   1a7 <md5_stream+0x97>
+ 1a7:	48 89 ef             	mov    %rbp,%rdi
+ 1aa:	e8 00 00 00 00       	call   1af <md5_stream+0x9f>
+ 1af:	31 c0                	xor    %eax,%eax
+ 1b1:	48 8b 54 24 68       	mov    0x68(%rsp),%rdx
+ 1b6:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+ 1bd:	00 00 
+ 1bf:	75 4f                	jne    210 <md5_stream+0x100>
+ 1c1:	48 83 c4 78          	add    $0x78,%rsp
+ 1c5:	5b                   	pop    %rbx
+ 1c6:	5d                   	pop    %rbp
+ 1c7:	41 5c                	pop    %r12
+ 1c9:	41 5d                	pop    %r13
+ 1cb:	41 5e                	pop    %r14
+ 1cd:	41 5f                	pop    %r15
+ 1cf:	c3                   	ret    
+ 1d0:	ba 00 80 00 00       	mov    $0x8000,%edx
+ 1d5:	48 89 ee             	mov    %rbp,%rsi
+ 1d8:	4c 89 f7             	mov    %r14,%rdi
+ 1db:	e8 00 00 00 00       	call   1e0 <md5_stream+0xd0>
+ 1e0:	e9 79 ff ff ff       	jmp    15e <md5_stream+0x4e>
+ 1e5:	0f 1f 00             	nopl   (%rax)
+ 1e8:	41 f6 07 20          	testb  $0x20,(%r15)
+ 1ec:	74 a9                	je     197 <md5_stream+0x87>
+ 1ee:	48 89 ef             	mov    %rbp,%rdi
+ 1f1:	e8 00 00 00 00       	call   1f6 <md5_stream+0xe6>
+ 1f6:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1fb:	eb b4                	jmp    1b1 <md5_stream+0xa1>
+ 1fd:	0f 1f 00             	nopl   (%rax)
+ 200:	4c 89 e2             	mov    %r12,%rdx
+ 203:	48 89 ee             	mov    %rbp,%rsi
+ 206:	4c 89 f7             	mov    %r14,%rdi
+ 209:	e8 00 00 00 00       	call   20e <md5_stream+0xfe>
+ 20e:	eb 8c                	jmp    19c <md5_stream+0x8c>
+ 210:	e8 00 00 00 00       	call   215 <md5_stream+0x105>
+ 215:	b8 01 00 00 00       	mov    $0x1,%eax
+ 21a:	eb 95                	jmp    1b1 <md5_stream+0xa1>

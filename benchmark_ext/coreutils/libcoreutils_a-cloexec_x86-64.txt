@@ -1,0 +1,53 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-cloexec.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <set_cloexec_flag>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	31 d2                	xor    %edx,%edx
+   7:	31 c0                	xor    %eax,%eax
+   9:	89 fd                	mov    %edi,%ebp
+   b:	53                   	push   %rbx
+   c:	89 f3                	mov    %esi,%ebx
+   e:	be 01 00 00 00       	mov    $0x1,%esi
+  13:	48 83 ec 08          	sub    $0x8,%rsp
+  17:	e8 00 00 00 00       	call   1c <set_cloexec_flag+0x1c>
+  1c:	85 c0                	test   %eax,%eax
+  1e:	78 40                	js     60 <set_cloexec_flag+0x60>
+  20:	89 c1                	mov    %eax,%ecx
+  22:	89 c2                	mov    %eax,%edx
+  24:	83 c9 01             	or     $0x1,%ecx
+  27:	83 e2 fe             	and    $0xfffffffe,%edx
+  2a:	84 db                	test   %bl,%bl
+  2c:	0f 45 d1             	cmovne %ecx,%edx
+  2f:	45 31 c0             	xor    %r8d,%r8d
+  32:	39 c2                	cmp    %eax,%edx
+  34:	74 1b                	je     51 <set_cloexec_flag+0x51>
+  36:	31 c0                	xor    %eax,%eax
+  38:	be 02 00 00 00       	mov    $0x2,%esi
+  3d:	89 ef                	mov    %ebp,%edi
+  3f:	e8 00 00 00 00       	call   44 <set_cloexec_flag+0x44>
+  44:	45 31 c0             	xor    %r8d,%r8d
+  47:	83 f8 ff             	cmp    $0xffffffff,%eax
+  4a:	41 0f 94 c0          	sete   %r8b
+  4e:	41 f7 d8             	neg    %r8d
+  51:	48 83 c4 08          	add    $0x8,%rsp
+  55:	44 89 c0             	mov    %r8d,%eax
+  58:	5b                   	pop    %rbx
+  59:	5d                   	pop    %rbp
+  5a:	c3                   	ret    
+  5b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  60:	41 b8 ff ff ff ff    	mov    $0xffffffff,%r8d
+  66:	eb e9                	jmp    51 <set_cloexec_flag+0x51>
+  68:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  6f:	00 
+
+0000000000000070 <dup_cloexec>:
+  70:	f3 0f 1e fa          	endbr64 
+  74:	31 d2                	xor    %edx,%edx
+  76:	be 06 04 00 00       	mov    $0x406,%esi
+  7b:	31 c0                	xor    %eax,%eax
+  7d:	e9 00 00 00 00       	jmp    82 <dup_cloexec+0x12>

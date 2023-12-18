@@ -1,0 +1,13 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-fpurge.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fpurge>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 83 ec 08          	sub    $0x8,%rsp
+   8:	e8 00 00 00 00       	call   d <fpurge+0xd>
+   d:	31 c0                	xor    %eax,%eax
+   f:	48 83 c4 08          	add    $0x8,%rsp
+  13:	c3                   	ret    

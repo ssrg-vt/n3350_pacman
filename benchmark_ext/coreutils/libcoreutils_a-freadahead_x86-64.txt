@@ -1,0 +1,20 @@
+
+/home/lalitssrg/coreutils/lib/libcoreutils_a-freadahead.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <freadahead>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 8b 4f 20          	mov    0x20(%rdi),%rcx
+   8:	31 c0                	xor    %eax,%eax
+   a:	48 39 4f 28          	cmp    %rcx,0x28(%rdi)
+   e:	77 1b                	ja     2b <freadahead+0x2b>
+  10:	48 8b 47 10          	mov    0x10(%rdi),%rax
+  14:	48 2b 47 08          	sub    0x8(%rdi),%rax
+  18:	f7 07 00 01 00 00    	testl  $0x100,(%rdi)
+  1e:	74 0b                	je     2b <freadahead+0x2b>
+  20:	48 8b 57 58          	mov    0x58(%rdi),%rdx
+  24:	48 2b 57 48          	sub    0x48(%rdi),%rdx
+  28:	48 01 d0             	add    %rdx,%rax
+  2b:	c3                   	ret    
