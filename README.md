@@ -102,7 +102,7 @@ Following run setups on https://github.com/pietroborrello/ghidra-atom-microcode.
 **_References:_**
 - **CustomProcessingUnit** Reverse Engineering and Customization of Intel Microcode : https://pietroborrello.com/publication/woot23/woot23.pdf
 - **Microcode patches** used by Pietro Borello et.al : https://github.com/pietroborrello/CustomProcessingUnit/tree/master/ucode_collection
-- **Microcode disambugation, Intel's undocumented instructions** : https://github.com/chip-red-pill/uCodeDisasm.git
+- **Microcode disambugation, Intel's undocumented instructions** by Mark Ermolov et.al : https://github.com/chip-red-pill/uCodeDisasm.git
 - **Intel Management Engine JTAG Proof of Concept** by Mark Ermolov. et.al : https://github.com/ptresearch/IntelTXE-PoC
 - **CHEx86** Context-Sensitive Enforcement of Memory Safety via Microcode-Enabled Capabilities : https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9138994
 - **Intel Celeron N3350** https://www.cpu-world.com/CPUs/Celeron/Intel-Mobile%20Celeron%20N3350.html
