@@ -1,0 +1,1991 @@
+
+ep.E.x:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000001000 <_init>:
+    1000:	f3 0f 1e fa          	endbr64 
+    1004:	48 83 ec 08          	sub    $0x8,%rsp
+    1008:	48 8b 05 c1 4f 00 00 	mov    0x4fc1(%rip),%rax        # 5fd0 <__gmon_start__@Base>
+    100f:	48 85 c0             	test   %rax,%rax
+    1012:	74 02                	je     1016 <_init+0x16>
+    1014:	ff d0                	call   *%rax
+    1016:	48 83 c4 08          	add    $0x8,%rsp
+    101a:	c3                   	ret    
+
+Disassembly of section .plt:
+
+0000000000001020 <_gfortran_transfer_real_write@plt-0x10>:
+    1020:	ff 35 d2 4e 00 00    	push   0x4ed2(%rip)        # 5ef8 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1026:	ff 25 d4 4e 00 00    	jmp    *0x4ed4(%rip)        # 5f00 <_GLOBAL_OFFSET_TABLE_+0x10>
+    102c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001030 <_gfortran_transfer_real_write@plt>:
+    1030:	ff 25 d2 4e 00 00    	jmp    *0x4ed2(%rip)        # 5f08 <_gfortran_transfer_real_write@GFORTRAN_8>
+    1036:	68 00 00 00 00       	push   $0x0
+    103b:	e9 e0 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001040 <omp_get_num_threads@plt>:
+    1040:	ff 25 ca 4e 00 00    	jmp    *0x4eca(%rip)        # 5f10 <omp_get_num_threads@OMP_1.0>
+    1046:	68 01 00 00 00       	push   $0x1
+    104b:	e9 d0 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001050 <gettimeofday@plt>:
+    1050:	ff 25 c2 4e 00 00    	jmp    *0x4ec2(%rip)        # 5f18 <gettimeofday@GLIBC_2.2.5>
+    1056:	68 02 00 00 00       	push   $0x2
+    105b:	e9 c0 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001060 <_gfortran_ieee_procedure_entry@plt>:
+    1060:	ff 25 ba 4e 00 00    	jmp    *0x4eba(%rip)        # 5f20 <_gfortran_ieee_procedure_entry@GFORTRAN_8>
+    1066:	68 03 00 00 00       	push   $0x3
+    106b:	e9 b0 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001070 <_gfortran_st_close@plt>:
+    1070:	ff 25 b2 4e 00 00    	jmp    *0x4eb2(%rip)        # 5f28 <_gfortran_st_close@GFORTRAN_8>
+    1076:	68 04 00 00 00       	push   $0x4
+    107b:	e9 a0 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001080 <_gfortran_ieee_procedure_exit@plt>:
+    1080:	ff 25 aa 4e 00 00    	jmp    *0x4eaa(%rip)        # 5f30 <_gfortran_ieee_procedure_exit@GFORTRAN_8>
+    1086:	68 05 00 00 00       	push   $0x5
+    108b:	e9 90 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001090 <_gfortran_transfer_integer_write@plt>:
+    1090:	ff 25 a2 4e 00 00    	jmp    *0x4ea2(%rip)        # 5f38 <_gfortran_transfer_integer_write@GFORTRAN_8>
+    1096:	68 06 00 00 00       	push   $0x6
+    109b:	e9 80 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010a0 <log@plt>:
+    10a0:	ff 25 9a 4e 00 00    	jmp    *0x4e9a(%rip)        # 5f40 <log@GLIBC_2.29>
+    10a6:	68 07 00 00 00       	push   $0x7
+    10ab:	e9 70 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010b0 <omp_get_thread_num@plt>:
+    10b0:	ff 25 92 4e 00 00    	jmp    *0x4e92(%rip)        # 5f48 <omp_get_thread_num@OMP_1.0>
+    10b6:	68 08 00 00 00       	push   $0x8
+    10bb:	e9 60 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010c0 <_gfortran_st_open@plt>:
+    10c0:	ff 25 8a 4e 00 00    	jmp    *0x4e8a(%rip)        # 5f50 <_gfortran_st_open@GFORTRAN_8>
+    10c6:	68 09 00 00 00       	push   $0x9
+    10cb:	e9 50 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010d0 <_gfortran_transfer_character_write@plt>:
+    10d0:	ff 25 82 4e 00 00    	jmp    *0x4e82(%rip)        # 5f58 <_gfortran_transfer_character_write@GFORTRAN_8>
+    10d6:	68 0a 00 00 00       	push   $0xa
+    10db:	e9 40 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010e0 <GOMP_atomic_end@plt>:
+    10e0:	ff 25 7a 4e 00 00    	jmp    *0x4e7a(%rip)        # 5f60 <GOMP_atomic_end@GOMP_1.0>
+    10e6:	68 0b 00 00 00       	push   $0xb
+    10eb:	e9 30 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010f0 <_gfortran_get_environment_variable_i4@plt>:
+    10f0:	ff 25 72 4e 00 00    	jmp    *0x4e72(%rip)        # 5f68 <_gfortran_get_environment_variable_i4@GFORTRAN_8>
+    10f6:	68 0c 00 00 00       	push   $0xc
+    10fb:	e9 20 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001100 <omp_get_num_threads_@plt>:
+    1100:	ff 25 6a 4e 00 00    	jmp    *0x4e6a(%rip)        # 5f70 <omp_get_num_threads_@OMP_1.0>
+    1106:	68 0d 00 00 00       	push   $0xd
+    110b:	e9 10 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001110 <_gfortran_compare_string@plt>:
+    1110:	ff 25 62 4e 00 00    	jmp    *0x4e62(%rip)        # 5f78 <_gfortran_compare_string@GFORTRAN_8>
+    1116:	68 0e 00 00 00       	push   $0xe
+    111b:	e9 00 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001120 <GOMP_atomic_start@plt>:
+    1120:	ff 25 5a 4e 00 00    	jmp    *0x4e5a(%rip)        # 5f80 <GOMP_atomic_start@GOMP_1.0>
+    1126:	68 0f 00 00 00       	push   $0xf
+    112b:	e9 f0 fe ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001130 <__powidf2@plt>:
+    1130:	ff 25 52 4e 00 00    	jmp    *0x4e52(%rip)        # 5f88 <__powidf2@GCC_4.0.0>
+    1136:	68 10 00 00 00       	push   $0x10
+    113b:	e9 e0 fe ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001140 <omp_get_wtime_@plt>:
+    1140:	ff 25 4a 4e 00 00    	jmp    *0x4e4a(%rip)        # 5f90 <omp_get_wtime_@OMP_2.0>
+    1146:	68 11 00 00 00       	push   $0x11
+    114b:	e9 d0 fe ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001150 <GOMP_parallel@plt>:
+    1150:	ff 25 42 4e 00 00    	jmp    *0x4e42(%rip)        # 5f98 <GOMP_parallel@GOMP_4.0>
+    1156:	68 12 00 00 00       	push   $0x12
+    115b:	e9 c0 fe ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001160 <_gfortran_st_write_done@plt>:
+    1160:	ff 25 3a 4e 00 00    	jmp    *0x4e3a(%rip)        # 5fa0 <_gfortran_st_write_done@GFORTRAN_8>
+    1166:	68 13 00 00 00       	push   $0x13
+    116b:	e9 b0 fe ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001170 <__stack_chk_fail@plt>:
+    1170:	ff 25 32 4e 00 00    	jmp    *0x4e32(%rip)        # 5fa8 <__stack_chk_fail@GLIBC_2.4>
+    1176:	68 14 00 00 00       	push   $0x14
+    117b:	e9 a0 fe ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001180 <omp_get_max_threads_@plt>:
+    1180:	ff 25 2a 4e 00 00    	jmp    *0x4e2a(%rip)        # 5fb0 <omp_get_max_threads_@OMP_1.0>
+    1186:	68 15 00 00 00       	push   $0x15
+    118b:	e9 90 fe ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001190 <_gfortran_set_options@plt>:
+    1190:	ff 25 22 4e 00 00    	jmp    *0x4e22(%rip)        # 5fb8 <_gfortran_set_options@GFORTRAN_8>
+    1196:	68 16 00 00 00       	push   $0x16
+    119b:	e9 80 fe ff ff       	jmp    1020 <_init+0x20>
+
+00000000000011a0 <_gfortran_set_args@plt>:
+    11a0:	ff 25 1a 4e 00 00    	jmp    *0x4e1a(%rip)        # 5fc0 <_gfortran_set_args@GFORTRAN_8>
+    11a6:	68 17 00 00 00       	push   $0x17
+    11ab:	e9 70 fe ff ff       	jmp    1020 <_init+0x20>
+
+00000000000011b0 <_gfortran_st_write@plt>:
+    11b0:	ff 25 12 4e 00 00    	jmp    *0x4e12(%rip)        # 5fc8 <_gfortran_st_write@GFORTRAN_8>
+    11b6:	68 18 00 00 00       	push   $0x18
+    11bb:	e9 60 fe ff ff       	jmp    1020 <_init+0x20>
+
+Disassembly of section .plt.got:
+
+00000000000011c0 <__cxa_finalize@plt>:
+    11c0:	ff 25 22 4e 00 00    	jmp    *0x4e22(%rip)        # 5fe8 <__cxa_finalize@GLIBC_2.2.5>
+    11c6:	66 90                	xchg   %ax,%ax
+
+Disassembly of section .text:
+
+00000000000011d0 <main>:
+    11d0:	48 83 ec 08          	sub    $0x8,%rsp
+    11d4:	e8 c7 ff ff ff       	call   11a0 <_gfortran_set_args@plt>
+    11d9:	48 8d 35 60 1e 00 00 	lea    0x1e60(%rip),%rsi        # 3040 <options.10.1>
+    11e0:	bf 07 00 00 00       	mov    $0x7,%edi
+    11e5:	e8 a6 ff ff ff       	call   1190 <_gfortran_set_options@plt>
+    11ea:	e8 31 05 00 00       	call   1720 <MAIN__>
+    11ef:	31 c0                	xor    %eax,%eax
+    11f1:	48 83 c4 08          	add    $0x8,%rsp
+    11f5:	c3                   	ret    
+    11f6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    11fd:	00 00 00 
+
+0000000000001200 <_start>:
+    1200:	f3 0f 1e fa          	endbr64 
+    1204:	31 ed                	xor    %ebp,%ebp
+    1206:	49 89 d1             	mov    %rdx,%r9
+    1209:	5e                   	pop    %rsi
+    120a:	48 89 e2             	mov    %rsp,%rdx
+    120d:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    1211:	50                   	push   %rax
+    1212:	54                   	push   %rsp
+    1213:	45 31 c0             	xor    %r8d,%r8d
+    1216:	31 c9                	xor    %ecx,%ecx
+    1218:	48 8d 3d b1 ff ff ff 	lea    -0x4f(%rip),%rdi        # 11d0 <main>
+    121f:	ff 15 cb 4d 00 00    	call   *0x4dcb(%rip)        # 5ff0 <__libc_start_main@GLIBC_2.34>
+    1225:	f4                   	hlt    
+    1226:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    122d:	00 00 00 
+
+0000000000001230 <deregister_tm_clones>:
+    1230:	48 8d 3d f9 4d 00 00 	lea    0x4df9(%rip),%rdi        # 6030 <__TMC_END__>
+    1237:	48 8d 05 f2 4d 00 00 	lea    0x4df2(%rip),%rax        # 6030 <__TMC_END__>
+    123e:	48 39 f8             	cmp    %rdi,%rax
+    1241:	74 15                	je     1258 <deregister_tm_clones+0x28>
+    1243:	48 8b 05 8e 4d 00 00 	mov    0x4d8e(%rip),%rax        # 5fd8 <_ITM_deregisterTMCloneTable@Base>
+    124a:	48 85 c0             	test   %rax,%rax
+    124d:	74 09                	je     1258 <deregister_tm_clones+0x28>
+    124f:	ff e0                	jmp    *%rax
+    1251:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1258:	c3                   	ret    
+    1259:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001260 <register_tm_clones>:
+    1260:	48 8d 3d c9 4d 00 00 	lea    0x4dc9(%rip),%rdi        # 6030 <__TMC_END__>
+    1267:	48 8d 35 c2 4d 00 00 	lea    0x4dc2(%rip),%rsi        # 6030 <__TMC_END__>
+    126e:	48 29 fe             	sub    %rdi,%rsi
+    1271:	48 89 f0             	mov    %rsi,%rax
+    1274:	48 c1 ee 3f          	shr    $0x3f,%rsi
+    1278:	48 c1 f8 03          	sar    $0x3,%rax
+    127c:	48 01 c6             	add    %rax,%rsi
+    127f:	48 d1 fe             	sar    %rsi
+    1282:	74 14                	je     1298 <register_tm_clones+0x38>
+    1284:	48 8b 05 55 4d 00 00 	mov    0x4d55(%rip),%rax        # 5fe0 <_ITM_registerTMCloneTable@Base>
+    128b:	48 85 c0             	test   %rax,%rax
+    128e:	74 08                	je     1298 <register_tm_clones+0x38>
+    1290:	ff e0                	jmp    *%rax
+    1292:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    1298:	c3                   	ret    
+    1299:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000012a0 <__do_global_dtors_aux>:
+    12a0:	f3 0f 1e fa          	endbr64 
+    12a4:	80 3d 95 4d 00 00 00 	cmpb   $0x0,0x4d95(%rip)        # 6040 <completed.0>
+    12ab:	75 2b                	jne    12d8 <__do_global_dtors_aux+0x38>
+    12ad:	55                   	push   %rbp
+    12ae:	48 83 3d 32 4d 00 00 	cmpq   $0x0,0x4d32(%rip)        # 5fe8 <__cxa_finalize@GLIBC_2.2.5>
+    12b5:	00 
+    12b6:	48 89 e5             	mov    %rsp,%rbp
+    12b9:	74 0c                	je     12c7 <__do_global_dtors_aux+0x27>
+    12bb:	48 8b 3d 46 4d 00 00 	mov    0x4d46(%rip),%rdi        # 6008 <__dso_handle>
+    12c2:	e8 f9 fe ff ff       	call   11c0 <__cxa_finalize@plt>
+    12c7:	e8 64 ff ff ff       	call   1230 <deregister_tm_clones>
+    12cc:	c6 05 6d 4d 00 00 01 	movb   $0x1,0x4d6d(%rip)        # 6040 <completed.0>
+    12d3:	5d                   	pop    %rbp
+    12d4:	c3                   	ret    
+    12d5:	0f 1f 00             	nopl   (%rax)
+    12d8:	c3                   	ret    
+    12d9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000012e0 <frame_dummy>:
+    12e0:	f3 0f 1e fa          	endbr64 
+    12e4:	e9 77 ff ff ff       	jmp    1260 <register_tm_clones>
+    12e9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000012f0 <MAIN__._omp_fn.1>:
+    12f0:	41 57                	push   %r15
+    12f2:	66 0f ef c0          	pxor   %xmm0,%xmm0
+    12f6:	41 56                	push   %r14
+    12f8:	41 55                	push   %r13
+    12fa:	41 54                	push   %r12
+    12fc:	55                   	push   %rbp
+    12fd:	53                   	push   %rbx
+    12fe:	48 83 ec 68          	sub    $0x68,%rsp
+    1302:	f2 0f 10 37          	movsd  (%rdi),%xmm6
+    1306:	48 c7 c3 b0 fb ff ff 	mov    $0xfffffffffffffbb0,%rbx
+    130d:	8b 6f 24             	mov    0x24(%rdi),%ebp
+    1310:	f2 0f 11 1c 24       	movsd  %xmm3,(%rsp)
+    1315:	44 8b 6f 20          	mov    0x20(%rdi),%r13d
+    1319:	48 89 7c 24 30       	mov    %rdi,0x30(%rsp)
+    131e:	f2 0f 11 74 24 40    	movsd  %xmm6,0x40(%rsp)
+    1324:	64 0f 11 03          	movups %xmm0,%fs:(%rbx)
+    1328:	64 0f 11 43 10       	movups %xmm0,%fs:0x10(%rbx)
+    132d:	64 0f 11 43 20       	movups %xmm0,%fs:0x20(%rbx)
+    1332:	64 0f 11 43 30       	movups %xmm0,%fs:0x30(%rbx)
+    1337:	64 0f 11 43 40       	movups %xmm0,%fs:0x40(%rbx)
+    133c:	e8 ff fc ff ff       	call   1040 <omp_get_num_threads@plt>
+    1341:	41 89 c4             	mov    %eax,%r12d
+    1344:	e8 67 fd ff ff       	call   10b0 <omp_get_thread_num@plt>
+    1349:	f2 0f 10 1c 24       	movsd  (%rsp),%xmm3
+    134e:	89 c1                	mov    %eax,%ecx
+    1350:	89 e8                	mov    %ebp,%eax
+    1352:	99                   	cltd   
+    1353:	41 f7 fc             	idiv   %r12d
+    1356:	39 d1                	cmp    %edx,%ecx
+    1358:	0f 8c 3f 03 00 00    	jl     169d <MAIN__._omp_fn.1+0x3ad>
+    135e:	0f af c8             	imul   %eax,%ecx
+    1361:	01 ca                	add    %ecx,%edx
+    1363:	01 d0                	add    %edx,%eax
+    1365:	39 c2                	cmp    %eax,%edx
+    1367:	0f 8d 15 03 00 00    	jge    1682 <MAIN__._omp_fn.1+0x392>
+    136d:	41 8d 44 05 01       	lea    0x1(%r13,%rax,1),%eax
+    1372:	41 8d 54 15 01       	lea    0x1(%r13,%rdx,1),%edx
+    1377:	66 0f ef f6          	pxor   %xmm6,%xmm6
+    137b:	f2 0f 11 5c 24 10    	movsd  %xmm3,0x10(%rsp)
+    1381:	89 44 24 4c          	mov    %eax,0x4c(%rsp)
+    1385:	4c 8d 6c 24 50       	lea    0x50(%rsp),%r13
+    138a:	64 48 8b 04 25 00 00 	mov    %fs:0x0,%rax
+    1391:	00 00 
+    1393:	89 54 24 48          	mov    %edx,0x48(%rsp)
+    1397:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
+    139c:	0f 29 34 24          	movaps %xmm6,(%rsp)
+    13a0:	48 8b 05 c1 1e 00 00 	mov    0x1ec1(%rip),%rax        # 3268 <options.10.1+0x228>
+    13a7:	f2 0f 10 74 24 40    	movsd  0x40(%rsp),%xmm6
+    13ad:	8b 6c 24 48          	mov    0x48(%rsp),%ebp
+    13b1:	48 89 44 24 50       	mov    %rax,0x50(%rsp)
+    13b6:	48 8b 44 24 30       	mov    0x30(%rsp),%rax
+    13bb:	f2 0f 11 74 24 58    	movsd  %xmm6,0x58(%rsp)
+    13c1:	48 8b 40 08          	mov    0x8(%rax),%rax
+    13c5:	8b 00                	mov    (%rax),%eax
+    13c7:	85 c0                	test   %eax,%eax
+    13c9:	0f 85 a2 02 00 00    	jne    1671 <MAIN__._omp_fn.1+0x381>
+    13cf:	4c 8d 74 24 58       	lea    0x58(%rsp),%r14
+    13d4:	41 bc 64 00 00 00    	mov    $0x64,%r12d
+    13da:	4c 89 f0             	mov    %r14,%rax
+    13dd:	41 89 ee             	mov    %ebp,%r14d
+    13e0:	48 89 c5             	mov    %rax,%rbp
+    13e3:	eb 14                	jmp    13f9 <MAIN__._omp_fn.1+0x109>
+    13e5:	0f 1f 00             	nopl   (%rax)
+    13e8:	48 89 ee             	mov    %rbp,%rsi
+    13eb:	48 89 ef             	mov    %rbp,%rdi
+    13ee:	e8 ed 17 00 00       	call   2be0 <randlc_>
+    13f3:	41 83 ec 01          	sub    $0x1,%r12d
+    13f7:	74 2b                	je     1424 <MAIN__._omp_fn.1+0x134>
+    13f9:	45 89 f7             	mov    %r14d,%r15d
+    13fc:	44 89 f0             	mov    %r14d,%eax
+    13ff:	41 c1 ef 1f          	shr    $0x1f,%r15d
+    1403:	45 01 f7             	add    %r14d,%r15d
+    1406:	41 d1 ff             	sar    %r15d
+    1409:	43 8d 0c 3f          	lea    (%r15,%r15,1),%ecx
+    140d:	45 89 fe             	mov    %r15d,%r14d
+    1410:	39 c1                	cmp    %eax,%ecx
+    1412:	74 0b                	je     141f <MAIN__._omp_fn.1+0x12f>
+    1414:	48 89 ee             	mov    %rbp,%rsi
+    1417:	4c 89 ef             	mov    %r13,%rdi
+    141a:	e8 c1 17 00 00       	call   2be0 <randlc_>
+    141f:	45 85 ff             	test   %r15d,%r15d
+    1422:	75 c4                	jne    13e8 <MAIN__._omp_fn.1+0xf8>
+    1424:	48 8b 4c 24 38       	mov    0x38(%rsp),%rcx
+    1429:	48 8d 15 e0 1b 00 00 	lea    0x1be0(%rip),%rdx        # 3010 <_IO_stdin_used+0x10>
+    1430:	48 8d 89 b0 fb ef ff 	lea    -0x100450(%rcx),%rcx
+    1437:	4c 89 ee             	mov    %r13,%rsi
+    143a:	48 8d 3d d7 1b 00 00 	lea    0x1bd7(%rip),%rdi        # 3018 <_IO_stdin_used+0x18>
+    1441:	e8 da 17 00 00       	call   2c20 <vranlc_>
+    1446:	48 8b 44 24 30       	mov    0x30(%rsp),%rax
+    144b:	48 8b 40 08          	mov    0x8(%rax),%rax
+    144f:	8b 28                	mov    (%rax),%ebp
+    1451:	48 8b 05 18 1e 00 00 	mov    0x1e18(%rip),%rax        # 3270 <options.10.1+0x230>
+    1458:	85 ed                	test   %ebp,%ebp
+    145a:	66 48 0f 6e e0       	movq   %rax,%xmm4
+    145f:	0f 85 b9 01 00 00    	jne    161e <MAIN__._omp_fn.1+0x32e>
+    1465:	4c 8b 64 24 38       	mov    0x38(%rsp),%r12
+    146a:	f2 0f 10 5c 24 10    	movsd  0x10(%rsp),%xmm3
+    1470:	31 c0                	xor    %eax,%eax
+    1472:	49 81 c4 b0 fb ef ff 	add    $0xffffffffffeffbb0,%r12
+    1479:	4d 8d b4 24 00 00 10 	lea    0x100000(%r12),%r14
+    1480:	00 
+    1481:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1488:	66 41 0f 10 0c 24    	movupd (%r12),%xmm1
+    148e:	66 0f 58 c9          	addpd  %xmm1,%xmm1
+    1492:	66 0f 58 0d 26 1e 00 	addpd  0x1e26(%rip),%xmm1        # 32c0 <options.10.1+0x280>
+    1499:	00 
+    149a:	66 0f 28 e9          	movapd %xmm1,%xmm5
+    149e:	66 0f 28 d1          	movapd %xmm1,%xmm2
+    14a2:	f2 0f 59 d1          	mulsd  %xmm1,%xmm2
+    14a6:	66 0f 15 ed          	unpckhpd %xmm5,%xmm5
+    14aa:	66 0f 28 c5          	movapd %xmm5,%xmm0
+    14ae:	f2 0f 59 c5          	mulsd  %xmm5,%xmm0
+    14b2:	f2 0f 58 d0          	addsd  %xmm0,%xmm2
+    14b6:	66 0f 2f e2          	comisd %xmm2,%xmm4
+    14ba:	0f 82 91 00 00 00    	jb     1551 <MAIN__._omp_fn.1+0x261>
+    14c0:	66 0f 28 c2          	movapd %xmm2,%xmm0
+    14c4:	0f 29 4c 24 20       	movaps %xmm1,0x20(%rsp)
+    14c9:	f2 0f 11 54 24 10    	movsd  %xmm2,0x10(%rsp)
+    14cf:	e8 cc fb ff ff       	call   10a0 <log@plt>
+    14d4:	f2 0f 10 54 24 10    	movsd  0x10(%rsp),%xmm2
+    14da:	66 0f 28 4c 24 20    	movapd 0x20(%rsp),%xmm1
+    14e0:	f2 0f 58 c0          	addsd  %xmm0,%xmm0
+    14e4:	48 8b 15 85 1d 00 00 	mov    0x1d85(%rip),%rdx        # 3270 <options.10.1+0x230>
+    14eb:	66 48 0f 6e e2       	movq   %rdx,%xmm4
+    14f0:	f2 0f 5e c2          	divsd  %xmm2,%xmm0
+    14f4:	66 0f 28 d8          	movapd %xmm0,%xmm3
+    14f8:	66 0f 57 1d d0 1d 00 	xorpd  0x1dd0(%rip),%xmm3        # 32d0 <options.10.1+0x290>
+    14ff:	00 
+    1500:	f2 0f 51 db          	sqrtsd %xmm3,%xmm3
+    1504:	66 0f 28 c3          	movapd %xmm3,%xmm0
+    1508:	66 0f 14 c0          	unpcklpd %xmm0,%xmm0
+    150c:	66 0f 59 c1          	mulpd  %xmm1,%xmm0
+    1510:	66 0f 54 05 c8 1d 00 	andpd  0x1dc8(%rip),%xmm0        # 32e0 <options.10.1+0x2a0>
+    1517:	00 
+    1518:	66 0f 28 f8          	movapd %xmm0,%xmm7
+    151c:	66 0f 28 c8          	movapd %xmm0,%xmm1
+    1520:	66 0f 15 ff          	unpckhpd %xmm7,%xmm7
+    1524:	66 0f c6 c8 01       	shufpd $0x1,%xmm0,%xmm1
+    1529:	66 0f 58 0c 24       	addpd  (%rsp),%xmm1
+    152e:	f2 0f 5f c7          	maxsd  %xmm7,%xmm0
+    1532:	0f 29 0c 24          	movaps %xmm1,(%rsp)
+    1536:	f2 0f 2c c0          	cvttsd2si %xmm0,%eax
+    153a:	48 98                	cltq   
+    153c:	64 f2 0f 10 04 c3    	movsd  %fs:(%rbx,%rax,8),%xmm0
+    1542:	f2 0f 58 c4          	addsd  %xmm4,%xmm0
+    1546:	64 f2 0f 11 04 c3    	movsd  %xmm0,%fs:(%rbx,%rax,8)
+    154c:	b8 01 00 00 00       	mov    $0x1,%eax
+    1551:	49 83 c4 10          	add    $0x10,%r12
+    1555:	4d 39 e6             	cmp    %r12,%r14
+    1558:	0f 85 2a ff ff ff    	jne    1488 <MAIN__._omp_fn.1+0x198>
+    155e:	f2 0f 11 5c 24 10    	movsd  %xmm3,0x10(%rsp)
+    1564:	f2 0f 11 54 24 50    	movsd  %xmm2,0x50(%rsp)
+    156a:	84 c0                	test   %al,%al
+    156c:	74 06                	je     1574 <MAIN__._omp_fn.1+0x284>
+    156e:	f2 0f 11 5c 24 58    	movsd  %xmm3,0x58(%rsp)
+    1574:	85 ed                	test   %ebp,%ebp
+    1576:	0f 85 91 00 00 00    	jne    160d <MAIN__._omp_fn.1+0x31d>
+    157c:	83 44 24 48 01       	addl   $0x1,0x48(%rsp)
+    1581:	8b 44 24 48          	mov    0x48(%rsp),%eax
+    1585:	39 44 24 4c          	cmp    %eax,0x4c(%rsp)
+    1589:	0f 85 11 fe ff ff    	jne    13a0 <MAIN__._omp_fn.1+0xb0>
+    158f:	48 8b 54 24 38       	mov    0x38(%rsp),%rdx
+    1594:	48 8d 0d c5 4a 00 00 	lea    0x4ac5(%rip),%rcx        # 6060 <__ep_data_MOD_q>
+    159b:	48 01 da             	add    %rbx,%rdx
+    159e:	4c 8d 42 50          	lea    0x50(%rdx),%r8
+    15a2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    15a8:	f2 0f 10 02          	movsd  (%rdx),%xmm0
+    15ac:	48 8b 31             	mov    (%rcx),%rsi
+    15af:	66 48 0f 6e f6       	movq   %rsi,%xmm6
+    15b4:	48 89 f0             	mov    %rsi,%rax
+    15b7:	f2 0f 58 f0          	addsd  %xmm0,%xmm6
+    15bb:	66 48 0f 7e f7       	movq   %xmm6,%rdi
+    15c0:	f0 48 0f b1 39       	lock cmpxchg %rdi,(%rcx)
+    15c5:	0f 85 dc 00 00 00    	jne    16a7 <MAIN__._omp_fn.1+0x3b7>
+    15cb:	48 83 c2 08          	add    $0x8,%rdx
+    15cf:	48 83 c1 08          	add    $0x8,%rcx
+    15d3:	4c 39 c2             	cmp    %r8,%rdx
+    15d6:	75 d0                	jne    15a8 <MAIN__._omp_fn.1+0x2b8>
+    15d8:	e8 43 fb ff ff       	call   1120 <GOMP_atomic_start@plt>
+    15dd:	48 8b 44 24 30       	mov    0x30(%rsp),%rax
+    15e2:	66 0f 28 04 24       	movapd (%rsp),%xmm0
+    15e7:	66 0f 10 70 10       	movupd 0x10(%rax),%xmm6
+    15ec:	66 0f 58 c6          	addpd  %xmm6,%xmm0
+    15f0:	0f 29 74 24 10       	movaps %xmm6,0x10(%rsp)
+    15f5:	0f 11 40 10          	movups %xmm0,0x10(%rax)
+    15f9:	e8 e2 fa ff ff       	call   10e0 <GOMP_atomic_end@plt>
+    15fe:	48 83 c4 68          	add    $0x68,%rsp
+    1602:	5b                   	pop    %rbx
+    1603:	5d                   	pop    %rbp
+    1604:	41 5c                	pop    %r12
+    1606:	41 5d                	pop    %r13
+    1608:	41 5e                	pop    %r14
+    160a:	41 5f                	pop    %r15
+    160c:	c3                   	ret    
+    160d:	48 8d 3d 08 1a 00 00 	lea    0x1a08(%rip),%rdi        # 301c <_IO_stdin_used+0x1c>
+    1614:	e8 b7 16 00 00       	call   2cd0 <timer_stop_>
+    1619:	e9 5e ff ff ff       	jmp    157c <MAIN__._omp_fn.1+0x28c>
+    161e:	48 8d 3d fb 19 00 00 	lea    0x19fb(%rip),%rdi        # 3020 <_IO_stdin_used+0x20>
+    1625:	e8 a6 16 00 00       	call   2cd0 <timer_stop_>
+    162a:	48 8b 44 24 30       	mov    0x30(%rsp),%rax
+    162f:	48 8b 40 08          	mov    0x8(%rax),%rax
+    1633:	8b 28                	mov    (%rax),%ebp
+    1635:	48 8b 05 34 1c 00 00 	mov    0x1c34(%rip),%rax        # 3270 <options.10.1+0x230>
+    163c:	85 ed                	test   %ebp,%ebp
+    163e:	66 48 0f 6e e0       	movq   %rax,%xmm4
+    1643:	0f 84 1c fe ff ff    	je     1465 <MAIN__._omp_fn.1+0x175>
+    1649:	48 8d 3d cc 19 00 00 	lea    0x19cc(%rip),%rdi        # 301c <_IO_stdin_used+0x1c>
+    1650:	e8 5b 16 00 00       	call   2cb0 <timer_start_>
+    1655:	48 8b 44 24 30       	mov    0x30(%rsp),%rax
+    165a:	48 8b 40 08          	mov    0x8(%rax),%rax
+    165e:	8b 28                	mov    (%rax),%ebp
+    1660:	48 8b 05 09 1c 00 00 	mov    0x1c09(%rip),%rax        # 3270 <options.10.1+0x230>
+    1667:	66 48 0f 6e e0       	movq   %rax,%xmm4
+    166c:	e9 f4 fd ff ff       	jmp    1465 <MAIN__._omp_fn.1+0x175>
+    1671:	48 8d 3d a8 19 00 00 	lea    0x19a8(%rip),%rdi        # 3020 <_IO_stdin_used+0x20>
+    1678:	e8 33 16 00 00       	call   2cb0 <timer_start_>
+    167d:	e9 4d fd ff ff       	jmp    13cf <MAIN__._omp_fn.1+0xdf>
+    1682:	64 48 8b 04 25 00 00 	mov    %fs:0x0,%rax
+    1689:	00 00 
+    168b:	66 0f ef f6          	pxor   %xmm6,%xmm6
+    168f:	0f 29 34 24          	movaps %xmm6,(%rsp)
+    1693:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
+    1698:	e9 f2 fe ff ff       	jmp    158f <MAIN__._omp_fn.1+0x29f>
+    169d:	83 c0 01             	add    $0x1,%eax
+    16a0:	31 d2                	xor    %edx,%edx
+    16a2:	e9 b7 fc ff ff       	jmp    135e <MAIN__._omp_fn.1+0x6e>
+    16a7:	48 89 c6             	mov    %rax,%rsi
+    16aa:	e9 00 ff ff ff       	jmp    15af <MAIN__._omp_fn.1+0x2bf>
+    16af:	90                   	nop
+
+00000000000016b0 <MAIN__._omp_fn.0>:
+    16b0:	48 c7 c0 b0 fb ef ff 	mov    $0xffffffffffeffbb0,%rax
+    16b7:	66 0f 28 05 31 1c 00 	movapd 0x1c31(%rip),%xmm0        # 32f0 <options.10.1+0x2b0>
+    16be:	00 
+    16bf:	53                   	push   %rbx
+    16c0:	48 89 fb             	mov    %rdi,%rbx
+    16c3:	64 48 03 04 25 00 00 	add    %fs:0x0,%rax
+    16ca:	00 00 
+    16cc:	48 8d 90 00 00 10 00 	lea    0x100000(%rax),%rdx
+    16d3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    16d8:	0f 11 00             	movups %xmm0,(%rax)
+    16db:	48 83 c0 10          	add    $0x10,%rax
+    16df:	48 39 c2             	cmp    %rax,%rdx
+    16e2:	75 f4                	jne    16d8 <MAIN__._omp_fn.0+0x28>
+    16e4:	48 8d 3d 39 19 00 00 	lea    0x1939(%rip),%rdi        # 3024 <_IO_stdin_used+0x24>
+    16eb:	e8 a0 15 00 00       	call   2c90 <timer_clear_>
+    16f0:	48 8b 03             	mov    (%rbx),%rax
+    16f3:	8b 10                	mov    (%rax),%edx
+    16f5:	85 d2                	test   %edx,%edx
+    16f7:	75 02                	jne    16fb <MAIN__._omp_fn.0+0x4b>
+    16f9:	5b                   	pop    %rbx
+    16fa:	c3                   	ret    
+    16fb:	48 8d 3d 1a 19 00 00 	lea    0x191a(%rip),%rdi        # 301c <_IO_stdin_used+0x1c>
+    1702:	e8 89 15 00 00       	call   2c90 <timer_clear_>
+    1707:	48 8b 03             	mov    (%rbx),%rax
+    170a:	8b 00                	mov    (%rax),%eax
+    170c:	85 c0                	test   %eax,%eax
+    170e:	74 e9                	je     16f9 <MAIN__._omp_fn.0+0x49>
+    1710:	48 8d 3d 09 19 00 00 	lea    0x1909(%rip),%rdi        # 3020 <_IO_stdin_used+0x20>
+    1717:	5b                   	pop    %rbx
+    1718:	e9 73 15 00 00       	jmp    2c90 <timer_clear_>
+    171d:	0f 1f 00             	nopl   (%rax)
+
+0000000000001720 <MAIN__>:
+    1720:	41 57                	push   %r15
+    1722:	41 56                	push   %r14
+    1724:	41 55                	push   %r13
+    1726:	4c 8d 2d 2f 19 00 00 	lea    0x192f(%rip),%r13        # 305c <options.10.1+0x1c>
+    172d:	41 54                	push   %r12
+    172f:	45 31 e4             	xor    %r12d,%r12d
+    1732:	55                   	push   %rbp
+    1733:	53                   	push   %rbx
+    1734:	48 81 ec a8 02 00 00 	sub    $0x2a8,%rsp
+    173b:	48 8d 5c 24 38       	lea    0x38(%rsp),%rbx
+    1740:	48 8d ac 24 90 00 00 	lea    0x90(%rsp),%rbp
+    1747:	00 
+    1748:	48 89 df             	mov    %rbx,%rdi
+    174b:	4c 8d b4 24 81 00 00 	lea    0x81(%rsp),%r14
+    1752:	00 
+    1753:	4c 8d 7c 24 60       	lea    0x60(%rsp),%r15
+    1758:	e8 c3 15 00 00       	call   2d20 <check_timer_flag_>
+    175d:	48 8d 05 b4 19 00 00 	lea    0x19b4(%rip),%rax        # 3118 <options.10.1+0xd8>
+    1764:	48 89 ef             	mov    %rbp,%rdi
+    1767:	4c 89 ac 24 98 00 00 	mov    %r13,0x98(%rsp)
+    176e:	00 
+    176f:	48 89 84 24 e0 00 00 	mov    %rax,0xe0(%rsp)
+    1776:	00 
+    1777:	48 8b 05 fa 1a 00 00 	mov    0x1afa(%rip),%rax        # 3278 <options.10.1+0x238>
+    177e:	c7 84 24 a0 00 00 00 	movl   $0x54,0xa0(%rsp)
+    1785:	54 00 00 00 
+    1789:	48 89 84 24 90 00 00 	mov    %rax,0x90(%rsp)
+    1790:	00 
+    1791:	48 c7 84 24 e8 00 00 	movq   $0x4d,0xe8(%rsp)
+    1798:	00 4d 00 00 00 
+    179d:	e8 0e fa ff ff       	call   11b0 <_gfortran_st_write@plt>
+    17a2:	48 89 ef             	mov    %rbp,%rdi
+    17a5:	e8 b6 f9 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    17aa:	48 8d 05 b2 18 00 00 	lea    0x18b2(%rip),%rax        # 3063 <options.10.1+0x23>
+    17b1:	48 89 ef             	mov    %rbp,%rdi
+    17b4:	4c 89 b4 24 00 01 00 	mov    %r14,0x100(%rsp)
+    17bb:	00 
+    17bc:	48 89 84 24 e0 00 00 	mov    %rax,0xe0(%rsp)
+    17c3:	00 
+    17c4:	48 8b 05 b5 1a 00 00 	mov    0x1ab5(%rip),%rax        # 3280 <options.10.1+0x240>
+    17cb:	4c 89 ac 24 98 00 00 	mov    %r13,0x98(%rsp)
+    17d2:	00 
+    17d3:	48 89 84 24 90 00 00 	mov    %rax,0x90(%rsp)
+    17da:	00 
+    17db:	c7 84 24 a0 00 00 00 	movl   $0x55,0xa0(%rsp)
+    17e2:	55 00 00 00 
+    17e6:	48 c7 84 24 08 01 00 	movq   $0xf,0x108(%rsp)
+    17ed:	00 0f 00 00 00 
+    17f2:	48 c7 84 24 d8 00 00 	movq   $0x0,0xd8(%rsp)
+    17f9:	00 00 00 00 00 
+    17fe:	48 c7 84 24 e8 00 00 	movq   $0x7,0xe8(%rsp)
+    1805:	00 07 00 00 00 
+    180a:	e8 a1 f9 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    180f:	ba 08 00 00 00       	mov    $0x8,%edx
+    1814:	48 8d 35 0d 18 00 00 	lea    0x180d(%rip),%rsi        # 3028 <_IO_stdin_used+0x28>
+    181b:	48 89 ef             	mov    %rbp,%rdi
+    181e:	e8 0d f8 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1823:	48 89 ef             	mov    %rbp,%rdi
+    1826:	e8 35 f9 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    182b:	80 bc 24 8f 00 00 00 	cmpb   $0x2e,0x8f(%rsp)
+    1832:	2e 
+    1833:	48 89 ef             	mov    %rbp,%rdi
+    1836:	48 8d 05 2b 19 00 00 	lea    0x192b(%rip),%rax        # 3168 <options.10.1+0x128>
+    183d:	41 0f 95 c4          	setne  %r12b
+    1841:	48 89 84 24 e0 00 00 	mov    %rax,0xe0(%rsp)
+    1848:	00 
+    1849:	48 8b 05 28 1a 00 00 	mov    0x1a28(%rip),%rax        # 3278 <options.10.1+0x238>
+    1850:	41 83 c4 0e          	add    $0xe,%r12d
+    1854:	4c 89 ac 24 98 00 00 	mov    %r13,0x98(%rsp)
+    185b:	00 
+    185c:	48 89 84 24 90 00 00 	mov    %rax,0x90(%rsp)
+    1863:	00 
+    1864:	c7 84 24 a0 00 00 00 	movl   $0x58,0xa0(%rsp)
+    186b:	58 00 00 00 
+    186f:	48 c7 84 24 e8 00 00 	movq   $0x2e,0xe8(%rsp)
+    1876:	00 2e 00 00 00 
+    187b:	e8 30 f9 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    1880:	49 63 d4             	movslq %r12d,%rdx
+    1883:	4c 89 f6             	mov    %r14,%rsi
+    1886:	48 89 ef             	mov    %rbp,%rdi
+    1889:	e8 42 f8 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    188e:	48 89 ef             	mov    %rbp,%rdi
+    1891:	4c 8d 35 88 47 00 00 	lea    0x4788(%rip),%r14        # 6020 <dum.0+0x10>
+    1898:	e8 c3 f8 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    189d:	48 8d 05 f4 18 00 00 	lea    0x18f4(%rip),%rax        # 3198 <options.10.1+0x158>
+    18a4:	48 89 ef             	mov    %rbp,%rdi
+    18a7:	4d 8d 66 f8          	lea    -0x8(%r14),%r12
+    18ab:	48 89 84 24 e0 00 00 	mov    %rax,0xe0(%rsp)
+    18b2:	00 
+    18b3:	48 8b 05 be 19 00 00 	mov    0x19be(%rip),%rax        # 3278 <options.10.1+0x238>
+    18ba:	4c 89 ac 24 98 00 00 	mov    %r13,0x98(%rsp)
+    18c1:	00 
+    18c2:	48 89 84 24 90 00 00 	mov    %rax,0x90(%rsp)
+    18c9:	00 
+    18ca:	c7 84 24 a0 00 00 00 	movl   $0x59,0xa0(%rsp)
+    18d1:	59 00 00 00 
+    18d5:	48 c7 84 24 e8 00 00 	movq   $0x31,0xe8(%rsp)
+    18dc:	00 31 00 00 00 
+    18e1:	e8 ca f8 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    18e6:	31 c0                	xor    %eax,%eax
+    18e8:	e8 93 f8 ff ff       	call   1180 <omp_get_max_threads_@plt>
+    18ed:	ba 04 00 00 00       	mov    $0x4,%edx
+    18f2:	48 89 ef             	mov    %rbp,%rdi
+    18f5:	89 44 24 78          	mov    %eax,0x78(%rsp)
+    18f9:	48 8d 44 24 78       	lea    0x78(%rsp),%rax
+    18fe:	48 89 c6             	mov    %rax,%rsi
+    1901:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    1906:	e8 85 f7 ff ff       	call   1090 <_gfortran_transfer_integer_write@plt>
+    190b:	48 89 ef             	mov    %rbp,%rdi
+    190e:	e8 4d f8 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    1913:	48 8b 05 6e 19 00 00 	mov    0x196e(%rip),%rax        # 3288 <options.10.1+0x248>
+    191a:	48 89 ef             	mov    %rbp,%rdi
+    191d:	4c 89 ac 24 98 00 00 	mov    %r13,0x98(%rsp)
+    1924:	00 
+    1925:	c7 84 24 a0 00 00 00 	movl   $0x5a,0xa0(%rsp)
+    192c:	5a 00 00 00 
+    1930:	48 89 84 24 90 00 00 	mov    %rax,0x90(%rsp)
+    1937:	00 
+    1938:	e8 73 f8 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    193d:	48 89 ef             	mov    %rbp,%rdi
+    1940:	e8 1b f8 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    1945:	4c 89 e2             	mov    %r12,%rdx
+    1948:	4c 89 f1             	mov    %r14,%rcx
+    194b:	49 8d 74 24 f8       	lea    -0x8(%r12),%rsi
+    1950:	48 8d 3d d9 16 00 00 	lea    0x16d9(%rip),%rdi        # 3030 <_IO_stdin_used+0x30>
+    1957:	e8 c4 12 00 00       	call   2c20 <vranlc_>
+    195c:	4c 89 e7             	mov    %r12,%rdi
+    195f:	4c 89 f6             	mov    %r14,%rsi
+    1962:	41 bc 02 00 00 00    	mov    $0x2,%r12d
+    1968:	e8 73 12 00 00       	call   2be0 <randlc_>
+    196d:	31 c9                	xor    %ecx,%ecx
+    196f:	31 d2                	xor    %edx,%edx
+    1971:	48 89 ee             	mov    %rbp,%rsi
+    1974:	48 8d 3d 35 fd ff ff 	lea    -0x2cb(%rip),%rdi        # 16b0 <MAIN__._omp_fn.0>
+    197b:	f2 0f 11 05 8d 46 00 	movsd  %xmm0,0x468d(%rip)        # 6010 <dum.0>
+    1982:	00 
+    1983:	48 89 9c 24 90 00 00 	mov    %rbx,0x90(%rsp)
+    198a:	00 
+    198b:	e8 c0 f7 ff ff       	call   1150 <GOMP_parallel@plt>
+    1990:	48 8d 3d 8d 16 00 00 	lea    0x168d(%rip),%rdi        # 3024 <_IO_stdin_used+0x24>
+    1997:	e8 14 13 00 00       	call   2cb0 <timer_start_>
+    199c:	48 8b 05 ed 18 00 00 	mov    0x18ed(%rip),%rax        # 3290 <options.10.1+0x250>
+    19a3:	48 c7 c1 b0 fb ef ff 	mov    $0xffffffffffeffbb0,%rcx
+    19aa:	48 8d 15 5f 16 00 00 	lea    0x165f(%rip),%rdx        # 3010 <_IO_stdin_used+0x10>
+    19b1:	64 48 03 0c 25 00 00 	add    %fs:0x0,%rcx
+    19b8:	00 00 
+    19ba:	4c 89 fe             	mov    %r15,%rsi
+    19bd:	48 8d 3d 6c 16 00 00 	lea    0x166c(%rip),%rdi        # 3030 <_IO_stdin_used+0x30>
+    19c4:	48 89 44 24 60       	mov    %rax,0x60(%rsp)
+    19c9:	e8 52 12 00 00       	call   2c20 <vranlc_>
+    19ce:	48 8b 05 bb 18 00 00 	mov    0x18bb(%rip),%rax        # 3290 <options.10.1+0x250>
+    19d5:	48 89 44 24 60       	mov    %rax,0x60(%rsp)
+    19da:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    19e0:	4c 89 fe             	mov    %r15,%rsi
+    19e3:	4c 89 ff             	mov    %r15,%rdi
+    19e6:	e8 f5 11 00 00       	call   2be0 <randlc_>
+    19eb:	44 89 64 24 30       	mov    %r12d,0x30(%rsp)
+    19f0:	41 83 c4 01          	add    $0x1,%r12d
+    19f4:	41 83 fc 13          	cmp    $0x13,%r12d
+    19f8:	75 e6                	jne    19e0 <MAIN__+0x2c0>
+    19fa:	66 0f ef c0          	pxor   %xmm0,%xmm0
+    19fe:	48 8b 05 63 18 00 00 	mov    0x1863(%rip),%rax        # 3268 <options.10.1+0x228>
+    1a05:	31 c9                	xor    %ecx,%ecx
+    1a07:	31 d2                	xor    %edx,%edx
+    1a09:	0f 11 05 50 46 00 00 	movups %xmm0,0x4650(%rip)        # 6060 <__ep_data_MOD_q>
+    1a10:	48 89 ee             	mov    %rbp,%rsi
+    1a13:	48 8d 3d d6 f8 ff ff 	lea    -0x72a(%rip),%rdi        # 12f0 <MAIN__._omp_fn.1>
+    1a1a:	4c 8d 7c 24 40       	lea    0x40(%rsp),%r15
+    1a1f:	0f 11 05 4a 46 00 00 	movups %xmm0,0x464a(%rip)        # 6070 <__ep_data_MOD_q+0x10>
+    1a26:	4c 8d 64 24 58       	lea    0x58(%rsp),%r12
+    1a2b:	4c 8d 74 24 50       	lea    0x50(%rsp),%r14
+    1a30:	0f 11 05 49 46 00 00 	movups %xmm0,0x4649(%rip)        # 6080 <__ep_data_MOD_q+0x20>
+    1a37:	0f 11 05 52 46 00 00 	movups %xmm0,0x4652(%rip)        # 6090 <__ep_data_MOD_q+0x30>
+    1a3e:	0f 11 05 5b 46 00 00 	movups %xmm0,0x465b(%rip)        # 60a0 <__ep_data_MOD_q+0x40>
+    1a45:	66 0f ef c0          	pxor   %xmm0,%xmm0
+    1a49:	48 89 44 24 70       	mov    %rax,0x70(%rsp)
+    1a4e:	48 8b 05 43 18 00 00 	mov    0x1843(%rip),%rax        # 3298 <options.10.1+0x258>
+    1a55:	0f 29 84 24 a0 00 00 	movaps %xmm0,0xa0(%rsp)
+    1a5c:	00 
+    1a5d:	f2 0f 10 44 24 60    	movsd  0x60(%rsp),%xmm0
+    1a63:	48 89 84 24 b0 00 00 	mov    %rax,0xb0(%rsp)
+    1a6a:	00 
+    1a6b:	48 89 9c 24 98 00 00 	mov    %rbx,0x98(%rsp)
+    1a72:	00 
+    1a73:	48 8d 1d ba 15 00 00 	lea    0x15ba(%rip),%rbx        # 3034 <_IO_stdin_used+0x34>
+    1a7a:	f2 0f 11 84 24 90 00 	movsd  %xmm0,0x90(%rsp)
+    1a81:	00 00 
+    1a83:	e8 c8 f6 ff ff       	call   1150 <GOMP_parallel@plt>
+    1a88:	66 0f ef d2          	pxor   %xmm2,%xmm2
+    1a8c:	f2 0f 10 84 24 a8 00 	movsd  0xa8(%rsp),%xmm0
+    1a93:	00 00 
+    1a95:	f2 0f 10 0d cb 45 00 	movsd  0x45cb(%rip),%xmm1        # 6068 <__ep_data_MOD_q+0x8>
+    1a9c:	00 
+    1a9d:	48 8d 3d 80 15 00 00 	lea    0x1580(%rip),%rdi        # 3024 <_IO_stdin_used+0x24>
+    1aa4:	f2 0f 11 44 24 50    	movsd  %xmm0,0x50(%rsp)
+    1aaa:	f2 0f 10 84 24 a0 00 	movsd  0xa0(%rsp),%xmm0
+    1ab1:	00 00 
+    1ab3:	f2 0f 11 44 24 58    	movsd  %xmm0,0x58(%rsp)
+    1ab9:	f2 0f 10 05 9f 45 00 	movsd  0x459f(%rip),%xmm0        # 6060 <__ep_data_MOD_q>
+    1ac0:	00 
+    1ac1:	f2 0f 58 c2          	addsd  %xmm2,%xmm0
+    1ac5:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+    1ac9:	f2 0f 10 0d 9f 45 00 	movsd  0x459f(%rip),%xmm1        # 6070 <__ep_data_MOD_q+0x10>
+    1ad0:	00 
+    1ad1:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+    1ad5:	f2 0f 10 0d 9b 45 00 	movsd  0x459b(%rip),%xmm1        # 6078 <__ep_data_MOD_q+0x18>
+    1adc:	00 
+    1add:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+    1ae1:	f2 0f 10 0d 97 45 00 	movsd  0x4597(%rip),%xmm1        # 6080 <__ep_data_MOD_q+0x20>
+    1ae8:	00 
+    1ae9:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+    1aed:	f2 0f 10 0d 93 45 00 	movsd  0x4593(%rip),%xmm1        # 6088 <__ep_data_MOD_q+0x28>
+    1af4:	00 
+    1af5:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+    1af9:	f2 0f 10 0d 8f 45 00 	movsd  0x458f(%rip),%xmm1        # 6090 <__ep_data_MOD_q+0x30>
+    1b00:	00 
+    1b01:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+    1b05:	f2 0f 10 0d 8b 45 00 	movsd  0x458b(%rip),%xmm1        # 6098 <__ep_data_MOD_q+0x38>
+    1b0c:	00 
+    1b0d:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+    1b11:	f2 0f 10 0d 87 45 00 	movsd  0x4587(%rip),%xmm1        # 60a0 <__ep_data_MOD_q+0x40>
+    1b18:	00 
+    1b19:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+    1b1d:	f2 0f 10 0d 83 45 00 	movsd  0x4583(%rip),%xmm1        # 60a8 <__ep_data_MOD_q+0x48>
+    1b24:	00 
+    1b25:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+    1b29:	f2 0f 11 44 24 40    	movsd  %xmm0,0x40(%rsp)
+    1b2f:	e8 9c 11 00 00       	call   2cd0 <timer_stop_>
+    1b34:	48 8d 3d e9 14 00 00 	lea    0x14e9(%rip),%rdi        # 3024 <_IO_stdin_used+0x24>
+    1b3b:	e8 c0 11 00 00       	call   2d00 <timer_read_>
+    1b40:	48 8d 44 24 3c       	lea    0x3c(%rsp),%rax
+    1b45:	4c 89 f9             	mov    %r15,%rcx
+    1b48:	4c 89 e2             	mov    %r12,%rdx
+    1b4b:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    1b50:	48 83 ec 08          	sub    $0x8,%rsp
+    1b54:	49 89 c0             	mov    %rax,%r8
+    1b57:	4c 89 f6             	mov    %r14,%rsi
+    1b5a:	f2 0f 11 44 24 70    	movsd  %xmm0,0x70(%rsp)
+    1b60:	48 89 df             	mov    %rbx,%rdi
+    1b63:	f2 0f 11 44 24 18    	movsd  %xmm0,0x18(%rsp)
+    1b69:	6a 01                	push   $0x1
+    1b6b:	4c 8d 4c 24 3f       	lea    0x3f(%rsp),%r9
+    1b70:	e8 5b 04 00 00       	call   1fd0 <verify_>
+    1b75:	f2 0f 10 44 24 20    	movsd  0x20(%rsp),%xmm0
+    1b7b:	f2 0f 10 0d 1d 17 00 	movsd  0x171d(%rip),%xmm1        # 32a0 <options.10.1+0x260>
+    1b82:	00 
+    1b83:	48 8d 05 46 16 00 00 	lea    0x1646(%rip),%rax        # 31d0 <options.10.1+0x190>
+    1b8a:	48 89 84 24 f0 00 00 	mov    %rax,0xf0(%rsp)
+    1b91:	00 
+    1b92:	48 8b 05 df 16 00 00 	mov    0x16df(%rip),%rax        # 3278 <options.10.1+0x238>
+    1b99:	48 89 ef             	mov    %rbp,%rdi
+    1b9c:	f2 0f 5e c8          	divsd  %xmm0,%xmm1
+    1ba0:	c7 44 24 44 00 00 00 	movl   $0x0,0x44(%rsp)
+    1ba7:	00 
+    1ba8:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    1baf:	00 
+    1bb0:	4c 89 ac 24 a8 00 00 	mov    %r13,0xa8(%rsp)
+    1bb7:	00 
+    1bb8:	c7 84 24 b0 00 00 00 	movl   $0xe2,0xb0(%rsp)
+    1bbf:	e2 00 00 00 
+    1bc3:	48 c7 84 24 f8 00 00 	movq   $0x97,0xf8(%rsp)
+    1bca:	00 97 00 00 00 
+    1bcf:	f2 0f 5e 0d d1 16 00 	divsd  0x16d1(%rip),%xmm1        # 32a8 <options.10.1+0x268>
+    1bd6:	00 
+    1bd7:	f2 0f 11 4c 24 58    	movsd  %xmm1,0x58(%rsp)
+    1bdd:	e8 ce f5 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    1be2:	48 8d 44 24 78       	lea    0x78(%rsp),%rax
+    1be7:	ba 08 00 00 00       	mov    $0x8,%edx
+    1bec:	48 89 ef             	mov    %rbp,%rdi
+    1bef:	48 89 c6             	mov    %rax,%rsi
+    1bf2:	48 89 44 24 20       	mov    %rax,0x20(%rsp)
+    1bf7:	e8 34 f4 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1bfc:	ba 04 00 00 00       	mov    $0x4,%edx
+    1c01:	48 89 de             	mov    %rbx,%rsi
+    1c04:	48 89 ef             	mov    %rbp,%rdi
+    1c07:	e8 84 f4 ff ff       	call   1090 <_gfortran_transfer_integer_write@plt>
+    1c0c:	ba 08 00 00 00       	mov    $0x8,%edx
+    1c11:	4c 89 fe             	mov    %r15,%rsi
+    1c14:	48 89 ef             	mov    %rbp,%rdi
+    1c17:	e8 14 f4 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1c1c:	ba 08 00 00 00       	mov    $0x8,%edx
+    1c21:	4c 89 f6             	mov    %r14,%rsi
+    1c24:	48 89 ef             	mov    %rbp,%rdi
+    1c27:	e8 04 f4 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1c2c:	ba 08 00 00 00       	mov    $0x8,%edx
+    1c31:	4c 89 e6             	mov    %r12,%rsi
+    1c34:	48 89 ef             	mov    %rbp,%rdi
+    1c37:	e8 f4 f3 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1c3c:	c7 44 24 40 00 00 00 	movl   $0x0,0x40(%rsp)
+    1c43:	00 
+    1c44:	5a                   	pop    %rdx
+    1c45:	59                   	pop    %rcx
+    1c46:	f6 84 24 90 00 00 00 	testb  $0x1,0x90(%rsp)
+    1c4d:	01 
+    1c4e:	75 5c                	jne    1cac <MAIN__+0x58c>
+    1c50:	4c 8d 35 09 44 00 00 	lea    0x4409(%rip),%r14        # 6060 <__ep_data_MOD_q>
+    1c57:	41 bf 01 00 00 00    	mov    $0x1,%r15d
+    1c5d:	48 8d 5c 24 30       	lea    0x30(%rsp),%rbx
+    1c62:	4d 8d 66 50          	lea    0x50(%r14),%r12
+    1c66:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    1c6d:	00 00 00 
+    1c70:	ba 04 00 00 00       	mov    $0x4,%edx
+    1c75:	48 89 de             	mov    %rbx,%rsi
+    1c78:	48 89 ef             	mov    %rbp,%rdi
+    1c7b:	e8 10 f4 ff ff       	call   1090 <_gfortran_transfer_integer_write@plt>
+    1c80:	ba 08 00 00 00       	mov    $0x8,%edx
+    1c85:	4c 89 f6             	mov    %r14,%rsi
+    1c88:	48 89 ef             	mov    %rbp,%rdi
+    1c8b:	e8 a0 f3 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1c90:	44 89 7c 24 30       	mov    %r15d,0x30(%rsp)
+    1c95:	f6 84 24 90 00 00 00 	testb  $0x1,0x90(%rsp)
+    1c9c:	01 
+    1c9d:	75 0d                	jne    1cac <MAIN__+0x58c>
+    1c9f:	49 83 c6 08          	add    $0x8,%r14
+    1ca3:	41 83 c7 01          	add    $0x1,%r15d
+    1ca7:	4d 39 f4             	cmp    %r14,%r12
+    1caa:	75 c4                	jne    1c70 <MAIN__+0x550>
+    1cac:	48 89 ef             	mov    %rbp,%rdi
+    1caf:	e8 ac f4 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    1cb4:	48 83 ec 08          	sub    $0x8,%rsp
+    1cb8:	48 8d 05 af 13 00 00 	lea    0x13af(%rip),%rax        # 306e <options.10.1+0x2e>
+    1cbf:	4c 8d 05 6a 13 00 00 	lea    0x136a(%rip),%r8        # 3030 <_IO_stdin_used+0x30>
+    1cc6:	6a 06                	push   $0x6
+    1cc8:	4c 89 c1             	mov    %r8,%rcx
+    1ccb:	48 8d 15 66 13 00 00 	lea    0x1366(%rip),%rdx        # 3038 <_IO_stdin_used+0x38>
+    1cd2:	48 8d 35 b3 1b 00 00 	lea    0x1bb3(%rip),%rsi        # 388c <options.10.1+0x84c>
+    1cd9:	6a 09                	push   $0x9
+    1cdb:	48 8d 3d 89 13 00 00 	lea    0x1389(%rip),%rdi        # 306b <options.10.1+0x2b>
+    1ce2:	6a 0c                	push   $0xc
+    1ce4:	6a 06                	push   $0x6
+    1ce6:	6a 06                	push   $0x6
+    1ce8:	6a 05                	push   $0x5
+    1cea:	6a 08                	push   $0x8
+    1cec:	6a 0b                	push   $0xb
+    1cee:	6a 05                	push   $0x5
+    1cf0:	6a 18                	push   $0x18
+    1cf2:	6a 01                	push   $0x1
+    1cf4:	6a 02                	push   $0x2
+    1cf6:	50                   	push   %rax
+    1cf7:	48 8d 05 77 13 00 00 	lea    0x1377(%rip),%rax        # 3075 <options.10.1+0x35>
+    1cfe:	50                   	push   %rax
+    1cff:	48 8d 05 79 13 00 00 	lea    0x1379(%rip),%rax        # 307f <options.10.1+0x3f>
+    1d06:	50                   	push   %rax
+    1d07:	48 8d 05 7e 13 00 00 	lea    0x137e(%rip),%rax        # 308c <options.10.1+0x4c>
+    1d0e:	50                   	push   %rax
+    1d0f:	50                   	push   %rax
+    1d10:	48 8d 05 7c 13 00 00 	lea    0x137c(%rip),%rax        # 3093 <options.10.1+0x53>
+    1d17:	50                   	push   %rax
+    1d18:	48 8d 05 7a 13 00 00 	lea    0x137a(%rip),%rax        # 3099 <options.10.1+0x59>
+    1d1f:	50                   	push   %rax
+    1d20:	48 8d 05 7b 13 00 00 	lea    0x137b(%rip),%rax        # 30a2 <options.10.1+0x62>
+    1d27:	50                   	push   %rax
+    1d28:	48 8d 05 7f 13 00 00 	lea    0x137f(%rip),%rax        # 30ae <options.10.1+0x6e>
+    1d2f:	50                   	push   %rax
+    1d30:	48 8d 05 7d 13 00 00 	lea    0x137d(%rip),%rax        # 30b4 <options.10.1+0x74>
+    1d37:	ff b4 24 b8 00 00 00 	push   0xb8(%rsp)
+    1d3e:	50                   	push   %rax
+    1d3f:	48 8d 84 24 08 01 00 	lea    0x108(%rsp),%rax
+    1d46:	00 
+    1d47:	50                   	push   %rax
+    1d48:	ff b4 24 d8 00 00 00 	push   0xd8(%rsp)
+    1d4f:	4c 8d 8c 24 04 01 00 	lea    0x104(%rsp),%r9
+    1d56:	00 
+    1d57:	e8 d4 04 00 00       	call   2230 <print_results_>
+    1d5c:	8b 84 24 08 01 00 00 	mov    0x108(%rsp),%eax
+    1d63:	48 81 c4 d0 00 00 00 	add    $0xd0,%rsp
+    1d6a:	85 c0                	test   %eax,%eax
+    1d6c:	0f 84 2f 02 00 00    	je     1fa1 <MAIN__+0x881>
+    1d72:	66 0f ef e4          	pxor   %xmm4,%xmm4
+    1d76:	66 0f 2f 64 24 68    	comisd 0x68(%rsp),%xmm4
+    1d7c:	0f 83 31 02 00 00    	jae    1fb3 <MAIN__+0x893>
+    1d82:	48 8d 3d 9b 12 00 00 	lea    0x129b(%rip),%rdi        # 3024 <_IO_stdin_used+0x24>
+    1d89:	48 8d 1d 3d 13 00 00 	lea    0x133d(%rip),%rbx        # 30cd <options.10.1+0x8d>
+    1d90:	e8 6b 0f 00 00       	call   2d00 <timer_read_>
+    1d95:	48 8b 05 dc 14 00 00 	mov    0x14dc(%rip),%rax        # 3278 <options.10.1+0x238>
+    1d9c:	48 89 ef             	mov    %rbp,%rdi
+    1d9f:	4c 8d 64 24 70       	lea    0x70(%rsp),%r12
+    1da4:	f2 0f 11 44 24 70    	movsd  %xmm0,0x70(%rsp)
+    1daa:	48 89 84 24 90 00 00 	mov    %rax,0x90(%rsp)
+    1db1:	00 
+    1db2:	f2 0f 11 44 24 08    	movsd  %xmm0,0x8(%rsp)
+    1db8:	4c 89 ac 24 98 00 00 	mov    %r13,0x98(%rsp)
+    1dbf:	00 
+    1dc0:	c7 84 24 a0 00 00 00 	movl   $0xf1,0xa0(%rsp)
+    1dc7:	f1 00 00 00 
+    1dcb:	48 89 9c 24 e0 00 00 	mov    %rbx,0xe0(%rsp)
+    1dd2:	00 
+    1dd3:	48 c7 84 24 e8 00 00 	movq   $0x1a,0xe8(%rsp)
+    1dda:	00 1a 00 00 00 
+    1ddf:	e8 cc f3 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    1de4:	ba 0f 00 00 00       	mov    $0xf,%edx
+    1de9:	48 8d 35 f8 12 00 00 	lea    0x12f8(%rip),%rsi        # 30e8 <options.10.1+0xa8>
+    1df0:	48 89 ef             	mov    %rbp,%rdi
+    1df3:	e8 d8 f2 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    1df8:	ba 08 00 00 00       	mov    $0x8,%edx
+    1dfd:	4c 89 e6             	mov    %r12,%rsi
+    1e00:	48 89 ef             	mov    %rbp,%rdi
+    1e03:	e8 28 f2 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1e08:	f2 0f 10 44 24 08    	movsd  0x8(%rsp),%xmm0
+    1e0e:	f2 0f 10 5c 24 68    	movsd  0x68(%rsp),%xmm3
+    1e14:	48 89 ef             	mov    %rbp,%rdi
+    1e17:	f2 0f 59 05 91 14 00 	mulsd  0x1491(%rip),%xmm0        # 32b0 <options.10.1+0x270>
+    1e1e:	00 
+    1e1f:	4c 8b 74 24 18       	mov    0x18(%rsp),%r14
+    1e24:	ba 08 00 00 00       	mov    $0x8,%edx
+    1e29:	f2 0f 11 5c 24 08    	movsd  %xmm3,0x8(%rsp)
+    1e2f:	4c 89 f6             	mov    %r14,%rsi
+    1e32:	f2 0f 5e c3          	divsd  %xmm3,%xmm0
+    1e36:	f2 0f 11 44 24 78    	movsd  %xmm0,0x78(%rsp)
+    1e3c:	e8 ef f1 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1e41:	48 89 ef             	mov    %rbp,%rdi
+    1e44:	e8 17 f3 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    1e49:	48 8d 3d cc 11 00 00 	lea    0x11cc(%rip),%rdi        # 301c <_IO_stdin_used+0x1c>
+    1e50:	e8 ab 0e 00 00       	call   2d00 <timer_read_>
+    1e55:	48 8b 05 1c 14 00 00 	mov    0x141c(%rip),%rax        # 3278 <options.10.1+0x238>
+    1e5c:	48 89 ef             	mov    %rbp,%rdi
+    1e5f:	4c 89 ac 24 98 00 00 	mov    %r13,0x98(%rsp)
+    1e66:	00 
+    1e67:	f2 0f 11 44 24 70    	movsd  %xmm0,0x70(%rsp)
+    1e6d:	48 89 84 24 90 00 00 	mov    %rax,0x90(%rsp)
+    1e74:	00 
+    1e75:	f2 0f 11 44 24 10    	movsd  %xmm0,0x10(%rsp)
+    1e7b:	c7 84 24 a0 00 00 00 	movl   $0xf3,0xa0(%rsp)
+    1e82:	f3 00 00 00 
+    1e86:	48 89 9c 24 e0 00 00 	mov    %rbx,0xe0(%rsp)
+    1e8d:	00 
+    1e8e:	48 c7 84 24 e8 00 00 	movq   $0x1a,0xe8(%rsp)
+    1e95:	00 1a 00 00 00 
+    1e9a:	e8 11 f3 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    1e9f:	ba 0f 00 00 00       	mov    $0xf,%edx
+    1ea4:	48 8d 35 4d 12 00 00 	lea    0x124d(%rip),%rsi        # 30f8 <options.10.1+0xb8>
+    1eab:	48 89 ef             	mov    %rbp,%rdi
+    1eae:	e8 1d f2 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    1eb3:	ba 08 00 00 00       	mov    $0x8,%edx
+    1eb8:	4c 89 e6             	mov    %r12,%rsi
+    1ebb:	48 89 ef             	mov    %rbp,%rdi
+    1ebe:	e8 6d f1 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1ec3:	ba 08 00 00 00       	mov    $0x8,%edx
+    1ec8:	4c 89 f6             	mov    %r14,%rsi
+    1ecb:	48 89 ef             	mov    %rbp,%rdi
+    1ece:	f2 0f 10 44 24 10    	movsd  0x10(%rsp),%xmm0
+    1ed4:	f2 0f 59 05 d4 13 00 	mulsd  0x13d4(%rip),%xmm0        # 32b0 <options.10.1+0x270>
+    1edb:	00 
+    1edc:	f2 0f 5e 44 24 08    	divsd  0x8(%rsp),%xmm0
+    1ee2:	f2 0f 11 44 24 78    	movsd  %xmm0,0x78(%rsp)
+    1ee8:	e8 43 f1 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1eed:	48 89 ef             	mov    %rbp,%rdi
+    1ef0:	e8 6b f2 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    1ef5:	48 8d 3d 24 11 00 00 	lea    0x1124(%rip),%rdi        # 3020 <_IO_stdin_used+0x20>
+    1efc:	e8 ff 0d 00 00       	call   2d00 <timer_read_>
+    1f01:	48 8b 05 70 13 00 00 	mov    0x1370(%rip),%rax        # 3278 <options.10.1+0x238>
+    1f08:	48 89 ef             	mov    %rbp,%rdi
+    1f0b:	4c 89 ac 24 98 00 00 	mov    %r13,0x98(%rsp)
+    1f12:	00 
+    1f13:	f2 0f 11 44 24 70    	movsd  %xmm0,0x70(%rsp)
+    1f19:	48 89 84 24 90 00 00 	mov    %rax,0x90(%rsp)
+    1f20:	00 
+    1f21:	f2 0f 11 44 24 10    	movsd  %xmm0,0x10(%rsp)
+    1f27:	c7 84 24 a0 00 00 00 	movl   $0xf5,0xa0(%rsp)
+    1f2e:	f5 00 00 00 
+    1f32:	48 89 9c 24 e0 00 00 	mov    %rbx,0xe0(%rsp)
+    1f39:	00 
+    1f3a:	48 c7 84 24 e8 00 00 	movq   $0x1a,0xe8(%rsp)
+    1f41:	00 1a 00 00 00 
+    1f46:	e8 65 f2 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    1f4b:	ba 0f 00 00 00       	mov    $0xf,%edx
+    1f50:	48 8d 35 b1 11 00 00 	lea    0x11b1(%rip),%rsi        # 3108 <options.10.1+0xc8>
+    1f57:	48 89 ef             	mov    %rbp,%rdi
+    1f5a:	e8 71 f1 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    1f5f:	ba 08 00 00 00       	mov    $0x8,%edx
+    1f64:	4c 89 e6             	mov    %r12,%rsi
+    1f67:	48 89 ef             	mov    %rbp,%rdi
+    1f6a:	e8 c1 f0 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1f6f:	48 89 ef             	mov    %rbp,%rdi
+    1f72:	ba 08 00 00 00       	mov    $0x8,%edx
+    1f77:	4c 89 f6             	mov    %r14,%rsi
+    1f7a:	f2 0f 10 44 24 10    	movsd  0x10(%rsp),%xmm0
+    1f80:	f2 0f 59 05 28 13 00 	mulsd  0x1328(%rip),%xmm0        # 32b0 <options.10.1+0x270>
+    1f87:	00 
+    1f88:	f2 0f 5e 44 24 08    	divsd  0x8(%rsp),%xmm0
+    1f8e:	f2 0f 11 44 24 78    	movsd  %xmm0,0x78(%rsp)
+    1f94:	e8 97 f0 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    1f99:	48 89 ef             	mov    %rbp,%rdi
+    1f9c:	e8 bf f1 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    1fa1:	48 81 c4 a8 02 00 00 	add    $0x2a8,%rsp
+    1fa8:	5b                   	pop    %rbx
+    1fa9:	5d                   	pop    %rbp
+    1faa:	41 5c                	pop    %r12
+    1fac:	41 5d                	pop    %r13
+    1fae:	41 5e                	pop    %r14
+    1fb0:	41 5f                	pop    %r15
+    1fb2:	c3                   	ret    
+    1fb3:	48 8b 05 b6 12 00 00 	mov    0x12b6(%rip),%rax        # 3270 <options.10.1+0x230>
+    1fba:	48 89 44 24 68       	mov    %rax,0x68(%rsp)
+    1fbf:	e9 be fd ff ff       	jmp    1d82 <MAIN__+0x662>
+    1fc4:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    1fcb:	00 00 00 
+    1fce:	66 90                	xchg   %ax,%ax
+
+0000000000001fd0 <verify_>:
+    1fd0:	41 57                	push   %r15
+    1fd2:	41 56                	push   %r14
+    1fd4:	4d 89 c6             	mov    %r8,%r14
+    1fd7:	41 55                	push   %r13
+    1fd9:	49 89 cd             	mov    %rcx,%r13
+    1fdc:	41 54                	push   %r12
+    1fde:	49 89 f4             	mov    %rsi,%r12
+    1fe1:	55                   	push   %rbp
+    1fe2:	48 89 fd             	mov    %rdi,%rbp
+    1fe5:	53                   	push   %rbx
+    1fe6:	4c 89 cb             	mov    %r9,%rbx
+    1fe9:	48 83 ec 48          	sub    $0x48,%rsp
+    1fed:	4c 8d 7c 24 10       	lea    0x10(%rsp),%r15
+    1ff2:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+    1ff7:	4c 89 ff             	mov    %r15,%rdi
+    1ffa:	e8 61 f0 ff ff       	call   1060 <_gfortran_ieee_procedure_entry@plt>
+    1fff:	8b 45 00             	mov    0x0(%rbp),%eax
+    2002:	41 c7 06 01 00 00 00 	movl   $0x1,(%r14)
+    2009:	83 f8 18             	cmp    $0x18,%eax
+    200c:	74 22                	je     2030 <verify_+0x60>
+    200e:	83 e8 19             	sub    $0x19,%eax
+    2011:	83 f8 13             	cmp    $0x13,%eax
+    2014:	0f 87 c6 00 00 00    	ja     20e0 <verify_+0x110>
+    201a:	48 8d 15 df 12 00 00 	lea    0x12df(%rip),%rdx        # 3300 <options.10.1+0x2c0>
+    2021:	48 63 04 82          	movslq (%rdx,%rax,4),%rax
+    2025:	48 01 d0             	add    %rdx,%rax
+    2028:	ff e0                	jmp    *%rax
+    202a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2030:	f2 0f 10 1d c0 13 00 	movsd  0x13c0(%rip),%xmm3        # 33f8 <options.10.1+0x3b8>
+    2037:	00 
+    2038:	f2 0f 10 0d c0 13 00 	movsd  0x13c0(%rip),%xmm1        # 3400 <options.10.1+0x3c0>
+    203f:	00 
+    2040:	b8 53 00 00 00       	mov    $0x53,%eax
+    2045:	f2 0f 10 25 bb 13 00 	movsd  0x13bb(%rip),%xmm4        # 3408 <options.10.1+0x3c8>
+    204c:	00 
+    204d:	f2 41 0f 10 04 24    	movsd  (%r12),%xmm0
+    2053:	f3 0f 7e 15 c5 13 00 	movq   0x13c5(%rip),%xmm2        # 3420 <options.10.1+0x3e0>
+    205a:	00 
+    205b:	88 03                	mov    %al,(%rbx)
+    205d:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    2062:	f2 0f 5c c1          	subsd  %xmm1,%xmm0
+    2066:	f2 0f 5e c1          	divsd  %xmm1,%xmm0
+    206a:	f2 0f 10 08          	movsd  (%rax),%xmm1
+    206e:	f2 0f 5c cb          	subsd  %xmm3,%xmm1
+    2072:	f2 0f 5e cb          	divsd  %xmm3,%xmm1
+    2076:	66 0f 54 c2          	andpd  %xmm2,%xmm0
+    207a:	66 0f 54 ca          	andpd  %xmm2,%xmm1
+    207e:	66 0f 2e c1          	ucomisd %xmm1,%xmm0
+    2082:	7a 39                	jp     20bd <verify_+0xed>
+    2084:	f2 0f 10 1d 84 13 00 	movsd  0x1384(%rip),%xmm3        # 3410 <options.10.1+0x3d0>
+    208b:	00 
+    208c:	66 0f 2f d8          	comisd %xmm0,%xmm3
+    2090:	72 2b                	jb     20bd <verify_+0xed>
+    2092:	66 0f 2f d9          	comisd %xmm1,%xmm3
+    2096:	72 25                	jb     20bd <verify_+0xed>
+    2098:	f2 41 0f 10 45 00    	movsd  0x0(%r13),%xmm0
+    209e:	41 c7 06 01 00 00 00 	movl   $0x1,(%r14)
+    20a5:	f2 0f 5c c4          	subsd  %xmm4,%xmm0
+    20a9:	f2 0f 5e c4          	divsd  %xmm4,%xmm0
+    20ad:	66 0f 54 c2          	andpd  %xmm2,%xmm0
+    20b1:	66 0f 2e c0          	ucomisd %xmm0,%xmm0
+    20b5:	7a 06                	jp     20bd <verify_+0xed>
+    20b7:	66 0f 2f c3          	comisd %xmm3,%xmm0
+    20bb:	76 07                	jbe    20c4 <verify_+0xf4>
+    20bd:	41 c7 06 00 00 00 00 	movl   $0x0,(%r14)
+    20c4:	4c 89 ff             	mov    %r15,%rdi
+    20c7:	e8 b4 ef ff ff       	call   1080 <_gfortran_ieee_procedure_exit@plt>
+    20cc:	48 83 c4 48          	add    $0x48,%rsp
+    20d0:	5b                   	pop    %rbx
+    20d1:	5d                   	pop    %rbp
+    20d2:	41 5c                	pop    %r12
+    20d4:	41 5d                	pop    %r13
+    20d6:	41 5e                	pop    %r14
+    20d8:	41 5f                	pop    %r15
+    20da:	c3                   	ret    
+    20db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    20e0:	c6 03 55             	movb   $0x55,(%rbx)
+    20e3:	41 c7 06 00 00 00 00 	movl   $0x0,(%r14)
+    20ea:	eb d8                	jmp    20c4 <verify_+0xf4>
+    20ec:	0f 1f 40 00          	nopl   0x0(%rax)
+    20f0:	f2 0f 10 1d 58 12 00 	movsd  0x1258(%rip),%xmm3        # 3350 <options.10.1+0x310>
+    20f7:	00 
+    20f8:	f2 0f 10 0d 58 12 00 	movsd  0x1258(%rip),%xmm1        # 3358 <options.10.1+0x318>
+    20ff:	00 
+    2100:	b8 46 00 00 00       	mov    $0x46,%eax
+    2105:	f2 0f 10 25 53 12 00 	movsd  0x1253(%rip),%xmm4        # 3360 <options.10.1+0x320>
+    210c:	00 
+    210d:	e9 3b ff ff ff       	jmp    204d <verify_+0x7d>
+    2112:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2118:	f2 0f 10 1d 48 12 00 	movsd  0x1248(%rip),%xmm3        # 3368 <options.10.1+0x328>
+    211f:	00 
+    2120:	f2 0f 10 0d 48 12 00 	movsd  0x1248(%rip),%xmm1        # 3370 <options.10.1+0x330>
+    2127:	00 
+    2128:	b8 45 00 00 00       	mov    $0x45,%eax
+    212d:	f2 0f 10 25 43 12 00 	movsd  0x1243(%rip),%xmm4        # 3378 <options.10.1+0x338>
+    2134:	00 
+    2135:	e9 13 ff ff ff       	jmp    204d <verify_+0x7d>
+    213a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2140:	f2 0f 10 1d 38 12 00 	movsd  0x1238(%rip),%xmm3        # 3380 <options.10.1+0x340>
+    2147:	00 
+    2148:	f2 0f 10 0d 38 12 00 	movsd  0x1238(%rip),%xmm1        # 3388 <options.10.1+0x348>
+    214f:	00 
+    2150:	b8 44 00 00 00       	mov    $0x44,%eax
+    2155:	f2 0f 10 25 33 12 00 	movsd  0x1233(%rip),%xmm4        # 3390 <options.10.1+0x350>
+    215c:	00 
+    215d:	e9 eb fe ff ff       	jmp    204d <verify_+0x7d>
+    2162:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2168:	f2 0f 10 1d 28 12 00 	movsd  0x1228(%rip),%xmm3        # 3398 <options.10.1+0x358>
+    216f:	00 
+    2170:	f2 0f 10 0d 28 12 00 	movsd  0x1228(%rip),%xmm1        # 33a0 <options.10.1+0x360>
+    2177:	00 
+    2178:	b8 43 00 00 00       	mov    $0x43,%eax
+    217d:	f2 0f 10 25 23 12 00 	movsd  0x1223(%rip),%xmm4        # 33a8 <options.10.1+0x368>
+    2184:	00 
+    2185:	e9 c3 fe ff ff       	jmp    204d <verify_+0x7d>
+    218a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2190:	f2 0f 10 1d 18 12 00 	movsd  0x1218(%rip),%xmm3        # 33b0 <options.10.1+0x370>
+    2197:	00 
+    2198:	f2 0f 10 0d 18 12 00 	movsd  0x1218(%rip),%xmm1        # 33b8 <options.10.1+0x378>
+    219f:	00 
+    21a0:	b8 42 00 00 00       	mov    $0x42,%eax
+    21a5:	f2 0f 10 25 13 12 00 	movsd  0x1213(%rip),%xmm4        # 33c0 <options.10.1+0x380>
+    21ac:	00 
+    21ad:	e9 9b fe ff ff       	jmp    204d <verify_+0x7d>
+    21b2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    21b8:	f2 0f 10 1d 08 12 00 	movsd  0x1208(%rip),%xmm3        # 33c8 <options.10.1+0x388>
+    21bf:	00 
+    21c0:	f2 0f 10 0d 08 12 00 	movsd  0x1208(%rip),%xmm1        # 33d0 <options.10.1+0x390>
+    21c7:	00 
+    21c8:	b8 41 00 00 00       	mov    $0x41,%eax
+    21cd:	f2 0f 10 25 03 12 00 	movsd  0x1203(%rip),%xmm4        # 33d8 <options.10.1+0x398>
+    21d4:	00 
+    21d5:	e9 73 fe ff ff       	jmp    204d <verify_+0x7d>
+    21da:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    21e0:	f2 0f 10 1d f8 11 00 	movsd  0x11f8(%rip),%xmm3        # 33e0 <options.10.1+0x3a0>
+    21e7:	00 
+    21e8:	f2 0f 10 0d f8 11 00 	movsd  0x11f8(%rip),%xmm1        # 33e8 <options.10.1+0x3a8>
+    21ef:	00 
+    21f0:	b8 57 00 00 00       	mov    $0x57,%eax
+    21f5:	f2 0f 10 25 f3 11 00 	movsd  0x11f3(%rip),%xmm4        # 33f0 <options.10.1+0x3b0>
+    21fc:	00 
+    21fd:	e9 4b fe ff ff       	jmp    204d <verify_+0x7d>
+    2202:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    2209:	00 00 00 
+    220c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002210 <print_results_._omp_fn.0>:
+    2210:	53                   	push   %rbx
+    2211:	48 89 fb             	mov    %rdi,%rbx
+    2214:	e8 97 ee ff ff       	call   10b0 <omp_get_thread_num@plt>
+    2219:	85 c0                	test   %eax,%eax
+    221b:	74 03                	je     2220 <print_results_._omp_fn.0+0x10>
+    221d:	5b                   	pop    %rbx
+    221e:	c3                   	ret    
+    221f:	90                   	nop
+    2220:	e8 db ee ff ff       	call   1100 <omp_get_num_threads_@plt>
+    2225:	41 89 c0             	mov    %eax,%r8d
+    2228:	48 8b 03             	mov    (%rbx),%rax
+    222b:	44 89 00             	mov    %r8d,(%rax)
+    222e:	5b                   	pop    %rbx
+    222f:	c3                   	ret    
+
+0000000000002230 <print_results_>:
+    2230:	41 57                	push   %r15
+    2232:	31 c0                	xor    %eax,%eax
+    2234:	49 89 ff             	mov    %rdi,%r15
+    2237:	41 56                	push   %r14
+    2239:	49 89 ce             	mov    %rcx,%r14
+    223c:	41 55                	push   %r13
+    223e:	41 54                	push   %r12
+    2240:	55                   	push   %rbp
+    2241:	53                   	push   %rbx
+    2242:	48 8d 1d e7 11 00 00 	lea    0x11e7(%rip),%rbx        # 3430 <options.10.1+0x3f0>
+    2249:	48 81 ec 68 02 00 00 	sub    $0x268,%rsp
+    2250:	4c 89 44 24 08       	mov    %r8,0x8(%rsp)
+    2255:	48 8d 6c 24 50       	lea    0x50(%rsp),%rbp
+    225a:	4c 89 4c 24 10       	mov    %r9,0x10(%rsp)
+    225f:	48 89 74 24 18       	mov    %rsi,0x18(%rsp)
+    2264:	48 89 54 24 20       	mov    %rdx,0x20(%rsp)
+    2269:	e8 12 ef ff ff       	call   1180 <omp_get_max_threads_@plt>
+    226e:	31 d2                	xor    %edx,%edx
+    2270:	48 89 ee             	mov    %rbp,%rsi
+    2273:	31 c9                	xor    %ecx,%ecx
+    2275:	89 44 24 30          	mov    %eax,0x30(%rsp)
+    2279:	48 8d 3d 90 ff ff ff 	lea    -0x70(%rip),%rdi        # 2210 <print_results_._omp_fn.0>
+    2280:	41 89 c5             	mov    %eax,%r13d
+    2283:	48 8d 44 24 34       	lea    0x34(%rsp),%rax
+    2288:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+    228d:	48 89 44 24 50       	mov    %rax,0x50(%rsp)
+    2292:	c7 44 24 34 00 00 00 	movl   $0x0,0x34(%rsp)
+    2299:	00 
+    229a:	e8 b1 ee ff ff       	call   1150 <GOMP_parallel@plt>
+    229f:	4c 8b 25 d2 0f 00 00 	mov    0xfd2(%rip),%r12        # 3278 <options.10.1+0x238>
+    22a6:	48 89 ef             	mov    %rbp,%rdi
+    22a9:	48 8d 0d 70 12 00 00 	lea    0x1270(%rip),%rcx        # 3520 <options.10.1+0x4e0>
+    22b0:	48 89 8c 24 a0 00 00 	mov    %rcx,0xa0(%rsp)
+    22b7:	00 
+    22b8:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    22bd:	c7 44 24 60 20 00 00 	movl   $0x20,0x60(%rsp)
+    22c4:	00 
+    22c5:	48 c7 84 24 a8 00 00 	movq   $0x25,0xa8(%rsp)
+    22cc:	00 25 00 00 00 
+    22d1:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    22d6:	e8 d5 ee ff ff       	call   11b0 <_gfortran_st_write@plt>
+    22db:	48 8b 94 24 08 03 00 	mov    0x308(%rsp),%rdx
+    22e2:	00 
+    22e3:	4c 89 fe             	mov    %r15,%rsi
+    22e6:	48 89 ef             	mov    %rbp,%rdi
+    22e9:	e8 e2 ed ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    22ee:	48 89 ef             	mov    %rbp,%rdi
+    22f1:	e8 6a ee ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    22f6:	48 8d 0d 4b 12 00 00 	lea    0x124b(%rip),%rcx        # 3548 <options.10.1+0x508>
+    22fd:	48 89 ef             	mov    %rbp,%rdi
+    2300:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2305:	48 89 8c 24 a0 00 00 	mov    %rcx,0xa0(%rsp)
+    230c:	00 
+    230d:	c7 44 24 60 23 00 00 	movl   $0x23,0x60(%rsp)
+    2314:	00 
+    2315:	48 c7 84 24 a8 00 00 	movq   $0x21,0xa8(%rsp)
+    231c:	00 21 00 00 00 
+    2321:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    2326:	e8 85 ee ff ff       	call   11b0 <_gfortran_st_write@plt>
+    232b:	48 8b 74 24 18       	mov    0x18(%rsp),%rsi
+    2330:	ba 01 00 00 00       	mov    $0x1,%edx
+    2335:	48 89 ef             	mov    %rbp,%rdi
+    2338:	e8 93 ed ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    233d:	48 89 ef             	mov    %rbp,%rdi
+    2340:	e8 1b ee ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2345:	41 8b 3e             	mov    (%r14),%edi
+    2348:	85 ff                	test   %edi,%edi
+    234a:	75 0f                	jne    235b <print_results_+0x12b>
+    234c:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    2351:	8b 30                	mov    (%rax),%esi
+    2353:	85 f6                	test   %esi,%esi
+    2355:	0f 84 2d 07 00 00    	je     2a88 <print_results_+0x858>
+    235b:	48 8d 05 56 12 00 00 	lea    0x1256(%rip),%rax        # 35b8 <options.10.1+0x578>
+    2362:	48 89 ef             	mov    %rbp,%rdi
+    2365:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    236a:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    2371:	00 
+    2372:	c7 44 24 60 37 00 00 	movl   $0x37,0x60(%rsp)
+    2379:	00 
+    237a:	48 c7 84 24 a8 00 00 	movq   $0x2d,0xa8(%rsp)
+    2381:	00 2d 00 00 00 
+    2386:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    238b:	e8 20 ee ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2390:	48 8b 74 24 20       	mov    0x20(%rsp),%rsi
+    2395:	ba 04 00 00 00       	mov    $0x4,%edx
+    239a:	48 89 ef             	mov    %rbp,%rdi
+    239d:	e8 ee ec ff ff       	call   1090 <_gfortran_transfer_integer_write@plt>
+    23a2:	ba 04 00 00 00       	mov    $0x4,%edx
+    23a7:	4c 89 f6             	mov    %r14,%rsi
+    23aa:	48 89 ef             	mov    %rbp,%rdi
+    23ad:	e8 de ec ff ff       	call   1090 <_gfortran_transfer_integer_write@plt>
+    23b2:	48 8b 74 24 08       	mov    0x8(%rsp),%rsi
+    23b7:	48 89 ef             	mov    %rbp,%rdi
+    23ba:	ba 04 00 00 00       	mov    $0x4,%edx
+    23bf:	e8 cc ec ff ff       	call   1090 <_gfortran_transfer_integer_write@plt>
+    23c4:	48 89 ef             	mov    %rbp,%rdi
+    23c7:	e8 94 ed ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    23cc:	48 8d 05 15 12 00 00 	lea    0x1215(%rip),%rax        # 35e8 <options.10.1+0x5a8>
+    23d3:	48 89 ef             	mov    %rbp,%rdi
+    23d6:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    23db:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    23e2:	00 
+    23e3:	c7 44 24 60 3b 00 00 	movl   $0x3b,0x60(%rsp)
+    23ea:	00 
+    23eb:	48 c7 84 24 a8 00 00 	movq   $0x21,0xa8(%rsp)
+    23f2:	00 21 00 00 00 
+    23f7:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    23fc:	e8 af ed ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2401:	48 8b 74 24 10       	mov    0x10(%rsp),%rsi
+    2406:	ba 04 00 00 00       	mov    $0x4,%edx
+    240b:	48 89 ef             	mov    %rbp,%rdi
+    240e:	e8 7d ec ff ff       	call   1090 <_gfortran_transfer_integer_write@plt>
+    2413:	48 89 ef             	mov    %rbp,%rdi
+    2416:	e8 45 ed ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    241b:	48 8d 05 ee 11 00 00 	lea    0x11ee(%rip),%rax        # 3610 <options.10.1+0x5d0>
+    2422:	48 89 ef             	mov    %rbp,%rdi
+    2425:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    242a:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    2431:	00 
+    2432:	c7 44 24 60 3e 00 00 	movl   $0x3e,0x60(%rsp)
+    2439:	00 
+    243a:	48 c7 84 24 a8 00 00 	movq   $0x22,0xa8(%rsp)
+    2441:	00 22 00 00 00 
+    2446:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    244b:	e8 60 ed ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2450:	48 8b b4 24 a0 02 00 	mov    0x2a0(%rsp),%rsi
+    2457:	00 
+    2458:	ba 08 00 00 00       	mov    $0x8,%edx
+    245d:	48 89 ef             	mov    %rbp,%rdi
+    2460:	e8 cb eb ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    2465:	48 89 ef             	mov    %rbp,%rdi
+    2468:	e8 f3 ec ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    246d:	8b 4c 24 34          	mov    0x34(%rsp),%ecx
+    2471:	85 c9                	test   %ecx,%ecx
+    2473:	7e 4f                	jle    24c4 <print_results_+0x294>
+    2475:	48 8d 05 bc 11 00 00 	lea    0x11bc(%rip),%rax        # 3638 <options.10.1+0x5f8>
+    247c:	48 89 ef             	mov    %rbp,%rdi
+    247f:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2484:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    248b:	00 
+    248c:	c7 44 24 60 41 00 00 	movl   $0x41,0x60(%rsp)
+    2493:	00 
+    2494:	48 c7 84 24 a8 00 00 	movq   $0x21,0xa8(%rsp)
+    249b:	00 21 00 00 00 
+    24a0:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    24a5:	e8 06 ed ff ff       	call   11b0 <_gfortran_st_write@plt>
+    24aa:	48 8b 74 24 28       	mov    0x28(%rsp),%rsi
+    24af:	48 89 ef             	mov    %rbp,%rdi
+    24b2:	ba 04 00 00 00       	mov    $0x4,%edx
+    24b7:	e8 d4 eb ff ff       	call   1090 <_gfortran_transfer_integer_write@plt>
+    24bc:	48 89 ef             	mov    %rbp,%rdi
+    24bf:	e8 9c ec ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    24c4:	45 85 ed             	test   %r13d,%r13d
+    24c7:	7e 4f                	jle    2518 <print_results_+0x2e8>
+    24c9:	48 8d 05 90 11 00 00 	lea    0x1190(%rip),%rax        # 3660 <options.10.1+0x620>
+    24d0:	48 89 ef             	mov    %rbp,%rdi
+    24d3:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    24d8:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    24df:	00 
+    24e0:	c7 44 24 60 44 00 00 	movl   $0x44,0x60(%rsp)
+    24e7:	00 
+    24e8:	48 c7 84 24 a8 00 00 	movq   $0x21,0xa8(%rsp)
+    24ef:	00 21 00 00 00 
+    24f4:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    24f9:	e8 b2 ec ff ff       	call   11b0 <_gfortran_st_write@plt>
+    24fe:	48 89 ef             	mov    %rbp,%rdi
+    2501:	48 8d 74 24 30       	lea    0x30(%rsp),%rsi
+    2506:	ba 04 00 00 00       	mov    $0x4,%edx
+    250b:	e8 80 eb ff ff       	call   1090 <_gfortran_transfer_integer_write@plt>
+    2510:	48 89 ef             	mov    %rbp,%rdi
+    2513:	e8 48 ec ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2518:	44 3b 6c 24 34       	cmp    0x34(%rsp),%r13d
+    251d:	74 3d                	je     255c <print_results_+0x32c>
+    251f:	48 8d 05 62 11 00 00 	lea    0x1162(%rip),%rax        # 3688 <options.10.1+0x648>
+    2526:	48 89 ef             	mov    %rbp,%rdi
+    2529:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    252e:	c7 44 24 60 47 00 00 	movl   $0x47,0x60(%rsp)
+    2535:	00 
+    2536:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    253d:	00 
+    253e:	48 c7 84 24 a8 00 00 	movq   $0x38,0xa8(%rsp)
+    2545:	00 38 00 00 00 
+    254a:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    254f:	e8 5c ec ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2554:	48 89 ef             	mov    %rbp,%rdi
+    2557:	e8 04 ec ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    255c:	48 8d 05 65 11 00 00 	lea    0x1165(%rip),%rax        # 36c8 <options.10.1+0x688>
+    2563:	48 89 ef             	mov    %rbp,%rdi
+    2566:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    256b:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    2572:	00 
+    2573:	c7 44 24 60 4a 00 00 	movl   $0x4a,0x60(%rsp)
+    257a:	00 
+    257b:	48 c7 84 24 a8 00 00 	movq   $0x22,0xa8(%rsp)
+    2582:	00 22 00 00 00 
+    2587:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    258c:	e8 1f ec ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2591:	48 8b b4 24 a8 02 00 	mov    0x2a8(%rsp),%rsi
+    2598:	00 
+    2599:	ba 08 00 00 00       	mov    $0x8,%edx
+    259e:	48 89 ef             	mov    %rbp,%rdi
+    25a1:	e8 8a ea ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    25a6:	48 89 ef             	mov    %rbp,%rdi
+    25a9:	e8 b2 eb ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    25ae:	8b 54 24 34          	mov    0x34(%rsp),%edx
+    25b2:	85 d2                	test   %edx,%edx
+    25b4:	7e 73                	jle    2629 <print_results_+0x3f9>
+    25b6:	48 8d 05 33 11 00 00 	lea    0x1133(%rip),%rax        # 36f0 <options.10.1+0x6b0>
+    25bd:	48 89 ef             	mov    %rbp,%rdi
+    25c0:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    25c5:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    25cc:	00 
+    25cd:	c7 44 24 60 4d 00 00 	movl   $0x4d,0x60(%rsp)
+    25d4:	00 
+    25d5:	48 c7 84 24 a8 00 00 	movq   $0x23,0xa8(%rsp)
+    25dc:	00 23 00 00 00 
+    25e1:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    25e6:	e8 c5 eb ff ff       	call   11b0 <_gfortran_st_write@plt>
+    25eb:	66 0f ef c9          	pxor   %xmm1,%xmm1
+    25ef:	48 89 ef             	mov    %rbp,%rdi
+    25f2:	48 8b 84 24 a8 02 00 	mov    0x2a8(%rsp),%rax
+    25f9:	00 
+    25fa:	f3 0f 2a 4c 24 34    	cvtsi2ssl 0x34(%rsp),%xmm1
+    2600:	48 8d 74 24 38       	lea    0x38(%rsp),%rsi
+    2605:	ba 08 00 00 00       	mov    $0x8,%edx
+    260a:	f2 0f 10 00          	movsd  (%rax),%xmm0
+    260e:	f3 0f 5a c9          	cvtss2sd %xmm1,%xmm1
+    2612:	f2 0f 5e c1          	divsd  %xmm1,%xmm0
+    2616:	f2 0f 11 44 24 38    	movsd  %xmm0,0x38(%rsp)
+    261c:	e8 0f ea ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    2621:	48 89 ef             	mov    %rbp,%rdi
+    2624:	e8 37 eb ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2629:	48 8d 05 12 0e 00 00 	lea    0xe12(%rip),%rax        # 3442 <options.10.1+0x402>
+    2630:	48 89 ef             	mov    %rbp,%rdi
+    2633:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2638:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    263f:	00 
+    2640:	c7 44 24 60 50 00 00 	movl   $0x50,0x60(%rsp)
+    2647:	00 
+    2648:	48 c7 84 24 a8 00 00 	movq   $0x1c,0xa8(%rsp)
+    264f:	00 1c 00 00 00 
+    2654:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    2659:	e8 52 eb ff ff       	call   11b0 <_gfortran_st_write@plt>
+    265e:	48 8b b4 24 b0 02 00 	mov    0x2b0(%rsp),%rsi
+    2665:	00 
+    2666:	ba 18 00 00 00       	mov    $0x18,%edx
+    266b:	48 89 ef             	mov    %rbp,%rdi
+    266e:	e8 5d ea ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    2673:	48 89 ef             	mov    %rbp,%rdi
+    2676:	e8 e5 ea ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    267b:	48 8b 84 24 b8 02 00 	mov    0x2b8(%rsp),%rax
+    2682:	00 
+    2683:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2688:	8b 00                	mov    (%rax),%eax
+    268a:	85 c0                	test   %eax,%eax
+    268c:	0f 84 9e 03 00 00    	je     2a30 <print_results_+0x800>
+    2692:	48 8d 05 7f 10 00 00 	lea    0x107f(%rip),%rax        # 3718 <options.10.1+0x6d8>
+    2699:	48 89 ef             	mov    %rbp,%rdi
+    269c:	c7 44 24 60 54 00 00 	movl   $0x54,0x60(%rsp)
+    26a3:	00 
+    26a4:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    26ab:	00 
+    26ac:	48 c7 84 24 a8 00 00 	movq   $0x1f,0xa8(%rsp)
+    26b3:	00 1f 00 00 00 
+    26b8:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    26bd:	e8 ee ea ff ff       	call   11b0 <_gfortran_st_write@plt>
+    26c2:	48 89 ef             	mov    %rbp,%rdi
+    26c5:	ba 0c 00 00 00       	mov    $0xc,%edx
+    26ca:	48 8d 35 8e 0d 00 00 	lea    0xd8e(%rip),%rsi        # 345f <options.10.1+0x41f>
+    26d1:	e8 fa e9 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    26d6:	48 89 ef             	mov    %rbp,%rdi
+    26d9:	e8 82 ea ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    26de:	48 8d 05 53 10 00 00 	lea    0x1053(%rip),%rax        # 3738 <options.10.1+0x6f8>
+    26e5:	48 89 ef             	mov    %rbp,%rdi
+    26e8:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    26ed:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    26f4:	00 
+    26f5:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    26fa:	c7 44 24 60 5a 00 00 	movl   $0x5a,0x60(%rsp)
+    2701:	00 
+    2702:	48 c7 84 24 a8 00 00 	movq   $0x21,0xa8(%rsp)
+    2709:	00 21 00 00 00 
+    270e:	e8 9d ea ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2713:	48 8b 94 24 20 03 00 	mov    0x320(%rsp),%rdx
+    271a:	00 
+    271b:	48 8b b4 24 c0 02 00 	mov    0x2c0(%rsp),%rsi
+    2722:	00 
+    2723:	48 89 ef             	mov    %rbp,%rdi
+    2726:	e8 a5 e9 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    272b:	48 89 ef             	mov    %rbp,%rdi
+    272e:	e8 2d ea ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2733:	48 8d 05 26 10 00 00 	lea    0x1026(%rip),%rax        # 3760 <options.10.1+0x720>
+    273a:	48 89 ef             	mov    %rbp,%rdi
+    273d:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2742:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    2749:	00 
+    274a:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    274f:	c7 44 24 60 5d 00 00 	movl   $0x5d,0x60(%rsp)
+    2756:	00 
+    2757:	48 c7 84 24 a8 00 00 	movq   $0x21,0xa8(%rsp)
+    275e:	00 21 00 00 00 
+    2763:	e8 48 ea ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2768:	48 8b 94 24 28 03 00 	mov    0x328(%rsp),%rdx
+    276f:	00 
+    2770:	48 8b b4 24 c8 02 00 	mov    0x2c8(%rsp),%rsi
+    2777:	00 
+    2778:	48 89 ef             	mov    %rbp,%rdi
+    277b:	e8 50 e9 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    2780:	48 89 ef             	mov    %rbp,%rdi
+    2783:	e8 d8 e9 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2788:	48 8d 05 f9 0f 00 00 	lea    0xff9(%rip),%rax        # 3788 <options.10.1+0x748>
+    278f:	48 89 ef             	mov    %rbp,%rdi
+    2792:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2797:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    279e:	00 
+    279f:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    27a4:	c7 44 24 60 61 00 00 	movl   $0x61,0x60(%rsp)
+    27ab:	00 
+    27ac:	48 c7 84 24 a8 00 00 	movq   $0x40,0xa8(%rsp)
+    27b3:	00 40 00 00 00 
+    27b8:	e8 f3 e9 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    27bd:	48 8b 94 24 30 03 00 	mov    0x330(%rsp),%rdx
+    27c4:	00 
+    27c5:	48 8b b4 24 d0 02 00 	mov    0x2d0(%rsp),%rsi
+    27cc:	00 
+    27cd:	48 89 ef             	mov    %rbp,%rdi
+    27d0:	e8 fb e8 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    27d5:	48 89 ef             	mov    %rbp,%rdi
+    27d8:	e8 83 e9 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    27dd:	48 8d 05 95 0c 00 00 	lea    0xc95(%rip),%rax        # 3479 <options.10.1+0x439>
+    27e4:	48 89 ef             	mov    %rbp,%rdi
+    27e7:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    27ec:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    27f3:	00 
+    27f4:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    27f9:	c7 44 24 60 65 00 00 	movl   $0x65,0x60(%rsp)
+    2800:	00 
+    2801:	48 c7 84 24 a8 00 00 	movq   $0x1a,0xa8(%rsp)
+    2808:	00 1a 00 00 00 
+    280d:	e8 9e e9 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2812:	48 8b 94 24 38 03 00 	mov    0x338(%rsp),%rdx
+    2819:	00 
+    281a:	48 8b b4 24 d8 02 00 	mov    0x2d8(%rsp),%rsi
+    2821:	00 
+    2822:	48 89 ef             	mov    %rbp,%rdi
+    2825:	e8 a6 e8 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    282a:	48 89 ef             	mov    %rbp,%rdi
+    282d:	e8 2e e9 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2832:	48 8d 05 5b 0c 00 00 	lea    0xc5b(%rip),%rax        # 3494 <options.10.1+0x454>
+    2839:	48 89 ef             	mov    %rbp,%rdi
+    283c:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2841:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    2848:	00 
+    2849:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    284e:	c7 44 24 60 68 00 00 	movl   $0x68,0x60(%rsp)
+    2855:	00 
+    2856:	48 c7 84 24 a8 00 00 	movq   $0x1a,0xa8(%rsp)
+    285d:	00 1a 00 00 00 
+    2862:	e8 49 e9 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2867:	48 8b 94 24 40 03 00 	mov    0x340(%rsp),%rdx
+    286e:	00 
+    286f:	48 8b b4 24 e0 02 00 	mov    0x2e0(%rsp),%rsi
+    2876:	00 
+    2877:	48 89 ef             	mov    %rbp,%rdi
+    287a:	e8 51 e8 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    287f:	48 89 ef             	mov    %rbp,%rdi
+    2882:	e8 d9 e8 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2887:	48 8d 05 21 0c 00 00 	lea    0xc21(%rip),%rax        # 34af <options.10.1+0x46f>
+    288e:	48 89 ef             	mov    %rbp,%rdi
+    2891:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2896:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    289d:	00 
+    289e:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    28a3:	c7 44 24 60 6b 00 00 	movl   $0x6b,0x60(%rsp)
+    28aa:	00 
+    28ab:	48 c7 84 24 a8 00 00 	movq   $0x1a,0xa8(%rsp)
+    28b2:	00 1a 00 00 00 
+    28b7:	e8 f4 e8 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    28bc:	48 8b 94 24 48 03 00 	mov    0x348(%rsp),%rdx
+    28c3:	00 
+    28c4:	48 8b b4 24 e8 02 00 	mov    0x2e8(%rsp),%rsi
+    28cb:	00 
+    28cc:	48 89 ef             	mov    %rbp,%rdi
+    28cf:	e8 fc e7 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    28d4:	48 89 ef             	mov    %rbp,%rdi
+    28d7:	e8 84 e8 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    28dc:	48 8d 05 e7 0b 00 00 	lea    0xbe7(%rip),%rax        # 34ca <options.10.1+0x48a>
+    28e3:	48 89 ef             	mov    %rbp,%rdi
+    28e6:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    28eb:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    28f2:	00 
+    28f3:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    28f8:	c7 44 24 60 6e 00 00 	movl   $0x6e,0x60(%rsp)
+    28ff:	00 
+    2900:	48 c7 84 24 a8 00 00 	movq   $0x1a,0xa8(%rsp)
+    2907:	00 1a 00 00 00 
+    290c:	e8 9f e8 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2911:	48 8b 94 24 50 03 00 	mov    0x350(%rsp),%rdx
+    2918:	00 
+    2919:	48 8b b4 24 f0 02 00 	mov    0x2f0(%rsp),%rsi
+    2920:	00 
+    2921:	48 89 ef             	mov    %rbp,%rdi
+    2924:	e8 a7 e7 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    2929:	48 89 ef             	mov    %rbp,%rdi
+    292c:	e8 2f e8 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2931:	48 8d 05 ad 0b 00 00 	lea    0xbad(%rip),%rax        # 34e5 <options.10.1+0x4a5>
+    2938:	48 89 ef             	mov    %rbp,%rdi
+    293b:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2940:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    2947:	00 
+    2948:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    294d:	c7 44 24 60 71 00 00 	movl   $0x71,0x60(%rsp)
+    2954:	00 
+    2955:	48 c7 84 24 a8 00 00 	movq   $0x1a,0xa8(%rsp)
+    295c:	00 1a 00 00 00 
+    2961:	e8 4a e8 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2966:	48 8b 94 24 58 03 00 	mov    0x358(%rsp),%rdx
+    296d:	00 
+    296e:	48 8b b4 24 f8 02 00 	mov    0x2f8(%rsp),%rsi
+    2975:	00 
+    2976:	48 89 ef             	mov    %rbp,%rdi
+    2979:	e8 52 e7 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    297e:	48 89 ef             	mov    %rbp,%rdi
+    2981:	e8 da e7 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2986:	48 8d 05 73 0b 00 00 	lea    0xb73(%rip),%rax        # 3500 <options.10.1+0x4c0>
+    298d:	48 89 ef             	mov    %rbp,%rdi
+    2990:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2995:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    299c:	00 
+    299d:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    29a2:	c7 44 24 60 74 00 00 	movl   $0x74,0x60(%rsp)
+    29a9:	00 
+    29aa:	48 c7 84 24 a8 00 00 	movq   $0x1a,0xa8(%rsp)
+    29b1:	00 1a 00 00 00 
+    29b6:	e8 f5 e7 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    29bb:	48 8b 94 24 60 03 00 	mov    0x360(%rsp),%rdx
+    29c2:	00 
+    29c3:	48 8b b4 24 00 03 00 	mov    0x300(%rsp),%rsi
+    29ca:	00 
+    29cb:	48 89 ef             	mov    %rbp,%rdi
+    29ce:	e8 fd e6 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    29d3:	48 89 ef             	mov    %rbp,%rdi
+    29d6:	e8 85 e7 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    29db:	48 8d 05 ee 0d 00 00 	lea    0xdee(%rip),%rax        # 37d0 <options.10.1+0x790>
+    29e2:	48 89 ef             	mov    %rbp,%rdi
+    29e5:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    29ea:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    29f1:	00 
+    29f2:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    29f7:	c7 44 24 60 77 00 00 	movl   $0x77,0x60(%rsp)
+    29fe:	00 
+    29ff:	48 c7 84 24 a8 00 00 	movq   $0x76,0xa8(%rsp)
+    2a06:	00 76 00 00 00 
+    2a0b:	e8 a0 e7 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2a10:	48 89 ef             	mov    %rbp,%rdi
+    2a13:	e8 48 e7 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2a18:	48 81 c4 68 02 00 00 	add    $0x268,%rsp
+    2a1f:	5b                   	pop    %rbx
+    2a20:	5d                   	pop    %rbp
+    2a21:	41 5c                	pop    %r12
+    2a23:	41 5d                	pop    %r13
+    2a25:	41 5e                	pop    %r14
+    2a27:	41 5f                	pop    %r15
+    2a29:	c3                   	ret    
+    2a2a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2a30:	48 8d 05 e1 0c 00 00 	lea    0xce1(%rip),%rax        # 3718 <options.10.1+0x6d8>
+    2a37:	48 89 ef             	mov    %rbp,%rdi
+    2a3a:	c7 44 24 60 56 00 00 	movl   $0x56,0x60(%rsp)
+    2a41:	00 
+    2a42:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    2a49:	00 
+    2a4a:	48 c7 84 24 a8 00 00 	movq   $0x1f,0xa8(%rsp)
+    2a51:	00 1f 00 00 00 
+    2a56:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    2a5b:	e8 50 e7 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2a60:	48 89 ef             	mov    %rbp,%rdi
+    2a63:	ba 0c 00 00 00       	mov    $0xc,%edx
+    2a68:	48 8d 35 fd 09 00 00 	lea    0x9fd(%rip),%rsi        # 346c <options.10.1+0x42c>
+    2a6f:	e8 5c e6 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    2a74:	48 89 ef             	mov    %rbp,%rdi
+    2a77:	e8 e4 e6 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2a7c:	e9 5d fc ff ff       	jmp    26de <print_results_+0x4ae>
+    2a81:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2a88:	66 41 81 3f 45 50    	cmpw   $0x5045,(%r15)
+    2a8e:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2a93:	0f 85 f7 00 00 00    	jne    2b90 <print_results_+0x960>
+    2a99:	48 8b 05 e0 07 00 00 	mov    0x7e0(%rip),%rax        # 3280 <options.10.1+0x240>
+    2aa0:	48 8d 0d bc 05 00 00 	lea    0x5bc(%rip),%rcx        # 3063 <options.10.1+0x23>
+    2aa7:	48 89 ef             	mov    %rbp,%rdi
+    2aaa:	45 31 f6             	xor    %r14d,%r14d
+    2aad:	4c 8d 7c 24 41       	lea    0x41(%rsp),%r15
+    2ab2:	48 89 8c 24 a0 00 00 	mov    %rcx,0xa0(%rsp)
+    2ab9:	00 
+    2aba:	48 89 44 24 50       	mov    %rax,0x50(%rsp)
+    2abf:	c7 44 24 60 2d 00 00 	movl   $0x2d,0x60(%rsp)
+    2ac6:	00 
+    2ac7:	4c 89 bc 24 c0 00 00 	mov    %r15,0xc0(%rsp)
+    2ace:	00 
+    2acf:	48 c7 84 24 c8 00 00 	movq   $0xf,0xc8(%rsp)
+    2ad6:	00 0f 00 00 00 
+    2adb:	48 c7 84 24 98 00 00 	movq   $0x0,0x98(%rsp)
+    2ae2:	00 00 00 00 00 
+    2ae7:	48 c7 84 24 a8 00 00 	movq   $0x7,0xa8(%rsp)
+    2aee:	00 07 00 00 00 
+    2af3:	e8 b8 e6 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2af8:	48 8b 44 24 20       	mov    0x20(%rsp),%rax
+    2afd:	f2 0f 10 05 43 0d 00 	movsd  0xd43(%rip),%xmm0        # 3848 <options.10.1+0x808>
+    2b04:	00 
+    2b05:	8b 38                	mov    (%rax),%edi
+    2b07:	e8 24 e6 ff ff       	call   1130 <__powidf2@plt>
+    2b0c:	48 8d 74 24 38       	lea    0x38(%rsp),%rsi
+    2b11:	ba 08 00 00 00       	mov    $0x8,%edx
+    2b16:	48 89 ef             	mov    %rbp,%rdi
+    2b19:	f2 0f 11 44 24 38    	movsd  %xmm0,0x38(%rsp)
+    2b1f:	e8 0c e5 ff ff       	call   1030 <_gfortran_transfer_real_write@plt>
+    2b24:	48 89 ef             	mov    %rbp,%rdi
+    2b27:	e8 34 e6 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2b2c:	80 7c 24 4f 2e       	cmpb   $0x2e,0x4f(%rsp)
+    2b31:	48 89 ef             	mov    %rbp,%rdi
+    2b34:	48 8d 05 35 0a 00 00 	lea    0xa35(%rip),%rax        # 3570 <options.10.1+0x530>
+    2b3b:	41 0f 95 c6          	setne  %r14b
+    2b3f:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    2b46:	00 
+    2b47:	49 83 c6 0e          	add    $0xe,%r14
+    2b4b:	48 89 5c 24 58       	mov    %rbx,0x58(%rsp)
+    2b50:	c7 44 24 60 30 00 00 	movl   $0x30,0x60(%rsp)
+    2b57:	00 
+    2b58:	48 c7 84 24 a8 00 00 	movq   $0x1f,0xa8(%rsp)
+    2b5f:	00 1f 00 00 00 
+    2b64:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    2b69:	e8 42 e6 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2b6e:	48 89 ef             	mov    %rbp,%rdi
+    2b71:	4c 89 f2             	mov    %r14,%rdx
+    2b74:	4c 89 fe             	mov    %r15,%rsi
+    2b77:	e8 54 e5 ff ff       	call   10d0 <_gfortran_transfer_character_write@plt>
+    2b7c:	48 89 ef             	mov    %rbp,%rdi
+    2b7f:	e8 dc e5 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2b84:	e9 43 f8 ff ff       	jmp    23cc <print_results_+0x19c>
+    2b89:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2b90:	48 8d 05 f9 09 00 00 	lea    0x9f9(%rip),%rax        # 3590 <options.10.1+0x550>
+    2b97:	48 89 ef             	mov    %rbp,%rdi
+    2b9a:	c7 44 24 60 33 00 00 	movl   $0x33,0x60(%rsp)
+    2ba1:	00 
+    2ba2:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+    2ba9:	00 
+    2baa:	48 c7 84 24 a8 00 00 	movq   $0x20,0xa8(%rsp)
+    2bb1:	00 20 00 00 00 
+    2bb6:	4c 89 64 24 50       	mov    %r12,0x50(%rsp)
+    2bbb:	e8 f0 e5 ff ff       	call   11b0 <_gfortran_st_write@plt>
+    2bc0:	48 8b 74 24 20       	mov    0x20(%rsp),%rsi
+    2bc5:	48 89 ef             	mov    %rbp,%rdi
+    2bc8:	ba 04 00 00 00       	mov    $0x4,%edx
+    2bcd:	e8 be e4 ff ff       	call   1090 <_gfortran_transfer_integer_write@plt>
+    2bd2:	48 89 ef             	mov    %rbp,%rdi
+    2bd5:	e8 86 e5 ff ff       	call   1160 <_gfortran_st_write_done@plt>
+    2bda:	e9 ed f7 ff ff       	jmp    23cc <print_results_+0x19c>
+    2bdf:	90                   	nop
+
+0000000000002be0 <randlc_>:
+    2be0:	f2 48 0f 2c 07       	cvttsd2si (%rdi),%rax
+    2be5:	66 0f ef c0          	pxor   %xmm0,%xmm0
+    2be9:	f2 48 0f 2c 16       	cvttsd2si (%rsi),%rdx
+    2bee:	48 0f af c2          	imul   %rdx,%rax
+    2bf2:	48 ba ff ff ff ff ff 	movabs $0x3fffffffffff,%rdx
+    2bf9:	3f 00 00 
+    2bfc:	48 21 d0             	and    %rdx,%rax
+    2bff:	f2 48 0f 2a c0       	cvtsi2sd %rax,%xmm0
+    2c04:	f2 0f 11 07          	movsd  %xmm0,(%rdi)
+    2c08:	f2 0f 59 05 40 0c 00 	mulsd  0xc40(%rip),%xmm0        # 3850 <options.10.1+0x810>
+    2c0f:	00 
+    2c10:	c3                   	ret    
+    2c11:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    2c18:	00 00 00 00 
+    2c1c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002c20 <vranlc_>:
+    2c20:	f2 48 0f 2c 06       	cvttsd2si (%rsi),%rax
+    2c25:	49 89 f0             	mov    %rsi,%r8
+    2c28:	8b 37                	mov    (%rdi),%esi
+    2c2a:	f2 48 0f 2c 12       	cvttsd2si (%rdx),%rdx
+    2c2f:	85 f6                	test   %esi,%esi
+    2c31:	7e 4d                	jle    2c80 <vranlc_+0x60>
+    2c33:	83 ee 01             	sub    $0x1,%esi
+    2c36:	f2 0f 10 15 12 0c 00 	movsd  0xc12(%rip),%xmm2        # 3850 <options.10.1+0x810>
+    2c3d:	00 
+    2c3e:	48 8d 7c f1 08       	lea    0x8(%rcx,%rsi,8),%rdi
+    2c43:	48 be ff ff ff ff ff 	movabs $0x3fffffffffff,%rsi
+    2c4a:	3f 00 00 
+    2c4d:	0f 1f 00             	nopl   (%rax)
+    2c50:	48 0f af c2          	imul   %rdx,%rax
+    2c54:	66 0f ef c0          	pxor   %xmm0,%xmm0
+    2c58:	48 83 c1 08          	add    $0x8,%rcx
+    2c5c:	48 21 f0             	and    %rsi,%rax
+    2c5f:	f2 48 0f 2a c0       	cvtsi2sd %rax,%xmm0
+    2c64:	66 0f 28 c8          	movapd %xmm0,%xmm1
+    2c68:	f2 0f 59 ca          	mulsd  %xmm2,%xmm1
+    2c6c:	f2 0f 11 49 f8       	movsd  %xmm1,-0x8(%rcx)
+    2c71:	48 39 cf             	cmp    %rcx,%rdi
+    2c74:	75 da                	jne    2c50 <vranlc_+0x30>
+    2c76:	f2 41 0f 11 00       	movsd  %xmm0,(%r8)
+    2c7b:	c3                   	ret    
+    2c7c:	0f 1f 40 00          	nopl   0x0(%rax)
+    2c80:	66 0f ef c0          	pxor   %xmm0,%xmm0
+    2c84:	f2 48 0f 2a c0       	cvtsi2sd %rax,%xmm0
+    2c89:	f2 41 0f 11 00       	movsd  %xmm0,(%r8)
+    2c8e:	c3                   	ret    
+    2c8f:	90                   	nop
+
+0000000000002c90 <timer_clear_>:
+    2c90:	48 63 07             	movslq (%rdi),%rax
+    2c93:	64 48 c7 04 c5 f8 fd 	movq   $0x0,%fs:-0x208(,%rax,8)
+    2c9a:	ff ff 00 00 00 00 
+    2ca0:	c3                   	ret    
+    2ca1:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    2ca8:	00 00 00 00 
+    2cac:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002cb0 <timer_start_>:
+    2cb0:	53                   	push   %rbx
+    2cb1:	48 63 1f             	movslq (%rdi),%rbx
+    2cb4:	31 c0                	xor    %eax,%eax
+    2cb6:	48 83 eb 01          	sub    $0x1,%rbx
+    2cba:	e8 51 00 00 00       	call   2d10 <elapsed_time_>
+    2cbf:	64 f2 0f 11 04 dd 00 	movsd  %xmm0,%fs:-0x400(,%rbx,8)
+    2cc6:	fc ff ff 
+    2cc9:	5b                   	pop    %rbx
+    2cca:	c3                   	ret    
+    2ccb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002cd0 <timer_stop_>:
+    2cd0:	53                   	push   %rbx
+    2cd1:	31 c0                	xor    %eax,%eax
+    2cd3:	48 89 fb             	mov    %rdi,%rbx
+    2cd6:	e8 35 00 00 00       	call   2d10 <elapsed_time_>
+    2cdb:	48 63 03             	movslq (%rbx),%rax
+    2cde:	64 f2 0f 5c 04 c5 f8 	subsd  %fs:-0x408(,%rax,8),%xmm0
+    2ce5:	fb ff ff 
+    2ce8:	64 f2 0f 58 04 c5 f8 	addsd  %fs:-0x208(,%rax,8),%xmm0
+    2cef:	fd ff ff 
+    2cf2:	64 f2 0f 11 04 c5 f8 	movsd  %xmm0,%fs:-0x208(,%rax,8)
+    2cf9:	fd ff ff 
+    2cfc:	5b                   	pop    %rbx
+    2cfd:	c3                   	ret    
+    2cfe:	66 90                	xchg   %ax,%ax
+
+0000000000002d00 <timer_read_>:
+    2d00:	48 63 07             	movslq (%rdi),%rax
+    2d03:	64 f2 0f 10 04 c5 f8 	movsd  %fs:-0x208(,%rax,8),%xmm0
+    2d0a:	fd ff ff 
+    2d0d:	c3                   	ret    
+    2d0e:	66 90                	xchg   %ax,%ax
+
+0000000000002d10 <elapsed_time_>:
+    2d10:	31 c0                	xor    %eax,%eax
+    2d12:	e9 29 e4 ff ff       	jmp    1140 <omp_get_wtime_@plt>
+    2d17:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    2d1e:	00 00 
+
+0000000000002d20 <check_timer_flag_>:
+    2d20:	41 55                	push   %r13
+    2d22:	41 b9 0e 00 00 00    	mov    $0xe,%r9d
+    2d28:	45 31 c0             	xor    %r8d,%r8d
+    2d2b:	31 c0                	xor    %eax,%eax
+    2d2d:	41 54                	push   %r12
+    2d2f:	55                   	push   %rbp
+    2d30:	53                   	push   %rbx
+    2d31:	48 89 fb             	mov    %rdi,%rbx
+    2d34:	48 81 ec 98 01 00 00 	sub    $0x198,%rsp
+    2d3b:	c7 07 00 00 00 00    	movl   $0x0,(%rdi)
+    2d41:	48 8d 3d 1f 0b 00 00 	lea    0xb1f(%rip),%rdi        # 3867 <options.10.1+0x827>
+    2d48:	4c 8d 64 24 08       	lea    0x8(%rsp),%r12
+    2d4d:	48 8d 54 24 0c       	lea    0xc(%rsp),%rdx
+    2d52:	48 8d 6c 24 10       	lea    0x10(%rsp),%rbp
+    2d57:	48 83 ec 08          	sub    $0x8,%rsp
+    2d5b:	4c 89 e1             	mov    %r12,%rcx
+    2d5e:	6a 14                	push   $0x14
+    2d60:	48 89 ee             	mov    %rbp,%rsi
+    2d63:	e8 88 e3 ff ff       	call   10f0 <_gfortran_get_environment_variable_i4@plt>
+    2d68:	59                   	pop    %rcx
+    2d69:	5e                   	pop    %rsi
+    2d6a:	8b 7c 24 08          	mov    0x8(%rsp),%edi
+    2d6e:	85 ff                	test   %edi,%edi
+    2d70:	75 2e                	jne    2da0 <check_timer_flag_+0x80>
+    2d72:	8b 54 24 0c          	mov    0xc(%rsp),%edx
+    2d76:	85 d2                	test   %edx,%edx
+    2d78:	7e 10                	jle    2d8a <check_timer_flag_+0x6a>
+    2d7a:	0f b6 44 24 10       	movzbl 0x10(%rsp),%eax
+    2d7f:	83 e8 31             	sub    $0x31,%eax
+    2d82:	3c 08                	cmp    $0x8,%al
+    2d84:	0f 87 c6 00 00 00    	ja     2e50 <check_timer_flag_+0x130>
+    2d8a:	c7 03 01 00 00 00    	movl   $0x1,(%rbx)
+    2d90:	48 81 c4 98 01 00 00 	add    $0x198,%rsp
+    2d97:	5b                   	pop    %rbx
+    2d98:	5d                   	pop    %rbp
+    2d99:	41 5c                	pop    %r12
+    2d9b:	41 5d                	pop    %r13
+    2d9d:	c3                   	ret    
+    2d9e:	66 90                	xchg   %ax,%ax
+    2da0:	48 8d 05 bc 0a 00 00 	lea    0xabc(%rip),%rax        # 3863 <options.10.1+0x823>
+    2da7:	48 8d 35 aa 0a 00 00 	lea    0xaaa(%rip),%rsi        # 3858 <options.10.1+0x818>
+    2dae:	c7 44 24 40 a2 00 00 	movl   $0xa2,0x40(%rsp)
+    2db5:	00 
+    2db6:	66 48 0f 6e c8       	movq   %rax,%xmm1
+    2dbb:	66 48 0f 6e c6       	movq   %rsi,%xmm0
+    2dc0:	48 8b 05 d9 0a 00 00 	mov    0xad9(%rip),%rax        # 38a0 <options.10.1+0x860>
+    2dc7:	48 8d 6c 24 30       	lea    0x30(%rsp),%rbp
+    2dcc:	66 0f 6c c1          	punpcklqdq %xmm1,%xmm0
+    2dd0:	48 89 ef             	mov    %rbp,%rdi
+    2dd3:	4c 8d 2d b4 0a 00 00 	lea    0xab4(%rip),%r13        # 388e <options.10.1+0x84e>
+    2dda:	c7 44 24 08 00 00 00 	movl   $0x0,0x8(%rsp)
+    2de1:	00 
+    2de2:	48 89 44 24 30       	mov    %rax,0x30(%rsp)
+    2de7:	4c 89 6c 24 38       	mov    %r13,0x38(%rsp)
+    2dec:	4c 89 64 24 58       	mov    %r12,0x58(%rsp)
+    2df1:	48 c7 44 24 68 0a 00 	movq   $0xa,0x68(%rsp)
+    2df8:	00 00 
+    2dfa:	48 c7 84 24 80 00 00 	movq   $0x3,0x80(%rsp)
+    2e01:	00 03 00 00 00 
+    2e06:	c7 84 24 60 01 00 00 	movl   $0x0,0x160(%rsp)
+    2e0d:	00 00 00 00 
+    2e11:	0f 29 44 24 70       	movaps %xmm0,0x70(%rsp)
+    2e16:	e8 a5 e2 ff ff       	call   10c0 <_gfortran_st_open@plt>
+    2e1b:	8b 44 24 08          	mov    0x8(%rsp),%eax
+    2e1f:	85 c0                	test   %eax,%eax
+    2e21:	0f 85 69 ff ff ff    	jne    2d90 <check_timer_flag_+0x70>
+    2e27:	48 8b 05 7a 0a 00 00 	mov    0xa7a(%rip),%rax        # 38a8 <options.10.1+0x868>
+    2e2e:	48 89 ef             	mov    %rbp,%rdi
+    2e31:	4c 89 6c 24 38       	mov    %r13,0x38(%rsp)
+    2e36:	c7 44 24 40 a4 00 00 	movl   $0xa4,0x40(%rsp)
+    2e3d:	00 
+    2e3e:	48 89 44 24 30       	mov    %rax,0x30(%rsp)
+    2e43:	e8 28 e2 ff ff       	call   1070 <_gfortran_st_close@plt>
+    2e48:	e9 3d ff ff ff       	jmp    2d8a <check_timer_flag_+0x6a>
+    2e4d:	0f 1f 00             	nopl   (%rax)
+    2e50:	48 8d 0d 1f 0a 00 00 	lea    0xa1f(%rip),%rcx        # 3876 <options.10.1+0x836>
+    2e57:	ba 02 00 00 00       	mov    $0x2,%edx
+    2e5c:	48 89 ee             	mov    %rbp,%rsi
+    2e5f:	bf 14 00 00 00       	mov    $0x14,%edi
+    2e64:	e8 a7 e2 ff ff       	call   1110 <_gfortran_compare_string@plt>
+    2e69:	85 c0                	test   %eax,%eax
+    2e6b:	0f 84 19 ff ff ff    	je     2d8a <check_timer_flag_+0x6a>
+    2e71:	48 8d 0d 01 0a 00 00 	lea    0xa01(%rip),%rcx        # 3879 <options.10.1+0x839>
+    2e78:	ba 02 00 00 00       	mov    $0x2,%edx
+    2e7d:	48 89 ee             	mov    %rbp,%rsi
+    2e80:	bf 14 00 00 00       	mov    $0x14,%edi
+    2e85:	e8 86 e2 ff ff       	call   1110 <_gfortran_compare_string@plt>
+    2e8a:	85 c0                	test   %eax,%eax
+    2e8c:	0f 84 f8 fe ff ff    	je     2d8a <check_timer_flag_+0x6a>
+    2e92:	48 8d 0d e3 09 00 00 	lea    0x9e3(%rip),%rcx        # 387c <options.10.1+0x83c>
+    2e99:	ba 03 00 00 00       	mov    $0x3,%edx
+    2e9e:	48 89 ee             	mov    %rbp,%rsi
+    2ea1:	bf 14 00 00 00       	mov    $0x14,%edi
+    2ea6:	e8 65 e2 ff ff       	call   1110 <_gfortran_compare_string@plt>
+    2eab:	85 c0                	test   %eax,%eax
+    2ead:	0f 84 d7 fe ff ff    	je     2d8a <check_timer_flag_+0x6a>
+    2eb3:	48 8d 0d c6 09 00 00 	lea    0x9c6(%rip),%rcx        # 3880 <options.10.1+0x840>
+    2eba:	ba 03 00 00 00       	mov    $0x3,%edx
+    2ebf:	48 89 ee             	mov    %rbp,%rsi
+    2ec2:	bf 14 00 00 00       	mov    $0x14,%edi
+    2ec7:	e8 44 e2 ff ff       	call   1110 <_gfortran_compare_string@plt>
+    2ecc:	85 c0                	test   %eax,%eax
+    2ece:	0f 84 b6 fe ff ff    	je     2d8a <check_timer_flag_+0x6a>
+    2ed4:	48 8d 0d a9 09 00 00 	lea    0x9a9(%rip),%rcx        # 3884 <options.10.1+0x844>
+    2edb:	ba 04 00 00 00       	mov    $0x4,%edx
+    2ee0:	48 89 ee             	mov    %rbp,%rsi
+    2ee3:	bf 14 00 00 00       	mov    $0x14,%edi
+    2ee8:	e8 23 e2 ff ff       	call   1110 <_gfortran_compare_string@plt>
+    2eed:	85 c0                	test   %eax,%eax
+    2eef:	0f 84 95 fe ff ff    	je     2d8a <check_timer_flag_+0x6a>
+    2ef5:	48 8d 0d 8d 09 00 00 	lea    0x98d(%rip),%rcx        # 3889 <options.10.1+0x849>
+    2efc:	ba 04 00 00 00       	mov    $0x4,%edx
+    2f01:	48 89 ee             	mov    %rbp,%rsi
+    2f04:	bf 14 00 00 00       	mov    $0x14,%edi
+    2f09:	e8 02 e2 ff ff       	call   1110 <_gfortran_compare_string@plt>
+    2f0e:	85 c0                	test   %eax,%eax
+    2f10:	0f 84 74 fe ff ff    	je     2d8a <check_timer_flag_+0x6a>
+    2f16:	e9 75 fe ff ff       	jmp    2d90 <check_timer_flag_+0x70>
+    2f1b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002f20 <wtime_>:
+    2f20:	f3 0f 1e fa          	endbr64 
+    2f24:	53                   	push   %rbx
+    2f25:	31 f6                	xor    %esi,%esi
+    2f27:	48 89 fb             	mov    %rdi,%rbx
+    2f2a:	48 83 ec 20          	sub    $0x20,%rsp
+    2f2e:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2f35:	00 00 
+    2f37:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    2f3c:	31 c0                	xor    %eax,%eax
+    2f3e:	48 89 e7             	mov    %rsp,%rdi
+    2f41:	e8 0a e1 ff ff       	call   1050 <gettimeofday@plt>
+    2f46:	48 63 05 db 30 00 00 	movslq 0x30db(%rip),%rax        # 6028 <sec.0>
+    2f4d:	48 8b 14 24          	mov    (%rsp),%rdx
+    2f51:	85 c0                	test   %eax,%eax
+    2f53:	79 09                	jns    2f5e <wtime_+0x3e>
+    2f55:	89 15 cd 30 00 00    	mov    %edx,0x30cd(%rip)        # 6028 <sec.0>
+    2f5b:	48 63 c2             	movslq %edx,%rax
+    2f5e:	66 0f ef c0          	pxor   %xmm0,%xmm0
+    2f62:	48 29 c2             	sub    %rax,%rdx
+    2f65:	66 0f ef c9          	pxor   %xmm1,%xmm1
+    2f69:	f2 48 0f 2a 44 24 08 	cvtsi2sdq 0x8(%rsp),%xmm0
+    2f70:	f2 0f 59 05 38 09 00 	mulsd  0x938(%rip),%xmm0        # 38b0 <options.10.1+0x870>
+    2f77:	00 
+    2f78:	f2 48 0f 2a ca       	cvtsi2sd %rdx,%xmm1
+    2f7d:	f2 0f 58 c1          	addsd  %xmm1,%xmm0
+    2f81:	f2 0f 11 03          	movsd  %xmm0,(%rbx)
+    2f85:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+    2f8a:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    2f91:	00 00 
+    2f93:	75 06                	jne    2f9b <wtime_+0x7b>
+    2f95:	48 83 c4 20          	add    $0x20,%rsp
+    2f99:	5b                   	pop    %rbx
+    2f9a:	c3                   	ret    
+    2f9b:	e8 d0 e1 ff ff       	call   1170 <__stack_chk_fail@plt>
+
+Disassembly of section .fini:
+
+0000000000002fa0 <_fini>:
+    2fa0:	f3 0f 1e fa          	endbr64 
+    2fa4:	48 83 ec 08          	sub    $0x8,%rsp
+    2fa8:	48 83 c4 08          	add    $0x8,%rsp
+    2fac:	c3                   	ret    
