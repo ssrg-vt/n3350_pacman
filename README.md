@@ -16,7 +16,7 @@ This is the collection of documentation, results and uCode Patches to replicate 
 - **bios** : C experiment and supporting supporting code, built using match&patch method. 
 - **uasm-lib** : Mneuminc, hexcode and *.u assembly functions used to efi experiments, invoked by cpu.efi
 - **ghidra_glm_extension** : ghidra decompiler executable and post-processing scripts for GLM uCode extenion. This version can decompile undocumented N3350 instructions and ucodes.
-- **glm_unlock** : Steps and screensshotf for Goldmont+ Red Unlock. This is needed only for dynamic tracing over JTAG/DCI.
+- **glm_unlock** : Steps and screensshot for Goldmont+ Red Unlock. This setup is needed for dynamic tracing over JTAG/DCI.
 
 #### HowTo
 1. **Linux-Bringup on BMAX_B1_Plus**
