@@ -4,10 +4,9 @@
 
 #### Introduction
 This is the collection of documentation, results and uCode Patches to replicate Pointer Authentication Code Case study on Intel N3350 / Goldmont Plus Architecture
-- This work builds upon case study presented in Woot'23 publication and Blackhat'22 by Pietro Borrello et.al
-- uCode patching and tracing mechanism is primarily inspired by authors published work found at: https://github.com/pietroborrello/CustomProcessingUnit
-Intel Atom N3350 (Glodmont) is used architecture of choice to test implementation of Pointer Authentication Codes(PAC) on x86_64 
-BMAX_B1 Plus is used as testbed to demonstrate.
+- This work builds upon PACMAN case study presented in Woot'23 publication and Blackhat'22 by Pietro Borrello et.al, which is first known demonstration of PAC code on x86-64.
+- uCode match&patch and tracing mechanism is inspired by authors published work [here](https://github.com/pietroborrello/CustomProcessingUnit)
+- Intel Atom N3350 (Glodmont) is used CPU of choice to implement of Pointer Authentication Codes(PAC) on x86_64. BMAX_B1 Plus board as testbed.
 
 ##### Overview of n3350_pacman repo
 - **Makefile** : Makefile to setup/make all the experiments *efi.
