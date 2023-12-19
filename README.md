@@ -13,7 +13,7 @@ This is the collection of documentation, results and uCode Patches to replicate 
 - **efi_executables** : Contains *.efi experiment executables, to be copied over to UEFI boot media.
 - **hello_world_efi** : Sanity efi compile & link test. Contains few flavours of "Hello World!" programs.
 - **benchmark_ext** : Benchmark Extracts with mneumonics, micro-codes built with same make flags as remaining n3350 experiments.
-- **bios** : C experiment and supporting supporting code, built using match&patch method. 
+- **bios** : C experiment files and supporting code, built using match&patch method. 
 - **uasm-lib** : Mneuminc, hexcode and *.u assembly functions used to efi experiments, invoked by cpu.efi
 - **ghidra_glm_extension** : ghidra decompiler executable and post-processing scripts for GLM uCode extenion. This version can decompile undocumented N3350 instructions and ucodes.
 - **glm_unlock** : Steps and screensshot for Goldmont+ Red Unlock. This setup is needed for dynamic tracing over JTAG/DCI.
@@ -92,8 +92,12 @@ In_EFI_SHELL>cpu.efi <experiment_id> // <experiment_id=2 for PAC on x86 and 3 fo
 git clone https://github.com/chip-red-pill/uCodeDisasm.git; cd uCodedisasm/glm_ucode_disasm
 git clone https://github.com/ssrg-vt/n3350_pacman.git
 cd ghidra_glm_extension/
+// To generate RAW uCode file for decompilation
+cd ghidra_glm_ucode_extension/uCodedisasm/glm_ucode_disasm
 glm_ucode_disasm.py ../ucode/ms_arry0.txt; cat ../ucode/ucode_glm.txt
-Following run setups on https://github.com/pietroborrello/ghidra-atom-microcode.git
+// To decompile RAW x86-64 uCode
+cd ghidra_glm_ucode_extension/ghidra_10.4_glm_ucode_extension/
+./ghidraRun & // Create a new project and read-in ../ucode/ucode_glm.txt raw file. Select x86-64-LE glm_ucode format.
 ```
 
 **ScreenShots**
