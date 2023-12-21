@@ -10,13 +10,13 @@ This is the collection of documentation, results and uCode Patches to replicate 
 
 ##### Overview of n3350_pacman repo
 - **Makefile** : Makefile to setup/make all the experiments *efi.
-- **efi_executables** : Contains *.efi experiment executables, to be copied over to UEFI boot media.
-- **hello_world_efi** : Sanity efi compile & link test. Contains few flavours of "Hello World!" programs.
-- **benchmark_ext** : Benchmark Extracts with mneumonics, micro-codes built with same make flags as remaining n3350 experiments.
-- **bios** : C experiment files and supporting code, built using match&patch method. 
-- **uasm-lib** : Mneuminc, hexcode and *.u assembly functions used to efi experiments, invoked by cpu.efi
+- **efi_executables** : Contains *.efi experiment executable, to be copied over to UEFI boot media.
+- **hello_world_efi** : Sanity efi compile & link test. Contains few flavors of "Hello World!" programs.
+- **benchmark_ext** : Benchmark Extracts with mnemonics, micro-codes built with same make flags as remaining n3350 experiments.
+- **bios** : C experiment files and supporting code, built using match&patch method.
+- **uasm-lib** : Mnemonics, hexcodes and *.u assembly functions used in efi experiments, invoked by bios/\*.efi
 - **ghidra_glm_extension** : ghidra decompiler executable and post-processing scripts for GLM uCode extenion. This version can decompile undocumented N3350 instructions and ucodes.
-- **glm_unlock** : Steps and screensshot for Goldmont+ Red Unlock. This setup is needed for dynamic tracing over JTAG/DCI.
+- **glm_unlock** : Steps and screenshots for Goldmont+ Red Unlock. This setup is needed for dynamic tracing over JTAG/DCI.
 
 #### HowTo
 1. **Linux-Bringup on BMAX_B1_Plus**
