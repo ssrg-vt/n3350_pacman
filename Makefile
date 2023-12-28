@@ -4,6 +4,13 @@ GNU_EFI_DIR=/home/lalitssrg/gnu-efi-3.0.14
 
 all: build-ucode build-cpu
 
+clean:
+	rm -rf bios/ucode_patches/*.h
+	rm -rf bios/*.efi	
+	rm -rf bios/*.o	
+	rm -rf bios/*.so	
+	rm -rf efi_executables/*.efi	
+
 build-ucode:
 	uasm-lib/uasm.py -i bios/ucode_patches/ucode_patch.u --avoid_unk_256 -o ./bios/ucode_patches/ucode_patch.h
 	uasm-lib/uasm.py -i bios/ucode_patches/dump_smm.u -o ./bios/ucode_patches/dump_smm.h
@@ -37,6 +44,8 @@ build-cpu:
 	objcopy -j .text -j .sdata -j .data -j .dynamic -j .dynsym  -j .rel -j .rela -j .rel.* -j .rela.* -j .reloc --target efi-app-x86_64 --subsystem=10 bios/pacman.so bios/pacman.efi
 	gcc -mno-sse -mno-sse2 -mno-mmx -mno-avx -Ibios -I$(GNU_EFI_DIR)/inc -fpic -ffreestanding -fno-stack-protector -fno-stack-check -fshort-wchar -mno-red-zone -maccumulate-outgoing-args -c bios/hello_gcc.c -o bios/hello_gcc.o
 	ld -shared -Bsymbolic -L$(GNU_EFI_DIR)/x86_64/gnuefi -L$(GNU_EFI_DIR)/x86_64/lib -T$(GNU_EFI_DIR)/gnuefi/elf_x86_64_efi.lds $(GNU_EFI_DIR)/x86_64/gnuefi/crt0-efi-x86_64.o bios/hello_gcc.o -o bios/hello_gcc.so -lgnuefi -lefi
-	objcopy -j .text -j .sdata -j .data -j .dynamic -j .dynsym  -j .rel -j .rela -j .rel.* -j .rela.* -j .reloc --target efi-app-x86_64 --subsystem=10 bios/hello_gcc.so bios/HELLO_GCC.efi
+	#objcopy -j .text -j .sdata -j .data -j .dynamic -j .dynsym  -j .rel -j .rela -j .rel.* -j .rela.* -j .reloc --target efi-app-x86_64 --subsystem=10 bios/hello_gcc.so bios/HELLO_GCC.efi
+	rm -rf efi_executables/*.efi
+	cp bios/*efi efi_executables/
 
 .PHONY: build-cpu build-ucode
