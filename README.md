@@ -99,6 +99,12 @@ cd ghidra_glm_ucode_extension/ghidra_10.4_glm_ucode_extension/
 ```
 
 **ScreenShots**
+>PAC Patch:
+<img src="https://github.com/ssrg-vt/n3350_pacman/blob/main/pac_patch.jpeg" style="height: 400px; width:600px;"/>
+>PACMAN Test:
+<img src="https://github.com/ssrg-vt/n3350_pacman/blob/main/pacman.jpeg" style="height: 400px; width:600px;"/>
+>
+>
 >
 >
 >
