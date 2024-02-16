@@ -29,7 +29,7 @@ build-ucode:
 	uasm-lib/uasm.py -i bios/ucode_patches/pac_verify.u --avoid_unk_256 -o ./bios/ucode_patches/pac_verify.h
 	uasm-lib/uasm.py -i bios/ucode_patches/pac_sign_weak.u --avoid_unk_256 -o ./bios/ucode_patches/pac_sign_weak.h
 	uasm-lib/uasm.py -i bios/ucode_patches/pac_verify_weak.u --avoid_unk_256 -o ./bios/ucode_patches/pac_verify_weak.h
-	uasm-lib/uasm.py -i bios/ucode_patches/baggybound.u --avoid_unk_256 -o ./bios/ucode_patches/baggybound.h
+	#uasm-lib/uasm.py -i bios/ucode_patches/baggybound.u --avoid_unk_256 -o ./bios/ucode_patches/baggybound.h
 
 build-cpu:
 	xxd -i bios/glm-intel-ucode/06-5c-09 > bios/glm-intel-ucode/06-5c-09.h
