@@ -112,9 +112,9 @@ ls efi_executables/baggybounds.efi  //Built efi executable will be placed here
 >PACMAN Test:
 <img src="https://github.com/ssrg-vt/n3350_pacman/blob/main/pacman.jpeg" style="height: 400px; width:600px;"/>
 >BaggyBounds
-<img src="https://github.com/ssrg-vt/n3350_pacman/blob/main/pacman.jpeg" style="height: 400px; width:600px;"/>
+<img src="https://github.com/ssrg-vt/n3350_pacman/blob/main/baggybound.jpeg" style="height: 400px; width:600px;"/>
 > BaggyBounds LmBench
-<img src="https://github.com/ssrg-vt/n3350_pacman/blob/main/pacman.jpeg" style="height: 400px; width:600px;"/>
+<img src="https://github.com/ssrg-vt/n3350_pacman/blob/main/lmbench_bb.jpeg" style="height: 400px; width:600px;"/>
 >
 >
 >
