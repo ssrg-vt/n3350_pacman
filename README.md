@@ -98,7 +98,7 @@ cd ghidra_glm_ucode_extension/ghidra_10.4_glm_ucode_extension/
 ./ghidraRun & // Create a new project and read-in ../ucode/ucode_glm.txt raw file. Select x86-64-LE glm_ucode format.
 ```
 
-6. **_Steps to build BaggyBounds Patch__**
+7. **_Steps to build BaggyBounds Patch__**
 ```sh
 git clone https://github.com/ssrg-vt/n3350_pacman.git
 cd n3350_pacman               //Update Makefile: GNU_EFI_DIR=<Gnu_EFI_home>
