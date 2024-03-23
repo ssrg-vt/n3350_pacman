@@ -35,7 +35,7 @@ Boot_ → _Secure_Boot_ → _Disable
 - There are two possible methods used for creating UEFI executable (gnu-efi or Intel's Tianocore edk2)
 - I am listing the tutorials [references] to setup a "Hello World" program before proceeding to more complex u-code patches. 
 - In these experiments we use gnu-efi packages (over TianoCore EDKII) for **.efi** program development. 
-- Baseline package version is used from sourceforge:**gnu-efi.3.0.14**. Use _$ git clone https://git.code.sf.net/p/gnu-efi/code gnu-efi_
+- Baseline package version is used from sourceforge:**gnu-efi.3.0.14**. 
 - Some differences in api/syntax has been observed, if different versions of gnu-efi are used (or tianocoreEDKII baseline used). These differences are captured in detail in tutorials[references] as UEFI framework allows firmware developers flexibility to write macros/APIs.
 
 3. **Achieving Goldmont Unlock**
