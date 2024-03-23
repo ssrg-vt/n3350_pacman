@@ -115,14 +115,7 @@ ls efi_executables/baggybounds.efi  //Built efi executable will be placed here
 <img src="https://github.com/ssrg-vt/n3350_pacman/blob/main/baggybound.jpeg" style="height: 400px; width:600px;"/>
 > BaggyBounds LmBench
 <img src="https://github.com/ssrg-vt/n3350_pacman/blob/main/lmbench_bb.jpeg" style="height: 400px; width:600px;"/>
->
->
->
->
->
->
->
->
+
 **_References:_**
 - **CustomProcessingUnit** Reverse Engineering and Customization of Intel Microcode : https://pietroborrello.com/publication/woot23/woot23.pdf
 - **Microcode patches** used by Pietro Borello et.al : https://github.com/pietroborrello/CustomProcessingUnit/tree/master/ucode_collection
