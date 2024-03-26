@@ -514,16 +514,20 @@ UINTN ucode_addr_to_patch_seqword_addr(UINTN addr) {
 void patch_ucode(UINTN addr, unsigned long ucode_patch[][4], int n) {
     // format: uop0, uop1, uop2, seqword 
     // uop3 is fixed to a nop and cannot be overridden
+     Print(L"[patch_ucode] msram address offset:%x +0x0 patch: %x sizeof: %x \n", addr, ucode_patch[0][0], n );
+     Print(L"[patch_ucode] msram address offset:%x +0x4 patch: %x sizeof: %x \n", addr, ucode_patch[1][1], n );
+     Print(L"[patch_ucode] msram address offset:%x +0x8 patch: %x sizeof: %x \n", addr, ucode_patch[2][2], n );
+     Print(L"[patch_ucode] msram address offset:%x +0xC patch: %x sizeof: %x \n", addr, ucode_patch[3][3], n );
 
-    for(int i=0; i < n; i++) {
-        // patch ucode
-        ms_patch_ram_write(ucode_addr_to_patch_addr(addr + i*4),   ucode_patch[i][0]);
-        ms_patch_ram_write(ucode_addr_to_patch_addr(addr + i*4)+1, ucode_patch[i][1]);
-        ms_patch_ram_write(ucode_addr_to_patch_addr(addr + i*4)+2, ucode_patch[i][2]);
+    //-- for(int i=0; i < n; i++) {
+    //--     // patch ucode
+    //--     ms_patch_ram_write(ucode_addr_to_patch_addr(addr + i*4),   ucode_patch[i][0]);
+    //--     ms_patch_ram_write(ucode_addr_to_patch_addr(addr + i*4)+1, ucode_patch[i][1]);
+    //--     ms_patch_ram_write(ucode_addr_to_patch_addr(addr + i*4)+2, ucode_patch[i][2]);
 
-        // patch seqword
-        ms_const_write(ucode_addr_to_patch_seqword_addr(addr) + i, ucode_patch[i][3]);
-    }
+    //--     // patch seqword
+    //--     ms_const_write(ucode_addr_to_patch_seqword_addr(addr) + i, ucode_patch[i][3]);
+    //-- }
 }
 
 // assumes that ucode_routine points to the ldat_read 
@@ -561,6 +565,8 @@ void disable_match_and_patch(void) {
 
 void init_match_and_patch(void) {
     if (current_glm_version == GLM_OLD) {
+
+        Print(L"[match and patch]\n GLM Version Detected -- OLD PartId: 0x506c9 \n");
         // Move the patch at U7c5c to U7dfc, since it seems important for the CPU
         unsigned long existing_patch[][4] = {
             // U7dfc: WRITEURAM(tmp5, 0x0037, 32) m2=1, NOP, NOP, SEQ_GOTO U60d2
@@ -577,13 +583,15 @@ void init_match_and_patch(void) {
         UINTN resB = 0;
         UINTN resC = 0;
         UINTN resD = 0;
-        udebug_invoke(addr, &resA, &resB, &resC, &resD);
-        if (resA != 0x0000133700001337uL) {
-            Print(L"[init FAILED]\n");
-            Print(L"invoke(%08lx) = %016lx, %016lx, %016lx, %016lx\n", addr, resA, resB, resC, resD);
-            Exit(EFI_SUCCESS, 0, NULL);
-        }
+        //-- udebug_invoke(addr, &resA, &resB, &resC, &resD);
+        //-- if (resA != 0x0000133700001337uL) {
+        //--     Print(L"[init FAILED]\n");
+        //--     Print(L"invoke(%08lx) = %016lx, %016lx, %016lx, %016lx\n", addr, resA, resB, resC, resD);
+        //--     Exit(EFI_SUCCESS, 0, NULL);
+        //-- }
     } else if (current_glm_version == GLM_NEW) {
+
+        Print(L"[init]\n GLM Version Detected NEW\n");
         // write and execute the patch that will zero out match&patch
         #include "ucode_patches/match_patch_init_glm_new.h"
         patch_ucode(addr, ucode_patch, sizeof(ucode_patch) / sizeof(ucode_patch[0]));
@@ -602,8 +610,54 @@ void init_match_and_patch(void) {
         Print(L"[init FAILED]\nunsupported GLM\n");
         Exit(EFI_SUCCESS, 0, NULL);
     }
-    enable_match_and_patch();
+    //-- enable_match_and_patch();
 }
+
+//-- void init_match_and_patch(void) {
+//--     if (current_glm_version == GLM_OLD) {
+//--         // Move the patch at U7c5c to U7dfc, since it seems important for the CPU
+//--         unsigned long existing_patch[][4] = {
+//--             // U7dfc: WRITEURAM(tmp5, 0x0037, 32) m2=1, NOP, NOP, SEQ_GOTO U60d2
+//--             {0xa04337080235, 0, 0, 0x2460d200},
+//--         };
+//--         patch_ucode(0x7dfc, existing_patch, sizeof(existing_patch) / sizeof(existing_patch[0]));
+//-- 
+//--         // write and execute the patch that will zero out match&patch moving
+//--         // the 0xc entry to last entry, which will make the hook call our moved patch
+//--         #include "ucode_patches/match_patch_init.h"
+//--         patch_ucode(addr, ucode_patch, sizeof(ucode_patch) / sizeof(ucode_patch[0]));
+//-- 
+//--         UINTN resA = 0;
+//--         UINTN resB = 0;
+//--         UINTN resC = 0;
+//--         UINTN resD = 0;
+//--         udebug_invoke(addr, &resA, &resB, &resC, &resD);
+//--         if (resA != 0x0000133700001337uL) {
+//--             Print(L"[init FAILED]\n");
+//--             Print(L"invoke(%08lx) = %016lx, %016lx, %016lx, %016lx\n", addr, resA, resB, resC, resD);
+//--             Exit(EFI_SUCCESS, 0, NULL);
+//--         }
+//--     } else if (current_glm_version == GLM_NEW) {
+//--         // write and execute the patch that will zero out match&patch
+//--         #include "ucode_patches/match_patch_init_glm_new.h"
+//--         patch_ucode(addr, ucode_patch, sizeof(ucode_patch) / sizeof(ucode_patch[0]));
+//-- 
+//--         UINTN resA = 0;
+//--         UINTN resB = 0;
+//--         UINTN resC = 0;
+//--         UINTN resD = 0;
+//--         udebug_invoke(addr, &resA, &resB, &resC, &resD);
+//--         if (resA != 0x0000133700001337uL) {
+//--             Print(L"[init FAILED]\n");
+//--             Print(L"invoke(%08lx) = %016lx, %016lx, %016lx, %016lx\n", addr, resA, resB, resC, resD);
+//--             Exit(EFI_SUCCESS, 0, NULL);
+//--         }
+//--     } else {
+//--         Print(L"[init FAILED]\nunsupported GLM\n");
+//--         Exit(EFI_SUCCESS, 0, NULL);
+//--     }
+//--     enable_match_and_patch();
+//-- }
 
 void hook_match_and_patch(UINTN entry_idx, UINTN ucode_addr, UINTN patch_addr) {
     if (ucode_addr % 2 != 0) {
@@ -1046,13 +1100,15 @@ efi_main (EFI_HANDLE image, EFI_SYSTEM_TABLE *SystemTable)
 
     Print(L"Efi exe hardcoded to test PAC-patch : Lalit \n");
     Print(L"Applying x86 PAC patch .... \n");
+    Print(L"PACMAN TEST  .... \n");
 
-    setup_exceptions();
-    activate_udebug_insts();
-    enable_match_and_patch();
+    //--test override custom function/patch -- setup_exceptions();
+    //--test override custom function/patch -- activate_udebug_insts();
+    //--test override custom function/patch -- enable_match_and_patch();
     test_PACMAN(); 
 
-    Print(L"x86 PAC patch .... Done\n");
+    Print(L"x86 PACMAN Test.... Done : Lalit\n");
 
   return EFI_SUCCESS;
 }
+

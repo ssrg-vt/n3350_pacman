@@ -366,12 +366,12 @@ static void activate_udebug_insts(void) {
 static UINTN udebug_read(UINTN command, UINTN address) {
     UINTN res_high=0, res_low=0;
     lmfence();
-    asm volatile(
-      ".byte 0x0f, 0x0e\n"
-      : "=b" (res_high), "=d" (res_low)
-      : "c" (command), "a" (address)
-      : "memory"
-    );
+    //asm volatile(
+    //  ".byte 0x0f, 0x0e\n"
+    //  : "=b" (res_high), "=d" (res_low)
+    //  : "c" (command), "a" (address)
+    //  : "memory"
+    //);
     lmfence();
     return (res_high << 32) | res_low;
 }
@@ -379,23 +379,23 @@ static UINTN udebug_read(UINTN command, UINTN address) {
 static void udebug_write(UINTN command, UINTN address, UINTN value) {
     unsigned int val_high=value >> 32, val_low= (unsigned int)value;
     lmfence();
-    asm volatile(
-      ".byte 0x0f, 0x0f\n"
-      :
-      : "c" (command), "a" (address), "b" (val_high), "d" (val_low)
-      : "memory"
-    );
+    //asm volatile(
+    //  ".byte 0x0f, 0x0f\n"
+    //  :
+    //  : "c" (command), "a" (address), "b" (val_high), "d" (val_low)
+    //  : "memory"
+    //);
     lmfence();
 }
 
 static void udebug_invoke(UINTN address, UINTN* resA, UINTN* resB, UINTN* resC, UINTN* resD) {
     lmfence();
-    asm volatile(
-      ".byte 0x0f, 0x0f\n"
-      : "=a" (*resA), "=b" (*resB), "=c" (*resC), "=d" (*resD)
-      : "c" (0xd8), "a" (address), "b" (0), "d" (0)
-      : "memory"
-    );
+    //asm volatile(
+    //  ".byte 0x0f, 0x0f\n"
+    //  : "=a" (*resA), "=b" (*resB), "=c" (*resC), "=d" (*resD)
+    //  : "c" (0xd8), "a" (address), "b" (0), "d" (0)
+    //  : "memory"
+    //);
     lmfence();
 }
 
@@ -475,7 +475,7 @@ UINTN detect_goldomnt_version(void) {
 }
 
 void ms_array_write(UINTN array_sel, UINTN bank_sel, UINTN dword_idx, UINTN fast_addr, UINTN val) {
-    ldat_array_write(0x6a0, array_sel, bank_sel, dword_idx, fast_addr, val);
+    //ldat_array_write(0x6a0, array_sel, bank_sel, dword_idx, fast_addr, val);
 }
 
 void ms_patch_ram_write(UINTN addr, UINTN val) {

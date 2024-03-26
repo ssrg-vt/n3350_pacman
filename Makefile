@@ -9,7 +9,6 @@ clean:
 	rm -rf bios/*.efi	
 	rm -rf bios/*.o	
 	rm -rf bios/*.so	
-	rm -rf efi_executables/*.efi	
 
 build-ucode:
 	uasm-lib/uasm.py -i bios/ucode_patches/ucode_patch.u --avoid_unk_256 -o ./bios/ucode_patches/ucode_patch.h
@@ -59,7 +58,7 @@ build-cpu:
 	ld -shared -Bsymbolic -L$(GNU_EFI_DIR)/x86_64/gnuefi -L$(GNU_EFI_DIR)/x86_64/lib -T$(GNU_EFI_DIR)/gnuefi/elf_x86_64_efi.lds $(GNU_EFI_DIR)/x86_64/gnuefi/crt0-efi-x86_64.o bios/lmbench_stream_bb.o -o bios/lmbench_stream_bb.so -lgnuefi -lefi
 	objcopy -j .text -j .sdata -j .data -j .dynamic -j .dynsym  -j .rel -j .rela -j .rel.* -j .rela.* -j .reloc --target efi-app-x86_64 --subsystem=10 bios/lmbench_stream_bb.so bios/lmbench_stream_bb.efi
 
-	rm -rf efi_executables/*.efi
+	#rm -rf efi_executables/*.efi
 	cp bios/*efi efi_executables/
 
 .PHONY: build-cpu build-ucode

